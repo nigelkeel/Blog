@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="数据加密数字签名、信息加密是前后端开发都经常需要使用到的技术，应用场景包括了用户登入、交易、信息通讯等等，不同的应用场景也会需要使用到不同的签名加密算法，或者需要搭配不一样的 签名加密算法 来达到业务目标。 [TOC] 一、概念1、数字签名数字签名，简单来说就是通过提供 可鉴别 的 数字信息 验证 自身身份 的一种方式。一套 数字签名 通常定义两种 互补 的运算，一个用于 签名，另一个用于 验证。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据加密概论">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="数据加密数字签名、信息加密是前后端开发都经常需要使用到的技术，应用场景包括了用户登入、交易、信息通讯等等，不同的应用场景也会需要使用到不同的签名加密算法，或者需要搭配不一样的 签名加密算法 来达到业务目标。 [TOC] 一、概念1、数字签名数字签名，简单来说就是通过提供 可鉴别 的 数字信息 验证 自身身份 的一种方式。一套 数字签名 通常定义两种 互补 的运算，一个用于 签名，另一个用于 验证。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa18df72?w=1024&h=768&f=png&s=77151">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa02dbcd?w=727&h=244&f=png&s=36256">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa06e955?w=736&h=214&f=png&s=37513">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-25T10:33:45.604Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="信息安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa18df72?w=1024&h=768&f=png&s=77151">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据加密概论 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据加密概论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-25 18:33:45" itemprop="dateModified" datetime="2020-08-25T18:33:45+08:00">2020-08-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="数据加密"><a href="#数据加密" class="headerlink" title="数据加密"></a>数据加密</h1><p><strong>数字签名</strong>、<strong>信息加密</strong>是前后端开发都经常需要使用到的技术，应用场景包括了用户登入、交易、信息通讯等等，不同的应用场景也会需要使用到不同的签名加密算法，或者需要搭配不一样的 <strong>签名加密算法</strong> 来达到业务目标。</p>
+<p>[TOC]</p>
+<h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><h3 id="1、数字签名"><a href="#1、数字签名" class="headerlink" title="1、数字签名"></a>1、数字签名</h3><p><strong>数字签名</strong>，简单来说就是通过提供 <strong>可鉴别</strong> 的 <strong>数字信息</strong> 验证 <strong>自身身份</strong> 的一种方式。一套 <strong>数字签名</strong> 通常定义两种 <strong>互补</strong> 的运算，一个用于 <strong>签名</strong>，另一个用于 <strong>验证</strong>。分别由 <strong>发送者</strong> 持有能够 <strong>代表自己身份</strong> 的 <strong>私钥</strong> (私钥不可泄露),由 <strong>接受者</strong> 持有与私钥对应的 <strong>公钥</strong> ，能够在 <strong>接受</strong> 到来自发送者信息时用于 <strong>验证</strong> 其身份。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa18df72?w=1024&h=768&f=png&s=77151" alt="img"></p>
+<blockquote>
+<p><strong>注意</strong>：图中 <strong>加密过程</strong> 有别于 <strong>公钥加密</strong>，更多 <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/25912483">介绍戳这里</a>。<strong>签名</strong> 最根本的用途是要能够唯一 <strong>证明发送方的身份</strong>，防止 <strong>中间人攻击</strong>、<code>CSRF</code> <strong>跨域身份伪造</strong>。基于这一点在诸如 <strong>设备认证</strong>、<strong>用户认证</strong>、<strong>第三方认证</strong> 等认证体系中都会使用到 <strong>签名算法</strong> (彼此的实现方式可能会有差异)。</p>
+</blockquote>
+<h3 id="2、加密、解密"><a href="#2、加密、解密" class="headerlink" title="2、加密、解密"></a>2、加密、解密</h3><p>加密 <strong>数据加密</strong> 的基本过程，就是对原来为 <strong>明文</strong> 的文件或数据按 <strong>某种算法</strong> 进行处理，使其成为 <strong>不可读</strong> 的一段代码，通常称为 <strong>“密文”</strong>。通过这样的途径，来达到 <strong>保护数据</strong> 不被 <strong>非法人窃取</strong>、阅读的目的。</p>
+<p>解密 <strong>加密</strong> 的 <strong>逆过程</strong> 为 <strong>解密</strong>，即将该 <strong>编码信息</strong> 转化为其 <strong>原来数据</strong> 的过程。</p>
+<h3 id="3、对称加密、非对称加密"><a href="#3、对称加密、非对称加密" class="headerlink" title="3、对称加密、非对称加密"></a>3、对称加密、非对称加密</h3><p>加密算法分 <strong>对称加密</strong> 和 <strong>非对称加密</strong>，其中对称加密算法的加密与解密 <strong>密钥相同</strong>，非对称加密算法的加密密钥与解密 <strong>密钥不同</strong>，此外，还有一类 <strong>不需要密钥</strong> 的 <strong>散列算法</strong>。</p>
+<blockquote>
+<p>常见的 <strong>对称加密</strong> 算法主要有 <code>DES</code>、<code>3DES</code>、<code>AES</code> 等，常见的 <strong>非对称算法</strong> 主要有 <code>RSA</code>、<code>DSA</code> 等，<strong>散列算法</strong> 主要有 <code>SHA-1</code>、<code>MD5</code> 等。</p>
+</blockquote>
+<p><strong>对称加密算法</strong> 是应用较早的加密算法，又称为 <strong>共享密钥加密算法</strong>。在 <strong>对称加密算法</strong> 中，使用的密钥只有一个，<strong>发送</strong> 和 <strong>接收</strong> 双方都使用这个密钥对数据进行 <strong>加密</strong> 和 <strong>解密</strong>。这就要求加密和解密方事先都必须知道加密的密钥。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa02dbcd?w=727&h=244&f=png&s=36256" alt="img"></p>
+<ol>
+<li>数据加密过程：在对称加密算法中，<strong>数据发送方</strong> 将 <strong>明文</strong> (原始数据) 和 <strong>加密密钥</strong> 一起经过特殊 <strong>加密处理</strong>，生成复杂的 <strong>加密密文</strong> 进行发送。</li>
+<li>数据解密过程：<strong>数据接收方</strong> 收到密文后，若想读取原数据，则需要使用 <strong>加密使用的密钥</strong> 及相同算法的 <strong>逆算法</strong> 对加密的密文进行解密，才能使其恢复成 <strong>可读明文</strong>。</li>
+</ol>
+<p><strong>非对称加密算法</strong>，又称为 <strong>公开密钥加密算法</strong>。它需要两个密钥，一个称为 <strong>公开密钥</strong> (<code>public key</code>)，即 <strong>公钥</strong>，另一个称为 <strong>私有密钥</strong> (<code>private key</code>)，即 <strong>私钥</strong>。</p>
+<p>因为 <strong>加密</strong> 和 <strong>解密</strong> 使用的是两个不同的密钥，所以这种算法称为 <strong>非对称加密算法</strong>。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa06e955?w=736&h=214&f=png&s=37513" alt="img"></p>
+<ol>
+<li>如果使用 <strong>公钥</strong> 对数据 <strong>进行加密</strong>，只有用对应的 <strong>私钥</strong> 才能 <strong>进行解密</strong>。</li>
+<li>如果使用 <strong>私钥</strong> 对数据 <strong>进行加密</strong>，只有用对应的 <strong>公钥</strong> 才能 <strong>进行解密</strong>。</li>
+</ol>
+<blockquote>
+<p><strong>例子</strong>：甲方生成 <strong>一对密钥</strong> 并将其中的一把作为 <strong>公钥</strong> 向其它人公开，得到该公钥的 <strong>乙方</strong> 使用该密钥对机密信息 <strong>进行加密</strong> 后再发送给甲方，甲方再使用自己保存的另一把 <strong>专用密钥</strong> (<strong>私钥</strong>)，对 <strong>加密</strong> 后的信息 <strong>进行解密</strong>。</p>
+</blockquote>
+<h2 id="二、常见的签名加密算法"><a href="#二、常见的签名加密算法" class="headerlink" title="二、常见的签名加密算法"></a>二、常见的签名加密算法</h2><h3 id="1、MD5"><a href="#1、MD5" class="headerlink" title="1、MD5"></a>1、MD5</h3><p><code>MD5</code> 用的是 <strong>哈希函数</strong>，它的典型应用是对一段信息产生 <strong>信息摘要</strong>，以 <strong>防止被篡改</strong>。严格来说，<code>MD5</code> 不是一种 <strong>加密算法</strong> 而是 <strong>摘要算法</strong>。无论是多长的输入，<code>MD5</code> 都会输出长度为 <code>128bits</code> 的一个串 (通常用 <code>16</code> <strong>进制</strong> 表示为 <code>32</code> 个字符)。</p>
+<h3 id="2、SHA"><a href="#2、SHA" class="headerlink" title="2、SHA"></a>2、SHA</h3><p><code>SHA1</code> 是和 <code>MD5</code> 一样流行的 <strong>消息摘要算法</strong>，然而 <code>SHA1</code> 比 <code>MD5</code> 的 <strong>安全性更强</strong>。对于长度小于 <code>2 ^ 64</code> 位的消息，<code>SHA1</code> 会产生一个 <code>160</code> 位的 <strong>消息摘要</strong>。基于 <code>MD5</code>、<code>SHA1</code> 的信息摘要特性以及 <strong>不可逆</strong> (一般而言)，可以被应用在检查 <strong>文件完整性</strong> 以及 <strong>数字签名</strong> 等场景。</p>
+<h3 id="3、HMAC"><a href="#3、HMAC" class="headerlink" title="3、HMAC"></a>3、HMAC</h3><p><code>HMAC</code> 是密钥相关的 <strong>哈希运算消息认证码</strong>（Hash-based Message Authentication Code），<code>HMAC</code> 运算利用 <strong>哈希算法</strong> (<code>MD5</code>、<code>SHA1</code> 等)，以 <strong>一个密钥</strong> 和 <strong>一个消息</strong> 为输入，生成一个 <strong>消息摘要</strong> 作为 <strong>输出</strong>。</p>
+<p><code>HMAC</code> <strong>发送方</strong> 和 <strong>接收方</strong> 都有的 <code>key</code> 进行计算，而没有这把 <code>key</code> 的第三方，则是 <strong>无法计算</strong> 出正确的 <strong>散列值</strong>的，这样就可以 <strong>防止数据被篡改</strong>。</p>
+<h3 id="4、AES-DES-3DES"><a href="#4、AES-DES-3DES" class="headerlink" title="4、AES/DES/3DES"></a>4、AES/DES/3DES</h3><p><code>AES</code>、<code>DES</code>、<code>3DES</code> 都是 <strong>对称</strong> 的 <strong>块加密算法</strong>，<strong>加解密</strong> 的过程是 <strong>可逆的</strong>。常用的有 <code>AES128</code>、<code>AES192</code>、<code>AES256</code>。</p>
+<p><code>DES</code> 加密算法是一种 <strong>分组密码</strong>，以 <code>64</code> 位为 <strong>分组对数据</strong> 加密，它的 <strong>密钥长度</strong> 是 <code>56</code> 位，<strong>加密解密</strong> 用 <strong>同一算法</strong>。</p>
+<p><code>DES</code> 加密算法是对 <strong>密钥</strong> 进行保密，而 <strong>公开算法</strong>，包括加密和解密算法。这样，只有掌握了和发送方 <strong>相同密钥</strong> 的人才能解读由 <code>DES</code>加密算法加密的密文数据。因此，破译 <code>DES</code> 加密算法实际上就是 <strong>搜索密钥的编码</strong>。对于 <code>56</code> 位长度的 <strong>密钥</strong> 来说，如果用 <strong>穷举法</strong> 来进行搜索的话，其运算次数为 <code>2 ^ 56</code> 次。</p>
+<p>3DES算法 是基于 <code>DES</code> 的 <strong>对称算法</strong>，对 <strong>一块数据</strong> 用 <strong>三个不同的密钥</strong> 进行 <strong>三次加密</strong>，<strong>强度更高</strong>。</p>
+<p><code>AES</code> 加密算法是密码学中的 <strong>高级加密标准</strong>，该加密算法采用 <strong>对称分组密码体制</strong>，密钥长度的最少支持为 <code>128</code> 位、 <code>192</code> 位、<code>256</code> 位，分组长度 <code>128</code> 位，算法应易于各种硬件和软件实现。这种加密算法是美国联邦政府采用的 <strong>区块加密标准</strong>。</p>
+<p><code>AES</code> 本身就是为了取代 <code>DES</code> 的，<code>AES</code> 具有更好的 <strong>安全性</strong>、<strong>效率</strong> 和 <strong>灵活性</strong>。</p>
+<h3 id="5、RSA"><a href="#5、RSA" class="headerlink" title="5、RSA"></a>5、RSA</h3><p><code>RSA</code> 加密算法是目前最有影响力的 <strong>公钥加密算法</strong>，并且被普遍认为是目前 <strong>最优秀的公钥方案</strong> 之一。<code>RSA</code> 是第一个能同时用于 <strong>加密</strong> 和 <strong>数字签名</strong> 的算法，它能够 <strong>抵抗</strong> 到目前为止已知的 <strong>所有密码攻击</strong>，已被 <code>ISO</code> 推荐为公钥数据加密标准。</p>
+<blockquote>
+<p><code>RSA</code> <strong>加密算法</strong> 基于一个十分简单的数论事实：将两个大 <strong>素数</strong> 相乘十分容易，但想要对其乘积进行 <strong>因式分解</strong> 却极其困难，因此可以将 <strong>乘积</strong> 公开作为 <strong>加密密钥</strong>。</p>
+</blockquote>
+<h3 id="6、ECC"><a href="#6、ECC" class="headerlink" title="6、ECC"></a>6、ECC</h3><p><code>ECC</code> 也是一种 <strong>非对称加密算法</strong>，主要优势是在某些情况下，它比其他的方法使用 <strong>更小的密钥</strong>，比如 <code>RSA</code> <strong>加密算法</strong>，提供 <strong>相当的或更高等级</strong> 的安全级别。不过一个缺点是 <strong>加密和解密操作</strong> 的实现比其他机制 <strong>时间长</strong> (相比 <code>RSA</code> 算法，该算法对 <code>CPU</code> 消耗严重)。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="tag"># 信息安全</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/11/41.jQuery/" rel="prev" title="jQuery">
+      <i class="fa fa-chevron-left"></i> jQuery
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/11/34.%E5%B8%B8%E8%A7%81%E6%95%88%E6%9E%9C/" rel="next" title="常见效果">
+      常见效果 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86"><span class="nav-text">数据加密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E5%BF%B5"><span class="nav-text">一、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="nav-text">1、数字签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%8A%A0%E5%AF%86%E3%80%81%E8%A7%A3%E5%AF%86"><span class="nav-text">2、加密、解密</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E3%80%81%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="nav-text">3、对称加密、非对称加密</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AD%BE%E5%90%8D%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-text">二、常见的签名加密算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81MD5"><span class="nav-text">1、MD5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81SHA"><span class="nav-text">2、SHA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81HMAC"><span class="nav-text">3、HMAC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81AES-DES-3DES"><span class="nav-text">4、AES&#x2F;DES&#x2F;3DES</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81RSA"><span class="nav-text">5、RSA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81ECC"><span class="nav-text">6、ECC</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

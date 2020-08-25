@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="CSS 杂项[TOC] 一、CSS 未归类内容1、CSS SpritesCSS Sprites 精灵图，是网页图片的常用处理方式。允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对于当前的网络来说，小于200k的文件加载速度是一样的。通过 background-position 属性，将图片定位到需要的位置即可。 优点：①减少图片大小 ②减少服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 杂项">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/12.CSS%E5%85%B6%E4%BB%96/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="CSS 杂项[TOC] 一、CSS 未归类内容1、CSS SpritesCSS Sprites 精灵图，是网页图片的常用处理方式。允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对于当前的网络来说，小于200k的文件加载速度是一样的。通过 background-position 属性，将图片定位到需要的位置即可。 优点：①减少图片大小 ②减少服务">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-25T10:18:07.873Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/11/12.CSS%E5%85%B6%E4%BB%96/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CSS 杂项 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/12.CSS%E5%85%B6%E4%BB%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS 杂项
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-25 18:18:07" itemprop="dateModified" datetime="2020-08-25T18:18:07+08:00">2020-08-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="CSS-杂项"><a href="#CSS-杂项" class="headerlink" title="CSS 杂项"></a>CSS 杂项</h1><p>[TOC]</p>
+<h2 id="一、CSS-未归类内容"><a href="#一、CSS-未归类内容" class="headerlink" title="一、CSS 未归类内容"></a>一、CSS 未归类内容</h2><h3 id="1、CSS-Sprites"><a href="#1、CSS-Sprites" class="headerlink" title="1、CSS Sprites"></a>1、CSS Sprites</h3><p><strong>CSS Sprites</strong> 精灵图，是网页图片的常用处理方式。允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对于当前的网络来说，小于200k的文件加载速度是一样的。通过 <strong>background-position</strong> 属性，将图片定位到需要的位置即可。</p>
+<p>优点：①减少图片大小 ②减少服务器请求次数</p>
+<p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a> </p>
+<h3 id="2、CSS-hack"><a href="#2、CSS-hack" class="headerlink" title="2、CSS hack"></a>2、CSS hack</h3><p>CSS hack是什么</p>
+<p>由于不同的厂商的浏览器，或者是同一个浏览器不同的版本（IE），对css的解析和认识不完全一样,可能会导致不同浏览器显示的效果不相同,那么我们需要针对某个浏览器，去写不同的样式，让代码能够兼容所有的浏览器。  </p>
+<p>为什么要用 CSS hack</p>
+<p>第一种理解：让我们CSS的代码兼容不同的浏览器  </p>
+<p>第二种理解：我们可以为不同的浏览器定制不同的样式  </p>
+<p>3种表现方式：</p>
+<p>CSS属性前缀法   </p>
+<p>选择器前缀法  </p>
+<p><strong>IE条件注释法</strong>: iE10、11不再使用条件注释。  </p>
+<h3 id="3、calc-方法"><a href="#3、calc-方法" class="headerlink" title="3、calc 方法"></a>3、calc 方法</h3><p>用来计算长度。  </p>
+<p>注意<br>使用+ - * /进行运算<br>可以使用百分比 px em rem等单位，可以单位混合计算<br>在使用的时候，尽量在 + - * / 前后添加一个空格  </p>
+<h2 id="二、BFC"><a href="#二、BFC" class="headerlink" title="二、BFC"></a>二、BFC</h2><p>BFC，块级格式化上下文。  </p>
+<h3 id="1、创建BFC"><a href="#1、创建BFC" class="headerlink" title="1、创建BFC"></a>1、创建BFC</h3><ul>
+<li><strong>根元素</strong></li>
+<li><strong>浮动（float 不为 none）</strong></li>
+<li><strong>绝对定位 或者 固定定位</strong></li>
+<li>表格的标题和单元格，匿名表格单元格元素</li>
+<li><strong>行内块元素</strong></li>
+<li><strong>overflow的值不为visible</strong></li>
+</ul>
+<h3 id="2、BFC的范围"><a href="#2、BFC的范围" class="headerlink" title="2、BFC的范围"></a>2、BFC的范围</h3><blockquote>
+<p>A block formatting context contains everything inside of the element creating it, that is not also inside a descendant element that creates a new block formatting context.</p>
+</blockquote>
+<p>直译过来就是, BFC包含创建它的元素的所有子元素, 但不包括创建了新BFC的子元素的内部元素。简单来说，子元素如果又创建了一个新的 BFC，那么它里面的内容就不属于上一个 BFC 了，这体现了 BFC隔离 的思想。<br>也就是所说，<strong>一个元素不能同时存在于两个 BFC 中</strong>。  </p>
+<h3 id="3、BFC的特性"><a href="#3、BFC的特性" class="headerlink" title="3、BFC的特性"></a>3、BFC的特性</h3><p>BFC 除了会创建一个隔离的空间外，还具有以下特性：  </p>
+<ul>
+<li>BFC 内部的块级盒会在垂直方向上一个接一个排列。  </li>
+<li>同一BFC下的相邻块级元素可能发生外边距折叠，创建新的BFC可以避免外边距折叠。（解决塌陷）  </li>
+<li>浮动盒的区域不会和BFC重叠  </li>
+<li>计算BFC的高度时，浮动元素也会参与计算  </li>
+</ul>
+<h3 id="4、BFC的应用"><a href="#4、BFC的应用" class="headerlink" title="4、BFC的应用"></a>4、BFC的应用</h3><ul>
+<li><p>自适应多栏布局<br>中间栏创建 BFC，左右栏宽度固定后浮动。由于盒子的 margin box 的左边和包含块 border box 的左边相接触，同时浮动盒的区域不会和 BFC 重叠，所以中间栏的宽度会自适应。  </p>
+</li>
+<li><p>防止外边距折叠<br>创建新的 BFC ，让相邻的块级盒位于不同 BFC 下可以防止外边距折叠  </p>
+</li>
+<li><p>清除浮动<br>BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的浮动  </p>
+</li>
+</ul>
+<h3 id="5、IFC规则"><a href="#5、IFC规则" class="headerlink" title="5、IFC规则"></a>5、IFC规则</h3><p>IFC，行内格式化上下文。 </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/11/14.%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" rel="prev" title="响应式布局">
+      <i class="fa fa-chevron-left"></i> 响应式布局
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/11/11.Canvas/" rel="next" title="Canvas">
+      Canvas <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-%E6%9D%82%E9%A1%B9"><span class="nav-text">CSS 杂项</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81CSS-%E6%9C%AA%E5%BD%92%E7%B1%BB%E5%86%85%E5%AE%B9"><span class="nav-text">一、CSS 未归类内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81CSS-Sprites"><span class="nav-text">1、CSS Sprites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81CSS-hack"><span class="nav-text">2、CSS hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81calc-%E6%96%B9%E6%B3%95"><span class="nav-text">3、calc 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81BFC"><span class="nav-text">二、BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BABFC"><span class="nav-text">1、创建BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81BFC%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="nav-text">2、BFC的范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81BFC%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-text">3、BFC的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81BFC%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">4、BFC的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81IFC%E8%A7%84%E5%88%99"><span class="nav-text">5、IFC规则</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

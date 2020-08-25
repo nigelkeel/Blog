@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、浮动float 浮动 可以让多个块元素横向排列，共行。    属性 说明    none 默认，不浮动   left 左浮动   right 右浮动   1、概念正常页面流&#x2F;正常文档流 是行元素从左至右，块元素从上到下布局。浮动 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个float堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。  2、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 浮动和定位">
+<meta property="og:url" content="http://yoursite.com/2020/01/11/07.%E5%B8%83%E5%B1%80/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="一、浮动float 浮动 可以让多个块元素横向排列，共行。    属性 说明    none 默认，不浮动   left 左浮动   right 右浮动   1、概念正常页面流&#x2F;正常文档流 是行元素从左至右，块元素从上到下布局。浮动 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个float堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。  2、">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-25T10:15:56.391Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/11/07.%E5%B8%83%E5%B1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CSS 浮动和定位 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/11/07.%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS 浮动和定位
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-25 18:15:56" itemprop="dateModified" datetime="2020-08-25T18:15:56+08:00">2020-08-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一、浮动"><a href="#一、浮动" class="headerlink" title="一、浮动"></a>一、浮动</h2><p><strong>float 浮动</strong> 可以让多个块元素横向排列，共行。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>默认，不浮动</td>
+</tr>
+<tr>
+<td>left</td>
+<td>左浮动</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右浮动</td>
+</tr>
+</tbody></table>
+<h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><p><strong>正常页面流/正常文档流</strong> 是行元素从左至右，块元素从上到下布局。<strong>浮动</strong> 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个float堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。 </p>
+<h3 id="2、浮动的使用"><a href="#2、浮动的使用" class="headerlink" title="2、浮动的使用"></a>2、浮动的使用</h3><p><strong>左浮动</strong> 就是让容器沿着容器左侧排序。</p>
+<p><strong>右浮动</strong> 让容器沿着容器右侧排序。  </p>
+<h3 id="3、高度塌陷"><a href="#3、高度塌陷" class="headerlink" title="3、高度塌陷"></a>3、高度塌陷</h3><p>浮动元素以后，脱离父级内容区域，父级没有内容撑开自身的高度，而且父级的兄弟元素是按照父级的位置进行布局的，所以页面会乱。 </p>
+<h3 id="4、清除浮动"><a href="#4、清除浮动" class="headerlink" title="4、清除浮动"></a>4、清除浮动</h3><p>清除浮动不是不让元素浮动，是清除浮动对父级高度塌陷的影响。 </p>
+<p>清除浮动的方法</p>
+<ul>
+<li>给浮动元素的父级设置高度。  </li>
+<li>给浮动元素的父级设置浮动，以浮制浮。  </li>
+<li>overflow设置不为visible的属性。  </li>
+<li>在最后一个浮动元素的后边添加一个空的块级元素，添加一个块级元素，添加属性和值为 clear: both。</li>
+<li>（推荐）after伪元素清浮动，给所有浮动元素父级一个clearFix的类名。  </li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在当前元素内部的最后边添加一个伪元素 */</span></span><br><span class="line"><span class="selector-class">.clearFix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">   <span class="comment">/* 伪元素必须有内容才生效，\200B代表空字符 */</span></span><br><span class="line">   <span class="attribute">content</span>: <span class="string">&quot;\200B&quot;</span>;</span><br><span class="line">  </span><br><span class="line">   <span class="comment">/* 伪元素默认是行，要设置成块才可以清浮动 */</span></span><br><span class="line">   <span class="attribute">display</span>: block;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 伪元素的空的，但可能某些浏览器解析空元素会有高度，所以直接设置高度为0 */</span></span><br><span class="line">   <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">   <span class="comment">/* 清浮动 */</span></span><br><span class="line">   <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>清浮动的原理（？）</p>
+<h2 id="二、定位"><a href="#二、定位" class="headerlink" title="二、定位"></a>二、定位</h2><p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static</td>
+<td>默认，没有定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位</td>
+</tr>
+</tbody></table>
+<p>布局一般用在大布局的小范围中。</p>
+<h3 id="1、相对定位-relative"><a href="#1、相对定位-relative" class="headerlink" title="1、相对定位 relative"></a>1、相对定位 relative</h3><p>让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。  </p>
+<h3 id="2、绝对定位-absolute"><a href="#2、绝对定位-absolute" class="headerlink" title="2、绝对定位 absolute"></a>2、绝对定位 absolute</h3><p>绝对定位元素，相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非static属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的padding-box的左上角为原点。right和bottom是距离包含块右下角的距离。</p>
+<h4 id="2-1-包含块"><a href="#2-1-包含块" class="headerlink" title="2.1 包含块"></a>2.1 包含块</h4><p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
+<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：  </p>
+<ul>
+<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
+<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
+<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
+</ul>
+<blockquote>
+<p>补充：<br>如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。  </p>
+<ul>
+<li>当祖先元素拥有 transform 或 perspective 属性并且值不为none的时候，它也是被当做包含块。 </li>
+<li>当祖先元素 拥有 filter 属性的时候（值不为none） 它也可以被当做包含块</li>
+</ul>
+</blockquote>
+<p>注：如果由内向外找不到包含块条件的元素，那么html（根元素）被称作为初始包含块。</p>
+<h4 id="2-2-“子绝父相”"><a href="#2-2-“子绝父相”" class="headerlink" title="2.2 “子绝父相”"></a>2.2 “子绝父相”</h4><p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
+<h3 id="3、固定定位-fixed"><a href="#3、固定定位-fixed" class="headerlink" title="3、固定定位 fixed"></a>3、固定定位 fixed</h3><p>相对于浏览器窗口定位。  </p>
+<h3 id="4、z-index-属性"><a href="#4、z-index-属性" class="headerlink" title="4、z-index 属性"></a>4、z-index 属性</h3><p><strong>z-index</strong> 指定了一个定位属性的元素及其后代的层叠顺序，只有定位元素（非static）拥有该属性。z-index 的值没有单位，理论上来说 z-index 的值大的元素，会覆盖小的元素。定位元素默认的z-index 的值是 auto。如果一个拥有 z-index 属性的定位元素中，子元素也设置了 z-index 。那么子元素会重新创建一个 <strong>层叠上下文</strong>，子元素的z-index只能在当前的层叠上下文中对比排列。  </p>
+<h4 id="4-1-元素层叠顺序"><a href="#4-1-元素层叠顺序" class="headerlink" title="4.1 元素层叠顺序"></a>4.1 元素层叠顺序</h4><p>z-index为负&lt; background&lt; border&lt; 块级元素 &lt; 浮动元素 &lt; 内联元素 &lt; 没有设置z-index的定位元素 &lt; z-index为正</p>
+<h4 id="4-2-层叠上下文"><a href="#4-2-层叠上下文" class="headerlink" title="4.2 层叠上下文 +"></a>4.2 层叠上下文 +</h4><blockquote>
+<p>想要一个元素支持 z-index 属性，但是又不想定位影响其他元素或者影响自己，则可以给该元素设置相对定位。</p>
+</blockquote>
+<h2 id="四、布局应用"><a href="#四、布局应用" class="headerlink" title="四、布局应用"></a>四、布局应用</h2><h3 id="1、布局常用单词"><a href="#1、布局常用单词" class="headerlink" title="1、布局常用单词"></a>1、布局常用单词</h3><table>
+<thead>
+<tr>
+<th>单词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>header</code></td>
+<td>头部、页眉</td>
+</tr>
+<tr>
+<td><code>logo</code></td>
+<td>标志</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>nav</code>、<code>sub_nav</code></td>
+<td>导航、子导航</td>
+</tr>
+<tr>
+<td><code>banner</code></td>
+<td>横幅广告</td>
+</tr>
+<tr>
+<td><code>main</code>、<code>content</code></td>
+<td>主体、内容</td>
+</tr>
+<tr>
+<td><code>container</code>、<code>con</code></td>
+<td>容器</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td>盒子</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>区域</td>
+</tr>
+<tr>
+<td><code>wrapper</code>、<code>wrap</code></td>
+<td>包裹</td>
+</tr>
+<tr>
+<td><code>menu</code></td>
+<td>菜单</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>列表</td>
+</tr>
+<tr>
+<td><code>section</code></td>
+<td>分区、分块</td>
+</tr>
+<tr>
+<td><code>article</code></td>
+<td>文章</td>
+</tr>
+<tr>
+<td><code>aside</code></td>
+<td>侧边栏</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td>页脚、底部</td>
+</tr>
+<tr>
+<td><code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code></td>
+<td>顶部 底部 左部 右部</td>
+</tr>
+<tr>
+<td><code>prev</code>、<code>next</code></td>
+<td>上一个、下一个</td>
+</tr>
+</tbody></table>
+<h3 id="2、网页的版心"><a href="#2、网页的版心" class="headerlink" title="2、网页的版心"></a>2、网页的版心</h3><h3 id="3、水平垂直居中-△"><a href="#3、水平垂直居中-△" class="headerlink" title="3、水平垂直居中 △"></a>3、水平垂直居中 △</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 公共代码 */</span></span><br></pre></td></tr></table></figure>
+
+<p>line-height</p>
+<p>absolute + margin auto</p>
+<p>absolute + 负margin</p>
+<p>absolute + calc</p>
+<p>absolute + transform: translate</p>
+<p>flex</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>writing-mode</p>
+<p>table </p>
+<p>css-table</p>
+<p>grid</p>
+<h3 id="4、其他布局"><a href="#4、其他布局" class="headerlink" title="4、其他布局"></a>4、其他布局</h3><p>Stick Footer 粘连布局</p>
+<p>三列布局</p>
+<p>等高布局</p>
+<p>圣杯布局</p>
+<p>双飞翼布局</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/11/08.%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="prev" title="CSS 弹性布局">
+      <i class="fa fa-chevron-left"></i> CSS 弹性布局
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/11/05.CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/" rel="next" title="盒模型">
+      盒模型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%B5%AE%E5%8A%A8"><span class="nav-text">一、浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%A6%82%E5%BF%B5"><span class="nav-text">1、概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">2、浮动的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7"><span class="nav-text">3、高度塌陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-text">4、清除浮动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9A%E4%BD%8D"><span class="nav-text">二、定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D-relative"><span class="nav-text">1、相对定位 relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-absolute"><span class="nav-text">2、绝对定位 absolute</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E5%8C%85%E5%90%AB%E5%9D%97"><span class="nav-text">2.1 包含块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E2%80%9C%E5%AD%90%E7%BB%9D%E7%88%B6%E7%9B%B8%E2%80%9D"><span class="nav-text">2.2 “子绝父相”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D-fixed"><span class="nav-text">3、固定定位 fixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81z-index-%E5%B1%9E%E6%80%A7"><span class="nav-text">4、z-index 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E5%85%83%E7%B4%A0%E5%B1%82%E5%8F%A0%E9%A1%BA%E5%BA%8F"><span class="nav-text">4.1 元素层叠顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-text">4.2 层叠上下文 +</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B8%83%E5%B1%80%E5%BA%94%E7%94%A8"><span class="nav-text">四、布局应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%B8%83%E5%B1%80%E5%B8%B8%E7%94%A8%E5%8D%95%E8%AF%8D"><span class="nav-text">1、布局常用单词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E7%BD%91%E9%A1%B5%E7%9A%84%E7%89%88%E5%BF%83"><span class="nav-text">2、网页的版心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD-%E2%96%B3"><span class="nav-text">3、水平垂直居中 △</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%85%B6%E4%BB%96%E5%B8%83%E5%B1%80"><span class="nav-text">4、其他布局</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
