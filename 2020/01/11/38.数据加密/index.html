@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.1.1">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="数据加密数字签名、信息加密是前后端开发都经常需要使用到的技术，应用场景包括了用户登入、交易、信息通讯等等，不同的应用场景也会需要使用到不同的签名加密算法，或者需要搭配不一样的 签名加密算法 来达到业务目标。 [TOC] 一、概念1、数字签名数字签名，简单来说就是通过提供 可鉴别 的 数字信息 验证 自身身份 的一种方式。一套 数字签名 通常定义两种 互补 的运算，一个用于 签名，另一个用于 验证。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据加密概论">
-<meta property="og:url" content="http://nigelkeel.gitee.io/blog/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/index.html">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/index.html">
 <meta property="og:site_name" content="飞鱼">
 <meta property="og:description" content="数据加密数字签名、信息加密是前后端开发都经常需要使用到的技术，应用场景包括了用户登入、交易、信息通讯等等，不同的应用场景也会需要使用到不同的签名加密算法，或者需要搭配不一样的 签名加密算法 来达到业务目标。 [TOC] 一、概念1、数字签名数字签名，简单来说就是通过提供 可鉴别 的 数字信息 验证 自身身份 的一种方式。一套 数字签名 通常定义两种 互补 的运算，一个用于 签名，另一个用于 验证。">
 <meta property="og:locale" content="zh_CN">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/7/13/16493f2bfa18df72?w=1024&h=768&f=png&s=77151">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/blog/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
 
 
 <script id="page-configurations">
@@ -99,7 +99,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">飞鱼</h1>
       <span class="logo-line-after"><i></i></span>
@@ -120,22 +120,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -193,10 +193,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/01/11/38.%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
       <meta itemprop="name" content="KEEL">
       <meta itemprop="description" content="暂无描述">
     </span>
@@ -231,7 +231,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
                 </span>
             </span>
 
@@ -299,7 +299,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="tag"># 信息安全</a>
+              <a href="/blog/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="tag"># 信息安全</a>
           </div>
 
         
@@ -308,11 +308,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/11/41.jQuery/" rel="prev" title="jQuery">
+    <a href="/blog/2020/01/11/41.jQuery/" rel="prev" title="jQuery">
       <i class="fa fa-chevron-left"></i> jQuery
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/11/34.%E5%B8%B8%E8%A7%81%E6%95%88%E6%9E%9C/" rel="next" title="常见效果">
+    <a href="/blog/2020/01/11/34.%E5%B8%B8%E8%A7%81%E6%95%88%E6%9E%9C/" rel="next" title="常见效果">
       常见效果 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -385,20 +385,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
@@ -450,30 +450,30 @@
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
 
 
-
-
-  
+<script src="/blog/js/next-boot.js"></script>
 
 
 
 
   
-<script src="/js/local-search.js"></script>
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
 
 
 
