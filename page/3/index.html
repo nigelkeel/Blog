@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/57-%E5%BC%82%E6%AD%A5/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/24/4-%E9%AB%98%E7%BA%A7/68-Angular/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -199,7 +199,671 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/57-%E5%BC%82%E6%AD%A5/" class="post-title-link" itemprop="url">JS 异步</a>
+            <a href="/blog/2020/08/24/4-%E9%AB%98%E7%BA%A7/68-Angular/" class="post-title-link" itemprop="url">Angular</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-24 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-24T00:00:00+08:00">2020-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 17:05:07" itemprop="dateModified" datetime="2020-08-27T17:05:07+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/22/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/50-%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/22/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/50-%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">NodeJS 路径和文件系统模块</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-22 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-22T00:00:00+08:00">2020-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 21:42:56" itemprop="dateModified" datetime="2020-08-26T21:42:56+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#yi-buffer">一、Buffer</a></li>
+<li><a href="#er-path">二、path</a><ul>
+<li><a href="#1-resolve">1、resolve</a></li>
+<li><a href="#2-huo-qu-dang-qian-wen-jian-jia">2、获取当前文件夹</a></li>
+</ul>
+</li>
+<li><a href="#san-fs">三、fs △</a><ul>
+<li><a href="#1-wen-jian-de-du-qu">1、文件的读取</a><ul>
+<li><a href="#1-jian-dan-du-qu-wen-jian">（1）简单读取文件</a></li>
+<li><a href="#2-shi-yong-promisify-jie-jue-yi-bu-wen-ti">(2) 使用 promisify 解决异步问题</a></li>
+<li><a href="#3-liu-shi-du-qu-wen-jian">（3）流式读取文件</a></li>
+</ul>
+</li>
+<li><a href="#2-wen-jian-de-xie-ru">2、文件的写入</a><ul>
+<li><a href="#1-tong-bu-xie">（1）同步写</a></li>
+<li><a href="#2-yi-bu-xie">（2）异步写</a></li>
+</ul>
+</li>
+<li><a href="#3-liu-shi-wen-jian-cao-zuo">3、流式文件操作</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+
+<h1><span id="yi-buffer">一、Buffer</span><a href="#yi-buffer" class="header-anchor">#</a></h1><p>缓冲器，二进制数据，性能较好。</p>
+<p>不需要引用直接使用。</p>
+<p>1 byte = 8 bit</p>
+<p>一个字母或者数组 1字节</p>
+<p>一个汉字或者全角 3字节</p>
+<h1><span id="er-path">二、path</span><a href="#er-path" class="header-anchor">#</a></h1><p><code>path</code> 是专门用于处理文件路径、目录的核心模块。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2><span id="1-resolve">1、resolve</span><a href="#1-resolve" class="header-anchor">#</a></h2><p><code>resolve</code> 方法将目录或者路径片段的序列解析成绝对路径。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(<span class="string">&#x27;./index.html&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="2-huo-qu-dang-qian-wen-jian-jia">2、获取当前文件夹</span><a href="#2-huo-qu-dang-qian-wen-jian-jia" class="header-anchor">#</a></h2><p><code>--dirname</code> 表示当前目录。</p>
+<p>开发中常用 <code>path.resolve(__dirname, &quot;xxxx&quot;)</code></p>
+<h1><span id="san-fs">三、fs △</span><a href="#san-fs" class="header-anchor">#</a></h1><p><code>fs</code> 就是 <code>file system</code> 是 NodeJS 核心的文件系统。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>该模块大部分方法提供了两个版本的方法，同步和异步。</p>
+<ul>
+<li><p>同步方法 带<code>sync</code>的方法</p>
+<p>同步方法会阻塞程序的执行</p>
+<p>同步方法通过返回值返回结果</p>
+</li>
+<li><p>异步方法 不带sync的方法</p>
+<p>异步方法不会阻塞程序的执行</p>
+<p>异步方法都是通过回调函数来返回结果的</p>
+</li>
+</ul>
+<h2><span id="1-wen-jian-de-du-qu">1、文件的读取</span><a href="#1-wen-jian-de-du-qu" class="header-anchor">#</a></h2><h3><span id="1-jian-dan-du-qu-wen-jian">（1）简单读取文件</span><a href="#1-jian-dan-du-qu-wen-jian" class="header-anchor">#</a></h3><p><code>fs.readFileSync(path[, options])</code><br><code>fs.readFile(path[, options], callback)</code></p>
+<ul>
+<li><p>path 读取文件的路径            </p>
+</li>
+<li><p>options  配置对象  默认如下：  <code>&#123;encoding:&quot;utf8&quot;,flag:&quot;w&quot;,mode:0666&#125;</code>                    </p>
+</li>
+<li><p>callback 回调函数，通过回调函数返回读取到的数据              </p>
+<p>err 错误对象    </p>
+<p>data 返回的数据（Buffer）  </p>
+</li>
+</ul>
+<h3><span id="2-shi-yong-promisify-jie-jue-yi-bu-wen-ti">(2) 使用 promisify 解决异步问题</span><a href="#2-shi-yong-promisify-jie-jue-yi-bu-wen-ti" class="header-anchor">#</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//案例1</span></span><br><span class="line"><span class="keyword">const</span> &#123;promisify&#125; = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> readFile = promisify(fs.readFile)</span><br><span class="line">readFile(<span class="string">&#x27;./conf.js&#x27;</span>).then(<span class="function"><span class="params">data</span>=&gt;</span><span class="built_in">console</span>.log(data))</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例2</span></span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> &#123; promisify &#125; = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>)</span><br><span class="line">    <span class="keyword">const</span> readFile = promisify(fs.readFile)</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> readFile(<span class="string">&#x27;./index.html&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;data&#x27;</span>,data)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h3><span id="3-liu-shi-du-qu-wen-jian">（3）流式读取文件</span><a href="#3-liu-shi-du-qu-wen-jian" class="header-anchor">#</a></h3><p>适用于较大的文件。</p>
+<h2><span id="2-wen-jian-de-xie-ru">2、文件的写入</span><a href="#2-wen-jian-de-xie-ru" class="header-anchor">#</a></h2><h3><span id="1-tong-bu-xie">（1）同步写</span><a href="#1-tong-bu-xie" class="header-anchor">#</a></h3><p>打开，写入，==关闭==。</p>
+<p><code>fs.openSync(path[, flags, mode])</code> </p>
+<ul>
+<li><p><code>path</code> 文件路径</p>
+</li>
+<li><p><code>flag</code> 文件系统标志<br><code>a</code> 追加，如果不存在就创建<br><code>w</code> 用于写，如果不存在就创建，存在覆盖<br><code>r</code> 用于读，如果不存在就异常（默认）</p>
+</li>
+<li><p><code>mode</code> 设置下一次打开文件时候的权限。<br><code>0o666</code> <code>110110110</code> 可读可写<br><code>0o111</code> <code>001001001</code> 可执行<br><code>0o222</code> <code>010010010</code> 可写<br><code>0o333</code> <code>100100100</code> 可读</p>
+</li>
+<li><p>返回文件描述符</p>
+</li>
+</ul>
+<p><code>fs.writeSync(fd, buffer[, offset, length, position, encoding])</code> </p>
+<ul>
+<li><code>fd</code> 文件描述符</li>
+<li><code>buffer</code> 要写入的内容</li>
+<li><code>offset</code> </li>
+<li><code>length</code> </li>
+<li><code>position</code> </li>
+<li><code>encoding</code> 写人文件的编码，默认<code>utf-8</code></li>
+</ul>
+<p><code>fs.closeSync(fd)</code></p>
+<h3><span id="2-yi-bu-xie">（2）异步写</span><a href="#2-yi-bu-xie" class="header-anchor">#</a></h3><p><code>fs.open( path, flags[, ], (err, data)=&gt;&#123;&#125;)</code></p>
+<ul>
+<li>回调函数<code>err</code>在前是因为NodeJS是==错误优先处理机制==。如果有错误返回错误对象，否则返回<code>null</code>。<code>data</code> 就是文件描述符。</li>
+<li>异步得到结果在回调函数中。</li>
+</ul>
+<p><code>fs.write(fd, string, call, (err, data)=&gt;&#123;&#125;)</code></p>
+<p><code>fs.close(fd)</code></p>
+<p>无论写入成功或者失败都要关闭文件。</p>
+<h2><span id="3-liu-shi-wen-jian-cao-zuo">3、流式文件操作</span><a href="#3-liu-shi-wen-jian-cao-zuo" class="header-anchor">#</a></h2><ul>
+<li>fs模块处理文件的缺点：将文件的数据全读到内存中，在把数据写到文件内，会大量占用内存</li>
+<li>流（stream）是 Node.js 中处理流式数据的抽象接口，是一组有序的，有起点和终点的字节数据传输手段。可以实现将数据从一个地方流动到另一个地方，其边读取边写入的特点有别于fs模块的文件处理，并且可以做到控制读取文件和写入文件的速度，从而减少内存的占用</li>
+<li>流是基于事件的，所有的流对象都用 on(once)绑定事件，并触发</li>
+<li>流式文件写入适用于一些比较大的文件，可以分多次向文件中写入内容，有效避免内存溢出的问题。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.createWriteStream(path[, options])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> inputFilePath = <span class="string">&#x27;//Users//lipeihua//Desktop//nodeJS//08.简单文件写入.mp4&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> outputFilePath = path.resolve(__dirname, <span class="string">&#x27;d.mp4&#x27;</span>);</span><br><span class="line"><span class="comment">// 创建可读流 会自动关闭</span></span><br><span class="line"><span class="keyword">const</span> rs = fs.createReadStream(inputFilePath);</span><br><span class="line"><span class="comment">// 创建可写流 不会自动关闭，需要手动关闭</span></span><br><span class="line"><span class="keyword">const</span> ws = fs.createWriteStream(outputFilePath);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* rs.on(&#x27;data&#x27;, (chunk) =&gt; &#123;</span></span><br><span class="line"><span class="comment">  // 当数据读取出来，要写入成另外一个文件</span></span><br><span class="line"><span class="comment">  ws.write(chunk);</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">.once(&#x27;end&#x27;, () =&gt; &#123;</span></span><br><span class="line"><span class="comment">  // 可读流全部读取完毕了，关闭可写流</span></span><br><span class="line"><span class="comment">  ws.end();</span></span><br><span class="line"><span class="comment">&#125;) */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// pipe会持续性消费可读流数据</span></span><br><span class="line"><span class="comment">// 将可读流数据写入到可写流中</span></span><br><span class="line"><span class="comment">// 会自动关闭可写流</span></span><br><span class="line">rs.pipe(ws);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/22/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/60-Puppeteer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/22/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/60-Puppeteer/" class="post-title-link" itemprop="url">Puppeteer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-22 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-22T00:00:00+08:00">2020-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 16:59:00" itemprop="dateModified" datetime="2020-08-27T16:59:00+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-puppeteer">一、Puppeteer</span><a href="#yi-puppeteer" class="header-anchor">#</a></h1><p><strong>Puppeteer</strong> 是一个NodeJS库，提供了一组用来操纵Chrome的API，通俗来说就是一个<code>headless Chrome</code>。既然是浏览器，那么我们手动在浏览器做的事情，Puppeteer 都能胜任。</p>
+<p>作用</p>
+<ul>
+<li>生成网页截图或者PDF文档</li>
+<li>高级爬虫，可以爬取大量异步渲染内容的网页</li>
+<li>模拟键盘输入、表单自动提交、登陆网页等</li>
+<li>实现UI自动化测试</li>
+<li>捕获站点的时间线，以便追踪你的网站，帮助分析网站性能问题</li>
+</ul>
+<h1><span id="er-yong-fa">二、用法</span><a href="#er-yong-fa" class="header-anchor">#</a></h1><p>示例一</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">&#x27;puppeteer&#x27;</span>);</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">// 先通过创建一个浏览器实例 Browser 对象</span></span><br><span class="line">  <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch();</span><br><span class="line">  <span class="comment">// 然后通过 Browser 对象创建页面 Page 对象</span></span><br><span class="line">  <span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</span><br><span class="line">  <span class="comment">// 然后 page.goto() 跳转到指定的页面</span></span><br><span class="line">  <span class="keyword">await</span> page.goto(<span class="string">&#x27;https://example.com&#x27;</span>);</span><br><span class="line">  <span class="comment">// 调用 page.screenshot() 对页面进行截图</span></span><br><span class="line">  <span class="keyword">await</span> page.screenshot(&#123;<span class="attr">path</span>: <span class="string">&#x27;example.png&#x27;</span>&#125;);</span><br><span class="line">  <span class="comment">// 关闭浏览器</span></span><br><span class="line">  <span class="keyword">await</span> browser.close();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>示例二</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> puppeteer = <span class="built_in">require</span>(<span class="string">&#x27;puppeteer&#x27;</span>);</span><br><span class="line"></span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">// 1. 打开浏览器</span></span><br><span class="line">  <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.launch(&#123;</span><br><span class="line">    headless: <span class="literal">false</span>, <span class="comment">// 有头模式</span></span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 2. 新建一个标签页</span></span><br><span class="line">  <span class="keyword">const</span> page = <span class="keyword">await</span> browser.newPage();</span><br><span class="line">  <span class="comment">// 3. 输入网址</span></span><br><span class="line">  <span class="keyword">await</span> page.goto(<span class="string">&#x27;http://search.dangdang.com/?key=%BC%C6%CB%E3%BB%FA&amp;act=input&#x27;</span>, &#123;</span><br><span class="line">    waitUntil: <span class="string">&#x27;load&#x27;</span> </span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 4. 抓取页面数据</span></span><br><span class="line">  <span class="keyword">const</span> books = <span class="keyword">await</span> page.evaluate(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 当前函数会在页面中调用</span></span><br><span class="line">    <span class="keyword">const</span> $lis = $(<span class="string">&#x27;.bigimg&gt;li&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> data = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; $lis.length; i++) &#123;</span><br><span class="line">      <span class="keyword">const</span> title = $lis.eq(i).find(<span class="string">&quot;.pic&quot;</span>).attr(<span class="string">&quot;title&quot;</span>);</span><br><span class="line">      <span class="keyword">const</span> img = $lis.eq(i).find(<span class="string">&quot;.pic&gt;img&quot;</span>).attr(<span class="string">&#x27;src&#x27;</span>);</span><br><span class="line">      <span class="keyword">const</span> price = $lis.eq(i).find(<span class="string">&quot;.search_now_price&quot;</span>).text();</span><br><span class="line">      <span class="keyword">const</span> detail = $lis.eq(i).find(<span class="string">&quot;.detail&quot;</span>).text();</span><br><span class="line">      <span class="keyword">const</span> url = $lis.eq(i).find(<span class="string">&quot;.name&gt;a&quot;</span>).attr(<span class="string">&quot;href&quot;</span>);</span><br><span class="line">      </span><br><span class="line">      data.push(&#123;</span><br><span class="line">        title, <span class="comment">// 详情页</span></span><br><span class="line">        img, <span class="comment">// 海报</span></span><br><span class="line">        price, <span class="comment">// 标题</span></span><br><span class="line">        detail, <span class="comment">// 评分</span></span><br><span class="line">        url</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(books);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 再去抓取其他数据</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; books.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> book = books[i];</span><br><span class="line">    <span class="keyword">await</span> page.goto(book.url, &#123;</span><br><span class="line">      waitUntil: <span class="string">&#x27;load&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> desc = <span class="keyword">await</span> page.evaluate(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 书籍介绍</span></span><br><span class="line">      </span><br><span class="line">    &#125;)</span><br><span class="line">    book.desc = desc;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// console.log(movies);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 5. 关闭浏览器</span></span><br><span class="line">  <span class="keyword">await</span> browser.close();</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/21/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/52.WebSocket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/21/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/52.WebSocket/" class="post-title-link" itemprop="url">WebSocket</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-21T00:00:00+08:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:00:20" itemprop="dateModified" datetime="2020-08-27T11:00:20+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-websocket">一、WebSocket</span><a href="#yi-websocket" class="header-anchor">#</a></h1><h2><span id="1-gai-nian">1、概念</span><a href="#1-gai-nian" class="header-anchor">#</a></h2><ul>
+<li>它是一种网络通信协议，是 <code>HTML5</code> 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。</li>
+<li>因为 HTTP 协议有一个缺陷：通信只能由客户端发起</li>
+<li>我们都知道轮询的效率低，非常浪费资源（因为必须不停连接，或者 HTTP 连接始终打开）, 因此websocket应运而生。</li>
+<li>WebSocket用于在Web浏览器和服务器之间进行任意的双向数据传输的一种技术。WebSocket协议基于TCP协议实现，包含初始的握手过程，以及后续的多次数据帧双向传输过程。其目的是在WebSocket应用和WebSocket服务器进行频繁双向通信时，可以使服务器避免打开多个HTTP连接进行工作来节约资源，提高了工作效率和资源利用率。</li>
+<li>WebSocket目前支持两种统一资源标志符<code>ws</code>和<code>wss</code>，类似于HTTP和HTTPS</li>
+<li>浏览器发出webSocket的连线请求，服务器发出响应，这个过程称为<code>握手</code>,握手的过程只需要一次，就可以实现持久连接。</li>
+</ul>
+<h2><span id="2-ji-ben-shi-yong">2、基本使用</span><a href="#2-ji-ben-shi-yong" class="header-anchor">#</a></h2><p>WS 表示一个WebSocket对象。</p>
+<p><code>WS.readyState</code> 检查连接状态</p>
+<ul>
+<li>0 未连接</li>
+<li><code>WS.OPEN</code> 连接已建立</li>
+<li>2 连接正在关闭</li>
+<li>3 连接已经关闭</li>
+</ul>
+<h2><span id="3-xin-tiao-bao">3、心跳包</span><a href="#3-xin-tiao-bao" class="header-anchor">#</a></h2><p>待补充。</p>
+<h1><span id="er-socket-io">二、Socket.io</span><a href="#er-socket-io" class="header-anchor">#</a></h1><p>Socket.io是一个NodeJS <code>webSocket</code>库，目标是构建不同浏览器和移动设备上使用的实时应用。它会自动根据浏览器从<code>webSocket</code> <code>ajax长轮询</code> <code>ifrane流</code>等各种方式选择最佳的方式。</p>
+<h2><span id="liao-tian-shi-de-shi-xian">聊天室的实现</span><a href="#liao-tian-shi-de-shi-xian" class="header-anchor">#</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务端</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建http server</span></span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>).createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (req.url === <span class="string">&quot;/socket.io.js&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> filePath = path.resolve(__dirname, <span class="string">&quot;./public/socket.io.js&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> rs = fs.createReadStream(filePath);</span><br><span class="line">    res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/javascript;charset=utf8&quot;</span>);</span><br><span class="line">    rs.pipe(res);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 响应页面</span></span><br><span class="line">  <span class="keyword">const</span> filePath = path.resolve(__dirname, <span class="string">&quot;./public/chat.html&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> rs = fs.createReadStream(filePath);</span><br><span class="line">  res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/html;charset=utf8&quot;</span>);</span><br><span class="line">  rs.pipe(res);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建WebSocket服务</span></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">&quot;socket.io&quot;</span>)(server);</span><br><span class="line"></span><br><span class="line"><span class="comment">// io可以代表所有客户端连接对象</span></span><br><span class="line">io.on(<span class="string">&quot;connect&quot;</span>, <span class="function">(<span class="params">socket</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// socket代表当前连接上服务的客户端对象</span></span><br><span class="line">  socket.on(<span class="string">&quot;client_to_server&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="comment">// 除它以外，通知其他客户端</span></span><br><span class="line">    socket.broadcast.emit(<span class="string">&quot;server_to_client&quot;</span>, data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>, <span class="string">&#x27;localhost&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//客户端</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.chat-btn&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> content = <span class="built_in">document</span>.querySelector(<span class="string">&quot;textarea&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">&quot;#chat-name&gt;input&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> chatContent = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.chat-content&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端连接上服务端</span></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">&quot;ws://192.168.10.2:3000&quot;</span>);</span><br><span class="line"><span class="comment">// socket代表当前连接客户端对象</span></span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取当前用户名</span></span><br><span class="line">    <span class="keyword">const</span> username = input.value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!username) &#123;</span><br><span class="line">        alert(<span class="string">&quot;请输入用户名！&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取用户输入的消息</span></span><br><span class="line">    <span class="keyword">const</span> msg = content.value;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!msg) &#123;</span><br><span class="line">        alert(<span class="string">&quot;请输入聊天内容！&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> time = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="comment">// 客户端向服务端发送消息</span></span><br><span class="line">    socket.emit(<span class="string">&quot;client_to_server&quot;</span>, &#123;</span><br><span class="line">        username,</span><br><span class="line">        msg,</span><br><span class="line">        time,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示在你的聊天内容</span></span><br><span class="line">    <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line">    div.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;title right-title&quot;&gt;<span class="subst">$&#123;username&#125;</span>  </span></span><br><span class="line"><span class="string">        <span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>(time).toLocaleString()&#125;</span></span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;right-content&quot;&gt;<span class="subst">$&#123;msg&#125;</span>&lt;/div&gt;`</span>;</span><br><span class="line"></span><br><span class="line">    chatContent.appendChild(div);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 聊天内容清空</span></span><br><span class="line">    content.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">&quot;server_to_client&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; username, msg, time &#125; = data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示别人的聊天内容</span></span><br><span class="line">    <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line">    div.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;title left-title&quot;&gt;<span class="subst">$&#123;username&#125;</span>  </span></span><br><span class="line"><span class="string">        <span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>(time).toLocaleString()&#125;</span></span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;left-content&quot;&gt;<span class="subst">$&#123;msg&#125;</span>&lt;/div&gt;`</span>;</span><br><span class="line"></span><br><span class="line">    chatContent.appendChild(div);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/21/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/53-NodeJS%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/21/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/53-NodeJS%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-title-link" itemprop="url">NodeJS 静态资源服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-21T00:00:00+08:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:20:52" itemprop="dateModified" datetime="2020-08-27T11:20:52+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-nodejs-http-mo-kuai">一、NodeJS HTTP模块</span><a href="#yi-nodejs-http-mo-kuai" class="header-anchor">#</a></h1><p><code>Aphche</code> <code>Nginx</code> <code>IIS</code> </p>
+<h3><span id="1-da-jian-fu-wu-qi-duan">1、搭建服务器端</span><a href="#1-da-jian-fu-wu-qi-duan" class="header-anchor">#</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="comment">// 创建服务</span></span><br><span class="line"><span class="keyword">const</span> serve = http.createServer(<span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 设置响应头(文件格式，字符编码)</span></span><br><span class="line">    response.setHeader(<span class="string">&quot;Content-Type&quot;</span>,<span class="string">&quot;text/plain;charset=utf-8&quot;</span>)</span><br><span class="line">    <span class="comment">// 返回响应内容</span></span><br><span class="line">    response.end(<span class="string">&quot;hello world&quot;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">8888</span>;</span><br><span class="line"><span class="keyword">const</span> host = <span class="string">&quot;localhost&quot;</span>;</span><br><span class="line"><span class="comment">// 启动服务并确定域名和端口号</span></span><br><span class="line">serve.listen(port, host, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;服务器打开失败&quot;</span> + err)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;服务器启动成功&quot;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3><span id="2-da-jian-ke-hu-duan">2、搭建客户端</span><a href="#2-da-jian-ke-hu-duan" class="header-anchor">#</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&quot;http://localhost:3838&quot;</span>;</span><br><span class="line"><span class="comment">// 书写请求</span></span><br><span class="line"><span class="keyword">const</span> request = http.request(url, <span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 响应状态码</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.statusCode)</span><br><span class="line">    res.on(<span class="string">&quot;data“,chunk =&gt;&#123;</span></span><br><span class="line"><span class="string"> 		console.log(chunk.toString());</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string">// 发送请求</span></span><br><span class="line"><span class="string">request.end();</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/16/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/46-NodeJS%E5%BC%80%E5%A7%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/16/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/46-NodeJS%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">NodeJS 基本内容</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-16T00:00:00+08:00">2020-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:14:20" itemprop="dateModified" datetime="2020-08-27T11:14:20+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-nodejs-gai-shu">一、NodeJS 概述</span><a href="#yi-nodejs-gai-shu" class="header-anchor">#</a></h1><p>Node.js是一个基于ChromeV8引擎的JS运行环境。</p>
+<p>优点</p>
+<ul>
+<li>异步的非阻塞（处理高并发）</li>
+<li>事件循环机制</li>
+<li>单线程</li>
+<li>跨平台</li>
+<li>事件驱动</li>
+</ul>
+<p>应用场景</p>
+<p>主要应用场景</p>
+<ul>
+<li>中间层BFF(backends for frontends)、RESTful API</li>
+<li>I/O 密集型的领域：如 服务端渲染，前端项目构建。</li>
+<li>低延迟的网络应用：如 即时聊天。</li>
+</ul>
+<h3><span id="rerl">RERL</span><a href="#rerl" class="header-anchor">#</a></h3><p>在命令行窗口运行JS程序。</p>
+<h3><span id="global">Global</span><a href="#global" class="header-anchor">#</a></h3><ul>
+<li>Browser（全局对象是window）中js的组成：<ul>
+<li>DOM –&gt; document 用来操作文档</li>
+<li>BOM –&gt; window 用来操作浏览器（控制浏览记录、读取浏览器的信息…）</li>
+<li>ES  –&gt; 语法规范</li>
+</ul>
+</li>
+<li>Nodejs（全局对象是Global）中js的组成：<ul>
+<li>DOM(完全没有)</li>
+<li>BOM(干掉了绝大部分，只保留少部分)<ul>
+<li>console.log</li>
+<li>setInterval</li>
+<li>setTimeout</li>
+</ul>
+</li>
+<li>ES(基本实现)</li>
+</ul>
+</li>
+</ul>
+<h3><span id="npm">NPM</span><a href="#npm" class="header-anchor">#</a></h3><p>包管理器。</p>
+<h1><span id="er-nodejs-de-shi-jian-lun-xun-ji-zhi">二、NodeJS的事件轮询机制 △△</span><a href="#er-nodejs-de-shi-jian-lun-xun-ji-zhi" class="header-anchor">#</a></h1><p>JS是单线程的，那么NodeJS是如何做到非阻塞的？  在NodeJS内部使用了第三方库<code>libuv</code> ，NodeJS会把IO、文件读取等异步操作交由它处理，而JS主线程可以去处理其他的事情。<code>libuv</code> 会开启不同的线程去处理这些延迟操作，处理完后，会将异步操作的回调函数放在NodeJS的<strong>轮询队列</strong>中，NodeJS会在适当的时候处理轮询队列中的回调函数，从而实现非阻塞。所以NodeJS在处理阻塞操作时，并不是单线程的</p>
+<h3><span id="1-liu-jie-duan">1、六阶段</span><a href="#1-liu-jie-duan" class="header-anchor">#</a></h3><p>NodeJS事件轮询队列分为6个阶段</p>
+<ol>
+<li><code>timers</code> <strong>处理定时器</strong> <code>setTimeout</code> <code>setInterval</code></li>
+<li><code>pending</code> <code>callbacks</code> 处理操作系统级的回调函数（了解）</li>
+<li><code>idle</code> <code>prepare</code> 处理NodeJS内部操作调用（了解）</li>
+<li><code>poll</code> <strong>处理读写操作，网络请求</strong>。（1）当这个阶段的回调函数队列不为空的时候，则处理队列中的回调函数，直到<strong>队列为空</strong>或者<strong>最大回调数</strong>的时候，就跳过此阶段，处理下一阶段。（2）当进入poll阶段的时候，如果此阶段的回调队列为空，系统会在此阶段等待新的回调函数入队，再进行处理。在这个阶段会同时进行检测**<code>timers</code>阶段是否已经有回调函数超时<strong>，如果有，则马上跳过poll阶段，进入下一个阶段。如果</strong><code>check</code>设置了<code>setImmediate</code>**，也会进入下一个阶段。</li>
+<li><code>check</code> <strong>专门处理<code>setImmediate</code>回调函数</strong>。</li>
+<li><code>close callbacks</code> 专门执行关闭的回调函数。</li>
+</ol>
+<p><strong><code>process.nextTick</code></strong> <code>Promise</code> 不由<code>libuv</code> 管理，**每次事件的轮询进入到下一个队列的时候，都会检查这两个队列是否为空，不为空则马上处理。（注意因为<code>process.nextTick</code>会在事件轮询每个阶段之间执行， 如果递归调用<code>nextTick</code>就会导致轮询阻塞，所以尽量避免使用<code>process.nextTick</code>， 可以使用<code>setImmediate</code>代替）</p>
+<h3><span id="2-hong-ren-wu-wei-ren-wu">2、宏任务、微任务</span><a href="#2-hong-ren-wu-wei-ren-wu" class="header-anchor">#</a></h3><p>微任务 </p>
+<p><code>process.nextTick</code>（优先级最高） </p>
+<p><code>Primise.then/catch/fanally</code> （依顺序）</p>
+<p><code>queueMicrostask</code> </p>
+<p>执行微队列时新增的微任务添加到当前微任务的下一个。（新添加的等下一轮执行）</p>
+<p>宏任务</p>
+<p>宿主环境提供的任务 </p>
+<p><code>setTimerout</code> </p>
+<p><code>serImmediate</code> </p>
+<p>先执行微任务。</p>
+<h3><span id="3-dai-ma-zhi-xing-shun-xu">3、代码执行顺序</span><a href="#3-dai-ma-zhi-xing-shun-xu" class="header-anchor">#</a></h3><p>同步代码 –&gt; 微任务（<code>process.nextTick</code> –&gt; <code>Primise</code> <code>async</code> ） –&gt; 宏任务（<code>setTimeout</code> <code>setInterval</code> –&gt; <code>setImmediate</code>）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/49-%E5%BC%82%E6%AD%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/49-%E5%BC%82%E6%AD%A5/" class="post-title-link" itemprop="url">JS 异步</a>
         </h2>
 
         <div class="post-meta">
@@ -284,7 +948,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/12/2-%E8%A1%8C%E4%B8%BA/40-jQuery/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/51-HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -298,7 +962,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/07/12/2-%E8%A1%8C%E4%B8%BA/40-jQuery/" class="post-title-link" itemprop="url">jQuery</a>
+            <a href="/blog/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/51-HTTP/" class="post-title-link" itemprop="url">HTTP协议</a>
         </h2>
 
         <div class="post-meta">
@@ -308,14 +972,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-12T00:00:00+08:00">2020-07-12</time>
+              <time title="创建时间：2020-08-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-11T00:00:00+08:00">2020-08-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 14:49:48" itemprop="dateModified" datetime="2020-08-26T14:49:48+08:00">2020-08-26</time>
+                <time title="修改时间：2020-08-27 11:20:45" itemprop="dateModified" datetime="2020-08-27T11:20:45+08:00">2020-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -338,449 +1002,293 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>[TOC]</p>
-<h1><span id="yao-dian">要点</span><a href="#yao-dian" class="header-anchor">#</a></h1><ol>
-<li>jQuery和JS对象的互相转换。</li>
-<li>类数组操作:<code>children()</code>，<code>parent()</code>，<code>sibling()</code>，<code>find()</code>，<code>end()</code>。</li>
-<li>jQuery 显示、隐藏以及参数。</li>
-<li>jQuery 自定义动画。</li>
-<li>jQuery Dom操作。</li>
-<li>jQuery 绑定事件，解绑事件。</li>
+          <p><code>request</code> 请求</p>
+<p><code>response</code> 响应</p>
+<h1><span id="er-http-xie-yi">二、HTTP 协议 △△</span><a href="#er-http-xie-yi" class="header-anchor">#</a></h1><p><code>Hyper Text Transfer Protocol</code> 超文本传输协议（通信协议规范）</p>
+<p>客户端和服务器端通信传输的内容称为<strong>报文</strong>。</p>
+<p><code>请求报文 </code> <code>响应报文</code></p>
+<p><code>HTTP</code> + <code>SSL</code> = <code>HTTPS</code></p>
+<h2><span id="1-xiang-ying-de-nei-rong">1、响应的内容</span><a href="#1-xiang-ying-de-nei-rong" class="header-anchor">#</a></h2><p><code>Headers</code> 报文的头部</p>
+<ul>
+<li>General 通用头部</li>
+<li>Response Headers 响应头部</li>
+<li>Request Headers 请求头部</li>
+</ul>
+<p><code>Preview</code> 预览响应的数据</p>
+<p><code>Response</code> 响应的具体数据</p>
+<p><code>Initiator</code> 初始化内容</p>
+<p><code>Timing</code> 时间</p>
+<p><code>Cookies</code> 携带的cookie</p>
+<h2><span id="2-bao-wen">2、报文</span><a href="#2-bao-wen" class="header-anchor">#</a></h2><p>HTTP应用程序之间发送的<strong>数据块</strong>。在客户端、服务器、代理之间流动。分为<strong>请求报文</strong>和<strong>响应报文</strong>。</p>
+<h4><span id="get-qing-qiu-bao-wen">GET 请求报文</span><a href="#get-qing-qiu-bao-wen" class="header-anchor">#</a></h4><p>请求报文首行 </p>
+<p><code>请求方式</code> <code>请求地址</code> <code>请求参数(查询字符串)</code> <code>协议版本</code></p>
+<ul>
+<li>请求方式 <code>GET</code></li>
+<li>协议版本 <code>HTTP/1.1</code> 兼容性 <code>HTTP/2</code> 最新</li>
+</ul>
+<p>请求报文头部 </p>
+<ul>
+<li>请求的主机地址 <code>Host</code></li>
+<li>连接方式 <code>Connection</code> 保持长连接 <code>keep-alive</code> </li>
+<li><code>Upgrade-Insecure-Requests</code> 允许使用https访问</li>
+<li><code>User-Agent</code> 用户代理（浏览器信息）</li>
+<li><code>Accept</code> 可以接收的类型</li>
+<li><code>Sec-Fetch-Size</code> <code>-Mode</code> <code>-User</code> <code>-Dest</code></li>
+<li><code>Accept-Encoding</code> 客户端可以接受的压缩格式</li>
+<li><code>Accept-Language</code> 可以支持的语言</li>
+</ul>
+<p>请求报文空行 一个回车或者空格</p>
+<p>请求报文体</p>
+<h4><span id="get-xiang-ying-bao-wen">GET 响应报文</span><a href="#get-xiang-ying-bao-wen" class="header-anchor">#</a></h4><p>响应报文首行</p>
+<p><code>协议版本</code> <code>状态码</code>  </p>
+<p>响应报文头部</p>
+<ul>
+<li><code>Context-Type</code> 响应数据类型</li>
+<li><code>Date</code> 响应的时间</li>
+<li><code>Connection</code> 连接方式</li>
+<li><code>Content-Length</code> 响应的字节长度</li>
+</ul>
+<p>响应报文空行</p>
+<p>响应报文体</p>
+<h4><span id="post-qing-qiu-bao-wen">POST 请求报文</span><a href="#post-qing-qiu-bao-wen" class="header-anchor">#</a></h4><p>请求内容在报文体里</p>
+<h4><span id="post-xiang-ying-bao-wen">POST 响应报文</span><a href="#post-xiang-ying-bao-wen" class="header-anchor">#</a></h4><h2><span id="3-qing-qiu-fang-shi">3、请求方式</span><a href="#3-qing-qiu-fang-shi" class="header-anchor">#</a></h2><p><code>GET</code> 查 用于请求指定的页面信息，并返回实体</p>
+<p><code>POST</code> 增 向指定资源提交数据，进行处理 一般用于登陆注册</p>
+<p><code>PUT</code> 改 更改服务器数据</p>
+<p><code>DELETE</code> 删</p>
+<p><code>OPTIONS</code> 跨域请求</p>
+<h2><span id="4-mime-lei-xing">4、MIME 类型</span><a href="#4-mime-lei-xing" class="header-anchor">#</a></h2><ul>
+<li>text/plain 纯文本类型</li>
+<li>text/html</li>
+<li>text/css</li>
+<li>application/javascript</li>
+</ul>
+<h2><span id="5-xiang-ying-zhuang-tai-ma">5、响应状态码 △</span><a href="#5-xiang-ying-zhuang-tai-ma" class="header-anchor">#</a></h2><p>1xx 信息响应</p>
+<ul>
+<li>100 请求继续</li>
+<li>101 正在切换协议</li>
+</ul>
+<p>2xx 请求成功</p>
+<ul>
+<li>200 请求成功</li>
+<li>204 请求成功 页面主体不发生修改 put delete 一般返回</li>
+</ul>
+<p>3xx 重定向</p>
+<ul>
+<li>301 永久重定向</li>
+<li>302 临时重定向</li>
+<li>304 读取缓存（协商缓存）</li>
+</ul>
+<p>4xx 客户端错误</p>
+<ul>
+<li>400 响应报文有问题需要修改</li>
+<li>403 服务器拒绝访问</li>
+<li>404 服务器找不到请求的资源，服务端不想响应</li>
+</ul>
+<p>5xx 服务端错误</p>
+<ul>
+<li>500 服务器执行请求发生错误</li>
+<li>503 服务器超负荷或者停机维护中 无法请求处理</li>
+</ul>
+<h2><span id="6-wang-luo-mo-xing">6、网络模型</span><a href="#6-wang-luo-mo-xing" class="header-anchor">#</a></h2><p>HTTP - TCP - IP - 以太网</p>
+<h2><span id="7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran">7、从输入URL到网页最终渲染 △</span><a href="#7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran" class="header-anchor">#</a></h2><p>（1）DNS解析</p>
+<ul>
+<li>输入的是域名，解析成IP地址</li>
+<li>四个缓存（浏览器DNS缓存，计算机DNS缓存，路由器DNS缓存，网络运营商DNS缓存），一个递归查询</li>
+</ul>
+<p>（2）TCP连接（三次握手）</p>
+<ul>
+<li>浏览器 我准备好了</li>
+<li>服务器 我收到了</li>
+<li>浏览器 我收到确认信息了，准备发</li>
+<li><strong>确认客户端、服务端双方都有正常的收发能力</strong>（为什么要三次握手呢？）</li>
+<li>保持长连接说的就是这里。</li>
+</ul>
+<p>（3）发送请求 客户端发请求给服务器</p>
+<p>（4）返回响应 服务器返回响应</p>
+<p>（5）渲染页面</p>
+<ul>
+<li>构建DOM树（html - DOM树）</li>
+<li>样式计算（样式树）</li>
+<li>布局</li>
+<li>分层</li>
+<li>图层绘制</li>
+<li>栅格化</li>
+<li>合成和显示</li>
+</ul>
+<p>（6）断开连接（四次挥手）</p>
+<ul>
+<li>客户端 我请求完了</li>
+<li>服务器 我收到了</li>
+<li>服务器 我响应完了</li>
+<li>客户端 我收到了</li>
+</ul>
+<h1><span id="san-https">三、HTTPS</span><a href="#san-https" class="header-anchor">#</a></h1><p>待补充。</p>
+<h1><span id="si-nodejs-jing-tai-zi-yuan-fu-wu-qi">四、NodeJS 静态资源服务器</span><a href="#si-nodejs-jing-tai-zi-yuan-fu-wu-qi" class="header-anchor">#</a></h1><p>设置响应解析类型 <code>res.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;)</code></p>
+<p>设置状态码 <code>res.statusCode = 200</code></p>
+<p>获取当前URL <code>req.url</code> 去掉绝对路径 <code>req.url.slice(1)</code></p>
+<p>中文URL转码 <code>decodeURL(req.url)</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/55-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/55-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="post-title-link" itemprop="url">版本控制工具</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-11T00:00:00+08:00">2020-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:05:30" itemprop="dateModified" datetime="2020-08-27T11:05:30+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-git">一、Git</span><a href="#yi-git" class="header-anchor">#</a></h1><p><strong><code>Git</code></strong> 是一款开源免费的<strong>分布式</strong>的版本控制系统。可以备份代码、版本回退、协作开发、权限控制。相对来说，<code>SVN</code>是集中式版本控制系统。</p>
+<h2><span id="1-chu-shi-pei-zhi">1、初始配置</span><a href="#1-chu-shi-pei-zhi" class="header-anchor">#</a></h2><p>（1）<a target="_blank" rel="noopener" href="https://git-scm.com/">下载</a>并安装 <code>git</code> </p>
+<p>（2）打开命令行工具检查是否安装成功</p>
+<p>（3）配置用户名和邮箱</p>
+<p><code>git config -global user.name &quot;xxxx&quot;</code></p>
+<p><code>git config -global user.email &quot;xxx&quot;</code></p>
+<p>配置完成后查看</p>
+<p><code>git config -l</code></p>
+<h2><span id="2-xin-jian-cang-ku">2、新建仓库</span><a href="#2-xin-jian-cang-ku" class="header-anchor">#</a></h2><p>初始化仓库 <code>git init</code></p>
+<h2><span id="3-ban-ben-ku-de-san-ge-qu-yu">3、版本库的三个区域</span><a href="#3-ban-ben-ku-de-san-ge-qu-yu" class="header-anchor">#</a></h2><p>工作区、暂存区<code>staged</code>、仓库区</p>
+<h2><span id="4-chang-yong-ming-ling">4、常用命令</span><a href="#4-chang-yong-ming-ling" class="header-anchor">#</a></h2><p><code>git status</code> 查看当前状态</p>
+<ul>
+<li><code>nothing to commit, working tree clean</code>  工作区和仓库一样，暂存区空</li>
+<li><code>untracked files</code> 工作区未跟踪的文件</li>
+<li><code>changes to be commited</code> 暂存区文件</li>
+<li><code>no staged for commit</code> 以下文件还没添加到暂存区</li>
+</ul>
+<p><code>git add xxx</code> 将文件加入的暂存区</p>
+<p>添加全部文件到暂存区</p>
+<p><code>git add .</code> 或者 <code>git add *</code></p>
+<p><code>git commit -m &#39;注释&#39;</code>  提交到仓库</p>
+<p>注释不能为空</p>
+<blockquote>
+<p>注释规范</p>
+<ul>
+<li>feat 新增功能</li>
+<li>fix 修复bug</li>
+<li>cors 对核心功能进行操作</li>
+<li>docs 对文档进行操作</li>
+</ul>
+</blockquote>
+<p><code>git diff</code>  查看工作区与暂存区的差异（不显示删除或新增文件） 显示做了哪些修改</p>
+<p><code>git diff -cached</code> 查看暂存区和仓库区的差异</p>
+<p><code>git restore</code> 恢复工作区改动内容</p>
+<p><code>git restore --staged &lt;文件&gt;</code>  取消暂存</p>
+<p><code>git log</code> 查看历史版本</p>
+<p><code>git log --oneline</code> 查看历史版本（简易）</p>
+<p><code>git reset --hard &lt;七位哈希&gt;</code>   回退某版本</p>
+<p><code>git reflog</code> 查看所有日志信息</p>
+<h2><span id="5-fen-zhi">5、分支</span><a href="#5-fen-zhi" class="header-anchor">#</a></h2><p><code>master</code> 主分支</p>
+<p><code>git branch name</code> 创建分支</p>
+<p><code>git branch</code> 查看分支</p>
+<p><code>git checkout name</code> 切换分支</p>
+<p><code>git merge name</code> 合并分支</p>
+<p><code>git branch -d name</code> 删除分支</p>
+<p><code>git checkout -b name</code> 切换并创建分支</p>
+<h2><span id="6-ban-ben-chong-tu">6、版本冲突</span><a href="#6-ban-ben-chong-tu" class="header-anchor">#</a></h2><p><code>CONFLICT</code> 冲突</p>
+<h2><span id="7-gitgnore">7、.gitgnore</span><a href="#7-gitgnore" class="header-anchor">#</a></h2><p>配置忽略文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 忽略所有的 .idea 文件</span></span><br><span class="line">.idea</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略所有以 .test 结尾的文件</span></span><br><span class="line">*.<span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略 node_modules 文件和文件夹</span></span><br><span class="line">/node_modules</span><br></pre></td></tr></table></figure>
+
+
+
+<h1><span id="er-yuan-cheng-cang-ku">二、远程仓库</span><a href="#er-yuan-cheng-cang-ku" class="header-anchor">#</a></h1><p>这边以远程仓库<code>Github</code>为例。</p>
+<p><code>fork</code> 拷贝别人代码到自己仓库</p>
+<h2><span id="1-chang-yong">1、常用</span><a href="#1-chang-yong" class="header-anchor">#</a></h2><ul>
+<li>新建本地仓库</li>
+<li>创建github仓库 <code>oringin</code></li>
+<li>关联 <code>git remote add origin 远程仓库地址</code></li>
+<li><code>git push -u origin</code> 推送到云端仓库<ul>
+<li>`git push origin dev</li>
+</ul>
+</li>
+<li><code>git pull</code> 下载到本地仓库</li>
+<li><code>git clone 远程仓库地址</code> 克隆远程仓库到本地</li>
+<li><code>git fetch origin </code></li>
+</ul>
+<p><code>git fetch</code>是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。</p>
+<p>而<code>git pull</code> 则是将远程主机的最新内容拉下来后直接合并，即：<code>git pull = git fetch + git merge</code>，这样可能会产生冲突，需要手动解决。</p>
+<h2><span id="2-pei-zhi-ssh-mian-mi-deng-lu">2、配置SSH 免密登录</span><a href="#2-pei-zhi-ssh-mian-mi-deng-lu" class="header-anchor">#</a></h2><ol>
+<li><p>创建非对称加密对</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen //在任意位置输入命令即可</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件默认存储在家目录（c:/用户/用户名/.ssh）的 .ssh 文件夹中。</p>
+<ul>
+<li>id_rsa 私钥</li>
+<li>id_rsa.pub 公钥</li>
+</ul>
+</li>
+<li><p>将公钥（.pub）文件内容配置到账号的秘钥中</p>
+<ul>
+<li>首页 -&gt; 右上角头像-&gt; settings -&gt; SSH and GPG keys -&gt; new SSH Key</li>
+</ul>
+</li>
+<li><p>克隆代码时，选择 ssh 模式进行克隆 （地址 在仓库首页 绿色 克隆的位置 选择 use ssh）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com/xiaohigh/team-repo-1.git </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>克隆代码时的提醒，这里需要输入 <code>yes</code></p>
+</li>
 </ol>
-<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1><p><strong>jQuery</strong> 是John Resig创建的一个JS开源类库，它通过封装原生的JavaScript 函数得到一整套定义好的方法。</p>
-<p><a href>jQuery API手册</a></p>
-<h2><span id="1-yin-ru-ku">1、引入库</span><a href="#1-yin-ru-ku" class="header-anchor">#</a></h2><p>（1）本地</p>
-<p>（2）CDN 引入</p>
-<p>CDN，Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户<strong>就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率</strong>。</p>
-<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a>:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>（3）版本</p>
-<p>版本格式 大版本.小版本.bugfix</p>
-<ul>
-<li>1.x.x 完全兼容IE6-8</li>
-<li>2.1.4 不再兼容IE6-8</li>
-<li>3.1.1 源码使用ES6语法</li>
-</ul>
-<p><code>jquery.js</code> | <code>jquery.min.js</code> 压缩版，正式上线使用压缩版本。</p>
-<h2><span id="2-dai-ma-feng-ge">2、代码风格</span><a href="#2-dai-ma-feng-ge" class="header-anchor">#</a></h2><p>（1）全局函数 <code>jQuery()</code> ，快捷别名 <code>$</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = windows.$ = jQuery;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择器选中 box 元素，获取了 jQuery 对象</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CSS方法设置样式</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>（2）链式调用</p>
-<p>jQuery的<strong>每个方法返回的都是jQuery对象</strong>，所以可以链式调用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;red&quot;</span>).css(<span class="string">&quot;font-size&quot;</span>,<span class="string">&quot;40px&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2><span id="3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象 与 JS 对象</span><a href="#3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h2><p><strong>JS对象</strong> 即DOM对象，即是我们用传统的方法获得的对象。</p>
-<p><strong>jQuery对象</strong> 即是用jQuery类库的选择器获得的类数组对象，就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法。</p>
-<p>对象的转换</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery对象 转 DOM对象</span></span><br><span class="line">$(...)[index];</span><br><span class="line">$(...).get(index);</span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM对象 转 jQuery 对象</span></span><br><span class="line">$(BOM对象)</span><br></pre></td></tr></table></figure>
-
-<h2><span id="4-zhi-xing-shi-ji">4、执行时机</span><a href="#4-zhi-xing-shi-ji" class="header-anchor">#</a></h2><table>
-<thead>
-<tr>
-<th></th>
-<th>window.onload</th>
-<th>$(document).ready()</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>执行时机</td>
-<td>等待网页全部加载完成然后才会执行</td>
-<td>等待DOM结构加载完成就执行</td>
-</tr>
-<tr>
-<td>执行次数</td>
-<td>只会执行一次<br>写第二次会覆盖第一次</td>
-<td>可以执行多次<br>不会覆盖</td>
-</tr>
-<tr>
-<td>简写方案</td>
-<td>无</td>
-<td>$(function (){});</td>
-</tr>
-</tbody></table>
-<h1><span id="er-chang-gui-cao-zuo">二、常规操作</span><a href="#er-chang-gui-cao-zuo" class="header-anchor">#</a></h1><h2><span id="1-lei-shu-zu-cao-zuo">1、类数组操作</span><a href="#1-lei-shu-zu-cao-zuo" class="header-anchor">#</a></h2><ul>
-<li><code>children()</code> 获取选择器元素的<strong>子元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>parent()</code>  获取选择器元素的<strong>父元素</strong>节点集合（只有一个），，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>siblings()</code>  获取选择器元素的<strong>兄弟元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>find()</code> 寻找后代元素，参数直接写选择器</li>
-<li><code>end</code> 返回上一次破坏性操作之前的伪数组</li>
-<li>对于类数组的常用方法还有很多，比如 <code>prev()</code>、<code>next()</code>等等。</li>
-</ul>
-<h2><span id="2-xuan-ze-qi-cao-zuo">2、选择器操作</span><a href="#2-xuan-ze-qi-cao-zuo" class="header-anchor">#</a></h2><p>直接参数传递选择器。</p>
-<ul>
-<li>基础选择器 <code>#id</code>、<code>.class</code></li>
-<li>层次选择器 <code>A B</code>、<code>A+B</code>、<code>A~B</code></li>
-<li>过滤选择器 <code>:first</code>、<code>first-child</code>、<code>not()</code>、<code>even</code>、<code>odd</code><ul>
-<li><code>:first</code> / <code>:last</code> 选取第一个元素/最后一个元素</li>
-<li><code>:first-child</code> / <code>:last-child</code> 选取第一个子元素/最后一个子元素。</li>
-<li><code>:only-child</code> 选取只有一个子元素的节点。</li>
-<li><code>nth-child(index/even/odd/equation)</code> 选取序列特定的元素</li>
-<li><code>:even</code> / <code>:odd</code> 选取索引是单数、双数的元素</li>
-<li><code>:eq(index)</code> 选取指定index值的元素</li>
-<li><code>:gt(index)</code> / <code>:lt(index)</code> 选取索引大于/小于指定的元素</li>
-<li><code>:not(seletor)</code> 排除选定的元素</li>
-<li><code>:contains(text)</code> 选取包含指定文本text的元素。</li>
-<li><code>:empty</code> 选取空元素</li>
-<li><code>:has(seletor)</code> 选取含有指定选择器的元素。</li>
-<li><code>:parent</code> 选取含有子元素或文本的元素。</li>
-</ul>
-</li>
-<li>属性过滤选择器 <code>[attr]</code></li>
-<li>表单选择器 <code>:input</code></li>
-</ul>
-<h1><span id="san-jquery-dong-hua">三、jQuery 动画</span><a href="#san-jquery-dong-hua" class="header-anchor">#</a></h1><h2><span id="1-xian-shi-yin-cang">1. 显示、隐藏</span><a href="#1-xian-shi-yin-cang" class="header-anchor">#</a></h2><p><code>.show()</code> 显示 | <code>.hide()</code> 隐藏</p>
-<ul>
-<li>第一个参数 控制速度   600ms  <code>slow</code> | 默认 400ms <code>normal</code> | 200ms <code>fast</code> </li>
-<li>第二个参数 控制动画形式   <code>linear</code> | <code>swing</code></li>
-<li>第三个参数 书写回调函数</li>
-</ul>
-<p><code>.tiggle()</code> 开关（显示的时候隐藏，隐藏的时候显示）</p>
-<h2><span id="2-hua-dong-juan-dong">2. 滑动、卷动</span><a href="#2-hua-dong-juan-dong" class="header-anchor">#</a></h2><p><code>.slideUp()</code> 向上收缩| <code>.slideDown()</code> 向上展开 | <code>.sildeToggle()</code></p>
-<h2><span id="3-dan-ru-dan-chu">3. 淡入、淡出</span><a href="#3-dan-ru-dan-chu" class="header-anchor">#</a></h2><p><code>.fadeIn()</code> | <code>.fadeOut()</code> | <code>.fadeToggle()</code></p>
-<h2><span id="4-zi-ding-yi-dong-hua">4. 自定义动画</span><a href="#4-zi-ding-yi-dong-hua" class="header-anchor">#</a></h2><p>（1）基础使用</p>
-<p><code>animate( params, speed, callback)</code> </p>
-<ul>
-<li>第1个参数 包含样式属性和值的映射速度</li>
-<li>第2个参数 可选 </li>
-<li>第3个参数 在动画完成时执行的回调函数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.box&quot;</span>).animate(&#123;</span><br><span class="line">    left: <span class="string">&quot;1000px&quot;</span></span><br><span class="line">&#125;,<span class="number">2000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 回调函数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>（2）动画队列</p>
-<p>如果要按照顺序执行动画，只需要按照代码顺序就可以。（只有动画会放在队列中，其他方法会立即执行 ）</p>
-<h2><span id="5-ting-zhi-dong-hua">5. 停止动画</span><a href="#5-ting-zhi-dong-hua" class="header-anchor">#</a></h2><p>（1） 停止方法</p>
-<p><code>stop( clearQueue, gotoEnd )</code></p>
-<ul>
-<li>第1个参数 可选 布尔值 是否需要清空未执行完的动画队列</li>
-<li>第2个参数 可选 布尔值 是否直接将正在执行的动画跳转到末状态</li>
-</ul>
-<p>这个方法会结束当前正在进行的动画，并立即执行队列中的下一个动画。</p>
-<p>（2）判断元素是否处于动画状态</p>
-<p>当用户在某个元素上执行 <code>animate()</code> 动画时，就会出现动画积累，</p>
-<p>使用 <code>is(&quot;:animated&quot;)</code> 来判断是否处于动画状态，如果不处于动画状态，才会给元素添加新动画。</p>
-<h2><span id="6-yan-chi-dong-hua">6. 延迟动画</span><a href="#6-yan-chi-dong-hua" class="header-anchor">#</a></h2><p><code>delay()</code> </p>
-<p>参数是延迟的毫秒数。</p>
-<h1><span id="si-jquery-yuan-su-yang-shi-cao-zuo">四、jQuery 元素样式操作</span><a href="#si-jquery-yuan-su-yang-shi-cao-zuo" class="header-anchor">#</a></h1><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>css( name )</code></td>
-<td>获取元素的样式</td>
-</tr>
-<tr>
-<td><code>css( name, value)</code></td>
-<td>设置元素的样式</td>
-</tr>
-<tr>
-<td><code>css( name:value, name2:value2,..)</code></td>
-<td>设置元素的样式（多个）</td>
-</tr>
-<tr>
-<td><code>addClass(Class)</code>/<code>removeClass(Class)</code></td>
-<td>添加类/ 移除类</td>
-</tr>
-<tr>
-<td><code>toggleClass(Class)</code></td>
-<td>来回切换默认样式和指定样式</td>
-</tr>
-<tr>
-<td><code>width()</code>/<code>height()</code></td>
-<td>获取和设置宽高</td>
-</tr>
-<tr>
-<td><code>innerWidth()</code> / <code>innerHeight()</code></td>
-<td>获取包含内边距的宽高</td>
-</tr>
-<tr>
-<td><code>outerWidth()</code> / <code>outerHeight()</code></td>
-<td>获取包含边框和内边距的宽高<br>如果参数是<code>true</code>则包含外边距</td>
-</tr>
-<tr>
-<td><code>offset()</code> ==!==</td>
-<td>获取元素相对文档的偏移位置</td>
-</tr>
-<tr>
-<td><code>position()</code></td>
-<td>获取元素相对父元素的偏移位置</td>
-</tr>
-<tr>
-<td><code>scrollTop()</code> / <code>scrollLeft</code></td>
-<td>获取和设置水平/垂直滚动条</td>
-</tr>
-</tbody></table>
-<h1><span id="wu-jquery-dom-cao-zuo">五、jQuery DOM 操作</span><a href="#wu-jquery-dom-cao-zuo" class="header-anchor">#</a></h1><h2><span id="1-she-zhi-nei-rong-he-shu-xing">1、设置内容和属性</span><a href="#1-she-zhi-nei-rong-he-shu-xing" class="header-anchor">#</a></h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>html()</code></td>
-<td>获取和设置元素中的内容</td>
-</tr>
-<tr>
-<td><code>text()</code></td>
-<td>获取和设置元素中的文本内容</td>
-</tr>
-<tr>
-<td><code>val()</code></td>
-<td>获取和设置表单元素的文本内容</td>
-</tr>
-<tr>
-<td><code>prop/attr(key[, value])</code> <a href="%E5%A4%84%E7%90%86%E8%87%AA%E5%B8%A6%E5%B1%9E%E6%80%A7%E4%BD%BF%E7%94%A8prop%EF%BC%8C%E5%A4%84%E7%90%86%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E4%BD%BF%E7%94%A8attr%E3%80%82">^51</a><br><code>prop/attr(key:value, key2:value2, )</code></td>
-<td>获取和设置元素 key 属性值</td>
-</tr>
-<tr>
-<td><code>removeattr(key)</code></td>
-<td>删除指定的属性</td>
-</tr>
-</tbody></table>
-<h2><span id="2-jie-dian-cao-zuo">2、节点操作</span><a href="#2-jie-dian-cao-zuo" class="header-anchor">#</a></h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>$(&quot;&lt;标签名&gt;&lt;/标签名&quot;)</code></td>
-<td><code>createElement()</code></td>
-</tr>
-<tr>
-<td><code>$(&quot;&lt;标签名&gt;文本&lt;/标签名&gt;&quot;)</code></td>
-<td><code>createTextNode()</code></td>
-</tr>
-<tr>
-<td>直接写在创建的标签中 | <code>setAttribute( name, value)</code></td>
-<td>创建属性节点</td>
-</tr>
-<tr>
-<td><code>append(Content)</code> 元素内部后面插入 <br><code>appendTo(Content)</code> <br><code>prepend(Content)</code> 元素内部前面插入 <br><code>prepentTo(Content)</code> <br><code>after()</code> 元素外部后面 <br><code>insertAfter()</code> <br><code>before()</code> 元素外部前面 <br><code>insertBefore()</code></td>
-<td>插入节点</td>
-</tr>
-<tr>
-<td><code>remove()</code></td>
-<td><code>removeChild()</code></td>
-</tr>
-<tr>
-<td><code>replaceAll()</code><a href="%E8%8A%82%E7%82%B9%E8%A2%AB%E6%9B%BF%E6%8D%A2%E5%90%8E%EF%BC%8C%E6%89%80%E5%8C%85%E5%90%AB%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A1%8C%E4%B8%BA%E5%B0%B1%E5%85%A8%E9%83%A8%E6%B6%88%E5%A4%B1%E4%BA%86%E3%80%82">^521</a></td>
-<td><code>replaceChild()</code></td>
-</tr>
-<tr>
-<td><code>clone()</code>[^522]</td>
-<td><code>cloneNode()</code></td>
-</tr>
-</tbody></table>
-<p>[^522]: 参数可以为空，只复制元素和内容，加上 <code>true</code> 参数的话，会复制这个元素的事件处理行为。</p>
-<h1><span id="liu-jquery-shi-jian">六、jQuery 事件</span><a href="#liu-jquery-shi-jian" class="header-anchor">#</a></h1><h2><span id="1-jian-xie-shi-jian">1. 简写事件</span><a href="#1-jian-xie-shi-jian" class="header-anchor">#</a></h2><p>jQuery 封装了常用的事件以节约更多的代码，称为<strong>简写事件</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>触发</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>click(fn)</code></td>
-<td>鼠标单击</td>
-</tr>
-<tr>
-<td><code>dblclick(fn)</code></td>
-<td>鼠标双击</td>
-</tr>
-<tr>
-<td><code>mousedown(fn)</code></td>
-<td>鼠标点击后</td>
-</tr>
-<tr>
-<td><code>mouseup(fn)</code></td>
-<td>鼠标点击后弹起</td>
-</tr>
-<tr>
-<td><code>mouseover(fn)</code></td>
-<td>鼠标移入</td>
-</tr>
-<tr>
-<td><code>mouseout(fn)</code></td>
-<td>鼠标移出</td>
-</tr>
-<tr>
-<td><code>mousemove(fn)</code></td>
-<td>鼠标移动</td>
-</tr>
-<tr>
-<td><code>mouseeenter(fn)</code></td>
-<td>鼠标穿过</td>
-</tr>
-<tr>
-<td><code>mouselevave(fn)</code></td>
-<td>鼠标穿出</td>
-</tr>
-<tr>
-<td><code>keydown(fn)</code></td>
-<td>键盘按下</td>
-</tr>
-<tr>
-<td><code>keyup(fn)</code></td>
-<td>键盘弹起</td>
-</tr>
-<tr>
-<td><code>resize(fn)</code></td>
-<td>文档改变大小</td>
-</tr>
-<tr>
-<td><code>scroll(fn)</code></td>
-<td>滚动条滚动</td>
-</tr>
-<tr>
-<td><code>focus(fn)</code></td>
-<td>表单交单激活</td>
-</tr>
-<tr>
-<td><code>blur(fn)</code></td>
-<td>表单交单丢失</td>
-</tr>
-<tr>
-<td><code>focusin(fn)</code></td>
-<td>表单焦点激活</td>
-</tr>
-<tr>
-<td><code>select(fn)</code></td>
-<td>表单文本选定</td>
-</tr>
-<tr>
-<td><code>change(fn)</code></td>
-<td>表单元素值改变</td>
-</tr>
-<tr>
-<td><code>submit(fn)</code></td>
-<td>表单提交</td>
-</tr>
-</tbody></table>
-<h2><span id="2-shi-jian-dui-xiang">2. 事件对象</span><a href="#2-shi-jian-dui-xiang" class="header-anchor">#</a></h2><p>对于原生的事件对象，由于浏览器差异，开发者总是需要做兼容性处理。jQuery 解决了原生事件对象的兼容性问题，还提供了很多新的属性和方法。</p>
-<p><code>.stopPropagation()</code> 阻止事件冒泡</p>
-<p><code>.preventDefault()</code> 阻止默认行为</p>
-<h2><span id="3-jquery-bang-ding-shi-jian">3. jQuery 绑定事件</span><a href="#3-jquery-bang-ding-shi-jian" class="header-anchor">#</a></h2><p><code>bind()</code> 方法无法动态绑定尚未存在的元素。此外还有 <code>live()</code> <code>delegate</code> 等已经被废弃，底层实际使用 <code>on()</code>。 </p>
-<p><strong><code>on( events, selector, data, fn)</code></strong> 绑定事件jQuery 1.7+</p>
-<ul>
-<li><code>events</code> 事件类型</li>
-<li><code>selector</code> 触发事件选择器元素的后代</li>
-<li><code>data</code> 当一个事件被触发要传递 event.data 给事件处理函数</li>
-<li><code>fn</code> 该事件被触发时的执行函数</li>
-</ul>
-<p>还可以<strong>绑定多个事件绑定同一个函数、多个事件绑定不同函数</strong>。</p>
-<p><code>unbind()</code> 解除绑定事件。</p>
-<p><strong><code>off( events, selector, fn)</code></strong> 解除绑定事件。</p>
-<p><code>one( type, data, fn )</code> 绑定元素执行完毕后自动移除事件，方法仅触发一次。</p>
-<ul>
-<li><code>type</code> 添加到元素的一个或者多个事件。</li>
-<li><code>data</code> 将要传递给事件处理函数的数据映射。</li>
-<li><code>fn</code> 每当事件触发时执行的函数。</li>
-</ul>
-<h1><span id="qi-jquery-kuo-zhan">七、jQuery 扩展（+）</span><a href="#qi-jquery-kuo-zhan" class="header-anchor">#</a></h1><p>自定义了<code>extent()</code>和 <code>fn.extent()</code> 方法，扩展jQuery类本身，为类添加新的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []</span><br><span class="line">$.each( [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    arr.push( item, <span class="number">10</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h1><span id="ba-jquery-shu-xie-cha-jian">八、jQuery 书写插件（+）</span><a href="#ba-jquery-shu-xie-cha-jian" class="header-anchor">#</a></h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/10/2-%E8%A1%8C%E4%B8%BA/33-JSON/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/10/2-%E8%A1%8C%E4%B8%BA/33-JSON/" class="post-title-link" itemprop="url">JSON对象</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 16:15:52" itemprop="dateModified" datetime="2020-08-26T16:15:52+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="yi-json">一、JSON</span><a href="#yi-json" class="header-anchor">#</a></h2><p><strong>JSON</strong> 是ES内置对象（不用定义就能用）。</p>
-<p>json 是一种常用于前后端数据交互的格式，本质是字符串。</p>
-<h3><span id="1-json-zhi">1、json 值</span><a href="#1-json-zhi" class="header-anchor">#</a></h3><p>可以表示三种类型数据：</p>
-<p>（1）简单值 </p>
-<p>除了 <code>undefined</code> 之外的基本数据类型，<strong>表示字符串必须使用双引号。</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="string">&quot;hello world&quot;</span>   <span class="comment">//表示字符串需加双引号</span></span><br><span class="line">null</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
-
-<p>（2）对象 表示的是一组无序的键值对，属性必须用双引号包起来。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;age&quot;</span><span class="attr">&quot;18</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>（3）数组 有序的集合、键值对。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">25</span>, <span class="string">&quot;hi&quot;</span>, <span class="literal">true</span>]</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="2-json-shu-ju-chu-li">2、json 数据处理</span><a href="#2-json-shu-ju-chu-li" class="header-anchor">#</a></h3><p>用于前后台发送数据。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify( )</span><br><span class="line"><span class="comment">// 将JS值序列化JSON字符串（不包含任何空格和缩进）</span></span><br><span class="line"><span class="comment">// 参数:</span></span><br><span class="line"><span class="comment">// 1. JS 值</span></span><br><span class="line"><span class="comment">// 2. 函数、原型成员、undefined会被忽略</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">JSON</span>.parse( )</span><br><span class="line"><span class="comment">// 将JSON字符串解析成原生的JS值</span></span><br><span class="line"><span class="comment">// 参数</span></span><br><span class="line"><span class="comment">// 1. json 字符串</span></span><br><span class="line"><span class="comment">// 2. 不是有效的json字符串就会报错 </span></span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -800,7 +1308,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/10/2-%E8%A1%8C%E4%B8%BA/34-Date%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/11/2-%E8%A1%8C%E4%B8%BA/45-TS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -814,7 +1322,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/07/10/2-%E8%A1%8C%E4%B8%BA/34-Date%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS Date 对象</a>
+            <a href="/blog/2020/08/11/2-%E8%A1%8C%E4%B8%BA/45-TS/" class="post-title-link" itemprop="url">TypeScript</a>
         </h2>
 
         <div class="post-meta">
@@ -824,14 +1332,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
+              <time title="创建时间：2020-08-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-11T00:00:00+08:00">2020-08-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:16:39" itemprop="dateModified" datetime="2020-08-26T20:16:39+08:00">2020-08-26</time>
+                <time title="修改时间：2020-08-27 16:52:39" itemprop="dateModified" datetime="2020-08-27T16:52:39+08:00">2020-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -839,7 +1347,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%8A%A0/" itemprop="url" rel="index"><span itemprop="name">技术栈加</span></a>
                 </span>
             </span>
 
@@ -854,805 +1362,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><code>Date</code> 是JS中用来处理<strong>日期和时间</strong>的内置对象。</p>
-<p><a target="_blank" rel="noopener" href="http://doc.lipeihua.vip:8800/#/./JS%E5%9F%BA%E7%A1%80/11.Date%E5%AF%B9%E8%B1%A1">参考链接</a></p>
-<h1><span id="yi-ji-ben-shi-yong">一、基本使用</span><a href="#yi-ji-ben-shi-yong" class="header-anchor">#</a></h1><p>获取一个Date对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">now <span class="comment">// 2020-08-26T12:11:25.743Z</span></span><br><span class="line"><span class="keyword">typeof</span> now <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
-
-<p>创建一个时间</p>
-<ul>
-<li>传入一个毫秒数（会把毫秒数转换成一个时间c  然后加上1970年1月1日 8：00 的时间）</li>
-<li>传入一个字符串格式的时间</li>
-<li>传入多个参数 分别代表年 月 日 时 分 秒 毫秒</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span>);</span><br><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1546354578234</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date1);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;2019-10-01 8:0:0&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;2019-10-1&quot;</span>);<span class="comment">//如果不写时间 只写年月日 那么时间按照00点来计算</span></span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;8:0:0&quot;</span>);<span class="comment">//Invalid Date 如果不写年月日 那么时间是错误的</span></span><br><span class="line"><span class="built_in">console</span>.log(date2);</span><br><span class="line"><span class="comment">//当数字形式传递或者获取月份的时候，月份是从0开始算  0 代表 1月</span></span><br><span class="line"><span class="keyword">var</span> date3 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">300</span>);</span><br><span class="line"><span class="comment">//时间超出分为 会自动向前进一位  但是不建议这么写</span></span><br><span class="line"><span class="keyword">var</span> date3 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2019</span>,<span class="number">16</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">300</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date3);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1><span id="er-shi-jian-chuo">二、时间戳</span><a href="#er-shi-jian-chuo" class="header-anchor">#</a></h1><p><strong>时间戳</strong>是一个整数，保存1970年1月1日到现在的毫秒数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取当前的时间戳</span></span><br><span class="line"><span class="built_in">Date</span>.now();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取当前时间</span></span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">// now =&gt; 2020-07-14T06:00:41.645Z</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 作为构造函数使用</span></span><br><span class="line"><span class="keyword">var</span> dt  = <span class="keyword">new</span> <span class="built_in">Date</span>(年,月,日,[时,分,秒]);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>自动校准机制：超过范围的会自动换算。</p>
-<h1><span id="san-shi-jian-huo-qu">三、时间获取</span><a href="#san-shi-jian-huo-qu" class="header-anchor">#</a></h1><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>getFullYear</code></td>
-<td>获得四位年份</td>
-</tr>
-<tr>
-<td><code>getMonth</code></td>
-<td>获取月份，0-11 ！</td>
-</tr>
-<tr>
-<td><code>getDate</code></td>
-<td>获取月份中的天数，1-31</td>
-</tr>
-<tr>
-<td><code>getDay</code></td>
-<td>获取星期，0表示周日，0-6</td>
-</tr>
-<tr>
-<td><code>getHours</code></td>
-<td>小时，0-23</td>
-</tr>
-<tr>
-<td><code>getMinutes</code></td>
-<td>分钟，0-59</td>
-</tr>
-<tr>
-<td><code>getSecond</code></td>
-<td>秒数，0-59</td>
-</tr>
-</tbody></table>
-<h1><span id="si-she-zhi-dan-du-de-shi-jian">四、设置单独的时间</span><a href="#si-she-zhi-dan-du-de-shi-jian" class="header-anchor">#</a></h1><ul>
-<li>设置年份 setFullYear</li>
-<li>设置月份 setMonth</li>
-<li>设置日 setDate</li>
-<li>设置小时 setHours</li>
-<li>设置分钟 setMinutes</li>
-<li>设置秒 setSeconds</li>
-<li>设置毫秒 setMilliseconds</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>设置时间<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置年份</span></span></span><br><span class="line">    now.setFullYear(2023);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置月份</span></span></span><br><span class="line">    now.setMonth(0);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置日期</span></span></span><br><span class="line">    now.setDate(4);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置 小时</span></span></span><br><span class="line">    now.setHours(19);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置分钟</span></span></span><br><span class="line">    now.setMinutes(40);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置秒</span></span></span><br><span class="line">    now.setSeconds(10);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置毫秒</span></span></span><br><span class="line">    now.setMilliseconds(100);</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now)</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//设置星期  不允许 没有这个方法</span></span></span><br><span class="line">    now.setDay();</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(now);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>设置一个3天后的当前时间</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="comment">//设置一个3天后的当前时间</span></span><br><span class="line"><span class="comment">/* //获取当前时间</span></span><br><span class="line"><span class="comment"> var now = new Date();</span></span><br><span class="line"><span class="comment"> //获取当前时间的日期</span></span><br><span class="line"><span class="comment"> var nowDate = now.getDate();</span></span><br><span class="line"><span class="comment"> //让当前的日期 加上3</span></span><br><span class="line"><span class="comment"> newDate = nowDate+3;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> // 获取一个当前的时间，然后把当前时间的日期 设置为newDate</span></span><br><span class="line"><span class="comment"> // console.log(newDate)</span></span><br><span class="line"><span class="comment"> var newTime = new Date();</span></span><br><span class="line"><span class="comment"> newTime = newTime.setDate(newDate);</span></span><br><span class="line"><span class="comment"> console.log(newTime);*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> threeDatLast = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"> threeDatLast.setDate(<span class="keyword">new</span> <span class="built_in">Date</span>().getDate()+<span class="number">3</span>);</span><br><span class="line"> <span class="built_in">console</span>.log(threeDatLast.toLocaleString());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h1><span id="si-shi-li-dai-ma">四、示例代码</span><a href="#si-shi-li-dai-ma" class="header-anchor">#</a></h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取类似 2020-08-08 12:04:56 格式的字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">return</span> time.getFullYear() + <span class="string">&quot;-&quot;</span> +</span><br><span class="line">        (time.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>) + <span class="string">&quot;-&quot;</span> +</span><br><span class="line">        time.getDate().toString().padStart(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>) + <span class="string">&quot; &quot;</span> +</span><br><span class="line">        time.getHours().toString().padStart(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>) + <span class="string">&quot;:&quot;</span> +</span><br><span class="line">        time.getMinutes().toString().padStart(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>) + <span class="string">&quot;:&quot;</span> +</span><br><span class="line">        time.getSeconds().toString().padStart(<span class="number">2</span>, <span class="string">&quot;0&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/10/2-%E8%A1%8C%E4%B8%BA/35-Math%E5%AF%B9%E8%B1%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/07/10/2-%E8%A1%8C%E4%B8%BA/35-Math%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">Math 对象</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 10:52:17" itemprop="dateModified" datetime="2020-08-27T10:52:17+08:00">2020-08-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">技术栈基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><code>Math</code> 是JS内置的数学处理对象。</p>
-<h1><span id="yi-ji-ben-shi-yong">一、基本使用</span><a href="#yi-ji-ben-shi-yong" class="header-anchor">#</a></h1><h2><span id="1-jin-zhi">1、进制</span><a href="#1-jin-zhi" class="header-anchor">#</a></h2><p>（1）进制表示</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二进制</span></span><br><span class="line"><span class="number">0b101</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 八进制</span></span><br><span class="line"><span class="number">0o123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 十六进制</span></span><br><span class="line"><span class="number">0x123</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）进制转换（待补充）</p>
-<h2><span id="2-qu-zheng">2、取整</span><a href="#2-qu-zheng" class="header-anchor">#</a></h2><p>将小数转换成整数，如果是整数则不改变。</p>
-<ul>
-<li><code>Math.ceil()</code>  进一取整  </li>
-<li><code>Math.floor()</code> 舍一取整 </li>
-<li><code>Math.round()</code>  标准的四舍五入</li>
-</ul>
-<h2><span id="3-zui-zhi">3、最值</span><a href="#3-zui-zhi" class="header-anchor">#</a></h2><p><code>Math.max()</code> <code>Math.min()</code> 获取一个参数列表的最大值，最小值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取一个数组的最值</span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="built_in">Math</span>.max(...arr);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2><span id="4-shu-xue-yun-suan">4、数学运算</span><a href="#4-shu-xue-yun-suan" class="header-anchor">#</a></h2><p><code>Math.abs()</code>  取绝对值</p>
-<p><code>Math.pow(底数，次方)</code> <code>**</code> 幂运算</p>
-<p><code>Math.PI</code> 圆周率π </p>
-<p><code>Math.random()</code> 返回大于等于0小于1的一个随机数</p>
-<p><code>Math.sign()</code>   判断正负<br>正数 <code>1</code><br>零或者 <code>null</code>  <code>0</code><br>负数 <code>-1</code><br>其他 <code>NaN</code></p>
-<p><code>Math.sqrt()</code> <code>Math.cbrt()</code> <code>Math.hypot(3, 4)==5</code>  平分根、立方根 </p>
-<h2><span id="5-bu-chong">5、补充</span><a href="#5-bu-chong" class="header-anchor">#</a></h2><p>去掉小数部分 <code>Math.trunc()</code></p>
-<h2><span id></span><a href="#" class="header-anchor">#</a></h2><h1><span id="er-kuo-zhan-ying-yong">二、扩展应用</span><a href="#er-kuo-zhan-ying-yong" class="header-anchor">#</a></h1><h2><span id="1-sheng-cheng-zhi-ding-fan-wei-de-sui-ji-shu">1、生成指定范围的随机数</span><a href="#1-sheng-cheng-zhi-ding-fan-wei-de-sui-ji-shu" class="header-anchor">#</a></h2><p><code>Math.floor (Math. random()*( MAX-MIN+1 ) + MIN)</code></p>
-<h2><span id="2-sheng-cheng-wei-yi-de-sui-ji-zi-fu-chuan">2、生成唯一的随机字符串</span><a href="#2-sheng-cheng-wei-yi-de-sui-ji-zi-fu-chuan" class="header-anchor">#</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">uniqueId</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// substring去掉.</span></span><br><span class="line">  <span class="keyword">const</span> randomNum = <span class="built_in">Number</span>(<span class="built_in">Math</span>.random().toString().substring(<span class="number">2</span>));</span><br><span class="line">  <span class="comment">// .toString(32) 转换为32进制</span></span><br><span class="line">  <span class="keyword">return</span> (randomNum + <span class="built_in">Date</span>.now()).toString(<span class="number">32</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/27-this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/27-this/" class="post-title-link" itemprop="url">this</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:30:53" itemprop="dateModified" datetime="2020-08-26T20:30:53+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3><span id="1-this">1、this</span><a href="#1-this" class="header-anchor">#</a></h3><p>JS的作用域是静态的，但是函数的调用却是动态的，由于函数可以在不同的运行环境内执行，因此JS在函数体内定义了<code>this</code>关键字来获取当前的运行环境。<strong>this</strong> 最终代表的是函数的__执行者，使用者，调用者__。它是一个指针型变量。</p>
-<h3><span id="2-this-de-zhi-xiang">2、this的指向</span><a href="#2-this-de-zhi-xiang" class="header-anchor">#</a></h3><ul>
-<li>函数是否在<code>new</code>中调用，如果是的话，<code>this</code>绑定的是新创建的对象</li>
-<li>函数是否通过<code>call</code>、<code>apply</code> 显示绑定，如果是，则<code>this</code>绑定的是执行的对象</li>
-<li>函数是否在某个上下文中调用，如果有，则<code>this</code>绑定在这个上下文对象上</li>
-<li>如果都不是，默认绑定<code>window</code></li>
-</ul>
-<p>（1）默认绑定</p>
-<p><code>this</code> 默认指向 <code>window</code>，在无法应用其他规则的时候使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123; </span><br><span class="line">    <span class="keyword">do</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        foo(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// foo是直接使用不带任何修饰的函数引用进行调用，因此只能使用默认绑定规则</span></span><br><span class="line"></span><br><span class="line">obj.do();<span class="comment">// window</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>（2）隐式绑定</p>
-<p>当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">foo</span>: foo &#125;;</span><br><span class="line"></span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 当foo调用的时候，它的落脚点确实是指向的obj对象，当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>（3）隐式绑定可能会出现隐式丢失问题。被隐式绑定的函数，丢失了绑定对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1 = obj.foo;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">fn1(); <span class="comment">// hello </span></span><br><span class="line"><span class="comment">// 虽然fn1是obj.foo的一个引用，但是实际上它的引用是foo函数本身，因此fn1其实是一个不带任何修饰的函数调用，属于默认绑定</span></span><br></pre></td></tr></table></figure>
-
-<p>每个函数对象都有 call 和 apply 方法，本质是设置函数体内this对象的值。</p>
-<h3><span id="3-call-apply-bind-chang-kao">3、call、apply、bind ==常考==</span><a href="#3-call-apply-bind-chang-kao" class="header-anchor">#</a></h3><p><code>call</code>、<code>apply</code>、<code>bind</code> 是 <a href>Function</a> 对象自带的方法。</p>
-<p>==这三个函数的存在意义是<strong>改变函数执行时的上下文</strong>，再具体一点就是<strong>改变函数运行时的this指向</strong>。==</p>
-<p>（1）call</p>
-<p><strong>call()</strong> 方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。当调用一个函数时，可以赋值一个不同的 <code>this</code> 对象。<code>this</code> 引用当前对象，即 <code>call</code> 方法的第一个参数。</p>
-<p>通过 <code>call</code> 方法，你可以在一个对象上借用另一个对象上的方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">fun.call( thisArg[, arg1..])</span><br><span class="line"><span class="comment">// 参数列表</span></span><br><span class="line"><span class="comment">// - thisArg 指定函数运行时的 this值</span></span><br><span class="line"><span class="comment">//   - 不传，或者传 null，undefined， 函数中的this指向window对象</span></span><br><span class="line"><span class="comment">//   - 传递另一个函数的函数名，函数中的this指向这个函数的引用，并不一定是该函数执行时真正的this值</span></span><br><span class="line"><span class="comment">//   - 值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象，如 String Number Boolean</span></span><br><span class="line"><span class="comment">//   - 传递一个对象，函数中的this指向这个对象</span></span><br><span class="line"><span class="comment">// - arg 函数所需要的参数，逗号间隔</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//输出函数a中的this对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数b</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">&#x27;我是obj&#x27;</span>&#125;; <span class="comment">//定义对象obj</span></span><br><span class="line">a.call(); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">null</span>); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">undefined</span>);<span class="comment">//window</span></span><br><span class="line">a.call(<span class="number">1</span>); <span class="comment">//Number</span></span><br><span class="line">a.call(<span class="string">&#x27;&#x27;</span>); <span class="comment">//String</span></span><br><span class="line">a.call(<span class="literal">true</span>); <span class="comment">//Boolean</span></span><br><span class="line">a.call(b);<span class="comment">// function b()&#123;&#125;</span></span><br><span class="line">a.call(obj); <span class="comment">//Object</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）apply</p>
-<p><strong>apply</strong>() 语法与 <code>call()</code> 方法的语法几乎完全相同，唯一的区别在于，apply的第二个参数必须是一个包含多个参数的数组（或类数组对象）。</p>
-<p>（3）bind</p>
-<p><code>bind</code> 函数会创建一个新函数（称为绑定函数）</p>
-<ul>
-<li>传参和call或apply类似</li>
-<li>不会执行对应的函数，call或apply会自动执行对应的函数</li>
-<li>返回对函数的引用</li>
-<li>语法 <code>fun.bind(thisArg[, arg1[, arg2[, ...]]])</code>。</li>
-</ul>
-<p>（4）<strong>call</strong> 方法的实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 1. 把调用call方法的对象this指向call方法的第一个参数</span></span><br><span class="line">    <span class="comment">// 2. 调用call方法的自己的this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/28-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/28-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">函数的执行过程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 16:51:22" itemprop="dateModified" datetime="2020-08-26T16:51:22+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="han-shu-de-zhi-xing-guo-cheng">函数的执行过程</span><a href="#han-shu-de-zhi-xing-guo-cheng" class="header-anchor">#</a></h2><h3><span id="1-zhan-nei-cun-he-dui-nei-cun">1、栈内存和堆内存</span><a href="#1-zhan-nei-cun-he-dui-nei-cun" class="header-anchor">#</a></h3><p>内存根据程序运行时候的逻辑分为<strong>栈内存</strong>和<strong>堆内存</strong>。在JS中，并没有严格意义区分。大部分的数据都保存在堆内存中，但是在某些场景，仍需要用栈（有时候也叫堆栈）的数据结构的思路进行处理，如<strong>执行上下文</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>栈内存</th>
-<th>堆内存</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>栈结构（先进先出）</td>
-<td>链表结构</td>
-</tr>
-<tr>
-<td>占内存小，速度快</td>
-<td>占内存大，速度慢</td>
-</tr>
-<tr>
-<td>自动分配，自动回收</td>
-<td>自己申请，手动释放</td>
-</tr>
-</tbody></table>
-<h3><span id="2-zhi-xing-shang-xia-wen">2、执行上下文</span><a href="#2-zhi-xing-shang-xia-wen" class="header-anchor">#</a></h3><p>JS引擎并不是逐行解析代码，而是逐段去分析和执行，当开始解析一段代码时，会先进行<strong>预处理</strong>（声明提升和创建作用域链）。生成一个<strong>执行上下文</strong>。</p>
-<p><strong>执行上下文</strong>（执行环境）分为两种<strong>变量对象</strong>（VO）：</p>
-<ul>
-<li><code>Global</code> | <code>Window</code>，默认的<strong>全局执行环境</strong>。</li>
-<li><code>Function</code>，调用函数时会进入的<strong>函数执行环境</strong>。</li>
-</ul>
-<p>代码执行时会开辟一个栈空间来说明程序的执行顺序，这个执行上下文堆栈称为<strong>执行栈</strong>。开始执行时先将全局执行环境压入栈底（压栈），执行到函数时会创建对应的函数执行环境，并将函数执行环境压入栈底。在函数执行完成后将函数执行环境弹出并销毁。直到所有代码执行完成销毁全局执行环境。</p>
-<h3><span id="3-bian-liang-dui-xiang">3、变量对象</span><a href="#3-bian-liang-dui-xiang" class="header-anchor">#</a></h3><p><strong>全局变量对象</strong> windows</p>
-<p><strong>函数变量对象</strong> </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	<span class="keyword">var</span> d = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟上面代码的变量对象</span></span><br><span class="line"><span class="keyword">var</span> VO = &#123;</span><br><span class="line">    argument:&#123;</span><br><span class="line">        <span class="number">0</span>:<span class="number">1</span>,</span><br><span class="line">        <span class="number">1</span>:<span class="number">2</span>,</span><br><span class="line">        length:<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    c:<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    b:<span class="literal">undefined</span>,</span><br><span class="line">	d:<span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="4-zuo-yong-yu">4、作用域</span><a href="#4-zuo-yong-yu" class="header-anchor">#</a></h3><p><strong>作用域 scope</strong> 是变量在程序中可以访问的有效访问，也被称为变量的可见性。作用域在进入全局执行环境或者函数执行环境时就已经确定好了。在<code>ES5</code>中，作用域分为两种：</p>
-<ul>
-<li>全局作用域</li>
-<li>函数作用域</li>
-</ul>
-<p>**同一个函数的多次调用都会生成不同的执行环境，每次调用都会生成。 **</p>
-<p><strong>全局变量</strong> 是定义在全局作用域中的变量，一般在函外部定义。在程序的所有地方都可以使用和操作。</p>
-<p><strong>局部变量</strong> 是在函数内部定义的，在函数执行域中。只能在自己的作用域中起作用，只能在函数内部使用。外部无法使用和操作局部变量。</p>
-<h3><span id="5-zuo-yong-yu-lian-chang-kao">5、作用域链 ==常考==</span><a href="#5-zuo-yong-yu-lian-chang-kao" class="header-anchor">#</a></h3><p><strong>作用域链</strong> 是用来查找变量的这样一系列的过程。一个函数在定义时会生成一个属性<code>[[scope]]</code>，这个属性存储的是函数定义时作用域的层级关系。作用域链是函数执行时创建的，是当前函数作用域链 -&gt; <code>[[scope]]</code>属性作用域组成的。函数当前执行的作用域是作用域链的顶端，全局作用域在作用域链的最后。执行环境销毁时，作用域链也会销毁。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; <span class="comment">// test -&gt; 全局作用域</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123; <span class="comment">// test2 -&gt; test -&gt; 全局作用域</span></span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(a)<span class="comment">//100</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(a)<span class="comment">//10</span></span><br><span class="line">    &#125;</span><br><span class="line">    f1()</span><br><span class="line">    f2()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br></pre></td></tr></table></figure>
-
-<p>当执行f1时，创建函数f1的执行环境，并将该对象置于链表开头，然后将函数f的调用对象放在第二位，最后是全局对象，作用域链的链表的结构是 f1-&gt;f-&gt;window 。从链表的开头寻找变量a，即f1函数内部找变量a，找到了，结果是20。同样，执行f2时，作用域链的链表的结构是 f2-&gt;f-&gt;window 。从链表的开头寻找变量a，即f2函数内部找变量a，找不到，于是从f内部找变量a，找到了，结果是10。最后在最外层打印出变量a，直接从变量a的作用域即全局作用域内寻找，结果为1。</p>
-<h3><span id="6-nei-cun-zhong-de-bian-liang-cun-chu">6、内存中的变量存储</span><a href="#6-nei-cun-zhong-de-bian-liang-cun-chu" class="header-anchor">#</a></h3><p>变量如果是<a href>基本数据类型</a>，会在直接在栈内存开辟一段存储空间标识符。然后将基本数据类型的值也存储在栈内存中和标识符对应起来。要求变量名不能重名，重名就会覆盖。</p>
-<p>如果是<a href>引用数据类型</a>，值储存在堆内存中，存储引用类型的时候标识符是储存在栈内存中的。（JS不允许直接访问堆内存中的数据，只能通过引用访问，差不多就是在变量对象中存储一个指向对象的句柄，可以理解成是一个地址，要访问这个对象，就要通过这个引用句柄来访问）。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> c = b;</span><br><span class="line">c[<span class="number">0</span>] = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// [1000,2,3]</span></span><br></pre></td></tr></table></figure>
-
-<p>程序一开始执行，进入全局环境，首先会创建全局环境并且压栈（执行栈），全局代码执行的时候依赖的是全局环境中的东西。全局变量如果是基本类型，那么这个值直接存在栈当中，如果这个变量的值是引用类型，那么引用类型会在堆内存中开辟自己的空间专门存储（数据本身）。然后里面的这块空间的地址存在栈当中对应的变量。</p>
-<p>当函数执行碰到函数调用，函数执行时也要有自己的环境去依赖。函数执行也是创建自己的函数环境进行压栈（函数执行环境一定压在全局执行环境的上面）。局部变量，是在函数环境当中存在的，只有函数执行，局部变量才会出现，函数执行完成之后，函数环境要弹出栈（销毁归还内存），局部变量也就不存在了。</p>
-<p>当函数调用完成之后，会继续执行全局代码，一直到所有的全局代码执行完成，代表程序执行结束，程序执行结束的时候，全局环境最后出栈（销毁）。</p>
-<h3><span id="7-sheng-ming-ti-sheng-chang-kao">7、声明提升  ==常考==</span><a href="#7-sheng-ming-ti-sheng-chang-kao" class="header-anchor">#</a></h3><p>也称为预解析。在执行环境的第一步（创建阶段），会将带 var 的变量声明和函数声明，放到作用域中。在执行阶段时，它的相关逻辑还是放在原来的位置进行赋值和其他的逻辑处理。函数表达式和函数构造器不会被提升。函数声明和变量都会提升，但是函数声明会先提升，然后是变量。</p>
-<p><strong>变量声明提升</strong> 通过 <code>var</code> 声明的变量，在定义语句之前就能访问到，值为 <code>undefined</code>。</p>
-<p><strong>函数声明提升</strong> 通过 <code>function</code> 声明的函数，在前面就可以直接调用，值为函数定义（对象）。</p>
-<h3><span id="8-la-ji-hui-shou-ji-zhi-xu-bu-chong">8. 垃圾回收机制  ==需补充==</span><a href="#8-la-ji-hui-shou-ji-zhi-xu-bu-chong" class="header-anchor">#</a></h3>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/29-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/29-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS 面向对象基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:31:17" itemprop="dateModified" datetime="2020-08-26T20:31:17+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="yi-mian-xiang-dui-xiang-ji-ben-gai-nian">一、面向对象基本概念</span><a href="#yi-mian-xiang-dui-xiang-ji-ben-gai-nian" class="header-anchor">#</a></h2><p><strong>面向对象</strong>和<strong>面向过程</strong>是两种截然不同的编程思想和方法。面向过程是以过程为中心，就像流水线一样设计程序的思想。面向对象是以对象为中心的编程思想。更符合人类的思维习惯。</p>
-<p>在面向对象的概念中，**类[^1]**是一类相似事物的统称，对象是类的实例化，类是对象的模版。</p>
-<p>面向对象的三个基本特性: ==封装、继承、多态==。</p>
-<p><strong>对象（Object）</strong> 可以是一个变量，一个函数，一种数据结构。在JS中，==一切皆为对象==。JS允许自定义对象，从狭义的概念来分析，对象是最基本的数据类型，是复合型的结构、引用型的数据，它是无序数据集合[^2]。对象中每个成员被称为<strong>属性</strong>。</p>
-<p>[^1]: JS中没有具体类的概念，ES6 引入的类实际上是函数。<br>[^2]: 对象是无序的键值对，数组是有序的键值对，函数是一种可执行的特殊对象。</p>
-<h2><span id="er-dui-xiang-de-sheng-ming-he-shi-yong">二、对象的声明和使用</span><a href="#er-dui-xiang-de-sheng-ming-he-shi-yong" class="header-anchor">#</a></h2><h3><span id="1-zi-mian-liang-fang-shi-sheng-ming">1. 字面量方式声明</span><a href="#1-zi-mian-liang-fang-shi-sheng-ming" class="header-anchor">#</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    name: <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    age: <span class="number">12</span>,</span><br><span class="line">    sleep: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 函数体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>字面量方式声明的对象由多个<strong>键值对</strong>组成，每个键值对之间用逗号分隔。每个键值对就是一个<strong>属性</strong>，包括属性名和属性值。</p>
-<p>属性名是字符串并且通常情况下不加引号，如果是其他类型也会转换成字符串。如果键名不符合变量命名规则必须加上引号。</p>
-<p>属性值可以是任意东西，包括对象。</p>
-<h3><span id="2-gou-zao-han-shu-fang-shi-sheng-ming-new-object">2、构造函数方式声明（new Object）</span><a href="#2-gou-zao-han-shu-fang-shi-sheng-ming-new-object" class="header-anchor">#</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">          <span class="comment">// 构造函数</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(</span><br><span class="line">&#123;</span><br><span class="line">    name:<span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    age:<span class="number">18</span>;</span><br><span class="line">    sleep:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<p><code>new</code> 是操作符，调用后面的 <strong>构造函数</strong> 创建一个对象[^3]。</p>
-<p>构造函数可以使用return语句，如果return的是基本类型数据，那么值会被忽略。如果返回的是其他对象，那么就返回这个对象。</p>
-<p>函数既是对象也是可以执行的代码块：</p>
-<ul>
-<li>在对象方面来说它也有属性和方法。</li>
-<li>从代码块方面来说，既可以执行特定的代码块（普通函数），又可以创建特定类型的对象（函数的构造调用）<ul>
-<li>普通函数，没有return返回的是undefined，return返回的是指定的值。</li>
-<li>函数的构造调用，没有return，返回的是新生成的对象。有的话看是基本数据类型还是对象。</li>
-</ul>
-</li>
-</ul>
-<p>[^3]: 字面量方式创建对象也会在内部调用<code>new Object</code>。</p>
-<h3><span id="3-gong-han-mo-shi-sheng-ming">3、工厂模式声明</span><a href="#3-gong-han-mo-shi-sheng-ming" class="header-anchor">#</a></h3><p>上面两种声明对象的最大缺点就是代码重复，会产生大量重复的代码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     <span class="comment">// 一般要首字母大写</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Obj</span>(<span class="params">name,age</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">this</span>.name = name;</span><br><span class="line">   <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Obj(<span class="string">&quot;aaa&quot;</span>,<span class="number">18</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="4-dui-xiang-de-ji-ben-cao-zuo">4、对象的基本操作</span><a href="#4-dui-xiang-de-ji-ben-cao-zuo" class="header-anchor">#</a></h3><p>（1）访问对象中的属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种方法</span></span><br><span class="line">obj.name;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种方法，最大优点是可以通过变量、表达式来访问属性</span></span><br><span class="line">obj[<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 如果键名命名不符合标识符命名规则</span></span><br><span class="line"><span class="comment">// 则只能通过第二种方法访问。</span></span><br><span class="line"><span class="comment">// 2. 点操作符比比中括号操作符高</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）增加和修改属性</p>
-<p>（3）删除属性：<code>delete 对象.属性</code></p>
-<blockquote>
-<p><strong>变量带var和不带var的区别</strong> </p>
-<p>window对象是JS中最顶层对象。在全局中声明的变量（即带var的）会作为window对象的属性（变量）。不带var的变量也会被作为window对象的属性，他只是window对象的属性。var声明的全局变量不能使用delete删除，但是不带var的所谓全局变量可以用delete删除，因为它只是属性。</p>
-</blockquote>
-<p>（4）遍历对象：<code>for...in</code> 遍历对象，其遍历的是可枚举的自身属性和原型链中的属性。</p>
-<h3><span id="5-dui-xiang-de-chuang-jian-mo-shi">5、对象的创建模式</span><a href="#5-dui-xiang-de-chuang-jian-mo-shi" class="header-anchor">#</a></h3><p>（1）构造函数模式</p>
-<p>先创建空对象，再动态添加属性和方法</p>
-<p>适用于 起始不能确定对象内部数据</p>
-<p>问题 语句太多</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ver p = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">p = &#123;&#125;;</span><br><span class="line">p.name = <span class="string">&quot;Tom&quot;</span>;</span><br><span class="line">p.age = <span class="number">12</span>;</span><br><span class="line">p.setName = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>（2）对象字面量模式</p>
-<p>使用<code>&#123; &#125;</code>创建对象，同时指定属性和方法</p>
-<p>适用于 起始时对象内部数据是确定的</p>
-<p>问题 如果创建多个对象，有重复代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = &#123;</span><br><span class="line">    name: <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    age: <span class="number">23</span>,</span><br><span class="line">    setName: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    	this.name = name;</span></span></span><br><span class="line"><span class="function"><span class="params">    </span>)</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>（3）工厂模式</p>
-<p>通过工厂函数动态创建对象并返回</p>
-<p>适用于 需要创建多个对象</p>
-<p>问题 对象没有一个具体的类型，都是 Object 类型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> p = &#123;</span><br><span class="line">          name: name,</span><br><span class="line">          age: age,</span><br><span class="line">          setName: <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">this</span>.name = name;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> p;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> p1 = createPerson(<span class="string">&#x27;Tom&#x27;</span>, <span class="number">12</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<p>（4）自定义构造函数模式</p>
-<p>自定义构造函数，通过 <code>new</code> 创建对象</p>
-<p>适用 需要多个类型确定的对象</p>
-<p>问题 每个对象都有相同的数据，浪费内存</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 在构造函数中书写的属性和方法都是实例化对象私有</span></span><br><span class="line">    <span class="comment">// 每个实例化对象在构造函数中的属性方法都不一样</span></span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">    <span class="built_in">this</span>.age = age</span><br><span class="line">    <span class="built_in">this</span>.setName = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">&#x27;Tom&#x27;</span>, <span class="number">12</span>)</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">&#x27;Tom2&#x27;</span>, <span class="number">13</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1, p1 <span class="keyword">instanceof</span> Person)</span><br></pre></td></tr></table></figure>
-
-
-
-<p>==（5）构造函数 + 原型的组合模式==</p>
-<p>自定义构造函数，属性在函数中初始化，方法添加到原型上</p>
-<p>适用 需要创建多个类型确定的对象</p>
-<p>==属性一般来说都是对象私有的，而方法基本上都是对象公有的==</p>
-<p>构造函数模式用于定义实例属性，原型模式用于定义方法和共享的属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性一般来说都是私有的</span></span><br><span class="line"><span class="comment">// 并且只有在构造函数中才能给对象的属性传参</span></span><br><span class="line"><span class="comment">// 方法基本上都是公有的</span></span><br><span class="line"><span class="comment">// 所以方法基本写在原型对象上</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">    <span class="built_in">this</span>.age = age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.setName = <span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">&#x27;Tom&#x27;</span>, <span class="number">12</span>)</span><br><span class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person(<span class="string">&#x27;JAck&#x27;</span>, <span class="number">23</span>)</span><br><span class="line">p1.setName(<span class="string">&#x27;TOM3&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(p1)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="6-object-create-xu-yao-bu-chong">6、Object.create ==需要补充==</span><a href="#6-object-create-xu-yao-bu-chong" class="header-anchor">#</a></h3><p><code>Object.create( prototype, descriptors)</code><br>**<code>Object.create(prototype [, descriptors])</code> **</p>
-<p>ES5新增的一个静态方法，用来定义一个实例对象。</p>
-<ul>
-<li>参数<code>prototype</code> 必须是一个已有对象或者<code>null</code>，是新创建这个对象的原型对象。==指定原型对象，继承方式。==</li>
-<li>参数<code>descriptors</code> 可选，设置新创建的对象。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个以已有对象obj为原型变量的对象</span></span><br><span class="line"><span class="keyword">var</span> obj1 = Objcet.create(obj)</span><br><span class="line"><span class="comment">// 创建一个普通对象（字面量）</span></span><br><span class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.create(<span class="built_in">Object</span>.protype)</span><br><span class="line"><span class="comment">// 创建一个干净的对象</span></span><br><span class="line"><span class="keyword">var</span> obj3 = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个干净的对象并设置</span></span><br><span class="line"><span class="keyword">var</span> obj4 = <span class="built_in">Object</span>.create(<span class="literal">null</span>, &#123;</span><br><span class="line">    name:&#123; <span class="comment">// 对象的特性描述必须是一个对象</span></span><br><span class="line">        value:<span class="string">&quot;Tom&quot;</span>, </span><br><span class="line">        <span class="comment">// 指定属性值</span></span><br><span class="line">        writable: <span class="literal">false</span>, </span><br><span class="line">        <span class="comment">// 设置值是否可写，默认false</span></span><br><span class="line">        enumerable: <span class="literal">false</span>,</span><br><span class="line">        <span class="comment">// 设置属性是否可以枚举（遍历），默认</span></span><br><span class="line">        configurable: <span class="literal">false</span>,</span><br><span class="line">        <span class="comment">// 设置属性是否可修改特性和删除特性，默认</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong><code>Object.defineProperty(obj, prop, descriptors)</code></strong></p>
-<p>给对象添加属性或者修改现有属性（可以设置属性的描述）</p>
-<ul>
-<li>参数<code>prop</code> 要修改的属性，要加字符串</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty( obj, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">    value: <span class="string">&quot;Java&quot;</span>,</span><br><span class="line">    <span class="comment">// 如果这个属性的正常创建的，则正常使用，如枚举</span></span><br><span class="line">    <span class="comment">// wriable, enumerable, configurable </span></span><br><span class="line">    <span class="comment">// 同 Object.create</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong><code>Object.defineProperties( obj, descriptors)</code></strong></p>
-<p>可以同时设置多个属性，格式和<code>Object.create()</code>基本相同。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/31-%E9%97%AD%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/31-%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">JS 闭包</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:31:41" itemprop="dateModified" datetime="2020-08-26T20:31:41+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="wu-bi-bao">五、闭包</span><a href="#wu-bi-bao" class="header-anchor">#</a></h2><blockquote>
-<p>面试常考，需要深入理解。</p>
-</blockquote>
-<h3><span id="1-bi-bao-shi-shi-me">1、闭包是什么</span><a href="#1-bi-bao-shi-shi-me" class="header-anchor">#</a></h3><p><strong>闭包</strong>（Closure）:</p>
-<ul>
-<li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
-<li>闭包可以理解为内部的函数。</li>
-<li>深入理解的话，闭包就是包含==被内部引用变量==的对象。（可以通过浏览器断点调试查看）</li>
-</ul>
-<h3><span id="2-bi-bao-de-zuo-yong-ji-que-dian">2、闭包的作用及缺点</span><a href="#2-bi-bao-de-zuo-yong-ji-que-dian" class="header-anchor">#</a></h3><ul>
-<li>外部间接的访问到了内部的变量。</li>
-<li>当外部函数执行完成后，局部变量暂时不会消失，==延长了局部变量的生命周期==。</li>
-</ul>
-<p>闭包的缺点: <strong>内存泄露</strong>。解决方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 让内部函数对象（闭包）变成垃圾对象</span></span><br><span class="line"><span class="comment">// 此时就马上被回收</span></span><br></pre></td></tr></table></figure>
-
-<h3><span id="3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h3><p>当内部函数被定义的时候，闭包就生成了。</p>
-<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
-<h3><span id="4-ying-yong">4、应用</span><a href="#4-ying-yong" class="header-anchor">#</a></h3><p>模块化。</p>
-<blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/30-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/30-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">JS 原型、继承</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:31:31" itemprop="dateModified" datetime="2020-08-26T20:31:31+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="san-yuan-xing">三、原型 △△</span><a href="#san-yuan-xing" class="header-anchor">#</a></h2><h3><span id="1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing">1. 函数的 prototype 属性（显式原型）</span><a href="#1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing" class="header-anchor">#</a></h3><p>每个函数在创建的时候都会创建一个 <strong><code>prototype</code></strong> 属性（指针），指向函数的<strong>原型对象</strong>。该属性中存储的是一个对象的引用（默认是一个空对象）。</p>
-<blockquote>
-<p>Foo.prototype === Foo 的原型对象</p>
-</blockquote>
-<p>在原型对象中也有一个属性叫 <strong><code>constructor</code></strong> ，指向的是拥有这个原型对象的<a href>构造函数</a>。</p>
-<blockquote>
-<p>Foo.prototype.constructor === Foo</p>
-</blockquote>
-<p><img src="img/007S8ZIlgy1gh1cmo2y3mj31ae0ccdh3.jpg" alt="img"></p>
-<p>prototype 属性只有在函数被当做构造函数调用的时候（函数的构造调用）才会生效。==由同一个构造函数生成的各个实例对象之间共享属性和方法。==</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;...&#125;;</span><br><span class="line">fun.prototype; <span class="comment">// 是一个object</span></span><br><span class="line"></span><br><span class="line">fun.prototype.constructor === fun;<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3><span id="2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</span><a href="#2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing" class="header-anchor">#</a></h3><p>当调用构造函数创建一个新实例之后，该实例内部将包含一个内部属性 **<code>__proto__</code>**，指向构造函数的原型对象。==实例化之后才能用==。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 构造函数中给this扩展的属性是私有的</span></span><br><span class="line">    <span class="built_in">this</span>.name = <span class="string">&quot;xxx&quot;</span></span><br><span class="line">    <span class="built_in">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1 = <span class="keyword">new</span> fun();<span class="comment">// f1是fun的实例化对象</span></span><br><span class="line"></span><br><span class="line">F.prototype.age = <span class="string">&quot;18&quot;</span></span><br><span class="line">f1.age <span class="comment">// 18</span></span><br><span class="line"><span class="comment">// f1上面没有age所以通过f1的__proto__属性</span></span><br><span class="line"><span class="comment">// 找到f的构造函数的原型对象</span></span><br><span class="line"></span><br><span class="line">F.prototype === f1.__proto__</span><br></pre></td></tr></table></figure>
-
-<p>构造函数中的 prototype 属性（显示原型）和构造函数实例化出来的对象 <code>__proto__</code>属性（隐式原型）指向同一个对象。</p>
-<p>先在本对象中查找对应的属性，找不到去 <code>__proto__</code> 里面找。</p>
-<p>在原型中查找值的过程是搜索。对原型对象所做的任何修改都能立即从实例上反映出来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person()</span><br><span class="line"></span><br><span class="line">Person.prototype == p.__proto__ <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-
-<p>原型分为 <strong>显式原型</strong>（构造函数的prototype属性） 和 <strong>隐式原型</strong>（调用构造函数实例化出来的对象的<code>__proto__</code>属性）。（ES5只允许操作 prototype，ES6都可以）</p>
-<h3><span id="3-yuan-xing-lian-bi-kao">3. 原型链 ==必考==</span><a href="#3-yuan-xing-lian-bi-kao" class="header-anchor">#</a></h3><p><strong>原型链</strong>是实现<strong>继承</strong>的主要方法。</p>
-<p>构造函数、原型和实例的关系 每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么假如我们让原型对象等于另一个类型的实例。显然，此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立。如此层层递进，就构成了实例与原型的链条。这就是所谓的<strong>原型链</strong>的基本概念。==原型链的终点是 null==。</p>
-<p>（1）基础原型链</p>
-<p><img src="img/image-20200725151021194.png" alt="img"></p>
-<p>（2）终极原型链</p>
-<p><img src="img/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg"></p>
-<h2><span id="si-ji-cheng">四、继承</span><a href="#si-ji-cheng" class="header-anchor">#</a></h2><p><strong>继承</strong>是子类对象能够使用父类对象的数据和方法。</p>
-<h3><span id="1-gou-zao-han-shu-ji-cheng">1. 构造函数继承</span><a href="#1-gou-zao-han-shu-ji-cheng" class="header-anchor">#</a></h3><h3><span id="2-yuan-xing-lian-ji-cheng">2. 原型链继承</span><a href="#2-yuan-xing-lian-ji-cheng" class="header-anchor">#</a></h3><p>子类型的原型为父类型的一个实例对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Supper</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">this</span>.superProp = <span class="string">&#x27;The super prop&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型的数据所有的实例对象都可见</span></span><br><span class="line">Supper.prototype.showSupperProp = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.superProp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类型</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.subProp = <span class="string">&#x27;The sub prop&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类的原型为父类的实例</span></span><br><span class="line">Sub.prototype = <span class="keyword">new</span> Supper()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修正原型链</span></span><br><span class="line"><span class="comment">// 修正 Sub.prototype.constructor 为Sub本身</span></span><br><span class="line">Sub.prototype.constructor = Sub</span><br><span class="line"></span><br><span class="line">Sub.prototype.showSubProp = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.subProp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建子类型的实例</span></span><br><span class="line"><span class="keyword">var</span> sub = <span class="keyword">new</span> Sub()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用父类型的方法</span></span><br><span class="line">sub.showSubProp()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用子类型的方法</span></span><br><span class="line">sub.showSupperProp()</span><br></pre></td></tr></table></figure>
-
-<h3><span id="3-hun-he-ji-cheng-chang-kao">3. 混合继承 ==常考==</span><a href="#3-hun-he-ji-cheng-chang-kao" class="header-anchor">#</a></h3><p>继承的主要方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类型（构造模式）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 父类型（原型模式）</span></span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="built_in">this</span>.name );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"> name, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// △ key1 继承属性 △</span></span><br><span class="line">    SuperType.call( <span class="built_in">this</span>,name );</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承方法</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">// △ 修正原型链 △</span></span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> SubType(<span class="string">&quot;Tom&quot;</span>,<span class="number">29</span>);</span><br><span class="line">p1.sayName();</span><br><span class="line">p1.syaAge();</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1670,7 +1380,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><a class="extend next" rel="next" href="/blog/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/">8</a><a class="extend next" rel="next" href="/blog/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1736,20 +1446,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">77</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

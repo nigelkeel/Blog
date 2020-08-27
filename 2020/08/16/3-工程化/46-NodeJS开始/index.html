@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、NodeJS 概述#Node.js是一个基于ChromeV8引擎的JS运行环境。 优点  异步的非阻塞（处理高并发） 事件循环机制 单线程 跨平台 事件驱动  应用场景 主要应用场景  中间层BFF(backends for frontends)、RESTful API I&#x2F;O 密集型的领域：如 服务端渲染，前端项目构建。 低延迟的网络应用：如 即时聊天。  RERL#在命令行窗口运行JS程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJS 基本内容">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2020/08/16/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/46-NodeJS%E5%BC%80%E5%A7%8B/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="一、NodeJS 概述#Node.js是一个基于ChromeV8引擎的JS运行环境。 优点  异步的非阻塞（处理高并发） 事件循环机制 单线程 跨平台 事件驱动  应用场景 主要应用场景  中间层BFF(backends for frontends)、RESTful API I&#x2F;O 密集型的领域：如 服务端渲染，前端项目构建。 低延迟的网络应用：如 即时聊天。  RERL#在命令行窗口运行JS程序">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-27T03:14:20.150Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="NodeJS">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/2020/08/16/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/46-NodeJS%E5%BC%80%E5%A7%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>NodeJS 基本内容 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/08/16/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/46-NodeJS%E5%BC%80%E5%A7%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NodeJS 基本内容
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-16T00:00:00+08:00">2020-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:14:20" itemprop="dateModified" datetime="2020-08-27T11:14:20+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="yi-nodejs-gai-shu">一、NodeJS 概述</span><a href="#yi-nodejs-gai-shu" class="header-anchor">#</a></h1><p>Node.js是一个基于ChromeV8引擎的JS运行环境。</p>
+<p>优点</p>
+<ul>
+<li>异步的非阻塞（处理高并发）</li>
+<li>事件循环机制</li>
+<li>单线程</li>
+<li>跨平台</li>
+<li>事件驱动</li>
+</ul>
+<p>应用场景</p>
+<p>主要应用场景</p>
+<ul>
+<li>中间层BFF(backends for frontends)、RESTful API</li>
+<li>I/O 密集型的领域：如 服务端渲染，前端项目构建。</li>
+<li>低延迟的网络应用：如 即时聊天。</li>
+</ul>
+<h3><span id="rerl">RERL</span><a href="#rerl" class="header-anchor">#</a></h3><p>在命令行窗口运行JS程序。</p>
+<h3><span id="global">Global</span><a href="#global" class="header-anchor">#</a></h3><ul>
+<li>Browser（全局对象是window）中js的组成：<ul>
+<li>DOM –&gt; document 用来操作文档</li>
+<li>BOM –&gt; window 用来操作浏览器（控制浏览记录、读取浏览器的信息…）</li>
+<li>ES  –&gt; 语法规范</li>
+</ul>
+</li>
+<li>Nodejs（全局对象是Global）中js的组成：<ul>
+<li>DOM(完全没有)</li>
+<li>BOM(干掉了绝大部分，只保留少部分)<ul>
+<li>console.log</li>
+<li>setInterval</li>
+<li>setTimeout</li>
+</ul>
+</li>
+<li>ES(基本实现)</li>
+</ul>
+</li>
+</ul>
+<h3><span id="npm">NPM</span><a href="#npm" class="header-anchor">#</a></h3><p>包管理器。</p>
+<h1><span id="er-nodejs-de-shi-jian-lun-xun-ji-zhi">二、NodeJS的事件轮询机制 △△</span><a href="#er-nodejs-de-shi-jian-lun-xun-ji-zhi" class="header-anchor">#</a></h1><p>JS是单线程的，那么NodeJS是如何做到非阻塞的？  在NodeJS内部使用了第三方库<code>libuv</code> ，NodeJS会把IO、文件读取等异步操作交由它处理，而JS主线程可以去处理其他的事情。<code>libuv</code> 会开启不同的线程去处理这些延迟操作，处理完后，会将异步操作的回调函数放在NodeJS的<strong>轮询队列</strong>中，NodeJS会在适当的时候处理轮询队列中的回调函数，从而实现非阻塞。所以NodeJS在处理阻塞操作时，并不是单线程的</p>
+<h3><span id="1-liu-jie-duan">1、六阶段</span><a href="#1-liu-jie-duan" class="header-anchor">#</a></h3><p>NodeJS事件轮询队列分为6个阶段</p>
+<ol>
+<li><code>timers</code> <strong>处理定时器</strong> <code>setTimeout</code> <code>setInterval</code></li>
+<li><code>pending</code> <code>callbacks</code> 处理操作系统级的回调函数（了解）</li>
+<li><code>idle</code> <code>prepare</code> 处理NodeJS内部操作调用（了解）</li>
+<li><code>poll</code> <strong>处理读写操作，网络请求</strong>。（1）当这个阶段的回调函数队列不为空的时候，则处理队列中的回调函数，直到<strong>队列为空</strong>或者<strong>最大回调数</strong>的时候，就跳过此阶段，处理下一阶段。（2）当进入poll阶段的时候，如果此阶段的回调队列为空，系统会在此阶段等待新的回调函数入队，再进行处理。在这个阶段会同时进行检测**<code>timers</code>阶段是否已经有回调函数超时<strong>，如果有，则马上跳过poll阶段，进入下一个阶段。如果</strong><code>check</code>设置了<code>setImmediate</code>**，也会进入下一个阶段。</li>
+<li><code>check</code> <strong>专门处理<code>setImmediate</code>回调函数</strong>。</li>
+<li><code>close callbacks</code> 专门执行关闭的回调函数。</li>
+</ol>
+<p><strong><code>process.nextTick</code></strong> <code>Promise</code> 不由<code>libuv</code> 管理，**每次事件的轮询进入到下一个队列的时候，都会检查这两个队列是否为空，不为空则马上处理。（注意因为<code>process.nextTick</code>会在事件轮询每个阶段之间执行， 如果递归调用<code>nextTick</code>就会导致轮询阻塞，所以尽量避免使用<code>process.nextTick</code>， 可以使用<code>setImmediate</code>代替）</p>
+<h3><span id="2-hong-ren-wu-wei-ren-wu">2、宏任务、微任务</span><a href="#2-hong-ren-wu-wei-ren-wu" class="header-anchor">#</a></h3><p>微任务 </p>
+<p><code>process.nextTick</code>（优先级最高） </p>
+<p><code>Primise.then/catch/fanally</code> （依顺序）</p>
+<p><code>queueMicrostask</code> </p>
+<p>执行微队列时新增的微任务添加到当前微任务的下一个。（新添加的等下一轮执行）</p>
+<p>宏任务</p>
+<p>宿主环境提供的任务 </p>
+<p><code>setTimerout</code> </p>
+<p><code>serImmediate</code> </p>
+<p>先执行微任务。</p>
+<h3><span id="3-dai-ma-zhi-xing-shun-xu">3、代码执行顺序</span><a href="#3-dai-ma-zhi-xing-shun-xu" class="header-anchor">#</a></h3><p>同步代码 –&gt; 微任务（<code>process.nextTick</code> –&gt; <code>Primise</code> <code>async</code> ） –&gt; 宏任务（<code>setTimeout</code> <code>setInterval</code> –&gt; <code>setImmediate</code>）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/NodeJS/" rel="tag"># NodeJS</a>
+              <a href="/blog/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/08/11/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/49-%E5%BC%82%E6%AD%A5/" rel="prev" title="JS 异步">
+      <i class="fa fa-chevron-left"></i> JS 异步
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/08/21/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/53-NodeJS%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="next" title="NodeJS 静态资源服务器">
+      NodeJS 静态资源服务器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、NodeJS 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">RERL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">Global</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">NPM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、NodeJS的事件轮询机制 △△</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、六阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、宏任务、微任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、代码执行顺序</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
