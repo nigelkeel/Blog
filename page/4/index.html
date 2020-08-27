@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/31-%E9%97%AD%E5%8C%85/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/08/2-%E8%A1%8C%E4%B8%BA/32-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -199,7 +199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/31-%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">JS 闭包</a>
+            <a href="/blog/2020/07/08/2-%E8%A1%8C%E4%B8%BA/32-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">JS 面向对象扩展</a>
         </h2>
 
         <div class="post-meta">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:31:41" itemprop="dateModified" datetime="2020-08-26T20:31:41+08:00">2020-08-26</time>
+                <time title="修改时间：2020-08-26 20:31:58" itemprop="dateModified" datetime="2020-08-26T20:31:58+08:00">2020-08-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,28 +239,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2><span id="wu-bi-bao">五、闭包</span><a href="#wu-bi-bao" class="header-anchor">#</a></h2><blockquote>
-<p>面试常考，需要深入理解。</p>
-</blockquote>
-<h3><span id="1-bi-bao-shi-shi-me">1、闭包是什么</span><a href="#1-bi-bao-shi-shi-me" class="header-anchor">#</a></h3><p><strong>闭包</strong>（Closure）:</p>
-<ul>
-<li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
-<li>闭包可以理解为内部的函数。</li>
-<li>深入理解的话，闭包就是包含==被内部引用变量==的对象。（可以通过浏览器断点调试查看）</li>
-</ul>
-<h3><span id="2-bi-bao-de-zuo-yong-ji-que-dian">2、闭包的作用及缺点</span><a href="#2-bi-bao-de-zuo-yong-ji-que-dian" class="header-anchor">#</a></h3><ul>
-<li>外部间接的访问到了内部的变量。</li>
-<li>当外部函数执行完成后，局部变量暂时不会消失，==延长了局部变量的生命周期==。</li>
-</ul>
-<p>闭包的缺点: <strong>内存泄露</strong>。解决方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 让内部函数对象（闭包）变成垃圾对象</span></span><br><span class="line"><span class="comment">// 此时就马上被回收</span></span><br></pre></td></tr></table></figure>
+          <h2><span id="liu-dui-xiang-de-bian-li">六、对象的遍历</span><a href="#liu-dui-xiang-de-bian-li" class="header-anchor">#</a></h2><h3><span id="1-die-dai-qi-iterator">1、迭代器 iterator</span><a href="#1-die-dai-qi-iterator" class="header-anchor">#</a></h3><p>遍历器（迭代器，iterator）</p>
+<p>统一的接口来遍历 Array Object Map Set</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Iterator</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 返回值 </span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next()&#123;</span><br><span class="line">            <span class="keyword">if</span>(num &lt; arr.length)&#123;</span><br><span class="line"> 				<span class="keyword">return</span>&#123;</span><br><span class="line">                   done: <span class="literal">false</span>, <span class="comment">// 是否遍历完成</span></span><br><span class="line">                   value: arr[num++]</span><br><span class="line">            	&#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                    done: ture</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3><span id="3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h3><p>当内部函数被定义的时候，闭包就生成了。</p>
-<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
-<h3><span id="4-ying-yong">4、应用</span><a href="#4-ying-yong" class="header-anchor">#</a></h3><p>模块化。</p>
+
+
+<h3><span id="2-for-of-xu-bu-chong">2、for … of ==需补充==</span><a href="#2-for-of-xu-bu-chong" class="header-anchor">#</a></h3><h3><span id="2-for-in">2、for … in</span><a href="#2-for-in" class="header-anchor">#</a></h3><p><code>for...in</code> 用来遍历自身和原型链中可枚举的属性。</p>
+<p>不关对象本身的属性能被遍历，在对象的原型链上的属性也能被遍历。</p>
 <blockquote>
+<p>千万不要用这个遍历数组，虽然数组也是对象，但是数组的索引只是具有整数名称的枚举属性，这个不能保证遍历的顺序，而数组的最重要特征就是有序。</p>
 </blockquote>
+<h2><span id="qi-jie-gou-fu-zhi">七、解构赋值</span><a href="#qi-jie-gou-fu-zhi" class="header-anchor">#</a></h2><p>（1）数组的解构赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一一对应</span></span><br><span class="line"><span class="keyword">const</span> [x1, x2, x3, x4] = arr;</span><br><span class="line"><span class="comment">// 解构失败返回 undefined</span></span><br><span class="line"><span class="comment">// 允许不完全解构</span></span><br><span class="line"><span class="comment">// 可以设置默认值(没有对应关系时)</span></span><br><span class="line"><span class="keyword">const</span> [x1, x2=<span class="string">&quot;qwq&quot;</span>, x3, x4] = arr;</span><br><span class="line"><span class="comment">// 想把后面没有解构的值保存起来(rest参数必须是最后)</span></span><br><span class="line"><span class="keyword">const</span> [x1, x2, ...x] = arr;</span><br><span class="line"><span class="comment">// 多维数组保证一一对应也能解构</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个变量</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">[b, a] = [a, b];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子</span></span><br><span class="line"><span class="keyword">let</span> [foo = hoo, hoo = <span class="number">2</span>] = [];</span><br><span class="line"><span class="comment">// 报错 cannot access ‘hoo&#x27; before initialization</span></span><br></pre></td></tr></table></figure>
 
+<p>（2）对象的解构赋值（用的很多） △</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象没有顺序，直接取 对应的方法 （保证同名，key）</span></span><br><span class="line"><span class="keyword">const</span>&#123;</span><br><span class="line">    log</span><br><span class="line">&#125; = <span class="built_in">console</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果键名key和键值value是一样的，则可以直接简写</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    hoo: <span class="string">&quot;hoo&quot;</span>,</span><br><span class="line">    foo: <span class="string">&quot;foo&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    hoo,</span><br><span class="line">    foo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也能设置默认值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>（3）应用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、函数多个返回值返回</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> [a,b,c,d] = fn();</span><br><span class="line"><span class="built_in">console</span>.log(a,b,c,d);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">foo</span>: <span class="string">&quot;hello&quot;</span>, <span class="attr">hoo</span>: <span class="string">&quot;word&quot;</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123; foo &#125; = fn();</span><br><span class="line"><span class="built_in">console</span>.log(foo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、函数传参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">[x, y, z]</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log([x, y, z]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">&#123; x, y, z &#125;</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(x, y, z);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.json数据的提取</span></span><br><span class="line"><span class="keyword">let</span> json = &#123;</span><br><span class="line">    name: <span class="string">&quot;lily&quot;</span>,</span><br><span class="line">    sex: <span class="string">&quot;nv&quot;</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> &#123; name, age, sex &#125; = json;</span><br><span class="line"><span class="built_in">console</span>.log(name, age, sex)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><span id="ba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter setter</span><a href="#ba-cun-chu-qi-shu-xing-getter-setter" class="header-anchor">#</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    first: <span class="string">&quot;李&quot;</span>,</span><br><span class="line">    last: <span class="string">&quot;沛华&quot;</span></span><br><span class="line">    <span class="comment">// getter</span></span><br><span class="line">    <span class="comment">// 一个对象可以有多个存储器属性</span></span><br><span class="line">    <span class="keyword">get</span> <span class="title">fullName</span>()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.first&#125;</span> <span class="subst">$&#123;<span class="built_in">this</span>,last&#125;</span>`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// setter</span></span><br><span class="line">	<span class="comment">// ！一定要有参数</span></span><br><span class="line">	<span class="keyword">set</span> <span class="title">setName</span>(<span class="params">a</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> nameArr = a.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">        <span class="built_in">this</span>.first = nameArr[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">this</span>.last = nameArr[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log( obj1.fullName);</span><br><span class="line"><span class="comment">// 李沛华</span></span><br><span class="line">obj1.setName = <span class="string">&quot;闫 海静&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>后面用于 vue 数据双向绑定原理。</p>
+<h2><span id="jiu-dui-xiang-de-bu-chong">九、对象的补充</span><a href="#jiu-dui-xiang-de-bu-chong" class="header-anchor">#</a></h2><h3><span id="1-instanceof-cao-zuo-fu">1、instanceof 操作符</span><a href="#1-instanceof-cao-zuo-fu" class="header-anchor">#</a></h3><p>第一个变量是对象，第二个变量是函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A <span class="keyword">instanceof</span> b </span><br><span class="line"><span class="comment">// a 沿着 __proto__ ， b 沿着 prototype  一直找</span></span><br><span class="line"><span class="comment">// 找到相交的地方返回 true</span></span><br></pre></td></tr></table></figure>
+
+<p>所有引用类型都是 Object 的实例，所以在检测引用类型和 Object 都会返回 true。所有基本类型都不是对象，使用会返回 <code>false</code>。</p>
+<h3><span id="2-new-yun-suan-fu-liu-cheng">2、new 运算符流程</span><a href="#2-new-yun-suan-fu-liu-cheng" class="header-anchor">#</a></h3><ol>
+<li><p>创建对象，开辟内存空间（堆）</p>
+</li>
+<li><p>设置原型链</p>
+</li>
+<li><p>this指向该内存</p>
+</li>
+<li><p>执行函数代码</p>
+</li>
+<li><p>将创建对象实例返回</p>
+</li>
+</ol>
+<h3><span id="3-dui-xiang-de-kao-bei">3、对象的拷贝</span><a href="#3-dui-xiang-de-kao-bei" class="header-anchor">#</a></h3>
       
     </div>
 
