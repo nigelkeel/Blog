@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="[TOC] 一、基本表单结构#1、form#123&lt;form action&#x3D;&quot;&quot; method&#x3D;&quot;POST&quot;&gt;&lt;&#x2F;form&gt;  action：表单提交接口。如果省略，则设置为当前页面。 method：表单提交的方式。一般为 POST 或者 GET 。  GET 通过URL提交 POST 通过请求报文  2、input 标签#0 属性#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 表单">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2020/06/12/1-%E8%A1%A8%E7%8E%B0/03HTML%E8%A1%A8%E5%8D%95/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="[TOC] 一、基本表单结构#1、form#123&lt;form action&#x3D;&quot;&quot; method&#x3D;&quot;POST&quot;&gt;&lt;&#x2F;form&gt;  action：表单提交接口。如果省略，则设置为当前页面。 method：表单提交的方式。一般为 POST 或者 GET 。  GET 通过URL提交 POST 通过请求报文  2、input 标签#0 属性#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-11T16:00:00.000Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/2020/06/12/1-%E8%A1%A8%E7%8E%B0/03HTML%E8%A1%A8%E5%8D%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HTML 表单 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/06/12/1-%E8%A1%A8%E7%8E%B0/03HTML%E8%A1%A8%E5%8D%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTML 表单
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-12T00:00:00+08:00">2020-06-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[TOC]</p>
+<h1><span id="yi-ji-ben-biao-dan-jie-gou">一、基本表单结构</span><a href="#yi-ji-ben-biao-dan-jie-gou" class="header-anchor">#</a></h1><h2><span id="1-form">1、form</span><a href="#1-form" class="header-anchor">#</a></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>action：表单提交接口。如果省略，则设置为当前页面。</p>
+<p>method：表单提交的方式。一般为 <strong>POST</strong> 或者 <strong>GET</strong> 。</p>
+<ul>
+<li>GET 通过URL提交</li>
+<li>POST 通过请求报文</li>
+</ul>
+<h2><span id="2-input-biao-qian">2、input 标签</span><a href="#2-input-biao-qian" class="header-anchor">#</a></h2><h3><span id="0-shu-xing">0 属性</span><a href="#0-shu-xing" class="header-anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>placeholder</code></td>
+<td><strong>占位符</strong>。控制元素为空时的提示信息，只要输入内容就会消失。</td>
+</tr>
+</tbody></table>
+<ul>
+<li>name  当前表单元素键名。</li>
+<li>value  当前表单元素输入内容，默认内容。</li>
+<li>type  表单元素的类型。</li>
+<li></li>
+<li>autocomplete  是否提示用户输入历史输入值，默认为 ON。</li>
+<li>autofocus  自动获取焦点。</li>
+<li>required  必填。提交表单时必须填写此项。</li>
+<li>disabled  禁用表单元素。不会被提交。</li>
+<li>readonly  只读。会被提交。</li>
+<li>checked  预先选中单选框或者多选框。</li>
+<li>form  关联表单。如果input存在form属性，表示该input属于某个表单。通过input的form属性为form表单的id，进行关联。 进行关联以后，无论input书写在哪里，都能随着表单提交数据。  </li>
+<li>selected  预先选择一个选项。</li>
+<li>multiple  实现多选。</li>
+</ul>
+<h3><span id="1-text-wen-ben-yu">1 text 文本域</span><a href="#1-text-wen-ben-yu" class="header-anchor">#</a></h3><p>即单行文本输入框。</p>
+<h3><span id="2-password-mi-ma-yu">2 password 密码域</span><a href="#2-password-mi-ma-yu" class="header-anchor">#</a></h3><h3><span id="3-radio-dan-xuan-kuang">3 radio 单选框</span><a href="#3-radio-dan-xuan-kuang" class="header-anchor">#</a></h3><p>注意需设置好 value 值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    请选择您的性别：</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;女&quot;</span>&gt;</span>女</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;男&quot;</span>&gt;</span>男</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>默认选中：checked</p>
+<ul>
+<li>checked</li>
+<li>checked = “”</li>
+<li>checked = “checked”</li>
+</ul>
+<h3><span id="4-checkbox-fu-xuan-kuang">4 checkbox 复选框</span><a href="#4-checkbox-fu-xuan-kuang" class="header-anchor">#</a></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    请选择您的学科</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;HTML5&quot;</span>&gt;</span>HTML5</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ASP&quot;</span>&gt;</span>ASP</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;c#&quot;</span>&gt;</span>c#</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Java&quot;</span>&gt;</span>Java</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3><span id="5-file-wen-jian-yu">5 file 文件域</span><a href="#5-file-wen-jian-yu" class="header-anchor">#</a></h3><p>上传文件。</p>
+<p>调用相册和摄像头。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&quot;camera&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&quot;photo&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3><span id="6-button-pu-tong-an-niu">6 button 普通按钮</span><a href="#6-button-pu-tong-an-niu" class="header-anchor">#</a></h3><h3><span id="7-submit-ti-jiao-an-niu">7 submit 提交按钮</span><a href="#7-submit-ti-jiao-an-niu" class="header-anchor">#</a></h3><h3><span id="8-reset-chong-zhi-an-niu">8 reset 重置按钮</span><a href="#8-reset-chong-zhi-an-niu" class="header-anchor">#</a></h3><h3><span id="9-hidden-yin-cang">9 hidden 隐藏</span><a href="#9-hidden-yin-cang" class="header-anchor">#</a></h3><h3><span id="10-qi-ta-lei-xing">10 其他类型</span><a href="#10-qi-ta-lei-xing" class="header-anchor">#</a></h3><p>以下是一些 H5 新增的类型：</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>功能</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>颜色</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期-年月日</td>
+<td></td>
+</tr>
+<tr>
+<td>week</td>
+<td>日期-年周</td>
+<td>火狐不支持</td>
+</tr>
+<tr>
+<td>month</td>
+<td>日期-年月</td>
+<td>火狐不支持</td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱号</td>
+<td>有校验，但是不完整</td>
+</tr>
+<tr>
+<td>number</td>
+<td>数字</td>
+<td>min | max | value | step</td>
+</tr>
+<tr>
+<td>search</td>
+<td>搜索框</td>
+<td></td>
+</tr>
+<tr>
+<td>tel</td>
+<td>电话号码</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td></td>
+</tr>
+<tr>
+<td>range</td>
+<td>可拖动控件</td>
+<td>很少用</td>
+</tr>
+</tbody></table>
+<h2><span id="3-button-an-niu">3、button 按钮</span><a href="#3-button-an-niu" class="header-anchor">#</a></h2><p>有3种 type，分别是 button，submit，reset。</p>
+<p>具体功能需要配合JS实现。</p>
+<blockquote>
+<p>注1：input提交按钮和button提交按钮的区别：input是单标签，button是双标签。<br>注2：button是行内块标签。  </p>
+</blockquote>
+<h2><span id="4-label-biao-qian">4、label 标签</span><a href="#4-label-biao-qian" class="header-anchor">#</a></h2><p>定义表单元素标注，获取焦点。</p>
+<p>两种方式来绑定表单。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span> ... <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<h2><span id="5-select-option-xia-lie-lie-biao">5、select-option 下列列表</span><a href="#5-select-option-xia-lie-lie-biao" class="header-anchor">#</a></h2><p>在 option 中 value 属性书写的内容不会显示，但是最后会提交。显示的内容写在 option 标签中。</p>
+<p><code>selected</code> 默认选中</p>
+<p><code>multiple</code> 多选</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">请选择你喜欢的地方：</span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;北京&quot;</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;上海&quot;</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;广州&quot;</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;深圳&quot;</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2><span id="5-textarea-duo-xing-wen-ben-shu-ru-kuang">5、textarea 多行文本输入框</span><a href="#5-textarea-duo-xing-wen-ben-shu-ru-kuang" class="header-anchor">#</a></h2><h2><span id="6-datatlist-option">6、datatlist-option +</span><a href="#6-datatlist-option" class="header-anchor">#</a></h2><h1><span id="er-biao-dan-bu-chong">二、表单补充</span><a href="#er-biao-dan-bu-chong" class="header-anchor">#</a></h1><h2><span id="1-h5-biao-dan-xin-gui-fan">1、H5 表单新规范</span><a href="#1-h5-biao-dan-xin-gui-fan" class="header-anchor">#</a></h2><ul>
+<li>表单的属性名和属性值相等的时候，可以省略属性值，直接书写属性名即可。 </li>
+<li>在JS中，允许用布尔值[^6]来开启和关闭属性。</li>
+<li>在多个表单元素，只能出现一次的属性，如果书写多个，以第一个为准。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/11/1-%E8%A1%A8%E7%8E%B0/01HTML%E5%9F%BA%E7%A1%80/" rel="prev" title="HTML 基础">
+      <i class="fa fa-chevron-left"></i> HTML 基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/13/1-%E8%A1%A8%E7%8E%B0/04HTML%E8%A1%A5%E5%85%85/" rel="next" title="HTML 补充内容">
+      HTML 补充内容 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、基本表单结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、input 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">0 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1 text 文本域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2 password 密码域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3 radio 单选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4 checkbox 复选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5 file 文件域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">6 button 普通按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">7 submit 提交按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">8 reset 重置按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9 hidden 隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10 其他类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、button 按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、label 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、select-option 下列列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、textarea 多行文本输入框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、datatlist-option +</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、表单补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、H5 表单新规范</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

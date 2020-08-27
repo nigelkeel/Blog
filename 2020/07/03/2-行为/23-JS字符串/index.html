@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="[TOC] 一、字符串#1、模版字符串 +#2、包装对象 +#在JS中，提供了三个特殊的构造函数Number、String、Boolean，可以使用new来操作，会生成对应类型的对象。（实际开发中不用） 1234var str &#x3D; new String(&quot;abc&quot;);&#x2F;&#x2F; 这确实是一个对象&#x2F;&#x2F; 被当成对象&#x2F;&#x2F; __proto__指向原型对象。原型方法有大量的方法  执行过程：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 字符串">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2020/07/03/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="[TOC] 一、字符串#1、模版字符串 +#2、包装对象 +#在JS中，提供了三个特殊的构造函数Number、String、Boolean，可以使用new来操作，会生成对应类型的对象。（实际开发中不用） 1234var str &#x3D; new String(&quot;abc&quot;);&#x2F;&#x2F; 这确实是一个对象&#x2F;&#x2F; 被当成对象&#x2F;&#x2F; __proto__指向原型对象。原型方法有大量的方法  执行过程：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-26T10:20:27.673Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/2020/07/03/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JS 字符串 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2020/07/03/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JS 字符串
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-03T00:00:00+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 18:20:27" itemprop="dateModified" datetime="2020-08-26T18:20:27+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[TOC]</p>
+<h1><span id="yi-zi-fu-chuan">一、字符串</span><a href="#yi-zi-fu-chuan" class="header-anchor">#</a></h1><h2><span id="1-mo-ban-zi-fu-chuan">1、模版字符串 +</span><a href="#1-mo-ban-zi-fu-chuan" class="header-anchor">#</a></h2><h2><span id="2-bao-zhuang-dui-xiang">2、包装对象 +</span><a href="#2-bao-zhuang-dui-xiang" class="header-anchor">#</a></h2><p>在JS中，提供了三个特殊的构造函数<code>Number</code>、<code>String</code>、<code>Boolean</code>，可以使用new来操作，会生成对应类型的对象。（实际开发中不用）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line"><span class="comment">// 这确实是一个对象</span></span><br><span class="line"><span class="comment">// 被当成对象</span></span><br><span class="line"><span class="comment">// __proto__指向原型对象。原型方法有大量的方法</span></span><br></pre></td></tr></table></figure>
+
+<p>执行过程：</p>
+<ol>
+<li>声明了一个字符串放入了str中。</li>
+<li>当发现你把str当做对象调用时，js内部会自动调用<code>new String(&#39;abc&#39;)</code>创建了一个对象（字符串对象，包装对象）；</li>
+<li>然后使用包装对象的属性、方法。当使用完成之后，又会将包装对象转换成字符串。</li>
+</ol>
+<p><code>number</code>、<code>boolean</code>、<code>string</code> 都会经过上面的过程。</p>
+<p>普通对象和包装对象的区别：主要针对对象的<strong>生命周期</strong>。</p>
+<ul>
+<li>使用 new 操作符创建的引用类型的实例，在执行流离开之前的作用域中将会一直存在。</li>
+<li>自动创建的基本包装类型对象，只存在于那一行代码的执行的一瞬间，然后立即销毁了。</li>
+</ul>
+<h1><span id="er-zi-fu-chuan-fang-fa">二、字符串方法</span><a href="#er-zi-fu-chuan-fang-fa" class="header-anchor">#</a></h1><h2><span id="1-zi-fu-chuan-cha-zhao">1、字符串查找</span><a href="#1-zi-fu-chuan-cha-zhao" class="header-anchor">#</a></h2><h3><span id="indexof-lastindexof">indexOf、lastIndexOf</span><a href="#indexof-lastindexof" class="header-anchor">#</a></h3><p><code>indexOf()</code> 正序查找 <code>lastIndexOf()</code> 逆序查找 根据参数字符串，返回指定子字符串的下标位置，如果没找到，返回<code>-1</code></p>
+<ul>
+<li>第1个参数 查找的目标</li>
+<li>第2个参数 可选 开始查找的位置</li>
+</ul>
+<h3><span id="search">search</span><a href="#search" class="header-anchor">#</a></h3><p><code>search()</code> 功能和<code>indexOf()</code>相同，定义匹配模式，只有一个参数，没有反向检索和全局模式。</p>
+<h3><span id="macth">macth</span><a href="#macth" class="header-anchor">#</a></h3><p><code>macth()</code> 找出所有匹配的子字符串，并以数组的形式返回，如果匹配模式没有指定全局，则进行单次匹配，如果没找到返回<code>null</code>。</p>
+<h3><span id="charat-charcodeat">charAt、charCodeAt</span><a href="#charat-charcodeat" class="header-anchor">#</a></h3><p><code>charAt(n)</code> 返回字符串中的第n个字符，如果n超出字符串范围，返回空串。</p>
+<p><code>charCodeAt(n)</code> 返回字符串中第n个字符的字符编码。</p>
+<h3><span id="includes-startswith-endswith">includes、startsWith、endsWith</span><a href="#includes-startswith-endswith" class="header-anchor">#</a></h3><p><code>includes(string,n)</code>  ES6 返回布尔值，表示是否找到参数字符串</p>
+<p><code>startsWith()</code> <code>endsWith()</code> 判断字符串开头、结尾 中间 有没有包含某个字符串</p>
+<h2><span id="2-zi-fu-chuan-jie-qu-qie-ge">2、字符串截取、切割</span><a href="#2-zi-fu-chuan-jie-qu-qie-ge" class="header-anchor">#</a></h2><h3><span id="substr">substr</span><a href="#substr" class="header-anchor">#</a></h3><p><code>substr</code> 根据指定长度截取字符串（不推荐使用该方法）</p>
+<ul>
+<li>第1个参数 起始下标</li>
+<li>第2个参数 截取的长度（如果省略，则代表截取到末尾）</li>
+</ul>
+<h3><span id="slice-substring">slice、substring</span><a href="#slice-substring" class="header-anchor">#</a></h3><p><code>slice</code> 、<code>substring</code> 根据指定的起止下标截取字符串</p>
+<ul>
+<li>第1个 起始下标</li>
+<li>第2个 结束下标（不包含），如果省略，代表剩下的全部截取</li>
+<li>起始和结束位置相比较的大小无法确定的时候可以使用<code>substring</code></li>
+<li>如果为负值，<code>slic</code>e能把负值当作从右向左。而<code>substring</code>视其无效</li>
+</ul>
+<h2><span id="3-zi-fu-chuan-zhuan-huan">3、字符串转换</span><a href="#3-zi-fu-chuan-zhuan-huan" class="header-anchor">#</a></h2><h3><span id="valueof-he-tostring">valueOf 和 toString</span><a href="#valueof-he-tostring" class="header-anchor">#</a></h3><p>valueOf 返回对象的字符串、数值或者布尔值表示</p>
+<p>toString 返回对象的字符串表示</p>
+<h3><span id="split">split</span><a href="#split" class="header-anchor">#</a></h3><p>第一个参数如果是空串，则会分割每个字符</p>
+<p>第二个参数用于指定分割后的数组大小，用来确保返回的数组不会超过这个大小</p>
+<h3><span id="da-xiao-xie-zhuan-huan">大小写转换</span><a href="#da-xiao-xie-zhuan-huan" class="header-anchor">#</a></h3><p><code>toLowerCase()</code> 将字符串转换成小写</p>
+<p><code>toUpperCase()</code> 将字符串转换成大写</p>
+<h2><span id="4-zi-fu-chuan-pin-jie-he-chu-li">4、字符串拼接和处理</span><a href="#4-zi-fu-chuan-pin-jie-he-chu-li" class="header-anchor">#</a></h2><h3><span id="concat">concat</span><a href="#concat" class="header-anchor">#</a></h3><p>拼接字符串。</p>
+<h3><span id="shan-kong-ge">删空格</span><a href="#shan-kong-ge" class="header-anchor">#</a></h3><p><code>trim()</code> 可以用于删除字符串的头尾空格，不会改变原始字符串。</p>
+<p><code>trim()</code>/<code>trimStart()</code>/<code>trimEnd()</code> </p>
+<h3><span id="repeat">repeat</span><a href="#repeat" class="header-anchor">#</a></h3><p>重复字符串。</p>
+<h3><span id="repace">repace</span><a href="#repace" class="header-anchor">#</a></h3><p>默认只能替换一次。</p>
+<p>除非使用正则表达式。</p>
+<h3><span id="zi-fu-chuan-bu-quan">字符串补全 +</span><a href="#zi-fu-chuan-bu-quan" class="header-anchor">#</a></h3><p>ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。</p>
+<p><code>padStart()</code> 头部补全， <code>padEnd()</code> 尾部补全。</p>
+<p>###</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/07/02/2-%E8%A1%8C%E4%B8%BA/22-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97/" rel="prev" title="JS 数据类型和运算">
+      <i class="fa fa-chevron-left"></i> JS 数据类型和运算
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/07/04/2-%E8%A1%8C%E4%B8%BA/24-JS%E6%95%B0%E7%BB%84/" rel="next" title="JS 数组 和 Set">
+      JS 数组 和 Set <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、模版字符串 +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、包装对象 +</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、字符串方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、字符串查找</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">indexOf、lastIndexOf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">macth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">charAt、charCodeAt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">includes、startsWith、endsWith</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、字符串截取、切割</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">substr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">slice、substring</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、字符串转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">valueOf 和 toString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">split</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">大小写转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、字符串拼接和处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">删空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">repeat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">repace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">字符串补全 +</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
