@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="DOM# [TOC] 一、是什么# Browser Object Model 浏览器对象模型。关于客户端浏览器的管理。 Document Object Model 文档对象模型。是W3C制订的一套技术规范，用来描述JS脚本如何与HTML或XML文档进行交互的Web标准。加载HTML页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM将这种树型结构理解为由节点组成的DOM树。 DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM 对象">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="DOM# [TOC] 一、是什么# Browser Object Model 浏览器对象模型。关于客户端浏览器的管理。 Document Object Model 文档对象模型。是W3C制订的一套技术规范，用来描述JS脚本如何与HTML或XML文档进行交互的Web标准。加载HTML页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM将这种树型结构理解为由节点组成的DOM树。 DOM">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/dom.jpg">
+<meta property="og:image" content="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/1219486-20170817160212381-718115701.gif">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-28T06:21:42.060Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/dom.jpg">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>DOM 对象 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DOM 对象
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 14:21:42" itemprop="dateModified" datetime="2020-08-28T14:21:42+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="dom">DOM</span><a href="#dom" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<h2><span id="pyi-shi-shi-me">一、是什么</span><a href="#pyi-shi-shi-me" class="header-anchor">#</a></h2>
+<p><strong>Browser Object Model</strong> 浏览器对象模型。关于客户端浏览器的管理。</p>
+<p><strong>Document Object Model</strong> 文档对象模型。是W3C制订的一套技术规范，用来描述JS脚本如何与HTML或XML文档进行交互的Web标准。加载HTML页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM将这种树型结构理解为由节点组成的DOM树。</p>
+<p>DOM规定了一系列标准接口（函数），允许开发人员通过标准方式访问文档结构、操作网页内容、控制样式和行为等。</p>
+<p><img src="/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/dom.jpg" alt="img"></p>
+<h3><span id="p1-dom-ban-ben">1、DOM 版本</span><a href="#p1-dom-ban-ben" class="header-anchor">#</a></h3>
+<p>DOM0和DOM2。</p>
+<h3><span id="p2-document-dui-xiang">2、document 对象</span><a href="#p2-document-dui-xiang" class="header-anchor">#</a></h3>
+<p><strong><code>document</code> 对象</strong> 是<code>window</code><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>对象的一个属性，因此可以将<code>document</code>对象作为一个全局对象来访问。当浏览器载入html文档, 它就会成为<code>document</code>对象。</p>
+<h2><span id="per-jie-dian-fang-wen">二、节点访问</span><a href="#per-jie-dian-fang-wen" class="header-anchor">#</a></h2>
+<p>在网页中所有对象和内容都被称为节点（Node）。如文档、元素、文本、属性、注释等。节点是DOM最基本的单元，并派生出不同类型的节点，它们共同构成了文档的树形结构模型。</p>
+<h3><span id="p1-jie-dian">1、节点</span><a href="#p1-jie-dian" class="header-anchor">#</a></h3>
+<h4><span id="pchang-yong-jie-dian-chong-lei">常用节点种类</span><a href="#pchang-yong-jie-dian-chong-lei" class="header-anchor">#</a></h4>
+<ul>
+<li>document 文档节点</li>
+<li>documentFragment 文档片段节点</li>
+<li>Element 元素节点</li>
+<li>attr 属性节点</li>
+<li>text 文本节点</li>
+<li>comment 注释节点</li>
+</ul>
+<h4><span id="pjie-dian-guan-xi">节点关系</span><a href="#pjie-dian-guan-xi" class="header-anchor">#</a></h4>
+<p>DOM把文档视为树形结构，称为节点树。节点之间的关系包括：上下父子关系，相邻兄弟关系。</p>
+<ul>
+<li>在节点树中，最顶端节点为根节点。除了根节点之外，每个节点都有一个父节点。</li>
+<li>节点可以包含任何数量的子节点。</li>
+<li>叶子是没有子节点的节点。</li>
+<li>同级节点是拥有相同父节点的节点。</li>
+</ul>
+<h4><span id="pchildnodes">childNodes</span><a href="#pchildnodes" class="header-anchor">#</a></h4>
+<p><code>childNodes</code> 属性获取元素所有的子节点，保存到一个<code>NodeList</code>对象中。</p>
+<h4><span id="pjie-dian-lei-xing-ming-cheng-zhi">节点类型、名称、值</span><a href="#pjie-dian-lei-xing-ming-cheng-zhi" class="header-anchor">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodeType</code></td>
+<td>节点类型</td>
+</tr>
+<tr>
+<td><code>nodeName</code></td>
+<td>节点名称</td>
+</tr>
+<tr>
+<td><code>nodeValue</code></td>
+<td>节点值</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> oBox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;box&quot;</span>);<br><span class="hljs-keyword">var</span> nodes = oBox.childNodes;<br><span class="hljs-comment">// nodes -- 节点的集合，类型 NodeList</span><br><span class="hljs-comment">// nodes[3] -- 直接获取节点</span><br><span class="hljs-comment">// nodes.item(5) -- 直接获取节点</span><br><br><span class="hljs-comment">// (1) documment</span><br><span class="hljs-comment">// nodeType -- 9</span><br><span class="hljs-comment">// nodeName -- #document</span><br><span class="hljs-comment">// nodeValue -- null</span><br><br><span class="hljs-comment">// (2) 元素节点</span><br><span class="hljs-comment">// nodeType -- 1</span><br><span class="hljs-comment">// nodeName -- 标签名大写</span><br><span class="hljs-comment">// nodeValue -- null</span><br><br><span class="hljs-comment">// (3) 文本节点</span><br><span class="hljs-comment">// nodeType -- 3</span><br><span class="hljs-comment">// nodeName -- #text</span><br><span class="hljs-comment">// nodeValue -- 文本内容</span><br><br><span class="hljs-comment">// (4) 注释节点</span><br><span class="hljs-comment">// nodeType -- 8</span><br><span class="hljs-comment">// nodeName -- #comment</span><br><span class="hljs-comment">// nodeValue -- 注释内容</span><br><br><span class="hljs-comment">// (5) 属性节点</span><br><span class="hljs-comment">// nodeType -- 2</span><br><span class="hljs-comment">// nodeName -- 键值对形式，属性名就是节点名称</span><br><span class="hljs-comment">// nodeValue -- 属性值就是节点的值</span><br></code></pre></td></tr></table></figure>
+<p>​</p>
+<p>​</p>
+<h3><span id="p2-fang-wen-jie-dian">2、访问节点</span><a href="#p2-fang-wen-jie-dian" class="header-anchor">#</a></h3>
+<h3><span id="pname-shu-xing-zhi-jie-fang-wen-fang-fa">name 属性直接访问方法</span><a href="#pname-shu-xing-zhi-jie-fang-wen-fang-fa" class="header-anchor">#</a></h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><br></code></pre></td></tr></table></figure>
+<h4><span id="pchuan-tong-fang-fa-huo-qu-yuan-su">传统方法获取元素</span><a href="#pchuan-tong-fang-fa-huo-qu-yuan-su" class="header-anchor">#</a></h4>
+<p>（1） <strong>getElementsByTagName</strong> 通过标签名获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 获得一个 HTMLCollection 对象（伪数组）</span><br><span class="hljs-comment">// 拥有 length 属性</span><br><span class="hljs-keyword">var</span> oLis = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;li&quot;</span>);<br><br><span class="hljs-comment">// 控制背景并变色</span><br>oLis.style.background = <span class="hljs-string">&quot;red&quot;</span>; <span class="hljs-comment">// 报错了！</span><br>oLis[<span class="hljs-number">0</span>].style.background = <span class="hljs-string">&quot;red&quot;</span>; <span class="hljs-comment">// 注意要加下标获取</span><br><br><br></code></pre></td></tr></table></figure>
+<p>（2）<strong>getElementsByClassName</strong> 通过类名</p>
+<p>（3）getElementsByName 通过name属性获取（几乎不用）</p>
+<p>IE6789 不兼容。</p>
+<p>（4）getElementByID 通过id获取</p>
+<p>和上面三个的区别是，这个可以直接获取到元素，不需要下标。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 获取某个元素中元素的方法</span><br><span class="hljs-comment">// （1）先获取到ul</span><br><span class="hljs-keyword">var</span> oBox = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;box&quot;</span>);<br><span class="hljs-keyword">var</span> oBox2 = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;ul&quot;</span>);<br><br><span class="hljs-comment">// （2）通过ul获取到其中的li</span><br><span class="hljs-keyword">var</span> oBoxLis = oBox.getElementsByTagName(<span class="hljs-string">&quot;li&quot;</span>);<br><span class="hljs-keyword">var</span> oBoxLis2 = oBox2[<span class="hljs-number">1</span>].getElementsByTagName(<span class="hljs-string">&quot;li&quot;</span>);<br><span class="hljs-comment">//   注意下标</span><br></code></pre></td></tr></table></figure>
+<h4><span id="pselectors-api">selectors API</span><a href="#pselectors-api" class="header-anchor">#</a></h4>
+<p>直接使用CSS选择器作为参数传递。</p>
+<p>核心方法 <strong>querySelector</strong> 和 <strong>querySelectorALL</strong>。后者获取的是一个<code>NodeList</code>对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 获取单个节点（如果选择多个，默认选第一个）</span><br><span class="hljs-keyword">var</span> oRed = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;#box&gt;.red&quot;</span>);<br><br><span class="hljs-comment">// 获取多个节点（NodeList），使用的时候注意加下标</span><br><span class="hljs-keyword">var</span> oRed2 = <span class="hljs-built_in">document</span>.querySelectorALL(<span class="hljs-string">&quot;#box&gt;.red&quot;</span>);<br><br>oRed2.forEach(item, index, array)&#123;<br>  	item.style.background = <span class="hljs-string">&quot;red&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4><span id="pfang-fa-bi-jiao">方法比较</span><a href="#pfang-fa-bi-jiao" class="header-anchor">#</a></h4>
+<p><code>getElementsByXX</code> 获取的元素集合是 <strong>动态</strong> 的，也就是DOM节点改变时，当前获取的集合内容也会改变。（选出来的元素会随着文档的改变而改变）</p>
+<p><code>selector API</code> 是 <strong>静态</strong> 的集合。（只要取出来，就和页面有没有任何关系；未来元素改变，不影响获取的结果。）</p>
+<p>NodeList是静态的，HTMLCollection是动态的</p>
+<h4><span id="pjie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa">节点关系中访问节点方法</span><a href="#pjie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa" class="header-anchor">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parentNode</td>
+<td>获取元素的父元素节点</td>
+</tr>
+<tr>
+<td>children</td>
+<td>获取元素的所有子元素节点 <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+</tr>
+<tr>
+<td>firstChild</td>
+<td>获取第一个子元素节点<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
+</tr>
+<tr>
+<td>firstElementChild</td>
+<td>获取第一个子元素节点</td>
+</tr>
+<tr>
+<td>lastChild</td>
+<td>获取最后一个子元素节点<sup class="footnote-ref"><a href="#fn3" id="fnref3:1">[3:1]</a></sup></td>
+</tr>
+<tr>
+<td>lastElementChild</td>
+<td>获取最后一个子元素节点</td>
+</tr>
+<tr>
+<td>nextSibling</td>
+<td>获取下一个兄弟节点<sup class="footnote-ref"><a href="#fn3" id="fnref3:2">[3:2]</a></sup></td>
+</tr>
+<tr>
+<td>nextElementSibing</td>
+<td>获取下一个兄弟节点</td>
+</tr>
+<tr>
+<td>previousSibling</td>
+<td>获取上一个兄弟节点<sup class="footnote-ref"><a href="#fn3" id="fnref3:3">[3:3]</a></sup></td>
+</tr>
+<tr>
+<td>previosElementSibing</td>
+<td>获取上一个兄弟节点</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// (1) parentNode</span><br>...parentNode <span class="hljs-comment">// ul</span><br>...parentNode.parentNode<span class="hljs-comment">// body</span><br>...parentNode.parentNode.parentNode <span class="hljs-comment">// html</span><br>...parentNode.parentNode.parentNode.parentNode <span class="hljs-comment">// document</span><br>...parentNode.parentNode.parentNode.parentNode.parentNode <span class="hljs-comment">// null</span><br>...parentNode.parentNode.parentNode.parentNode.parentNode.parentNode <span class="hljs-comment">// 报错</span><br><br><br><span class="hljs-comment">// (2) 获取上一个兄弟元素节点的兼容性封装</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPrevSibling</span>(<span class="hljs-params">ele</span>)</span>&#123;<br>  	<span class="hljs-keyword">if</span>(ele.previousElementSibing)&#123;<br>        <span class="hljs-keyword">return</span> ele.previousElementSibing;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">return</span> ele.previousSibing;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4><span id="pqi-ta-huo-qu-jie-dian-fang-fa">其他获取节点方法</span><a href="#pqi-ta-huo-qu-jie-dian-fang-fa" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// (1)获取body元素</span><br><span class="hljs-built_in">document</span>.body==<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&#x27;body&#x27;</span>)[<span class="hljs-number">0</span>];<br><br><span class="hljs-comment">// (2)获取head元素</span><br><span class="hljs-built_in">document</span>.head==<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&#x27;head&#x27;</span>)[<span class="hljs-number">0</span>];<br><br><span class="hljs-comment">// (3)获取html元素</span><br><span class="hljs-built_in">document</span>.documentElement==<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&#x27;html&#x27;</span>)[<span class="hljs-number">0</span>];<br></code></pre></td></tr></table></figure>
+<h2><span id="psan-jie-dian-cao-zuo">三、节点操作</span><a href="#psan-jie-dian-cao-zuo" class="header-anchor">#</a></h2>
+<p>节点关系都是只读的，DOM提供了一些操作节点的方法。</p>
+<h4><span id="pchuang-jian-jie-dian-createelement">创建节点 createElement()</span><a href="#pchuang-jian-jie-dian-createelement" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.createElement(tag)<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">	参数：标签名字</span><br><span class="hljs-comment">	返回值：新元素的引用</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+<p>使用document对象的createElement方法能够根据参数指定的标签名创建一个新的元素。并返回对新元素的引用。</p>
+<p>使用creatElement方法创建的新元素不会被自动添加到文档里，需要使用appendChild等方法。</p>
+<h4><span id="pchuang-jian-wen-ben-jie-dian-createtextnode">创建文本节点 createTextNode()</span><a href="#pchuang-jian-wen-ben-jie-dian-createtextnode" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-built_in">String</span>)<br><span class="hljs-comment">//                    参数是字符串</span><br></code></pre></td></tr></table></figure>
+<p>使用document对象的createTextNode方法可创建文本节点。创建的文本节点需要使用appendChild等方法才能插入到元素节点中，当然也可以使用 <strong>innerHTML</strong> 方法给元素节点添加内容。</p>
+<h4><span id="pcha-ru-jie-dian">插入节点</span><a href="#pcha-ru-jie-dian" class="header-anchor">#</a></h4>
+<p>都是插入元素的父元素调用的方法。</p>
+<p>（1）appendChild()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">appendChild()<br></code></pre></td></tr></table></figure>
+<p>appendChild()方法可以向当前节点的字节点列表的==末尾==添加新的节点。如果文档树中已经存在参数节点，则将从文档树中删除，然后重新插入新的位置。</p>
+<p>（2）insertBefore( )</p>
+<p>使用 <strong>insertBefore(newChild,oldChild)</strong> 方法可以在已有的子节点前插入一个新的子节点。</p>
+<p>newChild表示新插入的节点，oldChild用于指定插入节点的后边的相邻位置。插入成功以后，该方法返回新插入的节点。insertBefore可以把指定元素及其所包含的所有子节点都一起插入到指定位置中。同时会先删除移动的元素，再重新插入。</p>
+<p>appendChild 和 insertBefore 可以操作已经存在的元素。</p>
+<h4><span id="pfu-zhi-jie-dian-clonenode">复制节点 cloneNode()</span><a href="#pfu-zhi-jie-dian-clonenode" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">cloneNode()<br><span class="hljs-comment">//      参数 true 深复制 复制整个节点和里面的内容</span><br><span class="hljs-comment">//           false 浅复制 只复制节点（不要里面的内容）</span><br></code></pre></td></tr></table></figure>
+<p><code>cloneNode()</code> 方法可以创建一个节点的副本<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>。复制后的新节点，也不会被自动插入到文档，需要用到之前的方法去插入。</p>
+<h4><span id="pshan-chu-jie-dian-removechild">删除节点 removeChild()</span><a href="#pshan-chu-jie-dian-removechild" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">removeChild()<br><span class="hljs-comment">// 返回值：</span><br><span class="hljs-comment">// - 删除成功 ==&gt; 返回被删除的节点</span><br><span class="hljs-comment">// - 删除失败 ==&gt; 返回 null</span><br></code></pre></td></tr></table></figure>
+<p><strong>removeChild</strong>() 方法可以从子节点列表中删除某个节点，该节点所包含的所有子节点将同时被删除。</p>
+<h4><span id="pti-huan-jie-dian-replacechild">替换节点 replaceChild()</span><a href="#pti-huan-jie-dian-replacechild" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">replaceChild(newNode,oldNode)<br><span class="hljs-comment">// 参数</span><br><span class="hljs-comment">// - newNode 指定的新节点</span><br><span class="hljs-comment">// - oldNode 被替换的节点</span><br><span class="hljs-comment">// 返回值</span><br><span class="hljs-comment">// - 替换成功 ==&gt; 返回替换的节点</span><br><span class="hljs-comment">// - 替换失败 ==&gt;  null</span><br></code></pre></td></tr></table></figure>
+<p><code>replaceChild(new, old)</code> 方法可以将某个子节点替换为另一个。替换节点替换的是所有子节点以及包含的所有内容。</p>
+<h3><span id="p4-yuan-su-nei-rong-cao-zuo">4、元素内容操作</span><a href="#p4-yuan-su-nei-rong-cao-zuo" class="header-anchor">#</a></h3>
+<h4><span id="pinnerhtml-innertext-outerhtml-outertext">innerHTML、innerText、outerHTML、outerText</span><a href="#pinnerhtml-innertext-outerhtml-outertext" class="header-anchor">#</a></h4>
+<p>（1）获取标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;abc&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>破晓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>是猪<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br><span class="javascript">oT = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;abc&quot;</span>);</span><br><span class="javascript"><span class="hljs-built_in">console</span>.log(oT.innerHTML) <span class="hljs-comment">//&lt;span&gt;破晓&lt;/span&gt;是猪</span></span><br><span class="javascript"><span class="hljs-built_in">console</span>.log(oT.innerText) <span class="hljs-comment">//破晓是猪</span></span><br><span class="javascript"><span class="hljs-built_in">console</span>.log(oT.outerText) <span class="hljs-comment">//破晓是猪</span></span><br><span class="handlebars"><span class="xml">console.log(oT.outerHTML) //<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;abc&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>破晓<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>是猪<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span></span><br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><code>innerHTML</code> 和 <code>innerText</code>  前者可以解析并输出标签，后者是纯文本。</p>
+<p><code>innerHTML</code> 和 <code>outerHTML</code>  前者不包括自身，后者包括自身。</p>
+<p><img src="/2-%E8%A1%8C%E4%B8%BA/35-DOM%E5%AF%B9%E8%B1%A1/1219486-20170817160212381-718115701.gif" alt="img"></p>
+<p>（2）设置标签（直接覆盖原来的内容）</p>
+<p>innerText 和 outerText 在获取的时候是相同效果，但在设置时，innerText仅设置标签所包含的文本，而 outerText 设置包含包括标签<strong>自身在内</strong>的文本。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">oTest.innerHTML = <span class="hljs-string">&quot;这是内容&quot;</span><br>oTest.innerHTML = &quot;&lt;a href = &quot;##&quot;&gt; 这是内容 &lt;/a&gt;&quot;<br></code></pre></td></tr></table></figure>
+<h4><span id="ptextcontent">textContent</span><a href="#ptextcontent" class="header-anchor">#</a></h4>
+<p><strong>textContent</strong> 设置或者返回固定节点的文本内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;myList&quot;</span>).textContent;<br><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;myList&quot;</span>).textContent = <span class="hljs-string">&quot;你好&quot;</span>；<br></code></pre></td></tr></table></figure>
+<p>（1）textContent和innerHTML的区别</p>
+<ul>
+<li>textContent 会获取 style= “display:none” 中的文本，而innerText不会。</li>
+<li>innerText 不会理会html格式，直接输出不换行的文本，textContent会根据标签里面的元素独立一行。</li>
+<li>innerText 对IE的兼容性较好 ，textContent虽然作为标准方法但是只支持IE8+以上的浏览器 。</li>
+</ul>
+<p>（2）兼容性处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setOrGetContent</span>(<span class="hljs-params">node,content</span>) </span>&#123;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-comment">//代表当前是读取操作</span><br>        <span class="hljs-keyword">if</span>(node.textContent)&#123;<br>            <span class="hljs-comment">//只要能拿到这个dom对象的textContent属性值，代表当前用户是高级浏览器</span><br>            <span class="hljs-keyword">return</span> node.textContent;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">//代表拿不到  那就是低级浏览器</span><br>            <span class="hljs-keyword">return</span> node.innerText;<br>        &#125;<br>    &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-comment">//代表写入操作</span><br>        <span class="hljs-keyword">if</span>(node.textContent)&#123;<br>            <span class="hljs-comment">//代表高级</span><br>            node.textContent = content;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">//代表低级</span><br>            node.innerText = content;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="p5-shu-xing-jie-dian-cao-zuo">5、属性节点操作</span><a href="#p5-shu-xing-jie-dian-cao-zuo" class="header-anchor">#</a></h3>
+<p>create | get | set | remove</p>
+<h4><span id="pchuang-jian-shu-xing-jie-dian">创建属性节点</span><a href="#pchuang-jian-shu-xing-jie-dian" class="header-anchor">#</a></h4>
+<p><strong>createAttribute</strong> 方法可以创建属性节点。</p>
+<ul>
+<li>使用属性节点的name属性，可以得到属性的名称。</li>
+<li>使用属性节点的value属性，可以设置和属性的值。</li>
+<li>创建的属性可以通过setAttributeNode来插入到元素中。</li>
+</ul>
+<h4><span id="pdu-qu-shu-xing-zhi">读取属性值</span><a href="#pdu-qu-shu-xing-zhi" class="header-anchor">#</a></h4>
+<p>（1） 常用点语法通过元素直接访问HTML属性，如src、href等<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup><sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。</p>
+<p>（2） <strong>getAttribute</strong> 方法可以读取指定属性的值（非自有属性）。</p>
+<h4><span id="pshe-zhi-shu-xing-zhi">设置属性值</span><a href="#pshe-zhi-shu-xing-zhi" class="header-anchor">#</a></h4>
+<p><strong>setAttribute(name,value)</strong> 方法可以设置元素的属性值。</p>
+<p>参数name和value分别代表属性名称和属性值，并且必须是字符串，如果存在相同属性，则值被刷新，如果不存在则创建属性并添加。</p>
+<p>通过 <code>ele.value</code> 获取或设置表单的值（string）。</p>
+<h4><span id="pshan-chu-shu-xing">删除属性</span><a href="#pshan-chu-shu-xing" class="header-anchor">#</a></h4>
+<p><strong>removeAttribute</strong>() 使用元素的方法可以删除指定的属性</p>
+<p>参数是要删除的属性名。</p>
+<h4><span id="pzi-ding-yi-shu-xing-h5">自定义属性 <code>H5</code></span><a href="#pzi-ding-yi-shu-xing-h5" class="header-anchor">#</a></h4>
+<p>HTML5 允许用户为元素自定义属性，但是要求添加前缀<code>data-</code>。</p>
+<p><code>.dateset</code> 设置和获取自定义属性</p>
+<p><code>.delete</code> 删除自定义属性</p>
+<h3><span id="p6-wen-dang-pian-duan-jie-dian">6、文档片段节点</span><a href="#p6-wen-dang-pian-duan-jie-dian" class="header-anchor">#</a></h3>
+<p><strong>DocumentFragment</strong> 是一个==虚拟的==节点类型，仅仅存在于内存中，没有添加到文档树中，看不到渲染效果。当文档片段设计完善后，再使用JS一次性添加到文档树中显示出来，提高效率，==减少页面重绘的次数==。避免浏览器渲染和资源占用，解决大量添加节点时候的性能问题。</p>
+<p><strong>createDocumentFragment()</strong> 创建虚拟节点，使用 appendChild 等方法插入。</p>
+<h2><span id="psan-jiao-ben-hua-css">三、脚本化CSS</span><a href="#psan-jiao-ben-hua-css" class="header-anchor">#</a></h2>
+<h3><span id="p1-huo-qu-chi-cun">1、获取尺寸</span><a href="#p1-huo-qu-chi-cun" class="header-anchor">#</a></h3>
+<p><code>offsetWidth</code>和<code>offsetHeight</code> 可以获取元素的<code>border-box</code>尺寸。</p>
+<p><code>clientWidth</code>和<code>clientHeight</code> 可以获取元素的<code>padding-box</code>尺寸。</p>
+<p><code>scrollWidth</code>和<code>scrollHeight</code> 可以获取元素完全内容尺寸和<code>padding</code>。（几乎不用）</p>
+<p><code>innerWidth</code>和<code>innerHeight</code> 可以获取浏览器窗口的尺寸。</p>
+<p><code>outerWidth</code>和<code>outerHeight</code> 可以获取取加上工具条与滚动条窗口的尺寸。</p>
+<p><code>style.width/height</code> <strong>只能获取行内样式的尺寸</strong>（字符串，“10px”）。</p>
+<p>常见应用: 大盒子里面小盒子，大盒子用<code>clientX</code>，小盒子用<code>offsetX</code>。</p>
+<h3><span id="p2-huo-qu-wei-zhi">2、获取位置</span><a href="#p2-huo-qu-wei-zhi" class="header-anchor">#</a></h3>
+<p><code>getBoundingClientRect()</code> 返回一个对象，对象中包含元素距离视口的距离信息。</p>
+<p>getBoundingClientRect。</p>
+<p>获取某个元素相对于视口的位置集合</p>
+<ul>
+<li>top 元素上边到视窗上的距离</li>
+<li>right 元素右边到视窗左的距离</li>
+<li>bottom 元素下边到视窗上的距离</li>
+<li>left 元素左边到视窗左的距离</li>
+<li>width</li>
+<li>height</li>
+</ul>
+<p>offsetParent</p>
+<p>==offsetLeft / Top==</p>
+<p>返回当前元素的相对包含块的偏移位置。</p>
+<p>JS 默认把它当成绝对定位属性来寻找包含块，不管是什么属性，都是寻找最近定位父级，如果没找到就是 HTML。</p>
+<p>clientLeft / Top</p>
+<p>clientLeft 等于 border-left。</p>
+<p>==scrollLeft / Top==</p>
+<p>==设置或者获取==当前元素滚动条已经滚动过的距离。（值增大，内容左滚）</p>
+<h3><span id="p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao">3、获取文档大小、视口大小</span><a href="#p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 获取文档大小</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDocSize</span>(<span class="hljs-params"></span>)</span>&#123;<br>       <span class="hljs-keyword">var</span> h = <span class="hljs-built_in">document</span>.documentElement;<br>       <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">document</span>.body;<br>       <span class="hljs-keyword">return</span> &#123;<br>           y:h.offsetHeight || b.offsetHeight,<br>           x:h.offsetWidth || b.offsetWidth<br>       &#125;<br>&#125;<br><br><span class="hljs-comment">// 获取视口大小</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getWinSize</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-keyword">var</span> h = <span class="hljs-built_in">document</span>.documentElement;<br>    <span class="hljs-keyword">var</span> b =<span class="hljs-built_in">document</span>.body;<br>    <span class="hljs-keyword">return</span> &#123;<br>         y:h.clientHeight || b.clientHeight,<br>         x:h.clientWidth || b.clientWidth<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao">4、获取和设置系统滚动条</span><a href="#p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 获取系统滚动条</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDocScroll</span>(<span class="hljs-params"></span>) </span>&#123;<br>        <span class="hljs-keyword">var</span> h = <span class="hljs-built_in">document</span>.documentElement;<br>        <span class="hljs-keyword">var</span> b = <span class="hljs-built_in">document</span>.body;<br>        <span class="hljs-keyword">var</span> y = self.pageYOffset||<br>            h.scrollTop||<br>            b.scrollTop;<br>        <span class="hljs-keyword">var</span> x = self.pageXOffset||<br>            h.scrollLeft||<br>            b.scrollLeft;<br><br>        <span class="hljs-keyword">return</span> &#123;<br>            x:x,<br>            y:y<br>        &#125;<br>&#125;<br><br><span class="hljs-comment">// 设置系统滚动条</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setDocScroll</span>(<span class="hljs-params">x,y</span>) </span>&#123;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">1</span> &amp;&amp; <span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&quot;number&quot;</span>)&#123;<br>        <span class="hljs-built_in">window</span>.scrollTo(x,<span class="hljs-number">0</span>);<br>        <span class="hljs-built_in">document</span>.documentElement.scrollLeft = x;<br>        <span class="hljs-built_in">document</span>.body.scrollLeft = x;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">arguments</span>.length === <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-keyword">typeof</span> x === <span class="hljs-string">&quot;number&quot;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> y === <span class="hljs-string">&quot;number&quot;</span>)&#123;<br>        <span class="hljs-built_in">window</span>.scrollTo(x,y);<br>        <span class="hljs-built_in">document</span>.documentElement.scrollLeft = x;<br>        <span class="hljs-built_in">document</span>.documentElement.scrollTop = y;<br>        <span class="hljs-built_in">document</span>.body.scrollLeft = x;<br>        <span class="hljs-built_in">document</span>.body.scrollTop = y;<br>       &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>JS 顶层对象是<code>global</code>，<code>window</code>是<code>global</code>的实现。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>IE678会取到注释节点。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>前者在IE678中获取上一个元素节点，在其他浏览器中获取的是是一个节点（可能是文本节点等）。后者在浏览器中获取上一个兄弟元素节点，IE678不兼容。 <a href="#fnref3" class="footnote-backref">↩︎</a> <a href="#fnref3:1" class="footnote-backref">↩︎</a> <a href="#fnref3:2" class="footnote-backref">↩︎</a> <a href="#fnref3:3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>注意改id 复制的节点会包含原节点的所有特性，如果原节点中包含id属性，就会出现id属性值重叠的情况。为了避免潜在的冲突，应修改其中某个节点的id属性值。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>对于class属性，必须使用className属性名。对于for属性，则必须使用htmlFor属性名。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>在脚本化css中设置float属性和text属性，要改为cssFloat和cssText（一次设置多个样式）使用。 <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/5-%E5%AE%9E%E7%94%A8/84-Markdown/" rel="prev" title="Markdown">
+      <i class="fa fa-chevron-left"></i> Markdown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2-%E8%A1%8C%E4%B8%BA/40-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" rel="next" title="常见效果">
+      常见效果 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、DOM 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、document 对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、节点访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">常用节点种类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">节点关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">childNodes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">节点类型、名称、值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、访问节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">name 属性直接访问方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">传统方法获取元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">selectors API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">方法比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">节点关系中访问节点方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">其他获取节点方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">创建节点 createElement()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">创建文本节点 createTextNode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">复制节点 cloneNode()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">删除节点 removeChild()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">替换节点 replaceChild()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、元素内容操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">innerHTML、innerText、outerHTML、outerText</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">textContent</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5、属性节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">创建属性节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">读取属性值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">设置属性值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">删除属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">自定义属性 H5</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">6、文档片段节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、脚本化CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、获取尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、获取位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、获取文档大小、视口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、获取和设置系统滚动条</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="技术栈# 第一部分 工具#  版本控制工具（git，github） Markdown  第二部分 基础#  计算机组成原理（冯诺依曼结构，二进制，逻辑运算，存储器） 操作系统（进程线程，内存管理，文件系统IO） 汇编与编译原理（寄存器和内存，堆栈，CPU指令，编译器） 计算机网络（TCP&#x2F;IP，UDP，DNS，HTTP） 编码（ASCII，Unicode，UTF-8） 数据结构（线性结构，链表，栈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知识索引">
+<meta property="og:url" content="http://nigelkeel.gitee.io/%E7%B4%A2%E5%BC%95/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="技术栈# 第一部分 工具#  版本控制工具（git，github） Markdown  第二部分 基础#  计算机组成原理（冯诺依曼结构，二进制，逻辑运算，存储器） 操作系统（进程线程，内存管理，文件系统IO） 汇编与编译原理（寄存器和内存，堆栈，CPU指令，编译器） 计算机网络（TCP&#x2F;IP，UDP，DNS，HTTP） 编码（ASCII，Unicode，UTF-8） 数据结构（线性结构，链表，栈">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2048-10-24T06:30:00.000Z">
+<meta property="article:modified_time" content="2020-08-28T10:53:23.419Z">
+<meta property="article:author" content="KEEL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/%E7%B4%A2%E5%BC%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>知识索引 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%B4%A2%E5%BC%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          知识索引
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2048-10-24 14:30:00" itemprop="dateCreated datePublished" datetime="2048-10-24T14:30:00+08:00">2048-10-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 18:53:23" itemprop="dateModified" datetime="2020-08-28T18:53:23+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%AA%E5%BD%92%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">未归类</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="ji-zhu-zhan">技术栈</span><a href="#ji-zhu-zhan" class="header-anchor">#</a></h1>
+<h2><span id="pdi-yi-bu-fen-gong-ju">第一部分 工具</span><a href="#pdi-yi-bu-fen-gong-ju" class="header-anchor">#</a></h2>
+<ul>
+<li>版本控制工具（git，github）</li>
+<li>Markdown</li>
+</ul>
+<h2><span id="pdi-er-bu-fen-ji-chu">第二部分 基础</span><a href="#pdi-er-bu-fen-ji-chu" class="header-anchor">#</a></h2>
+<ul>
+<li>计算机组成原理（冯诺依曼结构，二进制，逻辑运算，存储器）</li>
+<li>操作系统（进程线程，内存管理，文件系统IO）</li>
+<li>汇编与编译原理（寄存器和内存，堆栈，CPU指令，编译器）</li>
+<li>计算机网络（TCP/IP，UDP，DNS，HTTP）</li>
+<li>编码（ASCII，Unicode，UTF-8）</li>
+<li>数据结构（线性结构，链表，栈，队列，树，图）</li>
+<li>算法（复杂度，二分法，贪心算法，动态规划，递归，查找排序，遍历树，图搜索）</li>
+<li>编程模式与设计模式（面向对象，函数式编程，设计模式，MVC，MVVM）</li>
+<li>数据库原理（关系型数据库，SQL语法）</li>
+<li>C语言</li>
+</ul>
+<h2><span id="pdi-san-bu-fen">第三部分</span><a href="#pdi-san-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JS</li>
+<li>JSWeb</li>
+</ul>
+<h2><span id="pdi-si-bu-fen">第四部分</span><a href="#pdi-si-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>NodeJS（NPM）</li>
+<li>JS 异步编程（Promise，async，手写Promise）</li>
+<li>JS 事件循环机制</li>
+<li>WebSocket</li>
+<li>Ajax</li>
+<li>跨域解决方案</li>
+</ul>
+<h2><span id="pdi-wu-bu-fen">第五部分</span><a href="#pdi-wu-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>Vue</li>
+<li>React</li>
+</ul>
+<h2><span id="pdi-liu-bu-fen">第六部分</span><a href="#pdi-liu-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>Java</li>
+</ul>
+<h2><span id="pdi-qi-bu-fen">第七部分</span><a href="#pdi-qi-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>Python</li>
+</ul>
+<h2><span id="pdi-ba-bu-fen">第八部分</span><a href="#pdi-ba-bu-fen" class="header-anchor">#</a></h2>
+<ul>
+<li>Go</li>
+</ul>
+<h2><span id="pdi-jiu-bu-fen">第九部分</span><a href="#pdi-jiu-bu-fen" class="header-anchor">#</a></h2>
+<h1><span id="ji-zhu-zhan">技术栈+</span><a href="#ji-zhu-zhan" class="header-anchor">#</a></h1>
+<h2><span id="pdi-yi-bu-fen-shu-xue">第一部分 数学</span><a href="#pdi-yi-bu-fen-shu-xue" class="header-anchor">#</a></h2>
+<h2><span id="pdi-er-bu-fen-ying-yu">第二部分 英语</span><a href="#pdi-er-bu-fen-ying-yu" class="header-anchor">#</a></h2>
+<h2><span id="pdi-san-bu-fen-mian-shi">第三部分 面试</span><a href="#pdi-san-bu-fen-mian-shi" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="https://what-is-fe.gitee.io/">https://what-is-fe.gitee.io/</a></p>
+<h1><span id="suo-yin">索引</span><a href="#suo-yin" class="header-anchor">#</a></h1>
+<p>第一部分</p>
+<ol>
+<li>前端基本概念（网页，浏览器，服务器）</li>
+<li>HTML（1）基本结构，常用标签，表格，表单</li>
+<li>HTML（2）音视频，SEO相关</li>
+<li>CSS（1）引用方式，基础选择器，高级选择器</li>
+<li>CSS（2）盒模型</li>
+<li>CSS（3）文本样式设置，背景设置</li>
+<li>CSS（4）其他样式设置</li>
+<li>CSS（5）浮动，文档流</li>
+<li>CSS（6）定位，层叠</li>
+<li>CSS（7）弹性布局</li>
+<li>CSS（8）<em>网格布局</em></li>
+<li>CSS（9）布局综合专题，BFC</li>
+<li>CSS（10）动画</li>
+<li>CSS（11）杂项</li>
+<li>CSS（12）预处理器，LESS</li>
+<li>响应式布局，Bootstrap</li>
+<li>移动端适配</li>
+<li>Canvas</li>
+<li><em>SASS</em></li>
+<li><em>STYLUS</em></li>
+</ol>
+<p>第二部分</p>
+<ol>
+<li>JS（1）变量，流程控制</li>
+<li>JS（2）数据类型及转换</li>
+<li>JS（3）字符串</li>
+<li>JS（4）数组</li>
+<li>JS（5）函数基础</li>
+<li>JS（6）<strong>this、call</strong></li>
+<li>JS（6）原型，原型链，继承</li>
+<li>jQuery</li>
+<li>zepto</li>
+</ol>
+<p>第三部分</p>
+<ol>
+<li>NodeJS（1）NPM</li>
+<li>NodeJS（2）Expresss</li>
+<li>NodeJS（3）<em>Koa</em></li>
+<li>异步解决方案（Promise，）</li>
+<li>事件循环机制</li>
+<li>UDP、TCP、HTTP、TLS（HTTPS）</li>
+<li>AJAX</li>
+<li>跨域解决方案</li>
+<li>Axios</li>
+<li>性能优化专题（重绘重排，节流防抖）</li>
+<li>浏览器渲染原理</li>
+<li>浏览器缓存机制</li>
+<li>浏览器安全防范</li>
+<li>自动化构建工具</li>
+<li>lodash</li>
+<li>echarts</li>
+</ol>
+<p>第四部分</p>
+<ol>
+<li>Vue</li>
+<li>React</li>
+</ol>
+<p>第五部分</p>
+<ol>
+<li>数学思维</li>
+<li>词汇集</li>
+<li>面试中的数据结构</li>
+<li>面试中的算法</li>
+</ol>
+<p>第六部分</p>
+<ol>
+<li>浏览器开发工具</li>
+</ol>
+<h3><span id="pdi-er-bu-fen-xing-wei">第二部分 行为</span><a href="#pdi-er-bu-fen-xing-wei" class="header-anchor">#</a></h3>
+<p>27 函数的执行过程<br>
+28 面向对象<br>
+29 原型与继承<br>
+30 闭包<br>
+31 面向对象扩展<br>
+32 JSON<br>
+33 Date<br>
+34 Math<br>
+35 DOM对象<br>
+36 BOM对象<br>
+37 脚本化CSS<br>
+38 JS事件 一<br>
+39 JS事件 二<br>
+40 DOM综合应用<br>
+41 jQuery 一<br>
+42 jQuery 二<br>
+43 ES6<br>
+44 TypeScript</p>
+<h3><span id="pdi-san-bu-fen-gong-cheng-hua">第三部分 工程化</span><a href="#pdi-san-bu-fen-gong-cheng-hua" class="header-anchor">#</a></h3>
+<p>46 NodeJS开始<br>
+47 模块化<br>
+48 NPM<br>
+49 异步解决方案<br>
+50 NodeJS文件系统<br>
+51 HTTP协议<br>
+52 WebSocket<br>
+53 AJAX fetch<br>
+54 跨域解决方案<br>
+55 版本控制工具<br>
+56 本地化存储<br>
+57 Axios<br>
+58 自动化构建工具 grunt gulp webpack<br>
+59 数据加密<br>
+60 Puppteer<br>
+61 可视化工具<br>
+62 数据库</p>
+<p>63 Express<br>
+64 正则表达式<br>
+65 工程化杂项 nginx mock.js postman REST api koa</p>
+<h3><span id="pdi-si-bu-fen-gao-ji">第四部分 高级</span><a href="#pdi-si-bu-fen-gao-ji" class="header-anchor">#</a></h3>
+<p>66、Vue<br>
+67、Vue Router<br>
+68、Vuex<br>
+69、Element-UI<br>
+70、Vue服务器端渲染<br>
+71、React<br>
+72、React Router<br>
+73、React Redux<br>
+74、Ant Design<br>
+75、React 服务器端渲染<br>
+76、Angular<br>
+77、移动端<br>
+78、小程序</p>
+<h3><span id="pdi-wu-bu-fen-shi-yong">第五部分 实用</span><a href="#pdi-wu-bu-fen-shi-yong" class="header-anchor">#</a></h3>
+<p>81 使用技巧<br>
+82 代码手册<br>
+83 面试题集<br>
+84 Markdown<br>
+85 收集箱<br>
+86 词汇集<br>
+87 工具箱<br>
+90 数学基础<br>
+91 软件工程<br>
+92 数据结构<br>
+93 算法1<br>
+94 算法2<br>
+95 算法3</p>
+<h1><span id="shu-qian">书签</span><a href="#shu-qian" class="header-anchor">#</a></h1>
+<p><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.caniuse.com/">Can I use ?</a></p>
+<p><a target="_blank" rel="noopener" href="http://doc.lipeihua.vip:8800">老李文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/">现代JS教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/">阮一峰ES6入门</a></p>
+<p><a target="_blank" rel="noopener" href="https://tool.lu/js/index.html">JS 代码美化、净化、压缩、解压、混淆</a></p>
+<p><a target="_blank" rel="noopener" href="http://nodejs.cn/api/">NodeJS API</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jquery123.com/">jQuery API</a></p>
+<p><a target="_blank" rel="noopener" href="https://c.runoob.com/">菜鸟工具集</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/5-%E5%AE%9E%E7%94%A8/81-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" rel="prev" title="使用技巧">
+      <i class="fa fa-chevron-left"></i> 使用技巧
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E6%A0%87%E6%B3%A8/" rel="next" title="标注">
+      标注 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">技术栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第一部分 工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第二部分 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第三部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第四部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第五部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第六部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第七部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第八部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第九部分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">技术栈+</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第一部分 数学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第二部分 英语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">第三部分 面试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">第二部分 行为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">第三部分 工程化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">第四部分 高级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">第五部分 实用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">书签</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、音视频# 1、历史# 2、格式和解码# 浏览器支持的格式：.mp4&#x2F;.ogv&#x2F;.webm&#x2F;.mp3&#x2F;.ogg	 目前还没有一种编解码和容器的组合能应用于所有的浏览器中。 3、video、audio#    属性 说明     src 引入的资源路径   width、height 宽度、高度   controls 显示控制和进度条   autoplay 自动播放   muted 静音（想要自动播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 补充内容">
+<meta property="og:url" content="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/03-HTML%E8%A1%A5%E5%85%85/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="一、音视频# 1、历史# 2、格式和解码# 浏览器支持的格式：.mp4&#x2F;.ogv&#x2F;.webm&#x2F;.mp3&#x2F;.ogg	 目前还没有一种编解码和容器的组合能应用于所有的浏览器中。 3、video、audio#    属性 说明     src 引入的资源路径   width、height 宽度、高度   controls 显示控制和进度条   autoplay 自动播放   muted 静音（想要自动播">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-12T16:00:00.000Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/03-HTML%E8%A1%A5%E5%85%85/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HTML 补充内容 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/03-HTML%E8%A1%A5%E5%85%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTML 补充内容
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-13T00:00:00+08:00">2020-06-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2><span id="pyi-yin-shi-pin">一、音视频</span><a href="#pyi-yin-shi-pin" class="header-anchor">#</a></h2>
+<h3><span id="p1-li-shi">1、历史</span><a href="#p1-li-shi" class="header-anchor">#</a></h3>
+<h3><span id="p2-ge-shi-he-jie-ma">2、格式和解码</span><a href="#p2-ge-shi-he-jie-ma" class="header-anchor">#</a></h3>
+<p>浏览器支持的格式：<code>.mp4/.ogv/.webm/.mp3/.ogg</code>	<br>
+目前还没有一种编解码和容器的组合能应用于所有的浏览器中。</p>
+<h3><span id="p3-video-audio">3、video、audio</span><a href="#p3-video-audio" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>引入的资源路径</td>
+</tr>
+<tr>
+<td>width、height</td>
+<td>宽度、高度</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>显示控制和进度条</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>静音（想要自动播放生效，需要开启静音）</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>是否循环</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>视频播放前的一帧，图片路径</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>none：不提前加载视频</td>
+</tr>
+<tr>
+<td></td>
+<td>metadate：抓取元数据</td>
+</tr>
+<tr>
+<td></td>
+<td>auto：预加载</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p4-yin-shi-pin-jian-rong-xing-chu-li">4、音视频兼容性处理</span><a href="#p4-yin-shi-pin-jian-rong-xing-chu-li" class="header-anchor">#</a></h3>
+<h2><span id="per-ben-di-hua-cun-chu">二、本地化存储</span><a href="#per-ben-di-hua-cun-chu" class="header-anchor">#</a></h2>
+<h2><span id="psan-iframe-kuang-jia">三、iframe 框架</span><a href="#psan-iframe-kuang-jia" class="header-anchor">#</a></h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.baidu.com&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;90%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2><span id="psi-wei-yuan-su">四、伪元素</span><a href="#psi-wei-yuan-su" class="header-anchor">#</a></h2>
+<p>伪元素 会在内容元素的前后插入额外的元素，但是并不会在文档中生成，在文档的源码中也找不到。虽然在结构上是虚假元素，但是在表现上和普通元素没有什么区别，能为它们添加任何样式，比如改变文字颜色等等。</p>
+<p>伪元素必须拥有<code>content</code>属性才能生效，伪元素默认是一个行内元素，伪元素对其他属性基本都是支持的。</p>
+<table>
+<thead>
+<tr>
+<th>伪元素</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>after</td>
+<td>在当前元素的最后边插入一个伪元素</td>
+<td></td>
+</tr>
+<tr>
+<td>before</td>
+<td>在当前元素的最前面插入一个伪元素</td>
+<td></td>
+</tr>
+<tr>
+<td>first-letter</td>
+<td>第一个字符</td>
+<td>只针对块元素生效</td>
+</tr>
+<tr>
+<td>first-line</td>
+<td>第一行</td>
+<td>只针对行元素生效</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="pqi-html-te-shu-fu-hao">七、HTML 特殊符号</span><a href="#pqi-html-te-shu-fu-hao" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>空格</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>大于号</td>
+</tr>
+<tr>
+<td><code>&amp;lt;</code></td>
+<td>小于号</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>版权符</td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td>和号</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="pba-seo-xiang-guan">八、SEO相关</span><a href="#pba-seo-xiang-guan" class="header-anchor">#</a></h2>
+<p>搜索引擎优化。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/1-%E8%A1%A8%E7%8E%B0/01-HTML%E5%9F%BA%E7%A1%80/" rel="prev" title="HTML 基础">
+      <i class="fa fa-chevron-left"></i> HTML 基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/1-%E8%A1%A8%E7%8E%B0/09-%E5%AE%9A%E4%BD%8D/" rel="next" title="CSS 定位">
+      CSS 定位 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、音视频</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、格式和解码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、video、audio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、音视频兼容性处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、本地化存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、iframe 框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">四、伪元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">七、HTML 特殊符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">八、SEO相关</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="暂无描述">
+<meta property="og:type" content="website">
+<meta property="og:title" content="飞鱼">
+<meta property="og:url" content="http://nigelkeel.gitee.io/page/5/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="暂无描述">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KEEL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">JS 闭包</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 08:25:34" itemprop="dateModified" datetime="2020-08-28T08:25:34+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-bi-bao">一、闭包</span><a href="#yi-bi-bao" class="header-anchor">#</a></h1>
+<h3><span id="p1-bi-bao-shi-shi-me">1、闭包是什么</span><a href="#p1-bi-bao-shi-shi-me" class="header-anchor">#</a></h3>
+<p><strong>闭包</strong>（Closure）:</p>
+<ul>
+<li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
+<li>闭包可以理解为内部的函数。</li>
+<li>深入理解的话，闭包就是包含==被内部引用变量==的对象。（可以通过浏览器断点调试查看）</li>
+</ul>
+<h3><span id="p2-bi-bao-de-zuo-yong-ji-que-dian">2、闭包的作用及缺点</span><a href="#p2-bi-bao-de-zuo-yong-ji-que-dian" class="header-anchor">#</a></h3>
+<ul>
+<li>外部间接的访问到了内部的变量。</li>
+<li>当外部函数执行完成后，局部变量暂时不会消失，==延长了局部变量的生命周期==。</li>
+</ul>
+<p>闭包的缺点: <strong>内存泄露</strong>。解决方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">fun = <span class="hljs-literal">null</span>;<br><span class="hljs-comment">// 让内部函数对象（闭包）变成垃圾对象</span><br><span class="hljs-comment">// 此时就马上被回收</span><br></code></pre></td></tr></table></figure>
+<h3><span id="p3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#p3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h3>
+<p>当内部函数被定义的时候，闭包就生成了。</p>
+<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
+<h3><span id="p4-ying-yong">4、应用</span><a href="#p4-ying-yong" class="header-anchor">#</a></h3>
+<p>模块化。</p>
+<h1><span id="er-bi-bao-de-ying-yong">二、闭包的应用 +</span><a href="#er-bi-bao-de-ying-yong" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><br></code></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/" class="post-title-link" itemprop="url">JS 原型、继承</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 20:31:31" itemprop="dateModified" datetime="2020-08-26T20:31:31+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="psan-yuan-xing">三、原型 △△</span><a href="#psan-yuan-xing" class="header-anchor">#</a></h2>
+<h3><span id="p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing">1. 函数的 prototype 属性（显式原型）</span><a href="#p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing" class="header-anchor">#</a></h3>
+<p>每个函数在创建的时候都会创建一个 <strong><code>prototype</code></strong> 属性（指针），指向函数的<strong>原型对象</strong>。该属性中存储的是一个对象的引用（默认是一个空对象）。</p>
+<blockquote>
+<p>Foo.prototype === Foo 的原型对象</p>
+</blockquote>
+<p>在原型对象中也有一个属性叫 <strong><code>constructor</code></strong> ，指向的是拥有这个原型对象的<a href>构造函数</a>。</p>
+<blockquote>
+<p>Foo.prototype.constructor === Foo</p>
+</blockquote>
+<p><img src="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/007S8ZIlgy1gh1cmo2y3mj31ae0ccdh3.jpg" alt="img"></p>
+<p>prototype 属性只有在函数被当做构造函数调用的时候（函数的构造调用）才会生效。==由同一个构造函数生成的各个实例对象之间共享属性和方法。==</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;;<br>fun.prototype; <span class="hljs-comment">// 是一个object</span><br><br>fun.prototype.constructor === fun;<span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<h3><span id="p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</span><a href="#p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing" class="header-anchor">#</a></h3>
+<p>当调用构造函数创建一个新实例之后，该实例内部将包含一个内部属性 <strong><code>__proto__</code></strong>，指向构造函数的原型对象。==实例化之后才能用==。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">// 构造函数中给this扩展的属性是私有的</span><br>    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;xxx&quot;</span><br>    <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>&#125;<br><br><span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">new</span> fun();<span class="hljs-comment">// f1是fun的实例化对象</span><br><br>F.prototype.age = <span class="hljs-string">&quot;18&quot;</span><br>f1.age <span class="hljs-comment">// 18</span><br><span class="hljs-comment">// f1上面没有age所以通过f1的__proto__属性</span><br><span class="hljs-comment">// 找到f的构造函数的原型对象</span><br><br>F.prototype === f1.__proto__<br></code></pre></td></tr></table></figure>
+<p>构造函数中的 prototype 属性（显示原型）和构造函数实例化出来的对象 <code>__proto__</code>属性（隐式原型）指向同一个对象。</p>
+<p>先在本对象中查找对应的属性，找不到去 <code>__proto__</code> 里面找。</p>
+<p>在原型中查找值的过程是搜索。对原型对象所做的任何修改都能立即从实例上反映出来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> Person()<br><br>Person.prototype == p.__proto__ <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<p>原型分为 <strong>显式原型</strong>（构造函数的prototype属性） 和 <strong>隐式原型</strong>（调用构造函数实例化出来的对象的<code>__proto__</code>属性）。（ES5只允许操作 prototype，ES6都可以）</p>
+<h3><span id="p3-yuan-xing-lian-bi-kao">3. 原型链 ==必考==</span><a href="#p3-yuan-xing-lian-bi-kao" class="header-anchor">#</a></h3>
+<p><strong>原型链</strong>是实现<strong>继承</strong>的主要方法。</p>
+<p>构造函数、原型和实例的关系 每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么假如我们让原型对象等于另一个类型的实例。显然，此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立。如此层层递进，就构成了实例与原型的链条。这就是所谓的<strong>原型链</strong>的基本概念。==原型链的终点是 null==。</p>
+<p>（1）基础原型链</p>
+<p><img src="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/image-20200725151021194.png" alt="img"></p>
+<p>（2）终极原型链</p>
+<p><img src="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg" alt></p>
+<h2><span id="psi-ji-cheng">四、继承</span><a href="#psi-ji-cheng" class="header-anchor">#</a></h2>
+<p><strong>继承</strong>是子类对象能够使用父类对象的数据和方法。</p>
+<h3><span id="p1-gou-zao-han-shu-ji-cheng">1. 构造函数继承</span><a href="#p1-gou-zao-han-shu-ji-cheng" class="header-anchor">#</a></h3>
+<h3><span id="p2-yuan-xing-lian-ji-cheng">2. 原型链继承</span><a href="#p2-yuan-xing-lian-ji-cheng" class="header-anchor">#</a></h3>
+<p>子类型的原型为父类型的一个实例对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Supper</span>(<span class="hljs-params"></span>) </span>&#123; <br>    <span class="hljs-built_in">this</span>.superProp = <span class="hljs-string">&#x27;The super prop&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 原型的数据所有的实例对象都可见</span><br>Supper.prototype.showSupperProp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.superProp)<br>&#125;<br><br><span class="hljs-comment">// 子类型</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.subProp = <span class="hljs-string">&#x27;The sub prop&#x27;</span><br>&#125;<br><br><span class="hljs-comment">// 子类的原型为父类的实例</span><br>Sub.prototype = <span class="hljs-keyword">new</span> Supper()<br><br><span class="hljs-comment">// 修正原型链</span><br><span class="hljs-comment">// 修正 Sub.prototype.constructor 为Sub本身</span><br>Sub.prototype.constructor = Sub<br><br>Sub.prototype.showSubProp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.subProp)<br>&#125;<br><br><span class="hljs-comment">// 创建子类型的实例</span><br><span class="hljs-keyword">var</span> sub = <span class="hljs-keyword">new</span> Sub()<br><br><span class="hljs-comment">// 调用父类型的方法</span><br>sub.showSubProp()<br><br><span class="hljs-comment">// 调用子类型的方法</span><br>sub.showSupperProp()<br></code></pre></td></tr></table></figure>
+<h3><span id="p3-hun-he-ji-cheng-chang-kao">3. 混合继承 ==常考==</span><a href="#p3-hun-he-ji-cheng-chang-kao" class="header-anchor">#</a></h3>
+<p>继承的主要方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型（构造模式）</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SuperType</span>(<span class="hljs-params"> name </span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name;<br>&#125;<br><span class="hljs-comment">// 父类型（原型模式）</span><br>SuperType.prototype.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">this</span>.name );<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SubType</span>(<span class="hljs-params"> name, age</span>)</span>&#123;<br>    <span class="hljs-comment">// △ key1 继承属性 △</span><br>    SuperType.call( <span class="hljs-built_in">this</span>,name );<br>    <br>    <span class="hljs-built_in">this</span>.age = age;<br>&#125;<br><span class="hljs-comment">// 继承方法</span><br>SubType.prototype = <span class="hljs-keyword">new</span> SuperType();<br><span class="hljs-comment">// △ 修正原型链 △</span><br>SubType.prototype.constructor = SubType;<br><br>SubType.prototype.sayAge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.age);<br>&#125;<br><br><span class="hljs-comment">// 实例化对象</span><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> SubType(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-number">29</span>);<br>p1.sayName();<br>p1.syaAge();<br></code></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/31-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/31-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">JS 面向对象扩展</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 20:31:58" itemprop="dateModified" datetime="2020-08-26T20:31:58+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="pliu-dui-xiang-de-bian-li">六、对象的遍历</span><a href="#pliu-dui-xiang-de-bian-li" class="header-anchor">#</a></h2>
+<h3><span id="p1-die-dai-qi-iterator">1、迭代器 iterator</span><a href="#p1-die-dai-qi-iterator" class="header-anchor">#</a></h3>
+<p>遍历器（迭代器，iterator）</p>
+<p>统一的接口来遍历 Array Object Map Set</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Iterator</span>(<span class="hljs-params">arr</span>)</span>&#123;<br>    <span class="hljs-keyword">let</span> num = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 返回值 </span><br>    <span class="hljs-keyword">return</span> &#123;<br>        next()&#123;<br>            <span class="hljs-keyword">if</span>(num &lt; arr.length)&#123;<br> 				<span class="hljs-keyword">return</span>&#123;<br>                   done: <span class="hljs-literal">false</span>, <span class="hljs-comment">// 是否遍历完成</span><br>                   value: arr[num++]<br>            	&#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    done: ture<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="p2-for-of-xu-bu-chong">2、for … of ==需补充==</span><a href="#p2-for-of-xu-bu-chong" class="header-anchor">#</a></h3>
+<h3><span id="p2-for-in">2、for … in</span><a href="#p2-for-in" class="header-anchor">#</a></h3>
+<p><code>for...in</code> 用来遍历自身和原型链中可枚举的属性。</p>
+<p>不关对象本身的属性能被遍历，在对象的原型链上的属性也能被遍历。</p>
+<blockquote>
+<p>千万不要用这个遍历数组，虽然数组也是对象，但是数组的索引只是具有整数名称的枚举属性，这个不能保证遍历的顺序，而数组的最重要特征就是有序。</p>
+</blockquote>
+<h2><span id="pqi-jie-gou-fu-zhi">七、解构赋值</span><a href="#pqi-jie-gou-fu-zhi" class="header-anchor">#</a></h2>
+<p>（1）数组的解构赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 一一对应</span><br><span class="hljs-keyword">const</span> [x1, x2, x3, x4] = arr;<br><span class="hljs-comment">// 解构失败返回 undefined</span><br><span class="hljs-comment">// 允许不完全解构</span><br><span class="hljs-comment">// 可以设置默认值(没有对应关系时)</span><br><span class="hljs-keyword">const</span> [x1, x2=<span class="hljs-string">&quot;qwq&quot;</span>, x3, x4] = arr;<br><span class="hljs-comment">// 想把后面没有解构的值保存起来(rest参数必须是最后)</span><br><span class="hljs-keyword">const</span> [x1, x2, ...x] = arr;<br><span class="hljs-comment">// 多维数组保证一一对应也能解构</span><br><br><span class="hljs-comment">// 交换两个变量</span><br><span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>;<br>[b, a] = [a, b];<br><br><span class="hljs-comment">// 例子</span><br><span class="hljs-keyword">let</span> [foo = hoo, hoo = <span class="hljs-number">2</span>] = [];<br><span class="hljs-comment">// 报错 cannot access ‘hoo&#x27; before initialization</span><br></code></pre></td></tr></table></figure>
+<p>（2）对象的解构赋值（用的很多） △</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 对象没有顺序，直接取 对应的方法 （保证同名，key）</span><br><span class="hljs-keyword">const</span>&#123;<br>    log<br>&#125; = <span class="hljs-built_in">console</span>;<br><br><span class="hljs-comment">// 如果键名key和键值value是一样的，则可以直接简写</span><br><span class="hljs-keyword">const</span> obj = &#123;<br>    hoo: <span class="hljs-string">&quot;hoo&quot;</span>,<br>    foo: <span class="hljs-string">&quot;foo&quot;</span><br>&#125;<br><br><span class="hljs-keyword">const</span> obj = &#123;<br>    hoo,<br>    foo<br>&#125;<br><br><span class="hljs-comment">// 也能设置默认值</span><br><br></code></pre></td></tr></table></figure>
+<p>（3）应用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1、函数多个返回值返回</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>];<br>&#125;<br><span class="hljs-keyword">let</span> [a,b,c,d] = fn();<br><span class="hljs-built_in">console</span>.log(a,b,c,d);<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-attr">hoo</span>: <span class="hljs-string">&quot;word&quot;</span> &#125;;<br>&#125;<br><br><span class="hljs-keyword">let</span> &#123; foo &#125; = fn();<br><span class="hljs-built_in">console</span>.log(foo);<br><br><span class="hljs-comment">// 2、函数传参数</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">[x, y, z]</span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log([x, y, z]);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn2</span>(<span class="hljs-params">&#123; x, y, z &#125;</span>) </span>&#123;<br>   <span class="hljs-built_in">console</span>.log(x, y, z);<br>&#125;<br><br><span class="hljs-comment">//3.json数据的提取</span><br><span class="hljs-keyword">let</span> json = &#123;<br>    name: <span class="hljs-string">&quot;lily&quot;</span>,<br>    sex: <span class="hljs-string">&quot;nv&quot;</span>,<br>    age: <span class="hljs-number">18</span><br>&#125;<br><span class="hljs-keyword">let</span> &#123; name, age, sex &#125; = json;<br><span class="hljs-built_in">console</span>.log(name, age, sex)<br></code></pre></td></tr></table></figure>
+<h2><span id="pba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter setter</span><a href="#pba-cun-chu-qi-shu-xing-getter-setter" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> obj1 = &#123;<br>    first: <span class="hljs-string">&quot;李&quot;</span>,<br>    last: <span class="hljs-string">&quot;沛华&quot;</span><br>    <span class="hljs-comment">// getter</span><br>    <span class="hljs-comment">// 一个对象可以有多个存储器属性</span><br>    <span class="hljs-keyword">get</span> <span class="hljs-title">fullName</span>()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.first&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>,last&#125;</span>`</span>;<br>    &#125;<br>	<span class="hljs-comment">// setter</span><br>	<span class="hljs-comment">// ！一定要有参数</span><br>	<span class="hljs-keyword">set</span> <span class="hljs-title">setName</span>(<span class="hljs-params">a</span>)&#123;<br>        <span class="hljs-keyword">var</span> nameArr = a.split(<span class="hljs-string">&quot; &quot;</span>);<br>        <span class="hljs-built_in">this</span>.first = nameArr[<span class="hljs-number">0</span>];<br>        <span class="hljs-built_in">this</span>.last = nameArr[<span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br><br><span class="hljs-built_in">console</span>.log( obj1.fullName);<br><span class="hljs-comment">// 李沛华</span><br>obj1.setName = <span class="hljs-string">&quot;闫 海静&quot;</span>;<br></code></pre></td></tr></table></figure>
+<p>后面用于 vue 数据双向绑定原理。</p>
+<h2><span id="pjiu-dui-xiang-de-bu-chong">九、对象的补充</span><a href="#pjiu-dui-xiang-de-bu-chong" class="header-anchor">#</a></h2>
+<h3><span id="p1-instanceof-cao-zuo-fu">1、instanceof 操作符</span><a href="#p1-instanceof-cao-zuo-fu" class="header-anchor">#</a></h3>
+<p>第一个变量是对象，第二个变量是函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">A <span class="hljs-keyword">instanceof</span> b <br><span class="hljs-comment">// a 沿着 __proto__ ， b 沿着 prototype  一直找</span><br><span class="hljs-comment">// 找到相交的地方返回 true</span><br></code></pre></td></tr></table></figure>
+<p>所有引用类型都是 Object 的实例，所以在检测引用类型和 Object 都会返回 true。所有基本类型都不是对象，使用会返回 <code>false</code>。</p>
+<h3><span id="p2-new-yun-suan-fu-liu-cheng">2、new 运算符流程</span><a href="#p2-new-yun-suan-fu-liu-cheng" class="header-anchor">#</a></h3>
+<ol>
+<li>
+<p>创建对象，开辟内存空间（堆）</p>
+</li>
+<li>
+<p>设置原型链</p>
+</li>
+<li>
+<p>this指向该内存</p>
+</li>
+<li>
+<p>执行函数代码</p>
+</li>
+<li>
+<p>将创建对象实例返回</p>
+</li>
+</ol>
+<h3><span id="p3-dui-xiang-de-kao-bei">3、对象的拷贝</span><a href="#p3-dui-xiang-de-kao-bei" class="header-anchor">#</a></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/25-JS%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/25-JS%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">JS 函数基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-05 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-05T00:00:00+08:00">2020-07-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 21:06:17" itemprop="dateModified" datetime="2020-08-26T21:06:17+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>[TOC]</p>
+<h1><span id="yi-han-shu-de-ji-ben">一、函数的基本</span><a href="#yi-han-shu-de-ji-ben" class="header-anchor">#</a></h1>
+<p><strong>函数</strong>是可以反复使用的并且命名的代码块。本质上也是一种属于<a href>对象</a>类型的数据。与其他数据类型不同的是，函数的值是可执行的代码。函数分为<strong>系统函数</strong>和<strong>自定义函数</strong>。</p>
+<p>函数是数据，函数名是这个数据的标识。需要访问函数的数据去掉圆括号就好。一个函数可以有多个标识。</p>
+<h2><span id="p1-han-shu-de-zuo-yong">1、函数的作用</span><a href="#p1-han-shu-de-zuo-yong" class="header-anchor">#</a></h2>
+<ul>
+<li>解决代码的冗余问题，实现代码的复用。</li>
+<li>封装代码，让函数内部的代码对外部不可见。</li>
+<li>可以让整个代码项目通过函数模块化。</li>
+</ul>
+<h2><span id="p2-ding-yi-han-shu">2、定义函数</span><a href="#p2-ding-yi-han-shu" class="header-anchor">#</a></h2>
+<p>函数名定义的规则遵循标识符的规则。函数的声明函数名可以重复，一旦重名，前面的覆盖后面的。</p>
+<h3><span id="p-1-sheng-ming-han-shu">（1）声明函数</span><a href="#p-1-sheng-ming-han-shu" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">name</span>(<span class="hljs-params"> args </span>)</span>&#123;<br>    <span class="hljs-comment">// 函数体</span><br>    <span class="hljs-keyword">return</span> statement; <span class="hljs-comment">// 返回语句</span><br>&#125;<br><br><span class="hljs-comment">// name -- 函数名</span><br><span class="hljs-comment">// args -- 参数列表（可选）</span><br></code></pre></td></tr></table></figure>
+<p><code>var</code> 和 <code>function</code> 都是声明语句，它们声明的变量和函数都在JS预编译时被解析，也被称为变量提升和函数提升。</p>
+<p>ES5中，不允许函数书写在非函数的代码块中（比如if语句中）。</p>
+<h3><span id="p-2-han-shu-biao-da-shi-ni-ming-han-shu-shi">（2）函数表达式，匿名函数式</span><a href="#p-2-han-shu-biao-da-shi-ni-ming-han-shu-shi" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 赋值调用（被称为函数表达式，这种方法只能提升函数名，不能提升函数体）</span><br><span class="hljs-comment">// 调用需在创建之后</span><br><span class="hljs-keyword">let</span> fun = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">// 函数体</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>函数可以不书写名字，这种被称为<strong>匿名函数</strong>。</p>
+<p>执行方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 自调用</span><br>( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">// 函数体</span><br>&#125;)();<br><br>!<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">// 函数体</span><br>&#125;();<br></code></pre></td></tr></table></figure>
+<h3><span id="p-3-gou-zao-han-shu">（3）构造函数</span><a href="#p-3-gou-zao-han-shu" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> fun = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Function</span>(<span class="hljs-string">&quot;执行字符串&quot;</span>);<br><span class="hljs-comment">// 这个方法不是很常用</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p3-shi-yong-han-shu">3、使用函数</span><a href="#p3-shi-yong-han-shu" class="header-anchor">#</a></h2>
+<p>函数需要调用才会执行。</p>
+<h3><span id="p-1-can-shu">（1）参数</span><a href="#p-1-can-shu" class="header-anchor">#</a></h3>
+<p>数据传递只有值传递，没有引用传递。</p>
+<p><strong>形参</strong> 形式上的参数，声明函数时候提供的参数。</p>
+<p><strong>实参</strong> 在调用时，实际使用的参数。</p>
+<p><strong>默认参数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// ES6之前</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"> name, age</span>)</span>&#123;<br>    age ? age: age = <span class="hljs-number">18</span>;<br><br><br><span class="hljs-comment">// ES6</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params"> name, age=<span class="hljs-number">18</span></span>)</span>&#123;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>**剩余参数 **</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 可以把不确定的参数表示成数组</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">a, ...b</span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> b;<br>&#125;<br>f(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// [2,3,4]</span><br></code></pre></td></tr></table></figure>
+<p><strong>argument对象</strong></p>
+<p>二者在传值的时候是一一对应的。二者的个数可以不相等，形参多的时候，多出来的自动被赋值 undefined，实参多的时候，多出来的放在**<code>arguments</code>**对象中。该对象在函数内部才有，实际上是一个类数组 array-like 的对象，可以访问这个对象获得传递给函数的每一个实参。函数中的形参可写可不写，即使不写形参也可以使用arguments对象获得，使用形参比较方便。arguments对象的length属性用来确定传递进来多少个实参。可以通过length属性的值的不同（根据传入的参数个数的不同），进行不同的操作。<code>arguments</code>对象中保存着一个叫<code>callee</code>的属性，这个属性是一个指针，它指向拥有这个<code>arguments</code>对象的函数。</p>
+<ul>
+<li>使用arguments对象的length属性可以获取函数的实参个数。</li>
+<li>argument对象只能在函数内可见,因此arguments.legth也只能在函数体内使用。</li>
+<li>使用函数对象的length属性可以获取函数的形参个数,该属性为只读属性,在函数体内,体外都可以使用</li>
+</ul>
+<p>callee 是arguments对象的属性，它引用当前argument对象所在的函数，使用该属性可以在函数体内调用自身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 检测函数的形参和实参是否一致，如果不一致</span><br><span class="hljs-built_in">arguments</span>.length != <span class="hljs-built_in">arguments</span>.callee.length<br></code></pre></td></tr></table></figure>
+<h3><span id="p-2-fan-hui-zhi">（2）返回值</span><a href="#p-2-fan-hui-zhi" class="header-anchor">#</a></h3>
+<p><code>return</code> 没有指定值时函数返回的是<code>undefined</code>，函数在执行完该语句以后立即停止执行并退出函数。</p>
+<h2><span id="p4-jian-tou-han-shu">4、箭头函数 △</span><a href="#p4-jian-tou-han-shu" class="header-anchor">#</a></h2>
+<p>ES6</p>
+<p>（1）写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 函数有参数，函数体只有一句返回值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn1</span>(<span class="hljs-params">n</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> n + <span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-keyword">const</span> fn1 = <span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n + <span class="hljs-number">1</span>;<br><br><span class="hljs-comment">// 函数没有参数，函数体只有一句返回值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn2</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello world&quot;</span>;<br>&#125;<br><span class="hljs-keyword">const</span> fn2 = <span class="hljs-function">() =&gt;</span> <span class="hljs-string">&quot;hello world&quot;</span>;<br><br><span class="hljs-comment">// 函数参数随意，函数体不仅仅是一句返回值</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn3</span>(<span class="hljs-params"></span>)</span>&#123;<br>    ...<br>&#125;<br><span class="hljs-keyword">const</span> fn3 = <span class="hljs-function">() =&gt;</span> &#123;...&#125;;<br></code></pre></td></tr></table></figure>
+<p>（2）特点</p>
+<ul>
+<li>不存在this，即箭头函数<code>this</code>在定义的时候就已经确定了， <code>this</code>指向看定义的位置。</li>
+<li>不能用于构造函数（不能被new实例化）。</li>
+<li>没有<code>argument</code>对象，可用<code>rest</code>参数代替。</li>
+<li>箭头函数不能使用<code>yield</code>命令，即不能用作Generator函数。</li>
+</ul>
+<p>（3）箭头函数的<code>this</code>指向</p>
+<p>待补充。</p>
+<h1><span id="er-te-shu-de-han-shu-biao-da-shi">二、特殊的函数表达式</span><a href="#er-te-shu-de-han-shu-biao-da-shi" class="header-anchor">#</a></h1>
+<h2><span id="p1-li-ji-zhi-xing-han-shu-biao-da-shi">1、立即执行函数表达式</span><a href="#p1-li-ji-zhi-xing-han-shu-biao-da-shi" class="header-anchor">#</a></h2>
+<p><code>IIFE</code>， Immediately Invoked Function Expression，立即执行的函数表达式，即声明的时候立即调用这个函数。</p>
+<p>在规范当中，函数表达式语句:</p>
+<ul>
+<li>不能大括号开头<code>&#123;</code></li>
+<li>不能 function 开头</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;test&#x27;</span>);<br>&#125;)();<br></code></pre></td></tr></table></figure>
+<p>IIFE函数只能运行一次，因为引用类型没有标识符，执行完成后会被JS的垃圾回收机制回收。</p>
+<h2><span id="p2-di-gui-han-shu">2、递归函数</span><a href="#p2-di-gui-han-shu" class="header-anchor">#</a></h2>
+<p>递归就是自己调用自己。多次调用同一函数他们的执行环境是不相同的，在执行环境中的变量互不影响。</p>
+<h2><span id="p3-hui-diao-han-shu-yi-bu-han-shu">3、回调函数、异步函数</span><a href="#p3-hui-diao-han-shu-yi-bu-han-shu" class="header-anchor">#</a></h2>
+<p>回调函数分为同步回调函数，异步回调函数。</p>
+<p>回调函数（callback）。</p>
+<p>什么函数才是回调函数?</p>
+<ul>
+<li>你定义的</li>
+<li>你没有直接调用</li>
+<li>但最终它执行了（在特定条件或时刻）</li>
+</ul>
+<p>常见的回调函数:</p>
+<ul>
+<li>DOM事件函数</li>
+<li>定时器函数</li>
+<li>AJAX回调函数</li>
+<li>生命周期回调函数</li>
+</ul>
+<h1><span id="san-ge-ren-feng-zhuang-han-shu-ku">三、个人封装函数库</span><a href="#san-ge-ren-feng-zhuang-han-shu-ku" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js">;+<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">w</span>)</span>&#123;<br>    <span class="hljs-comment">/* </span><br><span class="hljs-comment">    * xxxx方法：xxxx</span><br><span class="hljs-comment">    * @pargm &#123;x:[type],y:[type]&#125; （参数</span><br><span class="hljs-comment">    * @return &#123;object&#125; x:xxx y:xxx （返回值</span><br><span class="hljs-comment">    */</span><br>    <br>&#125;(windows);<br></code></pre></td></tr></table></figure>
+<ol>
+<li><code>;</code>是为了防止其他库末尾不加分号，引起错误</li>
+<li><code>+</code>等一元运算符代表把匿名函数括起来</li>
+<li>在匿名函数中定义一个对象，把所有方法</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/24-JS%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/24-JS%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">JS 数组 和 Set</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-04 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-04T00:00:00+08:00">2020-07-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 10:44:57" itemprop="dateModified" datetime="2020-08-28T10:44:57+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-shu-zu-de-ji-ben-shi-yong">一、数组的基本使用</span><a href="#yi-shu-zu-de-ji-ben-shi-yong" class="header-anchor">#</a></h1>
+<p><strong>数组（Array）</strong> 是一种引用类型，是<strong>有序</strong>的数据集合。它的**数组下标（index）**从0开始。数组中的每个成员被称为元素，不同元素的值可以为不同类型，数组的长度是弹性的，可读写的。</p>
+<h2><span id="p1-chuang-jian-shu-zu">1. 创建数组</span><a href="#p1-chuang-jian-shu-zu" class="header-anchor">#</a></h2>
+<p>（1）构造函数方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> color = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-string">&#x27;red&#x27;</span>,<span class="hljs-string">&#x27;blue&#x27;</span>,<span class="hljs-string">&#x27;green&#x27;</span>);<br><span class="hljs-comment">//  1. Array 如果仅一个元素且是数值，将创建数值个数元素的数组。</span><br><span class="hljs-comment">//  2. new可以省略。</span><br></code></pre></td></tr></table></figure>
+<p>（2）字面量方式（常用）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> color = [<span class="hljs-string">&#x27;red&#x27;</span>,<span class="hljs-string">&#x27;blue&#x27;</span>,<span class="hljs-string">&#x27;green&#x27;</span>];<br></code></pre></td></tr></table></figure>
+<h2><span id="p2-shu-zu-de-chang-du">2. 数组的长度</span><a href="#p2-shu-zu-de-chang-du" class="header-anchor">#</a></h2>
+<p><code>.length</code> 属性保存数组的元素个数（长度）。可读可写，是一个动态属性，会随元素的变化而自动更新。</p>
+<h2><span id="p3-shu-zu-ji-ben-cao-zuo">3. 数组基本操作</span><a href="#p3-shu-zu-ji-ben-cao-zuo" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>];<br><br><span class="hljs-comment">// 1. 查看元素</span><br>arr[<span class="hljs-number">1</span>]  <span class="hljs-comment">// 查看第二个元素</span><br><br><span class="hljs-comment">// 2. 修改元素</span><br>arr[<span class="hljs-number">1</span>] = <span class="hljs-number">3</span><br><br><span class="hljs-comment">// 3. 在尾部加入一个元素（push方法替代）</span><br>arr[arr.length] = <span class="hljs-number">7</span><br><br></code></pre></td></tr></table></figure>
+<h2><span id="p4-shi-yong-for-bian-li-shu-zu">4. 使用 for 遍历数组</span><a href="#p4-shi-yong-for-bian-li-shu-zu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 冒泡排序法</span><br><span class="hljs-keyword">for</span> ( <span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i&lt;a.length<span class="hljs-number">-1</span>; i++)&#123;<br>    <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">let</span> j=<span class="hljs-number">0</span>; j&lt;a.length<span class="hljs-number">-1</span>-i; j++)&#123;<br>        <span class="hljs-keyword">if</span> (a[j] &gt; a[j+<span class="hljs-number">1</span>])&#123;<br>            temp =a[j];<br>            a[j] =a[j+<span class="hljs-number">1</span>];<br>            a[j+<span class="hljs-number">1</span>] =temp;<br>        &#125;<br>    &#125;<br>&#125;<br><br><br><span class="hljs-comment">// 斐波那契数列</span><br><span class="hljs-comment">// 打印出斐波那契数列的前100个值在数组中</span><br><span class="hljs-comment">// 1,2,3,5,8,13 初始值1和2   其他的值是前两个值的和</span><br><br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">100</span>; i++) &#123;<br>    arr[i] = arr[i<span class="hljs-number">-2</span>] + arr[i<span class="hljs-number">-1</span>];<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h2><span id="p5-er-wei-shu-zu">5. 二维数组</span><a href="#p5-er-wei-shu-zu" class="header-anchor">#</a></h2>
+<p>JS不支持多维数组，设置元素值为数组可以看成是一个<strong>二维数组</strong>。</p>
+<h2><span id="p6-kuo-zhan-yun-suan-fu">6、扩展运算符</span><a href="#p6-kuo-zhan-yun-suan-fu" class="header-anchor">#</a></h2>
+<p>扩展运算符（spread）是三个点（<code>...</code>）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列，目前也可以用来展开数组。</p>
+<h2><span id="p7-qi-ta">7. 其他</span><a href="#p7-qi-ta" class="header-anchor">#</a></h2>
+<p>类数组 也称为伪数组，就是类似数组结构的对象。这个对象的属性名为非负整数，并且从0开始，有序递增，同时包含 <code>length</code> 属性，确保其值与有序下标属性个数保持一致，方便进行迭代操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 遍历伪数组</span><br>[].forEach.call( arrayLike, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> item,index</span>)</span>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125; )<br><br><span class="hljs-comment">// 转数组</span><br>[].slice.call( arrayLike )<br></code></pre></td></tr></table></figure>
+<p>空位数组 就是数组中包含空元素。所谓空元素，就是在语法上数组中两个逗号之间没有任何值。空元素可以读写，<code>length</code>属性不排斥空位，如果使用for语句和<code>length</code>属性遍历数组，空元素都可以被读取，空元素返回值为<code>undefined</code>。出现空位数组的情况如下:</p>
+<ul>
+<li>直接量定义</li>
+<li>构造函数定义</li>
+<li><code>delete</code>删除</li>
+</ul>
+<p>关联数组 如果数组的下标值超出范围，如负数、浮点数、布尔值、对象或其他值，JS会自动把它转换为一个字符串，并定义为关联数组。关联数组就是与数组关联的对象，简单地说就是数组对象，字符串下标就是数组对象的属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>];<br>arr[<span class="hljs-number">3.1</span>] = <span class="hljs-string">&quot;haha&quot;</span>; <span class="hljs-comment">// 相当于给数组扩展了一些属性和方法</span><br>arr[<span class="hljs-literal">true</span>] = <span class="hljs-string">&quot;buer&quot;</span>;<br><span class="hljs-built_in">console</span>.log(arr12);<br><span class="hljs-built_in">console</span>.log(arr12[<span class="hljs-number">3.1</span>]);<br></code></pre></td></tr></table></figure>
+<h1><span id="er-shu-zu-fang-fa">二、数组方法</span><a href="#er-shu-zu-fang-fa" class="header-anchor">#</a></h1>
+<h2><span id="p1-zhan-he-dui-lie-cao-zuo">1、栈和队列操作 △</span><a href="#p1-zhan-he-dui-lie-cao-zuo" class="header-anchor">#</a></h2>
+<p>栈是一种先进后出的数据结构，队列是一种先进先出的数据结构。</p>
+<p><code>.push()</code> 接收任意数量参数，并逐个添加到数组末尾，返回修改后数组的长度。</p>
+<p><code>.pop()</code> 无参数，移除数组最后一项并返回该项。</p>
+<p><code>.unshift()</code> 接收任意数量参数，并逐个添加到数组头部，返回修改后数组的长度。</p>
+<p><code>.shift()</code> 无参数，移除数组第一项并返回该项。</p>
+<p>这些方法都会修改原数组。</p>
+<h2><span id="p2-jian-suo">2、检索 △</span><a href="#p2-jian-suo" class="header-anchor">#</a></h2>
+<h3><span id="pindexof-lastindexof">indexOf、lastIndexOf</span><a href="#pindexof-lastindexof" class="header-anchor">#</a></h3>
+<p>indexOf 返回的是下标，第二个参数是起始位置</p>
+<p>indexOf 是全等查找，找不到NaN</p>
+<h3><span id="pincludes">includes △</span><a href="#pincludes" class="header-anchor">#</a></h3>
+<p>includes 返回一个布尔值，表示某个数组是否包含给定的值。</p>
+<h3><span id="pfind">find</span><a href="#pfind" class="header-anchor">#</a></h3>
+<p>find 找出符合条件的数组成员。</p>
+<h3><span id="pfindindex">findIndex</span><a href="#pfindindex" class="header-anchor">#</a></h3>
+<p><code>let result = arr.findIndex(fn)</code></p>
+<p>传入一个测试函数，返回符合条件（测试函数返回<code>ture</code>时）数组的第一个元素位置，</p>
+<p>如果没有符合条件则返回<code>-1</code>。</p>
+<p>如果是空数组，测试函数是不会执行的，这个方法不会改变原先数组的值。</p>
+<h2><span id="p3-pai-xu">3、排序</span><a href="#p3-pai-xu" class="header-anchor">#</a></h2>
+<p>① 对当前数组进行排序，会修改当前数组。</p>
+<p>② 参数可选，不传参数按默认unicode码进行排序，如果要进行数字的升序或者降序排序，需要传入一个比较函数作为参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 升序</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>)</span>&#123;<span class="hljs-keyword">return</span> a-b;&#125;<br><span class="hljs-comment">// 降序</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">a, b</span>)</span>&#123;<span class="hljs-keyword">return</span> b-a;&#125;<br><span class="hljs-comment">// 按照数组对象中的某个属性进行排序</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">prop</span>)</span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>)</span>&#123;<br>        <span class="hljs-keyword">var</span> v1 = a[prop];<br>        <span class="hljs-keyword">var</span> v2 = b[prop];<br>        <span class="hljs-keyword">return</span> v1-v2;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 冒泡排序法</span><br><span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;a.length<span class="hljs-number">-1</span>; i++)&#123;<br>    <span class="hljs-keyword">for</span>( <span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>; j&lt;a.length<span class="hljs-number">-1</span>-i; j++)&#123;<br>        <span class="hljs-comment">// 正序</span><br>        <span class="hljs-keyword">if</span>( a[j]&gt;a[j+<span class="hljs-number">1</span>])&#123;<br>            t = a[j+<span class="hljs-number">1</span>];<br>            a[j+<span class="hljs-number">1</span>] = a[j];<br>            a[j] = t;<br>            <br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>没有参数的情况下，该方法会调用每个数组元素的 toString 方法，然后比较的是字符串。在接收一个比较函数作为参数的情况下，来确定排序。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// v1</span><br><span class="hljs-keyword">var</span> res = values.sort(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value1,value2</span>))</span>&#123;<br>    <span class="hljs-keyword">if</span> ( value1 &lt; value2 )&#123;<br>  			<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>		&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (value1 &gt; value2)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;;<br><br><br><span class="hljs-comment">// v2 正序</span><br><span class="hljs-keyword">var</span> res = values.sort( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value1,value2</span>) )</span>&#123;<br>     <span class="hljs-keyword">return</span> value1 - value2;<br>&#125;;<br><br><span class="hljs-comment">// 倒序</span><br><span class="hljs-keyword">var</span> res = values.sort( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value1,value2</span>) )</span>&#123;<br>     <span class="hljs-keyword">return</span> value2 - value1;<br>&#125;;<br><br><br><br></code></pre></td></tr></table></figure>
+<h2><span id="p4-shan-chu-ti-huan-cha-ru-qie-ge">4、删除、替换、插入、切割</span><a href="#p4-shan-chu-ti-huan-cha-ru-qie-ge" class="header-anchor">#</a></h2>
+<h3><span id="psplice">splice</span><a href="#psplice" class="header-anchor">#</a></h3>
+<p><code>splice</code> 可以对数组进行删除、替换、插入。</p>
+<p>会修改原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// （1）删除</span><br><span class="hljs-comment">//  第一个参数指定开始删除的index</span><br><span class="hljs-comment">//  第二个参数指定要删除的项数</span><br>arr.splice(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <br><br><span class="hljs-comment">//  (2) 替换</span><br><span class="hljs-comment">//  第一个参数指定开始index</span><br><span class="hljs-comment">//  第二个参数指定要删除的项数</span><br><span class="hljs-comment">//  第三个参数（或者更多的参数）指定要插入的对象</span><br>arr.splice(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);<br><br><span class="hljs-comment">//  (3) 插入</span><br><span class="hljs-comment">//  在（2）中，把第二个参数设置为0就可以插入内容了。</span><br><br><span class="hljs-comment">//  通过delete删除数组</span><br><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>];<br><br><span class="hljs-keyword">delete</span> arr[<span class="hljs-number">1</span>];<br>arr[<span class="hljs-number">1</span>];<span class="hljs-comment">// undefined</span><br></code></pre></td></tr></table></figure>
+<h3><span id="pslice">slice</span><a href="#pslice" class="header-anchor">#</a></h3>
+<p><code>slice</code> 基于当前数组中的一个或者多个项目创建一个新数组，该方法<strong>不影响原始数组</strong>（实际上就是切割数组），一个参数就是从该位置切割到数组尾，两个参数就是切割起始位置和结束位置（不包括结束位置）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>];<br><br><span class="hljs-keyword">var</span> s1 = arr.slice(<span class="hljs-number">1</span>);  <span class="hljs-comment">// [ &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span><br><span class="hljs-keyword">var</span> s2 = arr.slice(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>); <span class="hljs-comment">// [&#x27;b&#x27;]</span><br><span class="hljs-keyword">var</span> s3 = arr.slice(<span class="hljs-number">1</span>,<span class="hljs-number">3</span>); <span class="hljs-comment">// [&#x27;b&#x27;,&#x27;c&#x27;]</span><br><span class="hljs-keyword">var</span> s4 = arr.slice();   <span class="hljs-comment">// 和arr相同</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p5-shu-zu-de-he-bing-pin-jie">5、数组的合并、拼接</span><a href="#p5-shu-zu-de-he-bing-pin-jie" class="header-anchor">#</a></h2>
+<h4><span id="pconcat">concat</span><a href="#pconcat" class="header-anchor">#</a></h4>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 合并、拼接数组</span><br><span class="hljs-keyword">var</span> a1 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], a2 = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>];<br><br><span class="hljs-keyword">var</span> arr = a1.concat(a2,[<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]);<span class="hljs-comment">// [1,2,4,5,6,7,8,9]</span><br><span class="hljs-keyword">var</span> arr = a1.concat(a2,<span class="hljs-number">10</span>);<span class="hljs-comment">// [1,2,3,4,5,6,10]</span><br><br><span class="hljs-keyword">var</span> arr = a1.concat(); <span class="hljs-comment">// 复制字符串</span><br>arr1 == a1 <span class="hljs-comment">// false  </span><br></code></pre></td></tr></table></figure>
+<h3><span id="pjoin">join</span><a href="#pjoin" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 使用指定的字符串拼接数组中的每个元素，组成一个字符串。</span><br><span class="hljs-comment">// 转字符串</span><br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>];<br><span class="hljs-keyword">var</span> str = arr.join(); <span class="hljs-comment">// &#x27;1,2,3&#x27;</span><br><span class="hljs-keyword">var</span> str2 = arr.join(<span class="hljs-string">&#x27;#&#x27;</span>); <span class="hljs-comment">// &#x27;1#2#3&#x27;</span><br></code></pre></td></tr></table></figure>
+<h3><span id="p5-shu-zu-de-zhuan-huan">5、数组的转换</span><a href="#p5-shu-zu-de-zhuan-huan" class="header-anchor">#</a></h3>
+<h3><span id="preverse">reverse</span><a href="#preverse" class="header-anchor">#</a></h3>
+<p>反转数组，会修改原数组，反转之后数组引用地址没变。</p>
+<h3><span id="p7-foreach-map-filter-every-some">7、forEach、map、filter、every、some</span><a href="#p7-foreach-map-filter-every-some" class="header-anchor">#</a></h3>
+<p>（1）<strong>forEach</strong> 迭代数组</p>
+<p><code>forEach</code> 只能遍历数组。</p>
+<p>不能使用break、continue退出。（可以使用 return）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 过年了，每个人增加一岁</span><br>Arr.forEach( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> item, index, array</span>)</span>&#123;<br>    Arr [index] = item + <span class="hljs-number">1</span>;<br>&#125;)<br><br><span class="hljs-comment">// 没有返回值</span><br></code></pre></td></tr></table></figure>
+<p>（2）map 映射数组</p>
+<p><code>map</code> 被称为映射数组。参数是一个回调函数。该方法可以对数组的每一个元素调用指定的回调函数，并返回包含结果的数组。==返回一个新数组==，其中每一个元素均为关联的原始数组元素的回调函数返回值。不会为缺失的元素调用回调函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js">Arr. map( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> item, index</span>)</span>&#123;<br>    <span class="hljs-comment">// 回调函数体</span><br>&#125;, thisArg );<br><span class="hljs-comment">// 参数：</span><br><span class="hljs-comment">//   - item 项</span><br><span class="hljs-comment">//   - index 下标</span><br><span class="hljs-comment">// 返回值： 返回一个新数组</span><br><br><span class="hljs-keyword">var</span> newAge = oldAge.map( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item, index,arr</span>) )</span>&#123;<br>    <span class="hljs-keyword">return</span> item + <span class="hljs-number">1</span>;<br>&#125;<br><br><span class="hljs-comment">// 可以使用系统的内置函数</span><br><br><span class="hljs-comment">// 题目</span><br>[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>].map[ <span class="hljs-built_in">parseInt</span> ];   <span class="hljs-comment">// [1,NaN,NaN]</span><br><span class="hljs-comment">// 调用了parseInt 进制转换方法</span><br><span class="hljs-comment">// 即 .map[ parseInt( item, index )]</span><br></code></pre></td></tr></table></figure>
+<p>（3）filter 过滤数组</p>
+<p>返回数组中满足指定条件的元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs js">Arr. filter (<span class="hljs-function"><span class="hljs-keyword">function</span>, <span class="hljs-title">thisArg</span>);</span><br><span class="hljs-function"></span><br><span class="hljs-function">// 返回一个新数组</span><br><span class="hljs-function"></span><br><span class="hljs-function">// 筛选出所有的偶数</span><br>var arr = [1,2,3,4,5,6,6,7,8,9];<br><span class="hljs-keyword">var</span> evenArr = arr.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item,index,array</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> item % <span class="hljs-number">2</span> == <span class="hljs-number">0</span><br>&#125;)<br><span class="hljs-built_in">console</span>.log(evenArr);<span class="hljs-comment">//[2,4,6,6,8]</span><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">item,index,array</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> item % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-keyword">var</span> evenArr = arr.filter(f);<br><span class="hljs-built_in">console</span>.log(evenArr);<br><br><br><span class="hljs-comment">// 使用filter过滤掉不符合条件的值</span><br><span class="hljs-keyword">var</span> obj = &#123;<span class="hljs-attr">max</span>:<span class="hljs-number">80</span>,<span class="hljs-attr">min</span>:<span class="hljs-number">14</span>&#125;;<br><span class="hljs-keyword">var</span> age = [<span class="hljs-number">12</span>,<span class="hljs-number">11</span>,<span class="hljs-number">34</span>,<span class="hljs-number">56</span>,<span class="hljs-number">90</span>,<span class="hljs-number">92</span>,<span class="hljs-number">65</span>,<span class="hljs-number">65</span>,<span class="hljs-number">34</span>,<span class="hljs-number">31</span>];<br><span class="hljs-keyword">var</span> newAge = age.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> item &gt;= <span class="hljs-built_in">this</span>.min &amp;&amp; item &lt;= <span class="hljs-built_in">this</span>.max;<br>&#125;,obj)<br><span class="hljs-built_in">console</span>.log(newAge);<br></code></pre></td></tr></table></figure>
+<p>（4）every 检测是否全部符合</p>
+<ul>
+<li>every方法可以测试的所有元素是否都满足指定的测试</li>
+<li>every中是函数，每一项数组的值，依次进入函数运行，函数最终要要求返回布尔值。</li>
+<li>如果有一项返回false，则停止执行，every返回false</li>
+<li>如果所有的项全部返回true  那么 整个every方法就返回true</li>
+<li>every方法的回调函数拥有3个参数：1、item  数组的每一项 2、index  数组的这一项 对应的下标  3、array  原数组</li>
+<li>every方法还有第二个可选的参数，可在回调函数中为其引用this关键字的对象。如果省略，则undefined是this值</li>
+</ul>
+<p>（5）some 检测是否存在符合</p>
+<ul>
+<li>使用some方法可以确定数组的元素是否有满足指定的测试的项</li>
+<li>只要一项返回true 那么 some 方法就返回 true（一真即真）</li>
+<li>其余和every类似</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 我们得到一组年龄，如果所有的人都成年了，那么我们就开启成人网吧模式，否则就进入儿童模式</span><br><span class="hljs-keyword">var</span> userAge = [<span class="hljs-number">19</span>,<span class="hljs-number">18</span>,<span class="hljs-number">21</span>,<span class="hljs-number">23</span>,<span class="hljs-number">14</span>,<span class="hljs-number">45</span>];<br><span class="hljs-keyword">var</span> isPerson = userAge.some(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item,index,array</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> item &lt; <span class="hljs-number">18</span>;<br>&#125;);<br><span class="hljs-keyword">if</span> (isPerson)&#123;<br>    alert(<span class="hljs-string">&quot;儿童模式&quot;</span>)<br>&#125; <span class="hljs-keyword">else</span>&#123;<br>    alert(<span class="hljs-string">&quot;成人模式&quot;</span>)<br>&#125;<br><br><br><span class="hljs-comment">//this指向对象的</span><br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">18</span>,<span class="hljs-number">19</span>,<span class="hljs-number">20</span>,<span class="hljs-number">21</span>,<span class="hljs-number">30</span>,<span class="hljs-number">11</span>,<span class="hljs-number">14</span>,<span class="hljs-number">19</span>,<span class="hljs-number">40</span>];<br><span class="hljs-keyword">var</span> isTrue = arr.some(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item,index,array</span>) </span>&#123;<br>    <span class="hljs-comment">// return item &lt; 18;</span><br>    <span class="hljs-keyword">return</span> item &lt; <span class="hljs-built_in">this</span>.max;<br>&#125;,&#123;<span class="hljs-attr">max</span>:<span class="hljs-number">18</span>&#125;)<br><span class="hljs-built_in">console</span>.log(isTrue);<br></code></pre></td></tr></table></figure>
+<h3><span id="p9-tostring">9、toString</span><a href="#p9-tostring" class="header-anchor">#</a></h3>
+<p>数组转成字符串。</p>
+<h3><span id="p10-reduce-es6">10、reduce <code>ES6</code></span><a href="#p10-reduce-es6" class="header-anchor">#</a></h3>
+<p><code>reduce()</code> 实现数组去重等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr5 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>];<br><span class="hljs-keyword">let</span> newArr = arr5.reduce(<span class="hljs-function">(<span class="hljs-params">pre, cur</span>)=&gt;</span>&#123;<br>	<span class="hljs-keyword">if</span>(!pre.includes(cur))&#123;<br>		<span class="hljs-keyword">return</span> pre.concat(cur)<br>	&#125; <span class="hljs-keyword">else</span> &#123;<br>	<span class="hljs-keyword">return</span> pre<br>&#125;<br>&#125;,[])<br><span class="hljs-built_in">console</span>.log(newArr)<br></code></pre></td></tr></table></figure>
+<h3><span id="p11-fill">11、fill</span><a href="#p11-fill" class="header-anchor">#</a></h3>
+<p><code>fill()</code> 填充一个数组，不会改变原始字符串。</p>
+<p>会修改原数组</p>
+<p>填充的内容，填充起始位置，填充结束位置（不包括）。</p>
+<h3><span id="p12-array-from">12、Array.from</span><a href="#p12-array-from" class="header-anchor">#</a></h3>
+<h3><span id="p13-array-of">13、Array.of</span><a href="#p13-array-of" class="header-anchor">#</a></h3>
+<p>创建一个新数组。</p>
+<p>用来弥补 <code>new Array</code> 的不足。</p>
+<h3><span id="p14-copywithin">14、CopyWithin</span><a href="#p14-copywithin" class="header-anchor">#</a></h3>
+<p>会修改当前数组。</p>
+<p>替换的开始位置，复制的起始位置，复制的结束位置（不包括）。</p>
+<h3><span id="p15-flat">15、flat</span><a href="#p15-flat" class="header-anchor">#</a></h3>
+<p>数组降维，多维数组转一维数组。</p>
+<h3><span id="p17-kuo-zhan-yun-suan-fu">17、扩展运算符</span><a href="#p17-kuo-zhan-yun-suan-fu" class="header-anchor">#</a></h3>
+<p><code>...</code> 三点运算符，把数组在其他数组中展开</p>
+<p>（1）复制数组（深拷贝） <code>let nArr = [...arr]</code></p>
+<p>（2）合并数组 <code>let nAtr = [...arr1, ...arr2]</code></p>
+<p>（3）解构赋值</p>
+<p>（4）字符串转数组 可以展开字符串，放在数组中，直接转为数组</p>
+<table>
+<thead>
+<tr>
+<th>数组方法<br>Array.protype.</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>indexOf(value)</code></td>
+<td>查找到就返回下标，否则返回<code>-1</code></td>
+</tr>
+<tr>
+<td><code>lastIndexOf(value)</code></td>
+<td>倒序查找，同上</td>
+</tr>
+<tr>
+<td><code>forEach()</code></td>
+<td>遍历数组</td>
+</tr>
+<tr>
+<td><code>map()</code></td>
+<td>==映射数组==<br>返回一个新数组（相同长度）<br>新数组的值是每次遍历的返回值·</td>
+</tr>
+<tr>
+<td><code>filter</code>()</td>
+<td>==过滤数组==<br>有返回值，当某一个值函数时，如果当前函数返回<code>true</code>，则把当前的的数组值放到返回值中。</td>
+</tr>
+<tr>
+<td><code>reduce(callback)</code></td>
+<td>==累加数组==<br>参数: function(prev, now, index){}</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br><span class="hljs-comment">// 格式</span><br>reduce( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> prev, now, index</span>)</span>&#123;&#125; [, init])<br><br><span class="hljs-comment">// 例子 累加求和</span><br><span class="hljs-keyword">var</span> val = a.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> prev, now, index</span>)</span>&#123;<br>    <span class="hljs-comment">// prev 上一次函数的返回值</span><br>    <span class="hljs-comment">// now 当前遍历数组的值</span><br>    <span class="hljs-comment">// index </span><br>    <span class="hljs-comment">// 只有一个函数参数的话</span><br>    <span class="hljs-comment">// 第一次进来下标就是1</span><br>    <span class="hljs-comment">// prev = arr[0]</span><br>    <span class="hljs-comment">// 少遍历一次</span><br>    <span class="hljs-comment">// 两个参数</span><br>    <span class="hljs-comment">// 第二个参数就是prev</span><br>    <br>    retuen prev + now;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<h1><span id="san-set">三、Set +</span><a href="#san-set" class="header-anchor">#</a></h1>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">JS 字符串</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-03T00:00:00+08:00">2020-07-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 18:20:27" itemprop="dateModified" datetime="2020-08-26T18:20:27+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>[TOC]</p>
+<h1><span id="yi-zi-fu-chuan">一、字符串</span><a href="#yi-zi-fu-chuan" class="header-anchor">#</a></h1>
+<h2><span id="p1-mo-ban-zi-fu-chuan">1、模版字符串 +</span><a href="#p1-mo-ban-zi-fu-chuan" class="header-anchor">#</a></h2>
+<h2><span id="p2-bao-zhuang-dui-xiang">2、包装对象 +</span><a href="#p2-bao-zhuang-dui-xiang" class="header-anchor">#</a></h2>
+<p>在JS中，提供了三个特殊的构造函数<code>Number</code>、<code>String</code>、<code>Boolean</code>，可以使用new来操作，会生成对应类型的对象。（实际开发中不用）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> str = <span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">&quot;abc&quot;</span>);<br><span class="hljs-comment">// 这确实是一个对象</span><br><span class="hljs-comment">// 被当成对象</span><br><span class="hljs-comment">// __proto__指向原型对象。原型方法有大量的方法</span><br></code></pre></td></tr></table></figure>
+<p>执行过程：</p>
+<ol>
+<li>声明了一个字符串放入了str中。</li>
+<li>当发现你把str当做对象调用时，js内部会自动调用<code>new String('abc')</code>创建了一个对象（字符串对象，包装对象）；</li>
+<li>然后使用包装对象的属性、方法。当使用完成之后，又会将包装对象转换成字符串。</li>
+</ol>
+<p><code>number</code>、<code>boolean</code>、<code>string</code> 都会经过上面的过程。</p>
+<p>普通对象和包装对象的区别：主要针对对象的<strong>生命周期</strong>。</p>
+<ul>
+<li>使用 new 操作符创建的引用类型的实例，在执行流离开之前的作用域中将会一直存在。</li>
+<li>自动创建的基本包装类型对象，只存在于那一行代码的执行的一瞬间，然后立即销毁了。</li>
+</ul>
+<h1><span id="er-zi-fu-chuan-fang-fa">二、字符串方法</span><a href="#er-zi-fu-chuan-fang-fa" class="header-anchor">#</a></h1>
+<h2><span id="p1-zi-fu-chuan-cha-zhao">1、字符串查找</span><a href="#p1-zi-fu-chuan-cha-zhao" class="header-anchor">#</a></h2>
+<h3><span id="pindexof-lastindexof">indexOf、lastIndexOf</span><a href="#pindexof-lastindexof" class="header-anchor">#</a></h3>
+<p><code>indexOf()</code> 正序查找 <code>lastIndexOf()</code> 逆序查找 根据参数字符串，返回指定子字符串的下标位置，如果没找到，返回<code>-1</code></p>
+<ul>
+<li>第1个参数 查找的目标</li>
+<li>第2个参数 可选 开始查找的位置</li>
+</ul>
+<h3><span id="psearch">search</span><a href="#psearch" class="header-anchor">#</a></h3>
+<p><code>search()</code> 功能和<code>indexOf()</code>相同，定义匹配模式，只有一个参数，没有反向检索和全局模式。</p>
+<h3><span id="pmacth">macth</span><a href="#pmacth" class="header-anchor">#</a></h3>
+<p><code>macth()</code> 找出所有匹配的子字符串，并以数组的形式返回，如果匹配模式没有指定全局，则进行单次匹配，如果没找到返回<code>null</code>。</p>
+<h3><span id="pcharat-charcodeat">charAt、charCodeAt</span><a href="#pcharat-charcodeat" class="header-anchor">#</a></h3>
+<p><code>charAt(n)</code> 返回字符串中的第n个字符，如果n超出字符串范围，返回空串。</p>
+<p><code>charCodeAt(n)</code> 返回字符串中第n个字符的字符编码。</p>
+<h3><span id="pincludes-startswith-endswith">includes、startsWith、endsWith</span><a href="#pincludes-startswith-endswith" class="header-anchor">#</a></h3>
+<p><code>includes(string,n)</code>  ES6 返回布尔值，表示是否找到参数字符串</p>
+<p><code>startsWith()</code> <code>endsWith()</code> 判断字符串开头、结尾 中间 有没有包含某个字符串</p>
+<h2><span id="p2-zi-fu-chuan-jie-qu-qie-ge">2、字符串截取、切割</span><a href="#p2-zi-fu-chuan-jie-qu-qie-ge" class="header-anchor">#</a></h2>
+<h3><span id="psubstr">substr</span><a href="#psubstr" class="header-anchor">#</a></h3>
+<p><code>substr</code> 根据指定长度截取字符串（不推荐使用该方法）</p>
+<ul>
+<li>第1个参数 起始下标</li>
+<li>第2个参数 截取的长度（如果省略，则代表截取到末尾）</li>
+</ul>
+<h3><span id="pslice-substring">slice、substring</span><a href="#pslice-substring" class="header-anchor">#</a></h3>
+<p><code>slice</code> 、<code>substring</code> 根据指定的起止下标截取字符串</p>
+<ul>
+<li>第1个 起始下标</li>
+<li>第2个 结束下标（不包含），如果省略，代表剩下的全部截取</li>
+<li>起始和结束位置相比较的大小无法确定的时候可以使用<code>substring</code></li>
+<li>如果为负值，<code>slic</code>e能把负值当作从右向左。而<code>substring</code>视其无效</li>
+</ul>
+<h2><span id="p3-zi-fu-chuan-zhuan-huan">3、字符串转换</span><a href="#p3-zi-fu-chuan-zhuan-huan" class="header-anchor">#</a></h2>
+<h3><span id="pvalueof-he-tostring">valueOf 和 toString</span><a href="#pvalueof-he-tostring" class="header-anchor">#</a></h3>
+<p>valueOf 返回对象的字符串、数值或者布尔值表示</p>
+<p>toString 返回对象的字符串表示</p>
+<h3><span id="psplit">split</span><a href="#psplit" class="header-anchor">#</a></h3>
+<p>第一个参数如果是空串，则会分割每个字符</p>
+<p>第二个参数用于指定分割后的数组大小，用来确保返回的数组不会超过这个大小</p>
+<h3><span id="pda-xiao-xie-zhuan-huan">大小写转换</span><a href="#pda-xiao-xie-zhuan-huan" class="header-anchor">#</a></h3>
+<p><code>toLowerCase()</code> 将字符串转换成小写</p>
+<p><code>toUpperCase()</code> 将字符串转换成大写</p>
+<h2><span id="p4-zi-fu-chuan-pin-jie-he-chu-li">4、字符串拼接和处理</span><a href="#p4-zi-fu-chuan-pin-jie-he-chu-li" class="header-anchor">#</a></h2>
+<h3><span id="pconcat">concat</span><a href="#pconcat" class="header-anchor">#</a></h3>
+<p>拼接字符串。</p>
+<h3><span id="pshan-kong-ge">删空格</span><a href="#pshan-kong-ge" class="header-anchor">#</a></h3>
+<p><code>trim()</code> 可以用于删除字符串的头尾空格，不会改变原始字符串。</p>
+<p><code>trim()</code>/<code>trimStart()</code>/<code>trimEnd()</code></p>
+<h3><span id="prepeat">repeat</span><a href="#prepeat" class="header-anchor">#</a></h3>
+<p>重复字符串。</p>
+<h3><span id="prepace">repace</span><a href="#prepace" class="header-anchor">#</a></h3>
+<p>默认只能替换一次。</p>
+<p>除非使用正则表达式。</p>
+<h3><span id="pzi-fu-chuan-bu-quan">字符串补全 +</span><a href="#pzi-fu-chuan-bu-quan" class="header-anchor">#</a></h3>
+<p>ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。</p>
+<p><code>padStart()</code> 头部补全， <code>padEnd()</code> 尾部补全。</p>
+<h3><span id="p"></span><a href="#p" class="header-anchor">#</a></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/22-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/22-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97/" class="post-title-link" itemprop="url">JS 数据类型和运算</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-02 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-02T00:00:00+08:00">2020-07-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 11:21:56" itemprop="dateModified" datetime="2020-08-27T11:21:56+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>（1）基本数据类型</p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>Symbol</li>
+<li>bigInt</li>
+</ul>
+<p>（2） 引用类型</p>
+<ul>
+<li>Object</li>
+<li>Array</li>
+<li>Function</li>
+<li>Map</li>
+<li>Set</li>
+</ul>
+<h1><span id="yi-ji-ben-shu-ju-lei-xing">一、基本数据类型</span><a href="#yi-ji-ben-shu-ju-lei-xing" class="header-anchor">#</a></h1>
+<p>（1）基本数据类型</p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Null</li>
+<li>Undefined</li>
+<li>Symbol</li>
+<li>bigInt</li>
+</ul>
+<h2><span id="p1-number">1、Number</span><a href="#p1-number" class="header-anchor">#</a></h2>
+<p>这些都是 <strong>数字 Number</strong> :</p>
+<p>（1）整数: 1，-1</p>
+<p>（2）小数（浮点数）: 0.1<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>（3）科学计数法：<code>1.1e6</code>、<code>1.2E-7</code></p>
+<p>（4）二进制<code>0b11</code>、八进制<code>012</code>、十六进制<code>0xff</code></p>
+<p>（5）非数字：<code>NaN</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<p>（6）无穷：<code>Infinity</code></p>
+<p>（7）<code>Number.MAX_VALUE</code> <code>Number_MIN_VALUE</code></p>
+<p>JS 所有的数字都是64位浮点数存储。</p>
+<p><code>Number()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot; &quot;</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;123&quot;</span>) <span class="hljs-comment">//123</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;a123&quot;</span>)  <span class="hljs-comment">//NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">true</span>) <span class="hljs-comment">//1</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">false</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">NaN</span>)  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>([])  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(&#123;&#125;)  <span class="hljs-comment">// NaN</span><br></code></pre></td></tr></table></figure>
+<p><code>parseInt</code></p>
+<p>（1）值转换成整数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;a123&quot;</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;1a123&quot;</span>) <span class="hljs-comment">// 1</span><br></code></pre></td></tr></table></figure>
+<p>（2）转换进制</p>
+<p>第二个参数是要转换的进制，默认是10。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) <span class="hljs-comment">// 0</span><br></code></pre></td></tr></table></figure>
+<p><code>parseFloat</code></p>
+<p>值转换成浮点数。</p>
+<p>如果变量<code>*1</code>会被自动转换成数值，如果无法转换，则是<code>NaN</code>。</p>
+<h2><span id="p2-string">2、String</span><a href="#p2-string" class="header-anchor">#</a></h2>
+<p><strong>字符串（String）</strong> 内容用单引号、双引号<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>、反引号<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>包起来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 普通的字符串</span><br><span class="hljs-string">&quot;这是字符串&quot;</span><br><span class="hljs-string">&#x27;这也是字符串&#x27;</span><br><span class="hljs-string">`<span class="hljs-subst">$&#123;varName&#125;</span>这也是字符串`</span>  <span class="hljs-comment">// 可以嵌入变量，格式$&#123;变量名&#125;</span><br><span class="hljs-string">`</span><br><span class="hljs-string">这也是</span><br><span class="hljs-string">是</span><br><span class="hljs-string">字符串</span><br><span class="hljs-string">`</span><br><br><br><span class="hljs-comment">// 空串</span><br><span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-comment">// 空白串</span><br><span class="hljs-string">&quot;   &quot;</span><br></code></pre></td></tr></table></figure>
+<p><code>.length</code> 获取字符串的长度</p>
+<p><code>A+B</code> 连接A、B字符串</p>
+<p>在ES5中，字符串可以作为只读数组使用，可以通过中括号运算符添加下标访问某值。</p>
+<p><code>String()</code></p>
+<p><code>.toString()</code></p>
+<h2><span id="p3-boolean">3、Boolean</span><a href="#p3-boolean" class="header-anchor">#</a></h2>
+<p>只有两个值，<strong>true</strong> 和 <strong>false</strong>。</p>
+<h2><span id="p4-null">4、null</span><a href="#p4-null" class="header-anchor">#</a></h2>
+<p>空对象指针。</p>
+<p>常见环境：</p>
+<ul>
+<li>作为函数的参数，表示该函数的参数不是对象。</li>
+<li>作为对象原型链的终点。</li>
+<li>如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值。</li>
+<li>让变量指向的对象成为垃圾对象。</li>
+</ul>
+<h2><span id="p5-undefined">5、undefined</span><a href="#p5-undefined" class="header-anchor">#</a></h2>
+<p>变量声明了但是未初始化的类型。</p>
+<p>一般是代表错误类型。</p>
+<p>常见环境：</p>
+<ul>
+<li>变量被声明了，但没有赋值时。</li>
+<li>调用函数时，应该提供的参数没有提供，该参数为<code>undefined</code>。</li>
+<li>对象没有赋值的属性。</li>
+<li>函数没有返回值时，默认返回值。</li>
+</ul>
+<h2><span id="p6-lei-xing-zhuan-huan">6、类型转换 △</span><a href="#p6-lei-xing-zhuan-huan" class="header-anchor">#</a></h2>
+<p>弱类型语言定义了类型以后，变量的类型可变，可自动转换。<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
+<h3><span id="pqiang-zhi-lei-xing-zhuan-huan">强制类型转换</span><a href="#pqiang-zhi-lei-xing-zhuan-huan" class="header-anchor">#</a></h3>
+<p>数值转换 <code>Number()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">+<span class="hljs-string">&quot;22&quot;</span>    <span class="hljs-comment">//22</span><br><span class="hljs-number">5</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">//5</span><br><span class="hljs-string">&quot;5&quot;</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">// &quot;5null&quot;</span><br><span class="hljs-string">&quot;5&quot;</span> +<span class="hljs-number">1</span> <span class="hljs-comment">// &quot;51&quot;</span><br><span class="hljs-string">&quot;5&quot;</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>typeof</th>
+<th>Number()</th>
+<th>parseInt()</th>
+<th>String()</th>
+<th>.toString()</th>
+<th>Boolen()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Number</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>转成字符串</td>
+<td>转成字符串</td>
+<td>0和NaN为false，其他都是true</td>
+</tr>
+<tr>
+<td>0</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“0”</td>
+<td>“0”</td>
+<td>false</td>
+</tr>
+<tr>
+<td>1</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“1”</td>
+<td>“1”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“-1”</td>
+<td>“-1”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>.2</td>
+<td>number</td>
+<td>0.2</td>
+<td>0</td>
+<td>“0.2”</td>
+<td>“0.2”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>number</td>
+<td>-</td>
+<td>NaN</td>
+<td>“NaN”</td>
+<td>“NaN”</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>number</td>
+<td>-</td>
+<td>==NaN==</td>
+<td>“Infinity”</td>
+<td>“Infinity”</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>String</strong></td>
+<td>-</td>
+<td>空串，空白串转成0，仅含数字直接转换，其他NaN</td>
+<td>只会看前面的数字，如果没有就是NaN</td>
+<td>-</td>
+<td>-</td>
+<td>非空字符串转成true</td>
+</tr>
+<tr>
+<td>“”</td>
+<td>string</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td>&quot; &quot;</td>
+<td>string</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>==true==</td>
+</tr>
+<tr>
+<td>“123”</td>
+<td>string</td>
+<td>123</td>
+<td>123</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td>“10px”</td>
+<td>string</td>
+<td>NaN</td>
+<td>==10==</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td>“abc”</td>
+<td>string</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>Boolean</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>true</td>
+<td>boolean</td>
+<td>1</td>
+<td>NaN</td>
+<td>“true”</td>
+<td>“true”</td>
+<td>-</td>
+</tr>
+<tr>
+<td>false</td>
+<td>boolean</td>
+<td>0</td>
+<td>NaN</td>
+<td>“fasle”</td>
+<td>“false”</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>null</strong></td>
+<td>==object==</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>“null”</td>
+<td>==报错==</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td><strong>undefined</strong></td>
+<td>undefined</td>
+<td>==NaN==</td>
+<td>NaN</td>
+<td>“undefined”</td>
+<td>==报错==</td>
+<td>==false==</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="pyin-shi-lei-xing-zhuan-huan">隐式类型转换</span><a href="#pyin-shi-lei-xing-zhuan-huan" class="header-anchor">#</a></h3>
+<p>通常和运算符相关联，规则和上面强制转换差不多。</p>
+<h3><span id="pparseint">parseInt</span><a href="#pparseint" class="header-anchor">#</a></h3>
+<p>可以转换进制。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(N,X);<br><span class="hljs-comment">// N -- 要转换的数</span><br><span class="hljs-comment">// X -- 要转换的进制</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p7-lei-xing-pan-duan">7、类型判断</span><a href="#p7-lei-xing-pan-duan" class="header-anchor">#</a></h2>
+<h3><span id="p-1-typeof">（1）typeof</span><a href="#p-1-typeof" class="header-anchor">#</a></h3>
+<p>通过<code>typeof(表达式)</code>或者<code>typeof 变量</code>来获取值或者变量的数据类型。返回值是数据类型的小写形式。特例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// object</span><br><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// string </span><br></code></pre></td></tr></table></figure>
+<h3><span id="p-2-instanceof">（2）instanceof</span><a href="#p-2-instanceof" class="header-anchor">#</a></h3>
+<p>判断对象的数据类型。</p>
+<p>Array | Function | Object</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">A <span class="hljs-keyword">instanceof</span> B <span class="hljs-comment">// A 是不是 B 的实例</span><br></code></pre></td></tr></table></figure>
+<h3><span id="p-3">（3）===</span><a href="#p-3" class="header-anchor">#</a></h3>
+<p>可以判断 <code>undefined</code> 和 <code>null</code>。</p>
+<h3><span id="p-4-isnan">（4）isNaN</span><a href="#p-4-isnan" class="header-anchor">#</a></h3>
+<p>检测参数是否为非数字值，仅当值为<code>NaN</code>时，返回<code>true</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">isNaN</span>(<span class="hljs-number">123</span>)  <span class="hljs-comment">// false</span><br><span class="hljs-built_in">isNaN</span>(<span class="hljs-string">&quot;123&quot;</span>)  <span class="hljs-comment">// false</span><br><span class="hljs-built_in">isNaN</span>(<span class="hljs-literal">NaN</span>)  <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p8-symbol">8、Symbol +</span><a href="#p8-symbol" class="header-anchor">#</a></h2>
+<p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。</p>
+<h2><span id="p9-bigint">9、BigInt +</span><a href="#p9-bigint" class="header-anchor">#</a></h2>
+<h1><span id="er-yun-suan-fu-he-biao-da-shi">二、运算符和表达式</span><a href="#er-yun-suan-fu-he-biao-da-shi" class="header-anchor">#</a></h1>
+<h2><span id="p1-suan-zhu-yun-suan-fu">1、算术运算符</span><a href="#p1-suan-zhu-yun-suan-fu" class="header-anchor">#</a></h2>
+<h3><span id="pjia-fa">加法</span><a href="#pjia-fa" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果其中一个操作数是字符串，则会把另外一个操作数转换成字符串。  </span><br><span class="hljs-number">1</span> + <span class="hljs-string">&#x27;str&#x27;</span>   <span class="hljs-comment">// 1str </span><br><span class="hljs-string">&#x27;str&#x27;</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// str1    </span><br><span class="hljs-number">1</span> + <span class="hljs-number">1</span> + <span class="hljs-string">&#x27;str&#x27;</span>  <span class="hljs-comment">// 2str  </span><br><span class="hljs-number">1</span> + (<span class="hljs-number">1</span> + str)  <span class="hljs-comment">// 11str</span><br><br><span class="hljs-comment">// 如果都有是字符串，会拼接在一起  </span><br><span class="hljs-string">&#x27;str&#x27;</span> + <span class="hljs-string">&#x27;is&#x27;</span>  <span class="hljs-comment">// stris</span><br><br><span class="hljs-comment">// 其他类型自动调用Number()进行转换  </span><br><span class="hljs-literal">true</span> + <span class="hljs-literal">true</span> <span class="hljs-comment">// 2</span><br><span class="hljs-literal">null</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">// 0</span><br><span class="hljs-literal">NaN</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// NaN</span><br><span class="hljs-number">1</span> + <span class="hljs-literal">undefined</span> <span class="hljs-comment">// NaN</span><br><br><span class="hljs-comment">// 放在非数值前面，则会自动调用Number()进行转换（不会影响本身）</span><br>+<span class="hljs-string">&#x27;123&#x27;</span> <span class="hljs-comment">// 123</span><br></code></pre></td></tr></table></figure>
+<h3><span id="pjian-fa-cheng-fa-chu-fa">减法、乘法、除法</span><a href="#pjian-fa-cheng-fa-chu-fa" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果有操作数是非字符，则自动调用Number()转换。</span><br><span class="hljs-string">&#x27;99&#x27;</span> - <span class="hljs-number">0</span> <span class="hljs-comment">// 99</span><br><span class="hljs-string">&#x27;99&#x27;</span> * <span class="hljs-number">1</span> <span class="hljs-comment">// 99</span><br><span class="hljs-string">&#x27;99&#x27;</span> / <span class="hljs-number">1</span> <span class="hljs-comment">// 99</span><br><br><span class="hljs-comment">// 特殊</span><br><span class="hljs-number">1</span> / <span class="hljs-number">0</span> <span class="hljs-comment">// Infinity</span><br><span class="hljs-literal">Infinity</span> * <span class="hljs-number">-1</span> <span class="hljs-comment">// - Infinity</span><br><span class="hljs-number">0</span> / <span class="hljs-number">0</span> <span class="hljs-comment">// NaN </span><br></code></pre></td></tr></table></figure>
+<h3><span id="pqu-yu">取余</span><a href="#pqu-yu" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">3</span> % <span class="hljs-number">5</span> <span class="hljs-comment">// 3</span><br><span class="hljs-number">5</span> % <span class="hljs-number">0</span> <span class="hljs-comment">// NaN</span><br></code></pre></td></tr></table></figure>
+<h3><span id="pzi-zeng-zi-jian">自增、自减</span><a href="#pzi-zeng-zi-jian" class="header-anchor">#</a></h3>
+<p><code>++i</code> 表示，i自增1后再参与其它运算（先加后用）；而 <code>i++</code> 则是i参与运算后，i的值再自增1。自增自减运算可能会改变原有变量类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">100</span><br><span class="hljs-number">1</span> + a++ <span class="hljs-comment">// 101</span><br><span class="hljs-number">1</span> + ++a <span class="hljs-comment">// 102</span><br><br><span class="hljs-comment">// 会改变原变量类型</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-literal">true</span>;<br>++a; <span class="hljs-comment">// a = 2</span><br><br><span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span><br>i = i++ <span class="hljs-comment">// i = 1</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p2-tiao-jian-yun-suan-fu">2、条件运算符</span><a href="#p2-tiao-jian-yun-suan-fu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果两个操作数都是字符串，比较对应的字符编码</span><br><span class="hljs-string">&quot;234&quot;</span> &gt; <span class="hljs-string">&quot;123455&quot;</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-comment">// == 和 === 的区别</span><br><span class="hljs-literal">undefined</span> == <span class="hljs-literal">null</span> <span class="hljs-comment">// true</span><br><span class="hljs-literal">undefined</span> === <span class="hljs-literal">null</span> <span class="hljs-comment">// false</span><br><br><span class="hljs-comment">// 坑</span><br><span class="hljs-literal">null</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// false 相等比较不进行类型转换</span><br><span class="hljs-literal">null</span> &gt;= <span class="hljs-number">0</span> <span class="hljs-comment">// true </span><br><br></code></pre></td></tr></table></figure>
+<h2><span id="p3-fu-zhi-yun-suan-fu">3、赋值运算符</span><a href="#p3-fu-zhi-yun-suan-fu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">a += b <span class="hljs-comment">// 等价于 a = a + b</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p4-luo-ji-yun-suan-fu">4、逻辑运算符</span><a href="#p4-luo-ji-yun-suan-fu" class="header-anchor">#</a></h2>
+<p><code>&amp;&amp;</code> 与</p>
+<ul>
+<li>第一步：计算第一个操作数</li>
+<li>第二步：如果第一个操作数转换成false，那么就会结束运算，直接第一个操作数</li>
+<li>第三步：如果第一个操作数返回true，则计算第二个操作数的值</li>
+<li>第四步：第二个操作数如果返回true  则逻辑与返回第二个操作数，否则返回第一个操作数</li>
+</ul>
+<p><code>||</code> 或</p>
+<ul>
+<li>第一步：计算第一个操作数的值。</li>
+<li>第二步：检测第一个操作数的值。如果左侧的表达式的值可以转换为true，那么就会结束运算。直接返回第一个操作数的值</li>
+<li>第三步：如果第一个操作数可以转换为false，则计算第二个操作数的值。并返回第二个操作数的值</li>
+</ul>
+<p><code>!</code> 非</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span> <span class="hljs-comment">// 返回2</span><br><span class="hljs-string">&#x27;&#x27;</span> &amp;&amp; <span class="hljs-number">1</span> <span class="hljs-comment">// 返回&#x27;&#x27;</span><br><span class="hljs-string">&quot;Cat&quot;</span> &amp;&amp; <span class="hljs-string">&quot;Dog&quot;</span> <span class="hljs-comment">// 返回”Dog&quot;</span><br><span class="hljs-string">&#x27;&#x27;</span>    &amp;&amp; <span class="hljs-literal">false</span>     <span class="hljs-comment">// f &amp;&amp; f 返回 &quot;&quot;</span><br><span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-string">&#x27;&#x27;</span>        <span class="hljs-comment">// f &amp;&amp; f 返回 false</span><br><br><span class="hljs-number">1</span> || <span class="hljs-number">2</span> <span class="hljs-comment">// 1</span><br><span class="hljs-number">0</span> || <span class="hljs-number">2</span> <span class="hljs-comment">// 2</span><br><span class="hljs-number">0</span> || <span class="hljs-literal">null</span> <span class="hljs-comment">// null</span><br><span class="hljs-string">&#x27;&#x27;</span>    || <span class="hljs-literal">false</span>     <span class="hljs-comment">// f || f 返回 false</span><br><span class="hljs-literal">false</span> || <span class="hljs-string">&#x27;&#x27;</span>        <span class="hljs-comment">// f || f 返回 &quot;&quot;</span><br></code></pre></td></tr></table></figure>
+<h3><span id="pduan-lu-yuan-li">短路原理</span><a href="#pduan-lu-yuan-li" class="header-anchor">#</a></h3>
+<p>在逻辑运算中，如果第一个操作数就能决定结果，那么第二个操作数就不会运行了。（就算运行了会报错也能顺利通过）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">false</span>;<br>fasle &amp;&amp; qwq();<br></code></pre></td></tr></table></figure>
+<h2><span id="p5-qi-ta-yun-suan-fu">5、其他运算符</span><a href="#p5-qi-ta-yun-suan-fu" class="header-anchor">#</a></h2>
+<p>逗号操作符</p>
+<p>它能够先执行运算符左侧的操作数，然后再执行右侧的操作数，最后返回右侧操作数的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a=<span class="hljs-number">1</span>,b=<span class="hljs-number">2</span>,c=<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<p>三元运算符：<code>运算元1?运算2:运算3</code></p>
+<h2><span id="p6-yun-suan-fu-de-you-xian-ji">6、运算符的优先级 +</span><a href="#p6-yun-suan-fu-de-you-xian-ji" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>符号 + 描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td><code>()</code> 分组</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>()</code> 函数调用 <code>.</code> <code>[]</code> 成员调用 <code>new</code> 创建</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>通常简要规则:  一元 &gt; 二元 &gt; 三元<br>
+使用圆括号</p>
+</blockquote>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>浮点数溢出：计算机对小数运算有偏差，比如 0.1 + 0.2 不会等于 0.3。如果需要解决这种问题，一是转成整数运算，二是使用专门的运算库。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>意思是Not a Number。具有污染性（粘性）。可以用 <code>isNaN()</code>来判断是不是数字。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>碰到使用这些符号的字符串时使用转义字符<code>\</code>。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>ES6新增的模版字符串。不兼容IE678。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>强类型语言在声明之前要指定数据类型。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/21-JS%E5%BC%80%E5%A7%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/21-JS%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">JS 开始</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-01T00:00:00+08:00">2020-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 16:39:43" itemprop="dateModified" datetime="2020-08-27T16:39:43+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-ji-ben-gai-nian">一、基本概念</span><a href="#yi-ji-ben-gai-nian" class="header-anchor">#</a></h1>
+<p><strong>JavaScript</strong> 最初的目的是为了“赋予网页生命”。</p>
+<p>这种编程语言我们称之为 <strong>脚本</strong>。它们可以写在 HTML 中，在页面加载的时候会自动执行。脚本作为纯文本存在和执行。它们不需要特殊的准备或编译即可运行。</p>
+<ul>
+<li>1995 JavaScript、JScript诞生</li>
+<li>1997 ECMA给JS制定了标准<strong>ECMA-262</strong>，命名为ECMAScript，即ES1.0。<strong>ES是JS的规范标准，JS的ES的实现。</strong></li>
+<li>1999 发布ES3，成为JS通用标准</li>
+<li>2009 发布ES5</li>
+<li>2013 ES6草案发布（其实就是之前不被接受的ES4激进方案）</li>
+<li>2015 发布ES6，即ES2015，从此JS新版本按<code>ES+年份</code>形式发布。ES6是一个历史名词，也是一个泛指，代表ES6以后的新一代标准。</li>
+</ul>
+<h2><span id="p1-te-dian">1、特点</span><a href="#p1-te-dian" class="header-anchor">#</a></h2>
+<p><strong>弱类型</strong> 数据类型不固定，可以随时改变。</p>
+<p><strong>解释型</strong> 解释型是一行一行解释运行，编译型是需要整体编译。</p>
+<p><strong>脚本语言</strong> 脚本是需要载体运行的。</p>
+<p><strong>基于原型</strong> 只有对象，没有类，对象继承对象，而不是类继承类。“原型对象”是基于原型语言的核心概念。原型对象是新对象的模板，它将自身的属性共享给新对象。一个对象不但可以享有自己创建时和运行时定义的属性，而且可以享有原型对象的属性。</p>
+<h2><span id="p2-zu-cheng">2、组成</span><a href="#p2-zu-cheng" class="header-anchor">#</a></h2>
+<ul>
+<li><strong>ECMA Script</strong> 核心语法，简称ES。</li>
+<li><strong>DOM</strong> Document Object Model 文档对象模型。</li>
+<li><strong>BOM</strong> Browser Object Model 浏览器对象模型。</li>
+</ul>
+<h2><span id="p3-wang-ye-zhong-shi-yong-js-de-fang-fa">3、网页中使用 JS 的方法</span><a href="#p3-wang-ye-zhong-shi-yong-js-de-fang-fa" class="header-anchor">#</a></h2>
+<p>页面嵌入（常用）</p>
+<p>行内写法（几乎不用，局限性大，代码分离性差，可读性不强）</p>
+<p>外部文件引入（主流方式）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>属性:</p>
+<ul>
+<li><code>src</code> 指定外部脚本的URI，如果设置了，标签内容会忽略</li>
+<li><code>type</code> 指定脚本的语言，默认为JS。</li>
+<li><code>async</code> 规定一旦脚本可用，则会异步执行。</li>
+<li><code>defer</code> 是否对脚本执行进行延迟。</li>
+</ul>
+<h2><span id="p4-duan-dian-diao-shi">4、断点调试 +</span><a href="#p4-duan-dian-diao-shi" class="header-anchor">#</a></h2>
+<h2><span id="p5-es5-es6">5、ES5 / ES6</span><a href="#p5-es5-es6" class="header-anchor">#</a></h2>
+<p><code>ECMAScript</code> 是JS的语言规范标准。</p>
+<p><code>ECMA-262</code> 1997年制定的规范，包含了大部分深入的、详细的、规范化的关于 JavaScript 的信息。这份规范明确地定义了这门语言。</p>
+<p><code>ES5</code> 2009年。</p>
+<p><code>ES6</code> <code>ES6</code>既是一个历史名词，也是一个泛指，含义是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等，而 ES2015 则是正式名称，特指该年发布的正式版本的语言标准。</p>
+<h1><span id="er-ji-ben-jie-gou-he-yu-fa">二、基本结构和语法</span><a href="#er-ji-ben-jie-gou-he-yu-fa" class="header-anchor">#</a></h1>
+<h2><span id="p1-yu-ju-zhu-shi-fen-hao-kong-bai">1、语句、注释、分号、空白</span><a href="#p1-yu-ju-zhu-shi-fen-hao-kong-bai" class="header-anchor">#</a></h2>
+<ul>
+<li>语句是执行行为的语法结构和命令。分为 声明语句、调试语句<code>debugger</code>等。</li>
+<li>注释的语法和C语言一样。</li>
+<li>建议每个语句结束都加分号，否则可能会出现奇奇怪怪的BUG。程序会忽略空白，合适的空白与缩进可以保持良好的代码结构。</li>
+</ul>
+<h2><span id="p2-shu-chu">2、输出</span><a href="#p2-shu-chu" class="header-anchor">#</a></h2>
+<ul>
+<li>系统对话框（弹窗）: <code>alert()</code>、<code>confirm()</code>、<code>prompt()</code></li>
+<li>控制台日志: <code>console.log()</code>、<code>console.dir()</code></li>
+<li>直接显示在文档上: <code>document.write</code></li>
+</ul>
+<h2><span id="p3-bian-liang">3、变量</span><a href="#p3-bian-liang" class="header-anchor">#</a></h2>
+<p><strong>变量</strong> 是一种用来储存数据的可变容器，是数据的命名储存，通常情况下由<strong>标识符</strong>和<strong>值</strong>构成。</p>
+<h3><span id="p-1-bian-liang-ming-ming-biao-shi-fu-ming-ming-gui-ze">（1）变量命名/标识符命名规则</span><a href="#p-1-bian-liang-ming-ming-biao-shi-fu-ming-ming-gui-ze" class="header-anchor">#</a></h3>
+<ul>
+<li>由数字，字母，下划线，美元符组成。</li>
+<li>不允许数字开头。</li>
+<li>不能和关键字、保留字同名。</li>
+<li>严格区分大小写。</li>
+<li>变量的起名要有意义。避免使用拼音等。</li>
+</ul>
+<h3><span id="p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi">（2）变量声明和变量赋值</span><a href="#p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi" class="header-anchor">#</a></h3>
+<p>优先使用<code>const</code> | <code>let</code> ，不要用 <code>var</code> 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 声明一个变量</span><br><span class="hljs-keyword">let</span> a;<br><br><br><span class="hljs-comment">// 给变量赋值（第一次赋值可以称为初始化）</span><br>a = <span class="hljs-number">10</span>;<br><br><span class="hljs-comment">// 同时声明和初始化</span><br><span class="hljs-keyword">let</span> b = <span class="hljs-number">10</span>;<br><br><span class="hljs-comment">// 一次定义和赋值多个变量</span><br><span class="hljs-keyword">let</span> c = <span class="hljs-number">1</span>, d = <span class="hljs-number">2</span>;<br><br><span class="hljs-comment">// 注意这种坑</span><br><span class="hljs-keyword">let</span> e = f = <span class="hljs-number">1</span>; <span class="hljs-comment">//  f 没有声明</span><br><br><span class="hljs-comment">// const 用于定义常量，常量通常是全大写</span><br><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.1415926</span>;<br></code></pre></td></tr></table></figure>
+<h3><span id="p-3-kuai-ji-zuo-yong-yu">（3）块级作用域</span><a href="#p-3-kuai-ji-zuo-yong-yu" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>特点</th>
+<th>var</th>
+<th>let</th>
+<th>const</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>声明提升</td>
+<td>会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+<tr>
+<td>块作用域<code>&#123;&#125;</code></td>
+<td>没有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>同一作用域多次声明</td>
+<td>可以</td>
+<td>不能</td>
+<td>不能</td>
+</tr>
+<tr>
+<td>基本数据</td>
+<td>可变</td>
+<td>可变</td>
+<td>不可变</td>
+</tr>
+<tr>
+<td>引用数据</td>
+<td>可变</td>
+<td>可变</td>
+<td>地址不可变</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>for循环声明的let，只在内部生效</p>
+<p>块级作用域和函数作用域类似，可以有作用链</p>
+<p>for循环的声明语句是父作用域，语句块是子作用域</p>
+</blockquote>
+<h2><span id="p4-yan-ge-mo-shi">4、严格模式</span><a href="#p4-yan-ge-mo-shi" class="header-anchor">#</a></h2>
+<p>ES6推出，也称为现代模式，通过在全局第一行或者是函数第一行添加<code>&quot;use strict&quot;</code> 语句开启严格模式。（一旦打开，无法关闭）</p>
+<p>特点：</p>
+<ul>
+<li>给未定义的元素赋值会抛出异常</li>
+<li>删除不可删除的属性会抛出异常</li>
+</ul>
+<h1><span id="san-liu-cheng-kong-zhi">三、流程控制</span><a href="#san-liu-cheng-kong-zhi" class="header-anchor">#</a></h1>
+<h2><span id="p1-fen-zhi-jie-gou">1、分支结构</span><a href="#p1-fen-zhi-jie-gou" class="header-anchor">#</a></h2>
+<h3><span id="pdan-fen-zhi-jie-gou-if">单分支结构 if</span><a href="#pdan-fen-zhi-jie-gou-if" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式)&#123;<br>   <span class="hljs-comment">// 语句块</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="pshuang-fen-zhi-jie-gou-if-else">双分支结构 if-else</span><a href="#pshuang-fen-zhi-jie-gou-if-else" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式)&#123;<br>  <span class="hljs-comment">// 语句块</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">// 语句块2</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="pduo-fen-zhi-jie-gou-else-if">多分支结构 else-if</span><a href="#pduo-fen-zhi-jie-gou-else-if" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式<span class="hljs-number">1</span>)&#123;<br>  <span class="hljs-comment">//语句块1</span><br>&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">2</span>)&#123;<br>  <span class="hljs-comment">//语句块2</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">//语句块3</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h3><span id="pduo-fen-zhi-jie-gou-switch">多分支结构 switch</span><a href="#pduo-fen-zhi-jie-gou-switch" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// switch</span><br><span class="hljs-comment">// 全等匹配</span><br><span class="hljs-keyword">switch</span> (值)&#123;<br>  <span class="hljs-comment">// 如果不加大括号，整个switch内作用域相同</span><br>  <span class="hljs-keyword">case</span> 值<span class="hljs-number">1</span>:<br>      代码块<span class="hljs-number">1</span>;<br>      <span class="hljs-keyword">break</span>;<br>  ...<br>  <span class="hljs-comment">// 可省略</span><br>  <span class="hljs-keyword">default</span>:<br>      代码块;<br>      <span class="hljs-keyword">break</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<h3><span id="pchao-zhuang-jie-gou">巢状结构</span><a href="#pchao-zhuang-jie-gou" class="header-anchor">#</a></h3>
+<p>各种嵌套。</p>
+<h2><span id="p2-xun-huan-jie-gou">2、循环结构</span><a href="#p2-xun-huan-jie-gou" class="header-anchor">#</a></h2>
+<h3><span id="pwhile-yu-ju">while 语句</span><a href="#pwhile-yu-ju" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 先判断，再执行</span><br><span class="hljs-keyword">while</span> (条件表达式)&#123;<br>    代码块   <br>&#125;<br></code></pre></td></tr></table></figure>
+<h3><span id="pdo-while-yu-ju">do-while 语句</span><a href="#pdo-while-yu-ju" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 先执行一次，再判断</span><br></code></pre></td></tr></table></figure>
+<h3><span id="pfor-yu-ju">for 语句</span><a href="#pfor-yu-ju" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (初始化; 条件表达式; 步增表达式)&#123;<br>		<span class="hljs-comment">// 代码块</span><br>&#125;<br><br><span class="hljs-comment">// 初始化</span><br><span class="hljs-comment">// 条件判断</span><br><span class="hljs-comment">// 代码块</span><br><span class="hljs-comment">// 步增</span><br></code></pre></td></tr></table></figure>
+<h2><span id="p3-break-continue">3、break 、continue</span><a href="#p3-break-continue" class="header-anchor">#</a></h2>
+<p><code>break</code></p>
+<p>跳出switch语句，跳出一层循环。</p>
+<p><code>continue</code></p>
+<p>结束本次循环，进行下次循环。</p>
+<p><code>label</code></p>
+<ul>
+<li>在JS中，label语句可以为一行语句添加标签，以方便在复杂的结构中设置跳转目标。</li>
+<li>语法如下：<code>label:语句</code></li>
+<li>label可以是任意合法的标识符，然后使用冒号分割标签名与标签语句。</li>
+<li>label和break语句配合使用，主要应用在循环结构、多分枝结构中，以便与跳出内层嵌套体。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> num=<span class="hljs-number">0</span>;<br>outermost:<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j++)&#123;<br>        <span class="hljs-keyword">if</span>(i==<span class="hljs-number">5</span> &amp;&amp; j==<span class="hljs-number">5</span>)&#123;<br>            <span class="hljs-keyword">break</span> outermost;<br>        &#125;<br>        num++;<br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.log(num);<br></code></pre></td></tr></table></figure>
+<p>禁止<code>break</code> 和<code>continue</code> 写在三元运算符<code>?</code>右边。</p>
+<p>异常处理</p>
+<p>ECMA-262 规范了7种错误类型。其中 Error 是基类，其他6种错误类型是子类，都继承了基类。Error类型的主要作用是自定义错误对象。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Error</code></td>
+<td>普通异常。与 thorw 语句和 try/catch 语句一起使用，属性可以读写异常类型，message 属性可以读写详细的错误信息。</td>
+</tr>
+<tr>
+<td><code>EvalError</code></td>
+<td>不正确使用eval()方法时抛出。</td>
+</tr>
+<tr>
+<td><code>SyntaxError</code></td>
+<td>语法错误</td>
+</tr>
+<tr>
+<td><code>ReferenceError</code></td>
+<td>读取不存在的变量时抛出</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>值的类型发生错误的时候抛出</td>
+</tr>
+<tr>
+<td><code>RangeError</code></td>
+<td>数字超出合法范围之抛出</td>
+</tr>
+<tr>
+<td><code>URIError</code></td>
+<td>URI编码和解码错误时抛出</td>
+</tr>
+</tbody>
+</table>
+<h1><span id="ji-ben-yu-fa">基本语法</span><a href="#ji-ben-yu-fa" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">try</span>&#123;<br>    <br>    <span class="hljs-comment">// 调试代码块</span><br>    <br>&#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <br>    <span class="hljs-comment">// 捕获异常，并进行异常处理代码块</span><br>    <br>&#125; <span class="hljs-keyword">finally</span> &#123;<br>    <br>    <span class="hljs-comment">// 后期清理代码块</span><br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>正常情况下，JS按顺序执行try子句中的代码，如果没有异常发生，将会忽略catch跳转到finally子句继续执行。</p>
+</li>
+<li>
+<p>如果在try子句运行错误，或者使用throw语句主动抛出异常，则执行catch子句中的代码，同时传入一个参数，引用Error对象</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/10-%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1-%E8%A1%A8%E7%8E%B0/10-%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">CSS 弹性布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-30T00:00:00+08:00">2020-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 16:55:51" itemprop="dateModified" datetime="2020-08-26T16:55:51+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="psan-dan-xing-bu-ju-flex-c3">三、弹性布局 flex <code>C3</code> △△</span><a href="#psan-dan-xing-bu-ju-flex-c3" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="http://flexboxfroggy.com/#zh-cn">青蛙flex</a></p>
+<h3><span id="p1-dan-xing-bu-ju-flex">1、弹性布局 flex</span><a href="#p1-dan-xing-bu-ju-flex" class="header-anchor">#</a></h3>
+<p>开启弹性布局</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">display</span><span class="hljs-selector-pseudo">:flex</span>;<br><br><span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">-webkit-flex</span>; <span class="hljs-comment">/* Safari */</span><br></code></pre></td></tr></table></figure>
+<p>开启 <code>flex</code> 的元素自身不受影响，只会影响子元素，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。对子元素的子元素不会影响。</p>
+<p>开启<code>flex</code>的盒子称为 <strong>容器</strong>（flex container），子元素称为 <strong>项目</strong>（flex item）。横向默认是 <strong>主轴</strong>。纵向默认是 <strong>侧轴</strong>。默认情况下，项目沿着主轴从左到右依次排列。项目的高度撑满容器（侧轴撑满）。当项目的总宽度超出，并不会换行，而是压缩项目的宽度。</p>
+<h3><span id="p2-dan-xing-bu-ju-de-shu-xing">2、弹性布局的属性</span><a href="#p2-dan-xing-bu-ju-de-shu-xing" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex-direction</td>
+<td>主轴布局方向</td>
+<td>row</td>
+<td>默认，从左到右</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>row-reverse</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>column</td>
+<td>从上到下</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>column-reverse</td>
+<td>从下到上</td>
+</tr>
+<tr>
+<td>justify-content</td>
+<td>主轴空间管理</td>
+<td>flex-start</td>
+<td>默认，左端对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>flex-end</td>
+<td>右端对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>center</td>
+<td>居中</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>space-between</td>
+<td>元素之间距离相等</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>space-around</td>
+<td>元素周围空间相等</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>space-evenly</td>
+<td>平均分配</td>
+</tr>
+<tr>
+<td>align-items</td>
+<td>侧轴空间管理</td>
+<td>skretch</td>
+<td>默认，撑满</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>flex-start</td>
+<td>和容器顶部对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>flex-end</td>
+<td>和容器底部对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>center</td>
+<td>居中对齐</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>baseline</td>
+<td>容器基线对齐</td>
+</tr>
+<tr>
+<td>flow-grow</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>flex-wrap</td>
+<td>换行管理</td>
+<td>nowrap</td>
+<td>默认，不换行</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>wrap</td>
+<td>换行</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>wrap-reverse</td>
+<td>换行并反转主轴</td>
+</tr>
+<tr>
+<td>align-content</td>
+<td>多行分配</td>
+<td>flex-start</td>
+<td>集中顶部</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>flex-end</td>
+<td>集中底部</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>center</td>
+<td>居中</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>space-between</td>
+<td>行之间距离相等</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>space-around</td>
+<td>行周围空间相等</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>stretch</td>
+<td>拉伸并填满容器</td>
+</tr>
+<tr>
+<td>align-self</td>
+<td>设置单个元素</td>
+<td>同align-items</td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>单元素排序</td>
+<td>正负</td>
+<td></td>
+</tr>
+<tr>
+<td>flex-basis</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>flex-shrink</td>
+<td>收缩率</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>flex（合写）</td>
+<td>flex-grow</td>
+<td>flex-sherink</td>
+<td>flex-basis</td>
+</tr>
+<tr>
+<td>flex-flow(合写)</td>
+<td>flex-direction</td>
+<td>flex-wrap</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/12-%E5%B8%83%E5%B1%80%E7%BB%BC%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1-%E8%A1%A8%E7%8E%B0/12-%E5%B8%83%E5%B1%80%E7%BB%BC%E5%90%88/" class="post-title-link" itemprop="url">布局综合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-30T00:00:00+08:00">2020-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 16:34:46" itemprop="dateModified" datetime="2020-08-27T16:34:46+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-bfc">一、BFC</span><a href="#yi-bfc" class="header-anchor">#</a></h1>
+<p>BFC，块级格式化上下文。</p>
+<h3><span id="p1-chuang-jian-bfc">1、创建BFC</span><a href="#p1-chuang-jian-bfc" class="header-anchor">#</a></h3>
+<ul>
+<li><strong>根元素</strong></li>
+<li><strong>浮动（float 不为 none）</strong></li>
+<li><strong>绝对定位 或者 固定定位</strong></li>
+<li>表格的标题和单元格，匿名表格单元格元素</li>
+<li><strong>行内块元素</strong></li>
+<li><strong>overflow的值不为visible</strong></li>
+</ul>
+<h3><span id="p2-bfc-de-fan-wei">2、BFC的范围</span><a href="#p2-bfc-de-fan-wei" class="header-anchor">#</a></h3>
+<blockquote>
+<p>A block formatting context contains everything inside of the element creating it, that is not also inside a descendant element that creates a new block formatting context.</p>
+</blockquote>
+<p>直译过来就是, BFC包含创建它的元素的所有子元素, 但不包括创建了新BFC的子元素的内部元素。简单来说，子元素如果又创建了一个新的 BFC，那么它里面的内容就不属于上一个 BFC 了，这体现了 BFC隔离 的思想。<br>
+也就是所说，<strong>一个元素不能同时存在于两个 BFC 中</strong>。</p>
+<h3><span id="p3-bfc-de-te-xing">3、BFC的特性</span><a href="#p3-bfc-de-te-xing" class="header-anchor">#</a></h3>
+<p>BFC 除了会创建一个隔离的空间外，还具有以下特性：</p>
+<ul>
+<li>BFC 内部的块级盒会在垂直方向上一个接一个排列。</li>
+<li>同一BFC下的相邻块级元素可能发生外边距折叠，创建新的BFC可以避免外边距折叠。（解决塌陷）</li>
+<li>浮动盒的区域不会和BFC重叠</li>
+<li>计算BFC的高度时，浮动元素也会参与计算</li>
+</ul>
+<h3><span id="p4-bfc-de-ying-yong">4、BFC的应用</span><a href="#p4-bfc-de-ying-yong" class="header-anchor">#</a></h3>
+<ul>
+<li>
+<p>自适应多栏布局<br>
+中间栏创建 BFC，左右栏宽度固定后浮动。由于盒子的 margin box 的左边和包含块 border box 的左边相接触，同时浮动盒的区域不会和 BFC 重叠，所以中间栏的宽度会自适应。</p>
+</li>
+<li>
+<p>防止外边距折叠<br>
+创建新的 BFC ，让相邻的块级盒位于不同 BFC 下可以防止外边距折叠</p>
+</li>
+<li>
+<p>清除浮动<br>
+BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的浮动</p>
+</li>
+</ul>
+<h3><span id="p5-ifc-gui-ze">5、IFC规则</span><a href="#p5-ifc-gui-ze" class="header-anchor">#</a></h3>
+<p>IFC，行内格式化上下文。</p>
+<h2><span id="psi-bu-ju-ying-yong">四、布局应用</span><a href="#psi-bu-ju-ying-yong" class="header-anchor">#</a></h2>
+<h3><span id="p1-bu-ju-chang-yong-dan-ci">1、布局常用单词</span><a href="#p1-bu-ju-chang-yong-dan-ci" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>header</code></td>
+<td>头部、页眉</td>
+</tr>
+<tr>
+<td><code>logo</code></td>
+<td>标志</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>nav</code>、<code>sub_nav</code></td>
+<td>导航、子导航</td>
+</tr>
+<tr>
+<td><code>banner</code></td>
+<td>横幅广告</td>
+</tr>
+<tr>
+<td><code>main</code>、<code>content</code></td>
+<td>主体、内容</td>
+</tr>
+<tr>
+<td><code>container</code>、<code>con</code></td>
+<td>容器</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td>盒子</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>区域</td>
+</tr>
+<tr>
+<td><code>wrapper</code>、<code>wrap</code></td>
+<td>包裹</td>
+</tr>
+<tr>
+<td><code>menu</code></td>
+<td>菜单</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>列表</td>
+</tr>
+<tr>
+<td><code>section</code></td>
+<td>分区、分块</td>
+</tr>
+<tr>
+<td><code>article</code></td>
+<td>文章</td>
+</tr>
+<tr>
+<td><code>aside</code></td>
+<td>侧边栏</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td>页脚、底部</td>
+</tr>
+<tr>
+<td><code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code></td>
+<td>顶部 底部 左部 右部</td>
+</tr>
+<tr>
+<td><code>prev</code>、<code>next</code></td>
+<td>上一个、下一个</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p2-wang-ye-de-ban-xin">2、网页的版心</span><a href="#p2-wang-ye-de-ban-xin" class="header-anchor">#</a></h3>
+<h3><span id="p3-shui-ping-chui-zhi-ju-zhong">3、水平垂直居中 △</span><a href="#p3-shui-ping-chui-zhi-ju-zhong" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">/* 公共代码 */</span><br></code></pre></td></tr></table></figure>
+<p>line-height</p>
+<p>absolute + margin auto</p>
+<p>absolute + 负margin</p>
+<p>absolute + calc</p>
+<p>absolute + transform: translate</p>
+<p>flex</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;<br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">justify-content</span>: center;<br>    <span class="hljs-attribute">align-items</span>: center;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>writing-mode</p>
+<p>table</p>
+<p>css-table</p>
+<p>grid</p>
+<h3><span id="p4-qi-ta-bu-ju">4、其他布局</span><a href="#p4-qi-ta-bu-ju" class="header-anchor">#</a></h3>
+<p>Stick Footer 粘连布局</p>
+<p>三列布局</p>
+<p>等高布局</p>
+<p>圣杯布局</p>
+<p>双飞翼布局</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
