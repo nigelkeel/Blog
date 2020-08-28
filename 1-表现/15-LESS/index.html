@@ -285,18 +285,21 @@
 </table>
 <h3><span id="p3-shi-yong">3、使用</span><a href="#p3-shi-yong" class="header-anchor">#</a></h3>
 <p>(1) <code>style</code>标签类型改成<code>less</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;link rel=<span class="hljs-string">&quot;stylesheet/less&quot;</span> type=<span class="hljs-string">&quot;text/css&quot;</span> href=<span class="hljs-string">&quot;styles.less&quot;</span> /&gt;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet/less"</span> type<span class="token operator">=</span><span class="token string">"text/css"</span> href<span class="token operator">=</span><span class="token string">"styles.less"</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>还需要一个编译相关的js文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>(2) 在命令行编译less文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">lessc styles.less styles.css<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lessc styles.less styles.css<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>(3) 通过VSCode的<code>Easy LESS</code>插件，在文件夹新建less文件，保存，即可在当前文件夹编译出相应的css文件。</p>
 <h2><span id="per-ji-ben-yu-fa">二、基本语法</span><a href="#per-ji-ben-yu-fa" class="header-anchor">#</a></h2>
 <h3><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h3>
 <p><code>//</code> 和 <code>/**/</code> 后者可以被注释到CSS文件中。</p>
 <h3><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h3>
 <p>LESS 允许我们定义一些变量来管理CSS，变量需以<code>@</code>开头。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-comment">// 定义</span><br><span class="hljs-variable">@test:</span> <span class="hljs-number">10px</span>;<br><span class="hljs-comment">// 使用</span><br><span class="hljs-attribute">width</span>: <span class="hljs-variable">@test</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-less" data-language="less"><code class="language-less"><span class="token comment">// 定义</span>
+<span class="token variable">@test<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+<span class="token comment">// 使用</span>
+<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@test</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意作用域。</p>
 <p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
 <h3><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h3>
@@ -304,7 +307,8 @@
 <h3><span id="p4-yun-suan">4、运算</span><a href="#p4-yun-suan" class="header-anchor">#</a></h3>
 <h3><span id="p5-hun-he">5、混合</span><a href="#p5-hun-he" class="header-anchor">#</a></h3>
 <p>类似函数。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-class">.xxx</span>()&#123;&#125;<br><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-less" data-language="less"><code class="language-less"><span class="token selector">.xxx()</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3><span id="p6-mo-shi-pi-pei-he-shou-wei">6、模式匹配和守卫</span><a href="#p6-mo-shi-pi-pei-he-shou-wei" class="header-anchor">#</a></h3>
 <p>重载，根据参数的个数来选择混合。</p>
 <h3><span id="p7-zi-fu-chuan-cha-zhi">7、字符串插值</span><a href="#p7-zi-fu-chuan-cha-zhi" class="header-anchor">#</a></h3>
@@ -409,7 +413,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -422,7 +426,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

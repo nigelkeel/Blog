@@ -291,9 +291,12 @@
 <p>（2）a标签的color属性默认不是继承，需要的时候需直接控制。</p>
 <h3><span id="p2-font-family-zi-ti-kong-zhi">2、font-family 字体控制</span><a href="#p2-font-family-zi-ti-kong-zhi" class="header-anchor">#</a></h3>
 <p><img src="/1-%E8%A1%A8%E7%8E%B0/06-%E6%96%87%E6%9C%AC%E5%92%8C%E8%83%8C%E6%99%AF%E6%A0%B7%E5%BC%8F/img/font-list.png" alt></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">font-family</span>: &quot;微软雅黑&quot;,&quot;<span class="hljs-selector-tag">SimSun</span>&quot;;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"微软雅黑"</span><span class="token punctuation">,</span><span class="token string">"SimSun"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3><span id="p3-font-face-zi-ding-yi-zi-ti">3、@font-face 自定义字体</span><a href="#p3-font-face-zi-ding-yi-zi-ti" class="header-anchor">#</a></h3>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@font-face</span> &#123;<br>		<span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;自定义字体名称&quot;</span>;<br>		<span class="hljs-attribute">src</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;自定义字体路径&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span>
+		<span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"自定义字体名称"</span><span class="token punctuation">;</span>
+		<span class="token property">src</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"自定义字体路径"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p4-font-size-zi-hao-da-xiao">4、font-size 字号大小</span><a href="#p4-font-size-zi-hao-da-xiao" class="header-anchor">#</a></h3>
 <p>常用单位</p>
 <ul>
@@ -385,7 +388,17 @@
 </tbody>
 </table>
 <p>图片垂直居中</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 1.首先控制父级内的元素的行高，让元素基线上下平分 */</span><br><span class="hljs-selector-tag">outer</span>&#123;<br>	 <span class="hljs-attribute">background-color</span>: red;<br>     <span class="hljs-attribute">height</span>: <span class="hljs-number">600px</span>;<br>     <span class="hljs-attribute">line-height</span>: <span class="hljs-number">600px</span>;<br>&#125;<br><br> <span class="hljs-comment">/*2.因为图片的基线是图片的底部，平分以后，不会居中 所以让图片改变成由自身的中间对齐方式对齐*/</span><br><span class="hljs-selector-tag">img</span>&#123;<br>     <span class="hljs-attribute">vertical-align</span>: middle;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 1.首先控制父级内的元素的行高，让元素基线上下平分 */</span>
+<span class="token selector">outer</span><span class="token punctuation">&#123;</span>
+	 <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+     <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+     <span class="token property">line-height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+ <span class="token comment">/*2.因为图片的基线是图片的底部，平分以后，不会居中 所以让图片改变成由自身的中间对齐方式对齐*/</span>
+<span class="token selector">img</span><span class="token punctuation">&#123;</span>
+     <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p10-text-align-wen-ben-dui-qi-she-zhi">10、text-align 文本对齐设置</span><a href="#p10-text-align-wen-ben-dui-qi-she-zhi" class="header-anchor">#</a></h3>
 <p><code>text-align</code> 文本对齐设置。控制当前元素内容。</p>
 <p>属性值</p>
@@ -530,7 +543,7 @@
 </ul>
 <h3><span id="p9-duo-chong-bei-jing-c3">9、多重背景 <code>C3</code></span><a href="#p9-duo-chong-bei-jing-c3" class="header-anchor">#</a></h3>
 <p>CSS3允许为元素使用多个背景图片。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">background-image: url(&#x27;1.jpg),url(&#x27;2.jpg&#x27;);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'1.jpg),url('</span>2.jpg'<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>元素引入多个背景图片，前面图片会覆盖后面的图片。</p>
 
     </div>
@@ -629,7 +642,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -642,7 +655,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

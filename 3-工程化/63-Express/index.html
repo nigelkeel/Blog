@@ -257,23 +257,36 @@
 <p><code>npm install express-generator -g</code></p>
 <h1><span id="er-express-ji-ben-shi-yong">二、express 基本使用</span><a href="#er-express-ji-ben-shi-yong" class="header-anchor">#</a></h1>
 <h2><span id="p1-kai-qi-fu-wu-qi">1、开启服务器</span><a href="#p1-kai-qi-fu-wu-qi" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);<br><span class="hljs-keyword">const</span> app = express();<br>        <span class="hljs-comment">//port</span><br>app.listen(<span class="hljs-number">80</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    ...<br>&#125;);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//port</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>http 默认80端口，https 默认443端口。</p>
 <h2><span id="p2-she-zhi-jing-tai-zi-yuan-mu-lu">2、设置静态资源目录</span><a href="#p2-she-zhi-jing-tai-zi-yuan-mu-lu" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">app.use( express.static(path.resolve(__dirname, <span class="hljs-string">&quot;../xxx&quot;</span>))) <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span> express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"../xxx"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>！明确到一个文件夹。</p>
 <p>！可以指定多个。</p>
 <h2><span id="p3-she-zhi-lu-you">3、设置路由</span><a href="#p3-she-zhi-lu-you" class="header-anchor">#</a></h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">app.get( URL, (req, res)&#x3D;&gt;&#123;&#125;)<br>app.post( URL, (req, res)&#x3D;&gt;&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">app.get( URL, (req, res)&#x3D;&gt;&#123;&#125;)
+app.post( URL, (req, res)&#x3D;&gt;&#123;&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如果指定多个，当遇到访问方法和地址相同时，遇到第一个，默认不会向下执行 – <strong>只会匹配第一个</strong></p>
 <p>只能响应一次。</p>
 <blockquote>
 <p>也可以用 <code>next()</code> 继续向下查找是否有满足条件的路由。</p>
 <p>第二次响应没有意义。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 允许所有站点跨域</span><br>app.all(<span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-function">(<span class="hljs-params">req,res</span>)=&gt;</span>&#123;<br>    res.header(<span class="hljs-string">&quot;Access-Control-Allow-Origin&quot;</span>),<span class="hljs-string">&quot;*&quot;</span>);<br>    next();<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 允许所有站点跨域</span>
+app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p4-body-parser">4、body-parser</span><a href="#p4-body-parser" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;body-parser&quot;</span>);<br>app.user( bodyParser.json());<br><br><span class="hljs-keyword">const</span> &#123;context&#125; = req.body;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"body-parser"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">user</span><span class="token punctuation">(</span> bodyParser<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>context<span class="token punctuation">&#125;</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
     </div>
 
@@ -293,12 +306,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/53-AJAX/" rel="prev" title="AJAX">
+    <a href="/%E5%B7%B2%E6%9B%B4%E6%96%B0/AJAX/" rel="prev" title="AJAX">
       <i class="fa fa-chevron-left"></i> AJAX
     </a></div>
       <div class="post-nav-item">
-    <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/47-%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="next" title="JS 模块化">
-      JS 模块化 <i class="fa fa-chevron-right"></i>
+    <a href="/%E5%B7%B2%E6%9B%B4%E6%96%B0/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="next" title="模块化">
+      模块化 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -372,7 +385,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -385,7 +398,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

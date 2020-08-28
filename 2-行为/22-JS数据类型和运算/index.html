@@ -282,19 +282,46 @@
 <p>（7）<code>Number.MAX_VALUE</code> <code>Number_MIN_VALUE</code></p>
 <p>JS 所有的数字都是64位浮点数存储。</p>
 <p><code>Number()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;&quot;</span>)  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot; &quot;</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;123&quot;</span>) <span class="hljs-comment">//123</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-string">&quot;a123&quot;</span>)  <span class="hljs-comment">//NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">true</span>) <span class="hljs-comment">//1</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">false</span>) <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">undefined</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">Number</span>(<span class="hljs-literal">NaN</span>)  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>([])  <span class="hljs-comment">// 0</span><br><span class="hljs-built_in">Number</span>(&#123;&#125;)  <span class="hljs-comment">// NaN</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span> <span class="token comment">//123</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">"a123"</span><span class="token punctuation">)</span>  <span class="token comment">//NaN</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>  <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>parseInt</code></p>
 <p>（1）值转换成整数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;a123&quot;</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&quot;1a123&quot;</span>) <span class="hljs-comment">// 1</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"a123"</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"1a123"</span><span class="token punctuation">)</span> <span class="token comment">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>（2）转换进制</p>
 <p>第二个参数是要转换的进制，默认是10。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>) <span class="hljs-comment">// NaN</span><br><span class="hljs-built_in">parseInt</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>) <span class="hljs-comment">// 0</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><code>parseFloat</code></p>
 <p>值转换成浮点数。</p>
 <p>如果变量<code>*1</code>会被自动转换成数值，如果无法转换，则是<code>NaN</code>。</p>
 <h2><span id="p2-string">2、String</span><a href="#p2-string" class="header-anchor">#</a></h2>
 <p><strong>字符串（String）</strong> 内容用单引号、双引号<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>、反引号<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup>包起来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 普通的字符串</span><br><span class="hljs-string">&quot;这是字符串&quot;</span><br><span class="hljs-string">&#x27;这也是字符串&#x27;</span><br><span class="hljs-string">`<span class="hljs-subst">$&#123;varName&#125;</span>这也是字符串`</span>  <span class="hljs-comment">// 可以嵌入变量，格式$&#123;变量名&#125;</span><br><span class="hljs-string">`</span><br><span class="hljs-string">这也是</span><br><span class="hljs-string">是</span><br><span class="hljs-string">字符串</span><br><span class="hljs-string">`</span><br><br><br><span class="hljs-comment">// 空串</span><br><span class="hljs-string">&quot;&quot;</span><br><br><span class="hljs-comment">// 空白串</span><br><span class="hljs-string">&quot;   &quot;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 普通的字符串</span>
+<span class="token string">"这是字符串"</span>
+<span class="token string">'这也是字符串'</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>varName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">这也是字符串</span><span class="token template-punctuation string">`</span></span>  <span class="token comment">// 可以嵌入变量，格式$&#123;变量名&#125;</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+这也是
+是
+字符串
+</span><span class="token template-punctuation string">`</span></span>
+
+
+<span class="token comment">// 空串</span>
+<span class="token string">""</span>
+
+<span class="token comment">// 空白串</span>
+<span class="token string">"   "</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>.length</code> 获取字符串的长度</p>
 <p><code>A+B</code> 连接A、B字符串</p>
 <p>在ES5中，字符串可以作为只读数组使用，可以通过中括号运算符添加下标访问某值。</p>
@@ -325,7 +352,11 @@
 <p>弱类型语言定义了类型以后，变量的类型可变，可自动转换。<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p>
 <h3><span id="pqiang-zhi-lei-xing-zhuan-huan">强制类型转换</span><a href="#pqiang-zhi-lei-xing-zhuan-huan" class="header-anchor">#</a></h3>
 <p>数值转换 <code>Number()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">+<span class="hljs-string">&quot;22&quot;</span>    <span class="hljs-comment">//22</span><br><span class="hljs-number">5</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">//5</span><br><span class="hljs-string">&quot;5&quot;</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">// &quot;5null&quot;</span><br><span class="hljs-string">&quot;5&quot;</span> +<span class="hljs-number">1</span> <span class="hljs-comment">// &quot;51&quot;</span><br><span class="hljs-string">&quot;5&quot;</span> <span class="hljs-number">-1</span> <span class="hljs-comment">// 4</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">+</span><span class="token string">"22"</span>    <span class="token comment">//22</span>
+<span class="token number">5</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">//5</span>
+<span class="token string">"5"</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">// "5null"</span>
+<span class="token string">"5"</span> <span class="token operator">+</span><span class="token number">1</span> <span class="token comment">// "51"</span>
+<span class="token string">"5"</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment">// 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -507,38 +538,87 @@
 <p>通常和运算符相关联，规则和上面强制转换差不多。</p>
 <h3><span id="pparseint">parseInt</span><a href="#pparseint" class="header-anchor">#</a></h3>
 <p>可以转换进制。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">parseInt</span>(N,X);<br><span class="hljs-comment">// N -- 要转换的数</span><br><span class="hljs-comment">// X -- 要转换的进制</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token constant">N</span><span class="token punctuation">,</span><span class="token constant">X</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// N -- 要转换的数</span>
+<span class="token comment">// X -- 要转换的进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p7-lei-xing-pan-duan">7、类型判断</span><a href="#p7-lei-xing-pan-duan" class="header-anchor">#</a></h2>
 <h3><span id="p-1-typeof">（1）typeof</span><a href="#p-1-typeof" class="header-anchor">#</a></h3>
 <p>通过<code>typeof(表达式)</code>或者<code>typeof 变量</code>来获取值或者变量的数据类型。返回值是数据类型的小写形式。特例:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// object</span><br><span class="hljs-keyword">typeof</span> <span class="hljs-keyword">typeof</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// string </span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">typeof</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// object</span>
+<span class="token keyword">typeof</span> <span class="token keyword">typeof</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// string </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3><span id="p-2-instanceof">（2）instanceof</span><a href="#p-2-instanceof" class="header-anchor">#</a></h3>
 <p>判断对象的数据类型。</p>
 <p>Array | Function | Object</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">A <span class="hljs-keyword">instanceof</span> B <span class="hljs-comment">// A 是不是 B 的实例</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">A</span> <span class="token keyword">instanceof</span> <span class="token class-name">B</span> <span class="token comment">// A 是不是 B 的实例</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3><span id="p-3">（3）===</span><a href="#p-3" class="header-anchor">#</a></h3>
 <p>可以判断 <code>undefined</code> 和 <code>null</code>。</p>
 <h3><span id="p-4-isnan">（4）isNaN</span><a href="#p-4-isnan" class="header-anchor">#</a></h3>
 <p>检测参数是否为非数字值，仅当值为<code>NaN</code>时，返回<code>true</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">isNaN</span>(<span class="hljs-number">123</span>)  <span class="hljs-comment">// false</span><br><span class="hljs-built_in">isNaN</span>(<span class="hljs-string">&quot;123&quot;</span>)  <span class="hljs-comment">// false</span><br><span class="hljs-built_in">isNaN</span>(<span class="hljs-literal">NaN</span>)  <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+<span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+<span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span>  <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p8-symbol">8、Symbol +</span><a href="#p8-symbol" class="header-anchor">#</a></h2>
 <p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。</p>
 <h2><span id="p9-bigint">9、BigInt +</span><a href="#p9-bigint" class="header-anchor">#</a></h2>
 <h1><span id="er-yun-suan-fu-he-biao-da-shi">二、运算符和表达式</span><a href="#er-yun-suan-fu-he-biao-da-shi" class="header-anchor">#</a></h1>
 <h2><span id="p1-suan-zhu-yun-suan-fu">1、算术运算符</span><a href="#p1-suan-zhu-yun-suan-fu" class="header-anchor">#</a></h2>
 <h3><span id="pjia-fa">加法</span><a href="#pjia-fa" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果其中一个操作数是字符串，则会把另外一个操作数转换成字符串。  </span><br><span class="hljs-number">1</span> + <span class="hljs-string">&#x27;str&#x27;</span>   <span class="hljs-comment">// 1str </span><br><span class="hljs-string">&#x27;str&#x27;</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// str1    </span><br><span class="hljs-number">1</span> + <span class="hljs-number">1</span> + <span class="hljs-string">&#x27;str&#x27;</span>  <span class="hljs-comment">// 2str  </span><br><span class="hljs-number">1</span> + (<span class="hljs-number">1</span> + str)  <span class="hljs-comment">// 11str</span><br><br><span class="hljs-comment">// 如果都有是字符串，会拼接在一起  </span><br><span class="hljs-string">&#x27;str&#x27;</span> + <span class="hljs-string">&#x27;is&#x27;</span>  <span class="hljs-comment">// stris</span><br><br><span class="hljs-comment">// 其他类型自动调用Number()进行转换  </span><br><span class="hljs-literal">true</span> + <span class="hljs-literal">true</span> <span class="hljs-comment">// 2</span><br><span class="hljs-literal">null</span> + <span class="hljs-literal">null</span> <span class="hljs-comment">// 0</span><br><span class="hljs-literal">NaN</span> + <span class="hljs-number">1</span> <span class="hljs-comment">// NaN</span><br><span class="hljs-number">1</span> + <span class="hljs-literal">undefined</span> <span class="hljs-comment">// NaN</span><br><br><span class="hljs-comment">// 放在非数值前面，则会自动调用Number()进行转换（不会影响本身）</span><br>+<span class="hljs-string">&#x27;123&#x27;</span> <span class="hljs-comment">// 123</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果其中一个操作数是字符串，则会把另外一个操作数转换成字符串。  </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'str'</span>   <span class="token comment">// 1str </span>
+<span class="token string">'str'</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// str1    </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'str'</span>  <span class="token comment">// 2str  </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> str<span class="token punctuation">)</span>  <span class="token comment">// 11str</span>
+
+<span class="token comment">// 如果都有是字符串，会拼接在一起  </span>
+<span class="token string">'str'</span> <span class="token operator">+</span> <span class="token string">'is'</span>  <span class="token comment">// stris</span>
+
+<span class="token comment">// 其他类型自动调用Number()进行转换  </span>
+<span class="token boolean">true</span> <span class="token operator">+</span> <span class="token boolean">true</span> <span class="token comment">// 2</span>
+<span class="token keyword">null</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">// 0</span>
+<span class="token number">NaN</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// NaN</span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token keyword">undefined</span> <span class="token comment">// NaN</span>
+
+<span class="token comment">// 放在非数值前面，则会自动调用Number()进行转换（不会影响本身）</span>
+<span class="token operator">+</span><span class="token string">'123'</span> <span class="token comment">// 123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pjian-fa-cheng-fa-chu-fa">减法、乘法、除法</span><a href="#pjian-fa-cheng-fa-chu-fa" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果有操作数是非字符，则自动调用Number()转换。</span><br><span class="hljs-string">&#x27;99&#x27;</span> - <span class="hljs-number">0</span> <span class="hljs-comment">// 99</span><br><span class="hljs-string">&#x27;99&#x27;</span> * <span class="hljs-number">1</span> <span class="hljs-comment">// 99</span><br><span class="hljs-string">&#x27;99&#x27;</span> / <span class="hljs-number">1</span> <span class="hljs-comment">// 99</span><br><br><span class="hljs-comment">// 特殊</span><br><span class="hljs-number">1</span> / <span class="hljs-number">0</span> <span class="hljs-comment">// Infinity</span><br><span class="hljs-literal">Infinity</span> * <span class="hljs-number">-1</span> <span class="hljs-comment">// - Infinity</span><br><span class="hljs-number">0</span> / <span class="hljs-number">0</span> <span class="hljs-comment">// NaN </span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果有操作数是非字符，则自动调用Number()转换。</span>
+<span class="token string">'99'</span> <span class="token operator">-</span> <span class="token number">0</span> <span class="token comment">// 99</span>
+<span class="token string">'99'</span> <span class="token operator">*</span> <span class="token number">1</span> <span class="token comment">// 99</span>
+<span class="token string">'99'</span> <span class="token operator">/</span> <span class="token number">1</span> <span class="token comment">// 99</span>
+
+<span class="token comment">// 特殊</span>
+<span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span> <span class="token comment">// Infinity</span>
+<span class="token number">Infinity</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment">// - Infinity</span>
+<span class="token number">0</span> <span class="token operator">/</span> <span class="token number">0</span> <span class="token comment">// NaN </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pqu-yu">取余</span><a href="#pqu-yu" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">3</span> % <span class="hljs-number">5</span> <span class="hljs-comment">// 3</span><br><span class="hljs-number">5</span> % <span class="hljs-number">0</span> <span class="hljs-comment">// NaN</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">3</span> <span class="token operator">%</span> <span class="token number">5</span> <span class="token comment">// 3</span>
+<span class="token number">5</span> <span class="token operator">%</span> <span class="token number">0</span> <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3><span id="pzi-zeng-zi-jian">自增、自减</span><a href="#pzi-zeng-zi-jian" class="header-anchor">#</a></h3>
 <p><code>++i</code> 表示，i自增1后再参与其它运算（先加后用）；而 <code>i++</code> 则是i参与运算后，i的值再自增1。自增自减运算可能会改变原有变量类型。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">100</span><br><span class="hljs-number">1</span> + a++ <span class="hljs-comment">// 101</span><br><span class="hljs-number">1</span> + ++a <span class="hljs-comment">// 102</span><br><br><span class="hljs-comment">// 会改变原变量类型</span><br><span class="hljs-keyword">var</span> a = <span class="hljs-literal">true</span>;<br>++a; <span class="hljs-comment">// a = 2</span><br><br><span class="hljs-keyword">var</span> i = <span class="hljs-number">1</span><br>i = i++ <span class="hljs-comment">// i = 1</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token number">1</span> <span class="token operator">+</span> a<span class="token operator">++</span> <span class="token comment">// 101</span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token operator">++</span>a <span class="token comment">// 102</span>
+
+<span class="token comment">// 会改变原变量类型</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token operator">++</span>a<span class="token punctuation">;</span> <span class="token comment">// a = 2</span>
+
+<span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span>
+i <span class="token operator">=</span> i<span class="token operator">++</span> <span class="token comment">// i = 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p2-tiao-jian-yun-suan-fu">2、条件运算符</span><a href="#p2-tiao-jian-yun-suan-fu" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 如果两个操作数都是字符串，比较对应的字符编码</span><br><span class="hljs-string">&quot;234&quot;</span> &gt; <span class="hljs-string">&quot;123455&quot;</span> <span class="hljs-comment">// true</span><br><br><span class="hljs-comment">// == 和 === 的区别</span><br><span class="hljs-literal">undefined</span> == <span class="hljs-literal">null</span> <span class="hljs-comment">// true</span><br><span class="hljs-literal">undefined</span> === <span class="hljs-literal">null</span> <span class="hljs-comment">// false</span><br><br><span class="hljs-comment">// 坑</span><br><span class="hljs-literal">null</span> == <span class="hljs-number">0</span> <span class="hljs-comment">// false 相等比较不进行类型转换</span><br><span class="hljs-literal">null</span> &gt;= <span class="hljs-number">0</span> <span class="hljs-comment">// true </span><br><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果两个操作数都是字符串，比较对应的字符编码</span>
+<span class="token string">"234"</span> <span class="token operator">></span> <span class="token string">"123455"</span> <span class="token comment">// true</span>
+
+<span class="token comment">// == 和 === 的区别</span>
+<span class="token keyword">undefined</span> <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token comment">// true</span>
+<span class="token keyword">undefined</span> <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token comment">// false</span>
+
+<span class="token comment">// 坑</span>
+<span class="token keyword">null</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment">// false 相等比较不进行类型转换</span>
+<span class="token keyword">null</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token comment">// true </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p3-fu-zhi-yun-suan-fu">3、赋值运算符</span><a href="#p3-fu-zhi-yun-suan-fu" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">a += b <span class="hljs-comment">// 等价于 a = a + b</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">a <span class="token operator">+=</span> b <span class="token comment">// 等价于 a = a + b</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2><span id="p4-luo-ji-yun-suan-fu">4、逻辑运算符</span><a href="#p4-luo-ji-yun-suan-fu" class="header-anchor">#</a></h2>
 <p><code>&amp;&amp;</code> 与</p>
 <ul>
@@ -554,14 +634,25 @@
 <li>第三步：如果第一个操作数可以转换为false，则计算第二个操作数的值。并返回第二个操作数的值</li>
 </ul>
 <p><code>!</code> 非</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">2</span> <span class="hljs-comment">// 返回2</span><br><span class="hljs-string">&#x27;&#x27;</span> &amp;&amp; <span class="hljs-number">1</span> <span class="hljs-comment">// 返回&#x27;&#x27;</span><br><span class="hljs-string">&quot;Cat&quot;</span> &amp;&amp; <span class="hljs-string">&quot;Dog&quot;</span> <span class="hljs-comment">// 返回”Dog&quot;</span><br><span class="hljs-string">&#x27;&#x27;</span>    &amp;&amp; <span class="hljs-literal">false</span>     <span class="hljs-comment">// f &amp;&amp; f 返回 &quot;&quot;</span><br><span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-string">&#x27;&#x27;</span>        <span class="hljs-comment">// f &amp;&amp; f 返回 false</span><br><br><span class="hljs-number">1</span> || <span class="hljs-number">2</span> <span class="hljs-comment">// 1</span><br><span class="hljs-number">0</span> || <span class="hljs-number">2</span> <span class="hljs-comment">// 2</span><br><span class="hljs-number">0</span> || <span class="hljs-literal">null</span> <span class="hljs-comment">// null</span><br><span class="hljs-string">&#x27;&#x27;</span>    || <span class="hljs-literal">false</span>     <span class="hljs-comment">// f || f 返回 false</span><br><span class="hljs-literal">false</span> || <span class="hljs-string">&#x27;&#x27;</span>        <span class="hljs-comment">// f || f 返回 &quot;&quot;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token comment">// 返回2</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token number">1</span> <span class="token comment">// 返回''</span>
+<span class="token string">"Cat"</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"Dog"</span> <span class="token comment">// 返回”Dog"</span>
+<span class="token string">''</span>    <span class="token operator">&amp;&amp;</span> <span class="token boolean">false</span>     <span class="token comment">// f &amp;&amp; f 返回 ""</span>
+<span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span>        <span class="token comment">// f &amp;&amp; f 返回 false</span>
+
+<span class="token number">1</span> <span class="token operator">||</span> <span class="token number">2</span> <span class="token comment">// 1</span>
+<span class="token number">0</span> <span class="token operator">||</span> <span class="token number">2</span> <span class="token comment">// 2</span>
+<span class="token number">0</span> <span class="token operator">||</span> <span class="token keyword">null</span> <span class="token comment">// null</span>
+<span class="token string">''</span>    <span class="token operator">||</span> <span class="token boolean">false</span>     <span class="token comment">// f || f 返回 false</span>
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token string">''</span>        <span class="token comment">// f || f 返回 ""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pduan-lu-yuan-li">短路原理</span><a href="#pduan-lu-yuan-li" class="header-anchor">#</a></h3>
 <p>在逻辑运算中，如果第一个操作数就能决定结果，那么第二个操作数就不会运行了。（就算运行了会报错也能顺利通过）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a = <span class="hljs-literal">false</span>;<br>fasle &amp;&amp; qwq();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+fasle <span class="token operator">&amp;&amp;</span> <span class="token function">qwq</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2><span id="p5-qi-ta-yun-suan-fu">5、其他运算符</span><a href="#p5-qi-ta-yun-suan-fu" class="header-anchor">#</a></h2>
 <p>逗号操作符</p>
 <p>它能够先执行运算符左侧的操作数，然后再执行右侧的操作数，最后返回右侧操作数的值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> a=<span class="hljs-number">1</span>,b=<span class="hljs-number">2</span>,c=<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>三元运算符：<code>运算元1?运算2:运算3</code></p>
 <h2><span id="p6-yun-suan-fu-de-you-xian-ji">6、运算符的优先级 +</span><a href="#p6-yun-suan-fu-de-you-xian-ji" class="header-anchor">#</a></h2>
 <table>
@@ -698,7 +789,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -711,7 +802,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

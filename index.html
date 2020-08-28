@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 19:46:05" itemprop="dateModified" datetime="2020-08-28T19:46:05+08:00">2020-08-28</time>
+                <time title="修改时间：2020-08-28 19:54:26" itemprop="dateModified" datetime="2020-08-28T19:54:26+08:00">2020-08-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,8 +239,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>dashdkas ==hk==</p>
-<p><img src="/images/%E6%A0%87%E6%B3%A8/1.PNG" alt="1"></p>
+          <h1><span id="biao-zhu">标注</span><a href="#biao-zhu" class="header-anchor">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>△</td>
+<td>重点</td>
+</tr>
+<tr>
+<td>△△</td>
+<td>超重点</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -291,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 18:53:23" itemprop="dateModified" datetime="2020-08-28T18:53:23+08:00">2020-08-28</time>
+                <time title="修改时间：2020-08-28 20:18:13" itemprop="dateModified" datetime="2020-08-28T20:18:13+08:00">2020-08-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -318,7 +335,7 @@
 <h2><span id="pdi-yi-bu-fen-gong-ju">第一部分 工具</span><a href="#pdi-yi-bu-fen-gong-ju" class="header-anchor">#</a></h2>
 <ul>
 <li>版本控制工具（git，github）</li>
-<li>Markdown</li>
+<li>Markdown <a href="%E6%A0%87%E6%B3%A8">标注.md</a></li>
 </ul>
 <h2><span id="pdi-er-bu-fen-ji-chu">第二部分 基础</span><a href="#pdi-er-bu-fen-ji-chu" class="header-anchor">#</a></h2>
 <ul>
@@ -346,7 +363,7 @@
 <li>JS 异步编程（Promise，async，手写Promise）</li>
 <li>JS 事件循环机制</li>
 <li>WebSocket</li>
-<li>Ajax</li>
+<li>AJAX</li>
 <li>跨域解决方案</li>
 </ul>
 <h2><span id="pdi-wu-bu-fen">第五部分</span><a href="#pdi-wu-bu-fen" class="header-anchor">#</a></h2>
@@ -805,45 +822,73 @@
 </div>
 <h1><span id="json">JSON</span><a href="#json" class="header-anchor">#</a></h1>
 <p>（1）JSON转字符串</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">JSON</span>.parse();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（2）字符串转JSON</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">JSON</span>.stringify();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1><span id="yuan-sheng-dom-cao-zuo">原生DOM操作</span><a href="#yuan-sheng-dom-cao-zuo" class="header-anchor">#</a></h1>
 <p>（1）创建节点 <code>createElement</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> newLi = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;li&quot;</span>)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> newLi <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（2）创建文本节点 <code>createTextNode</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> newLiCon = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&quot;这是字符串&quot;</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> newLiCon <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token string">"这是字符串"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（3）插入元素 <code>insertBefore</code> <code>appendChild</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 当前节点的子节点末尾插入</span><br>newLi.appendChild(newLiCon);<br><span class="hljs-comment">// 在已有的子节点之前插入</span><br><span class="hljs-comment">//        新插入的节点  插入节点后边的</span><br>oBox.insertBefore(newLi, oLis[<span class="hljs-number">1</span>]);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 当前节点的子节点末尾插入</span>
+newLi<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newLiCon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 在已有的子节点之前插入</span>
+<span class="token comment">//        新插入的节点  插入节点后边的</span>
+oBox<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span>newLi<span class="token punctuation">,</span> oLis<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（4）复制节点 <code>cloneNode</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">oLis[<span class="hljs-number">2</span>].cloneNode());<br>oLis[<span class="hljs-number">2</span>].cloneNode(<span class="hljs-literal">true</span>));<br><span class="hljs-comment">// 参数 true (深复制)，复制整个节点和里面的内容</span><br><span class="hljs-comment">// false (浅复制)，只复制节点不要里面的内容</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">oLis<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+oLis<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数 true (深复制)，复制整个节点和里面的内容</span>
+<span class="token comment">// false (浅复制)，只复制节点不要里面的内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（5）删除节点 <code>removeChild</code></p>
 <p>（6）替换节点 <code>replaceChild</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">                 <span class="hljs-comment">// new    old</span><br>oBox.replaceChild(newLi, oLis[<span class="hljs-number">2</span>])<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">                 <span class="token comment">// new    old</span>
+oBox<span class="token punctuation">.</span><span class="token function">replaceChild</span><span class="token punctuation">(</span>newLi<span class="token punctuation">,</span> oLis<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>（7）<code>innerHTML</code> <code>outerHTML</code> <code>innerText</code> <code>outerText</code> <code>textContent</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(oBox.innerHTML);  <span class="hljs-comment">// 把html也转成字符串输出</span><br>oBox.outerText = <span class="hljs-string">&quot;&lt;li&gt;我是创建的li字符串&lt;/li&gt;&quot;</span>;<br><span class="hljs-comment">// innerText 对IE的兼容性较好</span><br><span class="hljs-comment">// textContent虽然作为标准方法但是只支持IE8+以上的浏览器</span><br><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;myList&quot;</span>).textContent;<br><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;myList&quot;</span>).textContent = <span class="hljs-string">&quot;你好&quot;</span>；<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oBox<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 把html也转成字符串输出</span>
+oBox<span class="token punctuation">.</span>outerText <span class="token operator">=</span> <span class="token string">"&lt;li>我是创建的li字符串&lt;/li>"</span><span class="token punctuation">;</span>
+<span class="token comment">// innerText 对IE的兼容性较好</span>
+<span class="token comment">// textContent虽然作为标准方法但是只支持IE8+以上的浏览器</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent<span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"你好"</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（8）创建属性节点 <code>createAttribute</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> newAttr = <span class="hljs-built_in">document</span>.createAttribute(<span class="hljs-string">&quot;my&quot;</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> newAttr <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createAttribute</span><span class="token punctuation">(</span><span class="token string">"my"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（9）读取属性节点 <code>getAttrobute</code></p>
 <p>（10）设置属性 <code>setAttribute(name,value)</code></p>
 <p>（11）删除属性 <code>removeAttribute</code></p>
 <p>（12）自定义属性 <code>dataset</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">xxx.dataset.xxx = xxxx<br>xxx.dataset.xxx<br><span class="hljs-keyword">delete</span> xxx.dataset.xxx<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">xxx<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>xxx <span class="token operator">=</span> xxxx
+xxx<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>xxx
+<span class="token keyword">delete</span> xxx<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>（13）文档片段节点 <code>document.createDocumentFragment()</code></p>
 <h1><span id="mo-kuai-hua">模块化</span><a href="#mo-kuai-hua" class="header-anchor">#</a></h1>
 <p>（1）NodeJS</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports = &#123;&#125;;<br><span class="hljs-built_in">module</span>.exports.xxx = xxx;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>xxx <span class="token operator">=</span> xxx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>（2）ES6</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;<br><br>&lt;script type = <span class="hljs-string">&quot;module&quot;</span>&gt;<br>	<span class="hljs-keyword">import</span> xx, &#123;&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./mo.js&quot;</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token operator">&lt;</span>script type <span class="token operator">=</span> <span class="token string">"module"</span><span class="token operator">></span>
+	<span class="token keyword">import</span> xx<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"./mo.js"</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1><span id="nodejs-wen-jian-cao-zuo">NodeJS 文件操作</span><a href="#nodejs-wen-jian-cao-zuo" class="header-anchor">#</a></h1>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">fs.readFile(Path, <span class="hljs-function">(<span class="hljs-params">err, data</span>))=&gt;</span>&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span><span class="token parameter">Path<span class="token punctuation">,</span> <span class="token punctuation">(</span>err<span class="token punctuation">,</span> data<span class="token punctuation">)</span></span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1><span id="nodejs-fu-wu-qi">NodeJS 服务器</span><a href="#nodejs-fu-wu-qi" class="header-anchor">#</a></h1>
 <p>获得请求信息中的域名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">req.header.origin<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">req<span class="token punctuation">.</span>header<span class="token punctuation">.</span>origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>获得参数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// xxxx/test?a=1&amp;b=2</span><br><br>req.query <span class="hljs-comment">// &#123;a:&#x27;1&#x27;, b=&#x27;2&#x27;&#125;;</span><br><br><span class="hljs-comment">// xxxx/test/1/2</span><br>app.get(<span class="hljs-string">&quot;test/:a/:b&quot;</span>, <span class="hljs-function">(<span class="hljs-params">req,res</span>)=&gt;</span>&#123;<br>    req.params;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// xxxx/test?a=1&amp;b=2</span>
+
+req<span class="token punctuation">.</span>query <span class="token comment">// &#123;a:'1', b='2'&#125;;</span>
+
+<span class="token comment">// xxxx/test/1/2</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"test/:a/:b"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    req<span class="token punctuation">.</span>params<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1><span id="kua-yu">跨域</span><a href="#kua-yu" class="header-anchor">#</a></h1>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">app.all()<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
       
     </div>
@@ -1025,7 +1070,10 @@
 <li>重绘是重新绘制页面。相对来说影响比重排小，重排一定会导致重绘。</li>
 </ul>
 <h2><span id="p6-ru-he-wai-bu-yin-ru-zi-ti-bao">6、如何外部引入字体包</span><a href="#p6-ru-he-wai-bu-yin-ru-zi-ti-bao" class="header-anchor">#</a></h2>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@font-face</span> &#123;<br>    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;jier&quot;</span>;<br>    <span class="hljs-attribute">src</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../images/abc.ttf&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"jier"</span><span class="token punctuation">;</span>
+    <span class="token property">src</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"../images/abc.ttf"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing">7、颜色设置可以有几种类型</span><a href="#p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing" class="header-anchor">#</a></h2>
 <ul>
 <li>直接预定义好的英文名字</li>
@@ -1236,7 +1284,35 @@
 <p>一个进程中至少会有一个线程，也可以有多个线程，被称为多线程。一个进程内多个线程可以直接共享数据，多个进程之间的数据不能直接共享。</p>
 <p>JS的单线程的，浏览器是多线程的。</p>
 <h2><span id="p32-hun-he-ji-cheng">32、混合继承</span><a href="#p32-hun-he-ji-cheng" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型（构造模式）</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SuperType</span>(<span class="hljs-params"> name </span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name;<br>&#125;<br><span class="hljs-comment">// 父类型（原型模式）</span><br>SuperType.prototype.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">this</span>.name );<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SubType</span>(<span class="hljs-params"> name, age</span>)</span>&#123;<br>    <span class="hljs-comment">// △ 继承属性 △</span><br>    SuperType.call( <span class="hljs-built_in">this</span>,name );<br>    <br>    <span class="hljs-built_in">this</span>.age = age;<br>&#125;<br><span class="hljs-comment">// 继承方法</span><br>SubType.prototype = <span class="hljs-keyword">new</span> SuperType();<br><span class="hljs-comment">// △ 修正原型链 △</span><br>SubType.prototype.constructor = SubType;<br><br>SubType.prototype.sayAge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.age);<br>&#125;<br><br><br><span class="hljs-comment">// 实例化对象</span><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> SubType(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-number">29</span>);<br>p1.sayName();<br>p1.syaAge();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类型（构造模式）</span>
+<span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span> <span class="token parameter">name</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 父类型（原型模式）</span>
+<span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// △ 继承属性 △</span>
+    <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">,</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 继承方法</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// △ 修正原型链 △</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> SubType<span class="token punctuation">;</span>
+
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment">// 实例化对象</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">syaAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p33-shi-jian-xun-huan-ji-zhi">33、事件循环机制</span><a href="#p33-shi-jian-xun-huan-ji-zhi" class="header-anchor">#</a></h2>
 <ul>
 <li>执行初始代码，将事件回调函数交给对应模块管理</li>
@@ -1332,7 +1408,17 @@
 <p>当一个元素需要清除浮动的时候  直接设置clearFix类名即可</p>
 </li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearFix</span><span class="hljs-selector-pseudo">:after</span>&#123;<br>    content:&quot;\200B&quot;;  必须拥有content属性   内容为空<br>    <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">block</span>;   必须块标签才能清浮动<br>    <span class="hljs-selector-tag">height</span>: 0;          高度为0 不占用空间<br>    <span class="hljs-selector-tag">clear</span>: <span class="hljs-selector-tag">both</span>;        清除浮动<br>&#125;<br><br>.clearFix&#123;  //兼容ie<br>    *zoom:1;    //*是css  hack 只有ie6.7 认识<br>    <span class="hljs-selector-tag">ie6</span>、7 不支持伪元素，所以需要开启元素的<span class="hljs-selector-tag">haslayout</span>来清除浮动<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearFix:after</span><span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">"\200B"</span><span class="token punctuation">;</span>  必须拥有content属性   内容为空
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>   必须块标签才能清浮动
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>          高度为0 不占用空间
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>        清除浮动
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.clearFix</span><span class="token punctuation">&#123;</span>  //兼容ie
+    *<span class="token property">zoom</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>    //*是css  hack 只有ie6.7 认识
+    ie6、7 不支持伪元素，所以需要开启元素的haslayout来清除浮动
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p41-a-biao-qian-si-ge-wei-lei-shun-xu">41、a标签四个伪类顺序？</span><a href="#p41-a-biao-qian-si-ge-wei-lei-shun-xu" class="header-anchor">#</a></h2>
 <p>四个伪类</p>
 <p>link：当有链接属性时</p>
@@ -1358,16 +1444,36 @@
 应用场景：搜索栏</p>
 <h2><span id="p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie">46、谈谈你对面向对象的了解？</span><a href="#p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie" class="header-anchor">#</a></h2>
 <h2><span id="p47-object-create-definedproperty-de-shi-yong">47、Object.create/definedProperty的使用</span><a href="#p47-object-create-definedproperty-de-shi-yong" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> obj3 = Obje ct.create(obj, &#123;<br>    name:&#123;<br>        value: <span class="hljs-string">&quot;Lily&quot;</span>,<br>        writable: <span class="hljs-literal">false</span>,<br>        enumeerable: <span class="hljs-literal">false</span>,<br>        configureable: <span class="hljs-literal">false</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj3 <span class="token operator">=</span> Obje ct<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        value<span class="token operator">:</span> <span class="token string">"Lily"</span><span class="token punctuation">,</span>
+        writable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        enumeerable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        configureable<span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p48-geteter-setter">48、geteter、setter</span><a href="#p48-geteter-setter" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> Person&#123;<br>    firstName: <span class="hljs-string">&quot;姓&quot;</span>,<br>    lastName: <span class="hljs-string">&quot;名&quot;</span>,<br>    <span class="hljs-keyword">get</span> <span class="hljs-title">Name</span>()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.firstName&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.lastName&#125;</span>`</span><br>    &#125;<br>    <span class="hljs-keyword">set</span> <span class="hljs-title">setName</span>(<span class="hljs-params">name</span>)&#123;<br>        <span class="hljs-keyword">const</span> newArr = name.split(<span class="hljs-string">&#x27; &#x27;</span>)；<br>        <span class="hljs-built_in">this</span>.firstName = newArr[<span class="hljs-number">0</span>];<br>        <span class="hljs-built_in">this</span>.lastName = newArr[<span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.log(Person.Name);<br>Person.setName = <span class="hljs-string">&quot;某 某某&quot;</span>;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> Person<span class="token punctuation">&#123;</span>
+    firstName<span class="token operator">:</span> <span class="token string">"姓"</span><span class="token punctuation">,</span>
+    lastName<span class="token operator">:</span> <span class="token string">"名"</span><span class="token punctuation">,</span>
+    <span class="token keyword">get</span> <span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">set</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> newArr <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>；
+        <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> newArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> newArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Person<span class="token punctuation">.</span>setName <span class="token operator">=</span> <span class="token string">"某 某某"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p49-var-let-const-qu-bie">49、var/let/const区别</span><a href="#p49-var-let-const-qu-bie" class="header-anchor">#</a></h2>
 <p>var 没有块作用域，会声明提升，可以重复定义</p>
 <p>let 声明的变量具有块作用域，不会声明提升，不能重复定义</p>
 <p>const 常量，不允许修改的数据可以定义为常量，对象、数组等定义为常量只是保证地址不发生变化</p>
 <h2><span id="p50-dui-xiang-de-jie-gou-fu-zhi">50、对象的解构赋值</span><a href="#p50-dui-xiang-de-jie-gou-fu-zhi" class="header-anchor">#</a></h2>
 <h2><span id="p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he">51、箭头函数求一个数组的和</span><a href="#p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> Sum = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span>  a.reduce (<span class="hljs-function">(<span class="hljs-params"> prev, now </span>) =&gt;</span> prev + now )              <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">Sum</span> <span class="token operator">=</span> <span class="token parameter">a</span> <span class="token operator">=></span>  a<span class="token punctuation">.</span><span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token parameter">prev<span class="token punctuation">,</span> now</span> <span class="token punctuation">)</span> <span class="token operator">=></span> prev <span class="token operator">+</span> now <span class="token punctuation">)</span>              <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2><span id="p52-shi-me-shi-shu-xing-ming-biao-da-shi">52、什么是属性名表达式</span><a href="#p52-shi-me-shi-shu-xing-ming-biao-da-shi" class="header-anchor">#</a></h2>
 <p>对象的属性名在ES6之前只能是字符串，不能作为变量解析，</p>
 <p>在ES6中，提供新的写法，把属性名用中括号括起来 中括号就可以书写变量</p>
@@ -1382,7 +1488,32 @@
 <h2><span id="p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li">55、书写一个子类继承父类的案例</span><a href="#p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li" class="header-anchor">#</a></h2>
 <h2><span id="p56-jian-tou-han-shu-de-this-wen-ti">56、箭头函数的this问题</span><a href="#p56-jian-tou-han-shu-de-this-wen-ti" class="header-anchor">#</a></h2>
 <h2><span id="p57-shou-xie-iterator-jie-kou">57、手写 iterator 接口</span><a href="#p57-shou-xie-iterator-jie-kou" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Iterator</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">//用一个计数器，保存现在处理到哪里了</span><br>    <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> &#123;<br>        next: <span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (index &lt; arr.length) &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    value: arr[index++],<br>                    done: <span class="hljs-literal">false</span><br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    done: <span class="hljs-literal">true</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//只要调用这个Iterator接口，就可以依次处理成员了</span><br><span class="hljs-keyword">let</span> it = Iterator(arr);<br><span class="hljs-built_in">console</span>.log(it);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//用一个计数器，保存现在处理到哪里了</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                    value<span class="token operator">:</span> arr<span class="token punctuation">[</span>index<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    done<span class="token operator">:</span> <span class="token boolean">false</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                    done<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//只要调用这个Iterator接口，就可以依次处理成员了</span>
+<span class="token keyword">let</span> it <span class="token operator">=</span> <span class="token function">Iterator</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p58-for-of-he-for-in-xun-huan-de-qu-bie">58、for of 和 for in 循环的区别</span><a href="#p58-for-of-he-for-in-xun-huan-de-qu-bie" class="header-anchor">#</a></h2>
 <ul>
 <li>JavaScript 原有的<code>for...in</code>循环，只能获得对象的键名，不能直接获取键值。ES6 提供<code>for...of</code>循环，允许遍历获得键值，如果要通过<code>for...of</code>循环，获取数组的索引，可以借助数组实例的<code>entries</code>方法和<code>keys</code>方法。</li>
@@ -1637,10 +1768,18 @@
 <p>正则表达式包含 <strong>模式</strong> 和可选的 <strong>修饰符</strong>。</p>
 <h2><span id="p1-search">1、search</span><a href="#p1-search" class="header-anchor">#</a></h2>
 <p>创建一个正则表达式有两种语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1st 允许从字符串动态构造模式</span><br>reg = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;pattern&quot;</span>,<span class="hljs-string">&quot;flags&quot;</span>);<br><br><span class="hljs-comment">// 2nd 常用</span><br>reg = <span class="hljs-regexp">/pattern/</span>;<br>reg2 = <span class="hljs-regexp">/pattern/gmi</span>;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1st 允许从字符串动态构造模式</span>
+reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"pattern"</span><span class="token punctuation">,</span><span class="token string">"flags"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2nd 常用</span>
+reg <span class="token operator">=</span> <span class="token regex">/pattern/</span><span class="token punctuation">;</span>
+reg2 <span class="token operator">=</span> <span class="token regex">/pattern/gmi</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果要在字符串中搜索，可以使用 <strong>search</strong> 方法。这个方法返回匹配项的索引位置，如果没找到返回-1。</p>
 <p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;I love you!&quot;</span>;<br><span class="hljs-keyword">let</span> reg = <span class="hljs-regexp">/love/</span>;<br><br><span class="hljs-built_in">console</span>.log( str.search(reg) ); <span class="hljs-comment">// 2</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"I love you!"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex">/love/</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p2-xiu-shi-fu">2、修饰符</span><a href="#p2-xiu-shi-fu" class="header-anchor">#</a></h2>
 <p>正则表达式的修饰符影响搜索结果，在 JS 中有五个修饰符：</p>
 <table>
@@ -1694,7 +1833,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/48-NPM/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E5%B7%B2%E6%9B%B4%E6%96%B0/%E6%A8%A1%E5%9D%97%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1708,7 +1847,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/48-NPM/" class="post-title-link" itemprop="url">NPM</a>
+            <a href="/%E5%B7%B2%E6%9B%B4%E6%96%B0/%E6%A8%A1%E5%9D%97%E5%8C%96/" class="post-title-link" itemprop="url">模块化</a>
         </h2>
 
         <div class="post-meta">
@@ -1725,81 +1864,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 11:19:40" itemprop="dateModified" datetime="2020-08-27T11:19:40+08:00">2020-08-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>待补充。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/47-%E6%A8%A1%E5%9D%97%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/47-%E6%A8%A1%E5%9D%97%E5%8C%96/" class="post-title-link" itemprop="url">JS 模块化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-26T00:00:00+08:00">2020-08-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 08:36:58" itemprop="dateModified" datetime="2020-08-28T08:36:58+08:00">2020-08-28</time>
+                <time title="修改时间：2020-08-28 20:16:18" itemprop="dateModified" datetime="2020-08-28T20:16:18+08:00">2020-08-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1823,6 +1888,31 @@
 
       
           <p>模块化是工程化的基础。</p>
+<h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-nodejs-mo-kuai-hua">一、NodeJS 模块化</a>
+<ul>
+<li><a href="#1-mo-kuai-bao-lu">1、模块暴露</a></li>
+<li><a href="#2-mo-kuai-dao-ru">2、模块导入</a></li>
+<li><a href="#3-lu-jing-fen-xi-he-wen-jian-ding-wei">3、路径分析和文件定位</a></li>
+</ul>
+</li>
+<li><a href="#er-es6-mo-kuai-hua">二、ES6 模块化</a>
+<ul>
+<li><a href="#1-dao-chu">1、导出</a></li>
+<li><a href="#2-dao-ru">2、导入</a></li>
+<li><a href="#3-ding-yi-bie-ming">3、定义别名</a></li>
+<li><a href="#4-mo-ren-dao-chu-dao-ru">4、默认导出导入</a></li>
+<li><a href="#5-tong-pei-fu-dao-chu-as">5、通配符导出(<code>* as</code>)</a></li>
+</ul>
+</li>
+<li><a href="#san-amd-cmd">三、AMD、CMD +</a></li>
+</ul>
+<!-- tocstop -->
+</div>
 <h1><span id="yi-nodejs-mo-kuai-hua">一、NodeJS 模块化</span><a href="#yi-nodejs-mo-kuai-hua" class="header-anchor">#</a></h1>
 <p>NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 <strong>CommonJS</strong> 模块化系统。</p>
 <h2><span id="p1-mo-kuai-bao-lu">1、模块暴露</span><a href="#p1-mo-kuai-bao-lu" class="header-anchor">#</a></h2>
@@ -1831,32 +1921,79 @@
 <p><code>module.exports</code> 是导出的对象。</p>
 <p>无论添加还是直接覆盖，他永远都是导出的对象。</p>
 <p>如果是导出一个对象，可以写</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-built_in">module</span>.exports.obj = obj;<br><span class="hljs-comment">//或者</span><br><span class="hljs-built_in">module</span>.exports = &#123;<span class="hljs-attr">obj</span>:obj&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>obj <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+<span class="token comment">//或者</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>obj<span class="token operator">:</span>obj<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>如果导出一组对象，可以写</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">moudle.exports.obj = &#123;<span class="hljs-attr">obj</span>:obj, <span class="hljs-attr">obj2</span>:obj2&#125;;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">moudle<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>obj<span class="token operator">:</span>obj<span class="token punctuation">,</span> obj2<span class="token operator">:</span>obj2<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果直接导出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">module.exports &#x3D; fun; <br>&#x2F;&#x2F; 导出的对象是 fun 函数<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">module.exports &#x3D; fun; 
+&#x2F;&#x2F; 导出的对象是 fun 函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>例子</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><span class="hljs-comment">// 暴露出去</span><br><span class="hljs-built_in">module</span>.exports = add;<br></code></pre></td></tr></table></figure>
-<p>（2）将变量和函数设置为 <code>exports</code> 的属性来暴露变量和函数</p>
-<p>为了方便，Node为每个模块提供一个exports变量，指向module.exports，例如： <code>module.exports.fun = …</code>，相当于<code>exports.fun = ...</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 暴露出去</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> add<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）将变量和函数设置为 <code>exports</code> 的属性来暴露变量和函数为了方便，Node为每个模块提供一个exports变量，指向module.exports，例如： <code>module.exports.fun = …</code>，相当于<code>exports.fun = ...</code>。</p>
 <p><code>exports</code> 本身不具备导出功能，但是修改它的时候，其实是修改了<code>module.exports</code> 。<code>exports</code> 是指向 <code>moudlue.exports</code> 的对象地址的一个新对象。（<code>exports = xxx</code> 的用法是错误的，这样使其不再绑定。正确的用法是 <code>exports.xxx = xxx</code> ）</p>
 <p>不能将一个值赋值给<code>exports</code>，而是使用<code>exports.XXX</code>来暴露。否则这样它将不再绑定到<code>module.exports</code>。如果exports导出的变量类型是引用类型如函数，则会断开与<code>module.exports</code>的地址指向，导致变量导出失败。因为最终还是要靠<code>module.exports</code>来导出变量的。</p>
 <p>例子</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">x, y</span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> x + y;<br>&#125;<br><span class="hljs-comment">// 暴露出去</span><br><span class="hljs-built_in">exports</span>.add = add; <span class="hljs-comment">// &#123; add: [Function: add] &#125;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 暴露出去</span>
+exports<span class="token punctuation">.</span>add <span class="token operator">=</span> add<span class="token punctuation">;</span> <span class="token comment">// &#123; add: [Function: add] &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p2-mo-kuai-dao-ru">2、模块导入</span><a href="#p2-mo-kuai-dao-ru" class="header-anchor">#</a></h2>
 <p>通过 <code>require()</code> 来引入外部的模块</p>
 <p>模块分为三种类型。</p>
 <p>（1）系统模块</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（2）第三方模块</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// npm install express -save</span><br><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// npm install express -save</span>
+<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>（3）自定义模块</p>
-<p>可以不书写后缀名：默认按照 js  json  node 顺序给添加后缀</p>
+<p>可以不书写后缀名：默认按照 js json node 顺序解析</p>
 <p>一定要加上<code>./</code> 或者 <code>../</code> 之类的路径 否则可能解析错误</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// f1,f2 是 函数 o1,o2 是对象</span><br><br><span class="hljs-comment">// (1)</span><br><span class="hljs-built_in">module</span>.exports.f1 = f1;<br>==&gt; <br><span class="hljs-keyword">const</span> &#123;f1&#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br><br><span class="hljs-built_in">module</span>.exports.o1 = o1;<br>==&gt;<br><span class="hljs-keyword">const</span> &#123;o1&#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br>==&gt;<br><span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123; o1: &#123;...&#125;&#125;</span><br><br><span class="hljs-comment">// (2)</span><br><span class="hljs-built_in">module</span>.exports = &#123;<span class="hljs-attr">f1</span>:f1, <span class="hljs-attr">f2</span>:f2&#125;<br>==&gt; <br><span class="hljs-keyword">const</span> obj = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br><span class="hljs-built_in">console</span>.log(obj) <span class="hljs-comment">// &#123; o1: &#123;...&#125;, o2: &#123;...&#125; &#125;</span><br><br><br><span class="hljs-comment">// (3)</span><br><span class="hljs-built_in">exports</span>.f1 = f1;<br><span class="hljs-built_in">exports</span>.f2 = f2;<br>==&gt;<br><span class="hljs-keyword">const</span> &#123;f1&#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br><span class="hljs-keyword">const</span> &#123;f1, f2&#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./mod/test&quot;</span>);<br><br><span class="hljs-comment">// (4)</span><br><span class="hljs-built_in">module</span>.exports = f = <span class="hljs-function">() =&gt;</span> &#123;&#125;<br>==&gt;<br><span class="hljs-keyword">const</span> fn = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./xxx/xxx&quot;</span>);<br><span class="hljs-built_in">console</span>.log(fn); <span class="hljs-comment">// [Function: f]</span><br>fn(); <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// f1,f2 是 函数 o1,o2 是对象</span>
+
+<span class="token comment">// (1)</span>
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>f1 <span class="token operator">=</span> f1<span class="token punctuation">;</span>
+<span class="token operator">==</span><span class="token operator">></span> 
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>o1 <span class="token operator">=</span> o1<span class="token punctuation">;</span>
+<span class="token operator">==</span><span class="token operator">></span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>o1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">==</span><span class="token operator">></span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// &#123; o1: &#123;...&#125;&#125;</span>
+
+<span class="token comment">// (2)</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>f1<span class="token operator">:</span>f1<span class="token punctuation">,</span> f2<span class="token operator">:</span>f2<span class="token punctuation">&#125;</span>
+<span class="token operator">==</span><span class="token operator">></span> 
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// &#123; o1: &#123;...&#125;, o2: &#123;...&#125; &#125;</span>
+
+
+<span class="token comment">// (3)</span>
+exports<span class="token punctuation">.</span>f1 <span class="token operator">=</span> f1<span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span>f2 <span class="token operator">=</span> f2<span class="token punctuation">;</span>
+<span class="token operator">==</span><span class="token operator">></span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// (4)</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token operator">==</span><span class="token operator">></span>
+<span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./xxx/xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [Function: f]</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>！实际使用例子</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// (1)</span><br><span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (req, res) =&gt; &#123;...&#125;<br>==&gt;<br><span class="hljs-keyword">const</span> xxx = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./xxx&quot;</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// (1)</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token operator">...</span><span class="token punctuation">&#125;</span>
+<span class="token operator">==</span><span class="token operator">></span>
+<span class="token keyword">const</span> xxx <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p3-lu-jing-fen-xi-he-wen-jian-ding-wei">3、路径分析和文件定位</span><a href="#p3-lu-jing-fen-xi-he-wen-jian-ding-wei" class="header-anchor">#</a></h2>
 <p>路径形式的文件模块：以<code>./</code> <code>../</code>路径形式的文件模块，将其转化为真实路径，根据真实路径索引去查找。</p>
 <p>第三方模块会从 <code>node_modules</code> 逐层往上找，直到根目录的<code>node_modules</code>。</p>
@@ -1866,18 +2003,37 @@
 <p>ES6的模块化分为导出（export）与导入（import）。</p>
 <h2><span id="p1-dao-chu">1、导出</span><a href="#p1-dao-chu" class="header-anchor">#</a></h2>
 <p>使用关键字 <code>export</code> 导出模块。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 单个导出</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> a = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> b = <span class="hljs-number">2</span>;<br><span class="hljs-keyword">export</span> funcion fn()&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;abc&quot;</span>);<br>&#125;<br><br><span class="hljs-comment">// 批量导出</span><br><span class="hljs-keyword">let</span> c = <span class="hljs-number">3</span>;<br><span class="hljs-keyword">let</span> d = <span class="hljs-number">4</span>;<br><span class="hljs-keyword">export</span> &#123;c, d <span class="hljs-keyword">as</span> e&#125;; <span class="hljs-comment">// 这里也能定义别名</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 单个导出</span>
+<span class="token keyword">export</span> <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> funcion <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 批量导出</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token punctuation">&#123;</span>c<span class="token punctuation">,</span> d <span class="token keyword">as</span> e<span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">// 这里也能定义别名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p2-dao-ru">2、导入</span><a href="#p2-dao-ru" class="header-anchor">#</a></h2>
 <p>使用关键字 <code>import</code> 导出模块。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><br><span class="javascript">	<span class="hljs-keyword">import</span> &#123;a, b, fn&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./module/mo.js&quot;</span></span><br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+	<span class="token keyword">import</span> <span class="token punctuation">&#123;</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> fn<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"./module/mo.js"</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>可以少写，但是不能多写。</p>
 <h2><span id="p3-ding-yi-bie-ming">3、定义别名</span><a href="#p3-ding-yi-bie-ming" class="header-anchor">#</a></h2>
 <p>出现重名的情况，会报错，此时可以用关键字 <code>as</code> 定义<strong>别名</strong>。</p>
 <p>通过别名可以解决命名冲突。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;fn, name <span class="hljs-keyword">as</span> ns&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./module/mo.js&quot;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>fn<span class="token punctuation">,</span> name <span class="token keyword">as</span> ns<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"./module/mo.js"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2><span id="p4-mo-ren-dao-chu-dao-ru">4、默认导出导入</span><a href="#p4-mo-ren-dao-chu-dao-ru" class="header-anchor">#</a></h2>
 <p>常用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span>&#123;<br>    <span class="hljs-comment">// 这里写对象</span><br>    a:<span class="hljs-number">1</span>,<br>    b:<span class="hljs-number">2</span><br>&#125;;<br><br><span class="hljs-comment">// x 可以得到一个对象</span><br><span class="hljs-keyword">import</span> x <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./module/mo.js&quot;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 这里写对象</span>
+    a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+    b<span class="token operator">:</span><span class="token number">2</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// x 可以得到一个对象</span>
+<span class="token keyword">import</span> x <span class="token keyword">from</span> <span class="token string">"./module/mo.js"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>一个文件只能定义一个 <code>export default</code> 。</p>
 <p>混合导出导入 <code>import a, &#123;b&#125; from ...</code> 注意书写顺序</p>
 <h2><span id="p5-tong-pei-fu-dao-chu-as">5、通配符导出(<code>* as</code>)</span><a href="#p5-tong-pei-fu-dao-chu-as" class="header-anchor">#</a></h2>
@@ -1972,23 +2128,243 @@
 <p><code>npm install express-generator -g</code></p>
 <h1><span id="er-express-ji-ben-shi-yong">二、express 基本使用</span><a href="#er-express-ji-ben-shi-yong" class="header-anchor">#</a></h1>
 <h2><span id="p1-kai-qi-fu-wu-qi">1、开启服务器</span><a href="#p1-kai-qi-fu-wu-qi" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;express&quot;</span>);<br><span class="hljs-keyword">const</span> app = express();<br>        <span class="hljs-comment">//port</span><br>app.listen(<span class="hljs-number">80</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    ...<br>&#125;);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//port</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">80</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>http 默认80端口，https 默认443端口。</p>
 <h2><span id="p2-she-zhi-jing-tai-zi-yuan-mu-lu">2、设置静态资源目录</span><a href="#p2-she-zhi-jing-tai-zi-yuan-mu-lu" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">app.use( express.static(path.resolve(__dirname, <span class="hljs-string">&quot;../xxx&quot;</span>))) <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span> express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"../xxx"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>！明确到一个文件夹。</p>
 <p>！可以指定多个。</p>
 <h2><span id="p3-she-zhi-lu-you">3、设置路由</span><a href="#p3-she-zhi-lu-you" class="header-anchor">#</a></h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">app.get( URL, (req, res)&#x3D;&gt;&#123;&#125;)<br>app.post( URL, (req, res)&#x3D;&gt;&#123;&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">app.get( URL, (req, res)&#x3D;&gt;&#123;&#125;)
+app.post( URL, (req, res)&#x3D;&gt;&#123;&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>如果指定多个，当遇到访问方法和地址相同时，遇到第一个，默认不会向下执行 – <strong>只会匹配第一个</strong></p>
 <p>只能响应一次。</p>
 <blockquote>
 <p>也可以用 <code>next()</code> 继续向下查找是否有满足条件的路由。</p>
 <p>第二次响应没有意义。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 允许所有站点跨域</span><br>app.all(<span class="hljs-string">&quot;*&quot;</span>, <span class="hljs-function">(<span class="hljs-params">req,res</span>)=&gt;</span>&#123;<br>    res.header(<span class="hljs-string">&quot;Access-Control-Allow-Origin&quot;</span>),<span class="hljs-string">&quot;*&quot;</span>);<br>    next();<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 允许所有站点跨域</span>
+app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+    res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"*"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p4-body-parser">4、body-parser</span><a href="#p4-body-parser" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;body-parser&quot;</span>);<br>app.user( bodyParser.json());<br><br><span class="hljs-keyword">const</span> &#123;context&#125; = req.body;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"body-parser"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">user</span><span class="token punctuation">(</span> bodyParser<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>context<span class="token punctuation">&#125;</span> <span class="token operator">=</span> req<span class="token punctuation">.</span>body<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E5%B7%B2%E6%9B%B4%E6%96%B0/AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%B7%B2%E6%9B%B4%E6%96%B0/AJAX/" class="post-title-link" itemprop="url">AJAX</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-25 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-25T00:00:00+08:00">2020-08-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 20:47:05" itemprop="dateModified" datetime="2020-08-28T20:47:05+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-gong-zuo-yuan-li-he-ji-ben-shi-yong">一、工作原理和基本使用</a>
+<ul>
+<li><a href="#1-gong-zuo-yuan-li">1、工作原理</a></li>
+<li><a href="#2-te-dian">2、特点</a></li>
+<li><a href="#3-xmlhttprequest-he-xin-dui-xiang">3、XMLHttpRequest 核心对象</a></li>
+<li><a href="#4-shi-yong-bu-zou">4、使用步骤</a>
+<ul>
+<li><a href="#1-chuang-jian-he-xin-dui-xiang">（1）创建核心对象</a></li>
+<li><a href="#2-da-kai-jie-kou-she-zhi-shu-ju-lei-xing">（2）打开接口，设置数据类型</a></li>
+<li><a href="#3-fa-song-qing-qiu">（3）发送请求</a></li>
+<li><a href="#4-jie-shou-shu-ju">（4）接收数据</a></li>
+</ul>
+</li>
+<li><a href="#5-qing-qiu-he-xiang-ying-zhuang-tai">5、请求和响应状态</a></li>
+</ul>
+</li>
+<li><a href="#er-ying-yong-shi-li">二、应用示例（+）</a>
+<ul>
+<li><a href="#1-get-fang-shi">1、GET 方式</a></li>
+<li><a href="#2-post-fang-shi">2、POST 方式</a></li>
+<li><a href="#3-jquery">3、jQuery</a></li>
+<li><a href="#4-axios">4、axios</a></li>
+</ul>
+</li>
+<li><a href="#san-er-ci-feng-zhuang">三、二次封装（+）</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+<p><strong>AJAX</strong> 即 Asynchronous Javascript And XML，异步 JavaScript 和 XML。是指一种无需重新加载整个网页的情况下，能够更新部分网页的技术。通过Ajax可以在浏览器中向服务器发起异步请求。</p>
+<p>XML 称为可扩展标记语言，被设计用来传输和存储数据，和 HTML 类似，不同的是 HTML 日常使用大部分都是预定义标签，XML 全部都是自定义标签，用来表示一些数据。</p>
+<h1><span id="yi-gong-zuo-yuan-li-he-ji-ben-shi-yong">一、工作原理和基本使用</span><a href="#yi-gong-zuo-yuan-li-he-ji-ben-shi-yong" class="header-anchor">#</a></h1>
+<h2><span id="p1-gong-zuo-yuan-li">1、工作原理</span><a href="#p1-gong-zuo-yuan-li" class="header-anchor">#</a></h2>
+<p>Ajax 的工作原理相当于在用户和服务器之间加了一个中间层（Ajax引擎），使用户操作与服务器响应异步化。</p>
+<h2><span id="p2-te-dian">2、特点</span><a href="#p2-te-dian" class="header-anchor">#</a></h2>
+<p>优点</p>
+<ul>
+<li>无需刷新页面来和服务器通信。</li>
+<li>允许你根据用户事件来更新部分页面内容。</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>没有浏览历史，无法回退。</li>
+<li>存在跨域问题。</li>
+<li>对 SEO 不友好。</li>
+</ul>
+<h2><span id="p3-xmlhttprequest-he-xin-dui-xiang">3、XMLHttpRequest 核心对象</span><a href="#p3-xmlhttprequest-he-xin-dui-xiang" class="header-anchor">#</a></h2>
+<p>Ajax 的所有操作都是通过 <code>XMLHttpRequest</code> 对象进行的。</p>
+<h2><span id="p4-shi-yong-bu-zou">4、使用步骤</span><a href="#p4-shi-yong-bu-zou" class="header-anchor">#</a></h2>
+<h3><span id="p-1-chuang-jian-he-xin-dui-xiang">（1）创建核心对象</span><a href="#p-1-chuang-jian-he-xin-dui-xiang" class="header-anchor">#</a></h3>
+<p>创建 <code>XMLHttpRequest</code> 核心对象。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> xhr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="p-2-da-kai-jie-kou-she-zhi-shu-ju-lei-xing">（2）打开接口，设置数据类型</span><a href="#p-2-da-kai-jie-kou-she-zhi-shu-ju-lei-xing" class="header-anchor">#</a></h3>
+<p>通过 <code>open(method, URL)</code> 打开接口。</p>
+<ul>
+<li><code>method</code> 请求方法，<code>POST</code> 或者 <code>GET</code>。</li>
+<li><code>URL</code> 接口地址。</li>
+</ul>
+<p>！这里可以设置数据格式，即请求头，媒体类型有</p>
+<ul>
+<li><code>application/json</code></li>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>formdata</code></li>
+</ul>
+<p><code>xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"POST"</span><span class="token punctuation">,</span> <span class="token string">"http://127.0.0.1/weibo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="p-3-fa-song-qing-qiu">（3）发送请求</span><a href="#p-3-fa-song-qing-qiu" class="header-anchor">#</a></h3>
+<p>发送请求 <code>send(body)</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringifly</span><span class="token punctuation">(</span> content <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 只能传字符串</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>GET</code> 请求不需要参数， <code>POST</code> 请求需要。</p>
+<h3><span id="p-4-jie-shou-shu-ju">（4）接收数据</span><a href="#p-4-jie-shou-shu-ju" class="header-anchor">#</a></h3>
+<p><code>xhr.responseXML</code> 接收XML格式的响应数据。</p>
+<p><code>xhr.responseText</code> 接收文本格式的响应数据。</p>
+<p>a. 通过 <code>onreadystatechange</code> 事件接收数据，xhr 对象有 <code>readyState</code> 表示当前的请求状态，状态改变就会触发这个事件。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">>=</span> <span class="token number">200</span> <span class="token operator">&amp;&amp;</span> xhr<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token keyword">let</span> text <span class="token operator">=</span> xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">;</span>
+		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>b. 通过 <code>onload</code> 事件</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">xhr<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token operator">...</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p5-qing-qiu-he-xiang-ying-zhuang-tai">5、请求和响应状态</span><a href="#p5-qing-qiu-he-xiang-ying-zhuang-tai" class="header-anchor">#</a></h2>
+<p>（1）<code>xhr.readyState</code> 当前的请求状态</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>UNSENT</td>
+<td>表示 <code>XMLHttpRequest</code> 实例已经生成，但是 <code>open()</code> 方法还没有被调用。</td>
+</tr>
+<tr>
+<td>1</td>
+<td>OPENED</td>
+<td>表示 <code>send()</code>方法还没有被调用，仍然可以使用<code>setRequestHeader()</code>，设定HTTP请求的头信息。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEADERS_RECEIVED</td>
+<td>表示 <code>send()</code> 方法已经执行，并且头信息和状态码已经收到。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LOADING</td>
+<td>表示正在接收服务器传来的body部分的数据，如果responseType属性是text或者空字符串，responseText就会包含已经收到的部分信息。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DONE</td>
+<td>表示服务器数据已经接收完成，或者本次接收已经失败了。</td>
+</tr>
+</tbody>
+</table>
+<p>（2）<code>xhr.status</code> 响应状态，同HTTP协议响应状态码。</p>
+<h1><span id="er-ying-yong-shi-li">二、应用示例（+）</span><a href="#er-ying-yong-shi-li" class="header-anchor">#</a></h1>
+<h2><span id="p1-get-fang-shi">1、GET 方式</span><a href="#p1-get-fang-shi" class="header-anchor">#</a></h2>
+<h2><span id="p2-post-fang-shi">2、POST 方式</span><a href="#p2-post-fang-shi" class="header-anchor">#</a></h2>
+<h2><span id="p3-jquery">3、jQuery</span><a href="#p3-jquery" class="header-anchor">#</a></h2>
+<h2><span id="p4-axios">4、axios</span><a href="#p4-axios" class="header-anchor">#</a></h2>
+<h1><span id="san-er-ci-feng-zhuang">三、二次封装（+）</span><a href="#san-er-ci-feng-zhuang" class="header-anchor">#</a></h1>
+<p>待更新。</p>
 
       
     </div>
@@ -2007,7 +2383,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2073,7 +2449,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2086,7 +2462,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

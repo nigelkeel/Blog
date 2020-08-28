@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JavaScript 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 一、基本语法# 正则表达式包含 模式 和可选的 修饰符。 1、search# 创建一个正则表达式有两种语法： 123456&#x2F;&#x2F; 1st 允许从字符串动态构造模式reg &#x3D; new RegExp(&quot;pattern&quot;,&amp;q">
+  <meta name="description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JavaScript 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 一、基本语法# 正则表达式包含 模式 和可选的 修饰符。 1、search# 创建一个正则表达式有两种语法： &#x2F;&#x2F; 1st 允许从字符串动态构造模式 reg &#x3D; new RegExp(&quot;pattern&quot;,&quot;flags&quot;);  &#x2F;&#x2F; 2nd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://nigelkeel.gitee.io/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/64-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="飞鱼">
-<meta property="og:description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JavaScript 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 一、基本语法# 正则表达式包含 模式 和可选的 修饰符。 1、search# 创建一个正则表达式有两种语法： 123456&#x2F;&#x2F; 1st 允许从字符串动态构造模式reg &#x3D; new RegExp(&quot;pattern&quot;,&amp;q">
+<meta property="og:description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JavaScript 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 一、基本语法# 正则表达式包含 模式 和可选的 修饰符。 1、search# 创建一个正则表达式有两种语法： &#x2F;&#x2F; 1st 允许从字符串动态构造模式 reg &#x3D; new RegExp(&quot;pattern&quot;,&quot;flags&quot;);  &#x2F;&#x2F; 2nd">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-26T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-08-27T03:02:45.910Z">
@@ -241,10 +241,18 @@
 <p>正则表达式包含 <strong>模式</strong> 和可选的 <strong>修饰符</strong>。</p>
 <h2><span id="p1-search">1、search</span><a href="#p1-search" class="header-anchor">#</a></h2>
 <p>创建一个正则表达式有两种语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1st 允许从字符串动态构造模式</span><br>reg = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">&quot;pattern&quot;</span>,<span class="hljs-string">&quot;flags&quot;</span>);<br><br><span class="hljs-comment">// 2nd 常用</span><br>reg = <span class="hljs-regexp">/pattern/</span>;<br>reg2 = <span class="hljs-regexp">/pattern/gmi</span>;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1st 允许从字符串动态构造模式</span>
+reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"pattern"</span><span class="token punctuation">,</span><span class="token string">"flags"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 2nd 常用</span>
+reg <span class="token operator">=</span> <span class="token regex">/pattern/</span><span class="token punctuation">;</span>
+reg2 <span class="token operator">=</span> <span class="token regex">/pattern/gmi</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果要在字符串中搜索，可以使用 <strong>search</strong> 方法。这个方法返回匹配项的索引位置，如果没找到返回-1。</p>
 <p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;I love you!&quot;</span>;<br><span class="hljs-keyword">let</span> reg = <span class="hljs-regexp">/love/</span>;<br><br><span class="hljs-built_in">console</span>.log( str.search(reg) ); <span class="hljs-comment">// 2</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"I love you!"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex">/love/</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p2-xiu-shi-fu">2、修饰符</span><a href="#p2-xiu-shi-fu" class="header-anchor">#</a></h2>
 <p>正则表达式的修饰符影响搜索结果，在 JS 中有五个修饰符：</p>
 <table>
@@ -297,8 +305,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/48-NPM/" rel="prev" title="NPM">
-      <i class="fa fa-chevron-left"></i> NPM
+    <a href="/%E5%B7%B2%E6%9B%B4%E6%96%B0/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="prev" title="模块化">
+      <i class="fa fa-chevron-left"></i> 模块化
     </a></div>
       <div class="post-nav-item">
     <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/54-NodeJS%E6%89%A9%E5%B1%95/" rel="next" title="NodeJS 扩展模块">
@@ -376,7 +384,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -389,7 +397,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -258,14 +258,35 @@
 </blockquote>
 <p><img src="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/007S8ZIlgy1gh1cmo2y3mj31ae0ccdh3.jpg" alt="img"></p>
 <p>prototype 属性只有在函数被当做构造函数调用的时候（函数的构造调用）才会生效。==由同一个构造函数生成的各个实例对象之间共享属性和方法。==</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fun</span>(<span class="hljs-params"></span>)</span>&#123;...&#125;;<br>fun.prototype; <span class="hljs-comment">// 是一个object</span><br><br>fun.prototype.constructor === fun;<span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token operator">...</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+fun<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span> <span class="token comment">// 是一个object</span>
+
+fun<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> fun<span class="token punctuation">;</span><span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</span><a href="#p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing" class="header-anchor">#</a></h3>
 <p>当调用构造函数创建一个新实例之后，该实例内部将包含一个内部属性 <strong><code>__proto__</code></strong>，指向构造函数的原型对象。==实例化之后才能用==。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">// 构造函数中给this扩展的属性是私有的</span><br>    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;xxx&quot;</span><br>    <span class="hljs-built_in">this</span>.say = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;&#125;<br>&#125;<br><br><span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">new</span> fun();<span class="hljs-comment">// f1是fun的实例化对象</span><br><br>F.prototype.age = <span class="hljs-string">&quot;18&quot;</span><br>f1.age <span class="hljs-comment">// 18</span><br><span class="hljs-comment">// f1上面没有age所以通过f1的__proto__属性</span><br><span class="hljs-comment">// 找到f的构造函数的原型对象</span><br><br>F.prototype === f1.__proto__<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token constant">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 构造函数中给this扩展的属性是私有的</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"xxx"</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">say</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// f1是fun的实例化对象</span>
+
+<span class="token class-name">F</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token string">"18"</span>
+f1<span class="token punctuation">.</span>age <span class="token comment">// 18</span>
+<span class="token comment">// f1上面没有age所以通过f1的__proto__属性</span>
+<span class="token comment">// 找到f的构造函数的原型对象</span>
+
+<span class="token class-name">F</span><span class="token punctuation">.</span>prototype <span class="token operator">===</span> f1<span class="token punctuation">.</span>__proto__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>构造函数中的 prototype 属性（显示原型）和构造函数实例化出来的对象 <code>__proto__</code>属性（隐式原型）指向同一个对象。</p>
 <p>先在本对象中查找对应的属性，找不到去 <code>__proto__</code> 里面找。</p>
 <p>在原型中查找值的过程是搜索。对原型对象所做的任何修改都能立即从实例上反映出来。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-comment">//...</span><br>&#125;<br><span class="hljs-keyword">var</span> p = <span class="hljs-keyword">new</span> Person()<br><br>Person.prototype == p.__proto__ <span class="hljs-comment">// true</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//...</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype <span class="token operator">==</span> p<span class="token punctuation">.</span>__proto__ <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>原型分为 <strong>显式原型</strong>（构造函数的prototype属性） 和 <strong>隐式原型</strong>（调用构造函数实例化出来的对象的<code>__proto__</code>属性）。（ES5只允许操作 prototype，ES6都可以）</p>
 <h3><span id="p3-yuan-xing-lian-bi-kao">3. 原型链 ==必考==</span><a href="#p3-yuan-xing-lian-bi-kao" class="header-anchor">#</a></h3>
 <p><strong>原型链</strong>是实现<strong>继承</strong>的主要方法。</p>
@@ -279,10 +300,70 @@
 <h3><span id="p1-gou-zao-han-shu-ji-cheng">1. 构造函数继承</span><a href="#p1-gou-zao-han-shu-ji-cheng" class="header-anchor">#</a></h3>
 <h3><span id="p2-yuan-xing-lian-ji-cheng">2. 原型链继承</span><a href="#p2-yuan-xing-lian-ji-cheng" class="header-anchor">#</a></h3>
 <p>子类型的原型为父类型的一个实例对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Supper</span>(<span class="hljs-params"></span>) </span>&#123; <br>    <span class="hljs-built_in">this</span>.superProp = <span class="hljs-string">&#x27;The super prop&#x27;</span>;<br>&#125;<br><br><span class="hljs-comment">// 原型的数据所有的实例对象都可见</span><br>Supper.prototype.showSupperProp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.superProp)<br>&#125;<br><br><span class="hljs-comment">// 子类型</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Sub</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.subProp = <span class="hljs-string">&#x27;The sub prop&#x27;</span><br>&#125;<br><br><span class="hljs-comment">// 子类的原型为父类的实例</span><br>Sub.prototype = <span class="hljs-keyword">new</span> Supper()<br><br><span class="hljs-comment">// 修正原型链</span><br><span class="hljs-comment">// 修正 Sub.prototype.constructor 为Sub本身</span><br>Sub.prototype.constructor = Sub<br><br>Sub.prototype.showSubProp = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.subProp)<br>&#125;<br><br><span class="hljs-comment">// 创建子类型的实例</span><br><span class="hljs-keyword">var</span> sub = <span class="hljs-keyword">new</span> Sub()<br><br><span class="hljs-comment">// 调用父类型的方法</span><br>sub.showSubProp()<br><br><span class="hljs-comment">// 调用子类型的方法</span><br>sub.showSupperProp()<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类型</span>
+<span class="token keyword">function</span> <span class="token function">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+    <span class="token keyword">this</span><span class="token punctuation">.</span>superProp <span class="token operator">=</span> <span class="token string">'The super prop'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 原型的数据所有的实例对象都可见</span>
+<span class="token class-name">Supper</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSupperProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>superProp<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 子类型</span>
+<span class="token keyword">function</span> <span class="token function">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>subProp <span class="token operator">=</span> <span class="token string">'The sub prop'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 子类的原型为父类的实例</span>
+<span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 修正原型链</span>
+<span class="token comment">// 修正 Sub.prototype.constructor 为Sub本身</span>
+<span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Sub
+
+<span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSubProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>subProp<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 创建子类型的实例</span>
+<span class="token keyword">var</span> sub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 调用父类型的方法</span>
+sub<span class="token punctuation">.</span><span class="token function">showSubProp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 调用子类型的方法</span>
+sub<span class="token punctuation">.</span><span class="token function">showSupperProp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p3-hun-he-ji-cheng-chang-kao">3. 混合继承 ==常考==</span><a href="#p3-hun-he-ji-cheng-chang-kao" class="header-anchor">#</a></h3>
 <p>继承的主要方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型（构造模式）</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SuperType</span>(<span class="hljs-params"> name </span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name;<br>&#125;<br><span class="hljs-comment">// 父类型（原型模式）</span><br>SuperType.prototype.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">this</span>.name );<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SubType</span>(<span class="hljs-params"> name, age</span>)</span>&#123;<br>    <span class="hljs-comment">// △ key1 继承属性 △</span><br>    SuperType.call( <span class="hljs-built_in">this</span>,name );<br>    <br>    <span class="hljs-built_in">this</span>.age = age;<br>&#125;<br><span class="hljs-comment">// 继承方法</span><br>SubType.prototype = <span class="hljs-keyword">new</span> SuperType();<br><span class="hljs-comment">// △ 修正原型链 △</span><br>SubType.prototype.constructor = SubType;<br><br>SubType.prototype.sayAge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.age);<br>&#125;<br><br><span class="hljs-comment">// 实例化对象</span><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> SubType(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-number">29</span>);<br>p1.sayName();<br>p1.syaAge();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类型（构造模式）</span>
+<span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span> <span class="token parameter">name</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 父类型（原型模式）</span>
+<span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// △ key1 继承属性 △</span>
+    <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">,</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 继承方法</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// △ 修正原型链 △</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> SubType<span class="token punctuation">;</span>
+
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 实例化对象</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">syaAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
     </div>
 
     
@@ -304,8 +385,8 @@
       <i class="fa fa-chevron-left"></i> JS 面向对象扩展
     </a></div>
       <div class="post-nav-item">
-    <a href="/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/" rel="next" title="JS 闭包">
-      JS 闭包 <i class="fa fa-chevron-right"></i>
+    <a href="/2-%E8%A1%8C%E4%B8%BA/28-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="next" title="JS 面向对象基础">
+      JS 面向对象基础 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -379,7 +460,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -392,7 +473,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

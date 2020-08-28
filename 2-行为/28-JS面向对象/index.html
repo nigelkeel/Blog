@@ -249,12 +249,26 @@
 <p><strong>对象（Object）</strong> 可以是一个变量，一个函数，一种数据结构。在JS中，==一切皆为对象==。JS允许自定义对象，从狭义的概念来分析，对象是最基本的数据类型，是复合型的结构、引用型的数据，它是无序数据集合<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>。对象中每个成员被称为<strong>属性</strong>。</p>
 <h2><span id="per-dui-xiang-de-sheng-ming-he-shi-yong">二、对象的声明和使用</span><a href="#per-dui-xiang-de-sheng-ming-he-shi-yong" class="header-anchor">#</a></h2>
 <h3><span id="p1-zi-mian-liang-fang-shi-sheng-ming">1. 字面量方式声明</span><a href="#p1-zi-mian-liang-fang-shi-sheng-ming" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = &#123;<br>    name: <span class="hljs-string">&quot;Tom&quot;</span>,<br>    age: <span class="hljs-number">12</span>,<br>    sleep: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>        <span class="hljs-comment">// 函数体</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">sleep</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 函数体</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>字面量方式声明的对象由多个<strong>键值对</strong>组成，每个键值对之间用逗号分隔。每个键值对就是一个<strong>属性</strong>，包括属性名和属性值。</p>
 <p>属性名是字符串并且通常情况下不加引号，如果是其他类型也会转换成字符串。如果键名不符合变量命名规则必须加上引号。</p>
 <p>属性值可以是任意东西，包括对象。</p>
 <h3><span id="p2-gou-zao-han-shu-fang-shi-sheng-ming-new-object">2、构造函数方式声明（new Object）</span><a href="#p2-gou-zao-han-shu-fang-shi-sheng-ming-new-object" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js">          <span class="hljs-comment">// 构造函数</span><br><span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(<br>&#123;<br>    name:<span class="hljs-string">&quot;Tom&quot;</span>,<br>    age:<span class="hljs-number">18</span>;<br>    sleep:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <br>    &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">          <span class="token comment">// 构造函数</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span>
+<span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span><span class="token string">"Tom"</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">;</span>
+    <span class="token function-variable function">sleep</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>new</code> 是操作符，调用后面的 <strong>构造函数</strong> 创建一个对象<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
 <p>构造函数可以使用return语句，如果return的是基本类型数据，那么值会被忽略。如果返回的是其他对象，那么就返回这个对象。</p>
 <p>函数既是对象也是可以执行的代码块：</p>
@@ -269,10 +283,24 @@
 </ul>
 <h3><span id="p3-gong-han-mo-shi-sheng-ming">3、工厂模式声明</span><a href="#p3-gong-han-mo-shi-sheng-ming" class="header-anchor">#</a></h3>
 <p>上面两种声明对象的最大缺点就是代码重复，会产生大量重复的代码。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">     <span class="hljs-comment">// 一般要首字母大写</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Obj</span>(<span class="hljs-params">name,age</span>)</span>&#123;<br>   <span class="hljs-built_in">this</span>.name = name;<br>   <span class="hljs-built_in">this</span>.age = age;<br>&#125;<br><br><span class="hljs-keyword">var</span> obj1 = <span class="hljs-keyword">new</span> Obj(<span class="hljs-string">&quot;aaa&quot;</span>,<span class="hljs-number">18</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">     <span class="token comment">// 一般要首字母大写</span>
+<span class="token keyword">function</span> <span class="token function">Obj</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Obj</span><span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p4-dui-xiang-de-ji-ben-cao-zuo">4、对象的基本操作</span><a href="#p4-dui-xiang-de-ji-ben-cao-zuo" class="header-anchor">#</a></h3>
 <p>（1）访问对象中的属性</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 第一种方法</span><br>obj.name;<br><br><span class="hljs-comment">// 第二种方法，最大优点是可以通过变量、表达式来访问属性</span><br>obj[<span class="hljs-string">&#x27;name&#x27;</span>];<br><br><span class="hljs-comment">// 1. 如果键名命名不符合标识符命名规则</span><br><span class="hljs-comment">// 则只能通过第二种方法访问。</span><br><span class="hljs-comment">// 2. 点操作符比比中括号操作符高</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 第一种方法</span>
+obj<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+<span class="token comment">// 第二种方法，最大优点是可以通过变量、表达式来访问属性</span>
+obj<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 1. 如果键名命名不符合标识符命名规则</span>
+<span class="token comment">// 则只能通过第二种方法访问。</span>
+<span class="token comment">// 2. 点操作符比比中括号操作符高</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（2）增加和修改属性</p>
 <p>（3）删除属性：<code>delete 对象.属性</code></p>
 <blockquote>
@@ -285,28 +313,83 @@
 <p>先创建空对象，再动态添加属性和方法</p>
 <p>适用于 起始不能确定对象内部数据</p>
 <p>问题 语句太多</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">ver p = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();<br>p = &#123;&#125;;<br>p.name = <span class="hljs-string">&quot;Tom&quot;</span>;<br>p.age = <span class="hljs-number">12</span>;<br>p.setName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name;<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">ver p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"Tom"</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（2）对象字面量模式</p>
 <p>使用<code>&#123; &#125;</code>创建对象，同时指定属性和方法</p>
 <p>适用于 起始时对象内部数据是确定的</p>
 <p>问题 如果创建多个对象，有重复代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> p = &#123;<br>    name: <span class="hljs-string">&quot;Tom&quot;</span>,<br>    age: <span class="hljs-number">23</span>,<br>    setName: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>)(<span class="hljs-params"></span></span><br><span class="hljs-function"><span class="hljs-params">    	this.name = name;</span></span><br><span class="hljs-function"><span class="hljs-params">    </span>)</span><br><span class="hljs-function">&#125;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span> <span class="token string">"Tom"</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">setName</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">(</span>
+    	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（3）工厂模式</p>
 <p>通过工厂函数动态创建对象并返回</p>
 <p>适用于 需要创建多个对象</p>
 <p>问题 对象没有一个具体的类型，都是 Object 类型</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPerson</span>(<span class="hljs-params">name, age</span>) </span>&#123;<br>      <span class="hljs-keyword">var</span> p = &#123;<br>          name: name,<br>          age: age,<br>          setName: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>) </span>&#123;<br>              <span class="hljs-built_in">this</span>.name = name;<br>          &#125;<br>      &#125;<br>      <span class="hljs-keyword">return</span> p;<br>  &#125;<br><br>  <span class="hljs-keyword">var</span> p1 = createPerson(<span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-number">12</span>);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+          name<span class="token operator">:</span> name<span class="token punctuation">,</span>
+          age<span class="token operator">:</span> age<span class="token punctuation">,</span>
+          <span class="token function-variable function">setName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+              <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+          <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（4）自定义构造函数模式</p>
 <p>自定义构造函数，通过 <code>new</code> 创建对象</p>
 <p>适用 需要多个类型确定的对象</p>
 <p>问题 每个对象都有相同的数据，浪费内存</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name, age</span>) </span>&#123;<br>    <span class="hljs-comment">// 在构造函数中书写的属性和方法都是实例化对象私有</span><br>    <span class="hljs-comment">// 每个实例化对象在构造函数中的属性方法都不一样</span><br>    <span class="hljs-built_in">this</span>.name = name<br>    <span class="hljs-built_in">this</span>.age = age<br>    <span class="hljs-built_in">this</span>.setName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>) </span>&#123;<br>        <span class="hljs-built_in">this</span>.name = name<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-number">12</span>)<br><span class="hljs-keyword">var</span> p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;Tom2&#x27;</span>, <span class="hljs-number">13</span>)<br><span class="hljs-built_in">console</span>.log(p1, p1 <span class="hljs-keyword">instanceof</span> Person)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 在构造函数中书写的属性和方法都是实例化对象私有</span>
+    <span class="token comment">// 每个实例化对象在构造函数中的属性方法都不一样</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Tom2'</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p1 <span class="token keyword">instanceof</span> <span class="token class-name">Person</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>==（5）构造函数 + 原型的组合模式==</p>
 <p>自定义构造函数，属性在函数中初始化，方法添加到原型上</p>
 <p>适用 需要创建多个类型确定的对象</p>
 <p>==属性一般来说都是对象私有的，而方法基本上都是对象公有的==</p>
 <p>构造函数模式用于定义实例属性，原型模式用于定义方法和共享的属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 属性一般来说都是私有的</span><br><span class="hljs-comment">// 并且只有在构造函数中才能给对象的属性传参</span><br><span class="hljs-comment">// 方法基本上都是公有的</span><br><span class="hljs-comment">// 所以方法基本写在原型对象上</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span> (<span class="hljs-params">name, age</span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name<br>    <span class="hljs-built_in">this</span>.age = age<br>&#125;<br><br>Person.prototype.setName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name</span>) </span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name<br>&#125;<br><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-number">12</span>)<br><span class="hljs-keyword">var</span> p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">&#x27;JAck&#x27;</span>, <span class="hljs-number">23</span>)<br>p1.setName(<span class="hljs-string">&#x27;TOM3&#x27;</span>)<br><span class="hljs-built_in">console</span>.log(p1)<br><br><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 属性一般来说都是私有的</span>
+<span class="token comment">// 并且只有在构造函数中才能给对象的属性传参</span>
+<span class="token comment">// 方法基本上都是公有的</span>
+<span class="token comment">// 所以方法基本写在原型对象上</span>
+
+
+<span class="token keyword">function</span> <span class="token function">Person</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">&#125;</span>
+
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> p2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'JAck'</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">)</span>
+p1<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">'TOM3'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p6-object-create-xu-yao-bu-chong">6、Object.create ==需要补充==</span><a href="#p6-object-create-xu-yao-bu-chong" class="header-anchor">#</a></h3>
 <p><code>Object.create( prototype, descriptors)</code><br>
 **<code>Object.create(prototype [, descriptors])</code> **</p>
@@ -315,13 +398,38 @@
 <li>参数<code>prototype</code> 必须是一个已有对象或者<code>null</code>，是新创建这个对象的原型对象。==指定原型对象，继承方式。==</li>
 <li>参数<code>descriptors</code> 可选，设置新创建的对象。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 创建一个以已有对象obj为原型变量的对象</span><br><span class="hljs-keyword">var</span> obj1 = Objcet.create(obj)<br><span class="hljs-comment">// 创建一个普通对象（字面量）</span><br><span class="hljs-keyword">var</span> obj2 = <span class="hljs-built_in">Object</span>.create(<span class="hljs-built_in">Object</span>.protype)<br><span class="hljs-comment">// 创建一个干净的对象</span><br><span class="hljs-keyword">var</span> obj3 = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>)<br><br><span class="hljs-comment">// 创建一个干净的对象并设置</span><br><span class="hljs-keyword">var</span> obj4 = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>, &#123;<br>    name:&#123; <span class="hljs-comment">// 对象的特性描述必须是一个对象</span><br>        value:<span class="hljs-string">&quot;Tom&quot;</span>, <br>        <span class="hljs-comment">// 指定属性值</span><br>        writable: <span class="hljs-literal">false</span>, <br>        <span class="hljs-comment">// 设置值是否可写，默认false</span><br>        enumerable: <span class="hljs-literal">false</span>,<br>        <span class="hljs-comment">// 设置属性是否可以枚举（遍历），默认</span><br>        configurable: <span class="hljs-literal">false</span>,<br>        <span class="hljs-comment">// 设置属性是否可修改特性和删除特性，默认</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 创建一个以已有对象obj为原型变量的对象</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> Objcet<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token comment">// 创建一个普通对象（字面量）</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span>protype<span class="token punctuation">)</span>
+<span class="token comment">// 创建一个干净的对象</span>
+<span class="token keyword">var</span> obj3 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 创建一个干净的对象并设置</span>
+<span class="token keyword">var</span> obj4 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token comment">// 对象的特性描述必须是一个对象</span>
+        value<span class="token operator">:</span><span class="token string">"Tom"</span><span class="token punctuation">,</span> 
+        <span class="token comment">// 指定属性值</span>
+        writable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> 
+        <span class="token comment">// 设置值是否可写，默认false</span>
+        enumerable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token comment">// 设置属性是否可以枚举（遍历），默认</span>
+        configurable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token comment">// 设置属性是否可修改特性和删除特性，默认</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong><code>Object.defineProperty(obj, prop, descriptors)</code></strong></p>
 <p>给对象添加属性或者修改现有属性（可以设置属性的描述）</p>
 <ul>
 <li>参数<code>prop</code> 要修改的属性，要加字符串</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 例子</span><br><span class="hljs-built_in">Object</span>.defineProperty( obj, <span class="hljs-string">&quot;name&quot;</span>, &#123;<br>    value: <span class="hljs-string">&quot;Java&quot;</span>,<br>    <span class="hljs-comment">// 如果这个属性的正常创建的，则正常使用，如枚举</span><br>    <span class="hljs-comment">// wriable, enumerable, configurable </span><br>    <span class="hljs-comment">// 同 Object.create</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 例子</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span> obj<span class="token punctuation">,</span> <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    value<span class="token operator">:</span> <span class="token string">"Java"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 如果这个属性的正常创建的，则正常使用，如枚举</span>
+    <span class="token comment">// wriable, enumerable, configurable </span>
+    <span class="token comment">// 同 Object.create</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong><code>Object.defineProperties( obj, descriptors)</code></strong></p>
 <p>可以同时设置多个属性，格式和<code>Object.create()</code>基本相同。</p>
 <hr class="footnotes-sep">
@@ -353,12 +461,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/" rel="prev" title="JS 闭包">
-      <i class="fa fa-chevron-left"></i> JS 闭包
+    <a href="/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/" rel="prev" title="JS 原型、继承">
+      <i class="fa fa-chevron-left"></i> JS 原型、继承
     </a></div>
       <div class="post-nav-item">
-    <a href="/2-%E8%A1%8C%E4%B8%BA/27-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/" rel="next" title="函数的执行过程">
-      函数的执行过程 <i class="fa fa-chevron-right"></i>
+    <a href="/2-%E8%A1%8C%E4%B8%BA/34-Math%E5%AF%B9%E8%B1%A1/" rel="next" title="Math 对象">
+      Math 对象 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -432,7 +540,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -445,7 +553,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

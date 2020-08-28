@@ -353,7 +353,10 @@
 <li>重绘是重新绘制页面。相对来说影响比重排小，重排一定会导致重绘。</li>
 </ul>
 <h2><span id="p6-ru-he-wai-bu-yin-ru-zi-ti-bao">6、如何外部引入字体包</span><a href="#p6-ru-he-wai-bu-yin-ru-zi-ti-bao" class="header-anchor">#</a></h2>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@font-face</span> &#123;<br>    <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&quot;jier&quot;</span>;<br>    <span class="hljs-attribute">src</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../images/abc.ttf&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"jier"</span><span class="token punctuation">;</span>
+    <span class="token property">src</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"../images/abc.ttf"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing">7、颜色设置可以有几种类型</span><a href="#p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing" class="header-anchor">#</a></h2>
 <ul>
 <li>直接预定义好的英文名字</li>
@@ -564,7 +567,35 @@
 <p>一个进程中至少会有一个线程，也可以有多个线程，被称为多线程。一个进程内多个线程可以直接共享数据，多个进程之间的数据不能直接共享。</p>
 <p>JS的单线程的，浏览器是多线程的。</p>
 <h2><span id="p32-hun-he-ji-cheng">32、混合继承</span><a href="#p32-hun-he-ji-cheng" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 父类型（构造模式）</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SuperType</span>(<span class="hljs-params"> name </span>)</span>&#123;<br>    <span class="hljs-built_in">this</span>.name = name;<br>&#125;<br><span class="hljs-comment">// 父类型（原型模式）</span><br>SuperType.prototype.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">this</span>.name );<br>&#125;;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SubType</span>(<span class="hljs-params"> name, age</span>)</span>&#123;<br>    <span class="hljs-comment">// △ 继承属性 △</span><br>    SuperType.call( <span class="hljs-built_in">this</span>,name );<br>    <br>    <span class="hljs-built_in">this</span>.age = age;<br>&#125;<br><span class="hljs-comment">// 继承方法</span><br>SubType.prototype = <span class="hljs-keyword">new</span> SuperType();<br><span class="hljs-comment">// △ 修正原型链 △</span><br>SubType.prototype.constructor = SubType;<br><br>SubType.prototype.sayAge = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.age);<br>&#125;<br><br><br><span class="hljs-comment">// 实例化对象</span><br><span class="hljs-keyword">var</span> p1 = <span class="hljs-keyword">new</span> SubType(<span class="hljs-string">&quot;Tom&quot;</span>,<span class="hljs-number">29</span>);<br>p1.sayName();<br>p1.syaAge();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类型（构造模式）</span>
+<span class="token keyword">function</span> <span class="token function">SuperType</span><span class="token punctuation">(</span> <span class="token parameter">name</span> <span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 父类型（原型模式）</span>
+<span class="token class-name">SuperType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span> <span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// △ 继承属性 △</span>
+    <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">,</span>name <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 继承方法</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// △ 修正原型链 △</span>
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> SubType<span class="token punctuation">;</span>
+
+<span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">sayAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token comment">// 实例化对象</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">syaAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p33-shi-jian-xun-huan-ji-zhi">33、事件循环机制</span><a href="#p33-shi-jian-xun-huan-ji-zhi" class="header-anchor">#</a></h2>
 <ul>
 <li>执行初始代码，将事件回调函数交给对应模块管理</li>
@@ -660,7 +691,17 @@
 <p>当一个元素需要清除浮动的时候  直接设置clearFix类名即可</p>
 </li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.clearFix</span><span class="hljs-selector-pseudo">:after</span>&#123;<br>    content:&quot;\200B&quot;;  必须拥有content属性   内容为空<br>    <span class="hljs-selector-tag">display</span>: <span class="hljs-selector-tag">block</span>;   必须块标签才能清浮动<br>    <span class="hljs-selector-tag">height</span>: 0;          高度为0 不占用空间<br>    <span class="hljs-selector-tag">clear</span>: <span class="hljs-selector-tag">both</span>;        清除浮动<br>&#125;<br><br>.clearFix&#123;  //兼容ie<br>    *zoom:1;    //*是css  hack 只有ie6.7 认识<br>    <span class="hljs-selector-tag">ie6</span>、7 不支持伪元素，所以需要开启元素的<span class="hljs-selector-tag">haslayout</span>来清除浮动<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearFix:after</span><span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">"\200B"</span><span class="token punctuation">;</span>  必须拥有content属性   内容为空
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>   必须块标签才能清浮动
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>          高度为0 不占用空间
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>        清除浮动
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.clearFix</span><span class="token punctuation">&#123;</span>  //兼容ie
+    *<span class="token property">zoom</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>    //*是css  hack 只有ie6.7 认识
+    ie6、7 不支持伪元素，所以需要开启元素的haslayout来清除浮动
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p41-a-biao-qian-si-ge-wei-lei-shun-xu">41、a标签四个伪类顺序？</span><a href="#p41-a-biao-qian-si-ge-wei-lei-shun-xu" class="header-anchor">#</a></h2>
 <p>四个伪类</p>
 <p>link：当有链接属性时</p>
@@ -686,16 +727,36 @@
 应用场景：搜索栏</p>
 <h2><span id="p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie">46、谈谈你对面向对象的了解？</span><a href="#p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie" class="header-anchor">#</a></h2>
 <h2><span id="p47-object-create-definedproperty-de-shi-yong">47、Object.create/definedProperty的使用</span><a href="#p47-object-create-definedproperty-de-shi-yong" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> obj3 = Obje ct.create(obj, &#123;<br>    name:&#123;<br>        value: <span class="hljs-string">&quot;Lily&quot;</span>,<br>        writable: <span class="hljs-literal">false</span>,<br>        enumeerable: <span class="hljs-literal">false</span>,<br>        configureable: <span class="hljs-literal">false</span><br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj3 <span class="token operator">=</span> Obje ct<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    name<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        value<span class="token operator">:</span> <span class="token string">"Lily"</span><span class="token punctuation">,</span>
+        writable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        enumeerable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        configureable<span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p48-geteter-setter">48、geteter、setter</span><a href="#p48-geteter-setter" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> Person&#123;<br>    firstName: <span class="hljs-string">&quot;姓&quot;</span>,<br>    lastName: <span class="hljs-string">&quot;名&quot;</span>,<br>    <span class="hljs-keyword">get</span> <span class="hljs-title">Name</span>()&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.firstName&#125;</span> <span class="hljs-subst">$&#123;<span class="hljs-built_in">this</span>.lastName&#125;</span>`</span><br>    &#125;<br>    <span class="hljs-keyword">set</span> <span class="hljs-title">setName</span>(<span class="hljs-params">name</span>)&#123;<br>        <span class="hljs-keyword">const</span> newArr = name.split(<span class="hljs-string">&#x27; &#x27;</span>)；<br>        <span class="hljs-built_in">this</span>.firstName = newArr[<span class="hljs-number">0</span>];<br>        <span class="hljs-built_in">this</span>.lastName = newArr[<span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.log(Person.Name);<br>Person.setName = <span class="hljs-string">&quot;某 某某&quot;</span>;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> Person<span class="token punctuation">&#123;</span>
+    firstName<span class="token operator">:</span> <span class="token string">"姓"</span><span class="token punctuation">,</span>
+    lastName<span class="token operator">:</span> <span class="token string">"名"</span><span class="token punctuation">,</span>
+    <span class="token keyword">get</span> <span class="token function">Name</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>firstName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">set</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> newArr <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>；
+        <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">=</span> newArr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> newArr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>Name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Person<span class="token punctuation">.</span>setName <span class="token operator">=</span> <span class="token string">"某 某某"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p49-var-let-const-qu-bie">49、var/let/const区别</span><a href="#p49-var-let-const-qu-bie" class="header-anchor">#</a></h2>
 <p>var 没有块作用域，会声明提升，可以重复定义</p>
 <p>let 声明的变量具有块作用域，不会声明提升，不能重复定义</p>
 <p>const 常量，不允许修改的数据可以定义为常量，对象、数组等定义为常量只是保证地址不发生变化</p>
 <h2><span id="p50-dui-xiang-de-jie-gou-fu-zhi">50、对象的解构赋值</span><a href="#p50-dui-xiang-de-jie-gou-fu-zhi" class="header-anchor">#</a></h2>
 <h2><span id="p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he">51、箭头函数求一个数组的和</span><a href="#p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> Sum = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span>  a.reduce (<span class="hljs-function">(<span class="hljs-params"> prev, now </span>) =&gt;</span> prev + now )              <br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">Sum</span> <span class="token operator">=</span> <span class="token parameter">a</span> <span class="token operator">=></span>  a<span class="token punctuation">.</span><span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token parameter">prev<span class="token punctuation">,</span> now</span> <span class="token punctuation">)</span> <span class="token operator">=></span> prev <span class="token operator">+</span> now <span class="token punctuation">)</span>              <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2><span id="p52-shi-me-shi-shu-xing-ming-biao-da-shi">52、什么是属性名表达式</span><a href="#p52-shi-me-shi-shu-xing-ming-biao-da-shi" class="header-anchor">#</a></h2>
 <p>对象的属性名在ES6之前只能是字符串，不能作为变量解析，</p>
 <p>在ES6中，提供新的写法，把属性名用中括号括起来 中括号就可以书写变量</p>
@@ -710,7 +771,32 @@
 <h2><span id="p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li">55、书写一个子类继承父类的案例</span><a href="#p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li" class="header-anchor">#</a></h2>
 <h2><span id="p56-jian-tou-han-shu-de-this-wen-ti">56、箭头函数的this问题</span><a href="#p56-jian-tou-han-shu-de-this-wen-ti" class="header-anchor">#</a></h2>
 <h2><span id="p57-shou-xie-iterator-jie-kou">57、手写 iterator 接口</span><a href="#p57-shou-xie-iterator-jie-kou" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];<br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Iterator</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-comment">//用一个计数器，保存现在处理到哪里了</span><br>    <span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">return</span> &#123;<br>        next: <span class="hljs-function">() =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (index &lt; arr.length) &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    value: arr[index++],<br>                    done: <span class="hljs-literal">false</span><br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> &#123;<br>                    done: <span class="hljs-literal">true</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//只要调用这个Iterator接口，就可以依次处理成员了</span><br><span class="hljs-keyword">let</span> it = Iterator(arr);<br><span class="hljs-built_in">console</span>.log(it);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br><span class="hljs-built_in">console</span>.log(it.next().value);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//用一个计数器，保存现在处理到哪里了</span>
+    <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                    value<span class="token operator">:</span> arr<span class="token punctuation">[</span>index<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    done<span class="token operator">:</span> <span class="token boolean">false</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+                    done<span class="token operator">:</span> <span class="token boolean">true</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//只要调用这个Iterator接口，就可以依次处理成员了</span>
+<span class="token keyword">let</span> it <span class="token operator">=</span> <span class="token function">Iterator</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p58-for-of-he-for-in-xun-huan-de-qu-bie">58、for of 和 for in 循环的区别</span><a href="#p58-for-of-he-for-in-xun-huan-de-qu-bie" class="header-anchor">#</a></h2>
 <ul>
 <li>JavaScript 原有的<code>for...in</code>循环，只能获得对象的键名，不能直接获取键值。ES6 提供<code>for...of</code>循环，允许遍历获得键值，如果要通过<code>for...of</code>循环，获取数组的索引，可以借助数组实例的<code>entries</code>方法和<code>keys</code>方法。</li>
@@ -913,7 +999,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -926,7 +1012,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

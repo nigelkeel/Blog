@@ -293,7 +293,11 @@
 </ul>
 <p>返回值  就是新建的窗口名称。</p>
 <p><code>窗口名.close()</code>可以关闭窗口，如果关闭自身那就使用 <code>window.close()</code><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 1. 打开窗口</span><br><span class="hljs-keyword">var</span> newWin = <span class="hljs-built_in">window</span>.open(<span class="hljs-string">&quot;http://www.jd.com&quot;</span>,<span class="hljs-string">&quot;_blank&quot;</span>,<span class="hljs-string">&quot;width=300,height=300,left=200,top=100&quot;</span>)<br><br><span class="hljs-comment">// 2. 关闭窗口</span><br>newWin.close();<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 打开窗口</span>
+<span class="token keyword">var</span> newWin <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"http://www.jd.com"</span><span class="token punctuation">,</span><span class="token string">"_blank"</span><span class="token punctuation">,</span><span class="token string">"width=300,height=300,left=200,top=100"</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 2. 关闭窗口</span>
+newWin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="per-navigator-dui-xiang">二、navigator 对象</span><a href="#per-navigator-dui-xiang" class="header-anchor">#</a></h2>
 <p>储存了浏览器信息。通过 <code>navigator</code> 可以引用该对象，并利用它的属性来读取客户端基本信息。</p>
 <p>常见属性：</p>
@@ -319,7 +323,14 @@
 <p>navigator.userAgent返回值一般都会包含操作系统的基本信息，不过这些信息比较散乱，没有统一的规则。</p>
 <p>用户可以检测一些更为通用的信息，如检测是否为 Windows系统，或者为 Macintosh系统，而不去分辨操作系统的版本号。</p>
 <p>例如，如果仅检测通用信息，那么所有 Windows版本的操作系统都会包含&quot;Win”字符串，所有Macintosh版本的操作系统都包含有&quot;Mac”字符串，所有Umix版本的操作系统都包含有&quot;X11”，而 Linux操作系统会同时包含&quot;X11”和&quot; Linux。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> isWin = (navigator.userAgent.indexOf(<span class="hljs-string">&quot;Win&quot;</span>) != - <span class="hljs-number">1</span>);<br>    <span class="hljs-comment">// 如果是Windows系统，则返回true</span><br><span class="hljs-keyword">var</span> isMac = (navigator.userAgent.indexOf(<span class="hljs-string">&quot;Mac&quot;</span>) != - <span class="hljs-number">1</span>); <br>    <span class="hljs-comment">// 如果是Macintosh系统，则返回true </span><br><span class="hljs-keyword">var</span> isUnix = (navigator.userAgent.indexOf(<span class="hljs-string">&quot;X11&quot;</span>) != - <span class="hljs-number">1</span>); <br>    <span class="hljs-comment">// 如果是UNIX系统，则返回true</span><br><span class="hljs-keyword">var</span> isLinux = (navigator.userAgent.indexOf(<span class="hljs-string">&quot;Linux&quot;</span>) != - <span class="hljs-number">1</span>); <br>    <span class="hljs-comment">// 如果是Linux系统， xc则返回true</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> isWin <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Win"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 如果是Windows系统，则返回true</span>
+<span class="token keyword">var</span> isMac <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Mac"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是Macintosh系统，则返回true </span>
+<span class="token keyword">var</span> isUnix <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"X11"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是UNIX系统，则返回true</span>
+<span class="token keyword">var</span> isLinux <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Linux"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是Linux系统， xc则返回true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="psan-location-dui-xiang">三、location 对象</span><a href="#psan-location-dui-xiang" class="header-anchor">#</a></h2>
 <p><code>location</code> 对象存储了与当前文档位置（URL）</p>
 <table>
@@ -365,7 +376,17 @@
 </tbody>
 </table>
 <p><code>location.href</code> 可以设置和获取url地址</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">location.href = <span class="hljs-string">&quot;demo.html&quot;</span>;<span class="hljs-comment">//重定向</span><br>location.assign(<span class="hljs-string">&quot;demo.html&quot;</span>);<br>location.reload();<span class="hljs-comment">//刷新</span><br>location.replace(<span class="hljs-string">&quot;demo.html&quot;</span>);<br><br>hostname <span class="hljs-comment">// http://127.0.0.1:5500/0717/12.location.html</span><br>protocol <span class="hljs-comment">// 127.0.0.1</span><br>host <span class="hljs-comment">// http:</span><br>port <span class="hljs-comment">// 127.0.0.1:5500</span><br>pathname <span class="hljs-comment">// 5500</span><br>search <span class="hljs-comment">/// 0717/12.location.html</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"demo.html"</span><span class="token punctuation">;</span><span class="token comment">//重定向</span>
+location<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//刷新</span>
+location<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+hostname <span class="token comment">// http://127.0.0.1:5500/0717/12.location.html</span>
+protocol <span class="token comment">// 127.0.0.1</span>
+host <span class="token comment">// http:</span>
+port <span class="token comment">// 127.0.0.1:5500</span>
+pathname <span class="token comment">// 5500</span>
+search <span class="token comment">/// 0717/12.location.html</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>reload()</code> 重新加载文档</p>
 <p><code>replace()</code>  重新加载一个新文档，无需为它创建一个新的历史记录，替换当前文档的历史记录</p>
 <p><code>assign()</code> 和<code>href</code>差不多</p>
@@ -400,12 +421,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2-%E8%A1%8C%E4%B8%BA/38-JS%E4%BA%8B%E4%BB%B6/" rel="prev" title="JS 事件">
-      <i class="fa fa-chevron-left"></i> JS 事件
+    <a href="/2-%E8%A1%8C%E4%B8%BA/37-%E8%84%9A%E6%9C%AC%E5%8C%96CSS/" rel="prev" title="脚本化CSS">
+      <i class="fa fa-chevron-left"></i> 脚本化CSS
     </a></div>
       <div class="post-nav-item">
-    <a href="/2-%E8%A1%8C%E4%B8%BA/37-%E8%84%9A%E6%9C%AC%E5%8C%96CSS/" rel="next" title="脚本化CSS">
-      脚本化CSS <i class="fa fa-chevron-right"></i>
+    <a href="/1-%E8%A1%A8%E7%8E%B0/14-CSS%E6%9D%82%E9%A1%B9/" rel="next" title="CSS 杂项">
+      CSS 杂项 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -479,7 +500,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -492,7 +513,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

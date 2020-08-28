@@ -268,7 +268,7 @@
 <p>页面嵌入（常用）</p>
 <p>行内写法（几乎不用，局限性大，代码分离性差，可读性不强）</p>
 <p>外部文件引入（主流方式）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>属性:</p>
 <ul>
 <li><code>src</code> 指定外部脚本的URI，如果设置了，标签内容会忽略</li>
@@ -307,7 +307,24 @@
 </ul>
 <h3><span id="p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi">（2）变量声明和变量赋值</span><a href="#p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi" class="header-anchor">#</a></h3>
 <p>优先使用<code>const</code> | <code>let</code> ，不要用 <code>var</code> 。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 声明一个变量</span><br><span class="hljs-keyword">let</span> a;<br><br><br><span class="hljs-comment">// 给变量赋值（第一次赋值可以称为初始化）</span><br>a = <span class="hljs-number">10</span>;<br><br><span class="hljs-comment">// 同时声明和初始化</span><br><span class="hljs-keyword">let</span> b = <span class="hljs-number">10</span>;<br><br><span class="hljs-comment">// 一次定义和赋值多个变量</span><br><span class="hljs-keyword">let</span> c = <span class="hljs-number">1</span>, d = <span class="hljs-number">2</span>;<br><br><span class="hljs-comment">// 注意这种坑</span><br><span class="hljs-keyword">let</span> e = f = <span class="hljs-number">1</span>; <span class="hljs-comment">//  f 没有声明</span><br><br><span class="hljs-comment">// const 用于定义常量，常量通常是全大写</span><br><span class="hljs-keyword">const</span> PI = <span class="hljs-number">3.1415926</span>;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明一个变量</span>
+<span class="token keyword">let</span> a<span class="token punctuation">;</span>
+
+
+<span class="token comment">// 给变量赋值（第一次赋值可以称为初始化）</span>
+a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 同时声明和初始化</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 一次定义和赋值多个变量</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 注意这种坑</span>
+<span class="token keyword">let</span> e <span class="token operator">=</span> f <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//  f 没有声明</span>
+
+<span class="token comment">// const 用于定义常量，常量通常是全大写</span>
+<span class="token keyword">const</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.1415926</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="p-3-kuai-ji-zuo-yong-yu">（3）块级作用域</span><a href="#p-3-kuai-ji-zuo-yong-yu" class="header-anchor">#</a></h3>
 <table>
 <thead>
@@ -366,22 +383,58 @@
 <h1><span id="san-liu-cheng-kong-zhi">三、流程控制</span><a href="#san-liu-cheng-kong-zhi" class="header-anchor">#</a></h1>
 <h2><span id="p1-fen-zhi-jie-gou">1、分支结构</span><a href="#p1-fen-zhi-jie-gou" class="header-anchor">#</a></h2>
 <h3><span id="pdan-fen-zhi-jie-gou-if">单分支结构 if</span><a href="#pdan-fen-zhi-jie-gou-if" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式)&#123;<br>   <span class="hljs-comment">// 语句块</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// 语句块</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pshuang-fen-zhi-jie-gou-if-else">双分支结构 if-else</span><a href="#pshuang-fen-zhi-jie-gou-if-else" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式)&#123;<br>  <span class="hljs-comment">// 语句块</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">// 语句块2</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 语句块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 语句块2</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pduo-fen-zhi-jie-gou-else-if">多分支结构 else-if</span><a href="#pduo-fen-zhi-jie-gou-else-if" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span> (条件表达式<span class="hljs-number">1</span>)&#123;<br>  <span class="hljs-comment">//语句块1</span><br>&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">2</span>)&#123;<br>  <span class="hljs-comment">//语句块2</span><br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">//语句块3</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块1</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块2</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块3</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pduo-fen-zhi-jie-gou-switch">多分支结构 switch</span><a href="#pduo-fen-zhi-jie-gou-switch" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// switch</span><br><span class="hljs-comment">// 全等匹配</span><br><span class="hljs-keyword">switch</span> (值)&#123;<br>  <span class="hljs-comment">// 如果不加大括号，整个switch内作用域相同</span><br>  <span class="hljs-keyword">case</span> 值<span class="hljs-number">1</span>:<br>      代码块<span class="hljs-number">1</span>;<br>      <span class="hljs-keyword">break</span>;<br>  ...<br>  <span class="hljs-comment">// 可省略</span><br>  <span class="hljs-keyword">default</span>:<br>      代码块;<br>      <span class="hljs-keyword">break</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// switch</span>
+<span class="token comment">// 全等匹配</span>
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>值<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 如果不加大括号，整个switch内作用域相同</span>
+  <span class="token keyword">case</span> 值<span class="token number">1</span><span class="token operator">:</span>
+      代码块<span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+  <span class="token comment">// 可省略</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+      代码块<span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pchao-zhuang-jie-gou">巢状结构</span><a href="#pchao-zhuang-jie-gou" class="header-anchor">#</a></h3>
 <p>各种嵌套。</p>
 <h2><span id="p2-xun-huan-jie-gou">2、循环结构</span><a href="#p2-xun-huan-jie-gou" class="header-anchor">#</a></h2>
 <h3><span id="pwhile-yu-ju">while 语句</span><a href="#pwhile-yu-ju" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 先判断，再执行</span><br><span class="hljs-keyword">while</span> (条件表达式)&#123;<br>    代码块   <br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 先判断，再执行</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    代码块   
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3><span id="pdo-while-yu-ju">do-while 语句</span><a href="#pdo-while-yu-ju" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 先执行一次，再判断</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 先执行一次，再判断</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3><span id="pfor-yu-ju">for 语句</span><a href="#pfor-yu-ju" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (初始化; 条件表达式; 步增表达式)&#123;<br>		<span class="hljs-comment">// 代码块</span><br>&#125;<br><br><span class="hljs-comment">// 初始化</span><br><span class="hljs-comment">// 条件判断</span><br><span class="hljs-comment">// 代码块</span><br><span class="hljs-comment">// 步增</span><br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>初始化<span class="token punctuation">;</span> 条件表达式<span class="token punctuation">;</span> 步增表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token comment">// 代码块</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 初始化</span>
+<span class="token comment">// 条件判断</span>
+<span class="token comment">// 代码块</span>
+<span class="token comment">// 步增</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2><span id="p3-break-continue">3、break 、continue</span><a href="#p3-break-continue" class="header-anchor">#</a></h2>
 <p><code>break</code></p>
 <p>跳出switch语句，跳出一层循环。</p>
@@ -394,7 +447,17 @@
 <li>label可以是任意合法的标识符，然后使用冒号分割标签名与标签语句。</li>
 <li>label和break语句配合使用，主要应用在循环结构、多分枝结构中，以便与跳出内层嵌套体。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">var</span> num=<span class="hljs-number">0</span>;<br>outermost:<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j++)&#123;<br>        <span class="hljs-keyword">if</span>(i==<span class="hljs-number">5</span> &amp;&amp; j==<span class="hljs-number">5</span>)&#123;<br>            <span class="hljs-keyword">break</span> outermost;<br>        &#125;<br>        num++;<br>    &#125;<br>&#125;<br><span class="hljs-built_in">console</span>.log(num);<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+outermost<span class="token operator">:</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">5</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">break</span> outermost<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>禁止<code>break</code> 和<code>continue</code> 写在三元运算符<code>?</code>右边。</p>
 <p>异常处理</p>
 <p>ECMA-262 规范了7种错误类型。其中 Error 是基类，其他6种错误类型是子类，都继承了基类。Error类型的主要作用是自定义错误对象。</p>
@@ -437,7 +500,19 @@
 </tbody>
 </table>
 <h1><span id="ji-ben-yu-fa">基本语法</span><a href="#ji-ben-yu-fa" class="header-anchor">#</a></h1>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">try</span>&#123;<br>    <br>    <span class="hljs-comment">// 调试代码块</span><br>    <br>&#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <br>    <span class="hljs-comment">// 捕获异常，并进行异常处理代码块</span><br>    <br>&#125; <span class="hljs-keyword">finally</span> &#123;<br>    <br>    <span class="hljs-comment">// 后期清理代码块</span><br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span><span class="token punctuation">&#123;</span>
+    
+    <span class="token comment">// 调试代码块</span>
+    
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    
+    <span class="token comment">// 捕获异常，并进行异常处理代码块</span>
+    
+<span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    
+    <span class="token comment">// 后期清理代码块</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>
 <p>正常情况下，JS按顺序执行try子句中的代码，如果没有异常发生，将会忽略catch跳转到finally子句继续执行。</p>
@@ -543,7 +618,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -556,7 +631,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
