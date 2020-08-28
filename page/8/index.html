@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/40-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/14-CSS%E6%9D%82%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2-%E8%A1%8C%E4%B8%BA/40-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">常见效果</a>
+            <a href="/1-%E8%A1%A8%E7%8E%B0/14-CSS%E6%9D%82%E9%A1%B9/" class="post-title-link" itemprop="url">CSS 杂项</a>
         </h2>
 
         <div class="post-meta">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 16:52:03" itemprop="dateModified" datetime="2020-08-27T16:52:03+08:00">2020-08-27</time>
+                <time title="修改时间：2020-08-27 16:34:10" itemprop="dateModified" datetime="2020-08-27T16:34:10+08:00">2020-08-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -239,24 +239,27 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="chang-jian-xiao-guo">常见效果</span><a href="#chang-jian-xiao-guo" class="header-anchor">#</a></h1>
-<p>[TOC]</p>
-<h2><span id="pbiao-qian-ye-qie-huan">标签页切换</span><a href="#pbiao-qian-ye-qie-huan" class="header-anchor">#</a></h2>
-<h2><span id="phui-dao-ding-bu">回到顶部</span><a href="#phui-dao-ding-bu" class="header-anchor">#</a></h2>
-<h2><span id="pce-bian-lan">侧边栏</span><a href="#pce-bian-lan" class="header-anchor">#</a></h2>
-<h2><span id="ppeng-bi-fan-dan">碰壁反弹</span><a href="#ppeng-bi-fan-dan" class="header-anchor">#</a></h2>
-<h2><span id="ptu-pian-lun-bo">图片轮播</span><a href="#ptu-pian-lun-bo" class="header-anchor">#</a></h2>
-<h2><span id="ptuo-zhuai">拖拽</span><a href="#ptuo-zhuai" class="header-anchor">#</a></h2>
-<h2><span id="pbiao-dan-hui-che-ti-jiao-biao-dan-quan-xuan">表单（回车提交表单、全选）</span><a href="#pbiao-dan-hui-che-ti-jiao-biao-dan-quan-xuan" class="header-anchor">#</a></h2>
-<h2><span id="pzi-ding-yi-gun-dong-tiao">自定义滚动条</span><a href="#pzi-ding-yi-gun-dong-tiao" class="header-anchor">#</a></h2>
-<p>视口高度 H1 内容高度 H2</p>
-<p>滑块高度 h1 滑槽高度 h2</p>
-<p>比例 s 内容移动量H’ 滑槽移动量h’</p>
-<p>基本关系</p>
-<p>s = H1/H2 = h1/h2</p>
-<h2><span id="plan-jia-zai">懒加载</span><a href="#plan-jia-zai" class="header-anchor">#</a></h2>
-<h2><span id="ppu-bu-liu">瀑布流</span><a href="#ppu-bu-liu" class="header-anchor">#</a></h2>
-<h2><span id="ptu-pian-fang-da-jing">图片放大镜</span><a href="#ptu-pian-fang-da-jing" class="header-anchor">#</a></h2>
+          <h2><span id="pyi-css-wei-gui-lei-nei-rong">一、CSS 未归类内容</span><a href="#pyi-css-wei-gui-lei-nei-rong" class="header-anchor">#</a></h2>
+<h3><span id="p1-css-sprites">1、CSS Sprites</span><a href="#p1-css-sprites" class="header-anchor">#</a></h3>
+<p><strong>CSS Sprites</strong> 精灵图，是网页图片的常用处理方式。允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对于当前的网络来说，小于200k的文件加载速度是一样的。通过 <strong>background-position</strong> 属性，将图片定位到需要的位置即可。</p>
+<p>优点：①减少图片大小 ②减少服务器请求次数</p>
+<p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a></p>
+<h3><span id="p2-css-hack">2、CSS hack</span><a href="#p2-css-hack" class="header-anchor">#</a></h3>
+<p>CSS hack是什么</p>
+<p>由于不同的厂商的浏览器，或者是同一个浏览器不同的版本（IE），对css的解析和认识不完全一样,可能会导致不同浏览器显示的效果不相同,那么我们需要针对某个浏览器，去写不同的样式，让代码能够兼容所有的浏览器。</p>
+<p>为什么要用 CSS hack</p>
+<p>第一种理解：让我们CSS的代码兼容不同的浏览器</p>
+<p>第二种理解：我们可以为不同的浏览器定制不同的样式</p>
+<p>3种表现方式：</p>
+<p>CSS属性前缀法</p>
+<p>选择器前缀法</p>
+<p><strong>IE条件注释法</strong>: iE10、11不再使用条件注释。</p>
+<h3><span id="p3-calc-fang-fa">3、calc 方法</span><a href="#p3-calc-fang-fa" class="header-anchor">#</a></h3>
+<p>用来计算长度。</p>
+<p>注意<br>
+使用+ - * /进行运算<br>
+可以使用百分比 px em rem等单位，可以单位混合计算<br>
+在使用的时候，尽量在 + - * / 前后添加一个空格</p>
 
       
     </div>
