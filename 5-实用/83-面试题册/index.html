@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第一卷  1、如何解决网页乱码 2、常见浏览器及其内核 3、label 标签的用法 4、@import 和 link 引入的区别 5、描述重绘和重排 6、如何外部引入字体包 7、颜色设置可以有几种类型 8、样式来源、优先级、权重计算 9、display: none 和 visibility: hidden 的区别 10、CSS语句的基本构成 11、外边距塌陷的原因和解决方法 12、盒子模型概">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题册">
+<meta property="og:url" content="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="第一卷  1、如何解决网页乱码 2、常见浏览器及其内核 3、label 标签的用法 4、@import 和 link 引入的区别 5、描述重绘和重排 6、如何外部引入字体包 7、颜色设置可以有几种类型 8、样式来源、优先级、权重计算 9、display: none 和 visibility: hidden 的区别 10、CSS语句的基本构成 11、外边距塌陷的原因和解决方法 12、盒子模型概">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/img/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg">
+<meta property="og:image" content="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/img/007S8ZIlgy1gh5zsm0f2cj310p0u076v.jpg">
+<meta property="article:published_time" content="2020-08-27T06:30:00.000Z">
+<meta property="article:modified_time" content="2020-08-27T07:40:39.983Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/img/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>面试题册 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/83-%E9%9D%A2%E8%AF%95%E9%A2%98%E5%86%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面试题册
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-27 14:30:00 / 修改时间：15:40:39" itemprop="dateCreated datePublished" datetime="2020-08-27T14:30:00+08:00">2020-08-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#di-yi-juan">第一卷</a>
+<ul>
+<li><a href="#1-ru-he-jie-jue-wang-ye-luan-ma">1、如何解决网页乱码</a></li>
+<li><a href="#2-chang-jian-liu-lan-qi-ji-qi-nei-he">2、常见浏览器及其内核</a></li>
+<li><a href="#3-label-biao-qian-de-yong-fa">3、label 标签的用法</a></li>
+<li><a href="#4-import-he-link-yin-ru-de-qu-bie">4、@import 和 link 引入的区别</a></li>
+<li><a href="#5-miao-shu-chong-hui-he-chong-pai">5、描述重绘和重排</a></li>
+<li><a href="#6-ru-he-wai-bu-yin-ru-zi-ti-bao">6、如何外部引入字体包</a></li>
+<li><a href="#7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing">7、颜色设置可以有几种类型</a></li>
+<li><a href="#8-yang-shi-lai-yuan-you-xian-ji-quan-chong-ji-suan">8、样式来源、优先级、权重计算</a></li>
+<li><a href="#9-display-none-he-visibility-hidden-de-qu-bie">9、display: none 和 visibility: hidden 的区别</a></li>
+<li><a href="#10-css-yu-ju-de-ji-ben-gou-cheng">10、CSS语句的基本构成</a></li>
+<li><a href="#11-wai-bian-ju-ta-xian-de-yuan-yin-he-jie-jue-fang-fa">11、外边距塌陷的原因和解决方法</a></li>
+<li><a href="#12-he-zi-mo-xing-gai-nian">12、盒子模型概念</a></li>
+<li><a href="#13-selectors-api-he-chuan-tong-fang-fa-de-bi-jiao">13、Selectors API 和传统方法的比较</a></li>
+<li><a href="#14-null-he-undefined-chu-xian-de-chang-jing">14、null 和 undefined 出现的场景</a></li>
+<li><a href="#15-ji-ben-lei-xing-zhi-he-yin-yong-lei-xing-zhi-de-bi-jiao">15、基本类型值和引用类型值的比较</a></li>
+<li><a href="#16-bom-dui-xiang-bao-gua-na-xie-dong-xi">16、bom对象包括哪些东西</a></li>
+<li><a href="#17-offsetwidth-clientwidth-deng-ji-ge-huo-qu-fang-fa-de-shi-yong">17、offsetWidth、clientWidth等几个获取方法的使用</a></li>
+<li><a href="#18-innerhtml-outerhtml-innertext-textcontent-qu-bie">18、innerHTML/outerHTML/innerText/textContent 区别</a></li>
+<li><a href="#19-shu-zu-de-bian-li-fang-fa">19、数组的遍历方法</a></li>
+<li><a href="#20-ru-he-she-zhi-yi-ge-zi-ding-yi-shu-xing">20、如何设置一个自定义属性</a></li>
+<li><a href="#21-dom2-ji-bang-ding-shi-jian-yi-chu-shi-jian">21、DOM2级绑定事件、移除事件</a></li>
+<li><a href="#22-dom2-ji-he-dom0-ji-qu-bie">22、DOM2级和DOM0级区别</a></li>
+<li><a href="#23-zu-zhi-shi-jian-chuan-bo">23、阻止事件传播</a></li>
+<li><a href="#24-ru-he-zu-zhi-mo-ren-shi-jian">24、如何阻止默认事件？</a></li>
+<li><a href="#25-this-de-li-jie-he-zhi-xiang">25、this的理解和指向 ！！</a></li>
+<li><a href="#26-shi-jian-wei-tuo-shi-shi-me-yuan-li-you-dian">26、事件委托 是什么，原理，优点</a></li>
+<li><a href="#27-call-apply-bind">27、call、apply、bind</a></li>
+<li><a href="#28-yuan-xing-lian">28、原型链 ！</a></li>
+<li><a href="#29-shi-me-shi-bian-liang-dui-xiang">29、什么是变量对象</a></li>
+<li><a href="#30-qing-yong-zi-ji-de-hua-jian-shu-shi-me-shi-bi-bao-zuo-yong-you-que-dian">30、请用自己的话简述什么是闭包，作用，优缺点 ！</a></li>
+<li><a href="#31-jin-cheng-he-xian-cheng">31、进程和线程</a></li>
+<li><a href="#32-hun-he-ji-cheng">32、混合继承</a></li>
+<li><a href="#33-shi-jian-xun-huan-ji-zhi">33、事件循环机制</a></li>
+<li><a href="#34-dan-xing-bu-ju-xiang-guan-shu-xing">34、弹性布局相关属性 ！</a></li>
+<li><a href="#35-new-de-guo-cheng">35、new 的过程</a></li>
+<li><a href="#36-dui-html-yu-yi-hua-de-li-jie">36、对HTML语义化的理解</a></li>
+<li><a href="#37-html5-css3-de-xin-te-xing">37、HTML5、CSS3的新特性</a></li>
+<li><a href="#38-es6-xin-te-xing">38、ES6 新特性</a></li>
+<li><a href="#39-qing-xie-chu-ni-zhi-dao-de-she-zhi-yi-ge-yuan-su-chui-zhi-ju-zhong-de-suo-you-fang-shi">39、请写出你知道的设置一个元素垂直居中的所有方式？</a></li>
+<li><a href="#40-qing-chu-fu-dong-de-fang-shi">40、清除浮动的方式</a></li>
+<li><a href="#41-a-biao-qian-si-ge-wei-lei-shun-xu">41、a标签四个伪类顺序？</a></li>
+<li><a href="#42-yong-js-xie-yi-ge-jiu-jiu-cheng-fa-biao">42、用JS写一个九九乘法表 +</a></li>
+<li><a href="#43-qing-kong-shu-zu-de-fang-shi">43、清空数组的方式</a></li>
+<li><a href="#44-yong-js-sui-ji-sheng-cheng-1-dao-100-de-sui-ji-shu">44、用JS随机生成1到100的随机数 +</a></li>
+<li><a href="#45-jie-shi-zuo-yong-yu-lian">45、解释作用域链</a></li>
+<li><a href="#45-shi-me-shi-han-shu-fang-dou-han-shu-jie-liu">45、什么是函数防抖，函数节流 ！！</a></li>
+<li><a href="#46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie">46、谈谈你对面向对象的了解？</a></li>
+<li><a href="#47-object-create-definedproperty-de-shi-yong">47、Object.create/definedProperty的使用</a></li>
+<li><a href="#48-geteter-setter">48、geteter、setter</a></li>
+<li><a href="#49-var-let-const-qu-bie">49、var/let/const区别</a></li>
+<li><a href="#50-dui-xiang-de-jie-gou-fu-zhi">50、对象的解构赋值</a></li>
+<li><a href="#51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he">51、箭头函数求一个数组的和</a></li>
+<li><a href="#52-shi-me-shi-shu-xing-ming-biao-da-shi">52、什么是属性名表达式</a></li>
+<li><a href="#53-qing-jie-shi-symbol-he-bigint-shu-ju-lei-xing">53、请解释 symbol 和 bigInt 数据类型</a></li>
+<li><a href="#54-qing-jie-shi-set-he-map-lei-xing-bing-ju-li-shuo-ming">54、请解释 Set 和 Map 类型 并举例说明</a></li>
+<li><a href="#55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li">55、书写一个子类继承父类的案例</a></li>
+<li><a href="#56-jian-tou-han-shu-de-this-wen-ti">56、箭头函数的this问题</a></li>
+<li><a href="#57-shou-xie-iterator-jie-kou">57、手写 iterator 接口</a></li>
+<li><a href="#58-for-of-he-for-in-xun-huan-de-qu-bie">58、for of 和 for in 循环的区别</a></li>
+<li><a href="#59-tan-tan-promise">59、谈谈 promise</a></li>
+<li><a href="#60-tan-tan-async-he-await">60、谈谈 async 和 await</a></li>
+<li><a href="#61-nodejs-shi-jian-lun-xun">61、NodeJS事件轮询</a></li>
+<li><a href="#62-hong-ren-wu-he-wei-ren-wu">62、宏任务和微任务</a></li>
+<li><a href="#63-tan-yi-xia-nodejs-mo-kuai-hua">63、谈一下NodeJS模块化</a></li>
+<li><a href="#64-npm-de-ji-chu-cao-zuo">64、npm的基础操作</a></li>
+<li><a href="#65-tan-yi-xia-ni-liao-jie-de-jia-mi">65、谈一下你了解的加密</a></li>
+<li><a href="#66-huo-qu-dang-qian-wen-jian-jia-xia-mou-ge-wen-jian-de-jue-dui-lu-jing">66、获取当前文件夹下某个文件的绝对路径</a></li>
+<li><a href="#67-qing-jie-shi-http-xie-yi">67、请解释HTTP协议</a></li>
+<li><a href="#68-lie-ju-ji-ge-chang-jian-de-mime-lei-xing">68、列举几个常见的MIME类型</a></li>
+<li><a href="#69-chang-jian-xiang-ying-ma-zhuang-tai">69、 常见响应码状态</a></li>
+<li><a href="#70-cong-shu-ru-url-dao-jie-xi-wang-ye-chu-lai-de-quan-guo-cheng">70、从输入URL到解析网页出来的全过程</a></li>
+<li><a href="#71-tan-yi-xia-jian-tou-han-shu">71、谈一下箭头函数</a></li>
+<li><a href="#72-huan-cun-de-guo-cheng-xie-shang-huan-cun-he-qiang-zhi-huan-cun">72、缓存的过程（协商缓存和强制缓存）</a></li>
+<li><a href="#73-session-zen-me-shi-yong-liu-cheng">73、session怎么使用（流程）</a></li>
+<li><a href="#74-qing-fen-xi-cookie-session-localstorage-he-sessionstroage">74、请分析cookie session localstorage和sessionstroage</a></li>
+<li><a href="#75-ru-he-shi-xian-liu-lan-qi-nei-duo-ge-biao-qian-ye-zhi-jian-de-tong-xin">75、如何实现浏览器内多个标签页之间的通信</a></li>
+<li><a href="#76-zai-qian-duan-she-ji-li-wang-ye-zi-gua-ying-ru-he-shi-xian">76、在前端设计里，网页自适应如何实现</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="di-yi-juan">第一卷</span><a href="#di-yi-juan" class="header-anchor">#</a></h1>
+<h2><span id="p1-ru-he-jie-jue-wang-ye-luan-ma">1、如何解决网页乱码</span><a href="#p1-ru-he-jie-jue-wang-ye-luan-ma" class="header-anchor">#</a></h2>
+<p><code>&lt;meta charset=utf-8&gt;</code></p>
+<h2><span id="p2-chang-jian-liu-lan-qi-ji-qi-nei-he">2、常见浏览器及其内核</span><a href="#p2-chang-jian-liu-lan-qi-ji-qi-nei-he" class="header-anchor">#</a></h2>
+<h2><span id="p3-label-biao-qian-de-yong-fa">3、label 标签的用法</span><a href="#p3-label-biao-qian-de-yong-fa" class="header-anchor">#</a></h2>
+<p><code>&lt;label&gt;...&lt;/label&gt;</code><br>
+<code>&lt;label for=&quot;xxx&quot;&gt;...&lt;/label&gt; ... &lt;p id=&quot;xxx&quot;&gt; </code></p>
+<h2><span id="p4-import-he-link-yin-ru-de-qu-bie">4、@import 和 link 引入的区别</span><a href="#p4-import-he-link-yin-ru-de-qu-bie" class="header-anchor">#</a></h2>
+<ol>
+<li>
+<p>加载顺序 @import 引用的CSS会在页面全部被下载完后再被加载</p>
+</li>
+<li>
+<p>兼容性 相对来说 link更好一点</p>
+</li>
+<li>
+<p>link标签的样式是可以用js控制的</p>
+</li>
+</ol>
+<h2><span id="p5-miao-shu-chong-hui-he-chong-pai">5、描述重绘和重排</span><a href="#p5-miao-shu-chong-hui-he-chong-pai" class="header-anchor">#</a></h2>
+<ul>
+<li>渲染树重新构建的过程称为重排。</li>
+<li>当页面的布局和几何属性发送改变的时候、增删可见DOM元素、元素位置尺寸发送变化、内容变化、页面渲染初始化、浏览器窗口大小改变等这些情况都会引起重排。</li>
+<li>重排会消耗一定性能。</li>
+<li>重绘是重新绘制页面。相对来说影响比重排小，重排一定会导致重绘。</li>
+</ul>
+<h2><span id="p6-ru-he-wai-bu-yin-ru-zi-ti-bao">6、如何外部引入字体包</span><a href="#p6-ru-he-wai-bu-yin-ru-zi-ti-bao" class="header-anchor">#</a></h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&quot;jier&quot;</span>;</span><br><span class="line">    <span class="attribute">src</span>:<span class="built_in">url</span>(<span class="string">&quot;../images/abc.ttf&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing">7、颜色设置可以有几种类型</span><a href="#p7-yan-se-she-zhi-ke-yi-you-ji-chong-lei-xing" class="header-anchor">#</a></h2>
+<ul>
+<li>直接预定义好的英文名字</li>
+<li>RGB、RGBA</li>
+<li>十六进制表示法</li>
+<li>HSL、HSLA</li>
+<li><code>transparent</code></li>
+<li><code>inherit</code></li>
+</ul>
+<h2><span id="p8-yang-shi-lai-yuan-you-xian-ji-quan-chong-ji-suan">8、样式来源、优先级、权重计算</span><a href="#p8-yang-shi-lai-yuan-you-xian-ji-quan-chong-ji-suan" class="header-anchor">#</a></h2>
+<p>样式来源优先级</p>
+<ul>
+<li>!important</li>
+<li>行内样式 1000</li>
+<li>id选择器 100</li>
+<li>类选择器、伪类选择器、属性选择器 10</li>
+<li>标签选择器、伪元素选择器  1</li>
+<li>通配符选择器</li>
+<li>默认、继承</li>
+</ul>
+<p>优先级相同看顺序，后面定义的覆盖前面的</p>
+<h2><span id="p9-display-none-he-visibility-hidden-de-qu-bie">9、display: none 和 visibility: hidden 的区别</span><a href="#p9-display-none-he-visibility-hidden-de-qu-bie" class="header-anchor">#</a></h2>
+<ul>
+<li>visibility 可以继承</li>
+<li>visibility 保留原来空间</li>
+<li>js 可以获取 visibility 的可视化宽高</li>
+</ul>
+<h2><span id="p10-css-yu-ju-de-ji-ben-gou-cheng">10、CSS语句的基本构成</span><a href="#p10-css-yu-ju-de-ji-ben-gou-cheng" class="header-anchor">#</a></h2>
+<p><code>选择器&#123; 属性名: 属性值 &#125;</code></p>
+<h2><span id="p11-wai-bian-ju-ta-xian-de-yuan-yin-he-jie-jue-fang-fa">11、外边距塌陷的原因和解决方法</span><a href="#p11-wai-bian-ju-ta-xian-de-yuan-yin-he-jie-jue-fang-fa" class="header-anchor">#</a></h2>
+<p>防止父级和其他元素之间的间隙过大，当第一个和最后一个子元素的margn塌陷给父级以后 父级就可以和兄弟元素在垂直方向上进行叠加</p>
+<p>避免父级塌陷</p>
+<ol>
+<li>
+<p>给父级设置一个边框  边框的宽度不能为0</p>
+<p>防止影响视觉，可以设置透明（transparent）颜色</p>
+</li>
+<li>
+<p>开启BFC（块级格式化上下文）</p>
+<p>很多种方法，后边讲解:overflow：hidden 可以开启</p>
+</li>
+</ol>
+<h2><span id="p12-he-zi-mo-xing-gai-nian">12、盒子模型概念</span><a href="#p12-he-zi-mo-xing-gai-nian" class="header-anchor">#</a></h2>
+<p>在html中，把每一个元素都当做成一个盒子，拥有盒子的平面外形和空间</p>
+<h2><span id="p13-selectors-api-he-chuan-tong-fang-fa-de-bi-jiao">13、Selectors API 和传统方法的比较</span><a href="#p13-selectors-api-he-chuan-tong-fang-fa-de-bi-jiao" class="header-anchor">#</a></h2>
+<ol>
+<li>
+<p>动态、静态</p>
+<p>getElementsByXXXXX获取的是一个动态的集合</p>
+<p>queryselectorAll获取的是静态的集合（NodeList对象）</p>
+<p>动态：选出来的元素会随着文档的改变而改变</p>
+<p>静态：只要取出来，就和页面有没有任何关系</p>
+</li>
+<li>
+<p>兼容性</p>
+</li>
+<li>
+<p>参数</p>
+</li>
+</ol>
+<h2><span id="p14-null-he-undefined-chu-xian-de-chang-jing">14、null 和 undefined 出现的场景</span><a href="#p14-null-he-undefined-chu-xian-de-chang-jing" class="header-anchor">#</a></h2>
+<p>常见的 undefined 环境</p>
+<ul>
+<li>变量声明但是没有赋值</li>
+<li>调用函数没有提供的参数</li>
+<li>函数默认返回值</li>
+<li>对象没有赋值的属性</li>
+</ul>
+<p>常见 null 环境</p>
+<ul>
+<li>对象原型链的终点</li>
+<li>让变量指向的对象成为垃圾对象</li>
+</ul>
+<h2><span id="p15-ji-ben-lei-xing-zhi-he-yin-yong-lei-xing-zhi-de-bi-jiao">15、基本类型值和引用类型值的比较</span><a href="#p15-ji-ben-lei-xing-zhi-he-yin-yong-lei-xing-zhi-de-bi-jiao" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>基本类型值</th>
+<th>引用类型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>不可变（只能重新赋值）</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>添加属性方法</td>
+<td>无效</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>储存方式</td>
+<td>栈区</td>
+<td>名字地址存栈区 值存堆区</td>
+</tr>
+<tr>
+<td>比较方式</td>
+<td>值的比较</td>
+<td>引用的比较</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p16-bom-dui-xiang-bao-gua-na-xie-dong-xi">16、bom对象包括哪些东西</span><a href="#p16-bom-dui-xiang-bao-gua-na-xie-dong-xi" class="header-anchor">#</a></h2>
+<p><code>document</code></p>
+<p><code>navigator</code></p>
+<p><code>screen</code></p>
+<p><code>location</code></p>
+<p><code>history</code></p>
+<h2><span id="p17-offsetwidth-clientwidth-deng-ji-ge-huo-qu-fang-fa-de-shi-yong">17、offsetWidth、clientWidth等几个获取方法的使用</span><a href="#p17-offsetwidth-clientwidth-deng-ji-ge-huo-qu-fang-fa-de-shi-yong" class="header-anchor">#</a></h2>
+<p>使用offsetWidth和offsetHeight属性可以获取元素的尺寸(content+padding+border)</p>
+<p>clientWidth和clientHeight获取元素可视部分的宽度，即css的content和padding属性的和</p>
+<h2><span id="p18-innerhtml-outerhtml-innertext-textcontent-qu-bie">18、innerHTML/outerHTML/innerText/textContent 区别</span><a href="#p18-innerhtml-outerhtml-innertext-textcontent-qu-bie" class="header-anchor">#</a></h2>
+<p>inner 不包括自身 outer 包括自身</p>
+<p>HTML 解析html标签 Text 不解析</p>
+<ul>
+<li>textContent和innerHTML的区别
+<ul>
+<li>textContent 会获取style= “display:none” 中的文本，而innerText不会</li>
+<li>innerText不会理会html格式，直接输出不换行的文本 ，textContent会根据标签里面的元素独立一行</li>
+<li>innerText 对IE的兼容性较好 ，textContent虽然作为标准方法但是只支持IE8+以上的浏览器</li>
+</ul>
+</li>
+</ul>
+<h2><span id="p19-shu-zu-de-bian-li-fang-fa">19、数组的遍历方法</span><a href="#p19-shu-zu-de-bian-li-fang-fa" class="header-anchor">#</a></h2>
+<p><code>forEach</code> <code>map</code> <code>filter</code> <code>some</code> <code>every</code> <code>reduce</code></p>
+<h2><span id="p20-ru-he-she-zhi-yi-ge-zi-ding-yi-shu-xing">20、如何设置一个自定义属性</span><a href="#p20-ru-he-she-zhi-yi-ge-zi-ding-yi-shu-xing" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="http://dataset.xxx">dataset.xxx</a> = “111”</p>
+<p><a target="_blank" rel="noopener" href="http://dataset.xxx">dataset.xxx</a></p>
+<p>delete <a target="_blank" rel="noopener" href="http://detaset.xxx">detaset.xxx</a></p>
+<h2><span id="p21-dom2-ji-bang-ding-shi-jian-yi-chu-shi-jian">21、DOM2级绑定事件、移除事件</span><a href="#p21-dom2-ji-bang-ding-shi-jian-yi-chu-shi-jian" class="header-anchor">#</a></h2>
+<p>在DOM事件模型中，通过调用对象的addEventListnenr()方法注册事件</p>
+<ul>
+<li>type:注册事件的类型名,事件类型与事件属性不同,事件类型名没有on前缀,例如,对于事件属性 onclick来说,所对应的事件类型为 click</li>
+<li>listener:监听函数,即事件处理函数,在指定类型的事件发生时将调用该函数,在调用这个函数时,默认传递给它的唯一参数是 event对象</li>
+<li>useCapture:是一个布尔值,如果为true,则指定的事件处理函数将在事件传播的捕获阶段触发，如果为 false,则事件处理函数将在冒泡阶段触发</li>
+</ul>
+<p>DOM事件模型中，使用removeEventListener()方法可以从指定对象中删除已经注册的事件处理函数</p>
+<p>removeEventListener()只能处理addEventListener方法注册的事件</p>
+<h2><span id="p22-dom2-ji-he-dom0-ji-qu-bie">22、DOM2级和DOM0级区别</span><a href="#p22-dom2-ji-he-dom0-ji-qu-bie" class="header-anchor">#</a></h2>
+<ol>
+<li>兼容性</li>
+<li>同时绑定相同事件的个数</li>
+<li>注销方法</li>
+</ol>
+<h2><span id="p23-zu-zhi-shi-jian-chuan-bo">23、阻止事件传播</span><a href="#p23-zu-zhi-shi-jian-chuan-bo" class="header-anchor">#</a></h2>
+<p>ev.stopPropagation();</p>
+<p>ev.cancelBubble = true;</p>
+<h2><span id="p24-ru-he-zu-zhi-mo-ren-shi-jian">24、如何阻止默认事件？</span><a href="#p24-ru-he-zu-zhi-mo-ren-shi-jian" class="header-anchor">#</a></h2>
+<ul>
+<li>在IE浏览器中， <code>e.returnValue=fasle</code></li>
+<li>在其他浏览器中，<code>e.prevenDefault()</code></li>
+<li><code>return false</code></li>
+</ul>
+<h2><span id="p25-this-de-li-jie-he-zhi-xiang">25、this的理解和指向 ！！</span><a href="#p25-this-de-li-jie-he-zhi-xiang" class="header-anchor">#</a></h2>
+<h2><span id="p26-shi-jian-wei-tuo-shi-shi-me-yuan-li-you-dian">26、事件委托 是什么，原理，优点</span><a href="#p26-shi-jian-wei-tuo-shi-shi-me-yuan-li-you-dian" class="header-anchor">#</a></h2>
+<p>事件委托（delegate） 也称为事件托管或者事件代理，就是把目标节点的事件绑定到祖先的节点上</p>
+<p>原理 事件冒泡</p>
+<p>优点</p>
+<p>优化代码，提高效率</p>
+<p>给未来的元素添加绑定</p>
+<h2><span id="p27-call-apply-bind">27、call、apply、bind</span><a href="#p27-call-apply-bind" class="header-anchor">#</a></h2>
+<p>fn.call( arg,…,… )</p>
+<ol>
+<li>把fn的this指向arg</li>
+<li>执行fn</li>
+<li>如果fn需要参数，则第二个参数开始依次传参</li>
+</ol>
+<p>fn.apply( arg,[,] )</p>
+<ol>
+<li>把fn的this指向arg</li>
+<li>执行fn</li>
+<li>如果fn需要参数，则第二个参数传递一个数组或者伪数组</li>
+</ol>
+<p>fn.bind( arg,…,… )</p>
+<ol>
+<li>把fn的this指向arg</li>
+<li>不会执行fn，返回一个新this指向的fn的一个引用，如果想要调用，则需要手动调用</li>
+<li>参数形式同call</li>
+</ol>
+<h2><span id="p28-yuan-xing-lian">28、原型链 ！</span><a href="#p28-yuan-xing-lian" class="header-anchor">#</a></h2>
+<p><img src="img/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg" alt></p>
+<h2><span id="p29-shi-me-shi-bian-liang-dui-xiang">29、什么是变量对象</span><a href="#p29-shi-me-shi-bian-liang-dui-xiang" class="header-anchor">#</a></h2>
+<p>变量对象是与执行上下文相关的数据作用域，储存了在上下文中定义的变量和函数声明。</p>
+<p>在一个执行上下文中，变量才会被激活。只有被激活的变量对象，其各种属性才能被访问。</p>
+<h2><span id="p30-qing-yong-zi-ji-de-hua-jian-shu-shi-me-shi-bi-bao-zuo-yong-you-que-dian">30、请用自己的话简述什么是闭包，作用，优缺点 ！</span><a href="#p30-qing-yong-zi-ji-de-hua-jian-shu-shi-me-shi-bi-bao-zuo-yong-you-que-dian" class="header-anchor">#</a></h2>
+<ol>
+<li>闭包的产生是函数嵌套函数、内部函数引用外部变量、外部函数调用</li>
+<li>闭包可以理解为内部的函数</li>
+<li>深入理解的话，闭包就是包含 被内部引用变量 的对象</li>
+</ol>
+<p>闭包的优点</p>
+<ol>
+<li>外部间接的访问到了内部的变量</li>
+<li>可以延长局部变量的生命周期</li>
+</ol>
+<p>缺点：内存泄露</p>
+<p>闭包的生命周期</p>
+<ol>
+<li>产生 在内部函数被定义的时候就产生了</li>
+<li>死亡 当内部函数没有被引用的时候，函数就会成为垃圾对象，会被清理</li>
+</ol>
+<h2><span id="p31-jin-cheng-he-xian-cheng">31、进程和线程</span><a href="#p31-jin-cheng-he-xian-cheng" class="header-anchor">#</a></h2>
+<p>进程是程序一次执行占有的一片独有内存空间</p>
+<p>线程是进程内一个独立单元，CPU基本调度单位，是程序执行的一个完整流程</p>
+<p>一个进程中至少会有一个线程，也可以有多个线程，被称为多线程。一个进程内多个线程可以直接共享数据，多个进程之间的数据不能直接共享。</p>
+<p>JS的单线程的，浏览器是多线程的。</p>
+<h2><span id="p32-hun-he-ji-cheng">32、混合继承</span><a href="#p32-hun-he-ji-cheng" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父类型（构造模式）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"> name </span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 父类型（原型模式）</span></span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="built_in">this</span>.name );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"> name, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// △ 继承属性 △</span></span><br><span class="line">    SuperType.call( <span class="built_in">this</span>,name );</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承方法</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line"><span class="comment">// △ 修正原型链 △</span></span><br><span class="line">SubType.prototype.constructor = SubType;</span><br><span class="line"></span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> SubType(<span class="string">&quot;Tom&quot;</span>,<span class="number">29</span>);</span><br><span class="line">p1.sayName();</span><br><span class="line">p1.syaAge();</span><br></pre></td></tr></table></figure>
+<h2><span id="p33-shi-jian-xun-huan-ji-zhi">33、事件循环机制</span><a href="#p33-shi-jian-xun-huan-ji-zhi" class="header-anchor">#</a></h2>
+<ul>
+<li>执行初始代码，将事件回调函数交给对应模块管理</li>
+<li>当事件发生时，管理模块会将回调函数及其数据添加到回调队列中</li>
+<li>只有当初始化代码执行完成（需要一定时间），才会遍历读取回调队列中的回调函数并执行</li>
+</ul>
+<p><img src="img/007S8ZIlgy1gh5zsm0f2cj310p0u076v.jpg" alt="img"></p>
+<h2><span id="p34-dan-xing-bu-ju-xiang-guan-shu-xing">34、弹性布局相关属性 ！</span><a href="#p34-dan-xing-bu-ju-xiang-guan-shu-xing" class="header-anchor">#</a></h2>
+<p>富余空间管理（主轴）</p>
+<p>justify-content：</p>
+<ul>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>center</li>
+<li>space-around：富余空间包含伸缩项目</li>
+<li>space-between：伸缩项目包含富裕空间</li>
+</ul>
+<p>富余空间管理（侧轴）</p>
+<p>align-items：</p>
+<ul>
+<li>flex-start</li>
+<li>flex-end</li>
+<li>baseline</li>
+<li>center</li>
+<li>stretch</li>
+</ul>
+<p>主轴布局方向</p>
+<p>flex容器flex-direction：</p>
+<ul>
+<li>row</li>
+<li>row-reverse</li>
+<li>column：主轴与侧轴发生对调</li>
+<li>column-reverse</li>
+</ul>
+<h2><span id="p35-new-de-guo-cheng">35、new 的过程</span><a href="#p35-new-de-guo-cheng" class="header-anchor">#</a></h2>
+<ol>
+<li>创建一个空对象，将他的引用赋值给this，继承函数的原型。</li>
+<li>通过this将属性和方法添加到这个对象。</li>
+<li>最后返回this指向的新对象，也就是实例。</li>
+</ol>
+<h2><span id="p36-dui-html-yu-yi-hua-de-li-jie">36、对HTML语义化的理解</span><a href="#p36-dui-html-yu-yi-hua-de-li-jie" class="header-anchor">#</a></h2>
+<ul>
+<li>语义化标签更具有可读性，便于团队的开发和维护</li>
+<li>没有css的情况下，网页也能很好的呈现出内容结构和代码结构</li>
+<li>关于SEO，搜索引擎更能理解到网页中各部分之间的关系，更准确更快速搜索信息</li>
+</ul>
+<h2><span id="p37-html5-css3-de-xin-te-xing">37、HTML5、CSS3的新特性</span><a href="#p37-html5-css3-de-xin-te-xing" class="header-anchor">#</a></h2>
+<ul>
+<li>H5 语义化标签、增强型表单、音视频标签、、canvas、地理地位、本地存储localStorage sessionStotage、多线程</li>
+<li>C3 新选择器、动画、过渡、圆角标签、弹性布局、媒体查询</li>
+</ul>
+<h2><span id="p38-es6-xin-te-xing">38、ES6 新特性</span><a href="#p38-es6-xin-te-xing" class="header-anchor">#</a></h2>
+<ol>
+<li>字符串和数组扩展方法，模版字符串，reduce</li>
+<li>解构赋值</li>
+<li>函数默认参数值，箭头函数</li>
+<li>Promise</li>
+<li>模块化</li>
+</ol>
+<h2><span id="p39-qing-xie-chu-ni-zhi-dao-de-she-zhi-yi-ge-yuan-su-chui-zhi-ju-zhong-de-suo-you-fang-shi">39、请写出你知道的设置一个元素垂直居中的所有方式？</span><a href="#p39-qing-xie-chu-ni-zhi-dao-de-she-zhi-yi-ge-yuan-su-chui-zhi-ju-zhong-de-suo-you-fang-shi" class="header-anchor">#</a></h2>
+<h2><span id="p40-qing-chu-fu-dong-de-fang-shi">40、清除浮动的方式</span><a href="#p40-qing-chu-fu-dong-de-fang-shi" class="header-anchor">#</a></h2>
+<p>高度塌陷：</p>
+<ul>
+<li>浮动元素以后，脱离父级内容区域，父级没有内容撑开自身的高度</li>
+<li>父级的兄弟元素是 按照父级的位置进行布局的，所以页面会乱掉</li>
+</ul>
+<p>清除浮动的方法：</p>
+<ol>
+<li>
+<p>给浮动元素的父级设置高度height（不推荐使用）</p>
+<p>缺点：很多情况下 高度都是不缺定的  所有不适用</p>
+</li>
+<li>
+<p>以浮制浮，给浮动元素的父元素设置浮动，原理是开启BFC（不推荐使用）</p>
+<p>缺点：只有在父级需要浮动的时候，可以这么清除，否则父级的浮动会影响布局</p>
+</li>
+<li>
+<p>overflow：hidden；给父级设置，原理也是开启BFC（可以使用）</p>
+<p>优点：简单快捷</p>
+<p>缺点：元素超出的时候，会隐藏超出部分</p>
+</li>
+<li>
+<p>br清除浮动：在浮动元素的后边书写一个br。br中书写clear属性，值为all</p>
+<p>缺点：增加不必要的元素，不符合样式与结构相分离的要求</p>
+</li>
+<li>
+<p>clear清浮动法：给浮动元素的下边添加一个块元素，书写样式clear:both</p>
+<p>缺点：增加额外的结构，不符合语义化标准</p>
+</li>
+<li>
+<p>after伪元素清浮动（推荐）</p>
+<p>可以给所有浮动元素的父级一个  clearFix的类名</p>
+<p>当一个元素需要清除浮动的时候  直接设置clearFix类名即可</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearFix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    content:&quot;\200B&quot;;  必须拥有content属性   内容为空</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span>;   必须块标签才能清浮动</span><br><span class="line">    <span class="selector-tag">height</span>: 0;          高度为0 不占用空间</span><br><span class="line">    <span class="selector-tag">clear</span>: <span class="selector-tag">both</span>;        清除浮动</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearFix&#123;  //兼容ie</span><br><span class="line">    *zoom:1;    //*是css  hack 只有ie6.7 认识</span><br><span class="line">    <span class="selector-tag">ie6</span>、7 不支持伪元素，所以需要开启元素的<span class="selector-tag">haslayout</span>来清除浮动</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p41-a-biao-qian-si-ge-wei-lei-shun-xu">41、a标签四个伪类顺序？</span><a href="#p41-a-biao-qian-si-ge-wei-lei-shun-xu" class="header-anchor">#</a></h2>
+<p>四个伪类</p>
+<p>link：当有链接属性时</p>
+<p>visited:当连接被访问过以后</p>
+<p>hover：当连接被鼠标悬浮的时候</p>
+<p>active:当连接在激活状态的时候</p>
+<h2><span id="p42-yong-js-xie-yi-ge-jiu-jiu-cheng-fa-biao">42、用JS写一个九九乘法表 +</span><a href="#p42-yong-js-xie-yi-ge-jiu-jiu-cheng-fa-biao" class="header-anchor">#</a></h2>
+<h2><span id="p43-qing-kong-shu-zu-de-fang-shi">43、清空数组的方式</span><a href="#p43-qing-kong-shu-zu-de-fang-shi" class="header-anchor">#</a></h2>
+<ul>
+<li>arr.length = 0</li>
+<li>arr.splice(0, arr.length)</li>
+<li>arr = []</li>
+</ul>
+<h2><span id="p44-yong-js-sui-ji-sheng-cheng-1-dao-100-de-sui-ji-shu">44、用JS随机生成1到100的随机数 +</span><a href="#p44-yong-js-sui-ji-sheng-cheng-1-dao-100-de-sui-ji-shu" class="header-anchor">#</a></h2>
+<h2><span id="p45-jie-shi-zuo-yong-yu-lian">45、解释作用域链</span><a href="#p45-jie-shi-zuo-yong-yu-lian" class="header-anchor">#</a></h2>
+<p>当代码在一个环境中执行时，会创建变量对象的一个作用域链，用途是保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<h2><span id="p45-shi-me-shi-han-shu-fang-dou-han-shu-jie-liu">45、什么是函数防抖，函数节流 ！！</span><a href="#p45-shi-me-shi-han-shu-fang-dou-han-shu-jie-liu" class="header-anchor">#</a></h2>
+<p>函数的节流(throttle)与防抖(debounce)<br>
+作用：为了节约函数的性能（让函数调用次数更少）<br>
+节流(throttle)：让函数在单位时间内只调用一次，第一次调用生效<br>
+应用场景：发送验证码按钮</p>
+<p>防抖(debounce)：让函数在单位时间内只调用一次，最后一次调用生效<br>
+应用场景：搜索栏</p>
+<h2><span id="p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie">46、谈谈你对面向对象的了解？</span><a href="#p46-tan-tan-ni-dui-mian-xiang-dui-xiang-de-liao-jie" class="header-anchor">#</a></h2>
+<h2><span id="p47-object-create-definedproperty-de-shi-yong">47、Object.create/definedProperty的使用</span><a href="#p47-object-create-definedproperty-de-shi-yong" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj3 = Obje ct.create(obj, &#123;</span><br><span class="line">    name:&#123;</span><br><span class="line">        value: <span class="string">&quot;Lily&quot;</span>,</span><br><span class="line">        writable: <span class="literal">false</span>,</span><br><span class="line">        enumeerable: <span class="literal">false</span>,</span><br><span class="line">        configureable: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2><span id="p48-geteter-setter">48、geteter、setter</span><a href="#p48-geteter-setter" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Person&#123;</span><br><span class="line">    firstName: <span class="string">&quot;姓&quot;</span>,</span><br><span class="line">    lastName: <span class="string">&quot;名&quot;</span>,</span><br><span class="line">    <span class="keyword">get</span> <span class="title">Name</span>()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="built_in">this</span>.lastName&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span> <span class="title">setName</span>(<span class="params">name</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newArr = name.split(<span class="string">&#x27; &#x27;</span>)；</span><br><span class="line">        <span class="built_in">this</span>.firstName = newArr[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">this</span>.lastName = newArr[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Person.Name);</span><br><span class="line">Person.setName = <span class="string">&quot;某 某某&quot;</span>;</span><br></pre></td></tr></table></figure>
+<h2><span id="p49-var-let-const-qu-bie">49、var/let/const区别</span><a href="#p49-var-let-const-qu-bie" class="header-anchor">#</a></h2>
+<p>var 没有块作用域，会声明提升，可以重复定义</p>
+<p>let 声明的变量具有块作用域，不会声明提升，不能重复定义</p>
+<p>const 常量，不允许修改的数据可以定义为常量，对象、数组等定义为常量只是保证地址不发生变化</p>
+<h2><span id="p50-dui-xiang-de-jie-gou-fu-zhi">50、对象的解构赋值</span><a href="#p50-dui-xiang-de-jie-gou-fu-zhi" class="header-anchor">#</a></h2>
+<h2><span id="p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he">51、箭头函数求一个数组的和</span><a href="#p51-jian-tou-han-shu-qiu-yi-ge-shu-zu-de-he" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Sum = <span class="function"><span class="params">a</span> =&gt;</span>  a.reduce (<span class="function">(<span class="params"> prev, now </span>) =&gt;</span> prev + now )              </span><br></pre></td></tr></table></figure>
+<h2><span id="p52-shi-me-shi-shu-xing-ming-biao-da-shi">52、什么是属性名表达式</span><a href="#p52-shi-me-shi-shu-xing-ming-biao-da-shi" class="header-anchor">#</a></h2>
+<p>对象的属性名在ES6之前只能是字符串，不能作为变量解析，</p>
+<p>在ES6中，提供新的写法，把属性名用中括号括起来 中括号就可以书写变量</p>
+<h2><span id="p53-qing-jie-shi-symbol-he-bigint-shu-ju-lei-xing">53、请解释 symbol 和 bigInt 数据类型</span><a href="#p53-qing-jie-shi-symbol-he-bigint-shu-ju-lei-xing" class="header-anchor">#</a></h2>
+<p><code>symbol</code> 的值由 symbol 函数产生，主要用给对象设置一个属性名表达式，代表一个独一无二的属性（避免覆盖的问题）。另外通过这个基本类型值命名的属性，无法通过常规方法遍历。</p>
+<p>symbol 是为了给对象添加一个方法属性时，从根本上防止属性名冲突而新增的基本类型，他表示独一无二的值。作为对象key时，只能用专门的方法遍历，无法for in等。</p>
+<p><code>bigInt</code> 是为了大数运算精度而设计的一个基本数据类型。定义时在在数字后加<code>n</code>。和数字型比较时，相等true 全等false。</p>
+<p>bigInt 是为了提高大数运算精度而引入的一种基本类型，定义的时候在数字末尾加n就是，和number进行比较，相等t，全等false</p>
+<h2><span id="p54-qing-jie-shi-set-he-map-lei-xing-bing-ju-li-shuo-ming">54、请解释 Set 和 Map 类型 并举例说明</span><a href="#p54-qing-jie-shi-set-he-map-lei-xing-bing-ju-li-shuo-ming" class="header-anchor">#</a></h2>
+<p>set 类似数组，但成员的值都是唯一的(没有键名，只有键值，或者说二者相等)</p>
+<p>Map 相对于对象 字符串-值 的对应来说，是一种 值-值的键值对结构，更完善的hash实现</p>
+<h2><span id="p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li">55、书写一个子类继承父类的案例</span><a href="#p55-shu-xie-yi-ge-zi-lei-ji-cheng-fu-lei-de-an-li" class="header-anchor">#</a></h2>
+<h2><span id="p56-jian-tou-han-shu-de-this-wen-ti">56、箭头函数的this问题</span><a href="#p56-jian-tou-han-shu-de-this-wen-ti" class="header-anchor">#</a></h2>
+<h2><span id="p57-shou-xie-iterator-jie-kou">57、手写 iterator 接口</span><a href="#p57-shou-xie-iterator-jie-kou" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Iterator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//用一个计数器，保存现在处理到哪里了</span></span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        next: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (index &lt; arr.length) &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                    value: arr[index++],</span><br><span class="line">                    done: <span class="literal">false</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> &#123;</span><br><span class="line">                    done: <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//只要调用这个Iterator接口，就可以依次处理成员了</span></span><br><span class="line"><span class="keyword">let</span> it = Iterator(arr);</span><br><span class="line"><span class="built_in">console</span>.log(it);</span><br><span class="line"><span class="built_in">console</span>.log(it.next().value);</span><br><span class="line"><span class="built_in">console</span>.log(it.next().value);</span><br><span class="line"><span class="built_in">console</span>.log(it.next().value);</span><br></pre></td></tr></table></figure>
+<h2><span id="p58-for-of-he-for-in-xun-huan-de-qu-bie">58、for of 和 for in 循环的区别</span><a href="#p58-for-of-he-for-in-xun-huan-de-qu-bie" class="header-anchor">#</a></h2>
+<ul>
+<li>JavaScript 原有的<code>for...in</code>循环，只能获得对象的键名，不能直接获取键值。ES6 提供<code>for...of</code>循环，允许遍历获得键值，如果要通过<code>for...of</code>循环，获取数组的索引，可以借助数组实例的<code>entries</code>方法和<code>keys</code>方法。</li>
+<li><code>for...of</code>循环调用遍历器接口，数组的遍历器接口只返回具有数字索引的属性。这一点跟<code>for...in</code>循环也不一样</li>
+</ul>
+<h2><span id="p59-tan-tan-promise">59、谈谈 promise</span><a href="#p59-tan-tan-promise" class="header-anchor">#</a></h2>
+<p>Promise对象时一个异步变成的解决方案，<strong>可以将异步操作以同步的流程表达出来, 避免了层层嵌套的回调函数(俗称’回调地狱’)</strong></p>
+<p>pending resolve reject</p>
+<p>then / catch 方法返回值是一个新的promise对象</p>
+<ul>
+<li>新promise对象默认是成功状态</li>
+<li>如果 then / catch 接受的函数返回值是一个promise对象，那么 then / catch 方法返回值的promise就是这个promise对象</li>
+<li>如果没有返回 promise对象，就会新建一个默认成功状态promise</li>
+<li>内部如果报错了，返回一个失败状态的promise</li>
+</ul>
+<h2><span id="p60-tan-tan-async-he-await">60、谈谈 async 和 await</span><a href="#p60-tan-tan-async-he-await" class="header-anchor">#</a></h2>
+<p>async函数(源自ES2017 - ES8),真正意义上去解决异步回调的问题，同步流程表达异步操作,是 Generator的语法糖</p>
+<p>async 函数会返回一个 Promise 对象，如果在函数中 <code>return</code> 一个直接量，async 会把这个直接量通过<code>Promise.resolve()</code> 封装成 Promise 对象。</p>
+<p>async取代Generator函数的星号*，await取代Generator的yield</p>
+<h2><span id="p61-nodejs-shi-jian-lun-xun">61、NodeJS事件轮询</span><a href="#p61-nodejs-shi-jian-lun-xun" class="header-anchor">#</a></h2>
+<p>分为六类</p>
+<ul>
+<li><code>timers</code> 处理定时器的回调函数</li>
+<li><code>pending callback</code> 处理系统回调</li>
+<li><code>idle prepare</code> 处理NodeJS内部的操作</li>
+<li><code>poll</code> 处理一些I/O操作 <br>（1）当有回调队列成员，则回调队列执行完毕或者达到最大回调数，进入下个阶段<br>（2）当是空的时候，<code>timers</code>队列的计时器超时了或者下个阶段设置了<code>setImmediate</code>的时候，就直接进入到下个阶段。</li>
+<li><code>check</code> 专门处理<code>setImmediate</code></li>
+<li><code>close</code> 处理一些执行关闭的回调函数</li>
+</ul>
+<h2><span id="p62-hong-ren-wu-he-wei-ren-wu">62、宏任务和微任务</span><a href="#p62-hong-ren-wu-he-wei-ren-wu" class="header-anchor">#</a></h2>
+<p>宏任务是宿主环境提供的任务，包含了事件轮询机制中的各种回调函数。</p>
+<p>微任务包含了<code>process.nextTick</code>（优先级最高）， <code>promise</code> 其他的微任务按照书写顺序执行。</p>
+<p>微任务优先级高于宏任务，并且事件轮询每次到一个新的阶段之前，都会检查微任务队列。<br>
+微任务中如果新添加了微任务，则把新添加的微任务放到下一个微任务队列执行。</p>
+<h2><span id="p63-tan-yi-xia-nodejs-mo-kuai-hua">63、谈一下NodeJS模块化</span><a href="#p63-tan-yi-xia-nodejs-mo-kuai-hua" class="header-anchor">#</a></h2>
+<h2><span id="p64-npm-de-ji-chu-cao-zuo">64、npm的基础操作</span><a href="#p64-npm-de-ji-chu-cao-zuo" class="header-anchor">#</a></h2>
+<p><code>npm -v</code> 查看npm版本</p>
+<p><code>npm init</code> 初始化package.json文件</p>
+<p><code>npm install/i 包名</code> 安装指定的包</p>
+<p><code>--save -S</code> 安装指定包并添加到生产环境中</p>
+<p><code>--save-dev</code> 安装到开发环境中</p>
+<p><code>-g</code> 全局安装</p>
+<p><code>npm -remove / r</code> 删除指定的包</p>
+<h2><span id="p65-tan-yi-xia-ni-liao-jie-de-jia-mi">65、谈一下你了解的加密</span><a href="#p65-tan-yi-xia-ni-liao-jie-de-jia-mi" class="header-anchor">#</a></h2>
+<p>非对称加密算法。它需要两个密钥，一个公钥，一个私钥。</p>
+<p>因为 加密 和 解密 使用的是两个不同的密钥，所以这种算法称为 非对称加密算法。</p>
+<p>md5、sha1、sha256、sha512等。</p>
+<h2><span id="p66-huo-qu-dang-qian-wen-jian-jia-xia-mou-ge-wen-jian-de-jue-dui-lu-jing">66、获取当前文件夹下某个文件的绝对路径</span><a href="#p66-huo-qu-dang-qian-wen-jian-jia-xia-mou-ge-wen-jian-de-jue-dui-lu-jing" class="header-anchor">#</a></h2>
+<h2><span id="p67-qing-jie-shi-http-xie-yi">67、请解释HTTP协议</span><a href="#p67-qing-jie-shi-http-xie-yi" class="header-anchor">#</a></h2>
+<h2><span id="p68-lie-ju-ji-ge-chang-jian-de-mime-lei-xing">68、列举几个常见的MIME类型</span><a href="#p68-lie-ju-ji-ge-chang-jian-de-mime-lei-xing" class="header-anchor">#</a></h2>
+<h2><span id="p69-chang-jian-xiang-ying-ma-zhuang-tai">69、 常见响应码状态</span><a href="#p69-chang-jian-xiang-ying-ma-zhuang-tai" class="header-anchor">#</a></h2>
+<h2><span id="p70-cong-shu-ru-url-dao-jie-xi-wang-ye-chu-lai-de-quan-guo-cheng">70、从输入URL到解析网页出来的全过程</span><a href="#p70-cong-shu-ru-url-dao-jie-xi-wang-ye-chu-lai-de-quan-guo-cheng" class="header-anchor">#</a></h2>
+<p>（1）DNS 查询、解析</p>
+<ul>
+<li>输入的是域名，需要DNS解析成IP地址</li>
+<li>四个缓存和一个递归查询</li>
+</ul>
+<p>（2）TCP 三次握手</p>
+<ul>
+<li>客户端：我准备发请求了</li>
+<li>服务器：我收到了，你发吧</li>
+<li>客户端：好的，我准备发了</li>
+<li>确认双方都有收发能力</li>
+</ul>
+<p>（3）发送请求</p>
+<ul>
+<li>客户端发请求报文给服务器</li>
+</ul>
+<p>（4）返回响应</p>
+<ul>
+<li>服务器处理完请求后，发响应报文给客户端</li>
+</ul>
+<p>（5）渲染页面</p>
+<ul>
+<li>根据html生成dom树</li>
+<li>根据css生成cssom树</li>
+<li>cssom + dom 生成 rendre tree 渲染树</li>
+<li>根据层叠上下文分层</li>
+<li>生成图层绘制指令</li>
+<li>栅格化，把图层分为图块</li>
+<li>合成和显示，最终绘制</li>
+</ul>
+<p>（6）TCP 四次挥手</p>
+<ul>
+<li>客户端：我请求发完了</li>
+<li>服务器：好的我知道了</li>
+<li>服务端：我响应发完了</li>
+<li>客户端：好的我知道了</li>
+</ul>
+<h2><span id="p71-tan-yi-xia-jian-tou-han-shu">71、谈一下箭头函数</span><a href="#p71-tan-yi-xia-jian-tou-han-shu" class="header-anchor">#</a></h2>
+<h2><span id="p72-huan-cun-de-guo-cheng-xie-shang-huan-cun-he-qiang-zhi-huan-cun">72、缓存的过程（协商缓存和强制缓存）</span><a href="#p72-huan-cun-de-guo-cheng-xie-shang-huan-cun-he-qiang-zhi-huan-cun" class="header-anchor">#</a></h2>
+<h2><span id="p73-session-zen-me-shi-yong-liu-cheng">73、session怎么使用（流程）</span><a href="#p73-session-zen-me-shi-yong-liu-cheng" class="header-anchor">#</a></h2>
+<h2><span id="p74-qing-fen-xi-cookie-session-localstorage-he-sessionstroage">74、请分析cookie session localstorage和sessionstroage</span><a href="#p74-qing-fen-xi-cookie-session-localstorage-he-sessionstroage" class="header-anchor">#</a></h2>
+<h2><span id="p75-ru-he-shi-xian-liu-lan-qi-nei-duo-ge-biao-qian-ye-zhi-jian-de-tong-xin">75、如何实现浏览器内多个标签页之间的通信</span><a href="#p75-ru-he-shi-xian-liu-lan-qi-nei-duo-ge-biao-qian-ye-zhi-jian-de-tong-xin" class="header-anchor">#</a></h2>
+<p>1、调用<code>localStorage</code></p>
+<blockquote>
+<p>在一个标签页里面使用 <code>localStorage.setItem(key,value)</code>添加（修改、删除）内容；<br>
+在另一个标签页里面监听 <code>storage</code> 事件。<br>
+即可得到 <code>localstorge</code> 存储的值，实现不同标签页之间的通信。</p>
+</blockquote>
+<p>2、调用<code>cookie+setInterval()</code></p>
+<blockquote>
+<p>将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。</p>
+</blockquote>
+<h2><span id="p76-zai-qian-duan-she-ji-li-wang-ye-zi-gua-ying-ru-he-shi-xian">76、在前端设计里，网页自适应如何实现</span><a href="#p76-zai-qian-duan-she-ji-li-wang-ye-zi-gua-ying-ru-he-shi-xian" class="header-anchor">#</a></h2>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"># 面试题</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/3-%E5%B7%A5%E7%A8%8B%E5%8C%96/54-NodeJS%E6%89%A9%E5%B1%95/" rel="prev" title="NodeJS 扩展模块">
+      <i class="fa fa-chevron-left"></i> NodeJS 扩展模块
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/5-%E5%AE%9E%E7%94%A8/82-%E4%BB%A3%E7%A0%81%E6%89%8B%E5%86%8C/" rel="next" title="代码手册">
+      代码手册 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">第一卷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、如何解决网页乱码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、常见浏览器及其内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、label 标签的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、@import 和 link 引入的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、描述重绘和重排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、如何外部引入字体包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、颜色设置可以有几种类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8、样式来源、优先级、权重计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">9、display: none 和 visibility: hidden 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">10、CSS语句的基本构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">11、外边距塌陷的原因和解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">12、盒子模型概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">13、Selectors API 和传统方法的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">14、null 和 undefined 出现的场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">15、基本类型值和引用类型值的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">16、bom对象包括哪些东西</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">17、offsetWidth、clientWidth等几个获取方法的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">18、innerHTML&#x2F;outerHTML&#x2F;innerText&#x2F;textContent 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">19、数组的遍历方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">20、如何设置一个自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">21、DOM2级绑定事件、移除事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">22、DOM2级和DOM0级区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">23、阻止事件传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">24、如何阻止默认事件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">25、this的理解和指向 ！！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">26、事件委托 是什么，原理，优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">27、call、apply、bind</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">28、原型链 ！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">29、什么是变量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">30、请用自己的话简述什么是闭包，作用，优缺点 ！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">31、进程和线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">32、混合继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">33、事件循环机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">34、弹性布局相关属性 ！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">35、new 的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">36、对HTML语义化的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">37、HTML5、CSS3的新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">38、ES6 新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">39、请写出你知道的设置一个元素垂直居中的所有方式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">40、清除浮动的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">41、a标签四个伪类顺序？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">42、用JS写一个九九乘法表 +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">43、清空数组的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">44、用JS随机生成1到100的随机数 +</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">45、解释作用域链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">45、什么是函数防抖，函数节流 ！！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">46、谈谈你对面向对象的了解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">47、Object.create&#x2F;definedProperty的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">48、geteter、setter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">49、var&#x2F;let&#x2F;const区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">50、对象的解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">51、箭头函数求一个数组的和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">52、什么是属性名表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">53、请解释 symbol 和 bigInt 数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">54、请解释 Set 和 Map 类型 并举例说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">55、书写一个子类继承父类的案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">56、箭头函数的this问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">57、手写 iterator 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">58、for of 和 for in 循环的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">59、谈谈 promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">60、谈谈 async 和 await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">61、NodeJS事件轮询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">62、宏任务和微任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">63、谈一下NodeJS模块化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">64、npm的基础操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">65、谈一下你了解的加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">66、获取当前文件夹下某个文件的绝对路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">67、请解释HTTP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">68、列举几个常见的MIME类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">69、 常见响应码状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">70、从输入URL到解析网页出来的全过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">71、谈一下箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">72、缓存的过程（协商缓存和强制缓存）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">73、session怎么使用（流程）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">74、请分析cookie session localstorage和sessionstroage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">75、如何实现浏览器内多个标签页之间的通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">76、在前端设计里，网页自适应如何实现</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
