@@ -23,14 +23,14 @@
   <meta name="description" content="暂无描述">
 <meta property="og:type" content="website">
 <meta property="og:title" content="飞鱼">
-<meta property="og:url" content="http://nigelkeel.gitee.io/page/5/index.html">
+<meta property="og:url" content="http://nigelkeel.gitee.io/blog/page/5/index.html">
 <meta property="og:site_name" content="飞鱼">
 <meta property="og:description" content="暂无描述">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="KEEL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/page/5/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/blog/page/5/">
 
 
 <script id="page-configurations">
@@ -185,7 +185,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/27-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/26-this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/26-this/" class="post-title-link" itemprop="url">this</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-26 20:30:53" itemprop="dateModified" datetime="2020-08-26T20:30:53+08:00">2020-08-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3><span id="p1-this">1、this</span><a href="#p1-this" class="header-anchor">#</a></h3>
+<p>JS的作用域是静态的，但是函数的调用却是动态的，由于函数可以在不同的运行环境内执行，因此JS在函数体内定义了<code>this</code>关键字来获取当前的运行环境。<strong>this</strong> 最终代表的是函数的__执行者，使用者，调用者__。它是一个指针型变量。</p>
+<h3><span id="p2-this-de-zhi-xiang">2、this的指向</span><a href="#p2-this-de-zhi-xiang" class="header-anchor">#</a></h3>
+<ul>
+<li>函数是否在<code>new</code>中调用，如果是的话，<code>this</code>绑定的是新创建的对象</li>
+<li>函数是否通过<code>call</code>、<code>apply</code> 显示绑定，如果是，则<code>this</code>绑定的是执行的对象</li>
+<li>函数是否在某个上下文中调用，如果有，则<code>this</code>绑定在这个上下文对象上</li>
+<li>如果都不是，默认绑定<code>window</code></li>
+</ul>
+<p>（1）默认绑定</p>
+<p><code>this</code> 默认指向 <code>window</code>，在无法应用其他规则的时候使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123; </span><br><span class="line">    <span class="keyword">do</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        foo(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// foo是直接使用不带任何修饰的函数引用进行调用，因此只能使用默认绑定规则</span></span><br><span class="line"></span><br><span class="line">obj.do();<span class="comment">// window</span></span><br></pre></td></tr></table></figure>
+<p>（2）隐式绑定</p>
+<p>当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">foo</span>: foo &#125;;</span><br><span class="line"></span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 当foo调用的时候，它的落脚点确实是指向的obj对象，当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</span></span><br></pre></td></tr></table></figure>
+<p>（3）隐式绑定可能会出现隐式丢失问题。被隐式绑定的函数，丢失了绑定对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1 = obj.foo;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">fn1(); <span class="comment">// hello </span></span><br><span class="line"><span class="comment">// 虽然fn1是obj.foo的一个引用，但是实际上它的引用是foo函数本身，因此fn1其实是一个不带任何修饰的函数调用，属于默认绑定</span></span><br></pre></td></tr></table></figure>
+<p>每个函数对象都有 call 和 apply 方法，本质是设置函数体内this对象的值。</p>
+<h3><span id="p3-call-apply-bind-chang-kao">3、call、apply、bind ==常考==</span><a href="#p3-call-apply-bind-chang-kao" class="header-anchor">#</a></h3>
+<p><code>call</code>、<code>apply</code>、<code>bind</code> 是 <a href>Function</a> 对象自带的方法。</p>
+<p>==这三个函数的存在意义是<strong>改变函数执行时的上下文</strong>，再具体一点就是<strong>改变函数运行时的this指向</strong>。==</p>
+<p>（1）call</p>
+<p><strong>call()</strong> 方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。当调用一个函数时，可以赋值一个不同的 <code>this</code> 对象。<code>this</code> 引用当前对象，即 <code>call</code> 方法的第一个参数。</p>
+<p>通过 <code>call</code> 方法，你可以在一个对象上借用另一个对象上的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">fun.call( thisArg[, arg1..])</span><br><span class="line"><span class="comment">// 参数列表</span></span><br><span class="line"><span class="comment">// - thisArg 指定函数运行时的 this值</span></span><br><span class="line"><span class="comment">//   - 不传，或者传 null，undefined， 函数中的this指向window对象</span></span><br><span class="line"><span class="comment">//   - 传递另一个函数的函数名，函数中的this指向这个函数的引用，并不一定是该函数执行时真正的this值</span></span><br><span class="line"><span class="comment">//   - 值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象，如 String Number Boolean</span></span><br><span class="line"><span class="comment">//   - 传递一个对象，函数中的this指向这个对象</span></span><br><span class="line"><span class="comment">// - arg 函数所需要的参数，逗号间隔</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//输出函数a中的this对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数b</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">&#x27;我是obj&#x27;</span>&#125;; <span class="comment">//定义对象obj</span></span><br><span class="line">a.call(); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">null</span>); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">undefined</span>);<span class="comment">//window</span></span><br><span class="line">a.call(<span class="number">1</span>); <span class="comment">//Number</span></span><br><span class="line">a.call(<span class="string">&#x27;&#x27;</span>); <span class="comment">//String</span></span><br><span class="line">a.call(<span class="literal">true</span>); <span class="comment">//Boolean</span></span><br><span class="line">a.call(b);<span class="comment">// function b()&#123;&#125;</span></span><br><span class="line">a.call(obj); <span class="comment">//Object</span></span><br></pre></td></tr></table></figure>
+<p>（2）apply</p>
+<p><strong>apply</strong>() 语法与 <code>call()</code> 方法的语法几乎完全相同，唯一的区别在于，apply的第二个参数必须是一个包含多个参数的数组（或类数组对象）。</p>
+<p>（3）bind</p>
+<p><code>bind</code> 函数会创建一个新函数（称为绑定函数）</p>
+<ul>
+<li>传参和call或apply类似</li>
+<li>不会执行对应的函数，call或apply会自动执行对应的函数</li>
+<li>返回对函数的引用</li>
+<li>语法 <code>fun.bind(thisArg[, arg1[, arg2[, ...]]])</code>。</li>
+</ul>
+<p>（4）<strong>call</strong> 方法的实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 1. 把调用call方法的对象this指向call方法的第一个参数</span></span><br><span class="line">    <span class="comment">// 2. 调用call方法的自己的this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/27-%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,117 +430,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/26-this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2-%E8%A1%8C%E4%B8%BA/26-this/" class="post-title-link" itemprop="url">this</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-26 20:30:53" itemprop="dateModified" datetime="2020-08-26T20:30:53+08:00">2020-08-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3><span id="p1-this">1、this</span><a href="#p1-this" class="header-anchor">#</a></h3>
-<p>JS的作用域是静态的，但是函数的调用却是动态的，由于函数可以在不同的运行环境内执行，因此JS在函数体内定义了<code>this</code>关键字来获取当前的运行环境。<strong>this</strong> 最终代表的是函数的__执行者，使用者，调用者__。它是一个指针型变量。</p>
-<h3><span id="p2-this-de-zhi-xiang">2、this的指向</span><a href="#p2-this-de-zhi-xiang" class="header-anchor">#</a></h3>
-<ul>
-<li>函数是否在<code>new</code>中调用，如果是的话，<code>this</code>绑定的是新创建的对象</li>
-<li>函数是否通过<code>call</code>、<code>apply</code> 显示绑定，如果是，则<code>this</code>绑定的是执行的对象</li>
-<li>函数是否在某个上下文中调用，如果有，则<code>this</code>绑定在这个上下文对象上</li>
-<li>如果都不是，默认绑定<code>window</code></li>
-</ul>
-<p>（1）默认绑定</p>
-<p><code>this</code> 默认指向 <code>window</code>，在无法应用其他规则的时候使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123; </span><br><span class="line">    <span class="keyword">do</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">        foo(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// foo是直接使用不带任何修饰的函数引用进行调用，因此只能使用默认绑定规则</span></span><br><span class="line"></span><br><span class="line">obj.do();<span class="comment">// window</span></span><br></pre></td></tr></table></figure>
-<p>（2）隐式绑定</p>
-<p>当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">foo</span>: foo &#125;;</span><br><span class="line"></span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 当foo调用的时候，它的落脚点确实是指向的obj对象，当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</span></span><br></pre></td></tr></table></figure>
-<p>（3）隐式绑定可能会出现隐式丢失问题。被隐式绑定的函数，丢失了绑定对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">2</span>,</span><br><span class="line">    foo: foo,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1 = obj.foo;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">fn1(); <span class="comment">// hello </span></span><br><span class="line"><span class="comment">// 虽然fn1是obj.foo的一个引用，但是实际上它的引用是foo函数本身，因此fn1其实是一个不带任何修饰的函数调用，属于默认绑定</span></span><br></pre></td></tr></table></figure>
-<p>每个函数对象都有 call 和 apply 方法，本质是设置函数体内this对象的值。</p>
-<h3><span id="p3-call-apply-bind-chang-kao">3、call、apply、bind ==常考==</span><a href="#p3-call-apply-bind-chang-kao" class="header-anchor">#</a></h3>
-<p><code>call</code>、<code>apply</code>、<code>bind</code> 是 <a href>Function</a> 对象自带的方法。</p>
-<p>==这三个函数的存在意义是<strong>改变函数执行时的上下文</strong>，再具体一点就是<strong>改变函数运行时的this指向</strong>。==</p>
-<p>（1）call</p>
-<p><strong>call()</strong> 方法在使用一个指定的this值和若干个指定的参数值的前提下调用某个函数或方法。当调用一个函数时，可以赋值一个不同的 <code>this</code> 对象。<code>this</code> 引用当前对象，即 <code>call</code> 方法的第一个参数。</p>
-<p>通过 <code>call</code> 方法，你可以在一个对象上借用另一个对象上的方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">fun.call( thisArg[, arg1..])</span><br><span class="line"><span class="comment">// 参数列表</span></span><br><span class="line"><span class="comment">// - thisArg 指定函数运行时的 this值</span></span><br><span class="line"><span class="comment">//   - 不传，或者传 null，undefined， 函数中的this指向window对象</span></span><br><span class="line"><span class="comment">//   - 传递另一个函数的函数名，函数中的this指向这个函数的引用，并不一定是该函数执行时真正的this值</span></span><br><span class="line"><span class="comment">//   - 值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象，如 String Number Boolean</span></span><br><span class="line"><span class="comment">//   - 传递一个对象，函数中的this指向这个对象</span></span><br><span class="line"><span class="comment">// - arg 函数所需要的参数，逗号间隔</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//输出函数a中的this对象</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数b</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">&#x27;我是obj&#x27;</span>&#125;; <span class="comment">//定义对象obj</span></span><br><span class="line">a.call(); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">null</span>); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">undefined</span>);<span class="comment">//window</span></span><br><span class="line">a.call(<span class="number">1</span>); <span class="comment">//Number</span></span><br><span class="line">a.call(<span class="string">&#x27;&#x27;</span>); <span class="comment">//String</span></span><br><span class="line">a.call(<span class="literal">true</span>); <span class="comment">//Boolean</span></span><br><span class="line">a.call(b);<span class="comment">// function b()&#123;&#125;</span></span><br><span class="line">a.call(obj); <span class="comment">//Object</span></span><br></pre></td></tr></table></figure>
-<p>（2）apply</p>
-<p><strong>apply</strong>() 语法与 <code>call()</code> 方法的语法几乎完全相同，唯一的区别在于，apply的第二个参数必须是一个包含多个参数的数组（或类数组对象）。</p>
-<p>（3）bind</p>
-<p><code>bind</code> 函数会创建一个新函数（称为绑定函数）</p>
-<ul>
-<li>传参和call或apply类似</li>
-<li>不会执行对应的函数，call或apply会自动执行对应的函数</li>
-<li>返回对函数的引用</li>
-<li>语法 <code>fun.bind(thisArg[, arg1[, arg2[, ...]]])</code>。</li>
-</ul>
-<p>（4）<strong>call</strong> 方法的实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 1. 把调用call方法的对象this指向call方法的第一个参数</span></span><br><span class="line">    <span class="comment">// 2. 调用call方法的自己的this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/28-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/28-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -596,7 +596,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/29-JS%E5%8E%9F%E5%9E%8B%E4%B8%8E%E7%BB%A7%E6%89%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -705,7 +705,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/31-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">JS 闭包</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 08:25:34" itemprop="dateModified" datetime="2020-08-28T08:25:34+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="yi-bi-bao">一、闭包</span><a href="#yi-bi-bao" class="header-anchor">#</a></h1>
+<h3><span id="p1-bi-bao-shi-shi-me">1、闭包是什么</span><a href="#p1-bi-bao-shi-shi-me" class="header-anchor">#</a></h3>
+<p><strong>闭包</strong>（Closure）:</p>
+<ul>
+<li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
+<li>闭包可以理解为内部的函数。</li>
+<li>深入理解的话，闭包就是包含==被内部引用变量==的对象。（可以通过浏览器断点调试查看）</li>
+</ul>
+<h3><span id="p2-bi-bao-de-zuo-yong-ji-que-dian">2、闭包的作用及缺点</span><a href="#p2-bi-bao-de-zuo-yong-ji-que-dian" class="header-anchor">#</a></h3>
+<ul>
+<li>外部间接的访问到了内部的变量。</li>
+<li>当外部函数执行完成后，局部变量暂时不会消失，==延长了局部变量的生命周期==。</li>
+</ul>
+<p>闭包的缺点: <strong>内存泄露</strong>。解决方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 让内部函数对象（闭包）变成垃圾对象</span></span><br><span class="line"><span class="comment">// 此时就马上被回收</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#p3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h3>
+<p>当内部函数被定义的时候，闭包就生成了。</p>
+<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
+<h3><span id="p4-ying-yong">4、应用</span><a href="#p4-ying-yong" class="header-anchor">#</a></h3>
+<p>模块化。</p>
+<h1><span id="er-bi-bao-de-ying-yong">二、闭包的应用 +</span><a href="#er-bi-bao-de-ying-yong" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/31-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -824,101 +918,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2-%E8%A1%8C%E4%B8%BA/30-%E9%97%AD%E5%8C%85/" class="post-title-link" itemprop="url">JS 闭包</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-08T00:00:00+08:00">2020-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 08:25:34" itemprop="dateModified" datetime="2020-08-28T08:25:34+08:00">2020-08-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="yi-bi-bao">一、闭包</span><a href="#yi-bi-bao" class="header-anchor">#</a></h1>
-<h3><span id="p1-bi-bao-shi-shi-me">1、闭包是什么</span><a href="#p1-bi-bao-shi-shi-me" class="header-anchor">#</a></h3>
-<p><strong>闭包</strong>（Closure）:</p>
-<ul>
-<li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
-<li>闭包可以理解为内部的函数。</li>
-<li>深入理解的话，闭包就是包含==被内部引用变量==的对象。（可以通过浏览器断点调试查看）</li>
-</ul>
-<h3><span id="p2-bi-bao-de-zuo-yong-ji-que-dian">2、闭包的作用及缺点</span><a href="#p2-bi-bao-de-zuo-yong-ji-que-dian" class="header-anchor">#</a></h3>
-<ul>
-<li>外部间接的访问到了内部的变量。</li>
-<li>当外部函数执行完成后，局部变量暂时不会消失，==延长了局部变量的生命周期==。</li>
-</ul>
-<p>闭包的缺点: <strong>内存泄露</strong>。解决方法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun = <span class="literal">null</span>;</span><br><span class="line"><span class="comment">// 让内部函数对象（闭包）变成垃圾对象</span></span><br><span class="line"><span class="comment">// 此时就马上被回收</span></span><br></pre></td></tr></table></figure>
-<h3><span id="p3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#p3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h3>
-<p>当内部函数被定义的时候，闭包就生成了。</p>
-<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
-<h3><span id="p4-ying-yong">4、应用</span><a href="#p4-ying-yong" class="header-anchor">#</a></h3>
-<p>模块化。</p>
-<h1><span id="er-bi-bao-de-ying-yong">二、闭包的应用 +</span><a href="#er-bi-bao-de-ying-yong" class="header-anchor">#</a></h1>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/25-JS%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/25-JS%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1083,7 +1083,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/24-JS%E6%95%B0%E7%BB%84/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/24-JS%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1315,7 +1315,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/23-JS%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1464,7 +1464,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/22-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/22-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">

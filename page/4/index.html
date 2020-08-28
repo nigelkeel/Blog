@@ -23,14 +23,14 @@
   <meta name="description" content="暂无描述">
 <meta property="og:type" content="website">
 <meta property="og:title" content="飞鱼">
-<meta property="og:url" content="http://nigelkeel.gitee.io/page/4/index.html">
+<meta property="og:url" content="http://nigelkeel.gitee.io/blog/page/4/index.html">
 <meta property="og:site_name" content="飞鱼">
 <meta property="og:description" content="暂无描述">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="KEEL">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/page/4/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/blog/page/4/">
 
 
 <script id="page-configurations">
@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/86-%E8%AF%8D%E6%B1%87%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/5-%E5%AE%9E%E7%94%A8/86-%E8%AF%8D%E6%B1%87%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -296,7 +296,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/5-%E5%AE%9E%E7%94%A8/99-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/5-%E5%AE%9E%E7%94%A8/99-%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -371,469 +371,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/42-jQuery2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2-%E8%A1%8C%E4%B8%BA/42-jQuery2/" class="post-title-link" itemprop="url">jQuery</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-12T00:00:00+08:00">2020-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 16:51:02" itemprop="dateModified" datetime="2020-08-27T16:51:02+08:00">2020-08-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>[TOC]</p>
-<h1><span id="yao-dian">要点</span><a href="#yao-dian" class="header-anchor">#</a></h1>
-<ol>
-<li>jQuery和JS对象的互相转换。</li>
-<li>类数组操作:<code>children()</code>，<code>parent()</code>，<code>sibling()</code>，<code>find()</code>，<code>end()</code>。</li>
-<li>jQuery 显示、隐藏以及参数。</li>
-<li>jQuery 自定义动画。</li>
-<li>jQuery Dom操作。</li>
-<li>jQuery 绑定事件，解绑事件。</li>
-</ol>
-<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1>
-<p><strong>jQuery</strong> 是John Resig创建的一个JS开源类库，它通过封装原生的JavaScript 函数得到一整套定义好的方法。</p>
-<p><a href>jQuery API手册</a></p>
-<h2><span id="p1-yin-ru-ku">1、引入库</span><a href="#p1-yin-ru-ku" class="header-anchor">#</a></h2>
-<p>（1）本地</p>
-<p>（2）CDN 引入</p>
-<p>CDN，Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户<strong>就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率</strong>。</p>
-<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a>:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>（3）版本</p>
-<p>版本格式 大版本.小版本.bugfix</p>
-<ul>
-<li>1.x.x 完全兼容IE6-8</li>
-<li>2.1.4 不再兼容IE6-8</li>
-<li>3.1.1 源码使用ES6语法</li>
-</ul>
-<p><code>jquery.js</code> | <code>jquery.min.js</code> 压缩版，正式上线使用压缩版本。</p>
-<h2><span id="p2-dai-ma-feng-ge">2、代码风格</span><a href="#p2-dai-ma-feng-ge" class="header-anchor">#</a></h2>
-<p>（1）全局函数 <code>jQuery()</code> ，快捷别名 <code>$</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = windows.$ = jQuery;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择器选中 box 元素，获取了 jQuery 对象</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CSS方法设置样式</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>（2）链式调用</p>
-<p>jQuery的<strong>每个方法返回的都是jQuery对象</strong>，所以可以链式调用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;red&quot;</span>).css(<span class="string">&quot;font-size&quot;</span>,<span class="string">&quot;40px&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2><span id="p3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象 与 JS 对象</span><a href="#p3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h2>
-<p><strong>JS对象</strong> 即DOM对象，即是我们用传统的方法获得的对象。</p>
-<p><strong>jQuery对象</strong> 即是用jQuery类库的选择器获得的类数组对象，就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法。</p>
-<p>对象的转换</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery对象 转 DOM对象</span></span><br><span class="line">$(...)[index];</span><br><span class="line">$(...).get(index);</span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM对象 转 jQuery 对象</span></span><br><span class="line">$(BOM对象)</span><br></pre></td></tr></table></figure>
-<h2><span id="p4-zhi-xing-shi-ji">4、执行时机</span><a href="#p4-zhi-xing-shi-ji" class="header-anchor">#</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>window.onload</th>
-<th>$(document).ready()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>执行时机</td>
-<td>等待网页全部加载完成然后才会执行</td>
-<td>等待DOM结构加载完成就执行</td>
-</tr>
-<tr>
-<td>执行次数</td>
-<td>只会执行一次<br>写第二次会覆盖第一次</td>
-<td>可以执行多次<br>不会覆盖</td>
-</tr>
-<tr>
-<td>简写方案</td>
-<td>无</td>
-<td>$(function (){});</td>
-</tr>
-</tbody>
-</table>
-<h1><span id="er-chang-gui-cao-zuo">二、常规操作</span><a href="#er-chang-gui-cao-zuo" class="header-anchor">#</a></h1>
-<h2><span id="p1-lei-shu-zu-cao-zuo">1、类数组操作</span><a href="#p1-lei-shu-zu-cao-zuo" class="header-anchor">#</a></h2>
-<ul>
-<li><code>children()</code> 获取选择器元素的<strong>子元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>parent()</code>  获取选择器元素的<strong>父元素</strong>节点集合（只有一个），，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>siblings()</code>  获取选择器元素的<strong>兄弟元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
-<li><code>find()</code> 寻找后代元素，参数直接写选择器</li>
-<li><code>end</code> 返回上一次破坏性操作之前的伪数组</li>
-<li>对于类数组的常用方法还有很多，比如 <code>prev()</code>、<code>next()</code>等等。</li>
-</ul>
-<h2><span id="p2-xuan-ze-qi-cao-zuo">2、选择器操作</span><a href="#p2-xuan-ze-qi-cao-zuo" class="header-anchor">#</a></h2>
-<p>直接参数传递选择器。</p>
-<ul>
-<li>基础选择器 <code>#id</code>、<code>.class</code></li>
-<li>层次选择器 <code>A B</code>、<code>A+B</code>、<code>A~B</code></li>
-<li>过滤选择器 <code>:first</code>、<code>first-child</code>、<code>not()</code>、<code>even</code>、<code>odd</code>
-<ul>
-<li><code>:first</code> / <code>:last</code> 选取第一个元素/最后一个元素</li>
-<li><code>:first-child</code> / <code>:last-child</code> 选取第一个子元素/最后一个子元素。</li>
-<li><code>:only-child</code> 选取只有一个子元素的节点。</li>
-<li><code>nth-child(index/even/odd/equation)</code> 选取序列特定的元素</li>
-<li><code>:even</code> / <code>:odd</code> 选取索引是单数、双数的元素</li>
-<li><code>:eq(index)</code> 选取指定index值的元素</li>
-<li><code>:gt(index)</code> / <code>:lt(index)</code> 选取索引大于/小于指定的元素</li>
-<li><code>:not(seletor)</code> 排除选定的元素</li>
-<li><code>:contains(text)</code> 选取包含指定文本text的元素。</li>
-<li><code>:empty</code> 选取空元素</li>
-<li><code>:has(seletor)</code> 选取含有指定选择器的元素。</li>
-<li><code>:parent</code> 选取含有子元素或文本的元素。</li>
-</ul>
-</li>
-<li>属性过滤选择器 <code>[attr]</code></li>
-<li>表单选择器 <code>:input</code></li>
-</ul>
-<h1><span id="san-jquery-dong-hua">三、jQuery 动画</span><a href="#san-jquery-dong-hua" class="header-anchor">#</a></h1>
-<h2><span id="p1-xian-shi-yin-cang">1. 显示、隐藏</span><a href="#p1-xian-shi-yin-cang" class="header-anchor">#</a></h2>
-<p><code>.show()</code> 显示 | <code>.hide()</code> 隐藏</p>
-<ul>
-<li>第一个参数 控制速度   600ms  <code>slow</code> | 默认 400ms <code>normal</code> | 200ms <code>fast</code></li>
-<li>第二个参数 控制动画形式   <code>linear</code> | <code>swing</code></li>
-<li>第三个参数 书写回调函数</li>
-</ul>
-<p><code>.tiggle()</code> 开关（显示的时候隐藏，隐藏的时候显示）</p>
-<h2><span id="p2-hua-dong-juan-dong">2. 滑动、卷动</span><a href="#p2-hua-dong-juan-dong" class="header-anchor">#</a></h2>
-<p><code>.slideUp()</code> 向上收缩| <code>.slideDown()</code> 向上展开 | <code>.sildeToggle()</code></p>
-<h2><span id="p3-dan-ru-dan-chu">3. 淡入、淡出</span><a href="#p3-dan-ru-dan-chu" class="header-anchor">#</a></h2>
-<p><code>.fadeIn()</code> | <code>.fadeOut()</code> | <code>.fadeToggle()</code></p>
-<h2><span id="p4-zi-ding-yi-dong-hua">4. 自定义动画</span><a href="#p4-zi-ding-yi-dong-hua" class="header-anchor">#</a></h2>
-<p>（1）基础使用</p>
-<p><code>animate( params, speed, callback)</code></p>
-<ul>
-<li>第1个参数 包含样式属性和值的映射速度</li>
-<li>第2个参数 可选</li>
-<li>第3个参数 在动画完成时执行的回调函数</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.box&quot;</span>).animate(&#123;</span><br><span class="line">    left: <span class="string">&quot;1000px&quot;</span></span><br><span class="line">&#125;,<span class="number">2000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 回调函数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>（2）动画队列</p>
-<p>如果要按照顺序执行动画，只需要按照代码顺序就可以。（只有动画会放在队列中，其他方法会立即执行 ）</p>
-<h2><span id="p5-ting-zhi-dong-hua">5. 停止动画</span><a href="#p5-ting-zhi-dong-hua" class="header-anchor">#</a></h2>
-<p>（1） 停止方法</p>
-<p><code>stop( clearQueue, gotoEnd )</code></p>
-<ul>
-<li>第1个参数 可选 布尔值 是否需要清空未执行完的动画队列</li>
-<li>第2个参数 可选 布尔值 是否直接将正在执行的动画跳转到末状态</li>
-</ul>
-<p>这个方法会结束当前正在进行的动画，并立即执行队列中的下一个动画。</p>
-<p>（2）判断元素是否处于动画状态</p>
-<p>当用户在某个元素上执行 <code>animate()</code> 动画时，就会出现动画积累，</p>
-<p>使用 <code>is(&quot;:animated&quot;)</code> 来判断是否处于动画状态，如果不处于动画状态，才会给元素添加新动画。</p>
-<h2><span id="p6-yan-chi-dong-hua">6. 延迟动画</span><a href="#p6-yan-chi-dong-hua" class="header-anchor">#</a></h2>
-<p><code>delay()</code></p>
-<p>参数是延迟的毫秒数。</p>
-<h1><span id="si-jquery-yuan-su-yang-shi-cao-zuo">四、jQuery 元素样式操作</span><a href="#si-jquery-yuan-su-yang-shi-cao-zuo" class="header-anchor">#</a></h1>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>css( name )</code></td>
-<td>获取元素的样式</td>
-</tr>
-<tr>
-<td><code>css( name, value)</code></td>
-<td>设置元素的样式</td>
-</tr>
-<tr>
-<td><code>css( name:value, name2:value2,..)</code></td>
-<td>设置元素的样式（多个）</td>
-</tr>
-<tr>
-<td><code>addClass(Class)</code>/<code>removeClass(Class)</code></td>
-<td>添加类/ 移除类</td>
-</tr>
-<tr>
-<td><code>toggleClass(Class)</code></td>
-<td>来回切换默认样式和指定样式</td>
-</tr>
-<tr>
-<td><code>width()</code>/<code>height()</code></td>
-<td>获取和设置宽高</td>
-</tr>
-<tr>
-<td><code>innerWidth()</code> / <code>innerHeight()</code></td>
-<td>获取包含内边距的宽高</td>
-</tr>
-<tr>
-<td><code>outerWidth()</code> / <code>outerHeight()</code></td>
-<td>获取包含边框和内边距的宽高<br>如果参数是<code>true</code>则包含外边距</td>
-</tr>
-<tr>
-<td><code>offset()</code> ==!==</td>
-<td>获取元素相对文档的偏移位置</td>
-</tr>
-<tr>
-<td><code>position()</code></td>
-<td>获取元素相对父元素的偏移位置</td>
-</tr>
-<tr>
-<td><code>scrollTop()</code> / <code>scrollLeft</code></td>
-<td>获取和设置水平/垂直滚动条</td>
-</tr>
-</tbody>
-</table>
-<h1><span id="wu-jquery-dom-cao-zuo">五、jQuery DOM 操作</span><a href="#wu-jquery-dom-cao-zuo" class="header-anchor">#</a></h1>
-<h2><span id="p1-she-zhi-nei-rong-he-shu-xing">1、设置内容和属性</span><a href="#p1-she-zhi-nei-rong-he-shu-xing" class="header-anchor">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>html()</code></td>
-<td>获取和设置元素中的内容</td>
-</tr>
-<tr>
-<td><code>text()</code></td>
-<td>获取和设置元素中的文本内容</td>
-</tr>
-<tr>
-<td><code>val()</code></td>
-<td>获取和设置表单元素的文本内容</td>
-</tr>
-<tr>
-<td><code>prop/attr(key[, value])</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br><code>prop/attr(key:value, key2:value2, )</code></td>
-<td>获取和设置元素 key 属性值</td>
-</tr>
-<tr>
-<td><code>removeattr(key)</code></td>
-<td>删除指定的属性</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p2-jie-dian-cao-zuo">2、节点操作</span><a href="#p2-jie-dian-cao-zuo" class="header-anchor">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>$(&quot;&lt;标签名&gt;&lt;/标签名&quot;)</code></td>
-<td><code>createElement()</code></td>
-</tr>
-<tr>
-<td><code>$(&quot;&lt;标签名&gt;文本&lt;/标签名&gt;&quot;)</code></td>
-<td><code>createTextNode()</code></td>
-</tr>
-<tr>
-<td>直接写在创建的标签中 | <code>setAttribute( name, value)</code></td>
-<td>创建属性节点</td>
-</tr>
-<tr>
-<td><code>append(Content)</code> 元素内部后面插入 <br><code>appendTo(Content)</code> <br><code>prepend(Content)</code> 元素内部前面插入 <br><code>prepentTo(Content)</code> <br><code>after()</code> 元素外部后面 <br><code>insertAfter()</code> <br><code>before()</code> 元素外部前面 <br><code>insertBefore()</code></td>
-<td>插入节点</td>
-</tr>
-<tr>
-<td><code>remove()</code></td>
-<td><code>removeChild()</code></td>
-</tr>
-<tr>
-<td><code>replaceAll()</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
-<td><code>replaceChild()</code></td>
-</tr>
-<tr>
-<td><code>clone()</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
-<td><code>cloneNode()</code></td>
-</tr>
-</tbody>
-</table>
-<h1><span id="liu-jquery-shi-jian">六、jQuery 事件</span><a href="#liu-jquery-shi-jian" class="header-anchor">#</a></h1>
-<h2><span id="p1-jian-xie-shi-jian">1. 简写事件</span><a href="#p1-jian-xie-shi-jian" class="header-anchor">#</a></h2>
-<p>jQuery 封装了常用的事件以节约更多的代码，称为<strong>简写事件</strong>。</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>触发</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>click(fn)</code></td>
-<td>鼠标单击</td>
-</tr>
-<tr>
-<td><code>dblclick(fn)</code></td>
-<td>鼠标双击</td>
-</tr>
-<tr>
-<td><code>mousedown(fn)</code></td>
-<td>鼠标点击后</td>
-</tr>
-<tr>
-<td><code>mouseup(fn)</code></td>
-<td>鼠标点击后弹起</td>
-</tr>
-<tr>
-<td><code>mouseover(fn)</code></td>
-<td>鼠标移入</td>
-</tr>
-<tr>
-<td><code>mouseout(fn)</code></td>
-<td>鼠标移出</td>
-</tr>
-<tr>
-<td><code>mousemove(fn)</code></td>
-<td>鼠标移动</td>
-</tr>
-<tr>
-<td><code>mouseeenter(fn)</code></td>
-<td>鼠标穿过</td>
-</tr>
-<tr>
-<td><code>mouselevave(fn)</code></td>
-<td>鼠标穿出</td>
-</tr>
-<tr>
-<td><code>keydown(fn)</code></td>
-<td>键盘按下</td>
-</tr>
-<tr>
-<td><code>keyup(fn)</code></td>
-<td>键盘弹起</td>
-</tr>
-<tr>
-<td><code>resize(fn)</code></td>
-<td>文档改变大小</td>
-</tr>
-<tr>
-<td><code>scroll(fn)</code></td>
-<td>滚动条滚动</td>
-</tr>
-<tr>
-<td><code>focus(fn)</code></td>
-<td>表单交单激活</td>
-</tr>
-<tr>
-<td><code>blur(fn)</code></td>
-<td>表单交单丢失</td>
-</tr>
-<tr>
-<td><code>focusin(fn)</code></td>
-<td>表单焦点激活</td>
-</tr>
-<tr>
-<td><code>select(fn)</code></td>
-<td>表单文本选定</td>
-</tr>
-<tr>
-<td><code>change(fn)</code></td>
-<td>表单元素值改变</td>
-</tr>
-<tr>
-<td><code>submit(fn)</code></td>
-<td>表单提交</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p2-shi-jian-dui-xiang">2. 事件对象</span><a href="#p2-shi-jian-dui-xiang" class="header-anchor">#</a></h2>
-<p>对于原生的事件对象，由于浏览器差异，开发者总是需要做兼容性处理。jQuery 解决了原生事件对象的兼容性问题，还提供了很多新的属性和方法。</p>
-<p><code>.stopPropagation()</code> 阻止事件冒泡</p>
-<p><code>.preventDefault()</code> 阻止默认行为</p>
-<h2><span id="p3-jquery-bang-ding-shi-jian">3. jQuery 绑定事件</span><a href="#p3-jquery-bang-ding-shi-jian" class="header-anchor">#</a></h2>
-<p><code>bind()</code> 方法无法动态绑定尚未存在的元素。此外还有 <code>live()</code> <code>delegate</code> 等已经被废弃，底层实际使用 <code>on()</code>。</p>
-<p><strong><code>on( events, selector, data, fn)</code></strong> 绑定事件jQuery 1.7+</p>
-<ul>
-<li><code>events</code> 事件类型</li>
-<li><code>selector</code> 触发事件选择器元素的后代</li>
-<li><code>data</code> 当一个事件被触发要传递 event.data 给事件处理函数</li>
-<li><code>fn</code> 该事件被触发时的执行函数</li>
-</ul>
-<p>还可以<strong>绑定多个事件绑定同一个函数、多个事件绑定不同函数</strong>。</p>
-<p><code>unbind()</code> 解除绑定事件。</p>
-<p><strong><code>off( events, selector, fn)</code></strong> 解除绑定事件。</p>
-<p><code>one( type, data, fn )</code> 绑定元素执行完毕后自动移除事件，方法仅触发一次。</p>
-<ul>
-<li><code>type</code> 添加到元素的一个或者多个事件。</li>
-<li><code>data</code> 将要传递给事件处理函数的数据映射。</li>
-<li><code>fn</code> 每当事件触发时执行的函数。</li>
-</ul>
-<h1><span id="qi-jquery-kuo-zhan">七、jQuery 扩展（+）</span><a href="#qi-jquery-kuo-zhan" class="header-anchor">#</a></h1>
-<p>自定义了<code>extent()</code>和 <code>fn.extent()</code> 方法，扩展jQuery类本身，为类添加新的方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []</span><br><span class="line">$.each( [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    arr.push( item, <span class="number">10</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1><span id="ba-jquery-shu-xie-cha-jian">八、jQuery 书写插件（+）</span><a href="#ba-jquery-shu-xie-cha-jian" class="header-anchor">#</a></h1>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>处理自带属性使用prop，处理自定义属性使用attr。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>节点被替换后，所包含的事件行为就全部消失了。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn3" class="footnote-item"><p>参数可以为空，只复制元素和内容，加上 <code>true</code> 参数的话，会复制这个元素的事件处理行为。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/41-jQuery/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/41-jQuery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1295,7 +833,469 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/18-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/42-jQuery2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/42-jQuery2/" class="post-title-link" itemprop="url">jQuery</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-12T00:00:00+08:00">2020-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 16:51:02" itemprop="dateModified" datetime="2020-08-27T16:51:02+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>[TOC]</p>
+<h1><span id="yao-dian">要点</span><a href="#yao-dian" class="header-anchor">#</a></h1>
+<ol>
+<li>jQuery和JS对象的互相转换。</li>
+<li>类数组操作:<code>children()</code>，<code>parent()</code>，<code>sibling()</code>，<code>find()</code>，<code>end()</code>。</li>
+<li>jQuery 显示、隐藏以及参数。</li>
+<li>jQuery 自定义动画。</li>
+<li>jQuery Dom操作。</li>
+<li>jQuery 绑定事件，解绑事件。</li>
+</ol>
+<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1>
+<p><strong>jQuery</strong> 是John Resig创建的一个JS开源类库，它通过封装原生的JavaScript 函数得到一整套定义好的方法。</p>
+<p><a href>jQuery API手册</a></p>
+<h2><span id="p1-yin-ru-ku">1、引入库</span><a href="#p1-yin-ru-ku" class="header-anchor">#</a></h2>
+<p>（1）本地</p>
+<p>（2）CDN 引入</p>
+<p>CDN，Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户<strong>就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率</strong>。</p>
+<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a>:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（3）版本</p>
+<p>版本格式 大版本.小版本.bugfix</p>
+<ul>
+<li>1.x.x 完全兼容IE6-8</li>
+<li>2.1.4 不再兼容IE6-8</li>
+<li>3.1.1 源码使用ES6语法</li>
+</ul>
+<p><code>jquery.js</code> | <code>jquery.min.js</code> 压缩版，正式上线使用压缩版本。</p>
+<h2><span id="p2-dai-ma-feng-ge">2、代码风格</span><a href="#p2-dai-ma-feng-ge" class="header-anchor">#</a></h2>
+<p>（1）全局函数 <code>jQuery()</code> ，快捷别名 <code>$</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = windows.$ = jQuery;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择器选中 box 元素，获取了 jQuery 对象</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// CSS方法设置样式</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>（2）链式调用</p>
+<p>jQuery的<strong>每个方法返回的都是jQuery对象</strong>，所以可以链式调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>,<span class="string">&quot;red&quot;</span>).css(<span class="string">&quot;font-size&quot;</span>,<span class="string">&quot;40px&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2><span id="p3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象 与 JS 对象</span><a href="#p3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h2>
+<p><strong>JS对象</strong> 即DOM对象，即是我们用传统的方法获得的对象。</p>
+<p><strong>jQuery对象</strong> 即是用jQuery类库的选择器获得的类数组对象，就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法。</p>
+<p>对象的转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery对象 转 DOM对象</span></span><br><span class="line">$(...)[index];</span><br><span class="line">$(...).get(index);</span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM对象 转 jQuery 对象</span></span><br><span class="line">$(BOM对象)</span><br></pre></td></tr></table></figure>
+<h2><span id="p4-zhi-xing-shi-ji">4、执行时机</span><a href="#p4-zhi-xing-shi-ji" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>window.onload</th>
+<th>$(document).ready()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行时机</td>
+<td>等待网页全部加载完成然后才会执行</td>
+<td>等待DOM结构加载完成就执行</td>
+</tr>
+<tr>
+<td>执行次数</td>
+<td>只会执行一次<br>写第二次会覆盖第一次</td>
+<td>可以执行多次<br>不会覆盖</td>
+</tr>
+<tr>
+<td>简写方案</td>
+<td>无</td>
+<td>$(function (){});</td>
+</tr>
+</tbody>
+</table>
+<h1><span id="er-chang-gui-cao-zuo">二、常规操作</span><a href="#er-chang-gui-cao-zuo" class="header-anchor">#</a></h1>
+<h2><span id="p1-lei-shu-zu-cao-zuo">1、类数组操作</span><a href="#p1-lei-shu-zu-cao-zuo" class="header-anchor">#</a></h2>
+<ul>
+<li><code>children()</code> 获取选择器元素的<strong>子元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>parent()</code>  获取选择器元素的<strong>父元素</strong>节点集合（只有一个），，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>siblings()</code>  获取选择器元素的<strong>兄弟元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>find()</code> 寻找后代元素，参数直接写选择器</li>
+<li><code>end</code> 返回上一次破坏性操作之前的伪数组</li>
+<li>对于类数组的常用方法还有很多，比如 <code>prev()</code>、<code>next()</code>等等。</li>
+</ul>
+<h2><span id="p2-xuan-ze-qi-cao-zuo">2、选择器操作</span><a href="#p2-xuan-ze-qi-cao-zuo" class="header-anchor">#</a></h2>
+<p>直接参数传递选择器。</p>
+<ul>
+<li>基础选择器 <code>#id</code>、<code>.class</code></li>
+<li>层次选择器 <code>A B</code>、<code>A+B</code>、<code>A~B</code></li>
+<li>过滤选择器 <code>:first</code>、<code>first-child</code>、<code>not()</code>、<code>even</code>、<code>odd</code>
+<ul>
+<li><code>:first</code> / <code>:last</code> 选取第一个元素/最后一个元素</li>
+<li><code>:first-child</code> / <code>:last-child</code> 选取第一个子元素/最后一个子元素。</li>
+<li><code>:only-child</code> 选取只有一个子元素的节点。</li>
+<li><code>nth-child(index/even/odd/equation)</code> 选取序列特定的元素</li>
+<li><code>:even</code> / <code>:odd</code> 选取索引是单数、双数的元素</li>
+<li><code>:eq(index)</code> 选取指定index值的元素</li>
+<li><code>:gt(index)</code> / <code>:lt(index)</code> 选取索引大于/小于指定的元素</li>
+<li><code>:not(seletor)</code> 排除选定的元素</li>
+<li><code>:contains(text)</code> 选取包含指定文本text的元素。</li>
+<li><code>:empty</code> 选取空元素</li>
+<li><code>:has(seletor)</code> 选取含有指定选择器的元素。</li>
+<li><code>:parent</code> 选取含有子元素或文本的元素。</li>
+</ul>
+</li>
+<li>属性过滤选择器 <code>[attr]</code></li>
+<li>表单选择器 <code>:input</code></li>
+</ul>
+<h1><span id="san-jquery-dong-hua">三、jQuery 动画</span><a href="#san-jquery-dong-hua" class="header-anchor">#</a></h1>
+<h2><span id="p1-xian-shi-yin-cang">1. 显示、隐藏</span><a href="#p1-xian-shi-yin-cang" class="header-anchor">#</a></h2>
+<p><code>.show()</code> 显示 | <code>.hide()</code> 隐藏</p>
+<ul>
+<li>第一个参数 控制速度   600ms  <code>slow</code> | 默认 400ms <code>normal</code> | 200ms <code>fast</code></li>
+<li>第二个参数 控制动画形式   <code>linear</code> | <code>swing</code></li>
+<li>第三个参数 书写回调函数</li>
+</ul>
+<p><code>.tiggle()</code> 开关（显示的时候隐藏，隐藏的时候显示）</p>
+<h2><span id="p2-hua-dong-juan-dong">2. 滑动、卷动</span><a href="#p2-hua-dong-juan-dong" class="header-anchor">#</a></h2>
+<p><code>.slideUp()</code> 向上收缩| <code>.slideDown()</code> 向上展开 | <code>.sildeToggle()</code></p>
+<h2><span id="p3-dan-ru-dan-chu">3. 淡入、淡出</span><a href="#p3-dan-ru-dan-chu" class="header-anchor">#</a></h2>
+<p><code>.fadeIn()</code> | <code>.fadeOut()</code> | <code>.fadeToggle()</code></p>
+<h2><span id="p4-zi-ding-yi-dong-hua">4. 自定义动画</span><a href="#p4-zi-ding-yi-dong-hua" class="header-anchor">#</a></h2>
+<p>（1）基础使用</p>
+<p><code>animate( params, speed, callback)</code></p>
+<ul>
+<li>第1个参数 包含样式属性和值的映射速度</li>
+<li>第2个参数 可选</li>
+<li>第3个参数 在动画完成时执行的回调函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.box&quot;</span>).animate(&#123;</span><br><span class="line">    left: <span class="string">&quot;1000px&quot;</span></span><br><span class="line">&#125;,<span class="number">2000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 回调函数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>（2）动画队列</p>
+<p>如果要按照顺序执行动画，只需要按照代码顺序就可以。（只有动画会放在队列中，其他方法会立即执行 ）</p>
+<h2><span id="p5-ting-zhi-dong-hua">5. 停止动画</span><a href="#p5-ting-zhi-dong-hua" class="header-anchor">#</a></h2>
+<p>（1） 停止方法</p>
+<p><code>stop( clearQueue, gotoEnd )</code></p>
+<ul>
+<li>第1个参数 可选 布尔值 是否需要清空未执行完的动画队列</li>
+<li>第2个参数 可选 布尔值 是否直接将正在执行的动画跳转到末状态</li>
+</ul>
+<p>这个方法会结束当前正在进行的动画，并立即执行队列中的下一个动画。</p>
+<p>（2）判断元素是否处于动画状态</p>
+<p>当用户在某个元素上执行 <code>animate()</code> 动画时，就会出现动画积累，</p>
+<p>使用 <code>is(&quot;:animated&quot;)</code> 来判断是否处于动画状态，如果不处于动画状态，才会给元素添加新动画。</p>
+<h2><span id="p6-yan-chi-dong-hua">6. 延迟动画</span><a href="#p6-yan-chi-dong-hua" class="header-anchor">#</a></h2>
+<p><code>delay()</code></p>
+<p>参数是延迟的毫秒数。</p>
+<h1><span id="si-jquery-yuan-su-yang-shi-cao-zuo">四、jQuery 元素样式操作</span><a href="#si-jquery-yuan-su-yang-shi-cao-zuo" class="header-anchor">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>css( name )</code></td>
+<td>获取元素的样式</td>
+</tr>
+<tr>
+<td><code>css( name, value)</code></td>
+<td>设置元素的样式</td>
+</tr>
+<tr>
+<td><code>css( name:value, name2:value2,..)</code></td>
+<td>设置元素的样式（多个）</td>
+</tr>
+<tr>
+<td><code>addClass(Class)</code>/<code>removeClass(Class)</code></td>
+<td>添加类/ 移除类</td>
+</tr>
+<tr>
+<td><code>toggleClass(Class)</code></td>
+<td>来回切换默认样式和指定样式</td>
+</tr>
+<tr>
+<td><code>width()</code>/<code>height()</code></td>
+<td>获取和设置宽高</td>
+</tr>
+<tr>
+<td><code>innerWidth()</code> / <code>innerHeight()</code></td>
+<td>获取包含内边距的宽高</td>
+</tr>
+<tr>
+<td><code>outerWidth()</code> / <code>outerHeight()</code></td>
+<td>获取包含边框和内边距的宽高<br>如果参数是<code>true</code>则包含外边距</td>
+</tr>
+<tr>
+<td><code>offset()</code> ==!==</td>
+<td>获取元素相对文档的偏移位置</td>
+</tr>
+<tr>
+<td><code>position()</code></td>
+<td>获取元素相对父元素的偏移位置</td>
+</tr>
+<tr>
+<td><code>scrollTop()</code> / <code>scrollLeft</code></td>
+<td>获取和设置水平/垂直滚动条</td>
+</tr>
+</tbody>
+</table>
+<h1><span id="wu-jquery-dom-cao-zuo">五、jQuery DOM 操作</span><a href="#wu-jquery-dom-cao-zuo" class="header-anchor">#</a></h1>
+<h2><span id="p1-she-zhi-nei-rong-he-shu-xing">1、设置内容和属性</span><a href="#p1-she-zhi-nei-rong-he-shu-xing" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>html()</code></td>
+<td>获取和设置元素中的内容</td>
+</tr>
+<tr>
+<td><code>text()</code></td>
+<td>获取和设置元素中的文本内容</td>
+</tr>
+<tr>
+<td><code>val()</code></td>
+<td>获取和设置表单元素的文本内容</td>
+</tr>
+<tr>
+<td><code>prop/attr(key[, value])</code> <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br><code>prop/attr(key:value, key2:value2, )</code></td>
+<td>获取和设置元素 key 属性值</td>
+</tr>
+<tr>
+<td><code>removeattr(key)</code></td>
+<td>删除指定的属性</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-jie-dian-cao-zuo">2、节点操作</span><a href="#p2-jie-dian-cao-zuo" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$(&quot;&lt;标签名&gt;&lt;/标签名&quot;)</code></td>
+<td><code>createElement()</code></td>
+</tr>
+<tr>
+<td><code>$(&quot;&lt;标签名&gt;文本&lt;/标签名&gt;&quot;)</code></td>
+<td><code>createTextNode()</code></td>
+</tr>
+<tr>
+<td>直接写在创建的标签中 | <code>setAttribute( name, value)</code></td>
+<td>创建属性节点</td>
+</tr>
+<tr>
+<td><code>append(Content)</code> 元素内部后面插入 <br><code>appendTo(Content)</code> <br><code>prepend(Content)</code> 元素内部前面插入 <br><code>prepentTo(Content)</code> <br><code>after()</code> 元素外部后面 <br><code>insertAfter()</code> <br><code>before()</code> 元素外部前面 <br><code>insertBefore()</code></td>
+<td>插入节点</td>
+</tr>
+<tr>
+<td><code>remove()</code></td>
+<td><code>removeChild()</code></td>
+</tr>
+<tr>
+<td><code>replaceAll()</code><sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+<td><code>replaceChild()</code></td>
+</tr>
+<tr>
+<td><code>clone()</code><sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
+<td><code>cloneNode()</code></td>
+</tr>
+</tbody>
+</table>
+<h1><span id="liu-jquery-shi-jian">六、jQuery 事件</span><a href="#liu-jquery-shi-jian" class="header-anchor">#</a></h1>
+<h2><span id="p1-jian-xie-shi-jian">1. 简写事件</span><a href="#p1-jian-xie-shi-jian" class="header-anchor">#</a></h2>
+<p>jQuery 封装了常用的事件以节约更多的代码，称为<strong>简写事件</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>触发</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>click(fn)</code></td>
+<td>鼠标单击</td>
+</tr>
+<tr>
+<td><code>dblclick(fn)</code></td>
+<td>鼠标双击</td>
+</tr>
+<tr>
+<td><code>mousedown(fn)</code></td>
+<td>鼠标点击后</td>
+</tr>
+<tr>
+<td><code>mouseup(fn)</code></td>
+<td>鼠标点击后弹起</td>
+</tr>
+<tr>
+<td><code>mouseover(fn)</code></td>
+<td>鼠标移入</td>
+</tr>
+<tr>
+<td><code>mouseout(fn)</code></td>
+<td>鼠标移出</td>
+</tr>
+<tr>
+<td><code>mousemove(fn)</code></td>
+<td>鼠标移动</td>
+</tr>
+<tr>
+<td><code>mouseeenter(fn)</code></td>
+<td>鼠标穿过</td>
+</tr>
+<tr>
+<td><code>mouselevave(fn)</code></td>
+<td>鼠标穿出</td>
+</tr>
+<tr>
+<td><code>keydown(fn)</code></td>
+<td>键盘按下</td>
+</tr>
+<tr>
+<td><code>keyup(fn)</code></td>
+<td>键盘弹起</td>
+</tr>
+<tr>
+<td><code>resize(fn)</code></td>
+<td>文档改变大小</td>
+</tr>
+<tr>
+<td><code>scroll(fn)</code></td>
+<td>滚动条滚动</td>
+</tr>
+<tr>
+<td><code>focus(fn)</code></td>
+<td>表单交单激活</td>
+</tr>
+<tr>
+<td><code>blur(fn)</code></td>
+<td>表单交单丢失</td>
+</tr>
+<tr>
+<td><code>focusin(fn)</code></td>
+<td>表单焦点激活</td>
+</tr>
+<tr>
+<td><code>select(fn)</code></td>
+<td>表单文本选定</td>
+</tr>
+<tr>
+<td><code>change(fn)</code></td>
+<td>表单元素值改变</td>
+</tr>
+<tr>
+<td><code>submit(fn)</code></td>
+<td>表单提交</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-shi-jian-dui-xiang">2. 事件对象</span><a href="#p2-shi-jian-dui-xiang" class="header-anchor">#</a></h2>
+<p>对于原生的事件对象，由于浏览器差异，开发者总是需要做兼容性处理。jQuery 解决了原生事件对象的兼容性问题，还提供了很多新的属性和方法。</p>
+<p><code>.stopPropagation()</code> 阻止事件冒泡</p>
+<p><code>.preventDefault()</code> 阻止默认行为</p>
+<h2><span id="p3-jquery-bang-ding-shi-jian">3. jQuery 绑定事件</span><a href="#p3-jquery-bang-ding-shi-jian" class="header-anchor">#</a></h2>
+<p><code>bind()</code> 方法无法动态绑定尚未存在的元素。此外还有 <code>live()</code> <code>delegate</code> 等已经被废弃，底层实际使用 <code>on()</code>。</p>
+<p><strong><code>on( events, selector, data, fn)</code></strong> 绑定事件jQuery 1.7+</p>
+<ul>
+<li><code>events</code> 事件类型</li>
+<li><code>selector</code> 触发事件选择器元素的后代</li>
+<li><code>data</code> 当一个事件被触发要传递 event.data 给事件处理函数</li>
+<li><code>fn</code> 该事件被触发时的执行函数</li>
+</ul>
+<p>还可以<strong>绑定多个事件绑定同一个函数、多个事件绑定不同函数</strong>。</p>
+<p><code>unbind()</code> 解除绑定事件。</p>
+<p><strong><code>off( events, selector, fn)</code></strong> 解除绑定事件。</p>
+<p><code>one( type, data, fn )</code> 绑定元素执行完毕后自动移除事件，方法仅触发一次。</p>
+<ul>
+<li><code>type</code> 添加到元素的一个或者多个事件。</li>
+<li><code>data</code> 将要传递给事件处理函数的数据映射。</li>
+<li><code>fn</code> 每当事件触发时执行的函数。</li>
+</ul>
+<h1><span id="qi-jquery-kuo-zhan">七、jQuery 扩展（+）</span><a href="#qi-jquery-kuo-zhan" class="header-anchor">#</a></h1>
+<p>自定义了<code>extent()</code>和 <code>fn.extent()</code> 方法，扩展jQuery类本身，为类添加新的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []</span><br><span class="line">$.each( [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>)</span>&#123;</span><br><span class="line">    arr.push( item, <span class="number">10</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1><span id="ba-jquery-shu-xie-cha-jian">八、jQuery 书写插件（+）</span><a href="#ba-jquery-shu-xie-cha-jian" class="header-anchor">#</a></h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>处理自带属性使用prop，处理自定义属性使用attr。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>节点被替换后，所包含的事件行为就全部消失了。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>参数可以为空，只复制元素和内容，加上 <code>true</code> 参数的话，会复制这个元素的事件处理行为。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/1-%E8%A1%A8%E7%8E%B0/18-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1425,7 +1425,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/1-%E8%A1%A8%E7%8E%B0/19-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/1-%E8%A1%A8%E7%8E%B0/19-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1510,7 +1510,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/44-ES6/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/44-ES6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1583,94 +1583,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/32-JSON/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2-%E8%A1%8C%E4%B8%BA/32-JSON/" class="post-title-link" itemprop="url">JSON对象</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 08:26:07" itemprop="dateModified" datetime="2020-08-28T08:26:07+08:00">2020-08-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>JSON</strong> 是ES内置对象（不用定义就能用）。</p>
-<p>json 是一种常用于前后端数据交互的格式，本质是字符串。</p>
-<h3><span id="p1-json-zhi">1、json 值</span><a href="#p1-json-zhi" class="header-anchor">#</a></h3>
-<p>可以表示三种类型数据：</p>
-<p>（1）简单值</p>
-<p>除了 <code>undefined</code> 之外的基本数据类型，<strong>表示字符串必须使用双引号。</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="string">&quot;hello world&quot;</span>   <span class="comment">//表示字符串需加双引号</span></span><br><span class="line">null</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
-<p>（2）对象 表示的是一组无序的键值对，属性必须用双引号包起来。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;age&quot;</span><span class="attr">&quot;18</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>（3）数组 有序的集合、键值对。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">25</span>, <span class="string">&quot;hi&quot;</span>, <span class="literal">true</span>]</span><br></pre></td></tr></table></figure>
-<h3><span id="p2-json-shu-ju-chu-li">2、json 数据处理</span><a href="#p2-json-shu-ju-chu-li" class="header-anchor">#</a></h3>
-<p>用于前后台发送数据。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify( )</span><br><span class="line"><span class="comment">// 将JS值序列化JSON字符串（不包含任何空格和缩进）</span></span><br><span class="line"><span class="comment">// 参数:</span></span><br><span class="line"><span class="comment">// 1. JS 值</span></span><br><span class="line"><span class="comment">// 2. 函数、原型成员、undefined会被忽略</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">JSON</span>.parse( )</span><br><span class="line"><span class="comment">// 将JSON字符串解析成原生的JS值</span></span><br><span class="line"><span class="comment">// 参数</span></span><br><span class="line"><span class="comment">// 1. json 字符串</span></span><br><span class="line"><span class="comment">// 2. 不是有效的json字符串就会报错 </span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/34-Math%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/34-Math%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1774,7 +1687,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2-%E8%A1%8C%E4%B8%BA/33-Date%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/32-JSON/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2-%E8%A1%8C%E4%B8%BA/32-JSON/" class="post-title-link" itemprop="url">JSON对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-10T00:00:00+08:00">2020-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-28 08:26:07" itemprop="dateModified" datetime="2020-08-28T08:26:07+08:00">2020-08-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>JSON</strong> 是ES内置对象（不用定义就能用）。</p>
+<p>json 是一种常用于前后端数据交互的格式，本质是字符串。</p>
+<h3><span id="p1-json-zhi">1、json 值</span><a href="#p1-json-zhi" class="header-anchor">#</a></h3>
+<p>可以表示三种类型数据：</p>
+<p>（1）简单值</p>
+<p>除了 <code>undefined</code> 之外的基本数据类型，<strong>表示字符串必须使用双引号。</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br><span class="line"><span class="string">&quot;hello world&quot;</span>   <span class="comment">//表示字符串需加双引号</span></span><br><span class="line">null</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+<p>（2）对象 表示的是一组无序的键值对，属性必须用双引号包起来。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;age&quot;</span><span class="attr">&quot;18</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>（3）数组 有序的集合、键值对。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">25</span>, <span class="string">&quot;hi&quot;</span>, <span class="literal">true</span>]</span><br></pre></td></tr></table></figure>
+<h3><span id="p2-json-shu-ju-chu-li">2、json 数据处理</span><a href="#p2-json-shu-ju-chu-li" class="header-anchor">#</a></h3>
+<p>用于前后台发送数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify( )</span><br><span class="line"><span class="comment">// 将JS值序列化JSON字符串（不包含任何空格和缩进）</span></span><br><span class="line"><span class="comment">// 参数:</span></span><br><span class="line"><span class="comment">// 1. JS 值</span></span><br><span class="line"><span class="comment">// 2. 函数、原型成员、undefined会被忽略</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">JSON</span>.parse( )</span><br><span class="line"><span class="comment">// 将JSON字符串解析成原生的JS值</span></span><br><span class="line"><span class="comment">// 参数</span></span><br><span class="line"><span class="comment">// 1. json 字符串</span></span><br><span class="line"><span class="comment">// 2. 不是有效的json字符串就会报错 </span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/blog/2-%E8%A1%8C%E4%B8%BA/33-Date%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
