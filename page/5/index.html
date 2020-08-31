@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/Web%E5%BC%80%E5%A7%8B/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/02.HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/Web%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">Web 开始</a>
+            <a href="/03/02.HTML/" class="post-title-link" itemprop="url">HTML</a>
         </h2>
 
         <div class="post-meta">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 08:49:48" itemprop="dateModified" datetime="2020-08-29T08:49:48+08:00">2020-08-29</time>
+                <time title="修改时间：2020-08-29 08:56:19" itemprop="dateModified" datetime="2020-08-29T08:56:19+08:00">2020-08-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,89 +244,668 @@
 <div class="toc">
 <!-- toc -->
 <ul>
-<li><a href="#yi-wang-ye">一、网页</a>
+<li><a href="#yi-ji-ben-jie-gou">一、基本结构</a>
 <ul>
-<li><a href="#1-gai-nian">1、概念</a></li>
-<li><a href="#2-kai-fa-huan-jing">2、开发环境</a></li>
-<li><a href="#3-wang-ye-de-zu-cheng">3、网页的组成</a></li>
+<li><a href="#1-zhu-shi">1、注释</a></li>
+<li><a href="#2-ban-ben-sheng-ming">2、版本声明</a></li>
+<li><a href="#3-html-head-body">3、html 、head、body</a></li>
+<li><a href="#4-meta-biao-qian">4、meta 标签</a></li>
+<li><a href="#5-jie-jue-wang-ye-luan-ma-wen-ti">5、解决网页乱码问题 △</a></li>
 </ul>
 </li>
-<li><a href="#er-liu-lan-qi">二、浏览器</a>
+<li><a href="#er-html-biao-qian">二、HTML 标签</a>
 <ul>
-<li><a href="#1-chang-jian-liu-lan-qi-ji-qi-nei-he">1、常见浏览器及其内核</a></li>
+<li><a href="#1-biao-qian-de-yu-yi-hua">1、标签的语义化 △</a></li>
+<li><a href="#2-biao-qian-de-guan-xi">2、标签的关系</a></li>
+<li><a href="#3-biao-qian-de-fen-lei">3、标签的分类</a>
+<ul>
+<li><a href="#3-1-kuai-biao-qian">3.1 块标签</a></li>
+<li><a href="#3-2-xing-biao-qian">3.2 行标签</a></li>
+<li><a href="#3-3-xing-nei-kuai-inline-block">3.3 行内块（inline-block）</a></li>
+</ul>
+</li>
+<li><a href="#4-div">4、div</a></li>
+<li><a href="#5-h-p-br">5、h + p + br</a></li>
+<li><a href="#6-lie-biao">6、列表</a></li>
+<li><a href="#7-biao-ge">7、表格</a></li>
+<li><a href="#8-header-footer-nav-aside-h5">8、header、footer、nav、aside <code>H5</code></a></li>
+<li><a href="#9-section-artcle-h5">9、section 、artcle <code>H5</code></a></li>
+<li><a href="#10-figure-figcaption">10、figure、figcaption</a></li>
+<li><a href="#11-span">11、span</a></li>
+<li><a href="#12-mao-lian-jie">12、锚链接</a>
+<ul>
+<li><a href="#a-biao-qian-de-wei-lei">a标签的伪类 △</a></li>
+</ul>
+</li>
+<li><a href="#13-b-i-u-em-strong-var">13、b、i、u、em、strong、var</a></li>
+<li><a href="#14-mark">14、mark</a></li>
+<li><a href="#15-time-datalist-proress">15、time、datalist、proress</a></li>
+<li><a href="#16-img-biao-qian">16、img 标签</a></li>
+<li><a href="#17-zi-ding-yi-biao-qian">17、自定义标签</a></li>
+</ul>
+</li>
+<li><a href="#san-biao-dan">三、表单</a>
+<ul>
+<li><a href="#1-form">1、form</a></li>
+<li><a href="#2-input-biao-qian">2、input 标签</a>
+<ul>
+<li><a href="#0-shu-xing">0 属性</a></li>
+<li><a href="#1-text-wen-ben-yu">1 text 文本域</a></li>
+<li><a href="#2-password-mi-ma-yu">2 password 密码域</a></li>
+<li><a href="#3-radio-dan-xuan-kuang">3 radio 单选框</a></li>
+<li><a href="#4-checkbox-fu-xuan-kuang">4 checkbox 复选框</a></li>
+<li><a href="#5-file-wen-jian-yu">5 file 文件域</a></li>
+<li><a href="#6-button-pu-tong-an-niu">6 button 普通按钮</a></li>
+<li><a href="#7-submit-ti-jiao-an-niu">7 submit 提交按钮</a></li>
+<li><a href="#8-reset-chong-zhi-an-niu">8 reset 重置按钮</a></li>
+<li><a href="#9-hidden-yin-cang">9 hidden 隐藏</a></li>
+<li><a href="#10-qi-ta-lei-xing">10 其他类型</a></li>
+</ul>
+</li>
+<li><a href="#3-button-an-niu">3、button 按钮</a></li>
+<li><a href="#4-label-biao-qian">4、label 标签</a></li>
+<li><a href="#5-select-option-xia-lie-lie-biao">5、select-option 下列列表</a></li>
+<li><a href="#5-textarea-duo-xing-wen-ben-shu-ru-kuang">5、textarea 多行文本输入框</a></li>
+<li><a href="#6-datatlist-option">6、datatlist-option +</a></li>
+<li><a href="#7-h5-biao-dan-xin-gui-fan">7、H5 表单新规范</a></li>
+</ul>
+</li>
+<li><a href="#si-mei-ti">四、媒体</a>
+<ul>
+<li><a href="#1-li-shi">1、历史</a></li>
+<li><a href="#2-ge-shi-he-jie-ma">2、格式和解码</a></li>
+<li><a href="#3-video-audio">3、video、audio</a></li>
+<li><a href="#4-yin-shi-pin-jian-rong-xing-chu-li">4、音视频兼容性处理</a></li>
+</ul>
+</li>
+<li><a href="#wu-qi-ta">五、其他</a>
+<ul>
+<li><a href="#1-iframe-kuang-jia">1、iframe 框架</a></li>
+<li><a href="#2-wei-yuan-su">2、伪元素</a></li>
+<li><a href="#3-html-te-shu-fu-hao">3、HTML 特殊符号</a></li>
+<li><a href="#4-seo-xiang-guan">4、SEO相关</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 </div>
-<h1><span id="yi-wang-ye">一、网页</span><a href="#yi-wang-ye" class="header-anchor">#</a></h1>
-<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
+<h1><span id="yi-ji-ben-jie-gou">一、基本结构</span><a href="#yi-ji-ben-jie-gou" class="header-anchor">#</a></h1>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 版本声明 --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 根文档 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 头部 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- 主体 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
+<p>用<code>&lt;!-- </code>和<code>--&gt;</code>包裹起来的内容。</p>
+<h2><span id="p2-ban-ben-sheng-ming">2、版本声明</span><a href="#p2-ban-ben-sheng-ming" class="header-anchor">#</a></h2>
+<p>给浏览器声明，告诉浏览器应该按照HTML5的规范解析当前页面。 <strong>如果不写，浏览器就是按照自己默认的模式解析。</strong></p>
+<p>版本声明必须写在第一行。我们不把他看做一个html标签，而是把它当做一个指令，并且这个指令对大小写不敏感。</p>
+<h2><span id="p3-html-head-body">3、html 、head、body</span><a href="#p3-html-head-body" class="header-anchor">#</a></h2>
+<p><code>html</code> 是一个双标签，所有网页内容全部书写在html标签中。<code>lang</code>就是html标签的属性，<code>en</code>就是<code>lang</code>属性的值，属性是对当前标签的信息的扩展。</p>
+<p><code>head</code> 标签代表网页的头部，不会显示在网页中。主要是包含了标题，网页的描述，字符编码等等一些信息。</p>
+<p><code>body</code> 标签是网页显示的主体内容。</p>
+<h2><span id="p4-meta-biao-qian">4、meta 标签</span><a href="#p4-meta-biao-qian" class="header-anchor">#</a></h2>
+<p>控制网页的<strong>元信息</strong>（信息的信息），根据属性的不同，有很多的作用。</p>
+<h2><span id="p5-jie-jue-wang-ye-luan-ma-wen-ti">5、解决网页乱码问题  △</span><a href="#p5-jie-jue-wang-ye-luan-ma-wen-ti" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>charset</code>即字符编码。<code>utf-8</code>称作为万国码。</p>
+<h1><span id="er-html-biao-qian">二、HTML 标签</span><a href="#er-html-biao-qian" class="header-anchor">#</a></h1>
+<h2><span id="p1-biao-qian-de-yu-yi-hua">1、标签的语义化 △</span><a href="#p1-biao-qian-de-yu-yi-hua" class="header-anchor">#</a></h2>
 <ul>
-<li>WWW，World Wide Web，万维网</li>
-<li>B/S结构，浏览器-服务器结构</li>
-<li>C/S结构，客户端-服务器结构</li>
-<li>HTTP协议，超文本传输协议</li>
-<li>Domain Name，域名，DNS；Domain Name System，域名解析系统</li>
-<li>W3C，万维网联盟</li>
-<li>HTML，Hypertext Markup Language，超文本标记语言。</li>
-<li>CSS，层叠样式表。</li>
+<li>语义化标签更具有 <strong>可读性</strong> ，便于团队开发和维护。</li>
+<li>在没有加载CSS的情况下，网页也能很好呈现出内容结构和代码结构。</li>
+<li>对于SEO来说，搜索引擎更能理解网页中各部分之间的关系，更准确更快速搜索信息。</li>
 </ul>
-<h2><span id="p2-kai-fa-huan-jing">2、开发环境</span><a href="#p2-kai-fa-huan-jing" class="header-anchor">#</a></h2>
+<h2><span id="p2-biao-qian-de-guan-xi">2、标签的关系</span><a href="#p2-biao-qian-de-guan-xi" class="header-anchor">#</a></h2>
 <ul>
-<li><code>VSCode</code></li>
-<li>Chrome、Firefox、IE</li>
-<li>Photoshop</li>
+<li>并列：兄弟关系</li>
+<li>嵌套：父子关系（使用<code>TAB</code>缩进）</li>
 </ul>
-<h2><span id="p3-wang-ye-de-zu-cheng">3、网页的组成</span><a href="#p3-wang-ye-de-zu-cheng" class="header-anchor">#</a></h2>
-<p>网页由三部分组成：</p>
+<h2><span id="p3-biao-qian-de-fen-lei">3、标签的分类</span><a href="#p3-biao-qian-de-fen-lei" class="header-anchor">#</a></h2>
+<h3><span id="p3-1-kuai-biao-qian">3.1 块标签</span><a href="#p3-1-kuai-biao-qian" class="header-anchor">#</a></h3>
+<p>特性</p>
 <ul>
-<li><strong>结构</strong> html</li>
-<li><strong>表现</strong> CSS</li>
-<li><strong>行为</strong> JavaScript</li>
+<li>独占一行</li>
+<li>可设宽高、内外边距和边框</li>
+<li>可嵌套块元素和行元素（p、h标签除外）</li>
 </ul>
-<h1><span id="er-liu-lan-qi">二、浏览器</span><a href="#er-liu-lan-qi" class="header-anchor">#</a></h1>
-<h2><span id="p1-chang-jian-liu-lan-qi-ji-qi-nei-he">1、常见浏览器及其内核</span><a href="#p1-chang-jian-liu-lan-qi-ji-qi-nei-he" class="header-anchor">#</a></h2>
+<p>将非块级元素转换成块级元素的方法</p>
+<ul>
+<li>display: block</li>
+<li>float: left/right</li>
+<li>position: absolute/fixed</li>
+<li>父级元素使用display:flex</li>
+</ul>
+<h3><span id="p3-2-xing-biao-qian">3.2 行标签</span><a href="#p3-2-xing-biao-qian" class="header-anchor">#</a></h3>
+<p>特性</p>
+<ul>
+<li>空间足够时可以其他行标签共用一行</li>
+<li>设置宽高无效，内外边距和边框的上下设置无效</li>
+<li>宽高用内容撑开</li>
+<li>可嵌套行元素</li>
+<li>受父元素的 line-height 以及自身的 vertical-align影响。</li>
+</ul>
+<h3><span id="p3-3-xing-nei-kuai-inline-block">3.3 行内块（inline-block）</span><a href="#p3-3-xing-nei-kuai-inline-block" class="header-anchor">#</a></h3>
+<p>特性</p>
+<ul>
+<li>一行可放多个。</li>
+<li>宽高、内外边距、边框无法设置。</li>
+<li>受父元素的 line-height 以及自身的 vertical-align影响。</li>
+</ul>
+<h2><span id="p4-div">4、div</span><a href="#p4-div" class="header-anchor">#</a></h2>
+<p>分块原则：先行，后列。</p>
+<h2><span id="p5-h-p-br">5、h + p + br</span><a href="#p5-h-p-br" class="header-anchor">#</a></h2>
+<p>h，标题</p>
+<p>尽量避免跳过某一级标题，依次使用。</p>
+<p>同一个网页中最多使用一次h1元素，h1经常用在网页的标题或者是logo上。</p>
+<p>p，段落。</p>
+<p>br，单纯的换行，被称为软换行。</p>
+<h2><span id="p6-lie-biao">6、列表</span><a href="#p6-lie-biao" class="header-anchor">#</a></h2>
+<p>（1）无序列表和有序列表</p>
+<p><code>ol</code>，有序列表，ul，无序列表。li，列表的每一项。<br>
+<code>ul</code>/<code>ol</code>-<code>li</code>，<code>ol</code>/<code>ul</code>只能嵌套li。</p>
+<p>（2）自定义列表</p>
+<p><code>dl</code>-<code>dt</code>-<code>dd</code>，组合标签。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p7-biao-ge">7、表格</span><a href="#p7-biao-ge" class="header-anchor">#</a></h2>
+<p>table、tr、td、th</p>
+<ul>
+<li>表格的最外层是table元素</li>
+<li>表格的标题是caption元素 一般在表格的最上边</li>
+<li>tr就是表格的行</li>
+<li>td是普通单元格，th是表头单元格（默认加粗居中）</li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span> <span class="token attr-name">border</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>caption</span><span class="token punctuation">></span></span>学员就业信息表<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>caption</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>序号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>姓名<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>年龄<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>性别<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>备注<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>老李<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>18<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>男<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>table的属性</p>
+<ul>
+<li>border:边框（已经废弃，以后使用css的方法）</li>
+<li>合并表格的边框，对table设置：<code>border-collapse: collapse;</code></li>
+<li>cellpadding 控制内容和边框之间的距离</li>
+<li>cellspacing 控制两个单元格之间的距离</li>
+</ul>
+<p>跨行和跨列</p>
+<ul>
+<li>rowspan:控制元素跨行  谁跨行 设置给谁</li>
+<li>colspan:控制元素跨列  谁跨列 设置给谁</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>表格布局（过时了，了解即可）</li>
+<li>thead：表格的头部</li>
+<li>tbody：表格的内容，可以划分多个</li>
+<li>tfoot：表格的底部</li>
+<li>三个标签table划分为多个模块，优化表格的加载，一般数据表格量大的时候可以使用</li>
+<li>thead、tfoot、tbody：三个元素，无关书写顺序，一定会按照thead–tbody–tfoot顺序加载</li>
+</ul>
+<h2><span id="p8-header-footer-nav-aside-h5">8、header、footer、nav、aside <code>H5</code></span><a href="#p8-header-footer-nav-aside-h5" class="header-anchor">#</a></h2>
+<p><code>header</code> 用于定义文档的页眉（头部区域）。</p>
+<p><code>footer</code> 用于定义文档的页脚（底部区域）。</p>
+<p><code>nav</code> 在文档中定义导航。</p>
+<p><code>aside</code> 通常用于定义侧边栏。</p>
+<h2><span id="p9-section-artcle-h5">9、section 、artcle <code>H5</code></span><a href="#p9-section-artcle-h5" class="header-anchor">#</a></h2>
+<p><code>section</code> 在文档中对独立的区域进行分块，一般会有独立的标题。</p>
+<p><code>article</code> 在文档中，对可以独立的完整的被外部引用的内容。</p>
+<p>？ 比较 div、section、article</p>
+<h2><span id="p10-figure-figcaption">10、figure、figcaption</span><a href="#p10-figure-figcaption" class="header-anchor">#</a></h2>
+<p><code>figure</code>、<code>figcaption</code></p>
+<p>H5新标签，用于引用图片、插画、表格、代码段。</p>
+<h2><span id="p11-span">11、span</span><a href="#p11-span" class="header-anchor">#</a></h2>
+<p>span标签在不需要语义的情况下，增加额外的结构，方便设置样式等操作。</p>
+<h2><span id="p12-mao-lian-jie">12、锚链接</span><a href="#p12-mao-lian-jie" class="header-anchor">#</a></h2>
+<p>（1）路径</p>
+<ul>
+<li>网络路径：一般有三种协议，一种是http、一种是file、一种是ftp。需要引入网络路径的时候，需要书写<code>http://</code>。</li>
+<li>相对路径</li>
+<li>绝对路径</li>
+</ul>
+<p>（2）标签属性</p>
+<ul>
+<li>href：路径。</li>
+<li>target：跳转方式，<code>_self</code> 当前标签页跳转，<code>_blank</code>新标签页跳转。</li>
+<li>title：鼠标悬浮时的弹窗解释。</li>
+</ul>
+<p>（3）锚链接</p>
+<p><code>href=&quot;#(id)&quot;</code> → <code>id=&quot;(id)&quot;</code></p>
+<ul>
+<li>标签href为空时，点击刷新加载。当设置为<code>##</code>（两个#及以上）或者<code>javascript:;</code>时，点击之后不会有动作</li>
+<li>如果a标签的href值只有一个 # 那么可以实现回到顶部的功能。</li>
+<li>如果a标签的href属性书写的链接可以使用浏览器打开（比如图片），则浏览器跳转到这个位置并打开，如果a标签的href属性书写的链接不可以使用浏览器打开，则浏览器直接下载。</li>
+<li>a标签的下载功能：download属性 书写下载内容，可以直接实现下载，必须拥有href属性，否则下载功能失效。</li>
+</ul>
+<h3><span id="pa-biao-qian-de-wei-lei">a标签的伪类 △</span><a href="#pa-biao-qian-de-wei-lei" class="header-anchor">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>浏览器</th>
-<th>内核</th>
-<th>浏览器前缀</th>
+<th>伪类</th>
+<th>功能</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>IE</td>
-<td>Tredent</td>
-<td>-ms-</td>
+<td><code>link</code></td>
+<td>当有链接属性时</td>
 </tr>
 <tr>
-<td><strong>Safari</strong></td>
-<td>Webkit</td>
-<td>-webkit-</td>
+<td><code>visited</code></td>
+<td>链接被访问过</td>
 </tr>
 <tr>
-<td><strong>Firefox</strong></td>
-<td>Gecko</td>
-<td>-moz-</td>
+<td><code>hover</code></td>
+<td>鼠标悬浮在链接上面时</td>
 </tr>
 <tr>
-<td><strong>Chrome</strong></td>
-<td>Blink</td>
-<td>-webkit-</td>
-</tr>
-<tr>
-<td>Edge、Opera</td>
-<td>Blink</td>
-<td>-webkit-</td>
+<td><code>active</code></td>
+<td>链接激活时</td>
 </tr>
 </tbody>
 </table>
+<p>①“love-hate 爱恨法则” —— <strong>顺序不能互换</strong> ：四个选择器优先级一样，顺序改变可能会覆盖前边的，比如visited写在最后，那么当连接被访问过后，访问过后的颜色就会覆盖hover和active。<br>
+②hover适用于多数其他元素，并且伪元素也可以使用。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.a1:link</span><span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.a2:visited</span><span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> yellowgreen<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.a3:hover</span><span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span>
+	<span class="token property">font-size</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.a4:active</span><span class="token punctuation">&#123;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> blueviolet<span class="token punctuation">;</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p13-b-i-u-em-strong-var">13、b、i、u、em、strong、var</span><a href="#p13-b-i-u-em-strong-var" class="header-anchor">#</a></h2>
+<ul>
+<li>
+<p>b i u 没有太多的含义，可以增加额外的结构，但是使用率较低。</p>
+</li>
+<li>
+<p>i 标签常用在引入小图标</p>
+</li>
+<li>
+<p>em 标签默认倾斜，起到强调作用，主要是强调关键词的。</p>
+</li>
+<li>
+<p>strong 标签默认加粗，起到更强的强调，主要强调的是一段话。</p>
+</li>
+<li>
+<p>var 标签 没有任何的强调作用，有自己的含义，主要包含变量。</p>
+</li>
+</ul>
+<h2><span id="p14-mark">14、mark</span><a href="#p14-mark" class="header-anchor">#</a></h2>
+<p>标记，突出显示上下文的<strong>关联性</strong>，比如搜索页面的关键词。是行内元素。</p>
+<h2><span id="p15-time-datalist-proress">15、time、datalist、proress</span><a href="#p15-time-datalist-proress" class="header-anchor">#</a></h2>
+<p>time</p>
+<p>当时间是标准写法的时候，可以放在该标签中。</p>
+<p>datalist</p>
+<p>包含一组option元素，通常和input一起配套使用。</p>
+<p>proress</p>
+<p>通常用于进度条。（很少用）</p>
+<h2><span id="p16-img-biao-qian">16、img 标签</span><a href="#p16-img-biao-qian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>图片路径</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>加载失败时显示的替代文本</td>
+</tr>
+<tr>
+<td>title</td>
+<td>鼠标悬浮时显示的弹窗提示</td>
+</tr>
+<tr>
+<td>width、height</td>
+<td>宽高</td>
+</tr>
+</tbody>
+</table>
+<p>解决底部留白：</p>
+<ul>
+<li>display: block</li>
+<li>font-size： 0</li>
+</ul>
+<p>消除行内块间距的方式</p>
+<ul>
+<li>移除标签间的空格</li>
+<li>取消标签闭合</li>
+<li>给父元素设置<code>font-size:0</code>，Chrome 默认有最小字体大小限制，可以<code>font-size: 0; -webkit-text-size-adjust:none;</code></li>
+<li>设置 margin 为负值</li>
+</ul>
+<h2><span id="p17-zi-ding-yi-biao-qian">17、自定义标签</span><a href="#p17-zi-ding-yi-biao-qian" class="header-anchor">#</a></h2>
+<p>待更新。</p>
+<h1><span id="san-biao-dan">三、表单</span><a href="#san-biao-dan" class="header-anchor">#</a></h1>
+<h2><span id="p1-form">1、form</span><a href="#p1-form" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>action：表单提交接口。如果省略，则设置为当前页面。</p>
+<p>method：表单提交的方式。一般为 <strong>POST</strong> 或者 <strong>GET</strong> 。</p>
+<ul>
+<li>GET 通过URL提交</li>
+<li>POST 通过请求报文</li>
+</ul>
+<h2><span id="p2-input-biao-qian">2、input 标签</span><a href="#p2-input-biao-qian" class="header-anchor">#</a></h2>
+<h3><span id="p0-shu-xing">0 属性</span><a href="#p0-shu-xing" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>placeholder</code></td>
+<td><strong>占位符</strong>。控制元素为空时的提示信息，只要输入内容就会消失。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>name  当前表单元素键名。</li>
+<li>value  当前表单元素输入内容，默认内容。</li>
+<li>type  表单元素的类型。</li>
+<li></li>
+<li>autocomplete  是否提示用户输入历史输入值，默认为 ON。</li>
+<li>autofocus  自动获取焦点。</li>
+<li>required  必填。提交表单时必须填写此项。</li>
+<li>disabled  禁用表单元素。不会被提交。</li>
+<li>readonly  只读。会被提交。</li>
+<li>checked  预先选中单选框或者多选框。</li>
+<li>form  关联表单。如果input存在form属性，表示该input属于某个表单。通过input的form属性为form表单的id，进行关联。 进行关联以后，无论input书写在哪里，都能随着表单提交数据。</li>
+<li>selected  预先选择一个选项。</li>
+<li>multiple  实现多选。</li>
+</ul>
+<h3><span id="p1-text-wen-ben-yu">1 text 文本域</span><a href="#p1-text-wen-ben-yu" class="header-anchor">#</a></h3>
+<p>即单行文本输入框。</p>
+<h3><span id="p2-password-mi-ma-yu">2 password 密码域</span><a href="#p2-password-mi-ma-yu" class="header-anchor">#</a></h3>
+<h3><span id="p3-radio-dan-xuan-kuang">3 radio 单选框</span><a href="#p3-radio-dan-xuan-kuang" class="header-anchor">#</a></h3>
+<p>注意需设置好 value 值。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    请选择您的性别：
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>女<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>女
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>男<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>男
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>默认选中：checked</p>
+<ul>
+<li>checked</li>
+<li>checked = “”</li>
+<li>checked = “checked”</li>
+</ul>
+<h3><span id="p4-checkbox-fu-xuan-kuang">4 checkbox 复选框</span><a href="#p4-checkbox-fu-xuan-kuang" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    请选择您的学科
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>HTML5
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ASP<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>ASP
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>c#
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Java<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Java
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p5-file-wen-jian-yu">5 file 文件域</span><a href="#p5-file-wen-jian-yu" class="header-anchor">#</a></h3>
+<p>上传文件。</p>
+<p>调用相册和摄像头。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image/*<span class="token punctuation">"</span></span> <span class="token attr-name">capture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>camera<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image/*<span class="token punctuation">"</span></span> <span class="token attr-name">capture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3><span id="p6-button-pu-tong-an-niu">6 button 普通按钮</span><a href="#p6-button-pu-tong-an-niu" class="header-anchor">#</a></h3>
+<h3><span id="p7-submit-ti-jiao-an-niu">7 submit 提交按钮</span><a href="#p7-submit-ti-jiao-an-niu" class="header-anchor">#</a></h3>
+<h3><span id="p8-reset-chong-zhi-an-niu">8 reset 重置按钮</span><a href="#p8-reset-chong-zhi-an-niu" class="header-anchor">#</a></h3>
+<h3><span id="p9-hidden-yin-cang">9 hidden 隐藏</span><a href="#p9-hidden-yin-cang" class="header-anchor">#</a></h3>
+<h3><span id="p10-qi-ta-lei-xing">10 其他类型</span><a href="#p10-qi-ta-lei-xing" class="header-anchor">#</a></h3>
+<p>以下是一些 H5 新增的类型：</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>功能</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>颜色</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期-年月日</td>
+<td></td>
+</tr>
+<tr>
+<td>week</td>
+<td>日期-年周</td>
+<td>火狐不支持</td>
+</tr>
+<tr>
+<td>month</td>
+<td>日期-年月</td>
+<td>火狐不支持</td>
+</tr>
+<tr>
+<td>email</td>
+<td>邮箱号</td>
+<td>有校验，但是不完整</td>
+</tr>
+<tr>
+<td>number</td>
+<td>数字</td>
+<td>min | max | value | step</td>
+</tr>
+<tr>
+<td>search</td>
+<td>搜索框</td>
+<td></td>
+</tr>
+<tr>
+<td>tel</td>
+<td>电话号码</td>
+<td></td>
+</tr>
+<tr>
+<td>url</td>
+<td>URL</td>
+<td></td>
+</tr>
+<tr>
+<td>range</td>
+<td>可拖动控件</td>
+<td>很少用</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p3-button-an-niu">3、button 按钮</span><a href="#p3-button-an-niu" class="header-anchor">#</a></h2>
+<p>有3种 type，分别是 button，submit，reset。</p>
+<p>具体功能需要配合JS实现。</p>
 <blockquote>
-<p>注1 Edge之前采用 EdgeHTML 内核，Opera之前使用 Presto 内核。Blink内核是Webkit内核的分支。<br>
-注2 Android和iOS移动设备只能用自带系统浏览器内核。<br>
-注3 PC端浏览器市场份额Chrome浏览器排名第一，IE第二，二者约占70%。</p>
+<p>注1：input提交按钮和button提交按钮的区别：input是单标签，button是双标签。<br>
+注2：button是行内块标签。</p>
 </blockquote>
+<h2><span id="p4-label-biao-qian">4、label 标签</span><a href="#p4-label-biao-qian" class="header-anchor">#</a></h2>
+<p>定义表单元素标注，获取焦点。</p>
+<p>两种方式来绑定表单。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span> ... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2><span id="p5-select-option-xia-lie-lie-biao">5、select-option 下列列表</span><a href="#p5-select-option-xia-lie-lie-biao" class="header-anchor">#</a></h2>
+<p>在 option 中 value 属性书写的内容不会显示，但是最后会提交。显示的内容写在 option 标签中。</p>
+<p><code>selected</code> 默认选中</p>
+<p><code>multiple</code> 多选</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">请选择你喜欢的地方：
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>address<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>北京<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>上海<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>广州<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>广州<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>深圳<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>深圳<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p5-textarea-duo-xing-wen-ben-shu-ru-kuang">5、textarea 多行文本输入框</span><a href="#p5-textarea-duo-xing-wen-ben-shu-ru-kuang" class="header-anchor">#</a></h2>
+<h2><span id="p6-datatlist-option">6、datatlist-option +</span><a href="#p6-datatlist-option" class="header-anchor">#</a></h2>
+<h2><span id="p7-h5-biao-dan-xin-gui-fan">7、H5 表单新规范</span><a href="#p7-h5-biao-dan-xin-gui-fan" class="header-anchor">#</a></h2>
+<ul>
+<li>表单的属性名和属性值相等的时候，可以省略属性值，直接书写属性名即可。</li>
+<li>在JS中，允许用布尔值[^6]来开启和关闭属性。</li>
+<li>在多个表单元素，只能出现一次的属性，如果书写多个，以第一个为准。</li>
+</ul>
+<h1><span id="si-mei-ti">四、媒体</span><a href="#si-mei-ti" class="header-anchor">#</a></h1>
+<h3><span id="p1-li-shi">1、历史</span><a href="#p1-li-shi" class="header-anchor">#</a></h3>
+<h3><span id="p2-ge-shi-he-jie-ma">2、格式和解码</span><a href="#p2-ge-shi-he-jie-ma" class="header-anchor">#</a></h3>
+<p>浏览器支持的格式：<code>.mp4/.ogv/.webm/.mp3/.ogg</code>	<br>
+目前还没有一种编解码和容器的组合能应用于所有的浏览器中。</p>
+<h3><span id="p3-video-audio">3、video、audio</span><a href="#p3-video-audio" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src</td>
+<td>引入的资源路径</td>
+</tr>
+<tr>
+<td>width、height</td>
+<td>宽度、高度</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>显示控制和进度条</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>静音（想要自动播放生效，需要开启静音）</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>是否循环</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>视频播放前的一帧，图片路径</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>none：不提前加载视频</td>
+</tr>
+<tr>
+<td></td>
+<td>metadate：抓取元数据</td>
+</tr>
+<tr>
+<td></td>
+<td>auto：预加载</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p4-yin-shi-pin-jian-rong-xing-chu-li">4、音视频兼容性处理</span><a href="#p4-yin-shi-pin-jian-rong-xing-chu-li" class="header-anchor">#</a></h3>
+<p>待更新。</p>
+<h1><span id="wu-qi-ta">五、其他</span><a href="#wu-qi-ta" class="header-anchor">#</a></h1>
+<h2><span id="p1-iframe-kuang-jia">1、iframe 框架</span><a href="#p1-iframe-kuang-jia" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.baidu.com<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>90%<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p2-wei-yuan-su">2、伪元素</span><a href="#p2-wei-yuan-su" class="header-anchor">#</a></h2>
+<p>伪元素 会在内容元素的前后插入额外的元素，但是并不会在文档中生成，在文档的源码中也找不到。虽然在结构上是虚假元素，但是在表现上和普通元素没有什么区别，能为它们添加任何样式，比如改变文字颜色等等。</p>
+<p>伪元素必须拥有<code>content</code>属性才能生效，伪元素默认是一个行内元素，伪元素对其他属性基本都是支持的。</p>
+<table>
+<thead>
+<tr>
+<th>伪元素</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>after</td>
+<td>在当前元素的最后边插入一个伪元素</td>
+<td></td>
+</tr>
+<tr>
+<td>before</td>
+<td>在当前元素的最前面插入一个伪元素</td>
+<td></td>
+</tr>
+<tr>
+<td>first-letter</td>
+<td>第一个字符</td>
+<td>只针对块元素生效</td>
+</tr>
+<tr>
+<td>first-line</td>
+<td>第一行</td>
+<td>只针对行元素生效</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p3-html-te-shu-fu-hao">3、HTML 特殊符号</span><a href="#p3-html-te-shu-fu-hao" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>空格</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>大于号</td>
+</tr>
+<tr>
+<td><code>&amp;lt;</code></td>
+<td>小于号</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>版权符</td>
+</tr>
+<tr>
+<td><code>&amp;amp;</code></td>
+<td>和号</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p4-seo-xiang-guan">4、SEO相关</span><a href="#p4-seo-xiang-guan" class="header-anchor">#</a></h2>
+<p>搜索引擎优化。</p>
 
       
     </div>
@@ -346,7 +925,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/BOM%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/10-CSS%E6%9D%82%E9%A1%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -360,7 +939,239 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/BOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">BOM 对象</a>
+            <a href="/03/10-CSS%E6%9D%82%E9%A1%B9/" class="post-title-link" itemprop="url">CSS 杂项</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-11T00:00:00+08:00">2020-06-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 20:52:37" itemprop="dateModified" datetime="2020-08-31T20:52:37+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-css-sprites">一、CSS Sprites</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-css-sprites">一、CSS Sprites</span><a href="#yi-css-sprites" class="header-anchor">#</a></h1>
+<p><strong>CSS Sprites</strong>，精灵图，是网页图片的常用处理方式。</p>
+<p>允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对网络来说，小于200k的文件加载速度是一样的。通过 <code>background-position</code> 属性，将图片定位到需要的位置即可。</p>
+<p>优点：</p>
+<ul>
+<li>减少图片大小</li>
+<li>减少服务器请求次数</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/09-CSS%E5%8A%A8%E7%94%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/09-CSS%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">CSS3 动画</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 19:37:42" itemprop="dateModified" datetime="2020-08-31T19:37:42+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-transform">一、transform</a></li>
+<li><a href="#er-guo-du-dong-hua-transition">二、过渡动画 transition</a></li>
+<li><a href="#san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</a>
+<ul>
+<li><a href="#1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</a></li>
+<li><a href="#2-animation">2、animation</a></li>
+<li><a href="#3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</a></li>
+<li><a href="#4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</a></li>
+<li><a href="#5-zhu-zheng-dong-hua">5、逐帧动画</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-transform">一、transform</span><a href="#yi-transform" class="header-anchor">#</a></h1>
+<ul>
+<li>旋转 rotate</li>
+<li>移动 translate</li>
+<li>缩放 scale</li>
+<li>扭曲 skew</li>
+<li>改变变换基点 transform-origin</li>
+</ul>
+<p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
+<h1><span id="er-guo-du-dong-hua-transition">二、过渡动画 transition</span><a href="#er-guo-du-dong-hua-transition" class="header-anchor">#</a></h1>
+<p>允许CSS的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变CSS的属性值。</p>
+<p>transition</p>
+<ul>
+<li>property 参与过渡的属性</li>
+<li>duration 持续时间</li>
+<li>timing-function 动画类型 linear 线性匀速</li>
+<li>delay 延迟时间</li>
+</ul>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transition</span><span class="token punctuation">:</span> height 3s linear 2s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</span><a href="#san-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h1>
+<p>关键帧动画是控制关键位置，而不是所有位置。</p>
+<h2><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> &lt;name></span><span class="token punctuation">&#123;</span>
+	<span class="token selector">from/0%</span>
+	<span class="token punctuation">&#123;</span>
+		// ...
+	<span class="token punctuation">&#125;</span> 
+	<span class="token selector">to/100%</span>
+	<span class="token punctuation">&#123;</span>
+		// ...
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-animation">2、animation</span><a href="#p2-animation" class="header-anchor">#</a></h2>
+<ul>
+<li>name 动画属性名</li>
+<li>duration 关键帧持续时间</li>
+<li>timing-function 动画执行方式（针对于每一个关键帧之间的动画）</li>
+<li>delay 动画延迟时间</li>
+<li>iteration-count 动画循环次数，次数或者 infinite（无穷次）</li>
+<li>direction 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
+</ul>
+<h2><span id="p3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</span><a href="#p3-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h2>
+<ul>
+<li>animation-play-state</li>
+<li>paused</li>
+</ul>
+<h2><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h2>
+<h2><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h2>
+<p>timing-function: steps()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/19-BOM%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/19-BOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">BOM 对象</a>
         </h2>
 
         <div class="post-meta">
@@ -601,7 +1412,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E5%8A%A8%E7%94%BB/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/22-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -615,7 +1426,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">CSS3 动画</a>
+            <a href="/03/22-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">常见效果</a>
         </h2>
 
         <div class="post-meta">
@@ -632,148 +1443,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 09:13:52" itemprop="dateModified" datetime="2020-08-29T09:13:52+08:00">2020-08-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
-<p>[TOC]</p>
-<div class="toc">
-<!-- toc -->
-<ul>
-<li><a href="#yi-transform">一、transform</a></li>
-<li><a href="#er-guo-du-dong-hua-transition">二、过渡动画 transition</a></li>
-<li><a href="#san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</a>
-<ul>
-<li><a href="#1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</a></li>
-<li><a href="#2-animation">2、animation</a></li>
-<li><a href="#3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</a></li>
-<li><a href="#4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</a></li>
-<li><a href="#5-zhu-zheng-dong-hua">5、逐帧动画</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-</div>
-<h1><span id="yi-transform">一、transform</span><a href="#yi-transform" class="header-anchor">#</a></h1>
-<ul>
-<li>旋转 rotate</li>
-<li>移动 translate</li>
-<li>缩放 scale</li>
-<li>扭曲 skew</li>
-<li>改变变换基点 transform-origin</li>
-</ul>
-<p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
-<h1><span id="er-guo-du-dong-hua-transition">二、过渡动画 transition</span><a href="#er-guo-du-dong-hua-transition" class="header-anchor">#</a></h1>
-<p>允许CSS的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变CSS的属性值。</p>
-<p>transition</p>
-<ul>
-<li>property 参与过渡的属性</li>
-<li>duration 持续时间</li>
-<li>timing-function 动画类型 linear 线性匀速</li>
-<li>delay 延迟时间</li>
-</ul>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transition</span><span class="token punctuation">:</span> height 3s linear 2s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1><span id="san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</span><a href="#san-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h1>
-<p>关键帧动画是控制关键位置，而不是所有位置。</p>
-<h2><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> &lt;name></span><span class="token punctuation">&#123;</span>
-	<span class="token selector">from/0%</span>
-	<span class="token punctuation">&#123;</span>
-		// ...
-	<span class="token punctuation">&#125;</span> 
-	<span class="token selector">to/100%</span>
-	<span class="token punctuation">&#123;</span>
-		// ...
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p2-animation">2、animation</span><a href="#p2-animation" class="header-anchor">#</a></h2>
-<ul>
-<li>name 动画属性名</li>
-<li>duration 关键帧持续时间</li>
-<li>timing-function 动画执行方式（针对于每一个关键帧之间的动画）</li>
-<li>delay 动画延迟时间</li>
-<li>iteration-count 动画循环次数，次数或者 infinite（无穷次）</li>
-<li>direction 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
-</ul>
-<h2><span id="p3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</span><a href="#p3-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h2>
-<ul>
-<li>animation-play-state</li>
-<li>paused</li>
-</ul>
-<h2><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h2>
-<h2><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h2>
-<p>timing-function: steps()</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">常见效果</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 16:52:03" itemprop="dateModified" datetime="2020-08-27T16:52:03+08:00">2020-08-27</time>
+                <time title="修改时间：2020-08-31 21:22:00" itemprop="dateModified" datetime="2020-08-31T21:22:00+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -798,7 +1468,74 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
       
           <h1><span id="chang-jian-xiao-guo">常见效果</span><a href="#chang-jian-xiao-guo" class="header-anchor">#</a></h1>
 <p>[TOC]</p>
-<h2><span id="pbiao-qian-ye-qie-huan">标签页切换</span><a href="#pbiao-qian-ye-qie-huan" class="header-anchor">#</a></h2>
+<h1><span id="yi-biao-qian-ye-qie-huan">一、标签页切换</span><a href="#yi-biao-qian-ye-qie-huan" class="header-anchor">#</a></h1>
+<p>方法一</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> oH2s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".h2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> oLis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"active"</span><span class="token punctuation">;</span>
+                oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"show"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+                oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法二</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> oH2s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".h2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> oLis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 先全部清空</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"active"</span><span class="token punctuation">;</span>
+        oLis<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"show"</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法三（面向对象）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Tab</span><span class="token punctuation">(</span><span class="token parameter">btn<span class="token punctuation">,</span> content</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//把变量或者参数赋值给实例化对象，这样在构造函数和原型对象的方法中都能够访问这个变量</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>btns <span class="token operator">=</span> btn<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>contents <span class="token operator">=</span> content<span class="token punctuation">;</span>
+    <span class="token comment">//在其他函数中想要使用指向实例化对象的this比较困难，所以用一个that变量保存一个this,方便以后在其他地方使用</span>
+    <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token comment">//对所有的按钮绑定点击事件</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//给所有的元素扩展一个下标index属性</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//因为所有的Tab切换的核心方法都是一样的，所以我们把方法写在了原型对象上</span>
+            <span class="token comment">//当点击按钮的时候，去执行原型对象上的方法</span>
+            <span class="token comment">//这样所有的Tab切换的执行切换的方法都是同一个，节省效率</span>
+            <span class="token comment">//把当前的this（指向点击的对象）传参传递给方法，方便使用</span>
+            that<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Tab</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">click</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">that</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//使用that来接收参数 参数代表的是点击事件的事件对象</span>
+    <span class="token comment">//先清空所有的内容</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>contents<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//给当前点击的元素及对应的面板添加类名</span>
+    that<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>contents<span class="token punctuation">[</span>that<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p>待更新…</p>
 <h2><span id="phui-dao-ding-bu">回到顶部</span><a href="#phui-dao-ding-bu" class="header-anchor">#</a></h2>
 <h2><span id="pce-bian-lan">侧边栏</span><a href="#pce-bian-lan" class="header-anchor">#</a></h2>
 <h2><span id="ppeng-bi-fan-dan">碰壁反弹</span><a href="#ppeng-bi-fan-dan" class="header-anchor">#</a></h2>
@@ -833,7 +1570,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E4%BA%8B%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/21-JS%E4%BA%8B%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -847,7 +1584,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E4%BA%8B%E4%BB%B6/" class="post-title-link" itemprop="url">JS 事件</a>
+            <a href="/03/21-JS%E4%BA%8B%E4%BB%B6/" class="post-title-link" itemprop="url">JS 事件</a>
         </h2>
 
         <div class="post-meta">
@@ -1297,7 +2034,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/20-DOM%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1311,7 +2048,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">DOM 对象</a>
+            <a href="/03/20-DOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">DOM 对象</a>
         </h2>
 
         <div class="post-meta">
@@ -1328,7 +2065,7 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 10:13:26" itemprop="dateModified" datetime="2020-08-29T10:13:26+08:00">2020-08-29</time>
+                <time title="修改时间：2020-08-31 20:55:12" itemprop="dateModified" datetime="2020-08-31T20:55:12+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1369,7 +2106,11 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
 <li><a href="#name-shu-xing-zhi-jie-fang-wen-fang-fa">name 属性直接访问方法</a></li>
 </ul>
 </li>
+</ul>
+<ul>
 <li><a href="#san-jie-dian-cao-zuo">三、节点操作</a>
+<ul>
+<li><a href="#1-chuang-jian-jie-dian">1、创建节点</a>
 <ul>
 <li><a href="#4-yuan-su-nei-rong-cao-zuo">4、元素内容操作</a></li>
 <li><a href="#5-shu-xing-jie-dian-cao-zuo">5、属性节点操作</a></li>
@@ -1385,13 +2126,15 @@ search <span class="token comment">/// 0717/12.location.html</span><span aria-hi
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <!-- tocstop -->
 </div>
 <h2><span id="pyi-shi-shi-me">一、是什么</span><a href="#pyi-shi-shi-me" class="header-anchor">#</a></h2>
 <p><strong>Browser Object Model</strong> 浏览器对象模型。关于客户端浏览器的管理。</p>
 <p><strong>Document Object Model</strong> 文档对象模型。是W3C制订的一套技术规范，用来描述JS脚本如何与HTML或XML文档进行交互的Web标准。加载HTML页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM将这种树型结构理解为由节点组成的DOM树。</p>
 <p>DOM规定了一系列标准接口（函数），允许开发人员通过标准方式访问文档结构、操作网页内容、控制样式和行为等。</p>
-<p><img src="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E5%AF%B9%E8%B1%A1/dom.jpg" alt="img"></p>
+<p><img src="/03/20-DOM%E5%AF%B9%E8%B1%A1/dom.jpg" alt="img"></p>
 <h3><span id="p1-dom-ban-ben">1、DOM 版本</span><a href="#p1-dom-ban-ben" class="header-anchor">#</a></h3>
 <p>DOM0和DOM2。</p>
 <h3><span id="p2-document-dui-xiang">2、document 对象</span><a href="#p2-document-dui-xiang" class="header-anchor">#</a></h3>
@@ -1594,9 +2337,10 @@ document<span class="token punctuation">.</span>head<span class="token operator"
 
 <span class="token comment">// (3)获取html元素</span>
 document<span class="token punctuation">.</span>documentElement<span class="token operator">==</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="psan-jie-dian-cao-zuo">三、节点操作</span><a href="#psan-jie-dian-cao-zuo" class="header-anchor">#</a></h2>
+<h1><span id="san-jie-dian-cao-zuo">三、节点操作</span><a href="#san-jie-dian-cao-zuo" class="header-anchor">#</a></h1>
 <p>节点关系都是只读的，DOM提供了一些操作节点的方法。</p>
-<h4><span id="pchuang-jian-jie-dian-createelement">创建节点 createElement()</span><a href="#pchuang-jian-jie-dian-createelement" class="header-anchor">#</a></h4>
+<h2><span id="p1-chuang-jian-jie-dian">1、创建节点</span><a href="#p1-chuang-jian-jie-dian" class="header-anchor">#</a></h2>
+<p>（1）<code>createElement</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span>
 <span class="token comment">/*
 	参数：标签名字
@@ -1604,7 +2348,7 @@ document<span class="token punctuation">.</span>documentElement<span class="toke
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>使用document对象的createElement方法能够根据参数指定的标签名创建一个新的元素。并返回对新元素的引用。</p>
 <p>使用creatElement方法创建的新元素不会被自动添加到文档里，需要使用appendChild等方法。</p>
-<h4><span id="pchuang-jian-wen-ben-jie-dian-createtextnode">创建文本节点 createTextNode()</span><a href="#pchuang-jian-wen-ben-jie-dian-createtextnode" class="header-anchor">#</a></h4>
+<p>（2）创建文本节点 <code>createTextNode</code></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span>
 <span class="token comment">//                    参数是字符串</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>使用document对象的createTextNode方法可创建文本节点。创建的文本节点需要使用appendChild等方法才能插入到元素节点中，当然也可以使用 <strong>innerHTML</strong> 方法给元素节点添加内容。</p>
@@ -1650,7 +2394,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>innerHTML</code> 和 <code>innerText</code>  前者可以解析并输出标签，后者是纯文本。</p>
 <p><code>innerHTML</code> 和 <code>outerHTML</code>  前者不包括自身，后者包括自身。</p>
-<p><img src="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/DOM%E5%AF%B9%E8%B1%A1/1219486-20170817160212381-718115701.gif" alt="img"></p>
+<p><img src="/03/20-DOM%E5%AF%B9%E8%B1%A1/1219486-20170817160212381-718115701.gif" alt="img"></p>
 <p>（2）设置标签（直接覆盖原来的内容）</p>
 <p>innerText 和 outerText 在获取的时候是相同效果，但在设置时，innerText仅设置标签所包含的文本，而 outerText 设置包含包括标签<strong>自身在内</strong>的文本。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">oTest<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"这是内容"</span>
@@ -1896,7 +2640,7 @@ document<span class="token punctuation">.</span><span class="token function">get
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1909,7 +2653,7 @@ document<span class="token punctuation">.</span><span class="token function">get
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

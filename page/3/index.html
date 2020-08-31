@@ -185,7 +185,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/04/06-HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -199,7 +199,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="post-title-link" itemprop="url">版本控制工具</a>
+            <a href="/04/06-HTTP/" class="post-title-link" itemprop="url">HTTP</a>
         </h2>
 
         <div class="post-meta">
@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-30 21:52:26" itemprop="dateModified" datetime="2020-08-30T21:52:26+08:00">2020-08-30</time>
+                <time title="修改时间：2020-08-29 11:03:16" itemprop="dateModified" datetime="2020-08-29T11:03:16+08:00">2020-08-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,165 +244,317 @@
 <div class="toc">
 <!-- toc -->
 <ul>
-<li><a href="#yi-git">一、Git</a>
+<li><a href="#yi-tcp">一、TCP</a></li>
+<li><a href="#er-http">二、HTTP △</a>
 <ul>
-<li><a href="#1-an-zhuang-he-pei-zhi">1、安装和配置</a></li>
-<li><a href="#2-ban-ben-ku">2、版本库</a></li>
-<li><a href="#3-chang-yong-cao-zuo-ming-ling">3、常用操作命令</a></li>
-<li><a href="#4-gitgnore">4、.gitgnore</a></li>
+<li><a href="#1-xiang-ying-de-nei-rong">1、响应的内容</a></li>
+<li><a href="#2-bao-wen">2、报文</a></li>
+<li><a href="#3-qing-qiu-fang-shi">3、请求方式</a></li>
+<li><a href="#4-mime-lei-xing">4、MIME 类型</a></li>
+<li><a href="#5-xiang-ying-zhuang-tai-ma">5、响应状态码 △</a></li>
+<li><a href="#6-wang-luo-mo-xing">6、网络模型</a></li>
+<li><a href="#7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran">7、从输入URL到网页最终渲染 △</a></li>
 </ul>
 </li>
-<li><a href="#er-github">二、Github</a>
+<li><a href="#san-http-tls-https">三、HTTP + TLS = HTTPS</a>
 <ul>
-<li><a href="#1-chang-yong">1、常用</a></li>
-<li><a href="#2-pei-zhi-ssh-mian-mi-deng-lu">2、配置 SSH 免密登录</a></li>
+<li><a href="#1-liang-chong-jia-mi-fang-shi">1、两种加密方式</a></li>
+<li><a href="#2-tls-wo-shou">2、TLS 握手</a></li>
+</ul>
+</li>
+<li><a href="#si-udp">四、UDP</a></li>
+<li><a href="#wu-websocket">五、WebSocket</a>
+<ul>
+<li><a href="#1-gai-nian">1、概念</a></li>
+<li><a href="#2-ji-ben-shi-yong">2、基本使用</a></li>
+<li><a href="#3-xin-tiao-bao">3、心跳包</a></li>
+<li><a href="#4-socket-io">4、Socket.io</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
 </div>
-<h1><span id="yi-git">一、Git</span><a href="#yi-git" class="header-anchor">#</a></h1>
-<p><strong>Git</strong> 是一款开源免费的<strong>分布式</strong>的版本控制系统。相对来说，SVN 是集中式版本控制系统。</p>
-<p>Git 可以备份代码、版本回退、协作开发、权限控制。</p>
-<h2><span id="p1-an-zhuang-he-pei-zhi">1、安装和配置</span><a href="#p1-an-zhuang-he-pei-zhi" class="header-anchor">#</a></h2>
-<p>（1）<a target="_blank" rel="noopener" href="https://git-scm.com/">下载</a>并安装 Git</p>
-<p>（2）打开命令行工具检查是否安装成功</p>
-<p>（3）配置用户名和邮箱</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config -global user.name <span class="token string">"xxx"</span>
-<span class="token function">git</span> config -global user.email <span class="token string">"xxx"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（4）配置完成后查看</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（5）<strong>新建仓库</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="p2-ban-ben-ku">2、版本库</span><a href="#p2-ban-ben-ku" class="header-anchor">#</a></h2>
-<p>版本库分为三个区域</p>
+<h1><span id="yi-tcp">一、TCP</span><a href="#yi-tcp" class="header-anchor">#</a></h1>
+<p>待更新。</p>
+<h1><span id="er-http">二、HTTP  △</span><a href="#er-http" class="header-anchor">#</a></h1>
+<p><code>Hyper Text Transfer Protocol</code> 超文本传输协议（通信协议规范）</p>
+<p>客户端和服务器端通信传输的内容称为<strong>报文</strong>。</p>
+<p><code>请求报文 </code> <code>响应报文</code></p>
+<p><code>request</code> 请求</p>
+<p><code>response</code> 响应</p>
+<p><code>HTTP</code> + <code>SSL</code> = <code>HTTPS</code></p>
+<h2><span id="p1-xiang-ying-de-nei-rong">1、响应的内容</span><a href="#p1-xiang-ying-de-nei-rong" class="header-anchor">#</a></h2>
+<p><code>Headers</code> 报文的头部</p>
 <ul>
-<li>工作区</li>
-<li>暂存区 <code>staged</code></li>
-<li>仓库区</li>
+<li>General 通用头部</li>
+<li>Response Headers 响应头部</li>
+<li>Request Headers 请求头部</li>
 </ul>
-<h2><span id="p3-chang-yong-cao-zuo-ming-ling">3、常用操作命令</span><a href="#p3-chang-yong-cao-zuo-ming-ling" class="header-anchor">#</a></h2>
-<p>（1）查看当前状态</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> status<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>Preview</code> 预览响应的数据</p>
+<p><code>Response</code> 响应的具体数据</p>
+<p><code>Initiator</code> 初始化内容</p>
+<p><code>Timing</code> 时间</p>
+<p><code>Cookies</code> 携带的cookie</p>
+<h2><span id="p2-bao-wen">2、报文</span><a href="#p2-bao-wen" class="header-anchor">#</a></h2>
+<p>HTTP应用程序之间发送的<strong>数据块</strong>。在客户端、服务器、代理之间流动。分为<strong>请求报文</strong>和<strong>响应报文</strong>。</p>
+<h4><span id="pget-qing-qiu-bao-wen">GET 请求报文</span><a href="#pget-qing-qiu-bao-wen" class="header-anchor">#</a></h4>
+<p>请求报文首行</p>
+<p><code>请求方式</code> <code>请求地址</code> <code>请求参数(查询字符串)</code> <code>协议版本</code></p>
 <ul>
-<li><code>nothing to commit, working tree clean</code> 工作区和仓库一样，暂存区空</li>
-<li><code>untracked files</code> 工作区未跟踪的文件</li>
-<li><code>changes to be commited</code> 暂存区文件</li>
-<li><code>no staged for commit</code> 以下文件还没添加到暂存区</li>
+<li>请求方式 <code>GET</code></li>
+<li>协议版本 <code>HTTP/1.1</code> 兼容性 <code>HTTP/2</code> 最新</li>
 </ul>
-<p>（2）将文件加入暂存区</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> 文件名
-
-<span class="token comment"># 添加所有修改的文件到暂存区</span>
-<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span> 
-<span class="token function">git</span> <span class="token function">add</span> *<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>（3）提交暂存区的文件到仓库</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> commit -m <span class="token string">'注释内容'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>注释不能为空</p>
-<p>注释规范</p>
+<p>请求报文头部</p>
 <ul>
-<li>feat 新增功能</li>
-<li>fix 修复bug</li>
-<li>cors 对核心功能进行修改</li>
-<li>docs 修改文档</li>
+<li>请求的主机地址 <code>Host</code></li>
+<li>连接方式 <code>Connection</code> 保持长连接 <code>keep-alive</code></li>
+<li><code>Upgrade-Insecure-Requests</code> 允许使用https访问</li>
+<li><code>User-Agent</code> 用户代理（浏览器信息）</li>
+<li><code>Accept</code> 可以接收的类型</li>
+<li><code>Sec-Fetch-Size</code> <code>-Mode</code> <code>-User</code> <code>-Dest</code></li>
+<li><code>Accept-Encoding</code> 客户端可以接受的压缩格式</li>
+<li><code>Accept-Language</code> 可以支持的语言</li>
 </ul>
-<p>（4）查看工作区和暂存区的差异</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看工作区和暂存区的修改</span>
-<span class="token comment"># 不会显示删除或者新增文件</span>
-<span class="token function">git</span> <span class="token function">diff</span>
-
-<span class="token comment"># 查看暂存区和仓库区的差异</span>
-<span class="token function">git</span> <span class="token function">diff</span> -cached<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>（5）恢复改动</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 恢复工作区改动的内容</span>
-<span class="token function">git</span> restore
-
-<span class="token comment"># 取消暂存区的文件</span>
-<span class="token function">git</span> restore --staged 文件名
-
-<span class="token comment"># 回退版本</span>
-<span class="token function">git</span> reset --hard <span class="token operator">&lt;</span>七位哈希<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>（6）查看日志</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看历史版本</span>
-<span class="token function">git</span> log
-
-<span class="token comment"># 查看简易历史版本</span>
-<span class="token function">git</span> log --oneline
-
-<span class="token comment"># 查看所有日志信息</span>
-<span class="token function">git</span> reflog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>（7）分支</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建分支</span>
-<span class="token function">git</span> branch 分支名
-
-<span class="token comment"># 查看分支</span>
-<span class="token function">git</span> branch
-
-<span class="token comment"># 切换分支</span>
-<span class="token function">git</span> checkout 分支名
-
-<span class="token comment"># 删除分支</span>
-<span class="token function">git</span> branch -d 分支名
-
-<span class="token comment"># 切换并创建分支</span>
-<span class="token function">git</span> checkout -b 分支名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>（8）冲突和合并</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 冲突 CONFLICT</span>
-<span class="token comment"># 合并分支</span>
-<span class="token function">git</span> merge 分支名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p4-gitgnore">4、.gitgnore</span><a href="#p4-gitgnore" class="header-anchor">#</a></h2>
-<p>配置忽略文件。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 忽略所有的 .idea 文件</span>
-.idea
-
-<span class="token comment"># 忽略所有以 .test 结尾的文件</span>
-*.test
-
-<span class="token comment"># 忽略 node_modules 文件和文件夹</span>
-/node_modules<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="er-github">二、Github</span><a href="#er-github" class="header-anchor">#</a></h1>
-<p>这边以远程仓库<code>Github</code>为例。</p>
-<p><code>fork</code> 拷贝别人代码到自己仓库</p>
-<h2><span id="p1-chang-yong">1、常用</span><a href="#p1-chang-yong" class="header-anchor">#</a></h2>
+<p>请求报文空行 一个回车或者空格</p>
+<p>请求报文体</p>
+<h4><span id="pget-xiang-ying-bao-wen">GET 响应报文</span><a href="#pget-xiang-ying-bao-wen" class="header-anchor">#</a></h4>
+<p>响应报文首行</p>
+<p><code>协议版本</code> <code>状态码</code></p>
+<p>响应报文头部</p>
 <ul>
-<li>新建本地仓库</li>
-<li>创建github仓库 <code>oringin</code></li>
-<li>关联 <code>git remote add origin 远程仓库地址</code></li>
-<li><code>git push -u origin</code> 推送到云端仓库
+<li><code>Context-Type</code> 响应数据类型</li>
+<li><code>Date</code> 响应的时间</li>
+<li><code>Connection</code> 连接方式</li>
+<li><code>Content-Length</code> 响应的字节长度</li>
+</ul>
+<p>响应报文空行</p>
+<p>响应报文体</p>
+<h4><span id="ppost-qing-qiu-bao-wen">POST 请求报文</span><a href="#ppost-qing-qiu-bao-wen" class="header-anchor">#</a></h4>
+<p>请求内容在报文体里</p>
+<h4><span id="ppost-xiang-ying-bao-wen">POST 响应报文</span><a href="#ppost-xiang-ying-bao-wen" class="header-anchor">#</a></h4>
+<h2><span id="p3-qing-qiu-fang-shi">3、请求方式</span><a href="#p3-qing-qiu-fang-shi" class="header-anchor">#</a></h2>
+<p><code>GET</code> 查 用于请求指定的页面信息，并返回实体</p>
+<p><code>POST</code> 增 向指定资源提交数据，进行处理 一般用于登陆注册</p>
+<p><code>PUT</code> 改 更改服务器数据</p>
+<p><code>DELETE</code> 删</p>
+<p><code>OPTIONS</code> 跨域请求</p>
+<h2><span id="p4-mime-lei-xing">4、MIME 类型</span><a href="#p4-mime-lei-xing" class="header-anchor">#</a></h2>
 <ul>
-<li>`git push origin dev</li>
+<li>text/plain 纯文本类型</li>
+<li>text/html</li>
+<li>text/css</li>
+<li>application/javascript</li>
 </ul>
-</li>
-<li><code>git pull</code> 下载到本地仓库</li>
-<li><code>git clone 远程仓库地址</code> 克隆远程仓库到本地</li>
-<li><code>git fetch origin </code></li>
-</ul>
-<p><code>git fetch</code>是将远程主机的最新内容拉到本地，用户在检查了以后决定是否合并到工作本机分支中。</p>
-<p>而<code>git pull</code> 则是将远程主机的最新内容拉下来后直接合并，即：<code>git pull = git fetch + git merge</code>，这样可能会产生冲突，需要手动解决。</p>
-<h2><span id="p2-pei-zhi-ssh-mian-mi-deng-lu">2、配置 SSH 免密登录</span><a href="#p2-pei-zhi-ssh-mian-mi-deng-lu" class="header-anchor">#</a></h2>
-<ol>
-<li>
-<p>创建非对称加密对</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen //在任意位置输入命令即可<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>文件默认存储在家目录（c:/用户/用户名/.ssh）的 .ssh 文件夹中。</p>
+<h2><span id="p5-xiang-ying-zhuang-tai-ma">5、响应状态码 △</span><a href="#p5-xiang-ying-zhuang-tai-ma" class="header-anchor">#</a></h2>
+<p>1xx 信息响应</p>
 <ul>
-<li>id_rsa 私钥</li>
-<li>id_rsa.pub 公钥</li>
+<li>100 请求继续</li>
+<li>101 正在切换协议</li>
 </ul>
-</li>
-<li>
-<p>将公钥（.pub）文件内容配置到账号的秘钥中</p>
+<p>2xx 请求成功</p>
 <ul>
-<li>首页 -&gt; 右上角头像-&gt; settings -&gt; SSH and GPG keys -&gt; new SSH Key</li>
+<li>200 请求成功</li>
+<li>204 请求成功 页面主体不发生修改 put delete 一般返回</li>
 </ul>
-</li>
-<li>
-<p>克隆代码时，选择 ssh 模式进行克隆 （地址 在仓库首页 绿色 克隆的位置 选择 use ssh）</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> clone git@github.com/xiaohigh/team-repo-1.git <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-</ol>
+<p>3xx 重定向</p>
+<ul>
+<li>301 永久重定向</li>
+<li>302 临时重定向</li>
+<li>304 读取缓存（协商缓存）</li>
+</ul>
+<p>4xx 客户端错误</p>
+<ul>
+<li>400 响应报文有问题需要修改</li>
+<li>403 服务器拒绝访问</li>
+<li>404 服务器找不到请求的资源，服务端不想响应</li>
+</ul>
+<p>5xx 服务端错误</p>
+<ul>
+<li>500 服务器执行请求发生错误</li>
+<li>503 服务器超负荷或者停机维护中 无法请求处理</li>
+</ul>
+<h2><span id="p6-wang-luo-mo-xing">6、网络模型</span><a href="#p6-wang-luo-mo-xing" class="header-anchor">#</a></h2>
+<p>HTTP - TCP - IP - 以太网</p>
+<p><img src="/source/images/HTTP/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg" alt="网络模型"></p>
+<h2><span id="p7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran">7、从输入URL到网页最终渲染 △</span><a href="#p7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran" class="header-anchor">#</a></h2>
+<p>（1）DNS解析</p>
+<ul>
+<li>输入的是域名，解析成IP地址</li>
+<li>四个缓存（浏览器DNS缓存，计算机DNS缓存，路由器DNS缓存，网络运营商DNS缓存），一个递归查询</li>
+</ul>
+<p>（2）TCP连接（三次握手）</p>
+<ul>
+<li>浏览器 我准备好了</li>
+<li>服务器 我收到了</li>
+<li>浏览器 我收到确认信息了，准备发</li>
+<li><strong>确认客户端、服务端双方都有正常的收发能力</strong>（为什么要三次握手呢？）</li>
+<li>保持长连接说的就是这里。</li>
+</ul>
+<p>（3）发送请求 客户端发请求给服务器</p>
+<p>（4）返回响应 服务器返回响应</p>
+<p>（5）渲染页面</p>
+<ul>
+<li>构建DOM树（html - DOM树）</li>
+<li>样式计算（样式树）</li>
+<li>布局</li>
+<li>分层</li>
+<li>图层绘制</li>
+<li>栅格化</li>
+<li>合成和显示</li>
+</ul>
+<p>（6）断开连接（四次挥手）</p>
+<ul>
+<li>客户端 我请求完了</li>
+<li>服务器 我收到了</li>
+<li>服务器 我响应完了</li>
+<li>客户端 我收到了</li>
+</ul>
+<h1><span id="san-http-tls-https">三、HTTP + TLS = HTTPS</span><a href="#san-http-tls-https" class="header-anchor">#</a></h1>
+<p>HTTPS 还是通过了 HTTP 来传输信息，但是信息通过 TLS 协议进行了加密。TLS 协议位于传输层之上，应用层之下。首次进行 TLS 协议传输需要两个 RTT ，接下来可以通过 Session Resumption 减少到一个 RTT。</p>
+<p>在 TLS 中使用了两种加密技术，分别为<strong>对称加密</strong>和<strong>非对称加密</strong>。</p>
+<h2><span id="p1-liang-chong-jia-mi-fang-shi">1、两种加密方式</span><a href="#p1-liang-chong-jia-mi-fang-shi" class="header-anchor">#</a></h2>
+<p><strong>对称加密</strong></p>
+<p>对称加密就是两边拥有相同的秘钥，两边都知道如何将密文加密解密。</p>
+<p>这种加密方式固然很好，但是问题就在于如何让双方知道秘钥。因为传输数据都是走的网络，如果将秘钥通过网络的方式传递的话，一旦秘钥被截获就没有加密的意义的。</p>
+<p><strong>非对称加密</strong></p>
+<p>有公钥私钥之分，公钥所有人都可以知道，可以将数据用公钥加密，但是将数据解密必须使用私钥解密，私钥只有分发公钥的一方才知道。</p>
+<p>这种加密方式就可以完美解决对称加密存在的问题。假设现在两端需要使用对称加密，那么在这之前，可以先使用非对称加密交换秘钥。</p>
+<p>简单流程如下：首先服务端将公钥公布出去，那么客户端也就知道公钥了。接下来客户端创建一个秘钥，然后通过公钥加密并发送给服务端，服务端接收到密文以后通过私钥解密出正确的秘钥，这时候两端就都知道秘钥是什么了。</p>
+<h2><span id="p2-tls-wo-shou">2、TLS 握手</span><a href="#p2-tls-wo-shou" class="header-anchor">#</a></h2>
+<p><img src="/source/images/HTTP/TLS%E6%8F%A1%E6%89%8B.jpg" alt="TLS握手"></p>
+<p>客户端发送一个随机值以及需要的协议和加密方式。</p>
+<p>服务端收到客户端的随机值，自己也产生一个随机值，并根据客户端需求的协议和加密方式来使用对应的方式，并且发送自己的证书（如果需要验证客户端证书需要说明）</p>
+<p>客户端收到服务端的证书并验证是否有效，验证通过会再生成一个随机值，通过服务端证书的公钥去加密这个随机值并发送给服务端，如果服务端需要验证客户端证书的话会附带证书</p>
+<p>服务端收到加密过的随机值并使用私钥解密获得第三个随机值，这时候两端都拥有了三个随机值，可以通过这三个随机值按照之前约定的加密方式生成密钥，接下来的通信就可以通过该密钥来加密解密</p>
+<p>通过以上步骤可知，在 TLS 握手阶段，两端使用非对称加密的方式来通信，但是因为非对称加密损耗的性能比对称加密大，所以在正式传输数据时，两端使用对称加密的方式通信。</p>
+<p>以上说明的都是 TLS 1.2 协议的握手情况，在 1.3 协议中，首次建立连接只需要一个 RTT，后面恢复连接不需要 RTT 了。</p>
+<h1><span id="si-udp">四、UDP</span><a href="#si-udp" class="header-anchor">#</a></h1>
+<p>待更新。</p>
+<h1><span id="wu-websocket">五、WebSocket</span><a href="#wu-websocket" class="header-anchor">#</a></h1>
+<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
+<ul>
+<li>它是一种网络通信协议，是 <code>HTML5</code> 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。</li>
+<li>因为 HTTP 协议有一个缺陷：通信只能由客户端发起</li>
+<li>我们都知道轮询的效率低，非常浪费资源（因为必须不停连接，或者 HTTP 连接始终打开）, 因此websocket应运而生。</li>
+<li>WebSocket用于在Web浏览器和服务器之间进行任意的双向数据传输的一种技术。WebSocket协议基于TCP协议实现，包含初始的握手过程，以及后续的多次数据帧双向传输过程。其目的是在WebSocket应用和WebSocket服务器进行频繁双向通信时，可以使服务器避免打开多个HTTP连接进行工作来节约资源，提高了工作效率和资源利用率。</li>
+<li>WebSocket目前支持两种统一资源标志符<code>ws</code>和<code>wss</code>，类似于HTTP和HTTPS</li>
+<li>浏览器发出webSocket的连线请求，服务器发出响应，这个过程称为<code>握手</code>,握手的过程只需要一次，就可以实现持久连接。</li>
+</ul>
+<h2><span id="p2-ji-ben-shi-yong">2、基本使用</span><a href="#p2-ji-ben-shi-yong" class="header-anchor">#</a></h2>
+<p>WS 表示一个WebSocket对象。</p>
+<p><code>WS.readyState</code> 检查连接状态</p>
+<ul>
+<li>0 未连接</li>
+<li><code>WS.OPEN</code> 连接已建立</li>
+<li>2 连接正在关闭</li>
+<li>3 连接已经关闭</li>
+</ul>
+<h2><span id="p3-xin-tiao-bao">3、心跳包</span><a href="#p3-xin-tiao-bao" class="header-anchor">#</a></h2>
+<p>待补充。</p>
+<h2><span id="p4-socket-io">4、</span><a href="#p4-socket-io" class="header-anchor">#</a></h2>
+<p>Socket.io是一个NodeJS <code>webSocket</code>库，目标是构建不同浏览器和移动设备上使用的实时应用。它会自动根据浏览器从<code>webSocket</code> <code>ajax长轮询</code> <code>ifrane流</code>等各种方式选择最佳的方式。</p>
+<p>聊天室的实现</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//服务端</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"fs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建http server</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>url <span class="token operator">===</span> <span class="token string">"/socket.io.js"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> filePath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./public/socket.io.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> rs <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span> <span class="token string">"application/javascript;charset=utf8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    rs<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 响应页面</span>
+  <span class="token keyword">const</span> filePath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./public/chat.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> rs <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span> <span class="token string">"text/html;charset=utf8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  rs<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建WebSocket服务</span>
+<span class="token keyword">const</span> io <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"socket.io"</span><span class="token punctuation">)</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// io可以代表所有客户端连接对象</span>
+io<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"connect"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">socket</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// socket代表当前连接上服务的客户端对象</span>
+  socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"client_to_server"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 除它以外，通知其他客户端</span>
+    socket<span class="token punctuation">.</span>broadcast<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"server_to_client"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 启动服务</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token string">'localhost'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//客户端</span>
+<span class="token keyword">const</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".chat-btn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> content <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"textarea"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#chat-name>input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> chatContent <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".chat-content"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 客户端连接上服务端</span>
+<span class="token keyword">const</span> socket <span class="token operator">=</span> <span class="token function">io</span><span class="token punctuation">(</span><span class="token string">"ws://192.168.10.2:3000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// socket代表当前连接客户端对象</span>
+
+btn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 获取当前用户名</span>
+    <span class="token keyword">const</span> username <span class="token operator">=</span> input<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>username<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"请输入用户名！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 获取用户输入的消息</span>
+    <span class="token keyword">const</span> msg <span class="token operator">=</span> content<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>msg<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"请输入聊天内容！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">const</span> time <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 客户端向服务端发送消息</span>
+    socket<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"client_to_server"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+        username<span class="token punctuation">,</span>
+        msg<span class="token punctuation">,</span>
+        time<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 显示在你的聊天内容</span>
+    <span class="token keyword">const</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div class="title right-title"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>username<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">  
+        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">
+        &lt;/div>
+        &lt;div class="right-content"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>msg<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;/div></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+    chatContent<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>div<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 聊天内容清空</span>
+    content<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+socket<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"server_to_client"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> username<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> time <span class="token punctuation">&#125;</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
+
+    <span class="token comment">// 显示别人的聊天内容</span>
+    <span class="token keyword">const</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    div<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+        &lt;div class="title left-title"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>username<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">  
+        </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">
+        &lt;/div>
+        &lt;div class="left-content"></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>msg<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">&lt;/div></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+
+    chatContent<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>div<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
     </div>
@@ -422,7 +574,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/NodeJS%E5%BC%80%E5%A7%8B/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/04/03-NodeJS%E5%BC%80%E5%A7%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -436,7 +588,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/NodeJS%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">NodeJS开始</a>
+            <a href="/04/03-NodeJS%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">NodeJS开始</a>
         </h2>
 
         <div class="post-meta">
@@ -534,7 +686,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E6%94%B6%E9%9B%86%E7%AE%B1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E6%94%B6%E9%9B%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -548,7 +700,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E6%94%B6%E9%9B%86%E7%AE%B1/" class="post-title-link" itemprop="url">收集箱</a>
+            <a href="/%E6%94%B6%E9%9B%86/" class="post-title-link" itemprop="url">收集箱</a>
         </h2>
 
         <div class="post-meta">
@@ -565,7 +717,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 10:47:08" itemprop="dateModified" datetime="2020-08-31T10:47:08+08:00">2020-08-31</time>
+                <time title="修改时间：2020-08-31 21:25:13" itemprop="dateModified" datetime="2020-08-31T21:25:13+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -593,11 +745,6 @@
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function-variable function">onselectstart</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
       <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2><span id="pzai-node-zhong-yi-ge-mo-kuai-xiang-fang-wen-ling-yi-ge-mo-kuai-zhong-de-bian-liang">在node中一个模块想访问另一个模块中的变量</span><a href="#pzai-node-zhong-yi-ge-mo-kuai-xiang-fang-wen-ling-yi-ge-mo-kuai-zhong-de-bian-liang" class="header-anchor">#</a></h2>
-<blockquote>
-<p>第一种方式是作为global对象的参数。<code>global.a = a;</code> 不推荐</p>
-<p>第二种方式用模块的module.exports来用储存变量。</p>
-</blockquote>
 <h2><span id="pconsole-dui-xiang-fang-fa">Console 对象方法</span><a href="#pconsole-dui-xiang-fang-fa" class="header-anchor">#</a></h2>
 <table>
 <thead>
@@ -661,10 +808,6 @@
 </tr>
 </tbody>
 </table>
-<h3><span id="p1-css-sprites">1、CSS Sprites</span><a href="#p1-css-sprites" class="header-anchor">#</a></h3>
-<p><strong>CSS Sprites</strong> 精灵图，是网页图片的常用处理方式。允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对于当前的网络来说，小于200k的文件加载速度是一样的。通过 <strong>background-position</strong> 属性，将图片定位到需要的位置即可。</p>
-<p>优点：①减少图片大小 ②减少服务器请求次数</p>
-<p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a></p>
 <h3><span id="p2-css-hack">2、CSS hack</span><a href="#p2-css-hack" class="header-anchor">#</a></h3>
 <p>CSS hack是什么</p>
 <p>由于不同的厂商的浏览器，或者是同一个浏览器不同的版本（IE），对css的解析和认识不完全一样,可能会导致不同浏览器显示的效果不相同,那么我们需要针对某个浏览器，去写不同的样式，让代码能够兼容所有的浏览器。</p>
@@ -681,11 +824,6 @@
 使用+ - * /进行运算<br>
 可以使用百分比 px em rem等单位，可以单位混合计算<br>
 在使用的时候，尽量在 + - * / 前后添加一个空格</p>
-<p>面试的时候不要扭扭捏捏，你是过去交流的这种姿态。</p>
-<p>面试的时候能回答一半就不错了。</p>
-<p>对面试官的尊重。</p>
-<p>看着人家的额头，也不能一直看着。</p>
-<p>面试和上班是两回事。</p>
 
       
     </div>
@@ -705,7 +843,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E8%AF%8D%E6%B1%87%E6%9C%AC/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/05/%E8%AF%8D%E6%B1%87%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -719,7 +857,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E8%AF%8D%E6%B1%87%E6%9C%AC/" class="post-title-link" itemprop="url">词汇本</a>
+            <a href="/05/%E8%AF%8D%E6%B1%87%E6%9C%AC/" class="post-title-link" itemprop="url">词汇本</a>
         </h2>
 
         <div class="post-meta">
@@ -815,7 +953,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/jQuery/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/23-jQuery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -829,7 +967,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/jQuery/" class="post-title-link" itemprop="url">jQuery</a>
+            <a href="/03/23-jQuery/" class="post-title-link" itemprop="url">jQuery</a>
         </h2>
 
         <div class="post-meta">
@@ -846,7 +984,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 10:12:02" itemprop="dateModified" datetime="2020-08-29T10:12:02+08:00">2020-08-29</time>
+                <time title="修改时间：2020-08-31 21:22:56" itemprop="dateModified" datetime="2020-08-31T21:22:56+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -878,8 +1016,8 @@
 <ul>
 <li><a href="#1-yin-ru-ku">1、引入库</a></li>
 <li><a href="#2-dai-ma-feng-ge">2、代码风格</a></li>
-<li><a href="#3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象 与 JS 对象</a></li>
-<li><a href="#4-zhi-xing-shi-ji">4、执行时机</a></li>
+<li><a href="#3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery对象 与 JS对象</a></li>
+<li><a href="#4-zhi-xing-shi-ji">4、执行时机 △</a></li>
 </ul>
 </li>
 <li><a href="#er-chang-gui-cao-zuo">二、常规操作</a>
@@ -924,7 +1062,6 @@
 <p>（1）本地</p>
 <p>（2）CDN 引入</p>
 <p>CDN，Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户<strong>就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率</strong>。</p>
-<p><a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a>:</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>（3）版本</p>
 <p>版本格式 大版本.小版本.bugfix</p>
@@ -947,7 +1084,7 @@
 <p>（2）链式调用</p>
 <p>jQuery的<strong>每个方法返回的都是jQuery对象</strong>，所以可以链式调用。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">"#box"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"color"</span><span class="token punctuation">,</span><span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">css</span><span class="token punctuation">(</span><span class="token string">"font-size"</span><span class="token punctuation">,</span><span class="token string">"40px"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="p3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象 与 JS 对象</span><a href="#p3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h2>
+<h2><span id="p3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery对象 与 JS对象</span><a href="#p3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h2>
 <p><strong>JS对象</strong> 即DOM对象，即是我们用传统的方法获得的对象。</p>
 <p><strong>jQuery对象</strong> 即是用jQuery类库的选择器获得的类数组对象，就是通过jQuery包装DOM对象后产生的对象，它是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法。</p>
 <p>对象的转换</p>
@@ -957,7 +1094,7 @@
 
 <span class="token comment">// DOM对象 转 jQuery 对象</span>
 <span class="token function">$</span><span class="token punctuation">(</span><span class="token constant">BOM</span>对象<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p4-zhi-xing-shi-ji">4、执行时机</span><a href="#p4-zhi-xing-shi-ji" class="header-anchor">#</a></h2>
+<h2><span id="p4-zhi-xing-shi-ji">4、执行时机 △</span><a href="#p4-zhi-xing-shi-ji" class="header-anchor">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -1334,7 +1471,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/11-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1348,7 +1485,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">响应式布局</a>
+            <a href="/03/11-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" class="post-title-link" itemprop="url">响应式布局</a>
         </h2>
 
         <div class="post-meta">
@@ -1365,7 +1502,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 10:05:07" itemprop="dateModified" datetime="2020-08-29T10:05:07+08:00">2020-08-29</time>
+                <time title="修改时间：2020-08-31 19:37:24" itemprop="dateModified" datetime="2020-08-31T19:37:24+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1406,7 +1543,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
 <li><a href="#2-she-bei-te-zheng">2、设备特征</a></li>
 <li><a href="#3-luo-ji-tiao-jian">3、逻辑条件</a></li>
 <li><a href="#4-she-zhi-duan-dian">4、设置断点</a></li>
-<li><a href="#5-css3-mei-ti-cha-xun-media">5、CSS3 媒体查询 <code>@media</code></a></li>
+<li><a href="#5-css3-mei-ti-cha-xun">5、CSS3 媒体查询</a></li>
 </ul>
 </li>
 <li><a href="#san-yi-dong-duan-gua-pei">三、移动端适配</a></li>
@@ -1422,7 +1559,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
 <!-- tocstop -->
 </div>
 <h1><span id="yi-xiang-ying-shi-bu-ju">一、响应式布局</span><a href="#yi-xiang-ying-shi-bu-ju" class="header-anchor">#</a></h1>
-<p>响应式布局是在2010年提出的一个概念，简而言之，<strong>就是一个网站能够兼容多个终端，而不是为每个终端做一个特定的版本</strong>。用户会使用不同的终端，由于屏幕分辨率不同，想要用户体验更好，就有必要让你的网页兼容多个终端。响应式布局设计（HTML + CSS1 + CSS2 + CSS3）可以让一个网站适配多种设备和多个屏幕，可以让网站的布局和功能随用户的使用环境（屏幕大小，输入方式，设备/浏览器能力）而变化。</p>
+<p>响应式布局是在2010年提出的一个概念，简而言之，<strong>就是一个网站能够兼容多个终端，而不是为每个终端做一个特定的版本</strong>。用户会使用不同的终端，由于屏幕分辨率不同，想要用户体验更好，就有必要让你的网页兼容多个终端。响应式布局设计可以让一个网站适配多种设备和多个屏幕，可以让网站的布局和功能随用户的使用环境（屏幕大小，输入方式，设备/浏览器能力）而变化。</p>
 <h3><span id="p1-san-ge-te-zheng">1、三个特征</span><a href="#p1-san-ge-te-zheng" class="header-anchor">#</a></h3>
 <ul>
 <li>
@@ -1452,7 +1589,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
 <p><code>orientation</code> 横屏竖屏判断</p>
 <p><code>resolution</code> 分辨率</p>
 <p><code>devicePixelRatio</code> 像素比</p>
-<p>==！== 检测横屏、竖屏</p>
+<p>检测横屏、竖屏</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: portrait)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: landscape)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3><span id="p3-luo-ji-tiao-jian">3、逻辑条件</span><a href="#p3-luo-ji-tiao-jian" class="header-anchor">#</a></h3>
@@ -1463,7 +1600,8 @@ $<span class="token punctuation">.</span><span class="token function">each</span
 <li><code>only</code></li>
 </ul>
 <h3><span id="p4-she-zhi-duan-dian">4、设置断点</span><a href="#p4-she-zhi-duan-dian" class="header-anchor">#</a></h3>
-<h3><span id="p5-css3-mei-ti-cha-xun-media">5、CSS3 媒体查询 <code>@media</code></span><a href="#p5-css3-mei-ti-cha-xun-media" class="header-anchor">#</a></h3>
+<h3><span id="p5-css3-mei-ti-cha-xun">5、CSS3 媒体查询</span><a href="#p5-css3-mei-ti-cha-xun" class="header-anchor">#</a></h3>
+<p><code>@media</code></p>
 <h1><span id="san-yi-dong-duan-gua-pei">三、移动端适配</span><a href="#san-yi-dong-duan-gua-pei" class="header-anchor">#</a></h1>
 <p>视口 viewport</p>
 <p>rem</p>
@@ -1510,7 +1648,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%B8%B8%E7%94%A8API/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/18-JS%E6%89%A9%E5%B1%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1524,7 +1662,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%B8%B8%E7%94%A8API/" class="post-title-link" itemprop="url">JS 常用API</a>
+            <a href="/03/18-JS%E6%89%A9%E5%B1%95/" class="post-title-link" itemprop="url">JS 常用API</a>
         </h2>
 
         <div class="post-meta">
@@ -1541,7 +1679,7 @@ $<span class="token punctuation">.</span><span class="token function">each</span
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 11:14:02" itemprop="dateModified" datetime="2020-08-31T11:14:02+08:00">2020-08-31</time>
+                <time title="修改时间：2020-08-31 21:06:32" itemprop="dateModified" datetime="2020-08-31T21:06:32+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1576,6 +1714,9 @@ $<span class="token punctuation">.</span><span class="token function">each</span
 <li><a href="#object-freeze">Object.freeze()</a></li>
 </ul>
 </li>
+<li><a href="#er-ke-li-hua">二、柯里化</a></li>
+<li><a href="#san-proxy-he-reflect">三、Proxy和Reflect</a></li>
+<li><a href="#si-eval">四、Eval</a></li>
 </ul>
 <!-- tocstop -->
 </div>
@@ -1616,6 +1757,12 @@ Object<span class="token punctuation">.</span><span class="token function">keys<
 obj<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2><span id="pobject-freeze"></span><a href="#pobject-freeze" class="header-anchor">#</a></h2>
 <p><strong><code>Object.freeze()</code></strong> 方法可以<strong>冻结</strong>一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。<code>freeze()</code> 返回和传入的参数相同的对象。</p>
+<h1><span id="er-ke-li-hua">二、柯里化</span><a href="#er-ke-li-hua" class="header-anchor">#</a></h1>
+<p><strong>柯里化</strong>（Currying），是一种函数的转换，它是指将一个函数从可调用的 <code>f(a, b, c)</code> 转换为可调用的 <code>f(a)(b)(c)</code>。柯里化不会调用函数。它只是对函数进行转换。</p>
+<h1><span id="san-proxy-he-reflect">三、Proxy和Reflect</span><a href="#san-proxy-he-reflect" class="header-anchor">#</a></h1>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/proxy">参考</a></p>
+<h1><span id="si-eval">四、Eval</span><a href="#si-eval" class="header-anchor">#</a></h1>
+<p>执行代码字符串。</p>
 
       
     </div>
@@ -1635,7 +1782,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/17-JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1649,7 +1796,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS 内置对象</a>
+            <a href="/03/17-JS%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS 内置对象</a>
         </h2>
 
         <div class="post-meta">
@@ -1666,7 +1813,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 08:33:38" itemprop="dateModified" datetime="2020-08-31T08:33:38+08:00">2020-08-31</time>
+                <time title="修改时间：2020-08-31 21:07:13" itemprop="dateModified" datetime="2020-08-31T21:07:13+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1697,7 +1844,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
 <li><a href="#yi-json">一、JSON</a>
 <ul>
 <li><a href="#1-zhi">1、值</a></li>
-<li><a href="#2-shu-ju-chu-li">2、数据处理</a>
+<li><a href="#2-fang-fa">2、方法</a>
 <ul>
 <li><a href="#1-json-stringify">（1）JSON.stringify()</a></li>
 <li><a href="#2-json-parse">（2）JSON.parse()</a></li>
@@ -1711,7 +1858,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
 <li><a href="#2-shi-jian-chuo">2、时间戳</a></li>
 <li><a href="#3-shi-jian-huo-qu">3、时间获取</a></li>
 <li><a href="#4-she-zhi-dan-du-de-shi-jian">4、设置单独的时间</a></li>
-<li><a href="#5-shi-li-dai-ma">5、示例代码</a></li>
+<li><a href="#5-shi-li">5、示例</a></li>
 </ul>
 </li>
 <li><a href="#san-math">三、Math</a>
@@ -1746,7 +1893,7 @@ obj<span class="token punctuation">.</span><span class="token function">hasOwnPr
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（3）数组 有序的集合、键值对。</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token string">"hi"</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="p2-shu-ju-chu-li">2、数据处理</span><a href="#p2-shu-ju-chu-li" class="header-anchor">#</a></h2>
+<h2><span id="p2-fang-fa">2、方法</span><a href="#p2-fang-fa" class="header-anchor">#</a></h2>
 <p>用于前后台发送数据。</p>
 <h3><span id="p-1-json-stringify">（1）JSON.stringify()</span><a href="#p-1-json-stringify" class="header-anchor">#</a></h3>
 <p>将JS值序列化为JSON字符串。</p>
@@ -1908,7 +2055,7 @@ Date<span class="token punctuation">.</span><span class="token function">now</sp
  threeDatLast<span class="token punctuation">.</span><span class="token function">setDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>threeDatLast<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p5-shi-li-dai-ma">5、示例代码</span><a href="#p5-shi-li-dai-ma" class="header-anchor">#</a></h2>
+<h2><span id="p5-shi-li">5、示例</span><a href="#p5-shi-li" class="header-anchor">#</a></h2>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取类似 2020-08-08 12:04:56 格式的字符串</span>
 <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">const</span> time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1984,7 +2131,7 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/16-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1998,7 +2145,7 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS 面向对象</a>
+            <a href="/03/16-JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">JS 面向对象</a>
         </h2>
 
         <div class="post-meta">
@@ -2015,7 +2162,7 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 15:19:10" itemprop="dateModified" datetime="2020-08-29T15:19:10+08:00">2020-08-29</time>
+                <time title="修改时间：2020-08-31 21:26:46" itemprop="dateModified" datetime="2020-08-31T21:26:46+08:00">2020-08-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2070,7 +2217,7 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
 <ul>
 <li><a href="#1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing">1. 函数的 prototype 属性（显式原型）</a></li>
 <li><a href="#2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</a></li>
-<li><a href="#3-yuan-xing-lian">3. 原型链 △</a></li>
+<li><a href="#3-yuan-xing-lian">3. 原型链 △△</a></li>
 </ul>
 </li>
 <li><a href="#si-ji-cheng">四、继承</a>
@@ -2079,22 +2226,23 @@ Math<span class="token punctuation">.</span><span class="token function">max</sp
 <li><a href="#2-yuan-xing-lian-ji-cheng">2. 原型链继承</a></li>
 <li><a href="#3-hun-he-ji-cheng">3. 混合继承</a></li>
 </ul>
-<ul>
+</li>
 <li><a href="#liu-dui-xiang-de-bian-li">六、对象的遍历</a>
 <ul>
-<li><a href="#1-die-dai-qi-iterator">1、迭代器 iterator</a></li>
-<li><a href="#2-for-of-xu-bu-chong">2、for … of ==需补充==</a></li>
+<li><a href="#1-die-dai-qi-iterator">1、迭代器 iterator △</a>
+<ul>
+<li><a href="#2-for-of">2、for … of</a></li>
 <li><a href="#2-for-in">2、for … in</a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li><a href="#qi-jie-gou-fu-zhi">七、解构赋值</a></li>
-<li><a href="#ba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter setter</a></li>
+<li><a href="#ba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter、setter</a></li>
 <li><a href="#jiu-dui-xiang-de-bu-chong">九、对象的补充</a>
 <ul>
 <li><a href="#1-instanceof-cao-zuo-fu">1、instanceof 操作符</a></li>
 <li><a href="#2-new-yun-suan-fu-liu-cheng">2、new 运算符流程</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -2297,7 +2445,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1><span id="san-yuan-xing">三、原型 △△</span><a href="#san-yuan-xing" class="header-anchor">#</a></h1>
-<h3><span id="p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing">1. 函数的 prototype 属性（显式原型）</span><a href="#p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing" class="header-anchor">#</a></h3>
+<h2><span id="p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing">1. 函数的 prototype 属性（显式原型）</span><a href="#p1-han-shu-de-prototype-shu-xing-xian-shi-yuan-xing" class="header-anchor">#</a></h2>
 <p>每个函数在创建的时候都会创建一个 <strong><code>prototype</code></strong> 属性（指针），指向函数的<strong>原型对象</strong>。该属性中存储的是一个对象的引用（默认是一个空对象）。</p>
 <blockquote>
 <p>Foo.prototype === Foo 的原型对象</p>
@@ -2307,13 +2455,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>Foo.prototype.constructor === Foo</p>
 </blockquote>
 <p><img src="/source/images/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E5%8E%9F%E5%9E%8B.jpg" alt="原型"></p>
-<p>prototype 属性只有在函数被当做构造函数调用的时候（函数的构造调用）才会生效。==由同一个构造函数生成的各个实例对象之间共享属性和方法。==</p>
+<p>prototype 属性只有在函数被当做构造函数调用的时候（函数的构造调用）才会生效。<strong>由同一个构造函数生成的各个实例对象之间共享属性和方法。</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token operator">...</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 fun<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span> <span class="token comment">// 是一个object</span>
-
+               
 fun<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> fun<span class="token punctuation">;</span><span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3><span id="p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</span><a href="#p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing" class="header-anchor">#</a></h3>
-<p>当调用构造函数创建一个新实例之后，该实例内部将包含一个内部属性 <strong><code>__proto__</code></strong>，指向构造函数的原型对象。==实例化之后才能用==。</p>
+<h2><span id="p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing">2. 实例对象的 <code>__proto__</code> 属性（隐式原型）</span><a href="#p2-shi-li-dui-xiang-de-proto-shu-xing-yin-shi-yuan-xing" class="header-anchor">#</a></h2>
+<p>当调用构造函数创建一个新实例之后，该实例内部将包含一个内部属性 <strong><code>__proto__</code></strong>，指向构造函数的原型对象。<strong>实例化之后才能用</strong>。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token constant">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token comment">// 构造函数中给this扩展的属性是私有的</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"xxx"</span>
@@ -2338,7 +2486,7 @@ f1<span class="token punctuation">.</span>age <span class="token comment">// 18<
 
 <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype <span class="token operator">==</span> p<span class="token punctuation">.</span>__proto__ <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>原型分为 <strong>显式原型</strong>（构造函数的prototype属性） 和 <strong>隐式原型</strong>（调用构造函数实例化出来的对象的<code>__proto__</code>属性）。（ES5只允许操作 prototype，ES6都可以）</p>
-<h3><span id="p3-yuan-xing-lian">3. 原型链 △</span><a href="#p3-yuan-xing-lian" class="header-anchor">#</a></h3>
+<h2><span id="p3-yuan-xing-lian">3. 原型链 △△</span><a href="#p3-yuan-xing-lian" class="header-anchor">#</a></h2>
 <p><strong>原型链</strong>是实现<strong>继承</strong>的主要方法。</p>
 <p>构造函数、原型和实例的关系 每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。那么假如我们让原型对象等于另一个类型的实例。显然，此时的原型对象将包含一个指向另一个原型的指针，相应地，另一个原型中也包含着一个指向另一个构造函数的指针。假如另一个原型又是另一个类型的实例，那么上述关系依然成立。如此层层递进，就构成了实例与原型的链条。这就是所谓的<strong>原型链</strong>的基本概念。<strong>原型链的终点是 null。</strong></p>
 <p><img src="/source/images/JS%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/%E7%BB%88%E6%9E%81%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg" alt="终极原型链"></p>
@@ -2411,8 +2559,8 @@ sub<span class="token punctuation">.</span><span class="token function">showSupp
 <span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SubType</span><span class="token punctuation">(</span><span class="token string">"Tom"</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 p1<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 p1<span class="token punctuation">.</span><span class="token function">syaAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="pliu-dui-xiang-de-bian-li">六、对象的遍历</span><a href="#pliu-dui-xiang-de-bian-li" class="header-anchor">#</a></h2>
-<h3><span id="p1-die-dai-qi-iterator">1、迭代器 iterator</span><a href="#p1-die-dai-qi-iterator" class="header-anchor">#</a></h3>
+<h1><span id="liu-dui-xiang-de-bian-li">六、对象的遍历</span><a href="#liu-dui-xiang-de-bian-li" class="header-anchor">#</a></h1>
+<h2><span id="p1-die-dai-qi-iterator">1、迭代器 iterator △</span><a href="#p1-die-dai-qi-iterator" class="header-anchor">#</a></h2>
 <p>遍历器（迭代器，iterator）</p>
 <p>统一的接口来遍历 Array Object Map Set</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Iterator</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -2427,20 +2575,20 @@ p1<span class="token punctuation">.</span><span class="token function">syaAge</s
             	<span class="token punctuation">&#125;</span>
             <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
                 <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-                    done<span class="token operator">:</span> ture
+                   done<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token comment">// 完成了</span>
                 <span class="token punctuation">&#125;</span>
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3><span id="p2-for-of-xu-bu-chong">2、for … of ==需补充==</span><a href="#p2-for-of-xu-bu-chong" class="header-anchor">#</a></h3>
+<h3><span id="p2-for-of">2、for … of</span><a href="#p2-for-of" class="header-anchor">#</a></h3>
 <h3><span id="p2-for-in">2、for … in</span><a href="#p2-for-in" class="header-anchor">#</a></h3>
 <p><code>for...in</code> 用来遍历自身和原型链中可枚举的属性。</p>
 <p>不关对象本身的属性能被遍历，在对象的原型链上的属性也能被遍历。</p>
 <blockquote>
 <p>千万不要用这个遍历数组，虽然数组也是对象，但是数组的索引只是具有整数名称的枚举属性，这个不能保证遍历的顺序，而数组的最重要特征就是有序。</p>
 </blockquote>
-<h2><span id="pqi-jie-gou-fu-zhi">七、解构赋值</span><a href="#pqi-jie-gou-fu-zhi" class="header-anchor">#</a></h2>
+<h1><span id="qi-jie-gou-fu-zhi">七、解构赋值</span><a href="#qi-jie-gou-fu-zhi" class="header-anchor">#</a></h1>
 <p>（1）数组的解构赋值</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 一一对应</span>
 <span class="token keyword">const</span> <span class="token punctuation">[</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> x3<span class="token punctuation">,</span> x4<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">;</span>
@@ -2510,7 +2658,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span>
 <span class="token keyword">let</span> <span class="token punctuation">&#123;</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> sex <span class="token punctuation">&#125;</span> <span class="token operator">=</span> json<span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> sex<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="pba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter setter</span><a href="#pba-cun-chu-qi-shu-xing-getter-setter" class="header-anchor">#</a></h2>
+<h1><span id="ba-cun-chu-qi-shu-xing-getter-setter">八、存储器属性 getter、setter</span><a href="#ba-cun-chu-qi-shu-xing-getter-setter" class="header-anchor">#</a></h1>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     first<span class="token operator">:</span> <span class="token string">"李"</span><span class="token punctuation">,</span>
     last<span class="token operator">:</span> <span class="token string">"沛华"</span>
@@ -2532,14 +2680,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// 李沛华</span>
 obj1<span class="token punctuation">.</span>setName <span class="token operator">=</span> <span class="token string">"闫 海静"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>后面用于 vue 数据双向绑定原理。</p>
-<h2><span id="pjiu-dui-xiang-de-bu-chong">九、对象的补充</span><a href="#pjiu-dui-xiang-de-bu-chong" class="header-anchor">#</a></h2>
-<h3><span id="p1-instanceof-cao-zuo-fu">1、instanceof 操作符</span><a href="#p1-instanceof-cao-zuo-fu" class="header-anchor">#</a></h3>
+<h1><span id="jiu-dui-xiang-de-bu-chong">九、对象的补充</span><a href="#jiu-dui-xiang-de-bu-chong" class="header-anchor">#</a></h1>
+<h2><span id="p1-instanceof-cao-zuo-fu">1、instanceof 操作符</span><a href="#p1-instanceof-cao-zuo-fu" class="header-anchor">#</a></h2>
 <p>第一个变量是对象，第二个变量是函数。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">A</span> <span class="token keyword">instanceof</span> <span class="token class-name">b</span> 
 <span class="token comment">// a 沿着 __proto__ ， b 沿着 prototype  一直找</span>
 <span class="token comment">// 找到相交的地方返回 true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>所有引用类型都是 Object 的实例，所以在检测引用类型和 Object 都会返回 true。所有基本类型都不是对象，使用会返回 <code>false</code>。</p>
-<h3><span id="p2-new-yun-suan-fu-liu-cheng">2、new 运算符流程</span><a href="#p2-new-yun-suan-fu-liu-cheng" class="header-anchor">#</a></h3>
+<h2><span id="p2-new-yun-suan-fu-liu-cheng">2、new 运算符流程</span><a href="#p2-new-yun-suan-fu-liu-cheng" class="header-anchor">#</a></h2>
 <ol>
 <li>
 <p>创建对象，开辟内存空间（堆）</p>
@@ -2576,7 +2724,7 @@ obj1<span class="token punctuation">.</span>setName <span class="token operator"
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/15-JS%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -2590,7 +2738,7 @@ obj1<span class="token punctuation">.</span>setName <span class="token operator"
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/JS%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">JS 函数</a>
+            <a href="/03/15-JS%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">JS 函数</a>
         </h2>
 
         <div class="post-meta">
@@ -3153,7 +3301,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3166,7 +3314,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
