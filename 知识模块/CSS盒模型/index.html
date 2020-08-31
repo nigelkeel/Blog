@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="目录# [TOC]    一、盒子模型  1、标准模型和怪异模型 2、content 层  2.1 width&#x2F;height 2.2 min&#x2F;max-width&#x2F;height   3、padding 内边距层 4、border 边框层  4.1 边框属性 4.2 border-radius 圆角边框   5、margin 层  5.1 合写 5.2 水平方向上的auto 5.3 竖直方向的auto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 盒模型">
+<meta property="og:url" content="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="目录# [TOC]    一、盒子模型  1、标准模型和怪异模型 2、content 层  2.1 width&#x2F;height 2.2 min&#x2F;max-width&#x2F;height   3、padding 内边距层 4、border 边框层  4.1 边框属性 4.2 border-radius 圆角边框   5、margin 层  5.1 合写 5.2 水平方向上的auto 5.3 竖直方向的auto">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://nigelkeel.gitee.io/source/images/%E7%9B%92%E6%A8%A1%E5%9E%8B/%E7%9B%92%E6%A8%A1%E5%9E%8B.png">
+<meta property="article:published_time" content="2020-06-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-29T01:02:02.370Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nigelkeel.gitee.io/source/images/%E7%9B%92%E6%A8%A1%E5%9E%8B/%E7%9B%92%E6%A8%A1%E5%9E%8B.png">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CSS 盒模型 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="暂无描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS 盒模型
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-17 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-17T00:00:00+08:00">2020-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-29 09:02:02" itemprop="dateModified" datetime="2020-08-29T09:02:02+08:00">2020-08-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-he-zi-mo-xing">一、盒子模型</a>
+<ul>
+<li><a href="#1-biao-zhun-mo-xing-he-guai-yi-mo-xing">1、标准模型和怪异模型</a></li>
+<li><a href="#2-content-ceng">2、content 层</a>
+<ul>
+<li><a href="#2-1-width-height">2.1 width/height</a></li>
+<li><a href="#2-2-min-max-width-height">2.2 min/max-width/height</a></li>
+</ul>
+</li>
+<li><a href="#3-padding-nei-bian-ju-ceng">3、padding 内边距层</a></li>
+<li><a href="#4-border-bian-kuang-ceng">4、border 边框层</a>
+<ul>
+<li><a href="#4-1-bian-kuang-shu-xing">4.1 边框属性</a></li>
+<li><a href="#4-2-border-radius-yuan-jiao-bian-kuang">4.2 border-radius 圆角边框</a></li>
+</ul>
+</li>
+<li><a href="#5-margin-ceng">5、margin 层</a>
+<ul>
+<li><a href="#5-1-he-xie">5.1 合写</a></li>
+<li><a href="#5-2-shui-ping-fang-xiang-shang-de-auto">5.2 水平方向上的auto</a></li>
+<li><a href="#5-3-shu-zhi-fang-xiang-de-auto">5.3 竖直方向的auto</a></li>
+<li><a href="#5-4-ta-xian-he-bian-kuang-he-bing-wen-ti">5.4 塌陷和边框合并问题</a></li>
+<li><a href="#5-5-margin-fu-zhi">5.5 margin 负值</a></li>
+<li><a href="#5-6-zhi-chi-xing">5.6 支持性</a></li>
+</ul>
+</li>
+<li><a href="#6-outline">6、outline</a></li>
+</ul>
+</li>
+<li><a href="#er-display">二、display</a></li>
+<li><a href="#san-overflow">三、overflow</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-he-zi-mo-xing">一、盒子模型</span><a href="#yi-he-zi-mo-xing" class="header-anchor">#</a></h1>
+<p>在 HTML 中把每个元素当成一个盒子，元素拥有盒子的平面外形和空间。</p>
+<p><img src="/source/images/%E7%9B%92%E6%A8%A1%E5%9E%8B/%E7%9B%92%E6%A8%A1%E5%9E%8B.png" alt="盒模型"></p>
+<h2><span id="p1-biao-zhun-mo-xing-he-guai-yi-mo-xing">1、标准模型和怪异模型</span><a href="#p1-biao-zhun-mo-xing-he-guai-yi-mo-xing" class="header-anchor">#</a></h2>
+<p>分为<strong>标准盒模型</strong>和<strong>怪异盒模型</strong>。</p>
+<h2><span id="p2-content-ceng">2、content 层</span><a href="#p2-content-ceng" class="header-anchor">#</a></h2>
+<h3><span id="p2-1-width-height">2.1 width/height</span><a href="#p2-1-width-height" class="header-anchor">#</a></h3>
+<p>width设置的坑 如果设置宽度为100%，并且有border margin  padding等属性值的时候，宽度可能超出。因为width内容区域已经和父级一样了，所以可以不设置宽度或者设置宽度为auto那么内容的宽度就是可以充分利用可使用空间。</p>
+<p>height设置的坑 如果高度设置百分比，必须父级有一个显性的设置一个height属性，并且不能是auto。</p>
+<h3><span id="p2-2-min-max-width-height">2.2 min/max-width/height</span><a href="#p2-2-min-max-width-height" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>正常</th>
+<th>最小</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽度</td>
+<td>width</td>
+<td>min-width</td>
+<td>max-width</td>
+</tr>
+<tr>
+<td>高度</td>
+<td>height</td>
+<td>min-height</td>
+<td>max-height</td>
+</tr>
+</tbody>
+</table>
+<p>当min-width和max-width 冲突的时候，min-width是优先的。当width和 min或max冲突以后，min或者max直接无视width的存在（无论是否添加 ！important）。</p>
+<h2><span id="p3-padding-nei-bian-ju-ceng">3、padding 内边距层</span><a href="#p3-padding-nei-bian-ju-ceng" class="header-anchor">#</a></h2>
+<p>padding的写法和margin一致</p>
+<p>padding主要撑开内容和边框之间的距离</p>
+<p>padding不支持负值</p>
+<p>padding对所有属性的元素都支持，但是对于行内元素撑不开上下的距离</p>
+<p>padding可以用于扩大点击范围</p>
+<h2><span id="p4-border-bian-kuang-ceng">4、border 边框层</span><a href="#p4-border-bian-kuang-ceng" class="header-anchor">#</a></h2>
+<h3><span id="p4-1-bian-kuang-shu-xing">4.1 边框属性</span><a href="#p4-1-bian-kuang-shu-xing" class="header-anchor">#</a></h3>
+<p>border</p>
+<ul>
+<li>border-width 线的宽度</li>
+<li>border-style 线的类型
+<ul>
+<li>solid 实线</li>
+<li>dashed 虚线</li>
+<li>dotted 点状线</li>
+</ul>
+</li>
+<li>border-color 线的颜色</li>
+<li>border:none 不设置边框</li>
+</ul>
+<blockquote>
+<p>边框还分为4个方向  要么直接设置4个方向，要么一个个方向单独设置</p>
+</blockquote>
+<p>练习：边框画三角形</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.box</span><span class="token punctuation">&#123;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 100px solid #000<span class="token punctuation">;</span>
+    <span class="token property">border-left-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+    <span class="token property">border-right-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+    <span class="token property">border-bottom-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p4-2-border-radius-yuan-jiao-bian-kuang">4.2 border-radius 圆角边框</span><a href="#p4-2-border-radius-yuan-jiao-bian-kuang" class="header-anchor">#</a></h3>
+<p>CSS3。</p>
+<table>
+<thead>
+<tr>
+<th>border-radius</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 B1 C1 D1/A2 B2 C2 D2</td>
+<td>水平/垂直，左上角开始顺时针</td>
+</tr>
+<tr>
+<td>A B C D</td>
+<td></td>
+</tr>
+<tr>
+<td>M/N</td>
+<td>水平/垂直</td>
+</tr>
+<tr>
+<td>50px 100px</td>
+<td>AC BD</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>八个值一样</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p5-margin-ceng">5、margin 层</span><a href="#p5-margin-ceng" class="header-anchor">#</a></h2>
+<p>margin的作用是撑开当前元素和其他元素的距离。margin有四个方向，可以分别设置<code>margin-left</code> <code>margin-right</code> <code>margin-top</code> <code>margin-bottom</code>，margin的left和top是让当前元素向右向下移动，margin的right和bottom是让元素的兄弟元素向右向下移动，不影响自身。</p>
+<h3><span id="p5-1-he-xie">5.1 合写</span><a href="#p5-1-he-xie" class="header-anchor">#</a></h3>
+<ul>
+<li>4个值：<strong>上 右 下 左</strong>（从上开始顺时针）</li>
+<li>3个值：上 左右 下</li>
+<li>2个值：上下 左右</li>
+<li>1个值：上下左右</li>
+</ul>
+<h3><span id="p5-2-shui-ping-fang-xiang-shang-de-auto">5.2 水平方向上的auto</span><a href="#p5-2-shui-ping-fang-xiang-shang-de-auto" class="header-anchor">#</a></h3>
+<p>因为块标签拥有满行属性，但是设置宽度以后，剩余的空间就是默认的margin，设置左右的margin值为auto，那么剩余的margin就会平分到左右两边。</p>
+<h3><span id="p5-3-shu-zhi-fang-xiang-de-auto">5.3 竖直方向的auto</span><a href="#p5-3-shu-zhi-fang-xiang-de-auto" class="header-anchor">#</a></h3>
+<p>相对于水平方向来说，块元素在垂直方向上并没有满屏的属性，margin默认在上下的值都是0，并没有剩余空间去平分。</p>
+<h3><span id="p5-4-ta-xian-he-bian-kuang-he-bing-wen-ti">5.4 塌陷和边框合并问题</span><a href="#p5-4-ta-xian-he-bian-kuang-he-bing-wen-ti" class="header-anchor">#</a></h3>
+<ul>
+<li>父级塌陷：父级的第一个子元素的上margin和最后一个子元素的下margin会进行塌陷给父级，这样的设计是为了方便父级和他的兄弟进行垂直margin的合并，避免缝隙过大。</li>
+<li>解决塌陷：给父级开启BFC，给父级设置边框。</li>
+<li>兄弟的margin垂直方向会进行折叠，取最大值 。</li>
+</ul>
+<h3><span id="p5-5-margin-fu-zhi">5.5 margin 负值</span><a href="#p5-5-margin-fu-zhi" class="header-anchor">#</a></h3>
+<ul>
+<li>margin-top为负值：元素向上走，不会影响上边的元素的位置（会出现重叠），并且下边的兄弟元素会跟着一起向上走。</li>
+<li>margin-left为负值：元素向左走，不会影响前边的元素位置(会出现重叠)，右边兄弟元素会跟随移动。</li>
+<li>margin-right为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负margin的值），所以，后边的兄弟元素会自动向左走。</li>
+<li>margin-bottom为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负margin的值），所以，后边的兄弟元素会自动向上走。</li>
+</ul>
+<h3><span id="p5-6-zhi-chi-xing">5.6 支持性</span><a href="#p5-6-zhi-chi-xing" class="header-anchor">#</a></h3>
+<p><code>margin</code> 完美支持块元素和行内块元素，不支持行元素的垂直方向。</p>
+<h2><span id="p6-outline">6、outline</span><a href="#p6-outline" class="header-anchor">#</a></h2>
+<p><code>outline</code> 轮廓层。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 去掉轮廓 */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1><span id="er-display">二、display</span><a href="#er-display" class="header-anchor">#</a></h1>
+<p>控制元素的显示状态。</p>
+<table>
+<thead>
+<tr>
+<th><code>display</code></th>
+<th>描述说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inline</code></td>
+<td>让元素以行属性显示</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td>让元素以块属性显示</td>
+</tr>
+<tr>
+<td><code>inline-block</code></td>
+<td>让元素以行内块属性显示</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>带着所有子元素隐藏，直接消失</td>
+</tr>
+<tr>
+<td><code>flex</code></td>
+<td>开启弹性布局</td>
+</tr>
+</tbody>
+</table>
+<p><code>display:none</code> 隐藏的元素，不可以被js获取DOM节点及相关的样式属性。让隐藏的元素显示，只需要修改display属性的值不为none即可。</p>
+<h1><span id="san-overflow">三、overflow</span><a href="#san-overflow" class="header-anchor">#</a></h1>
+<p>内容溢出设置。</p>
+<table>
+<thead>
+<tr>
+<th><code>overflow</code></th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>visible</code></td>
+<td>默认值<br>超出正常显示，但是不会影响其他元素的位置</td>
+</tr>
+<tr>
+<td><code>hidden</code></td>
+<td>超出部分隐藏</td>
+</tr>
+<tr>
+<td><code>scroll</code></td>
+<td>无论是否超出都生成滚动条</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>自动生成滚动条，当内容溢出生成滚动条，否则不生成</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>overflow-x</code></strong> 和 <strong><code>overflow-y</code></strong> 可以单独控制一个方向的内容溢出设置。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E5%BC%80%E5%A7%8B/" rel="prev" title="CSS 开始">
+      <i class="fa fa-chevron-left"></i> CSS 开始
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/%E7%9F%A5%E8%AF%86%E6%A8%A1%E5%9D%97/CSS%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="next" title="CSS 弹性布局">
+      CSS 弹性布局 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、标准模型和怪异模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、content 层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.1 width&#x2F;height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.2 min&#x2F;max-width&#x2F;height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、padding 内边距层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、border 边框层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.1 边框属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.2 border-radius 圆角边框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、margin 层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.1 合写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.2 水平方向上的auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.3 竖直方向的auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.4 塌陷和边框合并问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.5 margin 负值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.6 支持性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、outline</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、display</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三、overflow</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">暂无描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
