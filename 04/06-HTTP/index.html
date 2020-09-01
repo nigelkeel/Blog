@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="目录# [TOC]    一、TCP 二、HTTP △  1、响应的内容 2、报文 3、请求方式 4、MIME 类型 5、响应状态码 △ 6、网络模型 7、从输入URL到网页最终渲染 △   三、HTTP + TLS &#x3D; HTTPS  1、两种加密方式 2、TLS 握手   四、UDP 五、WebSocket  1、概念 2、基本使用 3、心跳包 4、Socket.io      一、TCP# 待">
@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="飞鱼">
 <meta property="og:description" content="目录# [TOC]    一、TCP 二、HTTP △  1、响应的内容 2、报文 3、请求方式 4、MIME 类型 5、响应状态码 △ 6、网络模型 7、从输入URL到网页最终渲染 △   三、HTTP + TLS &#x3D; HTTPS  1、两种加密方式 2、TLS 握手   四、UDP 五、WebSocket  1、概念 2、基本使用 3、心跳包 4、Socket.io      一、TCP# 待">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://nigelkeel.gitee.io/source/images/HTTP/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg">
-<meta property="og:image" content="http://nigelkeel.gitee.io/source/images/HTTP/TLS%E6%8F%A1%E6%89%8B.jpg">
+<meta property="og:image" content="http://nigelkeel.gitee.io/images/2020/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="http://nigelkeel.gitee.io/images/2020/TLS%E6%8F%A1%E6%89%8B.jpg">
 <meta property="article:published_time" content="2020-08-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-29T03:03:16.149Z">
+<meta property="article:modified_time" content="2020-09-01T06:24:38.548Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="NodeJS">
 <meta property="article:tag" content="通信">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://nigelkeel.gitee.io/source/images/HTTP/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg">
+<meta name="twitter:image" content="http://nigelkeel.gitee.io/images/2020/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg">
 
 <link rel="canonical" href="http://nigelkeel.gitee.io/04/06-HTTP/">
 
@@ -82,7 +82,8 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -199,7 +200,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -224,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 11:03:16" itemprop="dateModified" datetime="2020-08-29T11:03:16+08:00">2020-08-29</time>
+                <time title="修改时间：2020-09-01 14:24:38" itemprop="dateModified" datetime="2020-09-01T14:24:38+08:00">2020-09-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -383,7 +384,7 @@
 </ul>
 <h2><span id="p6-wang-luo-mo-xing">6、网络模型</span><a href="#p6-wang-luo-mo-xing" class="header-anchor">#</a></h2>
 <p>HTTP - TCP - IP - 以太网</p>
-<p><img src="/source/images/HTTP/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg" alt="网络模型"></p>
+<p><img src="/images/2020/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.jpg" alt="网络模型"></p>
 <h2><span id="p7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran">7、从输入URL到网页最终渲染 △</span><a href="#p7-cong-shu-ru-url-dao-wang-ye-zui-zhong-xuan-ran" class="header-anchor">#</a></h2>
 <p>（1）DNS解析</p>
 <ul>
@@ -429,7 +430,7 @@
 <p>这种加密方式就可以完美解决对称加密存在的问题。假设现在两端需要使用对称加密，那么在这之前，可以先使用非对称加密交换秘钥。</p>
 <p>简单流程如下：首先服务端将公钥公布出去，那么客户端也就知道公钥了。接下来客户端创建一个秘钥，然后通过公钥加密并发送给服务端，服务端接收到密文以后通过私钥解密出正确的秘钥，这时候两端就都知道秘钥是什么了。</p>
 <h2><span id="p2-tls-wo-shou">2、TLS 握手</span><a href="#p2-tls-wo-shou" class="header-anchor">#</a></h2>
-<p><img src="/source/images/HTTP/TLS%E6%8F%A1%E6%89%8B.jpg" alt="TLS握手"></p>
+<p><img src="/images/2020/TLS%E6%8F%A1%E6%89%8B.jpg" alt="TLS握手"></p>
 <p>客户端发送一个随机值以及需要的协议和加密方式。</p>
 <p>服务端收到客户端的随机值，自己也产生一个随机值，并根据客户端需求的协议和加密方式来使用对应的方式，并且发送自己的证书（如果需要验证客户端证书需要说明）</p>
 <p>客户端收到服务端的证书并验证是否有效，验证通过会再生成一个随机值，通过服务端证书的公钥去加密这个随机值并发送给服务端，如果服务端需要验证客户端证书的话会附带证书</p>
@@ -453,7 +454,7 @@
 <p><code>WS.readyState</code> 检查连接状态</p>
 <ul>
 <li>0 未连接</li>
-<li><code>WS.OPEN</code> 连接已建立</li>
+<li>1 <code>WS.OPEN</code> 连接已建立</li>
 <li>2 连接正在关闭</li>
 <li>3 连接已经关闭</li>
 </ul>
@@ -587,8 +588,8 @@ socket<span class="token punctuation">.</span><span class="token function">on</s
       <i class="fa fa-chevron-left"></i> NodeJS开始
     </a></div>
       <div class="post-nav-item">
-    <a href="/02/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" rel="next" title="版本控制工具">
-      版本控制工具 <i class="fa fa-chevron-right"></i>
+    <a href="/04/01-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" rel="next" title="JS 异步">
+      JS 异步 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -655,27 +656,27 @@ socket<span class="token punctuation">.</span><span class="token function">on</s
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">KEEL</p>
-  <div class="site-description" itemprop="description">暂无描述</div>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

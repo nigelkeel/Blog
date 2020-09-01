@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="目录# [TOC]    一、LESS  1、安装 2、特性 3、使用   二、基本语法  1、注释 2、变量 3、嵌套规则 4、运算 5、混合 6、模式匹配和守卫 7、字符串插值 8、函数 9、文件导入 10、转义      一、LESS# less 是一种动态样式语言，属于CSS预处理器，扩展了CSS语言，增加了变量、混合（Mixin）、函数等特性，使CSS更易维护和扩展。LESS既可以在客户">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="目录# [TOC]    一、LESS  1、安装 2、特性 3、使用   二、基本语法  1、注释 2、变量 3、嵌套规则 4、运算 5、混合 6、模式匹配和守卫 7、字符串插值 8、函数 9、文件导入 10、转义      一、LESS# less 是一种动态样式语言，属于CSS预处理器，扩展了CSS语言，增加了变量、混合（Mixin）、函数等特性，使CSS更易维护和扩展。LESS既可以在客户">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-31T11:37:29.257Z">
+<meta property="article:modified_time" content="2020-09-01T03:12:30.653Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -77,7 +77,8 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -194,7 +195,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -219,7 +220,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 19:37:29" itemprop="dateModified" datetime="2020-08-31T19:37:29+08:00">2020-08-31</time>
+                <time title="修改时间：2020-09-01 11:12:30" itemprop="dateModified" datetime="2020-09-01T11:12:30+08:00">2020-09-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -324,10 +325,10 @@
 <p><code>//</code> 和 <code>/**/</code> 后者可以被注释到CSS文件中。</p>
 <h2><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h2>
 <p>LESS 允许我们定义一些变量来管理CSS，变量需以<code>@</code>开头。</p>
-<pre class="line-numbers language-less" data-language="less"><code class="language-less"><span class="token comment">// 定义</span>
-<span class="token variable">@test<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
-<span class="token comment">// 使用</span>
-<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@test</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-less" data-language="less"><code class="language-less">&#x2F;&#x2F; 定义
+@test: 10px;
+&#x2F;&#x2F; 使用
+width: @test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意作用域。</p>
 <p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
 <h2><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h2>
@@ -432,27 +433,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">KEEL</p>
-  <div class="site-description" itemprop="description">暂无描述</div>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

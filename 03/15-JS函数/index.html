@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="目录# [TOC]    一、基本的函数  1、函数的作用 2、定义函数  2.1 声明函数 2.2 函数表达式，匿名函数式 2.3 构造函数   3、使用函数 4、函数的参数 5、返回值 6、箭头函数 △   二、特殊的函数表达式  1、立即执行函数表达式 2、递归函数 3、回调函数   三、this △△  1、this 2、this的指向  2.1 默认绑定 2.2 隐式绑定   3、cal">
+  <meta name="description" content="目录# [TOC]    一、基本的函数  1、函数的作用 2、定义函数  2.1 声明函数 2.2 函数表达式，匿名函数式 2.3 构造函数式   3、使用函数 4、函数的参数 5、返回值 6、箭头函数 △   二、特殊的函数表达式  1、立即执行函数表达式 2、递归函数 3、回调函数   三、this △△  1、this 2、this的指向  2.1 默认绑定 2.2 隐式绑定   3、ca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS 函数">
 <meta property="og:url" content="http://nigelkeel.gitee.io/03/15-JS%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="飞鱼">
-<meta property="og:description" content="目录# [TOC]    一、基本的函数  1、函数的作用 2、定义函数  2.1 声明函数 2.2 函数表达式，匿名函数式 2.3 构造函数   3、使用函数 4、函数的参数 5、返回值 6、箭头函数 △   二、特殊的函数表达式  1、立即执行函数表达式 2、递归函数 3、回调函数   三、this △△  1、this 2、this的指向  2.1 默认绑定 2.2 隐式绑定   3、cal">
+<meta property="og:description" content="目录# [TOC]    一、基本的函数  1、函数的作用 2、定义函数  2.1 声明函数 2.2 函数表达式，匿名函数式 2.3 构造函数式   3、使用函数 4、函数的参数 5、返回值 6、箭头函数 △   二、特殊的函数表达式  1、立即执行函数表达式 2、递归函数 3、回调函数   三、this △△  1、this 2、this的指向  2.1 默认绑定 2.2 隐式绑定   3、ca">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-31T00:21:48.621Z">
+<meta property="article:modified_time" content="2020-09-01T10:35:22.275Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="已更新">
 <meta property="article:tag" content="JavaScript">
@@ -78,7 +78,8 @@
   </style>
 </noscript>
 
-</head>
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -195,7 +196,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="暂无描述">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -220,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 08:21:48" itemprop="dateModified" datetime="2020-08-31T08:21:48+08:00">2020-08-31</time>
+                <time title="修改时间：2020-09-01 18:35:22" itemprop="dateModified" datetime="2020-09-01T18:35:22+08:00">2020-09-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +256,7 @@
 <ul>
 <li><a href="#2-1-sheng-ming-han-shu">2.1 声明函数</a></li>
 <li><a href="#2-2-han-shu-biao-da-shi-ni-ming-han-shu-shi">2.2 函数表达式，匿名函数式</a></li>
-<li><a href="#2-3-gou-zao-han-shu">2.3 构造函数</a></li>
+<li><a href="#2-3-gou-zao-han-shu-shi">2.3 构造函数式</a></li>
 </ul>
 </li>
 <li><a href="#3-shi-yong-han-shu">3、使用函数</a></li>
@@ -305,9 +306,10 @@
 <li><a href="#wu-bi-bao">五、闭包 △△</a>
 <ul>
 <li><a href="#1-gai-nian">1、概念</a></li>
-<li><a href="#2-zuo-yong-ji-que-dian">2、作用及缺点</a></li>
-<li><a href="#3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</a></li>
-<li><a href="#4-ying-yong">4、应用</a></li>
+<li><a href="#2-zuo-yong">2、作用</a></li>
+<li><a href="#3-que-dian">3、缺点</a></li>
+<li><a href="#4-sheng-ming-zhou-qi">4、生命周期</a></li>
+<li><a href="#5-ying-yong">5、应用</a></li>
 </ul>
 </li>
 <li><a href="#liu-ge-ren-feng-zhuang-han-shu-ku">六、个人封装函数库</a></li>
@@ -352,9 +354,10 @@
 <span class="token operator">!</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token comment">// 函数体</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3><span id="p2-3-gou-zao-han-shu">2.3 构造函数</span><a href="#p2-3-gou-zao-han-shu" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> fun <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">"执行字符串"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 这个方法不是很常用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3><span id="p2-3-gou-zao-han-shu-shi">2.3 构造函数式</span><a href="#p2-3-gou-zao-han-shu-shi" class="header-anchor">#</a></h3>
+<p>类如 <code>const x = new XXXX()</code> 的形式，被称为<strong>构造函数</strong>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fun <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">"执行字符串"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 这个定义函数的方法几乎不用（会执行两次）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2><span id="p3-shi-yong-han-shu">3、使用函数</span><a href="#p3-shi-yong-han-shu" class="header-anchor">#</a></h2>
 <p>函数需要调用才会执行。</p>
 <h2><span id="p4-han-shu-de-can-shu">4、函数的参数</span><a href="#p4-han-shu-de-can-shu" class="header-anchor">#</a></h2>
@@ -652,22 +655,71 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>闭包的产生是函数嵌套函数，内部函数引用外部函数变量，外部函数调用。</li>
 <li>闭包可以理解为内部的函数。</li>
 <li>深入理解的话，闭包就是包含<strong>被内部引用变量</strong>的对象。（可以通过浏览器断点调试查看）</li>
+<li>闭包是指有权访问另一个函数作用域中的变量的函数，创建闭包的常见方式就是在一个函数内部创建另一个函数。</li>
 </ul>
-<h2><span id="p2-zuo-yong-ji-que-dian">2、作用及缺点</span><a href="#p2-zuo-yong-ji-que-dian" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 闭包</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-zuo-yong">2、作用</span><a href="#p2-zuo-yong" class="header-anchor">#</a></h2>
 <ul>
 <li>外部间接的访问到了内部的变量。</li>
-<li>当外部函数执行完成后，局部变量暂时不会消失，延长了局部变量的生命周期。</li>
+<li>当外部函数执行完成后，局部变量暂时不会消失，延长了局部变量的生命周期。可以实现函数内局部变量的累加。</li>
 </ul>
-<p>闭包的缺点: <strong>内存泄露</strong>。</p>
-<p>解决方法:</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        num <span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 101</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 102</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-que-dian">3、缺点</span><a href="#p3-que-dian" class="header-anchor">#</a></h2>
+<p>由于在闭包所在的作用域返回的局部变量不会被销毁，所以会占用内存。过度的使用闭包会迫使性能下降。</p>
+<h2><span id="p4-sheng-ming-zhou-qi">4、生命周期</span><a href="#p4-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>
+<p>当内部函数被定义的时候，闭包就生成了。</p>
+<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">fun <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 <span class="token comment">// 让内部函数对象（闭包）变成垃圾对象</span>
 <span class="token comment">// 此时就马上被回收</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p3-bi-bao-de-sheng-ming-zhou-qi">3、闭包的生命周期</span><a href="#p3-bi-bao-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>
-<p>当内部函数被定义的时候，闭包就生成了。</p>
-<p>当内部函数没有被引用的时候，函数就会称为垃圾对象，闭包就会消失。</p>
-<h2><span id="p4-ying-yong">4、应用</span><a href="#p4-ying-yong" class="header-anchor">#</a></h2>
-<p>模块化。</p>
+<h2><span id="p5-ying-yong">5、应用</span><a href="#p5-ying-yong" class="header-anchor">#</a></h2>
+<p>（1）模拟块级作用域（匿名自执行函数）</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">(function()&#123;
+       for(var i&#x3D;0;i&lt;count;i++)&#123;&#125;
+ &#125;)();
+ console.log(i);&#x2F;&#x2F;报错，无法访问<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）对结果进行缓存</p>
+<p>写一个用于实现所有参数和的函数：</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">var fn&#x3D;function()&#123;
+    var sum&#x3D;0;
+    for(var i&#x3D;0;i&lt;arguments.length;i++)&#123;
+        sum+&#x3D;arguments[i];
+    &#125;
+    return sum;
+&#125;
+console.log(fn(1,2));&#x2F;&#x2F;3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上函数接收一些number类型的参数，并返回这些参数之和。由于每次传递的参数相同，所以返回的结果是一样的。这样势必会造成了一种浪费，在此时咱们可以通过缓存机制来提高这个函数的性能。</p>
+<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx">var fn&#x3D;(function()&#123;
+    var cache&#x3D;&#123;&#125;&#x2F;&#x2F;将结果缓存到该对象中
+    return function()&#123;
+        var str&#x3D;JSON.stringify(arguments);
+        if(cache[str])&#123;&#x2F;&#x2F;判断缓存中是否存在传递过来的参数，存在直接返回结果，无需计算
+            return cache[str];
+        &#125;else&#123;&#x2F;&#x2F;进行计算并返回结果
+            var sum&#x3D;0;
+            for(var i&#x3D;0;i&lt;arguments.length;i++)&#123;
+                sum+&#x3D;arguments[i];
+            &#125;
+            return cache[str]&#x3D;sum;
+        &#125;
+    &#125;
+&#125;)()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的示例将计算后的结果缓存到局部变量cache当中，在调用这个函数时，先在缓存中查找，如果找不到，则进行计算，然后将结果放到缓存中并返回，如果找到了，直接返回查找到的值。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2fb8a9f26589">参考链接</a></p>
 <h1><span id="liu-ge-ren-feng-zhuang-han-shu-ku">六、个人封装函数库</span><a href="#liu-ge-ren-feng-zhuang-han-shu-ku" class="header-anchor">#</a></h1>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">;</span><span class="token operator">+</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">w</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
     <span class="token comment">/* 
@@ -766,34 +818,34 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、基本的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、函数的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.1 声明函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.2 函数表达式，匿名函数式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.3 构造函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、使用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、函数的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、箭头函数 △</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、特殊的函数表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、立即执行函数表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、回调函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三、this △△</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、this的指向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.1 默认绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.2 隐式绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、call、apply、bind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.1 call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2 apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.3 bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、call 的实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">四、函数的执行过程 △</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、栈内存和堆内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、执行上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、变量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、作用域链 △</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、内存中的变量存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、声明提升  △</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8. 垃圾回收机制  +</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">五、闭包 △△</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、作用及缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、闭包的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">六、个人封装函数库</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、基本的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、函数的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.1 声明函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.2 函数表达式，匿名函数式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.3 构造函数式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、使用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、函数的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、箭头函数 △</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、特殊的函数表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、立即执行函数表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、递归函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、回调函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三、this △△</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、this的指向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.1 默认绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2.2 隐式绑定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、call、apply、bind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.1 call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2 apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.3 bind</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、call 的实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">四、函数的执行过程 △</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、栈内存和堆内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、执行上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、变量对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、作用域链 △</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、内存中的变量存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、声明提升  △</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8. 垃圾回收机制  +</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">五、闭包 △△</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">六、个人封装函数库</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">KEEL</p>
-  <div class="site-description" itemprop="description">暂无描述</div>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

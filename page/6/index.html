@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这个人很懒，什么都没留下。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="飞鱼">
+<meta property="og:url" content="http://nigelkeel.gitee.io/page/6/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="这个人很懒，什么都没留下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KEEL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/page/6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/19-BOM%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/19-BOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">BOM 对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-01 18:46:35" itemprop="dateModified" datetime="2020-09-01T18:46:35+08:00">2020-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-window-dui-xiang">一、window对象</a>
+<ul>
+<li><a href="#1-ke-hu-duan-dui-xiang">1、客户端对象</a></li>
+<li><a href="#2-xi-tong-dui-hua-kuang">2、系统对话框</a></li>
+<li><a href="#3-da-kai-he-guan-bi-chuang-kou">3、打开和关闭窗口</a></li>
+<li><a href="#4-liu-lan-qi-kuan-gao">4、浏览器宽高</a></li>
+</ul>
+</li>
+<li><a href="#er-navigator-dui-xiang">二、navigator对象</a>
+<ul>
+<li><a href="#1-liu-lan-qi-jian-ce-fang-fa">1、浏览器检测方法</a></li>
+<li><a href="#2-cao-zuo-xi-tong-jian-ce-fang-fa">2、操作系统检测方法</a></li>
+</ul>
+</li>
+<li><a href="#san-location-dui-xiang">三、location对象</a></li>
+<li><a href="#si-history-dui-xiang">四、history对象 *</a></li>
+<li><a href="#wu-screen-dui-xiang">五、screen对象</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+<p><strong>BOM</strong>，Browser Object Model，浏览器对象模型。</p>
+<h1><span id="yi-window-dui-xiang">一、window对象</span><a href="#yi-window-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>window</code> 是BOM的核心对象。表示浏览器的一个实例，是客户端浏览器对象模型的基类。在浏览器中，该对象具有双重角色，既是通过JS访问浏览器窗口的一个接口，也是ES规定中的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以 <code>window</code> 作为其 <code>Global</code> 对象。<strong>所有在全局作用域中声明的变量、函数都会变成该对象的属性和方法。</strong></p>
+<h2><span id="p1-ke-hu-duan-dui-xiang">1、客户端对象</span><a href="#p1-ke-hu-duan-dui-xiang" class="header-anchor">#</a></h2>
+<p>可以访问客户端其他对象，这种关系构成浏览器对象模型。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>document</code></td>
+<td>包含整个HTML文档，可以用来访问文档内容及其所有页面元素。</td>
+</tr>
+<tr>
+<td><code>navigator</code></td>
+<td>包含客户端有关浏览器的信息。</td>
+</tr>
+<tr>
+<td><code>screen</code></td>
+<td>包含客户端屏幕的信息</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>包含浏览历史记录信息</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>包含当前网页文档的URL信息</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-xi-tong-dui-hua-kuang">2、系统对话框</span><a href="#p2-xi-tong-dui-hua-kuang" class="header-anchor">#</a></h2>
+<p>浏览器通过 <code>alert()</code>、<code>confirm()</code> 和 <code>prompt()</code> 方法可以调用系统对话框向用户显示消息。</p>
+<p>系统对话框与在浏览器中显示的网页没有关系，也不包含 HTML。它们的外观由操作系统及（或）浏览器设置决定，而不是由 CSS 决定（无法设置）。通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关掉这些对话框后代码又会恢复执行。</p>
+<p><code>confirm</code>和<code>prompt</code>有返回值。生产环境下不用，调试使用。</p>
+<h2><span id="p3-da-kai-he-guan-bi-chuang-kou">3、打开和关闭窗口</span><a href="#p3-da-kai-he-guan-bi-chuang-kou" class="header-anchor">#</a></h2>
+<p><code>window.open()</code> 方法既可以导航到一个特定的 URL，也可以打开一个新的浏览器窗口。</p>
+<p>参数</p>
+<ul>
+<li>要加载的URL</li>
+<li>新窗口打开方式：<code>_self</code>  <code>_blank</code>（默认新标签页打开）</li>
+<li>窗口大小、位置。</li>
+</ul>
+<p>返回值  就是新建的窗口名称。</p>
+<p><code>窗口名.close()</code>可以关闭窗口，如果关闭自身那就使用 <code>window.close()</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 打开窗口</span>
+<span class="token keyword">var</span> newWin <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"http://www.jd.com"</span><span class="token punctuation">,</span><span class="token string">"_blank"</span><span class="token punctuation">,</span><span class="token string">"width=300,height=300,left=200,top=100"</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 2. 关闭窗口</span>
+newWin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>close()</code> 方法仅适用于通过 <code>window.open()</code> 打开的弹出窗口。</p>
+<h2><span id="p4-liu-lan-qi-kuan-gao">4、浏览器宽高</span><a href="#p4-liu-lan-qi-kuan-gao" class="header-anchor">#</a></h2>
+<p><code>window</code>对象有<code>innerWidth</code>和<code>innerHeight</code>属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。</p>
+<p>对应的，还有一个<code>outerWidth</code>和<code>outerHeight</code>属性，可以获取浏览器窗口的整个宽高。</p>
+<h1><span id="er-navigator-dui-xiang">二、navigator对象</span><a href="#er-navigator-dui-xiang" class="header-anchor">#</a></h1>
+<p>navigator 对象储存了浏览器信息。通过 <code>navigator</code> 可以引用该对象，并利用它的属性来读取客户端基本信息。</p>
+<p>常见属性：</p>
+<ul>
+<li><code>onLine</code> 表示浏览器是否连接到因特网</li>
+<li><code>platform</code> 浏览器所在的操作系统</li>
+<li><code>userAgent</code> 浏览器识别码</li>
+<li><code>appName</code> 浏览器名称</li>
+<li><code>labguage</code> 浏览器设置的语言</li>
+</ul>
+<h2><span id="p1-liu-lan-qi-jian-ce-fang-fa">1、浏览器检测方法</span><a href="#p1-liu-lan-qi-jian-ce-fang-fa" class="header-anchor">#</a></h2>
+<p>检测浏览器类型的方法有多种，常用的方法包括两种:<strong>特征检测法</strong>和<strong>字符串检测法</strong>，这两种方法都存在各自的优点与缺点，用户可以根据需要进行选择。</p>
+<p>（1）特征检测法</p>
+<ul>
+<li>特征检测法就是根据浏览器是否支持特定功能来决定相应操作的方式。这是一种非精确判断法。但却是最安全的检测方法</li>
+<li>因为准确检测浏览器的类型和型号是一件很困难的事情,而且很容易存在误差，如果不关心浏览器的身份，仅仅在意浏览器的执行能力，那么使用特征检测法就完全可以满足需要。</li>
+<li>当使用一个对象、方法或属性时，先判断它是否存在，如果存在，则说明浏览器支持该对象、方法属性，那么就可以放心使用</li>
+</ul>
+<p>（2）字符串检测法</p>
+<ul>
+<li>客户端浏览器每次发送HTTP请求时，都会附带有一个user-agent(用户代理)字符串，对于Web开发人员来说，可以使用用户代理字符串检测浏览器类型。</li>
+<li>userAgent字符串包含了web浏览器的大量信息，如浏览器的名称和版本。</li>
+</ul>
+<h2><span id="p2-cao-zuo-xi-tong-jian-ce-fang-fa">2、操作系统检测方法</span><a href="#p2-cao-zuo-xi-tong-jian-ce-fang-fa" class="header-anchor">#</a></h2>
+<p>navigator.userAgent返回值一般都会包含操作系统的基本信息，不过这些信息比较散乱，没有统一的规则。</p>
+<p>用户可以检测一些更为通用的信息，如检测是否为 Windows系统，或者为 Macintosh系统，而不去分辨操作系统的版本号。</p>
+<p>例如，如果仅检测通用信息，那么所有Windows版本的操作系统都会包含&quot;Win”字符串，所有Macintosh版本的操作系统都包含有&quot;Mac”字符串，所有Umix版本的操作系统都包含有&quot;X11”，而 Linux操作系统会同时包含&quot;X11”和&quot; Linux。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> isWin <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Win"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 如果是Windows系统，则返回true</span>
+<span class="token keyword">var</span> isMac <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Mac"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是Macintosh系统，则返回true </span>
+<span class="token keyword">var</span> isUnix <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"X11"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是UNIX系统，则返回true</span>
+<span class="token keyword">var</span> isLinux <span class="token operator">=</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Linux"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment">// 如果是Linux系统，则返回true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>！请注意，<code>navigator</code>的信息可以很容易地被用户修改，所以JavaScript读取的值不一定是正确的。但这样既可能判断不准确，也很难维护代码。正确的方法是充分利用JavaScript对不存在属性返回<code>undefined</code>的特性，直接用短路运算符<code>||</code>计算：</p>
+<pre class="line-numbers language-none"><code class="language-none">var width &#x3D; window.innerWidth || document.body.clientWidth;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="san-location-dui-xiang">三、location对象</span><a href="#san-location-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>location</code> 对象存储了与当前文档位置（URL）信息。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>href</code></td>
+<td>声明或获取当前文档完整的URL</td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td>协议部分 <code>http:</code></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>主机和端口名称 <code>localhost:8080</code></td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>主机名称 <code>localhost</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>端口号 <code>8080</code></td>
+</tr>
+<tr>
+<td><code>pathname</code></td>
+<td>路径部分</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>URL查询部分</td>
+</tr>
+<tr>
+<td><code>hash</code></td>
+<td>锚部分包括前导 <code>#</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>location.href</code> 可以设置和获取url地址</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"demo.html"</span><span class="token punctuation">;</span><span class="token comment">//重定向</span>
+location<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//刷新</span>
+location<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+hostname <span class="token comment">// http://127.0.0.1:5500/0717/12.location.html</span>
+protocol <span class="token comment">// 127.0.0.1</span>
+host <span class="token comment">// http:</span>
+port <span class="token comment">// 127.0.0.1:5500</span>
+pathname <span class="token comment">// 5500</span>
+search <span class="token comment">/// 0717/12.location.html</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>reload()</code> 重新加载文档</p>
+<p><code>replace()</code>  重新加载一个新文档，无需为它创建一个新的历史记录，替换当前文档的历史记录</p>
+<p><code>assign()</code> 和<code>href</code>差不多，要加载一个新页面，可以调用 <code>location.assign()</code> 。如果要重新加载当前页面，调用 <code>location.reload()</code> 方法非常方便。</p>
+<h1><span id="si-history-dui-xiang">四、history对象 *</span><a href="#si-history-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>history</code>对象保存了浏览器的历史记录，JS 可以调用<code>history</code>对象的<code>back()</code>或<code>forward ()</code>，相当于用户点击了浏览器的后退或前进按钮。</p>
+<p>这个对象属于历史遗留对象，对于现代Web页面来说，由于大量使用AJAX和页面交互，简单粗暴地调用<code>history.back()</code>可能会让用户感到非常愤怒。</p>
+<p>新手开始设计Web页面时喜欢在登录页登录成功时调用<code>history.back()</code>，试图回到登录前的页面。这是一种错误的方法。</p>
+<p>任何情况，你都不应该使用<code>history</code>这个对象了。</p>
+<h1><span id="wu-screen-dui-xiang">五、screen对象</span><a href="#wu-screen-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>screen</code> 对象表示屏幕的信息，常用的属性有：</p>
+<ul>
+<li>screen.width：屏幕宽度，以像素为单位；</li>
+<li>screen.height：屏幕高度，以像素为单位；</li>
+<li>screen.colorDepth：返回颜色位数，如8、16、24。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/21-JS%E4%BA%8B%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/21-JS%E4%BA%8B%E4%BB%B6/" class="post-title-link" itemprop="url">JS 事件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-01 14:02:27" itemprop="dateModified" datetime="2020-09-01T14:02:27+08:00">2020-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-gai-nian">一、概念</a>
+<ul>
+<li><a href="#1-shi-jian-mo-xing">1、事件模型</a></li>
+<li><a href="#2-shi-jian-liu">2、事件流</a></li>
+<li><a href="#3-shi-jian-bang-ding">3、事件绑定</a></li>
+</ul>
+</li>
+<li><a href="#er-shi-jian-lei-xing-dom0-ji">二、事件类型（DOM0级）</a>
+<ul>
+<li><a href="#1-shi-qu-he-huo-qu-jiao-dian-shi-jian">1、失去和获取焦点事件</a></li>
+<li><a href="#2-dian-ji-shi-jian-shu-biao-shi-jian">2、点击事件、鼠标事件</a></li>
+<li><a href="#3-jian-pan-shi-jian">3、键盘事件</a></li>
+<li><a href="#4-biao-dan-shi-jian">4、表单事件</a></li>
+<li><a href="#5-gun-dong-tiao-shi-jian">5、滚动条事件</a></li>
+<li><a href="#6-jia-zai-wan-cheng-shi-jian">6、加载完成事件</a></li>
+<li><a href="#7-qi-ta">7、其他</a></li>
+</ul>
+</li>
+<li><a href="#san-shi-jian-chu-li-han-shu">三、事件处理函数</a>
+<ul>
+<li><a href="#1-zhu-ce-shi-jian-addeventlistener">1、注册事件 addEventListener</a></li>
+<li><a href="#2-xiao-hui-shi-jian-removeeventlistener">2、销毁事件 removeEventListener</a></li>
+<li><a href="#3-jian-rong-xing-xiang-guan">3、兼容性相关</a></li>
+</ul>
+</li>
+<li><a href="#wu-ding-shi-qi">五、定时器 △△</a>
+<ul>
+<li><a href="#1-chao-shi-diao-yong-settimeout">1、超时调用 setTimeout</a></li>
+<li><a href="#2-jian-xie-diao-yong-setinterval">2、间歇调用 setInterval</a></li>
+</ul>
+</li>
+<li><a href="#si-shi-jian-qi-ta">四、事件其他</a>
+<ul>
+<li><a href="#1-domcontentloaded-shi-jian">1、DOMContentLoaded 事件</a></li>
+<li><a href="#2-event-shi-jian-dui-xiang">2、event 事件对象</a></li>
+<li><a href="#3-shu-biao-de-event-shi-jian">3、鼠标的 event 事件</a></li>
+<li><a href="#4-zu-zhi-chuan-bo">4、阻止传播</a></li>
+<li><a href="#5-zu-zhi-mo-ren-shi-jian">5、阻止默认事件</a></li>
+<li><a href="#6-shi-jian-wei-tuo">6、事件委托</a></li>
+<li><a href="#7-bu-chong-nei-rong">7、补充内容</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-gai-nian">一、概念</span><a href="#yi-gai-nian" class="header-anchor">#</a></h1>
+<h2><span id="p1-shi-jian-mo-xing">1、事件模型</span><a href="#p1-shi-jian-mo-xing" class="header-anchor">#</a></h2>
+<p><code>DOM0</code> 基本事件模型。</p>
+<p><code>DOM2</code> DOM事件模型，标准的事件处理模型。</p>
+<h2><span id="p2-shi-jian-liu">2、事件流</span><a href="#p2-shi-jian-liu" class="header-anchor">#</a></h2>
+<p><strong>事件流</strong>就是多个节点对象对同一个事件响应的先后顺序。</p>
+<p>冒泡型 从目标元素向 document 进行响应 （IE标准）</p>
+<p>捕获型 从 document 向 目标元素 进行响应 （网景标准）</p>
+<p><strong>混合型</strong> W3C事件流，先捕获，执行目标事件，最后冒泡。</p>
+<p><img src="/images/2020/%E4%BA%8B%E4%BB%B6%E6%B5%81.jpg" alt></p>
+<h2><span id="p3-shi-jian-bang-ding">3、事件绑定</span><a href="#p3-shi-jian-bang-ding" class="header-anchor">#</a></h2>
+<p>（1）静态绑定</p>
+<p>（2）动态绑定（DOM0级绑定）</p>
+<p><strong><code>元素 . on+事件类型 = 函数</code></strong></p>
+<ul>
+<li>绑定事件简单，把事件函数赋值给DOM对象的事件属性上</li>
+<li>执行的事件流是冒泡</li>
+<li>对一个元素绑定同一个事件多次，前面的会被后面覆盖</li>
+<li>注销事件只需要给事件属性赋值为 null</li>
+</ul>
+<p>（3）<strong>事件处理函数</strong></p>
+<p><strong><code>元素 . addEventListener(type function Boolean)</code></strong></p>
+<ul>
+<li>可以绑定同一个元素同一个事件多次。</li>
+<li>可以控制冒泡或者捕获。</li>
+<li>DOM2级事件（DOMContentLoader事件），只能使用这种方法绑定。</li>
+</ul>
+<p>（4） IE事件模型绑定方法（了解）</p>
+<p><code>元素 . attachEvent( onType function )</code></p>
+<p>事件的this指向事件源对象。</p>
+<h1><span id="er-shi-jian-lei-xing-dom0-ji">二、事件类型（DOM0级）</span><a href="#er-shi-jian-lei-xing-dom0-ji" class="header-anchor">#</a></h1>
+<h2><span id="p1-shi-qu-he-huo-qu-jiao-dian-shi-jian">1、失去和获取焦点事件</span><a href="#p1-shi-qu-he-huo-qu-jiao-dian-shi-jian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>focus</code></td>
+<td>获取焦点事件</td>
+</tr>
+<tr>
+<td><code>blur</code></td>
+<td>失去焦点事件</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-dian-ji-shi-jian-shu-biao-shi-jian">2、点击事件、鼠标事件</span><a href="#p2-dian-ji-shi-jian-shu-biao-shi-jian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>click</strong></td>
+<td>鼠标点击（通常左键）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+</tr>
+<tr>
+<td>contextmenu</td>
+<td>鼠标点击（右键）</td>
+</tr>
+<tr>
+<td>dblclick</td>
+<td>鼠标双击（左键）<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>鼠标按下</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>鼠标抬起</td>
+</tr>
+<tr>
+<td>mousemove<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></td>
+<td>鼠标移动</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>鼠标移入-可以触发事件冒泡<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup></td>
+</tr>
+<tr>
+<td>mouseenter</td>
+<td>鼠标移入-不会触发事件冒泡</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>鼠标移出-可以触发事件冒泡</td>
+</tr>
+<tr>
+<td>mouseleave</td>
+<td>鼠标移出-不会触发事件冒泡</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p3-jian-pan-shi-jian">3、键盘事件</span><a href="#p3-jian-pan-shi-jian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keydown</td>
+<td>键盘按下</td>
+</tr>
+<tr>
+<td><strong>keyup</strong></td>
+<td>键盘抬起（常用）</td>
+</tr>
+</tbody>
+</table>
+<p>如果是表单输入，则对表单绑定键盘事件。如果不是表单，则对document绑定键盘事件，控制其他元素。</p>
+<p><code>keyCode</code> 对应键盘中对应键位的键值</p>
+<p><code>shiftKey</code>、<code>ctrlKey</code>、<code>altKey</code> 是否按下对应按键 返回布尔值</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function-variable function">onkeydown</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">var</span> e <span class="token operator">=</span> e <span class="token operator">||</span> window<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>keyCode<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出按键的ascii码值</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p4-biao-dan-shi-jian">4、表单事件</span><a href="#p4-biao-dan-shi-jian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td>当表单内容改变时触发</td>
+</tr>
+<tr>
+<td>change</td>
+<td>当表单内容改变并且失去焦点时候触发</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p5-gun-dong-tiao-shi-jian">5、滚动条事件</span><a href="#p5-gun-dong-tiao-shi-jian" class="header-anchor">#</a></h2>
+<p><code>scroll</code> 元素滚动条在滚动时触发。</p>
+<p><code>window.onscroll </code></p>
+<h2><span id="p6-jia-zai-wan-cheng-shi-jian">6、加载完成事件</span><a href="#p6-jia-zai-wan-cheng-shi-jian" class="header-anchor">#</a></h2>
+<p><code>load事件</code> 在资源加载完成后执行。</p>
+<p><code>window.onload</code> 等待html所有的DOM节点，以及所有资源全部加载完成后执行。一个页面只能出现一次，因为<code>DOM0</code>级事件会覆盖。</p>
+<h2><span id="p7-qi-ta">7、其他</span><a href="#p7-qi-ta" class="header-anchor">#</a></h2>
+<p><code>window.onresize</code> 重置窗口大小时触发。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取视口大小封装函数</span>
+<span class="token keyword">var</span> <span class="token function-variable function">getScreen</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> w <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth<span class="token operator">||</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientWidth<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientHeight<span class="token operator">||</span>document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>clientHeight<span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        width<span class="token operator">:</span>w<span class="token punctuation">,</span>
+        height<span class="token operator">:</span>h
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>selectstart</code> 目标对象被开始选中时触发（选中动作刚开始，并未实质开始。）可用于屏蔽页面复制黏贴等。</p>
+<h1><span id="san-shi-jian-chu-li-han-shu">三、事件处理函数</span><a href="#san-shi-jian-chu-li-han-shu" class="header-anchor">#</a></h1>
+<h2><span id="p1-zhu-ce-shi-jian-addeventlistener">1、注册事件 addEventListener</span><a href="#p1-zhu-ce-shi-jian-addeventlistener" class="header-anchor">#</a></h2>
+<p><strong><code>addEventListener()</code></strong>  注册事件（事件处理函数）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">X</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                     
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 参数： </span>
+<span class="token comment">// 1. 事件类型（不用加on）</span>
+<span class="token comment">// 2. 处理函数</span>
+<span class="token comment">// 3. Boolean 控制冒泡或捕获</span>
+<span class="token comment">//    - false 冒泡</span>
+<span class="token comment">//    - true 捕获</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-xiao-hui-shi-jian-removeeventlistener">2、销毁事件 removeEventListener</span><a href="#p2-xiao-hui-shi-jian-removeeventlistener" class="header-anchor">#</a></h2>
+<p><strong><code>removeEventListener()</code></strong> 销毁事件</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">X</span><span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span> type<span class="token punctuation">,</span> fn <span class="token punctuation">)</span>
+
+<span class="token comment">// 参数</span>
+<span class="token comment">// - type 事件类型</span>
+<span class="token comment">// - fn 函数</span>
+<span class="token comment">// 如果要移除事件句柄，addEventListener() 的执行函数必须使用外部函数。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-jian-rong-xing-xiang-guan">3、兼容性相关</span><a href="#p3-jian-rong-xing-xiang-guan" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 封装</span>
+<span class="token keyword">function</span> <span class="token function">addEvent</span><span class="token punctuation">(</span> <span class="token parameter">e<span class="token punctuation">,</span> type<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> boo</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> e<span class="token punctuation">.</span>addEventListener<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		e<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span> type<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> boo<span class="token operator">||</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>attachEvent<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        e<span class="token punctuation">.</span><span class="token function">attachEvent</span><span class="token punctuation">(</span><span class="token string">"on"</span><span class="token operator">+</span>type<span class="token punctuation">,</span> fn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        e<span class="token punctuation">[</span><span class="token string">"on"</span> <span class="token operator">+</span> type<span class="token punctuation">]</span> <span class="token operator">=</span> fn<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">removeEvent</span><span class="token punctuation">(</span> <span class="token parameter">e<span class="token punctuation">,</span> type<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="wu-ding-shi-qi">五、定时器 △△</span><a href="#wu-ding-shi-qi" class="header-anchor">#</a></h1>
+<p>JS是单线程语言，但它允许通过设置超时值和间歇时间值来调度代码在特定的时刻执行。**<a href>超时调用</a><strong>是在指定的时间过后执行代码（一次），而</strong><a href>间歇调用</a>**则是每隔指定的时间就执行一次代码。</p>
+<h2><span id="p1-chao-shi-diao-yong-settimeout">1、超时调用 setTimeout</span><a href="#p1-chao-shi-diao-yong-settimeout" class="header-anchor">#</a></h2>
+<p>超时调用需要使用 <code>window</code> 对象的 <code>setTimeout()</code> 方法，能够在指定的时间段后执行特定代码。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> TimerID <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span> code<span class="token punctuation">,</span> delay <span class="token punctuation">[</span><span class="token punctuation">,</span>arg<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">// code  -- 表示延迟执行的字符串型代码（或者函数）</span>
+<span class="token comment">//          如果包含多个语句，应该使用分号间隔</span>
+<span class="token comment">//          函数不用调用，只是书写函数</span>
+<span class="token comment">// delay -- 延迟时间，单位毫秒</span>
+<span class="token comment">// arg   -- 如果code是一个函数，则之后是任意多个参数</span>
+
+<span class="token comment">// 返回值</span>
+<span class="token comment">// TimeID 指向延迟执行的代码控制句柄。（唯一的）</span>
+
+<span class="token comment">// 写法1</span>
+<span class="token keyword">var</span> TimerID1 <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">'var a=1;alert(a);'</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 写法2</span>
+<span class="token keyword">var</span> TimerID2 <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 写法3</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> TimerID3 <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 传参方法1</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>a<span class="token operator">+</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token string">"f(1,2)"</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 传参方法2</span>
+<span class="token keyword">var</span> b <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>取消超时调用（特定条件）：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">clearTimeout</span><span class="token punctuation">(</span>timerID<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p2-jian-xie-diao-yong-setinterval">2、间歇调用 setInterval</span><a href="#p2-jian-xie-diao-yong-setinterval" class="header-anchor">#</a></h2>
+<p>方法是<code>setInterval()</code>，使用方法和超时调用基本相同。</p>
+<p>取消方法是<code>clearInterval(timerID)</code>。</p>
+<p>注意<strong>清除计时器</strong>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 计时器的this指向</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 一般都是指向 window</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="si-shi-jian-qi-ta">四、事件其他</span><a href="#si-shi-jian-qi-ta" class="header-anchor">#</a></h1>
+<h2><span id="p1-domcontentloaded-shi-jian">1、DOMContentLoaded 事件</span><a href="#p1-domcontentloaded-shi-jian" class="header-anchor">#</a></h2>
+<p>DOM2级事件，需要使用事件函数绑定。<strong>当DOM节点加载完成后即可执行，不需要等待加载资源。</strong></p>
+<p>而 <code>window.onload</code> 是等待html所有的DOM节点，以及所有资源加载完成后才会执行。</p>
+<h2><span id="p2-event-shi-jian-dui-xiang">2、event 事件对象</span><a href="#p2-event-shi-jian-dui-xiang" class="header-anchor">#</a></h2>
+<p>由事件自动创建，记录当前事件的状态。</p>
+<h2><span id="p3-shu-biao-de-event-shi-jian">3、鼠标的 event 事件</span><a href="#p3-shu-biao-de-event-shi-jian" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clientX</code> <code>clientY</code></td>
+<td>浏览器窗口定位<br>原点是浏览器窗口左上角</td>
+</tr>
+<tr>
+<td><code>offsetX</code> <code>offsetY</code></td>
+<td>当前事件目标对象定位</td>
+</tr>
+<tr>
+<td><code>screenX</code> <code>screenY</code></td>
+<td>计算机屏幕定位</td>
+</tr>
+<tr>
+<td><code>pageX</code> <code>pageY</code></td>
+<td>文档定位</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/2020/%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1.jpg" alt="鼠标事件对象"></p>
+<h2><span id="p4-zu-zhi-chuan-bo">4、阻止传播</span><a href="#p4-zu-zhi-chuan-bo" class="header-anchor">#</a></h2>
+<p><code>stopPropagation()</code> 现代浏览器</p>
+<p><code>cancelBubble = true</code> IE低版本</p>
+<h2><span id="p5-zu-zhi-mo-ren-shi-jian">5、阻止默认事件</span><a href="#p5-zu-zhi-mo-ren-shi-jian" class="header-anchor">#</a></h2>
+<p>取消事件的默认操作，阻止默认事件。</p>
+<p>（1）通用 <code>preventDefault()</code></p>
+<p>（2）IE低版本 <code>returnValue = false</code></p>
+<p>（3）<code>return false</code></p>
+<h2><span id="p6-shi-jian-wei-tuo">6、事件委托</span><a href="#p6-shi-jian-wei-tuo" class="header-anchor">#</a></h2>
+<p><strong>事件委托（delegate）</strong> 也称为事件托管、事件代理，就是把目标节点的事件绑定到祖先节点上。</p>
+<p>原理：冒泡事件流。</p>
+<p>优点：</p>
+<ul>
+<li>优化代码，提高效率</li>
+<li>给未来的元素添加绑定</li>
+</ul>
+<h2><span id="p7-bu-chong-nei-rong">7、补充内容</span><a href="#p7-bu-chong-nei-rong" class="header-anchor">#</a></h2>
+<p>禁止选择：<code>onselectstart=&quot;return false&quot;</code></p>
+<p>使用场景：实现元素内文本不被选中</p>
+<p>禁止拖放：<code>ondragstart=&quot;return false&quot;</code></p>
+<p>使用场景：禁止鼠标在网页上拖动</p>
+<p>禁止拷贝：<code>oncopy=&quot;return false&quot;</code></p>
+<p>使用场景：很多网站上的页面内容是不允许复制的，这样可以防止用户或者程序恶意的去抓取页面数据。</p>
+<p>禁止粘贴：<code>onpaste=&quot;return false&quot;</code></p>
+<p>使用场景：网银转账时，输入对方卡号，需要输入两次，通常第二次输入的输入框是不允许粘贴的，这样就在一定程度上保证了卡号的准确性。</p>
+<p>禁止剪贴：<code>oncut = &quot;return false&quot;</code></p>
+<p>禁止鼠标右键：<code>oncontextmenu=&quot;return false&quot;</code></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>在当前元素按下并抬起时才会触发。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>双击需在300毫秒内完成。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>触发频率很高，需要书写截流函数。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>当事件发生后，这个事件就要开始传播（从里到外或者从外向里）。<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/3f0ee1f6ec30">:link:</a> <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/22-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/22-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">常见效果</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 21:22:00" itemprop="dateModified" datetime="2020-08-31T21:22:00+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="chang-jian-xiao-guo">常见效果</span><a href="#chang-jian-xiao-guo" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<h1><span id="yi-biao-qian-ye-qie-huan">一、标签页切换</span><a href="#yi-biao-qian-ye-qie-huan" class="header-anchor">#</a></h1>
+<p>方法一</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> oH2s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".h2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> oLis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"active"</span><span class="token punctuation">;</span>
+                oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"show"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+                oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法二</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> oH2s <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".h2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> oLis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+    oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 先全部清空</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> oH2s<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            oH2s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+            oLis<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"active"</span><span class="token punctuation">;</span>
+        oLis<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>className <span class="token operator">=</span> <span class="token string">"show"</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>方法三（面向对象）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Tab</span><span class="token punctuation">(</span><span class="token parameter">btn<span class="token punctuation">,</span> content</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//把变量或者参数赋值给实例化对象，这样在构造函数和原型对象的方法中都能够访问这个变量</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>btns <span class="token operator">=</span> btn<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>contents <span class="token operator">=</span> content<span class="token punctuation">;</span>
+    <span class="token comment">//在其他函数中想要使用指向实例化对象的this比较困难，所以用一个that变量保存一个this,方便以后在其他地方使用</span>
+    <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    <span class="token comment">//对所有的按钮绑定点击事件</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//给所有的元素扩展一个下标index属性</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//因为所有的Tab切换的核心方法都是一样的，所以我们把方法写在了原型对象上</span>
+            <span class="token comment">//当点击按钮的时候，去执行原型对象上的方法</span>
+            <span class="token comment">//这样所有的Tab切换的执行切换的方法都是同一个，节省效率</span>
+            <span class="token comment">//把当前的this（指向点击的对象）传参传递给方法，方便使用</span>
+            that<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Tab</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">click</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">that</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//使用that来接收参数 参数代表的是点击事件的事件对象</span>
+    <span class="token comment">//先清空所有的内容</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>btns<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>contents<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token comment">//给当前点击的元素及对应的面板添加类名</span>
+    that<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>contents<span class="token punctuation">[</span>that<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"active"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p>待更新…</p>
+<h2><span id="phui-dao-ding-bu">回到顶部</span><a href="#phui-dao-ding-bu" class="header-anchor">#</a></h2>
+<h2><span id="pce-bian-lan">侧边栏</span><a href="#pce-bian-lan" class="header-anchor">#</a></h2>
+<h2><span id="ppeng-bi-fan-dan">碰壁反弹</span><a href="#ppeng-bi-fan-dan" class="header-anchor">#</a></h2>
+<h2><span id="ptu-pian-lun-bo">图片轮播</span><a href="#ptu-pian-lun-bo" class="header-anchor">#</a></h2>
+<h2><span id="ptuo-zhuai">拖拽</span><a href="#ptuo-zhuai" class="header-anchor">#</a></h2>
+<h2><span id="pbiao-dan-hui-che-ti-jiao-biao-dan-quan-xuan">表单（回车提交表单、全选）</span><a href="#pbiao-dan-hui-che-ti-jiao-biao-dan-quan-xuan" class="header-anchor">#</a></h2>
+<h2><span id="pzi-ding-yi-gun-dong-tiao">自定义滚动条</span><a href="#pzi-ding-yi-gun-dong-tiao" class="header-anchor">#</a></h2>
+<p>视口高度 H1 内容高度 H2</p>
+<p>滑块高度 h1 滑槽高度 h2</p>
+<p>比例 s 内容移动量H’ 滑槽移动量h’</p>
+<p>基本关系</p>
+<p>s = H1/H2 = h1/h2</p>
+<h2><span id="plan-jia-zai">懒加载</span><a href="#plan-jia-zai" class="header-anchor">#</a></h2>
+<h2><span id="ppu-bu-liu">瀑布流</span><a href="#ppu-bu-liu" class="header-anchor">#</a></h2>
+<h2><span id="ptu-pian-fang-da-jing">图片放大镜</span><a href="#ptu-pian-fang-da-jing" class="header-anchor">#</a></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/20-DOM%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/20-DOM%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">DOM 对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-01 18:50:35" itemprop="dateModified" datetime="2020-09-01T18:50:35+08:00">2020-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-gai-nian">一、概念</a>
+<ul>
+<li><a href="#1-dom-ban-ben">1、DOM 版本</a></li>
+<li><a href="#2-document-dui-xiang">2、document 对象</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="#er-jie-dian-fang-wen">二、节点访问</a>
+<ul>
+<li><a href="#1-jie-dian">1、节点</a></li>
+<li><a href="#2-fang-wen-jie-dian">2、访问节点</a>
+<ul>
+<li><a href="#2-1-chuan-tong-fang-fa-huo-qu">2.1 传统方法获取</a></li>
+<li><a href="#2-2-selectors-api">2.2 selectors API</a></li>
+<li><a href="#2-3-fang-fa-bi-jiao">2.3 方法比较</a></li>
+<li><a href="#2-4-jie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa">2.4 节点关系中访问节点方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#san-jie-dian-cao-zuo">三、节点操作</a>
+<ul>
+<li><a href="#1-chuang-jian-jie-dian">1、创建节点</a>
+<ul>
+<li><a href="#4-yuan-su-nei-rong-cao-zuo">4、元素内容操作</a></li>
+<li><a href="#5-shu-xing-jie-dian-cao-zuo">5、属性节点操作</a></li>
+<li><a href="#6-wen-dang-pian-duan-jie-dian">6、文档片段节点</a></li>
+</ul>
+</li>
+<li><a href="#san-jiao-ben-hua-css">三、脚本化CSS</a>
+<ul>
+<li><a href="#1-huo-qu-chi-cun">1、获取尺寸</a></li>
+<li><a href="#2-huo-qu-wei-zhi">2、获取位置</a></li>
+<li><a href="#3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao">3、获取文档大小、视口大小</a></li>
+<li><a href="#4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao">4、获取和设置系统滚动条</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h2><span id="pyi-gai-nian">一、概念</span><a href="#pyi-gai-nian" class="header-anchor">#</a></h2>
+<p><strong>Document Object Model</strong>， DOM，<strong>文档对象模型</strong>。是W3C制订的一套技术规范，用来描述JS脚本如何与HTML或XML文档进行交互的Web标准。加载HTML页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM将这种树型结构理解为由节点组成的DOM树。</p>
+<p>DOM规定了一系列标准接口（函数），允许开发人员通过标准方式访问文档结构、操作网页内容、控制样式和行为等。</p>
+<p><img src="/images/2020/%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B.jpg" alt="文档对象模型"></p>
+<h3><span id="p1-dom-ban-ben">1、DOM 版本</span><a href="#p1-dom-ban-ben" class="header-anchor">#</a></h3>
+<p>DOM0和DOM2。</p>
+<h3><span id="p2-document-dui-xiang">2、document 对象</span><a href="#p2-document-dui-xiang" class="header-anchor">#</a></h3>
+<p><strong><code>document</code> 对象</strong> 是<code>window</code>对象的一个属性，因此可以将<code>document</code>对象作为一个全局对象来访问。当浏览器载入html文档, 它就会成为<code>document</code>对象。</p>
+<p>JS 顶层对象是<code>global</code>，<code>window</code>是<code>global</code>的实现。</p>
+<h1><span id="er-jie-dian-fang-wen">二、节点访问</span><a href="#er-jie-dian-fang-wen" class="header-anchor">#</a></h1>
+<p>在网页中所有对象和内容都被称为节点（Node）。如文档、元素、文本、属性、注释等。节点是DOM最基本的单元，并派生出不同类型的节点，它们共同构成了文档的树形结构模型。</p>
+<h2><span id="p1-jie-dian">1、节点</span><a href="#p1-jie-dian" class="header-anchor">#</a></h2>
+<h4><span id="pchang-yong-jie-dian-chong-lei">常用节点种类</span><a href="#pchang-yong-jie-dian-chong-lei" class="header-anchor">#</a></h4>
+<ul>
+<li>document 文档节点</li>
+<li>documentFragment 文档片段节点</li>
+<li>Element 元素节点</li>
+<li>attr 属性节点</li>
+<li>text 文本节点</li>
+<li>comment 注释节点</li>
+</ul>
+<h4><span id="pjie-dian-guan-xi">节点关系</span><a href="#pjie-dian-guan-xi" class="header-anchor">#</a></h4>
+<p>DOM把文档视为树形结构，称为节点树。节点之间的关系包括：上下父子关系，相邻兄弟关系。</p>
+<ul>
+<li>在节点树中，最顶端节点为根节点。除了根节点之外，每个节点都有一个父节点。</li>
+<li>节点可以包含任何数量的子节点。</li>
+<li>叶子是没有子节点的节点。</li>
+<li>同级节点是拥有相同父节点的节点。</li>
+</ul>
+<h4><span id="pchildnodes">childNodes</span><a href="#pchildnodes" class="header-anchor">#</a></h4>
+<p><code>childNodes</code> 属性获取元素所有的子节点，保存到一个<code>NodeList</code>对象中。</p>
+<h4><span id="pjie-dian-lei-xing-ming-cheng-zhi">节点类型、名称、值</span><a href="#pjie-dian-lei-xing-ming-cheng-zhi" class="header-anchor">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodeType</code></td>
+<td>节点类型</td>
+</tr>
+<tr>
+<td><code>nodeName</code></td>
+<td>节点名称</td>
+</tr>
+<tr>
+<td><code>nodeValue</code></td>
+<td>节点值</td>
+</tr>
+</tbody>
+</table>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> oBox <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"box"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> nodes <span class="token operator">=</span> oBox<span class="token punctuation">.</span>childNodes<span class="token punctuation">;</span>
+<span class="token comment">// nodes -- 节点的集合，类型 NodeList</span>
+<span class="token comment">// nodes[3] -- 直接获取节点</span>
+<span class="token comment">// nodes.item(5) -- 直接获取节点</span>
+
+<span class="token comment">// (1) documment</span>
+<span class="token comment">// nodeType -- 9</span>
+<span class="token comment">// nodeName -- #document</span>
+<span class="token comment">// nodeValue -- null</span>
+
+<span class="token comment">// (2) 元素节点</span>
+<span class="token comment">// nodeType -- 1</span>
+<span class="token comment">// nodeName -- 标签名大写</span>
+<span class="token comment">// nodeValue -- null</span>
+
+<span class="token comment">// (3) 文本节点</span>
+<span class="token comment">// nodeType -- 3</span>
+<span class="token comment">// nodeName -- #text</span>
+<span class="token comment">// nodeValue -- 文本内容</span>
+
+<span class="token comment">// (4) 注释节点</span>
+<span class="token comment">// nodeType -- 8</span>
+<span class="token comment">// nodeName -- #comment</span>
+<span class="token comment">// nodeValue -- 注释内容</span>
+
+<span class="token comment">// (5) 属性节点</span>
+<span class="token comment">// nodeType -- 2</span>
+<span class="token comment">// nodeName -- 键值对形式，属性名就是节点名称</span>
+<span class="token comment">// nodeValue -- 属性值就是节点的值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>​</p>
+<p>​</p>
+<h2><span id="p2-fang-wen-jie-dian">2、访问节点</span><a href="#p2-fang-wen-jie-dian" class="header-anchor">#</a></h2>
+<h3><span id="p2-1-chuan-tong-fang-fa-huo-qu">2.1 传统方法获取</span><a href="#p2-1-chuan-tong-fang-fa-huo-qu" class="header-anchor">#</a></h3>
+<p>（1） <strong>getElementsByTagName</strong> 通过标签名获取</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获得一个 HTMLCollection 对象（伪数组）</span>
+<span class="token comment">// 拥有 length 属性</span>
+<span class="token keyword">var</span> oLis <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 控制背景并变色</span>
+oLis<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span> <span class="token comment">// 报错了！</span>
+oLis<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span> <span class="token comment">// 注意要加下标获取</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）<strong>getElementsByClassName</strong> 通过类名</p>
+<p>（3）getElementsByName 通过name属性获取（几乎不用）</p>
+<p>IE6789 不兼容。</p>
+<p>（4）getElementByID 通过id获取</p>
+<p>和上面三个的区别是，这个可以直接获取到元素，不需要下标。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取某个元素中元素的方法</span>
+<span class="token comment">// （1）先获取到ul</span>
+<span class="token keyword">var</span> oBox <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"box"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> oBox2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"ul"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// （2）通过ul获取到其中的li</span>
+<span class="token keyword">var</span> oBoxLis <span class="token operator">=</span> oBox<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> oBoxLis2 <span class="token operator">=</span> oBox2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//   注意下标</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p2-2-selectors-api">2.2 selectors API</span><a href="#p2-2-selectors-api" class="header-anchor">#</a></h3>
+<p>直接使用CSS选择器作为参数传递。</p>
+<p>核心方法 <code>querySelector</code> 和 <code>querySelectorAll</code>。后者获取的是一个<code>NodeList</code>对象。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取单个节点（如果选择多个，默认选第一个）</span>
+<span class="token keyword">var</span> oRed <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#box>.red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取多个节点（NodeList），使用的时候注意加下标</span>
+<span class="token keyword">var</span> oRed2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">"#box>.red"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+oRed2<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  	item<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">"red"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意：低版本的IE&lt;8不支持<code>querySelector</code>和<code>querySelectorAll</code>。IE8仅有限支持。</p>
+<h3><span id="p2-3-fang-fa-bi-jiao">2.3 方法比较</span><a href="#p2-3-fang-fa-bi-jiao" class="header-anchor">#</a></h3>
+<p><code>getElementsByXX</code> 获取的元素集合是 <strong>动态</strong> 的，也就是DOM节点改变时，当前获取的集合内容也会改变。（选出来的元素会随着文档的改变而改变）</p>
+<p><code>selector API</code> 是 <strong>静态</strong> 的集合。（只要取出来，就和页面有没有任何关系；未来元素改变，不影响获取的结果。）</p>
+<p>NodeList是静态的，HTMLCollection是动态的</p>
+<h3><span id="p2-4-jie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa">2.4 节点关系中访问节点方法</span><a href="#p2-4-jie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parentNode</td>
+<td>获取元素的父元素节点</td>
+</tr>
+<tr>
+<td>children</td>
+<td>获取元素的所有子元素节点 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></td>
+</tr>
+<tr>
+<td>firstChild</td>
+<td>获取第一个子元素节点<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></td>
+</tr>
+<tr>
+<td>firstElementChild</td>
+<td>获取第一个子元素节点</td>
+</tr>
+<tr>
+<td>lastChild</td>
+<td>获取最后一个子元素节点<sup class="footnote-ref"><a href="#fn2" id="fnref2:1">[2:1]</a></sup></td>
+</tr>
+<tr>
+<td>lastElementChild</td>
+<td>获取最后一个子元素节点</td>
+</tr>
+<tr>
+<td>nextSibling</td>
+<td>获取下一个兄弟节点<sup class="footnote-ref"><a href="#fn2" id="fnref2:2">[2:2]</a></sup></td>
+</tr>
+<tr>
+<td>nextElementSibing</td>
+<td>获取下一个兄弟节点</td>
+</tr>
+<tr>
+<td>previousSibling</td>
+<td>获取上一个兄弟节点<sup class="footnote-ref"><a href="#fn2" id="fnref2:3">[2:3]</a></sup></td>
+</tr>
+<tr>
+<td>previosElementSibing</td>
+<td>获取上一个兄弟节点</td>
+</tr>
+</tbody>
+</table>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// (1) parentNode</span>
+<span class="token operator">...</span>parentNode <span class="token comment">// ul</span>
+<span class="token operator">...</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token comment">// body</span>
+<span class="token operator">...</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode <span class="token comment">// html</span>
+<span class="token operator">...</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode <span class="token comment">// document</span>
+<span class="token operator">...</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode <span class="token comment">// null</span>
+<span class="token operator">...</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">.</span>parentNode <span class="token comment">// 报错</span>
+
+
+<span class="token comment">// (2) 获取上一个兄弟元素节点的兼容性封装</span>
+<span class="token keyword">function</span> <span class="token function">getPrevSibling</span><span class="token punctuation">(</span><span class="token parameter">ele</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  	<span class="token keyword">if</span><span class="token punctuation">(</span>ele<span class="token punctuation">.</span>previousElementSibing<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> ele<span class="token punctuation">.</span>previousElementSibing<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> ele<span class="token punctuation">.</span>previousSibing<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其他获取节点方法</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// (1)获取body元素</span>
+document<span class="token punctuation">.</span>body<span class="token operator">==</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// (2)获取head元素</span>
+document<span class="token punctuation">.</span>head<span class="token operator">==</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'head'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// (3)获取html元素</span>
+document<span class="token punctuation">.</span>documentElement<span class="token operator">==</span>document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="san-jie-dian-cao-zuo">三、节点操作</span><a href="#san-jie-dian-cao-zuo" class="header-anchor">#</a></h1>
+<p>节点关系都是只读的，DOM提供了一些操作节点的方法。</p>
+<h2><span id="p1-chuang-jian-jie-dian">1、创建节点</span><a href="#p1-chuang-jian-jie-dian" class="header-anchor">#</a></h2>
+<p>（1）<code>createElement</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span>tag<span class="token punctuation">)</span>
+<span class="token comment">/*
+	参数：标签名字
+	返回值：新元素的引用
+*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用document对象的createElement方法能够根据参数指定的标签名创建一个新的元素。并返回对新元素的引用。</p>
+<p>使用creatElement方法创建的新元素不会被自动添加到文档里，需要使用appendChild等方法。</p>
+<p>（2）创建文本节点 <code>createTextNode</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">createTextNode</span><span class="token punctuation">(</span>String<span class="token punctuation">)</span>
+<span class="token comment">//                    参数是字符串</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用document对象的createTextNode方法可创建文本节点。创建的文本节点需要使用appendChild等方法才能插入到元素节点中，当然也可以使用 <strong>innerHTML</strong> 方法给元素节点添加内容。</p>
+<h4><span id="pcha-ru-jie-dian">插入节点</span><a href="#pcha-ru-jie-dian" class="header-anchor">#</a></h4>
+<p>都是插入元素的父元素调用的方法。</p>
+<p>（1）appendChild()</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>appendChild()方法可以向当前节点的字节点列表的==末尾==添加新的节点。如果文档树中已经存在参数节点，则将从文档树中删除，然后重新插入新的位置。</p>
+<p>（2）insertBefore( )</p>
+<p>使用 <strong>insertBefore(newChild,oldChild)</strong> 方法可以在已有的子节点前插入一个新的子节点。</p>
+<p>newChild表示新插入的节点，oldChild用于指定插入节点的后边的相邻位置。插入成功以后，该方法返回新插入的节点。insertBefore可以把指定元素及其所包含的所有子节点都一起插入到指定位置中。同时会先删除移动的元素，再重新插入。</p>
+<p>appendChild 和 insertBefore 可以操作已经存在的元素。</p>
+<h4><span id="pfu-zhi-jie-dian-clonenode">复制节点 cloneNode()</span><a href="#pfu-zhi-jie-dian-clonenode" class="header-anchor">#</a></h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//      参数 true 深复制 复制整个节点和里面的内容</span>
+<span class="token comment">//           false 浅复制 只复制节点（不要里面的内容）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><code>cloneNode()</code> 方法可以创建一个节点的副本<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。复制后的新节点，也不会被自动插入到文档，需要用到之前的方法去插入。</p>
+<h4><span id="pshan-chu-jie-dian-removechild">删除节点 removeChild()</span><a href="#pshan-chu-jie-dian-removechild" class="header-anchor">#</a></h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">removeChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 返回值：</span>
+<span class="token comment">// - 删除成功 ==> 返回被删除的节点</span>
+<span class="token comment">// - 删除失败 ==> 返回 null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>removeChild</strong>() 方法可以从子节点列表中删除某个节点，该节点所包含的所有子节点将同时被删除。</p>
+<h4><span id="pti-huan-jie-dian-replacechild">替换节点 replaceChild()</span><a href="#pti-huan-jie-dian-replacechild" class="header-anchor">#</a></h4>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">replaceChild</span><span class="token punctuation">(</span>newNode<span class="token punctuation">,</span>oldNode<span class="token punctuation">)</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">// - newNode 指定的新节点</span>
+<span class="token comment">// - oldNode 被替换的节点</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">// - 替换成功 ==> 返回替换的节点</span>
+<span class="token comment">// - 替换失败 ==>  null</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>replaceChild(new, old)</code> 方法可以将某个子节点替换为另一个。替换节点替换的是所有子节点以及包含的所有内容。</p>
+<h3><span id="p4-yuan-su-nei-rong-cao-zuo">4、元素内容操作</span><a href="#p4-yuan-su-nei-rong-cao-zuo" class="header-anchor">#</a></h3>
+<h4><span id="pinnerhtml-innertext-outerhtml-outertext">innerHTML、innerText、outerHTML、outerText</span><a href="#pinnerhtml-innertext-outerhtml-outertext" class="header-anchor">#</a></h4>
+<p>（1）获取标签</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>abc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>破晓<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>是猪<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+oT <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oT<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span> <span class="token comment">//&lt;span>破晓&lt;/span>是猪</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oT<span class="token punctuation">.</span>innerText<span class="token punctuation">)</span> <span class="token comment">//破晓是猪</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oT<span class="token punctuation">.</span>outerText<span class="token punctuation">)</span> <span class="token comment">//破晓是猪</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oT<span class="token punctuation">.</span>outerHTML<span class="token punctuation">)</span> <span class="token comment">//&lt;p id="abc">&lt;span>破晓&lt;/span>是猪&lt;/p></span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>innerHTML</code> 和 <code>innerText</code>  前者可以解析并输出标签，后者是纯文本。</p>
+<p><code>innerHTML</code> 和 <code>outerHTML</code>  前者不包括自身，后者包括自身。</p>
+<p><img src="/images/2020/%E5%85%83%E7%B4%A0%E5%86%85%E5%AE%B9%E6%93%8D%E4%BD%9C.gif" alt="元素内容操作"></p>
+<p>（2）设置标签（直接覆盖原来的内容）</p>
+<p>innerText 和 outerText 在获取的时候是相同效果，但在设置时，innerText仅设置标签所包含的文本，而 outerText 设置包含包括标签<strong>自身在内</strong>的文本。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">oTest<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"这是内容"</span>
+oTest<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">"&lt;a href = "</span>##<span class="token string">"> 这是内容 &lt;/a>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4><span id="ptextcontent">textContent</span><a href="#ptextcontent" class="header-anchor">#</a></h4>
+<p><strong>textContent</strong> 设置或者返回固定节点的文本内容。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent<span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"myList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token string">"你好"</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（1）textContent和innerHTML的区别</p>
+<ul>
+<li>textContent 会获取 style= “display:none” 中的文本，而innerText不会。</li>
+<li>innerText 不会理会html格式，直接输出不换行的文本，textContent会根据标签里面的元素独立一行。</li>
+<li>innerText 对IE的兼容性较好 ，textContent虽然作为标准方法但是只支持IE8+以上的浏览器 。</li>
+</ul>
+<p>（2）兼容性处理</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">setOrGetContent</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span>content</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//代表当前是读取操作</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//只要能拿到这个dom对象的textContent属性值，代表当前用户是高级浏览器</span>
+            <span class="token keyword">return</span> node<span class="token punctuation">.</span>textContent<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//代表拿不到  那就是低级浏览器</span>
+            <span class="token keyword">return</span> node<span class="token punctuation">.</span>innerText<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">//代表写入操作</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>textContent<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">//代表高级</span>
+            node<span class="token punctuation">.</span>textContent <span class="token operator">=</span> content<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">//代表低级</span>
+            node<span class="token punctuation">.</span>innerText <span class="token operator">=</span> content<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p5-shu-xing-jie-dian-cao-zuo">5、属性节点操作</span><a href="#p5-shu-xing-jie-dian-cao-zuo" class="header-anchor">#</a></h3>
+<p>create | get | set | remove</p>
+<h4><span id="pchuang-jian-shu-xing-jie-dian">创建属性节点</span><a href="#pchuang-jian-shu-xing-jie-dian" class="header-anchor">#</a></h4>
+<p><strong>createAttribute</strong> 方法可以创建属性节点。</p>
+<ul>
+<li>使用属性节点的name属性，可以得到属性的名称。</li>
+<li>使用属性节点的value属性，可以设置和属性的值。</li>
+<li>创建的属性可以通过setAttributeNode来插入到元素中。</li>
+</ul>
+<h4><span id="pdu-qu-shu-xing-zhi">读取属性值</span><a href="#pdu-qu-shu-xing-zhi" class="header-anchor">#</a></h4>
+<p>（1） 常用点语法通过元素直接访问HTML属性，如src、href等<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>。</p>
+<p>（2） <strong>getAttribute</strong> 方法可以读取指定属性的值（非自有属性）。</p>
+<h4><span id="pshe-zhi-shu-xing-zhi">设置属性值</span><a href="#pshe-zhi-shu-xing-zhi" class="header-anchor">#</a></h4>
+<p><strong>setAttribute(name,value)</strong> 方法可以设置元素的属性值。</p>
+<p>参数name和value分别代表属性名称和属性值，并且必须是字符串，如果存在相同属性，则值被刷新，如果不存在则创建属性并添加。</p>
+<p>通过 <code>ele.value</code> 获取或设置表单的值（string）。</p>
+<h4><span id="pshan-chu-shu-xing">删除属性</span><a href="#pshan-chu-shu-xing" class="header-anchor">#</a></h4>
+<p><strong>removeAttribute</strong>() 使用元素的方法可以删除指定的属性</p>
+<p>参数是要删除的属性名。</p>
+<h4><span id="pzi-ding-yi-shu-xing-h5">自定义属性 <code>H5</code></span><a href="#pzi-ding-yi-shu-xing-h5" class="header-anchor">#</a></h4>
+<p>HTML5 允许用户为元素自定义属性，但是要求添加前缀<code>data-</code>。</p>
+<p><code>.dateset</code> 设置和获取自定义属性</p>
+<p><code>.delete</code> 删除自定义属性</p>
+<h3><span id="p6-wen-dang-pian-duan-jie-dian">6、文档片段节点</span><a href="#p6-wen-dang-pian-duan-jie-dian" class="header-anchor">#</a></h3>
+<p><strong>DocumentFragment</strong> 是一个==虚拟的==节点类型，仅仅存在于内存中，没有添加到文档树中，看不到渲染效果。当文档片段设计完善后，再使用JS一次性添加到文档树中显示出来，提高效率，==减少页面重绘的次数==。避免浏览器渲染和资源占用，解决大量添加节点时候的性能问题。</p>
+<p><strong>createDocumentFragment()</strong> 创建虚拟节点，使用 appendChild 等方法插入。</p>
+<h2><span id="psan-jiao-ben-hua-css">三、脚本化CSS</span><a href="#psan-jiao-ben-hua-css" class="header-anchor">#</a></h2>
+<h3><span id="p1-huo-qu-chi-cun">1、获取尺寸</span><a href="#p1-huo-qu-chi-cun" class="header-anchor">#</a></h3>
+<p><code>offsetWidth</code>和<code>offsetHeight</code> 可以获取元素的<code>border-box</code>尺寸。</p>
+<p><code>clientWidth</code>和<code>clientHeight</code> 可以获取元素的<code>padding-box</code>尺寸。</p>
+<p><code>scrollWidth</code>和<code>scrollHeight</code> 可以获取元素完全内容尺寸和<code>padding</code>。（几乎不用）</p>
+<p><code>innerWidth</code>和<code>innerHeight</code> 可以获取浏览器窗口的尺寸。</p>
+<p><code>outerWidth</code>和<code>outerHeight</code> 可以获取取加上工具条与滚动条窗口的尺寸。</p>
+<p><code>style.width/height</code> <strong>只能获取行内样式的尺寸</strong>（字符串，“10px”）。</p>
+<p>常见应用: 大盒子里面小盒子，大盒子用<code>clientX</code>，小盒子用<code>offsetX</code>。</p>
+<h3><span id="p2-huo-qu-wei-zhi">2、获取位置</span><a href="#p2-huo-qu-wei-zhi" class="header-anchor">#</a></h3>
+<p><code>getBoundingClientRect()</code> 返回一个对象，对象中包含元素距离视口的距离信息。</p>
+<p>getBoundingClientRect。</p>
+<p>获取某个元素相对于视口的位置集合</p>
+<ul>
+<li>top 元素上边到视窗上的距离</li>
+<li>right 元素右边到视窗左的距离</li>
+<li>bottom 元素下边到视窗上的距离</li>
+<li>left 元素左边到视窗左的距离</li>
+<li>width</li>
+<li>height</li>
+</ul>
+<p>offsetParent</p>
+<p>==offsetLeft / Top==</p>
+<p>返回当前元素的相对包含块的偏移位置。</p>
+<p>JS 默认把它当成绝对定位属性来寻找包含块，不管是什么属性，都是寻找最近定位父级，如果没找到就是 HTML。</p>
+<p>clientLeft / Top</p>
+<p>clientLeft 等于 border-left。</p>
+<p>==scrollLeft / Top==</p>
+<p>==设置或者获取==当前元素滚动条已经滚动过的距离。（值增大，内容左滚）</p>
+<h3><span id="p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao">3、获取文档大小、视口大小</span><a href="#p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取文档大小</span>
+<span class="token keyword">function</span> <span class="token function">getDocSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+       <span class="token keyword">var</span> b <span class="token operator">=</span> document<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+       <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+           y<span class="token operator">:</span>h<span class="token punctuation">.</span>offsetHeight <span class="token operator">||</span> b<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">,</span>
+           x<span class="token operator">:</span>h<span class="token punctuation">.</span>offsetWidth <span class="token operator">||</span> b<span class="token punctuation">.</span>offsetWidth
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 获取视口大小</span>
+<span class="token keyword">function</span> <span class="token function">getWinSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span>document<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+         y<span class="token operator">:</span>h<span class="token punctuation">.</span>clientHeight <span class="token operator">||</span> b<span class="token punctuation">.</span>clientHeight<span class="token punctuation">,</span>
+         x<span class="token operator">:</span>h<span class="token punctuation">.</span>clientWidth <span class="token operator">||</span> b<span class="token punctuation">.</span>clientWidth
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao">4、获取和设置系统滚动条</span><a href="#p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取系统滚动条</span>
+<span class="token keyword">function</span> <span class="token function">getDocScroll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">var</span> h <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> b <span class="token operator">=</span> document<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> y <span class="token operator">=</span> self<span class="token punctuation">.</span>pageYOffset<span class="token operator">||</span>
+            h<span class="token punctuation">.</span>scrollTop<span class="token operator">||</span>
+            b<span class="token punctuation">.</span>scrollTop<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> x <span class="token operator">=</span> self<span class="token punctuation">.</span>pageXOffset<span class="token operator">||</span>
+            h<span class="token punctuation">.</span>scrollLeft<span class="token operator">||</span>
+            b<span class="token punctuation">.</span>scrollLeft<span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+            x<span class="token operator">:</span>x<span class="token punctuation">,</span>
+            y<span class="token operator">:</span>y
+        <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 设置系统滚动条</span>
+<span class="token keyword">function</span> <span class="token function">setDocScroll</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">"number"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollLeft <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollLeft <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> x <span class="token operator">===</span> <span class="token string">"number"</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> y <span class="token operator">===</span> <span class="token string">"number"</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollLeft <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollTop <span class="token operator">=</span> y<span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollLeft <span class="token operator">=</span> x<span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>scrollTop <span class="token operator">=</span> y<span class="token punctuation">;</span>
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>IE678会取到注释节点。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>前者在IE678中获取上一个元素节点，在其他浏览器中获取的是是一个节点（可能是文本节点等）。后者在浏览器中获取上一个兄弟元素节点，IE678不兼容。 <a href="#fnref2" class="footnote-backref">↩︎</a> <a href="#fnref2:1" class="footnote-backref">↩︎</a> <a href="#fnref2:2" class="footnote-backref">↩︎</a> <a href="#fnref2:3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>注意改id 复制的节点会包含原节点的所有特性，如果原节点中包含id属性，就会出现id属性值重叠的情况。为了避免潜在的冲突，应修改其中某个节点的id属性值。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>对于class属性，必须使用className属性名。对于for属性，则必须使用htmlFor属性名。 <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>在脚本化css中设置float属性和text属性，要改为cssFloat和cssText（一次设置多个样式）使用。 <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
