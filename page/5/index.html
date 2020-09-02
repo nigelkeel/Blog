@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="这个人很懒，什么都没留下。">
@@ -182,6 +182,1162 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/13-JS%E5%BC%80%E5%A7%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/13-JS%E5%BC%80%E5%A7%8B/" class="post-title-link" itemprop="url">JS 开始</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-07-01T00:00:00+08:00">2020-07-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 21:02:55" itemprop="dateModified" datetime="2020-08-31T21:02:55+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-ji-ben-gai-nian">一、基本概念</a>
+<ul>
+<li><a href="#1-te-dian">1、特点</a></li>
+<li><a href="#2-zu-cheng">2、组成</a></li>
+<li><a href="#3-wang-ye-zhong-shi-yong-js-de-fang-fa">3、网页中使用 JS 的方法</a></li>
+<li><a href="#4-duan-dian-diao-shi">4、断点调试 +</a></li>
+<li><a href="#5-es5-es6">5、ES5 / ES6</a></li>
+</ul>
+</li>
+<li><a href="#er-ji-ben-jie-gou-he-yu-fa">二、基本结构和语法</a>
+<ul>
+<li><a href="#1-yu-ju-zhu-shi-fen-hao-kong-bai">1、语句、注释、分号、空白</a></li>
+<li><a href="#2-shu-chu">2、输出</a></li>
+<li><a href="#3-bian-liang">3、变量</a>
+<ul>
+<li><a href="#1-bian-liang-ming-ming-biao-shi-fu-ming-ming-gui-ze">（1）变量命名/标识符命名规则</a></li>
+<li><a href="#2-bian-liang-sheng-ming-he-bian-liang-fu-zhi">（2）变量声明和变量赋值</a></li>
+<li><a href="#3-kuai-ji-zuo-yong-yu">（3）块级作用域</a></li>
+</ul>
+</li>
+<li><a href="#4-yan-ge-mo-shi">4、严格模式</a></li>
+</ul>
+</li>
+<li><a href="#san-ji-ben-shu-ju-lei-xing">三、基本数据类型</a>
+<ul>
+<li><a href="#1-number">1、Number</a></li>
+<li><a href="#2-string">2、String</a></li>
+<li><a href="#3-boolean">3、Boolean</a></li>
+<li><a href="#4-null">4、null</a></li>
+<li><a href="#5-undefined">5、undefined</a></li>
+<li><a href="#6-lei-xing-zhuan-huan">6、类型转换 △</a>
+<ul>
+<li><a href="#qiang-zhi-lei-xing-zhuan-huan">强制类型转换</a></li>
+<li><a href="#yin-shi-lei-xing-zhuan-huan">隐式类型转换</a></li>
+<li><a href="#parseint">parseInt</a></li>
+</ul>
+</li>
+<li><a href="#7-lei-xing-pan-duan">7、类型判断</a>
+<ul>
+<li><a href="#1-typeof">（1）typeof</a></li>
+<li><a href="#2-instanceof">（2）instanceof</a></li>
+<li><a href="#3">（3）===</a></li>
+<li><a href="#4-isnan">（4）isNaN</a></li>
+</ul>
+</li>
+<li><a href="#8-symbol">8、Symbol +</a></li>
+</ul>
+</li>
+<li><a href="#si-yun-suan-fu-he-biao-da-shi">四、运算符和表达式</a>
+<ul>
+<li><a href="#1-suan-zhu-yun-suan-fu">1、算术运算符</a>
+<ul>
+<li><a href="#jia-fa">加法</a></li>
+<li><a href="#jian-fa-cheng-fa-chu-fa">减法、乘法、除法</a></li>
+<li><a href="#qu-yu">取余</a></li>
+<li><a href="#zi-zeng-zi-jian">自增、自减</a></li>
+</ul>
+</li>
+<li><a href="#2-tiao-jian-yun-suan-fu">2、条件运算符</a></li>
+<li><a href="#3-fu-zhi-yun-suan-fu">3、赋值运算符</a></li>
+<li><a href="#4-luo-ji-yun-suan-fu">4、逻辑运算符</a>
+<ul>
+<li><a href="#duan-lu-yuan-li">短路原理</a></li>
+</ul>
+</li>
+<li><a href="#5-qi-ta-yun-suan-fu">5、其他运算符</a></li>
+<li><a href="#6-yun-suan-fu-de-you-xian-ji">6、运算符的优先级 +</a></li>
+</ul>
+</li>
+<li><a href="#wu-liu-cheng-kong-zhi">五、流程控制</a>
+<ul>
+<li><a href="#1-fen-zhi-jie-gou">1、分支结构</a>
+<ul>
+<li><a href="#dan-fen-zhi-jie-gou-if">单分支结构 if</a></li>
+<li><a href="#shuang-fen-zhi-jie-gou-if-else">双分支结构 if-else</a></li>
+<li><a href="#duo-fen-zhi-jie-gou-else-if">多分支结构 else-if</a></li>
+<li><a href="#duo-fen-zhi-jie-gou-switch">多分支结构 switch</a></li>
+<li><a href="#chao-zhuang-jie-gou">巢状结构</a></li>
+</ul>
+</li>
+<li><a href="#2-xun-huan-jie-gou">2、循环结构</a>
+<ul>
+<li><a href="#while-yu-ju">while 语句</a></li>
+<li><a href="#do-while-yu-ju">do-while 语句</a></li>
+<li><a href="#for-yu-ju">for 语句</a></li>
+</ul>
+</li>
+<li><a href="#3-break-continue">3、break 、continue</a></li>
+</ul>
+</li>
+<li><a href="#liu-cuo-wu-yu-yi-chang-chu-li">六、错误与异常处理</a>
+<ul>
+<li><a href="#1-cuo-wu-lei-xing">1、错误类型</a></li>
+<li><a href="#2-try-catch">2、try…catch</a></li>
+<li><a href="#3-throw">3、throw</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-ji-ben-gai-nian">一、基本概念</span><a href="#yi-ji-ben-gai-nian" class="header-anchor">#</a></h1>
+<p><strong>JavaScript</strong> 最初的目的是为了“赋予网页生命”。</p>
+<p>这种编程语言我们称之为 <strong>脚本</strong>。它们可以写在 HTML 中，在页面加载的时候会自动执行。脚本作为纯文本存在和执行。它们不需要特殊的准备或编译即可运行。</p>
+<ul>
+<li>1995 JavaScript、JScript诞生</li>
+<li>1997 ECMA给JS制定了标准<strong>ECMA-262</strong>，命名为ECMAScript，即ES1.0。<strong>ES是JS的规范标准，JS的ES的实现。</strong></li>
+<li>1999 发布ES3，成为JS通用标准</li>
+<li>2009 发布ES5</li>
+<li>2013 ES6草案发布（其实就是之前不被接受的ES4激进方案）</li>
+<li>2015 发布ES6，即ES2015，从此JS新版本按<code>ES+年份</code>形式发布。ES6是一个历史名词，也是一个泛指，代表ES6以后的新一代标准。</li>
+</ul>
+<h2><span id="p1-te-dian">1、特点</span><a href="#p1-te-dian" class="header-anchor">#</a></h2>
+<p><strong>弱类型</strong> 数据类型不固定，可以随时改变。</p>
+<p><strong>解释型</strong> 解释型是一行一行解释运行，编译型是需要整体编译。</p>
+<p><strong>脚本语言</strong> 脚本是需要载体运行的。</p>
+<p><strong>基于原型</strong> 只有对象，没有类，对象继承对象，而不是类继承类。“原型对象”是基于原型语言的核心概念。原型对象是新对象的模板，它将自身的属性共享给新对象。一个对象不但可以享有自己创建时和运行时定义的属性，而且可以享有原型对象的属性。</p>
+<h2><span id="p2-zu-cheng">2、组成</span><a href="#p2-zu-cheng" class="header-anchor">#</a></h2>
+<ul>
+<li><strong>ECMA Script</strong> 核心语法，简称ES。</li>
+<li><strong>DOM</strong> Document Object Model 文档对象模型。</li>
+<li><strong>BOM</strong> Browser Object Model 浏览器对象模型。</li>
+</ul>
+<h2><span id="p3-wang-ye-zhong-shi-yong-js-de-fang-fa">3、网页中使用 JS 的方法</span><a href="#p3-wang-ye-zhong-shi-yong-js-de-fang-fa" class="header-anchor">#</a></h2>
+<p>页面嵌入（常用）</p>
+<p>行内写法（几乎不用，局限性大，代码分离性差，可读性不强）</p>
+<p>外部文件引入（主流方式）</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>属性:</p>
+<ul>
+<li><code>src</code> 指定外部脚本的URI，如果设置了，标签内容会忽略</li>
+<li><code>type</code> 指定脚本的语言，默认为JS。</li>
+<li><code>async</code> 规定一旦脚本可用，则会异步执行。</li>
+<li><code>defer</code> 是否对脚本执行进行延迟。</li>
+</ul>
+<h2><span id="p4-duan-dian-diao-shi">4、断点调试 +</span><a href="#p4-duan-dian-diao-shi" class="header-anchor">#</a></h2>
+<h2><span id="p5-es5-es6">5、ES5 / ES6</span><a href="#p5-es5-es6" class="header-anchor">#</a></h2>
+<p><code>ECMAScript</code> 是JS的语言规范标准。</p>
+<p><code>ECMA-262</code> 1997年制定的规范，包含了大部分深入的、详细的、规范化的关于 JavaScript 的信息。这份规范明确地定义了这门语言。</p>
+<p><code>ES5</code> 2009年。</p>
+<p><code>ES6</code> <code>ES6</code>既是一个历史名词，也是一个泛指，含义是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等，而 ES2015 则是正式名称，特指该年发布的正式版本的语言标准。</p>
+<h1><span id="er-ji-ben-jie-gou-he-yu-fa">二、基本结构和语法</span><a href="#er-ji-ben-jie-gou-he-yu-fa" class="header-anchor">#</a></h1>
+<h2><span id="p1-yu-ju-zhu-shi-fen-hao-kong-bai">1、语句、注释、分号、空白</span><a href="#p1-yu-ju-zhu-shi-fen-hao-kong-bai" class="header-anchor">#</a></h2>
+<ul>
+<li>语句是执行行为的语法结构和命令。分为 声明语句、调试语句<code>debugger</code>等。</li>
+<li>注释的语法和C语言一样。</li>
+<li>建议每个语句结束都加分号，否则可能会出现奇奇怪怪的BUG。程序会忽略空白，合适的空白与缩进可以保持良好的代码结构。</li>
+</ul>
+<h2><span id="p2-shu-chu">2、输出</span><a href="#p2-shu-chu" class="header-anchor">#</a></h2>
+<ul>
+<li>系统对话框（弹窗）: <code>alert()</code>、<code>confirm()</code>、<code>prompt()</code></li>
+<li>控制台日志: <code>console.log()</code>、<code>console.dir()</code></li>
+<li>直接显示在文档上: <code>document.write</code></li>
+</ul>
+<h2><span id="p3-bian-liang">3、变量</span><a href="#p3-bian-liang" class="header-anchor">#</a></h2>
+<p><strong>变量</strong> 是一种用来储存数据的可变容器，是数据的命名储存，通常情况下由<strong>标识符</strong>和<strong>值</strong>构成。</p>
+<h3><span id="p-1-bian-liang-ming-ming-biao-shi-fu-ming-ming-gui-ze">（1）变量命名/标识符命名规则</span><a href="#p-1-bian-liang-ming-ming-biao-shi-fu-ming-ming-gui-ze" class="header-anchor">#</a></h3>
+<ul>
+<li>由数字，字母，下划线，美元符组成。</li>
+<li>不允许数字开头。</li>
+<li>不能和关键字、保留字同名。</li>
+<li>严格区分大小写。</li>
+<li>变量的起名要有意义。避免使用拼音等。</li>
+</ul>
+<h3><span id="p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi">（2）变量声明和变量赋值</span><a href="#p-2-bian-liang-sheng-ming-he-bian-liang-fu-zhi" class="header-anchor">#</a></h3>
+<p>优先使用<code>const</code> | <code>let</code> ，不要用 <code>var</code> 。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明一个变量</span>
+<span class="token keyword">let</span> a<span class="token punctuation">;</span>
+
+
+<span class="token comment">// 给变量赋值（第一次赋值可以称为初始化）</span>
+a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 同时声明和初始化</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 一次定义和赋值多个变量</span>
+<span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> d <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 注意这种坑</span>
+<span class="token keyword">let</span> e <span class="token operator">=</span> f <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">//  f 没有声明</span>
+
+<span class="token comment">// const 用于定义常量，常量通常是全大写</span>
+<span class="token keyword">const</span> <span class="token constant">PI</span> <span class="token operator">=</span> <span class="token number">3.1415926</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p-3-kuai-ji-zuo-yong-yu">（3）块级作用域</span><a href="#p-3-kuai-ji-zuo-yong-yu" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>特点</th>
+<th>var</th>
+<th>let</th>
+<th>const</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>声明提升</td>
+<td>会</td>
+<td>不会</td>
+<td>不会</td>
+</tr>
+<tr>
+<td>块作用域<code>&#123;&#125;</code></td>
+<td>没有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>同一作用域多次声明</td>
+<td>可以</td>
+<td>不能</td>
+<td>不能</td>
+</tr>
+<tr>
+<td>基本数据</td>
+<td>可变</td>
+<td>可变</td>
+<td>不可变</td>
+</tr>
+<tr>
+<td>引用数据</td>
+<td>可变</td>
+<td>可变</td>
+<td>地址不可变</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>for循环声明的let，只在内部生效</p>
+<p>块级作用域和函数作用域类似，可以有作用链</p>
+<p>for循环的声明语句是父作用域，语句块是子作用域</p>
+</blockquote>
+<h2><span id="p4-yan-ge-mo-shi">4、严格模式</span><a href="#p4-yan-ge-mo-shi" class="header-anchor">#</a></h2>
+<p><code>ES6</code> 也称为现代模式，通过在全局第一行或者是函数第一行添加<code>&quot;use strict&quot;</code> 语句开启严格模式。（一旦打开，无法关闭）</p>
+<p>特点：</p>
+<ul>
+<li>给未定义的元素赋值会抛出异常</li>
+<li>删除不可删除的属性会抛出异常</li>
+</ul>
+<h1><span id="san-ji-ben-shu-ju-lei-xing">三、基本数据类型</span><a href="#san-ji-ben-shu-ju-lei-xing" class="header-anchor">#</a></h1>
+<p>JS 数据类型分为<strong>基本数据类型</strong>和<strong>引用类型</strong>。</p>
+<p>（1）基本数据类型</p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>Symbol <code>ES6</code></li>
+<li>bigInt <code>ES6</code></li>
+</ul>
+<p>（2） 引用类型</p>
+<ul>
+<li>Object</li>
+<li>Array</li>
+<li>Function</li>
+<li>Map</li>
+<li>Set</li>
+</ul>
+<h2><span id="p1-number">1、Number</span><a href="#p1-number" class="header-anchor">#</a></h2>
+<p>这些是 <strong>数字 Number</strong> :</p>
+<p>（1）整数: 1，-1</p>
+<p>（2）小数（浮点数）: 0.1</p>
+<ul>
+<li>浮点数溢出：计算机对小数运算有偏差，比如 0.1 + 0.2 不会等于 0.3。如果需要解决这种问题，一是转成整数运算，二是使用专门的运算库。</li>
+</ul>
+<p>（3）科学计数法：<code>1.1e6</code>、<code>1.2E-7</code></p>
+<p>（4）二进制<code>0b11</code>、八进制<code>012</code>、十六进制<code>0xff</code></p>
+<p>（5）非数字：</p>
+<ul>
+<li><code>NaN</code>，Not a Number</li>
+<li>具有污染性（粘性）。可以用 <code>isNaN()</code>来判断是不是数字。</li>
+</ul>
+<p>（6）无穷：<code>Infinity</code></p>
+<p>（7）<code>Number.MAX_VALUE</code> <code>Number_MIN_VALUE</code></p>
+<p>这是 <code>BigInt</code></p>
+<p>（8）<code>BigInt</code></p>
+<ul>
+<li>这是一种<strong>新的数据类型</strong>，提供了任意长度整数的支持。</li>
+<li><code>const bg = 123459857387593749573975938475347857n</code></li>
+</ul>
+<p>JS 所有的数字都是64位浮点数存储。</p>
+<p><code>Number()</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span> <span class="token comment">//123</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token string">"a123"</span><span class="token punctuation">)</span>  <span class="token comment">//NaN</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// 0</span>
+<span class="token function">Number</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>  <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>parseInt</code></p>
+<p>（1）值转换成整数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"a123"</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"1a123"</span><span class="token punctuation">)</span> <span class="token comment">// 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（2）转换进制</p>
+<p>第二个参数是要转换的进制，默认是10。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">// NaN</span>
+<span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">// 0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><code>parseFloat</code></p>
+<p>值转换成浮点数。</p>
+<p>如果变量<code>*1</code>会被自动转换成数值，如果无法转换，则是<code>NaN</code>。</p>
+<h2><span id="p2-string">2、String</span><a href="#p2-string" class="header-anchor">#</a></h2>
+<p><strong>字符串（String）</strong> 内容用单引号、双引号<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>、反引号<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>包起来。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 普通的字符串</span>
+<span class="token string">"这是字符串"</span>
+<span class="token string">'这也是字符串'</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>varName<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">这也是字符串</span><span class="token template-punctuation string">`</span></span>  <span class="token comment">// 可以嵌入变量，格式$&#123;变量名&#125;</span>
+<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+这也是
+是
+字符串
+</span><span class="token template-punctuation string">`</span></span>
+
+
+<span class="token comment">// 空串</span>
+<span class="token string">""</span>
+
+<span class="token comment">// 空白串</span>
+<span class="token string">"   "</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>.length</code> 获取字符串的长度</p>
+<p><code>A+B</code> 连接A、B字符串</p>
+<p>在ES5中，字符串可以作为只读数组使用，可以通过中括号运算符添加下标访问某值。</p>
+<p><code>String()</code></p>
+<p><code>.toString()</code></p>
+<h2><span id="p3-boolean">3、Boolean</span><a href="#p3-boolean" class="header-anchor">#</a></h2>
+<p>只有两个值，<strong>true</strong> 和 <strong>false</strong>。</p>
+<h2><span id="p4-null">4、null</span><a href="#p4-null" class="header-anchor">#</a></h2>
+<p>空对象指针。</p>
+<p>常见环境：</p>
+<ul>
+<li>作为函数的参数，表示该函数的参数不是对象。</li>
+<li>作为对象原型链的终点。</li>
+<li>如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值。</li>
+<li>让变量指向的对象成为垃圾对象。</li>
+</ul>
+<h2><span id="p5-undefined">5、undefined</span><a href="#p5-undefined" class="header-anchor">#</a></h2>
+<p>变量声明了但是未初始化的类型。</p>
+<p>一般是代表错误类型。</p>
+<p>常见环境：</p>
+<ul>
+<li>变量被声明了，但没有赋值时。</li>
+<li>调用函数时，应该提供的参数没有提供，该参数为<code>undefined</code>。</li>
+<li>对象没有赋值的属性。</li>
+<li>函数没有返回值时，默认返回值。</li>
+</ul>
+<h2><span id="p6-lei-xing-zhuan-huan">6、类型转换 △</span><a href="#p6-lei-xing-zhuan-huan" class="header-anchor">#</a></h2>
+<p>弱类型语言定义了类型以后，变量的类型可变，可自动转换。<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<h3><span id="pqiang-zhi-lei-xing-zhuan-huan">强制类型转换</span><a href="#pqiang-zhi-lei-xing-zhuan-huan" class="header-anchor">#</a></h3>
+<p>数值转换 <code>Number()</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">+</span><span class="token string">"22"</span>    <span class="token comment">//22</span>
+<span class="token number">5</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">//5</span>
+<span class="token string">"5"</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">// "5null"</span>
+<span class="token string">"5"</span> <span class="token operator">+</span><span class="token number">1</span> <span class="token comment">// "51"</span>
+<span class="token string">"5"</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment">// 4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>typeof</th>
+<th>Number()</th>
+<th>parseInt()</th>
+<th>String()</th>
+<th>.toString()</th>
+<th>Boolen()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Number</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>转成字符串</td>
+<td>转成字符串</td>
+<td>0和NaN为false，其他都是true</td>
+</tr>
+<tr>
+<td>0</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“0”</td>
+<td>“0”</td>
+<td>false</td>
+</tr>
+<tr>
+<td>1</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“1”</td>
+<td>“1”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>number</td>
+<td>-</td>
+<td>-</td>
+<td>“-1”</td>
+<td>“-1”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>.2</td>
+<td>number</td>
+<td>0.2</td>
+<td>0</td>
+<td>“0.2”</td>
+<td>“0.2”</td>
+<td>true</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>number</td>
+<td>-</td>
+<td>NaN</td>
+<td>“NaN”</td>
+<td>“NaN”</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>number</td>
+<td>-</td>
+<td>==NaN==</td>
+<td>“Infinity”</td>
+<td>“Infinity”</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>String</strong></td>
+<td>-</td>
+<td>空串，空白串转成0，仅含数字直接转换，其他NaN</td>
+<td>只会看前面的数字，如果没有就是NaN</td>
+<td>-</td>
+<td>-</td>
+<td>非空字符串转成true</td>
+</tr>
+<tr>
+<td>“”</td>
+<td>string</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td>&quot; &quot;</td>
+<td>string</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>==true==</td>
+</tr>
+<tr>
+<td>“123”</td>
+<td>string</td>
+<td>123</td>
+<td>123</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td>“10px”</td>
+<td>string</td>
+<td>NaN</td>
+<td>==10==</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td>“abc”</td>
+<td>string</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>-</td>
+<td>-</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>Boolean</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>true</td>
+<td>boolean</td>
+<td>1</td>
+<td>NaN</td>
+<td>“true”</td>
+<td>“true”</td>
+<td>-</td>
+</tr>
+<tr>
+<td>false</td>
+<td>boolean</td>
+<td>0</td>
+<td>NaN</td>
+<td>“fasle”</td>
+<td>“false”</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>null</strong></td>
+<td>==object==</td>
+<td>==0==</td>
+<td>NaN</td>
+<td>“null”</td>
+<td>==报错==</td>
+<td>==false==</td>
+</tr>
+<tr>
+<td><strong>undefined</strong></td>
+<td>undefined</td>
+<td>==NaN==</td>
+<td>NaN</td>
+<td>“undefined”</td>
+<td>==报错==</td>
+<td>==false==</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="pyin-shi-lei-xing-zhuan-huan">隐式类型转换</span><a href="#pyin-shi-lei-xing-zhuan-huan" class="header-anchor">#</a></h3>
+<p>通常和运算符相关联，规则和上面强制转换差不多。</p>
+<h3><span id="pparseint">parseInt</span><a href="#pparseint" class="header-anchor">#</a></h3>
+<p>可以转换进制。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token constant">N</span><span class="token punctuation">,</span><span class="token constant">X</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// N -- 要转换的数</span>
+<span class="token comment">// X -- 要转换的进制</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p7-lei-xing-pan-duan">7、类型判断</span><a href="#p7-lei-xing-pan-duan" class="header-anchor">#</a></h2>
+<h3><span id="p-1-typeof">（1）typeof</span><a href="#p-1-typeof" class="header-anchor">#</a></h3>
+<p>通过<code>typeof(表达式)</code>或者<code>typeof 变量</code>来获取值或者变量的数据类型。返回值是数据类型的小写形式。特例:</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">typeof</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">// object</span>
+<span class="token keyword">typeof</span> <span class="token keyword">typeof</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment">// string </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3><span id="p-2-instanceof">（2）instanceof</span><a href="#p-2-instanceof" class="header-anchor">#</a></h3>
+<p>判断对象的数据类型。</p>
+<p>Array | Function | Object</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">A</span> <span class="token keyword">instanceof</span> <span class="token class-name">B</span> <span class="token comment">// A 是不是 B 的实例</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="p-3">（3）===</span><a href="#p-3" class="header-anchor">#</a></h3>
+<p>可以判断 <code>undefined</code> 和 <code>null</code>。</p>
+<h3><span id="p-4-isnan">（4）isNaN</span><a href="#p-4-isnan" class="header-anchor">#</a></h3>
+<p>检测参数是否为非数字值，仅当值为<code>NaN</code>时，返回<code>true</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+<span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span>  <span class="token comment">// false</span>
+<span class="token function">isNaN</span><span class="token punctuation">(</span><span class="token number">NaN</span><span class="token punctuation">)</span>  <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p8-symbol">8、Symbol +</span><a href="#p8-symbol" class="header-anchor">#</a></h2>
+<p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。</p>
+<h1><span id="si-yun-suan-fu-he-biao-da-shi">四、运算符和表达式</span><a href="#si-yun-suan-fu-he-biao-da-shi" class="header-anchor">#</a></h1>
+<h2><span id="p1-suan-zhu-yun-suan-fu">1、算术运算符</span><a href="#p1-suan-zhu-yun-suan-fu" class="header-anchor">#</a></h2>
+<h3><span id="pjia-fa">加法</span><a href="#pjia-fa" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果其中一个操作数是字符串，则会把另外一个操作数转换成字符串。  </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'str'</span>   <span class="token comment">// 1str </span>
+<span class="token string">'str'</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// str1    </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'str'</span>  <span class="token comment">// 2str  </span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">+</span> str<span class="token punctuation">)</span>  <span class="token comment">// 11str</span>
+
+<span class="token comment">// 如果都有是字符串，会拼接在一起  </span>
+<span class="token string">'str'</span> <span class="token operator">+</span> <span class="token string">'is'</span>  <span class="token comment">// stris</span>
+
+<span class="token comment">// 其他类型自动调用Number()进行转换  </span>
+<span class="token boolean">true</span> <span class="token operator">+</span> <span class="token boolean">true</span> <span class="token comment">// 2</span>
+<span class="token keyword">null</span> <span class="token operator">+</span> <span class="token keyword">null</span> <span class="token comment">// 0</span>
+<span class="token number">NaN</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token comment">// NaN</span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token keyword">undefined</span> <span class="token comment">// NaN</span>
+
+<span class="token comment">// 放在非数值前面，则会自动调用Number()进行转换（不会影响本身）</span>
+<span class="token operator">+</span><span class="token string">'123'</span> <span class="token comment">// 123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pjian-fa-cheng-fa-chu-fa">减法、乘法、除法</span><a href="#pjian-fa-cheng-fa-chu-fa" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果有操作数是非字符，则自动调用Number()转换。</span>
+<span class="token string">'99'</span> <span class="token operator">-</span> <span class="token number">0</span> <span class="token comment">// 99</span>
+<span class="token string">'99'</span> <span class="token operator">*</span> <span class="token number">1</span> <span class="token comment">// 99</span>
+<span class="token string">'99'</span> <span class="token operator">/</span> <span class="token number">1</span> <span class="token comment">// 99</span>
+
+<span class="token comment">// 特殊</span>
+<span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span> <span class="token comment">// Infinity</span>
+<span class="token number">Infinity</span> <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token comment">// - Infinity</span>
+<span class="token number">0</span> <span class="token operator">/</span> <span class="token number">0</span> <span class="token comment">// NaN </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pqu-yu">取余</span><a href="#pqu-yu" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">3</span> <span class="token operator">%</span> <span class="token number">5</span> <span class="token comment">// 3</span>
+<span class="token number">5</span> <span class="token operator">%</span> <span class="token number">0</span> <span class="token comment">// NaN</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3><span id="pzi-zeng-zi-jian">自增、自减</span><a href="#pzi-zeng-zi-jian" class="header-anchor">#</a></h3>
+<p><code>++i</code> 表示，i自增1后再参与其它运算（先加后用）；而 <code>i++</code> 则是i参与运算后，i的值再自增1。自增自减运算可能会改变原有变量类型。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span>
+<span class="token number">1</span> <span class="token operator">+</span> a<span class="token operator">++</span> <span class="token comment">// 101</span>
+<span class="token number">1</span> <span class="token operator">+</span> <span class="token operator">++</span>a <span class="token comment">// 102</span>
+
+<span class="token comment">// 会改变原变量类型</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token operator">++</span>a<span class="token punctuation">;</span> <span class="token comment">// a = 2</span>
+
+<span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">1</span>
+i <span class="token operator">=</span> i<span class="token operator">++</span> <span class="token comment">// i = 1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-tiao-jian-yun-suan-fu">2、条件运算符</span><a href="#p2-tiao-jian-yun-suan-fu" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 如果两个操作数都是字符串，比较对应的字符编码</span>
+<span class="token string">"234"</span> <span class="token operator">></span> <span class="token string">"123455"</span> <span class="token comment">// true</span>
+
+<span class="token comment">// == 和 === 的区别</span>
+<span class="token keyword">undefined</span> <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token comment">// true</span>
+<span class="token keyword">undefined</span> <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token comment">// false</span>
+
+<span class="token comment">// 坑</span>
+<span class="token keyword">null</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment">// false 相等比较不进行类型转换</span>
+<span class="token keyword">null</span> <span class="token operator">>=</span> <span class="token number">0</span> <span class="token comment">// true </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-fu-zhi-yun-suan-fu">3、赋值运算符</span><a href="#p3-fu-zhi-yun-suan-fu" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">a <span class="token operator">+=</span> b <span class="token comment">// 等价于 a = a + b</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p4-luo-ji-yun-suan-fu">4、逻辑运算符</span><a href="#p4-luo-ji-yun-suan-fu" class="header-anchor">#</a></h2>
+<p><code>&amp;&amp;</code> 与</p>
+<ul>
+<li>第一步：计算第一个操作数</li>
+<li>第二步：如果第一个操作数转换成false，那么就会结束运算，直接第一个操作数</li>
+<li>第三步：如果第一个操作数返回true，则计算第二个操作数的值</li>
+<li>第四步：第二个操作数如果返回true  则逻辑与返回第二个操作数，否则返回第一个操作数</li>
+</ul>
+<p><code>||</code> 或</p>
+<ul>
+<li>第一步：计算第一个操作数的值。</li>
+<li>第二步：检测第一个操作数的值。如果左侧的表达式的值可以转换为true，那么就会结束运算。直接返回第一个操作数的值</li>
+<li>第三步：如果第一个操作数可以转换为false，则计算第二个操作数的值。并返回第二个操作数的值</li>
+</ul>
+<p><code>!</code> 非</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token number">2</span> <span class="token comment">// 返回2</span>
+<span class="token string">''</span> <span class="token operator">&amp;&amp;</span> <span class="token number">1</span> <span class="token comment">// 返回''</span>
+<span class="token string">"Cat"</span> <span class="token operator">&amp;&amp;</span> <span class="token string">"Dog"</span> <span class="token comment">// 返回”Dog"</span>
+<span class="token string">''</span>    <span class="token operator">&amp;&amp;</span> <span class="token boolean">false</span>     <span class="token comment">// f &amp;&amp; f 返回 ""</span>
+<span class="token boolean">false</span> <span class="token operator">&amp;&amp;</span> <span class="token string">''</span>        <span class="token comment">// f &amp;&amp; f 返回 false</span>
+
+<span class="token number">1</span> <span class="token operator">||</span> <span class="token number">2</span> <span class="token comment">// 1</span>
+<span class="token number">0</span> <span class="token operator">||</span> <span class="token number">2</span> <span class="token comment">// 2</span>
+<span class="token number">0</span> <span class="token operator">||</span> <span class="token keyword">null</span> <span class="token comment">// null</span>
+<span class="token string">''</span>    <span class="token operator">||</span> <span class="token boolean">false</span>     <span class="token comment">// f || f 返回 false</span>
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token string">''</span>        <span class="token comment">// f || f 返回 ""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pduan-lu-yuan-li">短路原理</span><a href="#pduan-lu-yuan-li" class="header-anchor">#</a></h3>
+<p>在逻辑运算中，如果第一个操作数就能决定结果，那么第二个操作数就不会运行了。（就算运行了会报错也能顺利通过）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+fasle <span class="token operator">&amp;&amp;</span> <span class="token function">qwq</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2><span id="p5-qi-ta-yun-suan-fu">5、其他运算符</span><a href="#p5-qi-ta-yun-suan-fu" class="header-anchor">#</a></h2>
+<p>逗号操作符</p>
+<p>它能够先执行运算符左侧的操作数，然后再执行右侧的操作数，最后返回右侧操作数的值。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>三元运算符：<code>运算元1?运算2:运算3</code></p>
+<h2><span id="p6-yun-suan-fu-de-you-xian-ji">6、运算符的优先级 +</span><a href="#p6-yun-suan-fu-de-you-xian-ji" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>符号 + 描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td><code>()</code> 分组</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>()</code> 函数调用 <code>.</code> <code>[]</code> 成员调用 <code>new</code> 创建</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>通常简要规则:  一元 &gt; 二元 &gt; 三元<br>
+使用圆括号</p>
+</blockquote>
+<h1><span id="wu-liu-cheng-kong-zhi">五、流程控制</span><a href="#wu-liu-cheng-kong-zhi" class="header-anchor">#</a></h1>
+<h2><span id="p1-fen-zhi-jie-gou">1、分支结构</span><a href="#p1-fen-zhi-jie-gou" class="header-anchor">#</a></h2>
+<h3><span id="pdan-fen-zhi-jie-gou-if">单分支结构 if</span><a href="#pdan-fen-zhi-jie-gou-if" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token comment">// 语句块</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pshuang-fen-zhi-jie-gou-if-else">双分支结构 if-else</span><a href="#pshuang-fen-zhi-jie-gou-if-else" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 语句块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 语句块2</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pduo-fen-zhi-jie-gou-else-if">多分支结构 else-if</span><a href="#pduo-fen-zhi-jie-gou-else-if" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span>条件表达式<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块1</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>条件表达式<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块2</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//语句块3</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pduo-fen-zhi-jie-gou-switch">多分支结构 switch</span><a href="#pduo-fen-zhi-jie-gou-switch" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// switch</span>
+<span class="token comment">// 全等匹配</span>
+<span class="token keyword">switch</span> <span class="token punctuation">(</span>值<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  <span class="token comment">// 如果不加大括号，整个switch内作用域相同</span>
+  <span class="token keyword">case</span> 值<span class="token number">1</span><span class="token operator">:</span>
+      代码块<span class="token number">1</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token operator">...</span>
+  <span class="token comment">// 可省略</span>
+  <span class="token keyword">default</span><span class="token operator">:</span>
+      代码块<span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pchao-zhuang-jie-gou">巢状结构</span><a href="#pchao-zhuang-jie-gou" class="header-anchor">#</a></h3>
+<p>各种嵌套。</p>
+<h2><span id="p2-xun-huan-jie-gou">2、循环结构</span><a href="#p2-xun-huan-jie-gou" class="header-anchor">#</a></h2>
+<h3><span id="pwhile-yu-ju">while 语句</span><a href="#pwhile-yu-ju" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 先判断，再执行</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>条件表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    代码块   
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pdo-while-yu-ju">do-while 语句</span><a href="#pdo-while-yu-ju" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 先执行一次，再判断</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="pfor-yu-ju">for 语句</span><a href="#pfor-yu-ju" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span>初始化<span class="token punctuation">;</span> 条件表达式<span class="token punctuation">;</span> 步增表达式<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		<span class="token comment">// 代码块</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 初始化</span>
+<span class="token comment">// 条件判断</span>
+<span class="token comment">// 代码块</span>
+<span class="token comment">// 步增</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-break-continue">3、break 、continue</span><a href="#p3-break-continue" class="header-anchor">#</a></h2>
+<p><code>break</code></p>
+<p>跳出switch语句，跳出一层循环。</p>
+<p><code>continue</code></p>
+<p>结束本次循环，进行下次循环。</p>
+<p><code>label</code></p>
+<ul>
+<li>在JS中，label语句可以为一行语句添加标签，以方便在复杂的结构中设置跳转目标。</li>
+<li>语法如下：<code>label:语句</code></li>
+<li>label可以是任意合法的标识符，然后使用冒号分割标签名与标签语句。</li>
+<li>label和break语句配合使用，主要应用在循环结构、多分枝结构中，以便与跳出内层嵌套体。</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+outermost<span class="token operator">:</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">5</span> <span class="token operator">&amp;&amp;</span> j<span class="token operator">==</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">break</span> outermost<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>禁止<code>break</code> 和<code>continue</code> 写在三元运算符<code>?</code>右边。</p>
+<h1><span id="liu-cuo-wu-yu-yi-chang-chu-li">六、错误与异常处理</span><a href="#liu-cuo-wu-yu-yi-chang-chu-li" class="header-anchor">#</a></h1>
+<p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
+<h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Error</code></td>
+<td>基类 <br><code>name</code> 可以读写异常类型（TypeError）<br><code>message</code> 可以读写详细的错误信息。</td>
+</tr>
+<tr>
+<td><code>EvalError</code></td>
+<td>不正确使用eval()方法时抛出</td>
+</tr>
+<tr>
+<td><code>SyntaxError</code></td>
+<td><strong>语法错误</strong></td>
+</tr>
+<tr>
+<td><code>ReferenceError</code></td>
+<td>读取不存在的变量时抛出</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>值的类型发生错误的时候抛出</td>
+</tr>
+<tr>
+<td><code>RangeError</code></td>
+<td>数字超出合法范围</td>
+</tr>
+<tr>
+<td><code>URIError</code></td>
+<td>URI编码和解码错误</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-try-catch">2、try…catch</span><a href="#p2-try-catch" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 调试代码块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 捕获异常，并进行异常处理代码块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一般情况下 <code>try...catch</code> 就够用了。</p>
+<p>按顺序执行 try 子句中的代码，如果没有异常发生，将会忽略 catch 跳转到 finally 子句继续执行。</p>
+<p>无法捕获逻辑错误。</p>
+<h2><span id="p3-throw">3、throw</span><a href="#p3-throw" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">=</span> <span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 抛出错误</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"除数不能为0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>exception<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>exception<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>抛出错误之后，后续代码不会执行。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>碰到使用这些符号的字符串时使用转义字符<code>\</code>。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>ES6新增的模版字符串。不兼容IE678。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>强类型语言在声明之前要指定数据类型。 <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/08-%E5%B8%83%E5%B1%80%E7%BB%BC%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/08-%E5%B8%83%E5%B1%80%E7%BB%BC%E5%90%88/" class="post-title-link" itemprop="url">布局综合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-30T00:00:00+08:00">2020-06-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-30 21:55:22" itemprop="dateModified" datetime="2020-08-30T21:55:22+08:00">2020-08-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-bfc">一、BFC</a>
+<ul>
+<li><a href="#1-chuang-jian-bfc">1、创建BFC</a></li>
+<li><a href="#2-bfc-de-fan-wei">2、BFC的范围</a></li>
+<li><a href="#3-bfc-de-te-xing">3、BFC的特性</a></li>
+<li><a href="#4-bfc-de-ying-yong">4、BFC的应用</a></li>
+<li><a href="#5-ifc-gui-ze">5、IFC规则</a></li>
+</ul>
+</li>
+<li><a href="#er-bu-ju-ying-yong">二、布局应用</a>
+<ul>
+<li><a href="#1-bu-ju-chang-yong-dan-ci">1、布局常用单词</a></li>
+<li><a href="#2-wang-ye-de-ban-xin">2、网页的版心</a></li>
+<li><a href="#3-shui-ping-chui-zhi-ju-zhong">3、水平垂直居中 △</a></li>
+<li><a href="#4-qi-ta-bu-ju">4、其他布局</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-bfc">一、BFC</span><a href="#yi-bfc" class="header-anchor">#</a></h1>
+<p>BFC，块级格式化上下文。</p>
+<h2><span id="p1-chuang-jian-bfc">1、创建BFC</span><a href="#p1-chuang-jian-bfc" class="header-anchor">#</a></h2>
+<ul>
+<li><strong>根元素</strong></li>
+<li><strong>浮动（float 不为 none）</strong></li>
+<li><strong>绝对定位 或者 固定定位</strong></li>
+<li>表格的标题和单元格，匿名表格单元格元素</li>
+<li><strong>行内块元素</strong></li>
+<li><strong>overflow的值不为visible</strong></li>
+</ul>
+<h2><span id="p2-bfc-de-fan-wei">2、BFC的范围</span><a href="#p2-bfc-de-fan-wei" class="header-anchor">#</a></h2>
+<blockquote>
+<p>A block formatting context contains everything inside of the element creating it, that is not also inside a descendant element that creates a new block formatting context.</p>
+</blockquote>
+<p>直译过来就是, BFC包含创建它的元素的所有子元素, 但不包括创建了新BFC的子元素的内部元素。简单来说，子元素如果又创建了一个新的 BFC，那么它里面的内容就不属于上一个 BFC 了，这体现了 BFC隔离 的思想。<br>
+也就是所说，<strong>一个元素不能同时存在于两个 BFC 中</strong>。</p>
+<h2><span id="p3-bfc-de-te-xing">3、BFC的特性</span><a href="#p3-bfc-de-te-xing" class="header-anchor">#</a></h2>
+<p>BFC 除了会创建一个隔离的空间外，还具有以下特性：</p>
+<ul>
+<li>BFC 内部的块级盒会在垂直方向上一个接一个排列。</li>
+<li>同一BFC下的相邻块级元素可能发生外边距折叠，创建新的BFC可以避免外边距折叠。（解决塌陷）</li>
+<li>浮动盒的区域不会和BFC重叠</li>
+<li>计算BFC的高度时，浮动元素也会参与计算</li>
+</ul>
+<h2><span id="p4-bfc-de-ying-yong">4、BFC的应用</span><a href="#p4-bfc-de-ying-yong" class="header-anchor">#</a></h2>
+<ul>
+<li>
+<p>自适应多栏布局<br>
+中间栏创建 BFC，左右栏宽度固定后浮动。由于盒子的 margin box 的左边和包含块 border box 的左边相接触，同时浮动盒的区域不会和 BFC 重叠，所以中间栏的宽度会自适应。</p>
+</li>
+<li>
+<p>防止外边距折叠<br>
+创建新的 BFC ，让相邻的块级盒位于不同 BFC 下可以防止外边距折叠</p>
+</li>
+<li>
+<p>清除浮动<br>
+BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的浮动</p>
+</li>
+</ul>
+<h2><span id="p5-ifc-gui-ze">5、IFC规则</span><a href="#p5-ifc-gui-ze" class="header-anchor">#</a></h2>
+<p>IFC，行内格式化上下文。</p>
+<h1><span id="er-bu-ju-ying-yong">二、布局应用</span><a href="#er-bu-ju-ying-yong" class="header-anchor">#</a></h1>
+<h2><span id="p1-bu-ju-chang-yong-dan-ci">1、布局常用单词</span><a href="#p1-bu-ju-chang-yong-dan-ci" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>header</code></td>
+<td>头部、页眉</td>
+</tr>
+<tr>
+<td><code>logo</code></td>
+<td>标志</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>nav</code>、<code>sub_nav</code></td>
+<td>导航、子导航</td>
+</tr>
+<tr>
+<td><code>banner</code></td>
+<td>横幅广告</td>
+</tr>
+<tr>
+<td><code>main</code>、<code>content</code></td>
+<td>主体、内容</td>
+</tr>
+<tr>
+<td><code>container</code>、<code>con</code></td>
+<td>容器</td>
+</tr>
+<tr>
+<td><code>box</code></td>
+<td>盒子</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>区域</td>
+</tr>
+<tr>
+<td><code>wrapper</code>、<code>wrap</code></td>
+<td>包裹</td>
+</tr>
+<tr>
+<td><code>menu</code></td>
+<td>菜单</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>列表</td>
+</tr>
+<tr>
+<td><code>section</code></td>
+<td>分区、分块</td>
+</tr>
+<tr>
+<td><code>article</code></td>
+<td>文章</td>
+</tr>
+<tr>
+<td><code>aside</code></td>
+<td>侧边栏</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td>页脚、底部</td>
+</tr>
+<tr>
+<td><code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code></td>
+<td>顶部 底部 左部 右部</td>
+</tr>
+<tr>
+<td><code>prev</code>、<code>next</code></td>
+<td>上一个、下一个</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-wang-ye-de-ban-xin">2、网页的版心</span><a href="#p2-wang-ye-de-ban-xin" class="header-anchor">#</a></h2>
+<p>待更新。</p>
+<h2><span id="p3-shui-ping-chui-zhi-ju-zhong">3、水平垂直居中 △</span><a href="#p3-shui-ping-chui-zhi-ju-zhong" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/* 公共代码 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>line-height</p>
+<p>absolute + margin auto</p>
+<p>absolute + 负margin</p>
+<p>absolute + calc</p>
+<p>absolute + transform: translate</p>
+<p>flex</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.box</span><span class="token punctuation">&#123;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>writing-mode</p>
+<p>table</p>
+<p>css-table</p>
+<p>grid</p>
+<h2><span id="p4-qi-ta-bu-ju">4、其他布局</span><a href="#p4-qi-ta-bu-ju" class="header-anchor">#</a></h2>
+<p>Stick Footer 粘连布局</p>
+<p>三列布局</p>
+<p>等高布局</p>
+<p>圣杯布局</p>
+<p>双飞翼布局</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -696,7 +1852,7 @@ width: @test<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 09:10:16" itemprop="dateModified" datetime="2020-08-29T09:10:16+08:00">2020-08-29</time>
+                <time title="修改时间：2020-09-02 09:32:51" itemprop="dateModified" datetime="2020-09-02T09:32:51+08:00">2020-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1136,239 +2292,6 @@ width: @test<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/06.%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%B5%AE%E5%8A%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/03/06.%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%B5%AE%E5%8A%A8/" class="post-title-link" itemprop="url">CSS 定位和浮动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-01 08:32:29" itemprop="dateModified" datetime="2020-09-01T08:32:29+08:00">2020-09-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
-<p>[TOC]</p>
-<div class="toc">
-<!-- toc -->
-<ul>
-<li><a href="#yi-wen-dang-liu">一、文档流</a>
-<ul>
-<li><a href="#1-wen-dang-liu-wen-ben-liu">1、文档流、文本流</a></li>
-<li><a href="#2-tuo-chi-wen-dang-liu">2、脱离文档流</a></li>
-</ul>
-</li>
-<li><a href="#er-fu-dong">二、浮动</a>
-<ul>
-<li><a href="#1-gai-nian">1、概念</a></li>
-<li><a href="#2-fu-dong-de-shi-yong">2、浮动的使用</a></li>
-<li><a href="#3-gao-du-ta-xian">3、高度塌陷</a></li>
-<li><a href="#4-qing-chu-fu-dong">4、清除浮动 △</a></li>
-</ul>
-</li>
-<li><a href="#san-ding-wei">三、定位</a>
-<ul>
-<li><a href="#1-xiang-dui-ding-wei">1、相对定位</a></li>
-<li><a href="#2-jue-dui-ding-wei">2、绝对定位</a>
-<ul>
-<li><a href="#2-1-bao-han-kuai">2.1 包含块</a></li>
-<li><a href="#2-2-zi-jue-fu-xiang">2.2 “子绝父相”</a></li>
-</ul>
-</li>
-<li><a href="#3-gu-ding-ding-wei">3、固定定位</a></li>
-</ul>
-</li>
-<li><a href="#si-ceng-die">四、层叠</a>
-<ul>
-<li><a href="#1-z-index">1、z-index</a></li>
-<li><a href="#2-yuan-su-ceng-die-shun-xu">2、元素层叠顺序</a></li>
-<li><a href="#3-ceng-die-shang-xia-wen">3、层叠上下文 +</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-</div>
-<h1><span id="yi-wen-dang-liu">一、文档流</span><a href="#yi-wen-dang-liu" class="header-anchor">#</a></h1>
-<h2><span id="p1-wen-dang-liu-wen-ben-liu">1、文档流、文本流</span><a href="#p1-wen-dang-liu-wen-ben-liu" class="header-anchor">#</a></h2>
-<p>待更新。</p>
-<h2><span id="p2-tuo-chi-wen-dang-liu">2、脱离文档流</span><a href="#p2-tuo-chi-wen-dang-liu" class="header-anchor">#</a></h2>
-<p>脱离文档流，指的是元素脱离正常元素的布局排版规则，其他处于文档流中的盒子在计算布局排版时，会自动无视已脱离文档流的元素来进行定位。</p>
-<p>浮动与绝对定位之间的区别就是</p>
-<ul>
-<li>浮动会使元素脱离文档流，但是不会脱离文本流，在于其他盒子的文本内容计算布局的时候，还是占位置的</li>
-<li>绝对定位会使元素脱离文档流，同时也会脱离文本流，在于其他盒子的文本内容计算布局的时候，不占位置。</li>
-</ul>
-<h1><span id="er-fu-dong">二、浮动</span><a href="#er-fu-dong" class="header-anchor">#</a></h1>
-<p><strong>浮动</strong>（<strong>float</strong>）可以让多个块元素横向排列，共行。</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>none</td>
-<td>默认，不浮动</td>
-</tr>
-<tr>
-<td>left</td>
-<td>左浮动</td>
-</tr>
-<tr>
-<td>right</td>
-<td>右浮动</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
-<p><strong>正常页面流/正常文档流</strong> 是行元素从左至右，块元素从上到下布局。<strong>浮动</strong> 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个float堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。</p>
-<h2><span id="p2-fu-dong-de-shi-yong">2、浮动的使用</span><a href="#p2-fu-dong-de-shi-yong" class="header-anchor">#</a></h2>
-<p><strong>左浮动</strong> 就是让容器沿着容器左侧排序。</p>
-<p><strong>右浮动</strong> 让容器沿着容器右侧排序。</p>
-<h2><span id="p3-gao-du-ta-xian">3、高度塌陷</span><a href="#p3-gao-du-ta-xian" class="header-anchor">#</a></h2>
-<p>浮动元素以后，脱离父级内容区域，父级没有内容撑开自身的高度，而且父级的兄弟元素是按照父级的位置进行布局的，所以页面会乱。</p>
-<h2><span id="p4-qing-chu-fu-dong">4、清除浮动 △</span><a href="#p4-qing-chu-fu-dong" class="header-anchor">#</a></h2>
-<p>清除浮动不是不让元素浮动，是清除浮动对父级高度塌陷的影响。</p>
-<p>清除浮动的方法</p>
-<ul>
-<li>给浮动元素的父级设置高度。</li>
-<li>给浮动元素的父级设置浮动，以浮制浮。</li>
-<li>overflow设置不为visible的属性。</li>
-<li>在最后一个浮动元素的后边添加一个空的块级元素，添加一个块级元素，添加属性和值为 <code>clear: both</code>。</li>
-<li>（推荐）after伪元素清浮动，给所有浮动元素父级一个clearFix的类名。</li>
-</ul>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearFix:after</span><span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"/200B"</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span> 
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="san-ding-wei">三、定位</span><a href="#san-ding-wei" class="header-anchor">#</a></h1>
-<p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>static</td>
-<td>默认，没有定位</td>
-</tr>
-<tr>
-<td>relative</td>
-<td>相对定位</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td>绝对定位</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>固定定位</td>
-</tr>
-</tbody>
-</table>
-<p>布局一般用在大布局的小范围中。</p>
-<h2><span id="p1-xiang-dui-ding-wei">1、相对定位</span><a href="#p1-xiang-dui-ding-wei" class="header-anchor">#</a></h2>
-<p><strong>相对定位</strong>（relative），让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。</p>
-<h2><span id="p2-jue-dui-ding-wei">2、绝对定位</span><a href="#p2-jue-dui-ding-wei" class="header-anchor">#</a></h2>
-<p><strong>绝对定位</strong>（absolute），相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非static属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的padding-box的左上角为原点。right和bottom是距离包含块右下角的距离。</p>
-<h3><span id="p2-1-bao-han-kuai">2.1 包含块</span><a href="#p2-1-bao-han-kuai" class="header-anchor">#</a></h3>
-<p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
-<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：</p>
-<ul>
-<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
-<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
-<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
-</ul>
-<blockquote>
-<p>补充：<br>
-如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。</p>
-<ul>
-<li>当祖先元素拥有 transform 或 perspective 属性并且值不为none的时候，它也是被当做包含块。</li>
-<li>当祖先元素 拥有 filter 属性的时候（值不为none） 它也可以被当做包含块</li>
-</ul>
-</blockquote>
-<p>注：如果由内向外找不到包含块条件的元素，那么html（根元素）被称作为初始包含块。</p>
-<h3><span id="p2-2-zi-jue-fu-xiang">2.2 “子绝父相”</span><a href="#p2-2-zi-jue-fu-xiang" class="header-anchor">#</a></h3>
-<p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
-<h2><span id="p3-gu-ding-ding-wei">3、固定定位</span><a href="#p3-gu-ding-ding-wei" class="header-anchor">#</a></h2>
-<p>固定定位（fixed），相对于浏览器窗口定位。</p>
-<h1><span id="si-ceng-die">四、层叠</span><a href="#si-ceng-die" class="header-anchor">#</a></h1>
-<h2><span id="p1-z-index">1、z-index</span><a href="#p1-z-index" class="header-anchor">#</a></h2>
-<p><strong>z-index</strong> 指定了一个定位属性的元素及其后代的层叠顺序，只有定位元素（非static）拥有该属性。z-index 的值没有单位，理论上来说 z-index 的值大的元素，会覆盖小的元素。定位元素默认的z-index 的值是 auto。如果一个拥有 z-index 属性的定位元素中，子元素也设置了 z-index 。那么子元素会重新创建一个<strong>层叠上下文</strong>，子元素的z-index只能在当前的层叠上下文中对比排列。</p>
-<h2><span id="p2-yuan-su-ceng-die-shun-xu">2、元素层叠顺序</span><a href="#p2-yuan-su-ceng-die-shun-xu" class="header-anchor">#</a></h2>
-<p>z-index为负&lt; background&lt; border&lt; 块级元素 &lt; 浮动元素 &lt; 内联元素 &lt; 没有设置z-index的定位元素 &lt; z-index为正</p>
-<h2><span id="p3-ceng-die-shang-xia-wen">3、层叠上下文 +</span><a href="#p3-ceng-die-shang-xia-wen" class="header-anchor">#</a></h2>
-<p>待更新。</p>
-<p>想要一个元素支持 z-index 属性，但是又不想定位影响其他元素或者影响自己，则可以给该元素设置相对定位。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/05.CSS%E6%A0%B7%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1400,7 +2323,7 @@ width: @test<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-29 09:08:20" itemprop="dateModified" datetime="2020-08-29T09:08:20+08:00">2020-08-29</time>
+                <time title="修改时间：2020-09-02 09:34:14" itemprop="dateModified" datetime="2020-09-02T09:34:14+08:00">2020-09-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1869,6 +2792,239 @@ opacity直接控制所有的内部元素的不透明度，无论是什么元素�
 <li>第三个参数：圆心的位置</li>
 <li>第四个参数：渐变的颜色点</li>
 </ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/06.%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%B5%AE%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/03/06.%E5%AE%9A%E4%BD%8D%E5%92%8C%E6%B5%AE%E5%8A%A8/" class="post-title-link" itemprop="url">CSS 定位和浮动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-16T00:00:00+08:00">2020-06-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-02 09:33:16" itemprop="dateModified" datetime="2020-09-02T09:33:16+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%9F%BA/" itemprop="url" rel="index"><span itemprop="name">技术栈基</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-wen-dang-liu">一、文档流</a>
+<ul>
+<li><a href="#1-wen-dang-liu-wen-ben-liu">1、文档流、文本流</a></li>
+<li><a href="#2-tuo-chi-wen-dang-liu">2、脱离文档流</a></li>
+</ul>
+</li>
+<li><a href="#er-fu-dong">二、浮动</a>
+<ul>
+<li><a href="#1-gai-nian">1、概念</a></li>
+<li><a href="#2-fu-dong-de-shi-yong">2、浮动的使用</a></li>
+<li><a href="#3-gao-du-ta-xian">3、高度塌陷</a></li>
+<li><a href="#4-qing-chu-fu-dong">4、清除浮动 △</a></li>
+</ul>
+</li>
+<li><a href="#san-ding-wei">三、定位</a>
+<ul>
+<li><a href="#1-xiang-dui-ding-wei">1、相对定位</a></li>
+<li><a href="#2-jue-dui-ding-wei">2、绝对定位</a>
+<ul>
+<li><a href="#2-1-bao-han-kuai">2.1 包含块</a></li>
+<li><a href="#2-2-zi-jue-fu-xiang">2.2 子绝父相</a></li>
+</ul>
+</li>
+<li><a href="#3-gu-ding-ding-wei">3、固定定位</a></li>
+</ul>
+</li>
+<li><a href="#si-ceng-die">四、层叠</a>
+<ul>
+<li><a href="#1-z-index">1、z-index</a></li>
+<li><a href="#2-yuan-su-ceng-die-shun-xu">2、元素层叠顺序</a></li>
+<li><a href="#3-ceng-die-shang-xia-wen">3、层叠上下文 +</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-wen-dang-liu">一、文档流</span><a href="#yi-wen-dang-liu" class="header-anchor">#</a></h1>
+<h2><span id="p1-wen-dang-liu-wen-ben-liu">1、文档流、文本流</span><a href="#p1-wen-dang-liu-wen-ben-liu" class="header-anchor">#</a></h2>
+<p>待更新。</p>
+<h2><span id="p2-tuo-chi-wen-dang-liu">2、脱离文档流</span><a href="#p2-tuo-chi-wen-dang-liu" class="header-anchor">#</a></h2>
+<p>脱离文档流，指的是元素脱离正常元素的布局排版规则，其他处于文档流中的盒子在计算布局排版时，会自动无视已脱离文档流的元素来进行定位。</p>
+<p>浮动与绝对定位之间的区别就是</p>
+<ul>
+<li>浮动会使元素脱离文档流，但是不会脱离文本流，在于其他盒子的文本内容计算布局的时候，还是占位置的</li>
+<li>绝对定位会使元素脱离文档流，同时也会脱离文本流，在于其他盒子的文本内容计算布局的时候，不占位置。</li>
+</ul>
+<h1><span id="er-fu-dong">二、浮动</span><a href="#er-fu-dong" class="header-anchor">#</a></h1>
+<p><strong>浮动</strong>（<strong>float</strong>）可以让多个块元素横向排列，共行。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认，不浮动</td>
+</tr>
+<tr>
+<td>left</td>
+<td>左浮动</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右浮动</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
+<p><strong>正常页面流/正常文档流</strong> 是行元素从左至右，块元素从上到下布局。<strong>浮动</strong> 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个float堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。</p>
+<h2><span id="p2-fu-dong-de-shi-yong">2、浮动的使用</span><a href="#p2-fu-dong-de-shi-yong" class="header-anchor">#</a></h2>
+<p><strong>左浮动</strong> 就是让容器沿着容器左侧排序。</p>
+<p><strong>右浮动</strong> 让容器沿着容器右侧排序。</p>
+<h2><span id="p3-gao-du-ta-xian">3、高度塌陷</span><a href="#p3-gao-du-ta-xian" class="header-anchor">#</a></h2>
+<p>浮动元素以后，脱离父级内容区域，父级没有内容撑开自身的高度，而且父级的兄弟元素是按照父级的位置进行布局的，所以页面会乱。</p>
+<h2><span id="p4-qing-chu-fu-dong">4、清除浮动 △</span><a href="#p4-qing-chu-fu-dong" class="header-anchor">#</a></h2>
+<p>清除浮动不是不让元素浮动，是清除浮动对父级高度塌陷的影响。</p>
+<p>清除浮动的方法</p>
+<ul>
+<li>给浮动元素的父级设置高度。</li>
+<li>给浮动元素的父级设置浮动，以浮制浮。</li>
+<li>overflow设置不为visible的属性。</li>
+<li>在最后一个浮动元素的后边添加一个空的块级元素，添加一个块级元素，添加属性和值为 <code>clear: both</code>。</li>
+<li>（推荐）after伪元素清浮动，给所有浮动元素父级一个clearFix的类名。</li>
+</ul>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.clearFix:after</span><span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"/200B"</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="san-ding-wei">三、定位</span><a href="#san-ding-wei" class="header-anchor">#</a></h1>
+<p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>默认，没有定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位</td>
+</tr>
+</tbody>
+</table>
+<p>布局一般用在大布局的小范围中。</p>
+<h2><span id="p1-xiang-dui-ding-wei">1、相对定位</span><a href="#p1-xiang-dui-ding-wei" class="header-anchor">#</a></h2>
+<p><strong>相对定位</strong>（relative），让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。</p>
+<h2><span id="p2-jue-dui-ding-wei">2、绝对定位</span><a href="#p2-jue-dui-ding-wei" class="header-anchor">#</a></h2>
+<p><strong>绝对定位</strong>（absolute），相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非static属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的padding-box的左上角为原点。right和bottom是距离包含块右下角的距离。</p>
+<h3><span id="p2-1-bao-han-kuai">2.1 包含块</span><a href="#p2-1-bao-han-kuai" class="header-anchor">#</a></h3>
+<p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
+<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：</p>
+<ul>
+<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
+<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
+<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
+</ul>
+<blockquote>
+<p>补充：<br>
+如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。</p>
+<ul>
+<li>当祖先元素拥有 transform 或 perspective 属性并且值不为none的时候，它也是被当做包含块。</li>
+<li>当祖先元素 拥有 filter 属性的时候（值不为none） 它也可以被当做包含块</li>
+</ul>
+</blockquote>
+<p>注：如果由内向外找不到包含块条件的元素，那么html（根元素）被称作为初始包含块。</p>
+<h3><span id="p2-2-zi-jue-fu-xiang">2.2 子绝父相</span><a href="#p2-2-zi-jue-fu-xiang" class="header-anchor">#</a></h3>
+<p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
+<h2><span id="p3-gu-ding-ding-wei">3、固定定位</span><a href="#p3-gu-ding-ding-wei" class="header-anchor">#</a></h2>
+<p>固定定位（fixed），相对于浏览器窗口定位。</p>
+<h1><span id="si-ceng-die">四、层叠</span><a href="#si-ceng-die" class="header-anchor">#</a></h1>
+<h2><span id="p1-z-index">1、z-index</span><a href="#p1-z-index" class="header-anchor">#</a></h2>
+<p><strong>z-index</strong> 指定了一个定位属性的元素及其后代的层叠顺序，只有定位元素（非static）拥有该属性。z-index 的值没有单位，理论上来说 z-index 的值大的元素，会覆盖小的元素。定位元素默认的z-index 的值是 auto。如果一个拥有 z-index 属性的定位元素中，子元素也设置了 z-index 。那么子元素会重新创建一个<strong>层叠上下文</strong>，子元素的z-index只能在当前的层叠上下文中对比排列。</p>
+<h2><span id="p2-yuan-su-ceng-die-shun-xu">2、元素层叠顺序</span><a href="#p2-yuan-su-ceng-die-shun-xu" class="header-anchor">#</a></h2>
+<p>z-index为负&lt; background&lt; border&lt; 块级元素 &lt; 浮动元素 &lt; 内联元素 &lt; 没有设置z-index的定位元素 &lt; z-index为正</p>
+<h2><span id="p3-ceng-die-shang-xia-wen">3、层叠上下文 +</span><a href="#p3-ceng-die-shang-xia-wen" class="header-anchor">#</a></h2>
+<p>待更新。</p>
+<p>想要一个元素支持 z-index 属性，但是又不想定位影响其他元素或者影响自己，则可以给该元素设置相对定位。</p>
 
       
     </div>
@@ -2787,238 +3943,6 @@ opacity直接控制所有的内部元素的不透明度，无论是什么元素�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/10-CSS%E6%9D%82%E9%A1%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/03/10-CSS%E6%9D%82%E9%A1%B9/" class="post-title-link" itemprop="url">CSS 杂项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-11T00:00:00+08:00">2020-06-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 20:52:37" itemprop="dateModified" datetime="2020-08-31T20:52:37+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
-<p>[TOC]</p>
-<div class="toc">
-<!-- toc -->
-<ul>
-<li><a href="#yi-css-sprites">一、CSS Sprites</a></li>
-</ul>
-<!-- tocstop -->
-</div>
-<h1><span id="yi-css-sprites">一、CSS Sprites</span><a href="#yi-css-sprites" class="header-anchor">#</a></h1>
-<p><strong>CSS Sprites</strong>，精灵图，是网页图片的常用处理方式。</p>
-<p>允许将一个页面中很多零星的小图片包含到一张大图中去，当访问页面的时候，就不会一张张的去请求显示图片。对网络来说，小于200k的文件加载速度是一样的。通过 <code>background-position</code> 属性，将图片定位到需要的位置即可。</p>
-<p>优点：</p>
-<ul>
-<li>减少图片大小</li>
-<li>减少服务器请求次数</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/09-CSS%E5%8A%A8%E7%94%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="飞鱼">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/03/09-CSS%E5%8A%A8%E7%94%BB/" class="post-title-link" itemprop="url">CSS3 动画</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 19:37:42" itemprop="dateModified" datetime="2020-08-31T19:37:42+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
-<p>[TOC]</p>
-<div class="toc">
-<!-- toc -->
-<ul>
-<li><a href="#yi-transform">一、transform</a></li>
-<li><a href="#er-guo-du-dong-hua-transition">二、过渡动画 transition</a></li>
-<li><a href="#san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</a>
-<ul>
-<li><a href="#1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</a></li>
-<li><a href="#2-animation">2、animation</a></li>
-<li><a href="#3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</a></li>
-<li><a href="#4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</a></li>
-<li><a href="#5-zhu-zheng-dong-hua">5、逐帧动画</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-</div>
-<h1><span id="yi-transform">一、transform</span><a href="#yi-transform" class="header-anchor">#</a></h1>
-<ul>
-<li>旋转 rotate</li>
-<li>移动 translate</li>
-<li>缩放 scale</li>
-<li>扭曲 skew</li>
-<li>改变变换基点 transform-origin</li>
-</ul>
-<p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
-<h1><span id="er-guo-du-dong-hua-transition">二、过渡动画 transition</span><a href="#er-guo-du-dong-hua-transition" class="header-anchor">#</a></h1>
-<p>允许CSS的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变CSS的属性值。</p>
-<p>transition</p>
-<ul>
-<li>property 参与过渡的属性</li>
-<li>duration 持续时间</li>
-<li>timing-function 动画类型 linear 线性匀速</li>
-<li>delay 延迟时间</li>
-</ul>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transition</span><span class="token punctuation">:</span> height 3s linear 2s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1><span id="san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</span><a href="#san-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h1>
-<p>关键帧动画是控制关键位置，而不是所有位置。</p>
-<h2><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> &lt;name></span><span class="token punctuation">&#123;</span>
-	<span class="token selector">from/0%</span>
-	<span class="token punctuation">&#123;</span>
-		// ...
-	<span class="token punctuation">&#125;</span> 
-	<span class="token selector">to/100%</span>
-	<span class="token punctuation">&#123;</span>
-		// ...
-	<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p2-animation">2、animation</span><a href="#p2-animation" class="header-anchor">#</a></h2>
-<ul>
-<li>name 动画属性名</li>
-<li>duration 关键帧持续时间</li>
-<li>timing-function 动画执行方式（针对于每一个关键帧之间的动画）</li>
-<li>delay 动画延迟时间</li>
-<li>iteration-count 动画循环次数，次数或者 infinite（无穷次）</li>
-<li>direction 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
-</ul>
-<h2><span id="p3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</span><a href="#p3-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h2>
-<ul>
-<li>animation-play-state</li>
-<li>paused</li>
-</ul>
-<h2><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h2>
-<h2><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h2>
-<p>timing-function: steps()</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -3088,7 +4012,7 @@ opacity直接控制所有的内部元素的不透明度，无论是什么元素�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -3101,7 +4025,7 @@ opacity直接控制所有的内部元素的不透明度，无论是什么元素�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -3134,7 +4058,7 @@ opacity直接控制所有的内部元素的不透明度，无论是什么元素�
   </span>
   <span class="author" itemprop="copyrightHolder">KEEL</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         

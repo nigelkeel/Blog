@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="目录# [TOC]    一、gulp  1、开始   仅安装到生产环境  2、插件      一、gulp# 自动化构建部署工具。 开发环境 --&gt; 生产环境 1、开始# （1）安装 # 全局安装 npm install gulp -g  # 仅安装到生产环境 npm install gulp -D （2）配置 gulpfile.js const gulp &#x3D; require(&quot;gulp&quot;">
+  <meta name="description" content="目录# [TOC]    一、gulp  1、开始   仅安装到生产环境  2、插件   二、Webpack △  1、开始   局部安装（建议）  2、基本使用 3、打包CSS&#x2F;LESS&#x2F;SASS资源 4、JS语法检查 5、JS语法转换      自动化构建工具：开发环境 --&gt; 生产环境 开发环境（development）注重开发效率和源码的阅读。 生产环境（production）注重代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自动化构建工具">
 <meta property="og:url" content="http://nigelkeel.gitee.io/04/14-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="飞鱼">
-<meta property="og:description" content="目录# [TOC]    一、gulp  1、开始   仅安装到生产环境  2、插件      一、gulp# 自动化构建部署工具。 开发环境 --&gt; 生产环境 1、开始# （1）安装 # 全局安装 npm install gulp -g  # 仅安装到生产环境 npm install gulp -D （2）配置 gulpfile.js const gulp &#x3D; require(&quot;gulp&quot;">
+<meta property="og:description" content="目录# [TOC]    一、gulp  1、开始   仅安装到生产环境  2、插件   二、Webpack △  1、开始   局部安装（建议）  2、基本使用 3、打包CSS&#x2F;LESS&#x2F;SASS资源 4、JS语法检查 5、JS语法转换      自动化构建工具：开发环境 --&gt; 生产环境 开发环境（development）注重开发效率和源码的阅读。 生产环境（production）注重代">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-01T08:26:31.641Z">
+<meta property="article:modified_time" content="2020-09-02T06:42:43.833Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="工程化">
 <meta name="twitter:card" content="summary">
@@ -212,10 +212,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-09-01 00:00:00 / 修改时间：16:26:31" itemprop="dateCreated datePublished" datetime="2020-09-01T00:00:00+08:00">2020-09-01</time>
+              <time title="创建时间：2020-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-09-01T00:00:00+08:00">2020-09-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-02 14:42:43" itemprop="dateModified" datetime="2020-09-02T14:42:43+08:00">2020-09-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -252,12 +258,26 @@
 <li><a href="#2-cha-jian">2、插件</a></li>
 </ul>
 </li>
+<li><a href="#er-webpack"><strong>二、Webpack</strong> △</a>
+<ul>
+<li><a href="#1-kai-shi-1">1、开始</a></li>
+</ul>
+</li>
+<li><a href="#ju-bu-an-zhuang-jian-yi">局部安装（建议）</a>
+<ul>
+<li><a href="#2-ji-ben-shi-yong">2、基本使用</a></li>
+<li><a href="#3-da-bao-css-less-sass-zi-yuan">3、打包CSS/LESS/SASS资源</a></li>
+<li><a href="#4-js-yu-fa-jian-cha">4、JS语法检查</a></li>
+<li><a href="#5-js-yu-fa-zhuan-huan">5、JS语法转换</a></li>
+</ul>
+</li>
 </ul>
 <!-- tocstop -->
 </div>
+<p>自动化构建工具：<strong>开发环境 --&gt; 生产环境</strong></p>
+<p>开发环境（development）注重开发效率和源码的阅读。</p>
+<p>生产环境（production）注重代码的执行效率（压缩）。</p>
 <h1><span id="yi-gulp">一、gulp</span><a href="#yi-gulp" class="header-anchor">#</a></h1>
-<p>自动化构建部署工具。</p>
-<p>开发环境 --&gt; 生产环境</p>
 <h2><span id="p1-kai-shi">1、开始</span><a href="#p1-kai-shi" class="header-anchor">#</a></h2>
 <p>（1）安装</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 全局安装
@@ -279,6 +299,164 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 <h2><span id="p2-cha-jian">2、插件</span><a href="#p2-cha-jian" class="header-anchor">#</a></h2>
 <p><code>gulp-jshint</code> 语法检查</p>
 <p><code>gulp-babel</code> 语法转换</p>
+<h1><span id="er-webpack"><strong>二、Webpack</strong> △</span><a href="#er-webpack" class="header-anchor">#</a></h1>
+<p><strong><a target="_blank" rel="noopener" href="https://www.webpackjs.com/">Webpack</a></strong> 是一个模块打包器（bundler），根据模块的依赖关系进行静态分析，生成对应的静态资源。在 Webpack 看来，前端所有资源文件（js/json/css/less/img/…）都会作为模块处理。</p>
+<p>核心概念</p>
+<p><code>Entry</code> 入口起点，指示 Webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。</p>
+<p><code>Output</code> 告诉 Webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件。</p>
+<p><code>Loader</code> 让 Webpack 能够处理那些非JS文件。</p>
+<p><code>Plugins</code> 插件，用于执行范围更广的任务，比如打包优化，压缩。</p>
+<p><code>Mode</code> 模式，有生产模式（production）和开发模式（development ）。</p>
+<h2><span id="p1-kai-shi">1、开始</span><a href="#p1-kai-shi" class="header-anchor">#</a></h2>
+<p>依赖于 NodeJS 环境安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 全局安装
+npm install webpack webpack-cli -g
+
+# 局部安装（建议）
+npm install webpack webpack-cli -D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>零配置</p>
+<p>不需要配置，会默认将 <code>src/index.js</code> 进行打包，默认打包到 dist 下，生成的文件是 main.js</p>
+<p>模式（mode）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx webpack --mode developent<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p2-ji-ben-shi-yong">2、基本使用</span><a href="#p2-ji-ben-shi-yong" class="header-anchor">#</a></h2>
+<p>对指定文件进行打包</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx webpack xxx.js  --output xxx.js <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>打包多个文件</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">npx webpack x1<span class="token punctuation">.</span>js x2<span class="token punctuation">.</span>js <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>入口文件</p>
+<p>统一配置管理</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 多入口，单出口</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 指定打包模式</span>
+    mode<span class="token operator">:</span> <span class="token string">"development"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 指定打包文件的入口</span>
+    entry： <span class="token string">"./src/js/app.js"</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 指定打包之后的名字</span>
+    	filename<span class="token operator">:</span><span class="token string">"bundke.js"</span><span class="token punctuation">,</span>
+        <span class="token comment">// 指定打包路径（需绝对路径）</span>
+    	path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./build"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 多入口，多出口</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 指定打包模式</span>
+    mode<span class="token operator">:</span> <span class="token string">"development"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 指定打包文件的入口</span>
+    entry：<span class="token punctuation">&#123;</span>
+    	app<span class="token operator">:</span> <span class="token string">"./src/js/app.js"</span><span class="token punctuation">,</span>
+    	mo<span class="token operator">:</span> <span class="token string">"./src/js/mo.js"</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 指定打包之后的名字</span>
+        <span class="token comment">//               ↓ entry 的属性名</span>
+    	filename<span class="token operator">:</span><span class="token string">"abc/[name].bundke.js"</span><span class="token punctuation">,</span>
+        <span class="token comment">// 指定打包路径（须绝对路径）</span>
+    	path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"./build"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>清空上次打包的内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install clean-webpack-plugin -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>cleanWebpackPlugin<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"clean-webpack-plugin"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+    plugins<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-da-bao-css-less-sass-zi-yuan">3、打包CSS/LESS/SASS资源</span><a href="#p3-da-bao-css-less-sass-zi-yuan" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install style-loader css-leader -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 入口文件</span>
+<span class="token keyword">import</span> <span class="token string">"../css/app.css"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 配置文件</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 运行相对应的loader</span>
+    module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        rules<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+            test<span class="token operator">:</span><span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+            loader<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token string">"css-loader"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install less-loader -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install sass-loader -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p4-js-yu-fa-jian-cha">4、JS语法检查</span><a href="#p4-js-yu-fa-jian-cha" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install eslint-loader eslint -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+    <span class="token comment">// 运行相对应的loader</span>
+    module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        rules<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">// 只检测 js 文件</span>
+            test<span class="token operator">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 排除</span>
+            exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 提前加载使用</span>
+            enforce<span class="token operator">:</span> <span class="token string">"pre"</span><span class="token punctuation">,</span>
+            use<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+                loader<span class="token operator">:</span><span class="token string">"eslint-loader"</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// .eslint.js</span>
+module<span class="token punctuation">.</span>export <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">"parserOption"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token string">"ecmaVersion"</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>  <span class="token comment">// 支持 ES6</span>
+        <span class="token string">"sourceType"</span><span class="token operator">:</span> <span class="token string">"module"</span>  <span class="token comment">// 使用 ES6 模块化</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token string">"env"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>                <span class="token comment">// 设置环境</span>
+        <span class="token string">"browser"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>   <span class="token comment">// 支持浏览器环境</span>
+        <span class="token string">"node"</span><span class="token operator">:</span> <span class="token boolean">true</span>       <span class="token comment">// 支持服务器环境</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token string">"global"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>             <span class="token comment">// 声明使用的全局变量</span>
+        <span class="token string">"$"</span><span class="token operator">:</span><span class="token string">"readonly"</span><span class="token punctuation">,</span>    <span class="token comment">// 不允许重写</span>
+        <span class="token string">"$$"</span><span class="token operator">:</span><span class="token string">"writable"</span>    <span class="token comment">// 可修改</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token string">"rules"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>              <span class="token comment">// 0 忽略 1 警告 2 错误</span>
+        <span class="token string">"no-console"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>   <span class="token comment">// 不检查 console</span>
+        <span class="token string">"eqeqeq"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>       <span class="token comment">// 用 == 而不用 ===</span>
+        <span class="token string">"no-alert"</span><span class="token operator">:</span> <span class="token number">0</span>      <span class="token comment">// 不能使用 alert</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token comment">// 使用 eslint 推荐的默认规则</span>
+    <span class="token string">"extends"</span><span class="token operator">:</span> <span class="token string">"eslint:recommended"</span> 
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p5-js-yu-fa-zhuan-huan">5、JS语法转换</span><a href="#p5-js-yu-fa-zhuan-huan" class="header-anchor">#</a></h2>
+<p><code>@babel/preset-ent</code> 将新语法转成 ES5。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install babel-loader @bable&#x2F;core @babel&#x2F;preset-ent -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// webpack.config.js</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token operator">...</span>
+    <span class="token comment">// 运行相对应的loader</span>
+    module<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        rules<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+            <span class="token comment">// 只检测 js 文件</span>
+            test<span class="token operator">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 排除</span>
+            exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span>
+            <span class="token comment">// 提前加载使用</span>
+            enforce<span class="token operator">:</span> <span class="token string">"pre"</span><span class="token punctuation">,</span>
+            use<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+                loader<span class="token operator">:</span><span class="token string">"babel-loader"</span><span class="token punctuation">,</span>
+                options<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+                    presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>JS 兼容性处理</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install @babel&#x2F;polyfill<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 入口文件 app.js</span>
+<span class="token keyword">import</span> <span class="token string">"@babel/polyfill"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>解决 <code>babel</code> 只能转换语法的问题，引入 <code>polyfill</code> 可以转换高级语法（如 <code>Promise</code> ）。</p>
 
     </div>
 
@@ -297,8 +475,8 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/04/15-%E5%AE%89%E5%85%A8%E9%98%B2%E8%8C%83/" rel="prev" title="安全防范专题">
-      <i class="fa fa-chevron-left"></i> 安全防范专题
+    <a href="/06/%E9%9D%A2%E8%AF%95%E5%BF%83%E6%80%81/" rel="prev" title="面试心态">
+      <i class="fa fa-chevron-left"></i> 面试心态
     </a></div>
       <div class="post-nav-item">
     <a href="/04/13-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="next" title="性能优化">
@@ -362,7 +540,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、插件</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、Webpack △</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、打包CSS&#x2F;LESS&#x2F;SASS资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、JS语法检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、JS语法转换</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -376,7 +554,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -389,7 +567,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -422,7 +600,7 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
   </span>
   <span class="author" itemprop="copyrightHolder">KEEL</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
         
