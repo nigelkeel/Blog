@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JS 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 目录# [TOC]    一、基本语法  1、创建 2、修饰符 3、字符类 4、锚点 5、Unicode 6、多行模式 7、正则和字符串方法   二、扩展语法  1、词边界 2、转义、特殊字符 3、集合和范围 4、量词 5、捕获组 6、模式中的反向引用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 正则表达式">
+<meta property="og:url" content="http://nigelkeel.gitee.io/03/15-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="正则表达式（regexp） 是搜索和替换字符串一种强大的方法。在 JS 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。 目录# [TOC]    一、基本语法  1、创建 2、修饰符 3、字符类 4、锚点 5、Unicode 6、多行模式 7、正则和字符串方法   二、扩展语法  1、词边界 2、转义、特殊字符 3、集合和范围 4、量词 5、捕获组 6、模式中的反向引用">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-04T06:34:15.054Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/03/15-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JS 正则表达式 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/03/15-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JS 正则表达式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-21T00:00:00+08:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-04 14:34:15" itemprop="dateModified" datetime="2020-09-04T14:34:15+08:00">2020-09-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>正则表达式</strong>（regexp） 是搜索和替换字符串一种强大的方法。在 JS 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。</p>
+<h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-ji-ben-yu-fa">一、基本语法</a>
+<ul>
+<li><a href="#1-chuang-jian">1、创建</a></li>
+<li><a href="#2-xiu-shi-fu">2、修饰符</a></li>
+<li><a href="#3-zi-fu-lei">3、字符类</a></li>
+<li><a href="#4-mao-dian">4、锚点</a></li>
+<li><a href="#5-unicode">5、Unicode</a></li>
+<li><a href="#6-duo-xing-mo-shi">6、多行模式</a></li>
+<li><a href="#7-zheng-ze-he-zi-fu-chuan-fang-fa">7、正则和字符串方法</a></li>
+</ul>
+</li>
+<li><a href="#er-kuo-zhan-yu-fa">二、扩展语法</a>
+<ul>
+<li><a href="#1-ci-bian-jie">1、词边界</a></li>
+<li><a href="#2-zhuan-yi-te-shu-zi-fu">2、转义、特殊字符</a></li>
+<li><a href="#3-ji-he-he-fan-wei">3、集合和范围</a></li>
+<li><a href="#4-liang-ci">4、量词</a></li>
+<li><a href="#5-bu-huo-zu">5、捕获组</a></li>
+<li><a href="#6-mo-shi-zhong-de-fan-xiang-yin-yong">6、模式中的反向引用</a></li>
+<li><a href="#7-xuan-ze-or">7、选择（OR）</a></li>
+<li><a href="#8-qian-zhan-duan-yan-yu-hou-zhan-duan-yan">8、前瞻断言与后瞻断言</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-ji-ben-yu-fa">一、基本语法</span><a href="#yi-ji-ben-yu-fa" class="header-anchor">#</a></h1>
+<p>正则表达式包含 <strong>模式</strong> 和可选的 <strong>修饰符</strong>。</p>
+<h2><span id="p1-chuang-jian">1、创建</span><a href="#p1-chuang-jian" class="header-anchor">#</a></h2>
+<p>创建一个正则表达式有两种语法：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 允许从字符串动态构造模式</span>
+reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">"pattern"</span><span class="token punctuation">,</span> <span class="token string">"flags"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 常用</span>
+reg2 <span class="token operator">=</span> <span class="token regex">/pattern/</span><span class="token punctuation">;</span>
+reg3 <span class="token operator">=</span> <span class="token regex">/pattern/gmi</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果要在字符串中搜索，可以使用 <code>search()</code> 。这个方法返回匹配项的索引位置，如果没找到返回<code>-1</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 例子</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"I love you!"</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token regex">/love/</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-xiu-shi-fu">2、修饰符</span><a href="#p2-xiu-shi-fu" class="header-anchor">#</a></h2>
+<p>正则表达式的修饰符影响搜索结果，在 JS 中有五个修饰符：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>搜索不区分大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>搜索会查找所有的匹配项，而不是第一个</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行模式</td>
+</tr>
+<tr>
+<td>u</td>
+<td>开启完整的unicode支持</td>
+</tr>
+<tr>
+<td>y</td>
+<td>粘滞模式</td>
+</tr>
+</tbody>
+</table>
+<p>搜索默认是区分大小写的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"I love you!"</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex">/LOVE/</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token regex">/LOVE/i</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-zi-fu-lei">3、字符类</span><a href="#p3-zi-fu-lei" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>匹配所有字符（除换行符外）</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>任何一个数字（digit）</td>
+</tr>
+<tr>
+<td><code>\D</code></td>
+<td>非数字</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>空格（制表符，换行符）</td>
+</tr>
+<tr>
+<td><code>\S</code></td>
+<td>非空格</td>
+</tr>
+<tr>
+<td><code>\w</code></td>
+<td>拉丁字母或者数字或者下划线。</td>
+</tr>
+<tr>
+<td><code>\W</code></td>
+<td>非单字</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p4-mao-dian">4、锚点</span><a href="#p4-mao-dian" class="header-anchor">#</a></h2>
+<p>插入符 <code>^</code> 匹配文本开头，而美元符 <code>$</code> 则匹配文本末尾。它们被称为<strong>锚点</strong>。</p>
+<h2><span id="p5-unicode">5、Unicode</span><a href="#p5-unicode" class="header-anchor">#</a></h2>
+<p>JavaScript 使用 <strong>Unicode 编码</strong>（Unicode encoding）对字符串进行编码。大多数字符使用 2 个字节编码，但这种方式只能编码最多 65536 个字符。</p>
+<p>这个范围不足以对所有可能的字符进行编码，这就是为什么一些罕见的字符使用 4 个字节进行编码，比如 <code>𝒳</code> （数学符号 X）或者 <code>😄</code> （笑脸），一些象形文字等等。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/regexp-unicode">Unicode：修饰符 “u” 和 class \p{…}</a></p>
+<h2><span id="p6-duo-xing-mo-shi">6、多行模式</span><a href="#p6-duo-xing-mo-shi" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/regexp-multiline-mode">Flag “m” — 多行模式</a></p>
+<h2><span id="p7-zheng-ze-he-zi-fu-chuan-fang-fa">7、正则和字符串方法</span><a href="#p7-zheng-ze-he-zi-fu-chuan-fang-fa" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/regexp-methods">正则表达式（RegExp）和字符串（String）的方法</a></p>
+<h1><span id="er-kuo-zhan-yu-fa">二、扩展语法</span><a href="#er-kuo-zhan-yu-fa" class="header-anchor">#</a></h1>
+<h2><span id="p1-ci-bian-jie">1、词边界</span><a href="#p1-ci-bian-jie" class="header-anchor">#</a></h2>
+<h2><span id="p2-zhuan-yi-te-shu-zi-fu">2、转义、特殊字符</span><a href="#p2-zhuan-yi-te-shu-zi-fu" class="header-anchor">#</a></h2>
+<h2><span id="p3-ji-he-he-fan-wei">3、集合和范围</span><a href="#p3-ji-he-he-fan-wei" class="header-anchor">#</a></h2>
+<h2><span id="p4-liang-ci">4、量词</span><a href="#p4-liang-ci" class="header-anchor">#</a></h2>
+<h2><span id="p5-bu-huo-zu">5、捕获组</span><a href="#p5-bu-huo-zu" class="header-anchor">#</a></h2>
+<h2><span id="p6-mo-shi-zhong-de-fan-xiang-yin-yong">6、模式中的反向引用</span><a href="#p6-mo-shi-zhong-de-fan-xiang-yin-yong" class="header-anchor">#</a></h2>
+<h2><span id="p7-xuan-ze-or">7、选择（OR）</span><a href="#p7-xuan-ze-or" class="header-anchor">#</a></h2>
+<h2><span id="p8-qian-zhan-duan-yan-yu-hou-zhan-duan-yan">8、前瞻断言与后瞻断言</span><a href="#p8-qian-zhan-duan-yan-yu-hou-zhan-duan-yan" class="header-anchor">#</a></h2>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/03/01-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" rel="prev" title="JS 异步">
+      <i class="fa fa-chevron-left"></i> JS 异步
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/03/05-NodeJS%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97/" rel="next" title="NodeJS 核心模块">
+      NodeJS 核心模块 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、字符类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、锚点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、Unicode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、多行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、正则和字符串方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、扩展语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、词边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、转义、特殊字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、集合和范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、量词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、捕获组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、模式中的反向引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、选择（OR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8、前瞻断言与后瞻断言</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

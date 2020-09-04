@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="目录# [TOC]    一、transform 二、过渡动画 transition 三、关键帧动画 animation  1、@keyframes 定义新关键帧 2、animation 3、动画的暂停和播放 4、动画的起始和结束状态 5、逐帧动画      一、transform#  旋转 rotate 移动 translate 缩放 scale 扭曲 skew 改变变换基点 transform">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3 动画">
+<meta property="og:url" content="http://nigelkeel.gitee.io/02/09-CSS%E5%8A%A8%E7%94%BB/index.html">
+<meta property="og:site_name" content="飞鱼">
+<meta property="og:description" content="目录# [TOC]    一、transform 二、过渡动画 transition 三、关键帧动画 animation  1、@keyframes 定义新关键帧 2、animation 3、动画的暂停和播放 4、动画的起始和结束状态 5、逐帧动画      一、transform#  旋转 rotate 移动 translate 缩放 scale 扭曲 skew 改变变换基点 transform">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-31T11:37:42.798Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/02/09-CSS%E5%8A%A8%E7%94%BB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CSS3 动画 | 飞鱼</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">飞鱼</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/02/09-CSS%E5%8A%A8%E7%94%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="飞鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSS3 动画
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-11T00:00:00+08:00">2020-01-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 19:37:42" itemprop="dateModified" datetime="2020-08-31T19:37:42+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">技术栈</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="mu-lu">目录</span><a href="#mu-lu" class="header-anchor">#</a></h1>
+<p>[TOC]</p>
+<div class="toc">
+<!-- toc -->
+<ul>
+<li><a href="#yi-transform">一、transform</a></li>
+<li><a href="#er-guo-du-dong-hua-transition">二、过渡动画 transition</a></li>
+<li><a href="#san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</a>
+<ul>
+<li><a href="#1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</a></li>
+<li><a href="#2-animation">2、animation</a></li>
+<li><a href="#3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</a></li>
+<li><a href="#4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</a></li>
+<li><a href="#5-zhu-zheng-dong-hua">5、逐帧动画</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+</div>
+<h1><span id="yi-transform">一、transform</span><a href="#yi-transform" class="header-anchor">#</a></h1>
+<ul>
+<li>旋转 rotate</li>
+<li>移动 translate</li>
+<li>缩放 scale</li>
+<li>扭曲 skew</li>
+<li>改变变换基点 transform-origin</li>
+</ul>
+<p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
+<h1><span id="er-guo-du-dong-hua-transition">二、过渡动画 transition</span><a href="#er-guo-du-dong-hua-transition" class="header-anchor">#</a></h1>
+<p>允许CSS的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变CSS的属性值。</p>
+<p>transition</p>
+<ul>
+<li>property 参与过渡的属性</li>
+<li>duration 持续时间</li>
+<li>timing-function 动画类型 linear 线性匀速</li>
+<li>delay 延迟时间</li>
+</ul>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">transition</span><span class="token punctuation">:</span> height 3s linear 2s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="san-guan-jian-zheng-dong-hua-animation">三、关键帧动画 animation</span><a href="#san-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h1>
+<p>关键帧动画是控制关键位置，而不是所有位置。</p>
+<h2><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@keyframes</span> &lt;name></span><span class="token punctuation">&#123;</span>
+	<span class="token selector">from/0%</span>
+	<span class="token punctuation">&#123;</span>
+		// ...
+	<span class="token punctuation">&#125;</span> 
+	<span class="token selector">to/100%</span>
+	<span class="token punctuation">&#123;</span>
+		// ...
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p2-animation">2、animation</span><a href="#p2-animation" class="header-anchor">#</a></h2>
+<ul>
+<li>name 动画属性名</li>
+<li>duration 关键帧持续时间</li>
+<li>timing-function 动画执行方式（针对于每一个关键帧之间的动画）</li>
+<li>delay 动画延迟时间</li>
+<li>iteration-count 动画循环次数，次数或者 infinite（无穷次）</li>
+<li>direction 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
+</ul>
+<h2><span id="p3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</span><a href="#p3-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h2>
+<ul>
+<li>animation-play-state</li>
+<li>paused</li>
+</ul>
+<h2><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h2>
+<h2><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h2>
+<p>timing-function: steps()</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/02/22-DOM%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8/" rel="prev" title="常见效果">
+      <i class="fa fa-chevron-left"></i> 常见效果
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/02/10-CSS%E6%9D%82%E9%A1%B9/" rel="next" title="CSS 杂项">
+      CSS 杂项 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、transform</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、过渡动画 transition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三、关键帧动画 animation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、@keyframes 定义新关键帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、animation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、动画的暂停和播放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、动画的起始和结束状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、逐帧动画</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
