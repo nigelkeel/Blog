@@ -8,7 +8,7 @@
       <link href="/suo-yin/"/>
       <url>/suo-yin/</url>
       
-        <content type="html"><![CDATA[<h1><span id="mian-shi-he-xin">面试核心</span><a href="#mian-shi-he-xin" class="header-anchor">#</a></h1><h1><span id="mo-ban">模版</span><a href="#mo-ban" class="header-anchor">#</a></h1><pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">---title: 标题tags: [标签]categories: 分类---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<p>还在建设中的个人博客…</p>]]></content>
       
       
       
@@ -21,7 +21,7 @@
       <link href="/yu-fa/typescript/"/>
       <url>/yu-fa/typescript/</url>
       
-        <content type="html"><![CDATA[<h2><span id="pjie-kou">接口</span><a href="#pjie-kou" class="header-anchor">#</a></h2><p>约束对象</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">interface P &#123;  name: string;  age: number;  like: any[];  sex?: string; &#x2F;&#x2F; 可以有也可以没有&#125;const person: P &#x3D; &#123;  name: &quot;tim&quot;,  age: 10,  like: [&quot;吃饭&quot;, 123],&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h2><span id="pjie-kou">接口</span><a href="#pjie-kou" class="header-anchor">#</a></h2><p>约束对象</p><pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">interface P &#123;  name: string;  age: number;  like: any[];  sex?: string; &#x2F;&#x2F; 可以有也可以没有&#125;const person: P &#x3D; &#123;  name: &quot;Tom&quot;,  age: 10,  like: [&quot;吃饭&quot;, 123],&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -36,25 +36,6 @@
             <tag> 标签 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>链接汇总</title>
-      <link href="/wei-gui-lei/lian-jie/"/>
-      <url>/wei-gui-lei/lian-jie/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="phtml">HTML</span><a href="#phtml" class="header-anchor">#</a></h2><p><a href="https://www.w3school.com.cn/tags/tag_iframe.asp">iframe 标签</a></p><h2><span id="pmian-shi">面试</span><a href="#pmian-shi" class="header-anchor">#</a></h2><p><a href="https://juejin.cn/post/6867715946941775885">落魄前端，整理给自己的前端知识体系复习大纲（上篇）</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 未归类 </category>
-          
-      </categories>
-      
       
     </entry>
     
@@ -128,56 +109,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>生命周期</title>
-      <link href="/kuang-jia/sheng-ming-zhou-qi/"/>
-      <url>/kuang-jia/sheng-ming-zhou-qi/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="pyi-vue-zhong-de-sheng-ming-zhou-qi">一、Vue 中的生命周期</span><a href="#pyi-vue-zhong-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h2><h2><span id="per-react-zhong-de-sheng-ming-zhou-qi">二、React 中的生命周期</span><a href="#per-react-zhong-de-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> 框架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 面试核心 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ECharts</title>
-      <link href="/shi-tu/echarts/"/>
-      <url>/shi-tu/echarts/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 视图 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据可视化 </tag>
             
         </tags>
       
