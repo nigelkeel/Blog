@@ -4,7 +4,151 @@
   
     
     <entry>
-      <title>210701 Electron</title>
+      <title>250701：Vue 3</title>
+      <link href="/2507-vue3/01/"/>
+      <url>/2507-vue3/01/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="vue-3">Vue 3</span><a href="#vue-3" class="header-anchor">#</a></h1><blockquote><p>前置知识：<code>Vue基础</code> <code>Vue高级</code> <code>TypeScript</code></p></blockquote><h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2><ul><li><a href="https://juejin.cn/post/6897030228867022856">https://juejin.cn/post/6897030228867022856</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2507：Vue3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>250501：Vue + ElementUI</title>
+      <link href="/2505-vue-elementui/01/"/>
+      <url>/2505-vue-elementui/01/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="element-ui">Element UI</span><a href="#element-ui" class="header-anchor">#</a></h1><h2><span id="pkai-shi">开始</span><a href="#pkai-shi" class="header-anchor">#</a></h2><p>作者：饿了么团队<br>文档：<a href="https://element.eleme.cn/#/zh-CN">https://element.eleme.cn/#/zh-CN</a><br>适用技术栈：Vue</p><h2><span id="pyi-ru-shou">一、入手</span><a href="#pyi-ru-shou" class="header-anchor">#</a></h2><h2><span id="per-zu-jian">二、组件</span><a href="#per-zu-jian" class="header-anchor">#</a></h2><p>使用比较多的组件：标签页（Tabs），表格，按钮，开关</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2505：Vue+ElementUI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220501：NodeJS</title>
+      <link href="/2205-nodejs/01/"/>
+      <url>/2205-nodejs/01/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="nodejs">NodeJS</span><a href="#nodejs" class="header-anchor">#</a></h1><p>I/O密集型</p><p>非阻塞</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2205：NodeJS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220401：解构赋值</title>
+      <link href="/2204-es6/01-jie-gou-fu-zhi/"/>
+      <url>/2204-es6/01-jie-gou-fu-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="jie-gou-fu-zhi">解构赋值</span><a href="#jie-gou-fu-zhi" class="header-anchor">#</a></h1><p>基础使用</p><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 字符串解构</span><span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"qwq"</span><span class="token comment">// 数组解构</span><span class="token keyword">const</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token comment">// 对象解构</span><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>x<span class="token punctuation">,</span> y<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span> y<span class="token operator">:</span><span class="token number">2</span> <span class="token punctuation">&#125;</span><span class="token comment">// 默认值</span><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>x<span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span> x<span class="token operator">:</span><span class="token number">1</span> <span class="token punctuation">&#125;</span><span class="token comment">// 改名</span><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>x<span class="token punctuation">,</span> y<span class="token operator">:</span> z<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>x<span class="token punctuation">,</span> y<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>常用场景</p><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 交换变量</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>y<span class="token punctuation">,</span> x<span class="token punctuation">]</span><span class="token comment">// 按需使用模块</span><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> readFile <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token comment">// 函数传参</span><span class="token comment">// 待更新</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2204：ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>630201：亲密关系</title>
+      <link href="/6302-qin-mi-guan-xi/01/"/>
+      <url>/6302-qin-mi-guan-xi/01/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="qin-mi-guan-xi">亲密关系</span><a href="#qin-mi-guan-xi" class="header-anchor">#</a></h1><ul><li>男人的情感需求是信任，接纳，欣赏，崇拜，认可，鼓励。<br>女人的情感需求是关爱，理解，忠诚，尊重，体贴，安全感。</li><li>想要持续拥有感情中的幸福是一件很难的事情。可能比你在工作上获得成功还要难，所以需要你和伴侣都提升爱的能力，付出时间、精力、金钱、感情去学习提升和经营。</li><li>得不到的永远最好的。</li><li>一度追求结果，可能会适得其反。过度强求结果，是一个非常错误的恋爱观念。</li><li>虽然聊天的目的在于邀约和升级关系，但不要一味的在信息的世界里去升级关系。升级关系应该放在两人接触之后，双方感觉良好，适时且适当的升级关系。</li><li>**如果你想让自己过得更好，想做更多自己想做的事情，我建议你不要太早结婚，**结了婚就意味着你要放弃一半的自己。</li><li>你的自我感动和自我安慰，比又蠢又懒更致命，明明啥都没做，还在那儿觉得自己是全世界最努力的人。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 6302：亲密关系 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>640101：建立知识体系</title>
+      <link href="/6401-zhi-shi-guan-li/01-jian-li-zhi-shi-ti-xi/"/>
+      <url>/6401-zhi-shi-guan-li/01-jian-li-zhi-shi-ti-xi/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="jian-li-zhi-shi-ti-xi">建立知识体系</span><a href="#jian-li-zhi-shi-ti-xi" class="header-anchor">#</a></h1><h2><span id="pyi-kai-shi">一、开始</span><a href="#pyi-kai-shi" class="header-anchor">#</a></h2><h3><span id="pda-nao-de-gong-zuo-mo-shi-shi-ji-yu-suo-yin-de">大脑的工作模式是基于索引的</span><a href="#pda-nao-de-gong-zuo-mo-shi-shi-ji-yu-suo-yin-de" class="header-anchor">#</a></h3><ul><li>我们学过那么多的东西、之所以无用，之所以过不好这一生，是因为你学到的东西都是零碎的，完全没有任何可以索引的机会。想要让学习过的知识有用，我们就必须让知识体系化。</li><li>我们给知识建立体系就是给知识建立索引，以及索引间的逻辑关系，当知识体系大厦搭建完毕以后，你就可以随意调用，只要在你知识体系涵盖的范围内，就可以任意纵横。</li></ul><h2><span id="per-ru-he-jian-li-zhi-shi-ti-xi">二、如何建立知识体系</span><a href="#per-ru-he-jian-li-zhi-shi-ti-xi" class="header-anchor">#</a></h2><h3><span id="pgou-zao-zhi-shi-ti-xi-de-cai-liao">构造知识体系的材料</span><a href="#pgou-zao-zhi-shi-ti-xi-de-cai-liao" class="header-anchor">#</a></h3><p>（1）元认知（地基）</p><ul><li>能指导你思考背后的思考，指导你解释原理背后的原理。</li><li>最底层的知识，它为一切现象原理，提供最底层的解释和支撑。</li></ul><p>（2）方法（钢筋水泥）</p><ul><li>方法，套路。</li></ul><p>（3）概念（砖瓦）</p><ul><li>我们身处的世界都是由一个个概念构成的，这个时候我们理解事物的基本方式。</li><li>可以说我们认知这个世界的方式，就是在认知一个个概念，概念是组成我们思想的基本方式，你了解的概念越多，你认识这个世界的维度就会越丰富。</li></ul><p>（4）事实（边料）</p><ul><li>浩如烟海。</li><li>这些知识只在特定情况有用，大多数情况下是没有用的，所以它的可迁移能力最弱。</li></ul><h3><span id="pzhi-shi-de-ke-qian-yi">知识的可迁移</span><a href="#pzhi-shi-de-ke-qian-yi" class="header-anchor">#</a></h3><ul><li>知识的可迁移能力，就是<strong>我们学习的任何东西，都是为了实现知识的最大可迁移，我们可以从一个领域，迅速用同样的方式，进行跨界。</strong></li><li>元认知类知识最有用，迁移能力最强，但学习难度最高，而事实类知识迁移能力最弱，学习难度也是最容易的。</li></ul><h3><span id="pyuan-ren-zhi-yi-shi-cong-di-ceng-chu-fa">元认知意识 —— 从底层出发</span><a href="#pyuan-ren-zhi-yi-shi-cong-di-ceng-chu-fa" class="header-anchor">#</a></h3><h3><span id="pcong-wen-ti-xian-xiang-chu-fa">从问题、现象出发</span><a href="#pcong-wen-ti-xian-xiang-chu-fa" class="header-anchor">#</a></h3><h3><span id="pzhu-yi-shi-xiang">注意事项</span><a href="#pzhu-yi-shi-xiang" class="header-anchor">#</a></h3><ul><li><p>无用之用是为大用</p><p>很多人觉得哲学、美学、逻辑学、社会学、心理学、经济学、历史学等各大学科很高大上，很空洞，感觉学了也不能找到工作啥的，事实上恰恰相反，这些东西才是真正承载人类顶级智慧和知识的学科，你所见到的一切都是在这些底层学科之上构建而成的。</p></li><li><p>让知识间建立关系，切记一定不要孤立</p></li><li><p>寻找一切现象，填充你的知识框架：为理论找到实例，为实例提供理论。</p></li><li><p>搭建知识体系的过程一定是需要过程的</p></li></ul><h2><span id="psan-ru-he-guan-li-zhi-shi-ti-xi">三、如何管理知识体系</span><a href="#psan-ru-he-guan-li-zhi-shi-ti-xi" class="header-anchor">#</a></h2><h3><span id="pjian-li-wai-bu-zhi-shi-ku">建立外部知识库</span><a href="#pjian-li-wai-bu-zhi-shi-ku" class="header-anchor">#</a></h3><h3><span id="pdie-dai-geng-xin">迭代更新</span><a href="#pdie-dai-geng-xin" class="header-anchor">#</a></h3><h2><span id="psi-xue-yi-zhi-yong">四、学以致用</span><a href="#psi-xue-yi-zhi-yong" class="header-anchor">#</a></h2><p>知识拿去用了才有用</p><h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2><ul><li><a href="https://www.zhihu.com/question/19591121/answer/1364971134">https://www.zhihu.com/question/19591121/answer/1364971134</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 6401：知识管理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>210701：Electron</title>
       <link href="/2701-electron/01/"/>
       <url>/2701-electron/01/</url>
       
@@ -29,7 +173,7 @@
     
     
     <entry>
-      <title>210702 Electron 环境配置</title>
+      <title>210702：Electron 环境配置</title>
       <link href="/2701-electron/02-electron-huan-jing-pei-zhi/"/>
       <url>/2701-electron/02-electron-huan-jing-pei-zhi/</url>
       
@@ -54,7 +198,7 @@
     
     
     <entry>
-      <title>210101 网页基础</title>
+      <title>210101：网页基础</title>
       <link href="/2101-html/01-wang-ye-ji-chu/"/>
       <url>/2101-html/01-wang-ye-ji-chu/</url>
       
@@ -79,7 +223,7 @@
     
     
     <entry>
-      <title>210203 C3：transform</title>
+      <title>210203：C3 Transform</title>
       <link href="/2102-css/03-css3-transform/"/>
       <url>/2102-css/03-css3-transform/</url>
       
@@ -104,7 +248,7 @@
     
     
     <entry>
-      <title>210202 CSS 选择器</title>
+      <title>210202：CSS 选择器</title>
       <link href="/2102-css/02-css-xuan-ze-qi/"/>
       <url>/2102-css/02-css-xuan-ze-qi/</url>
       
@@ -129,7 +273,7 @@
     
     
     <entry>
-      <title>210201 CSS 开始</title>
+      <title>210201：CSS 开始</title>
       <link href="/2102-css/01-css-kai-shi/"/>
       <url>/2102-css/01-css-kai-shi/</url>
       
@@ -154,7 +298,7 @@
     
     
     <entry>
-      <title>181001 Markdown 快速上手</title>
+      <title>181001：Markdown 快速上手</title>
       <link href="/1810-markdown/01-markdown-kuai-su-shang-shou/"/>
       <url>/1810-markdown/01-markdown-kuai-su-shang-shou/</url>
       
@@ -179,7 +323,7 @@
     
     
     <entry>
-      <title>170201 用户交互心理学</title>
+      <title>170201：用户交互心理学</title>
       <link href="/1702-yong-hu-jiao-hu-xin-li-xue/01/"/>
       <url>/1702-yong-hu-jiao-hu-xin-li-xue/01/</url>
       
@@ -204,7 +348,7 @@
     
     
     <entry>
-      <title>170101 平面设计基础</title>
+      <title>170101：平面设计基础</title>
       <link href="/1701-ping-mian-she-ji-ji-chu/01/"/>
       <url>/1701-ping-mian-she-ji-ji-chu/01/</url>
       
@@ -229,7 +373,7 @@
     
     
     <entry>
-      <title>170301 色彩库</title>
+      <title>170301：色彩库</title>
       <link href="/1703-se-cai/01-se-cai-ku/"/>
       <url>/1703-se-cai/01-se-cai-ku/</url>
       
@@ -246,6 +390,137 @@
         <tags>
             
             <tag> 设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220102：闭包</title>
+      <link href="/2202-es-gao-ji/01-bi-bao/"/>
+      <url>/2202-es-gao-ji/01-bi-bao/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="bi-bao">闭包</span><a href="#bi-bao" class="header-anchor">#</a></h1><h2><span id="p1-shi-me-shi-bi-bao">1、什么是闭包</span><a href="#p1-shi-me-shi-bi-bao" class="header-anchor">#</a></h2><p>闭包是一个包含被引用局部变量的 <code>closure</code> 对象，存在嵌套的内部函数中。</p><h2><span id="p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi">2、怎么产生闭包 &amp; 生命周期</span><a href="#p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi" class="header-anchor">#</a></h2><p>必须满足三个条件</p><ul><li>函数嵌套函数</li><li>内部函数调用外部函数的局部变量（引入全局变量是不会产生闭包的）</li><li>调用外部函数</li></ul><p>生命周期</p><ul><li>内部函数定义执行完成就产生</li><li>内部函数成为垃圾对象就销毁</li></ul><h2><span id="p3-bi-bao-de-zuo-yong-yu-que-dian">3、闭包的作用与缺点</span><a href="#p3-bi-bao-de-zuo-yong-yu-que-dian" class="header-anchor">#</a></h2><p>作用</p><ul><li>延长了局部变量的存活时间</li><li>让函数外部操作函数内部的数据</li></ul><p>缺点</p><ul><li>用太多可能会导致内存泄露（因为占用内部空间不释放）</li></ul><h2><span id="p4-bi-bao-de-ying-yong">4、闭包的应用</span><a href="#p4-bi-bao-de-ying-yong" class="header-anchor">#</a></h2><ul><li>迭代器</li><li>React 组件高阶函数（为了复用函数，给内部函数传参）</li><li>Vue 原理中存在（双向数据绑定原理）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2202：ES高级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220503：NodeJS 版本管理</title>
+      <link href="/2205-nodejs/03-npm-ban-ben-guan-li/"/>
+      <url>/2205-nodejs/03-npm-ban-ben-guan-li/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="nodejs-ban-ben-guan-li">NodeJS 版本管理</span><a href="#nodejs-ban-ben-guan-li" class="header-anchor">#</a></h1><h2><span id="pn">n</span><a href="#pn" class="header-anchor">#</a></h2><blockquote><p>不支持 <code>win</code> 系统</p></blockquote><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 安装sudo npm i -g n# 安装指定版本的 node.jssudo n 12.18.2# 切换sudo n<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2><span id="pnvm">nvm</span><a href="#pnvm" class="header-anchor">#</a></h2><blockquote><p><code>win</code></p></blockquote><p>全称 <code>node.js version management</code></p><ul><li><p><a href="https://github.com/coreybutler/nvm-windows/releases">下载</a>，推荐使用 <code>nvm-setup.zip</code></p></li><li><p>相关命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 查看已经安装的node版本nvm ls# 安装对应的版本 nvm install xxx# 卸载nvm uninstall xxx# 使用nvm use xxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2205：NodeJS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220502：NPM</title>
+      <link href="/2205-nodejs/02-npm/"/>
+      <url>/2205-nodejs/02-npm/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="npm">NPM</span><a href="#npm" class="header-anchor">#</a></h1><p><code>npm</code> 是 Node 的模块管理器，全称 <code>Node Package Manager</code>。</p><h2><span id="pyi-chang-yong-ming-ling">一、常用命令</span><a href="#pyi-chang-yong-ming-ling" class="header-anchor">#</a></h2><p>1、安装</p><blockquote><p><code>npm install &lt;package&gt;</code></p><p><code>npm install</code> 可以简写为 <code>npm i</code> （？二者有一些微小的差异）</p><p><strong>强制安装</strong> 安装之前，会先检查 <code>node_modules</code> 目录之中是否已经存在指定模块，就会跳过，即使有一个新版本也是如此。使用<code>-f</code>或者<code>--force</code> 参数强制安装。</p><p><strong>安装指定版本</strong> 在包名@指定版本</p><p>全局安装 <code>-g</code> 或者 <code>-global</code></p><p>安装到生产和开发环境(dependencies) <code>-D</code> 或者 <code>--save-dev</code> （默认）</p><p>仅安装到开发环境(devDependencies) <code>-S</code> 或者 <code>--save</code></p><p><strong>安装项目依赖</strong> <code>npm i</code></p></blockquote><p>2、更新</p><blockquote><p><code>npm updata &lt;package&gt;</code></p></blockquote><p>3、查询版本</p><blockquote><p><code>npm view &lt;package&gt;</code></p><p>简写为 <code>npm v</code></p></blockquote><p>4、查看全局安装的包</p><blockquote><p><code>npm list -g --depth 0</code></p></blockquote><p>5、卸载</p><blockquote><p><code>npm uninstall &lt;package&gt;</code></p></blockquote><p>6、启动、停止、重启模块</p><blockquote><p><code>npm start</code></p><p><code>npm stop</code></p><p><code>npm restart</code></p></blockquote><p>7、切换镜像</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 切换阿里镜像npm config set registry http:&#x2F;&#x2F;registry.npm.taobao.org# 切换回原镜像npm config set registry https:&#x2F;&#x2F;registry.npmjs.org<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>8、清缓存</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm cache verify# mac 要加 sudo 前缀<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2><ul><li><a href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2205：NodeJS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>250101：Vue 开始</title>
+      <link href="/2501-vue-ji-chu/01/"/>
+      <url>/2501-vue-ji-chu/01/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="vue-kai-shi">Vue 开始</span><a href="#vue-kai-shi" class="header-anchor">#</a></h1><p>渐进式，动态构建用户界面</p><p><a href="https://cn.vuejs.org/">文档</a></p><h2><span id="pte-dian">特点</span><a href="#pte-dian" class="header-anchor">#</a></h2><p>编码简洁，体积小，运行效率高，适合移动和PC端开发<br>借鉴了 Angular 的模版和数据绑定技术<br>借鉴了 React 的组件化和虚拟DOM技术</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2501：Vue基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>220101：in of</title>
+      <link href="/2201-es-ji-chu/01-in-of/"/>
+      <url>/2201-es-ji-chu/01-in-of/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="in-of">in/of</span><a href="#in-of" class="header-anchor">#</a></h1><p>1、<code>in</code> 用来判断对象是否是数组/对象的元素/属性</p><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">A</span> <span class="token keyword">in</span> <span class="token constant">B</span><span class="token comment">// 当B是数组时，A指的是数组的索引</span><span class="token comment">// 当B是对象时，A指的是对象的属性</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>2、<code>for...in</code> 对数组或者对象循环（迭代）操作</p><p>对于数组来说，遍历出来的是数组元素</p><p>对于对象来说，遍历出来的是对象属性（key）</p><p>可枚举属性（<code>enumerable</code> ，不包括 <code>symbol</code>），会循环原型链和手动添加的键</p><p>某些情况下，循环顺序是随机的</p><p>3、<code>for...of</code> 遍历出来的是对象（数组、类数组、字符串）的值</p><p>可以使用 <code>break</code> <code>continue</code> <code>return</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2201：ES基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
