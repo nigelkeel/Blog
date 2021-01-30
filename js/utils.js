@@ -239,12 +239,13 @@ NexT.utils = {
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();
-        var offset = target.getBoundingClientRect().top + window.scrollY;
+        // var offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
           targets  : document.scrollingElement,
           duration : 500,
           easing   : 'linear',
-          scrollTop: offset + 10
+          //scrollTop: offset + 10
+          scrollTop: 10
         });
       });
       return target;

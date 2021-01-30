@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="From small beginning come great things.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="所有标签">
-<meta property="og:url" content="http://nigelkeel.gitee.io/tags/index.html">
+  <meta name="description" content="CSS3：transform# 一、transform 2d# 改变标签在二维平面的位置和形状。 类型  translate 移动 rotate 旋转 scale 缩放  1. 移动 translate#  transform: translate(x, y) transform: translateX(n)&#x2F;Y(n) 最大的优点就是不影响其他元素的位置。 行内标签没有效果。  2. 旋转 rot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="210203 C3：transform">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2102-css/03-css3-transform/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="From small beginning come great things.">
+<meta property="og:description" content="CSS3：transform# 一、transform 2d# 改变标签在二维平面的位置和形状。 类型  translate 移动 rotate 旋转 scale 缩放  1. 移动 translate#  transform: translate(x, y) transform: translateX(n)&#x2F;Y(n) 最大的优点就是不影响其他元素的位置。 行内标签没有效果。  2. 旋转 rot">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2014-12-22T04:39:04.000Z">
-<meta property="article:modified_time" content="2020-08-25T10:38:56.849Z">
+<meta property="article:published_time" content="2021-01-30T03:55:49.113Z">
+<meta property="article:modified_time" content="2021-01-30T03:58:47.199Z">
 <meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/tags/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/2102-css/03-css3-transform/">
 
 
 <script id="page-configurations">
@@ -40,13 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>所有标签 | 永远的伊尔瓦
-</title>
+  <title>210203 C3：transform | 永远的伊尔瓦</title>
   
 
 
@@ -187,51 +187,119 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2102-css/03-css3-transform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="From small beginning come great things. ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          210203 C3：transform
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">所有标签
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2021-01-30 11:55:49 / 修改时间：11:58:47" itemprop="dateCreated datePublished" datetime="2021-01-30T11:55:49+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="css3-transform">CSS3：transform</span><a href="#css3-transform" class="header-anchor">#</a></h1>
+<h2><span id="pyi-transform-2d">一、transform 2d</span><a href="#pyi-transform-2d" class="header-anchor">#</a></h2>
+<p>改变标签在二维平面的位置和形状。</p>
+<p>类型</p>
+<ul>
+<li><code>translate</code> 移动</li>
+<li><code>rotate</code> 旋转</li>
+<li><code>scale</code> 缩放</li>
+</ul>
+<h3><span id="p1-yi-dong-translate">1. 移动 <code>translate</code></span><a href="#p1-yi-dong-translate" class="header-anchor">#</a></h3>
+<ul>
+<li><code>transform: translate(x, y)</code></li>
+<li><code>transform: translateX(n)/Y(n)</code></li>
+<li>最大的优点就是不影响其他元素的位置。</li>
+<li>行内标签没有效果。</li>
+</ul>
+<h3><span id="p2-xuan-zhuan-rotate">2. 旋转 <code>rotate</code></span><a href="#p2-xuan-zhuan-rotate" class="header-anchor">#</a></h3>
+<ul>
+<li>单位是 <code>deg</code></li>
+<li>正是顺时针，负是逆时针。</li>
+<li>可以通过 <code>transform-oringin</code> 设置旋转中心点</li>
+</ul>
+<h3><span id="p3-suo-fang-scale">3. 缩放 <code>scale</code></span><a href="#p3-suo-fang-scale" class="header-anchor">#</a></h3>
+<p>备注</p>
+<ul>
+<li>同时使用多个转换，其格式为 <code>transform: translate() rotate() scale()</code></li>
+</ul>
+<p>待更新。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2102-css/02-css-xuan-ze-qi/" rel="prev" title="210202 CSS 选择器">
+      <i class="fa fa-chevron-left"></i> 210202 CSS 选择器
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 3 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/CSS/" style="font-size: 30px; color: #111">CSS</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 30px; color: #111">设计</a>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -282,6 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">CSS3：transform</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、transform 2d</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1. 移动 translate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2. 旋转 rotate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3. 缩放 scale</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
