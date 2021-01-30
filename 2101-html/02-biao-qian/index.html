@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="HTML 标签# 一、概述# 标签，又称为元素。 1、标签的关系# 兄弟关系 父子关系 2、标签的分类# （1）块标签 block  代表标签: div 默认的宽度是占据父标签全部内容，即 width: 100% 默认的高度由内容决定 设宽高、边距、边框没有限制 独占一行 允许嵌套块元素和行元素（p&#x2F;h标签除外）  （2）行内标签 inline  代表标签: span 默认的宽高由内容决定。 内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="210102：HTML 标签">
+<meta property="og:url" content="http://nigelkeel.gitee.io/2101-html/02-biao-qian/index.html">
+<meta property="og:site_name" content="永远的伊尔瓦">
+<meta property="og:description" content="HTML 标签# 一、概述# 标签，又称为元素。 1、标签的关系# 兄弟关系 父子关系 2、标签的分类# （1）块标签 block  代表标签: div 默认的宽度是占据父标签全部内容，即 width: 100% 默认的高度由内容决定 设宽高、边距、边框没有限制 独占一行 允许嵌套块元素和行元素（p&#x2F;h标签除外）  （2）行内标签 inline  代表标签: span 默认的宽高由内容决定。 内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-30T08:57:44.044Z">
+<meta property="article:modified_time" content="2021-01-30T10:02:40.298Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="HTML">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/2101-html/02-biao-qian/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>210102：HTML 标签 | 永远的伊尔瓦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">永远的伊尔瓦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2101-html/02-biao-qian/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          210102：HTML 标签
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:57:44 / 修改时间：18:02:40" itemprop="dateCreated datePublished" datetime="2021-01-30T16:57:44+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2101%EF%BC%9AHTML/" itemprop="url" rel="index"><span itemprop="name">2101：HTML</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="html-biao-qian">HTML 标签</span><a href="#html-biao-qian" class="header-anchor">#</a></h1>
+<h2><span id="pyi-gai-shu">一、概述</span><a href="#pyi-gai-shu" class="header-anchor">#</a></h2>
+<p>标签，又称为元素。</p>
+<h3><span id="p1-biao-qian-de-guan-xi">1、标签的关系</span><a href="#p1-biao-qian-de-guan-xi" class="header-anchor">#</a></h3>
+<p>兄弟关系<br>
+父子关系</p>
+<h3><span id="p2-biao-qian-de-fen-lei">2、标签的分类</span><a href="#p2-biao-qian-de-fen-lei" class="header-anchor">#</a></h3>
+<p>（1）块标签 <code>block</code></p>
+<ul>
+<li>代表标签: <code>div</code></li>
+<li>默认的宽度是占据父标签全部内容，即 <code>width: 100%</code></li>
+<li>默认的高度由内容决定</li>
+<li>设宽高、边距、边框没有限制</li>
+<li>独占一行</li>
+<li>允许嵌套块元素和行元素（<code>p</code>/<code>h</code>标签除外）</li>
+</ul>
+<p>（2）行内标签 <code>inline</code></p>
+<ul>
+<li>代表标签: <code>span</code></li>
+<li>默认的宽高由内容决定。</li>
+<li>内容过多时允许换行并断开（一般都是用于处理文字样式）。</li>
+<li>设置宽高无效。上下边距、边框无法设置。</li>
+<li>共用一行：在一行中如有剩余空间，允许同其他行内/行内块标签共用。</li>
+<li>某些动画样式不能添加和使用。</li>
+</ul>
+<p>（3）行内块标签 <code>inline-block</code></p>
+<ul>
+<li>代表标签: <code>img</code>、<code>button</code>、<code>input</code></li>
+<li>默认的宽高由内容决定。</li>
+<li>内容过多时不会断开。</li>
+<li>可以设置宽高。</li>
+<li>在一行中如有剩余空间，允许同其他 行内/行内块 标签公用一行。</li>
+<li>行内块和内行标签会有行高的概念。</li>
+<li>行内块受父元素的 <code>line-height</code> 以及自身的 <code>vertical-align</code> 影响。</li>
+</ul>
+<p>将非块级元素转换成块级元素的方法</p>
+<ul>
+<li><code>display: block</code></li>
+<li><code>float: left/right</code></li>
+<li><code>position: absolute/fixed</code></li>
+<li>父级元素使用 <code>display:flex</code></li>
+</ul>
+<h2><span id="p3-yu-yi-hua-biao-qian">3、语义化标签</span><a href="#p3-yu-yi-hua-biao-qian" class="header-anchor">#</a></h2>
+<p>优点：</p>
+<ul>
+<li>语义化标签更具有可读性，便于团队的开发和维护</li>
+<li>没有 CSS 的情况下，网页也能很好的呈现出内容结构和代码结构</li>
+<li>关于SEO，搜索引擎更能理解到网页中各部分之间的关系，更准确更快速搜索信息</li>
+</ul>
+<p>布局的三个发展阶段：</p>
+<ul>
+<li>开荒时期：前端的代码主要是后台写的，使用 <code>table</code> 来布局</li>
+<li>美工时期：有专门的人来写前端代码了，主要布局方式是 <code>DIV+CSS</code></li>
+<li>现在：使用具有语义的标签，可以表达正确的内容，也利用开发和维护。</li>
+</ul>
+<h2><span id="per-chang-yong-biao-qian">二、常用标签</span><a href="#per-chang-yong-biao-qian" class="header-anchor">#</a></h2>
+<h3><span id="p1-div-fen-kuai">1、<code>div</code> 分块</span><a href="#p1-div-fen-kuai" class="header-anchor">#</a></h3>
+<p>用于分块。<br>
+分块原则：先行后列。</p>
+<h3><span id="p2-biao-ti-duan-luo-huan-xing">2、标题、段落、换行</span><a href="#p2-biao-ti-duan-luo-huan-xing" class="header-anchor">#</a></h3>
+<p>（1）标题：<code>h1</code> <code>h2</code> <code>h3</code> …<br>
+最多允许6级标题。<br>
+依次使用，避免跳过某级标题使用。<br>
+同一个网页最多使用一次 <code>h1</code> 标签。</p>
+<p>（2）段落：<code>p</code><br>
+（3）换行：<code>br</code><br>
+单纯的换行，被称为软换行。</p>
+<h3><span id="p3-lie-biao">3、列表</span><a href="#p3-lie-biao" class="header-anchor">#</a></h3>
+<p>（1）无序列表：<code>ul</code>-<code>li</code><br>
+常用于重复结构的大块内容布局。<br>
+注：<br>
+1、<code>ol</code>/<code>ul</code>只能嵌套 <code>li</code>。<br>
+2、不建议在<code>ul</code>和<code>li</code>嵌套的中间，书写其他元素。</p>
+<p>（2）有序列表：<code>ol</code>-<code>li</code><br>
+用的少。</p>
+<p>（3）自定义列表<br>
+<code>dl</code>-<code>dt</code>-<code>dd</code>，组合标签。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p4-biao-ge">4、表格</span><a href="#p4-biao-ge" class="header-anchor">#</a></h3>
+<h3><span id="p5-span-e-wai-jie-gou">5、<code>span</code> 额外结构</span><a href="#p5-span-e-wai-jie-gou" class="header-anchor">#</a></h3>
+<h3><span id="p6-mao-lian-jie">6、锚链接</span><a href="#p6-mao-lian-jie" class="header-anchor">#</a></h3>
+<h3><span id="p7-tu-pian">7、图片</span><a href="#p7-tu-pian" class="header-anchor">#</a></h3>
+<p>inline 行标签<br>
+span 额外结构<br>
+i 小图标<br>
+<code>&lt;a&gt;</code> 链接<br>
+属性<br>
+href 跳转地址<br>
+title 悬浮提示<br>
+target 跳转设置<br>
+_self<br>
+_blank 新标签页打开<br>
+download<br>
+tel<br>
+sms<br>
+mailto<br>
+路径<br>
+绝对路径<br>
+相对路径<br>
+./ ：代表文件所在的目录（可以省略不写）<br>
+…/ ：代表文件所在的父级目录<br>
+…/…/ ：代表文件所在的父级目录的父级目录<br>
+/ ：代表文件所在的根目录,可以理解成项目内部的绝对路径。<br>
+网络路径<br>
+锚链接<br>
+#id<br>
+相关伪类<br>
+link：当有链接属性时<br>
+visited：当连接被访问过以后<br>
+hover：当连接被鼠标悬浮的时候<br>
+active：当连接在激活状态的时候<br>
+inline-block 行内块<br>
+img 图片<br>
+属性<br>
+src: 设置路径<br>
+alt: 设置替代文本<br>
+title: 鼠标悬浮提示文本<br>
+width / height<br>
+表格<br>
+属性<br>
+src &amp; href<br>
+href：文档之间的跳转<br>
+src：资源的引用</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2204-es6/05-map/" rel="prev" title="220405：ES Map">
+      <i class="fa fa-chevron-left"></i> 220405：ES Map
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2101-html/03-biao-dan/" rel="next" title="210103：HTML 表单">
+      210103：HTML 表单 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">HTML 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、标签的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、标签的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、语义化标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、常用标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、div 分块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、标题、段落、换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5、span 额外结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">6、锚链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">7、图片</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。 </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

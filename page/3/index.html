@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="From small beginning come great things.">
+  <meta name="description" content="这个人很懒，什么都没留下。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="永远的伊尔瓦">
 <meta property="og:url" content="http://nigelkeel.gitee.io/page/3/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="From small beginning come great things.">
+<meta property="og:description" content="这个人很懒，什么都没留下。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="KEEL">
 <meta name="twitter:card" content="summary">
@@ -191,12 +191,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/01-in-of/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2203-es-api/01-json/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="KEEL">
-      <meta itemprop="description" content="From small beginning come great things. ">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -205,7 +205,279 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2201-es-ji-chu/01-in-of/" class="post-title-link" itemprop="url">220101：in of</a>
+            <a href="/2203-es-api/01-json/" class="post-title-link" itemprop="url">220301：JSON</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:44:28 / 修改时间：18:25:26" itemprop="dateCreated datePublished" datetime="2021-01-30T16:44:28+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2203%EF%BC%9AES-API/" itemprop="url" rel="index"><span itemprop="name">2203：ES API</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="json">JSON</span><a href="#json" class="header-anchor">#</a></h1>
+<p><code>JSON</code> 是ES内置对象（不用定义就能用）。<br>
+<code>.json</code> 是一种常用于前后端数据交互的格式，本质是字符串。</p>
+<h2><span id="pyi-zhi-de-biao-shi">一、值的表示</span><a href="#pyi-zhi-de-biao-shi" class="header-anchor">#</a></h2>
+<h3><span id="p1-ji-ben-zhi">1、基本值</span><a href="#p1-ji-ben-zhi" class="header-anchor">#</a></h3>
+<p>可以表示除了 <code>undefined</code>、<code>symbol</code> 之外的基本数据类型，<strong>表示字符串必须加双引号。</strong></p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">false
+5
+&quot;hello world&quot; &#x2F;&#x2F; 表示字符串需加双引号
+null<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p2-dui-xiang">2、对象</span><a href="#p2-dui-xiang" class="header-anchor">#</a></h3>
+<p>表示的是一组无序的键值对，属性必须用双引号包起来。此外，最后一个属性末尾不能加逗号。</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&#123;
+    &quot;name&quot;: &quot;Tom&quot;,
+    &quot;age&quot;: 18
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p3-shu-zu">3、数组</span><a href="#p3-shu-zu" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">[25, &quot;hi&quot;, true]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="per-json-api">二、JSON API</span><a href="#per-json-api" class="header-anchor">#</a></h2>
+<h3><span id="p1-json-stringify">1、<code>JSON.stringify()</code></span><a href="#p1-json-stringify" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token operator">...</span>
+<span class="token keyword">let</span> jsonData <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">Stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>将JS值序列化为JSON字符串，常用于向服务器发送数据。<br>
+函数，原型成员，<code>undefined</code>，<code>symbol</code> 会被忽略。</p>
+<h3><span id="p2-json-parse">2、<code>JSON.parse()</code></span><a href="#p2-json-parse" class="header-anchor">#</a></h3>
+<p>将JSON字符串解析成原生的JS值，常用于解析服务器获取的数据。<br>
+不是有效的JSON字符串就会报错。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2202-es-gao-ji/02-bi-bao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2202-es-gao-ji/02-bi-bao/" class="post-title-link" itemprop="url">220202：闭包</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-12 14:25:56" itemprop="dateCreated datePublished" datetime="2021-01-12T14:25:56+08:00">2021-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-30 17:34:03" itemprop="dateModified" datetime="2021-01-30T17:34:03+08:00">2021-01-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="bi-bao">闭包</span><a href="#bi-bao" class="header-anchor">#</a></h1>
+<h2><span id="p1-shi-me-shi-bi-bao">1、什么是闭包</span><a href="#p1-shi-me-shi-bi-bao" class="header-anchor">#</a></h2>
+<p>闭包是一个包含被引用局部变量的 <code>closure</code> 对象，存在嵌套的内部函数中。</p>
+<h2><span id="p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi">2、怎么产生闭包 &amp; 生命周期</span><a href="#p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>
+<p>必须满足三个条件</p>
+<ul>
+<li>函数嵌套函数</li>
+<li>内部函数调用外部函数的局部变量（引入全局变量是不会产生闭包的）</li>
+<li>调用外部函数</li>
+</ul>
+<p>生命周期</p>
+<ul>
+<li>内部函数定义执行完成就产生</li>
+<li>内部函数成为垃圾对象就销毁</li>
+</ul>
+<h2><span id="p3-bi-bao-de-zuo-yong-yu-que-dian">3、闭包的作用与缺点</span><a href="#p3-bi-bao-de-zuo-yong-yu-que-dian" class="header-anchor">#</a></h2>
+<p>作用</p>
+<ul>
+<li>延长了局部变量的存活时间</li>
+<li>让函数外部操作函数内部的数据</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>用太多可能会导致内存泄露（因为占用内部空间不释放）</li>
+</ul>
+<h2><span id="p4-bi-bao-de-ying-yong">4、闭包的应用</span><a href="#p4-bi-bao-de-ying-yong" class="header-anchor">#</a></h2>
+<ul>
+<li>迭代器</li>
+<li>React 组件高阶函数（为了复用函数，给内部函数传参）</li>
+<li>Vue 原理中存在（双向数据绑定原理）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2202-es-gao-ji/01-mian-xiang-dui-xiang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2202-es-gao-ji/01-mian-xiang-dui-xiang/" class="post-title-link" itemprop="url">220201：ES 面向对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 17:32:52 / 修改时间：18:05:03" itemprop="dateCreated datePublished" datetime="2021-01-30T17:32:52+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-mian-xiang-dui-xiang">ES 面向对象</span><a href="#es-mian-xiang-dui-xiang" class="header-anchor">#</a></h1>
+<p>面向对象和面向过程是两种不同的编程思想和方法。<br>
+面向过程是以过程为中心，就像流水线一样设计程序的思想。面向对象是以对象为中心的编程思想。更符合人类的思维习惯。<br>
+在面向对象的概念中，<strong>类</strong>是一类相似事物的统称，对象是类的实例化，类是对象的模版。（JS 中没有具体类的概念，ES6 引入的类实际上是函数。）<br>
+面向对象的三个基本特性: <strong>封装、继承、多态</strong>。<br>
+<strong>对象（Object）</strong> 可以是一个变量，一个函数，一种数据结构。在 JS 中，一切皆为对象。JS 允许自定义对象，从狭义的概念来分析，对象是最基本的数据类型，是复合型的结构、引用型的数据，它是无序数据集合。对象中每个成员被称为<strong>属性</strong>。对象是无序的键值对，数组是有序的键值对，函数是一种可执行的特殊对象。</p>
+<p><strong>实例对象</strong>与<strong>函数对象</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/10-za-xiang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/10-za-xiang/" class="post-title-link" itemprop="url">220110：ES 杂项</a>
         </h2>
 
         <div class="post-meta">
@@ -222,7 +494,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-30 14:52:27" itemprop="dateModified" datetime="2021-01-30T14:52:27+08:00">2021-01-30</time>
+                <time title="修改时间：2021-01-30 16:43:56" itemprop="dateModified" datetime="2021-01-30T16:43:56+08:00">2021-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +517,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="in-of">in/of</span><a href="#in-of" class="header-anchor">#</a></h1>
+          <h2><span id="peval">eval</span><a href="#peval" class="header-anchor">#</a></h2>
+<h2><span id="pdebugger">debugger</span><a href="#pdebugger" class="header-anchor">#</a></h2>
+<h2><span id="pin-of">in/of</span><a href="#pin-of" class="header-anchor">#</a></h2>
 <p>1、<code>in</code> 用来判断对象是否是数组/对象的元素/属性</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">A</span> <span class="token keyword">in</span> <span class="token constant">B</span>
 <span class="token comment">// 当B是数组时，A指的是数组的索引</span>
@@ -272,10 +546,1497 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/09-dui-xiang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/09-dui-xiang/" class="post-title-link" itemprop="url">220109：ES 对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:42:00 / 修改时间：16:43:41" itemprop="dateCreated datePublished" datetime="2021-01-30T16:42:00+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-dui-xiang">ES 对象</span><a href="#es-dui-xiang" class="header-anchor">#</a></h1>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/08-han-shu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/08-han-shu/" class="post-title-link" itemprop="url">220108：ES 函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:41:42 / 修改时间：16:41:51" itemprop="dateCreated datePublished" datetime="2021-01-30T16:41:42+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/07-shu-zu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/07-shu-zu/" class="post-title-link" itemprop="url">220107：ES 数组</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:41:14 / 修改时间：16:43:02" itemprop="dateCreated datePublished" datetime="2021-01-30T16:41:14+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-shu-zu">ES 数组</span><a href="#es-shu-zu" class="header-anchor">#</a></h1>
+<p>Array<br>
+定义数组<br>
+数组的长度<br>
+操作数组<br>
+多维数组<br>
+伪数组<br>
+数组方法</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/06-cuo-wu-yu-yi-chang-chu-li/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/06-cuo-wu-yu-yi-chang-chu-li/" class="post-title-link" itemprop="url">220106：ES 错误与异常处理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:39:36 / 修改时间：16:40:48" itemprop="dateCreated datePublished" datetime="2021-01-30T16:39:36+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="cuo-wu-yu-yi-chang-chu-li">错误与异常处理</span><a href="#cuo-wu-yu-yi-chang-chu-li" class="header-anchor">#</a></h1>
+<p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
+<h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Error</code></td>
+<td>基类 <br><code>name</code> 可以读写异常类型（TypeError）<br><code>message</code> 可以读写详细的错误信息。</td>
+</tr>
+<tr>
+<td><code>EvalError</code></td>
+<td>不正确使用eval()方法时抛出</td>
+</tr>
+<tr>
+<td><code>SyntaxError</code></td>
+<td><strong>语法错误</strong></td>
+</tr>
+<tr>
+<td><code>ReferenceError</code></td>
+<td>读取不存在的变量时抛出</td>
+</tr>
+<tr>
+<td><code>TypeError</code></td>
+<td>值的类型发生错误的时候抛出</td>
+</tr>
+<tr>
+<td><code>RangeError</code></td>
+<td>数字超出合法范围</td>
+</tr>
+<tr>
+<td><code>URIError</code></td>
+<td>URI编码和解码错误</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-try-catch">2、try…catch</span><a href="#p2-try-catch" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 调试代码块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 捕获异常，并进行异常处理代码块</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>一般情况下 <code>try...catch</code> 就够用了。</p>
+<p>按顺序执行 try 子句中的代码，如果没有异常发生，将会忽略 catch 跳转到 finally 子句继续执行。</p>
+<p>无法捕获逻辑错误。</p>
+<h2><span id="p3-throw">3、throw</span><a href="#p3-throw" class="header-anchor">#</a></h2>
+<p>抛出异常。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> num <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">=</span> <span class="token number">Infinity</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 抛出错误</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"除数不能为0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>exception<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>exception<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>抛出错误之后，后续代码不会执行。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/04-yun-suan-fu-yu-lei-xing-zhuan-huan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/04-yun-suan-fu-yu-lei-xing-zhuan-huan/" class="post-title-link" itemprop="url">220104：ES 运算符与类型转换</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:32:11 / 修改时间：16:36:59" itemprop="dateCreated datePublished" datetime="2021-01-30T16:32:11+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-yun-suan-fu-yu-lei-xing-zhuan-huan">ES 运算符与类型转换</span><a href="#es-yun-suan-fu-yu-lei-xing-zhuan-huan" class="header-anchor">#</a></h1>
+<h2><span id="psuan-zhu-yun-suan-fu">算术运算符</span><a href="#psuan-zhu-yun-suan-fu" class="header-anchor">#</a></h2>
+<h2><span id="pguan-xi-yun-suan-fu">关系运算符</span><a href="#pguan-xi-yun-suan-fu" class="header-anchor">#</a></h2>
+<h2><span id="pluo-ji-yun-suan-fu">逻辑运算符</span><a href="#pluo-ji-yun-suan-fu" class="header-anchor">#</a></h2>
+<h2><span id="pwei-yun-suan-fu">位运算符</span><a href="#pwei-yun-suan-fu" class="header-anchor">#</a></h2>
+<h2><span id="plei-xing-zhuan-huan">类型转换</span><a href="#plei-xing-zhuan-huan" class="header-anchor">#</a></h2>
+<p>强制类型转换<br>
+parseInt<br>
+ParseFloat<br>
+toString / valueOf<br>
+<a target="_blank" rel="noopener" href="https://juejin.im/post/6873215243804213262">https://juejin.im/post/6873215243804213262</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/05-ji-ben-liu-cheng-kong-zhi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/05-ji-ben-liu-cheng-kong-zhi/" class="post-title-link" itemprop="url">220103：ES 基本流程控制</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 16:37:27 / 修改时间：16:38:51" itemprop="dateCreated datePublished" datetime="2021-01-30T16:37:27+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-ji-ben-liu-cheng-kong-zhi">ES 基本流程控制</span><a href="#es-ji-ben-liu-cheng-kong-zhi" class="header-anchor">#</a></h1>
+<h2><span id="pfen-zhi-kong-zhi">分支控制</span><a href="#pfen-zhi-kong-zhi" class="header-anchor">#</a></h2>
+<p>if-else<br>
+switch</p>
+<h2><span id="pxun-huan-kong-zhi">循环控制</span><a href="#pxun-huan-kong-zhi" class="header-anchor">#</a></h2>
+<p>for<br>
+while<br>
+do-while<br>
+break<br>
+continue</p>
+<h2><span id="plian-xi-shu-chu-jiu-jiu-cheng-fa-biao">练习：输出九九乘法表</span><a href="#plian-xi-shu-chu-jiu-jiu-cheng-fa-biao" class="header-anchor">#</a></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/03-ji-ben-shu-ju-lei-xing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/03-ji-ben-shu-ju-lei-xing/" class="post-title-link" itemprop="url">220103：ES 基本数据类型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 15:53:22 / 修改时间：16:32:53" itemprop="dateCreated datePublished" datetime="2021-01-30T15:53:22+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-ji-ben-shu-ju-lei-xing">ES 基本数据类型</span><a href="#es-ji-ben-shu-ju-lei-xing" class="header-anchor">#</a></h1>
+<p>在 ES 中，数据类型分为基本类型和引用类型（复杂类型）。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>基本类型</th>
+<th>引用类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值</td>
+<td>不可变（注）</td>
+<td>可变</td>
+</tr>
+<tr>
+<td>添加属性和方法</td>
+<td>无效</td>
+<td>可以</td>
+</tr>
+<tr>
+<td>存储方式</td>
+<td>栈区</td>
+<td>名字地址存栈区，值存堆区</td>
+</tr>
+<tr>
+<td>比较方式</td>
+<td>值比较</td>
+<td>引用的比较</td>
+</tr>
+</tbody>
+</table>
+<p>基本类型分为</p>
+<ul>
+<li>布尔值 <code>Boolean</code></li>
+<li>数值 <code>Number</code></li>
+<li>大整数 <code>bigint</code> （ES6新增）</li>
+<li>字符串 <code>String</code></li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+<li><code>Symbol</code> （ES6新增）</li>
+</ul>
+<h2><span id="pyi-bu-er-zhi">一、布尔值</span><a href="#pyi-bu-er-zhi" class="header-anchor">#</a></h2>
+<h2><span id="per-shu-zhi-da-zheng-shu">二、数值、大整数</span><a href="#per-shu-zhi-da-zheng-shu" class="header-anchor">#</a></h2>
+<p>NaN</p>
+<p>最值</p>
+<p>安全值</p>
+<h2><span id="psan-zi-fu-chuan">三、字符串</span><a href="#psan-zi-fu-chuan" class="header-anchor">#</a></h2>
+<p>模板字符串</p>
+<h2><span id="psi-null-amp-undefined">四、<code>null</code> &amp; <code>undefined</code></span><a href="#psi-null-amp-undefined" class="header-anchor">#</a></h2>
+<p>常见的 <code>undefined</code> 环境</p>
+<ul>
+<li>变量声明但是没有赋值</li>
+<li>调用函数没有提供的参数</li>
+<li>函数默认返回值</li>
+<li>对象没有赋值的属性</li>
+</ul>
+<p>常见的 <code>null</code> 环境</p>
+<ul>
+<li>对象原型链的终点</li>
+<li>让变量指向的对象成为垃圾对象</li>
+</ul>
+<h2><span id="pwu-symbol">五、<code>Symbol</code></span><a href="#pwu-symbol" class="header-anchor">#</a></h2>
+<p>保证对象的每个属性的名字都是独一无二的，从根本上面防止属性名冲突。</p>
+<p>更多内容详看 <code>ES6/Symbol</code></p>
+<h2><span id="pliu-pan-duan-lei-xing">六、判断类型</span><a href="#pliu-pan-duan-lei-xing" class="header-anchor">#</a></h2>
+<p><code>typeof</code><br>
+<code>instanceof</code><br>
+<code>isNaN</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/02-ji-ben-yu-fa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/02-ji-ben-yu-fa/" class="post-title-link" itemprop="url">220102：ES 基本语法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 15:49:02 / 修改时间：15:53:46" itemprop="dateCreated datePublished" datetime="2021-01-30T15:49:02+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-ji-ben-yu-fa">ES 基本语法</span><a href="#es-ji-ben-yu-fa" class="header-anchor">#</a></h1>
+<h2><span id="pyi-yu-ju-zhu-shi-fen-hao-kong-ge">一、语句、注释、分号、空格</span><a href="#pyi-yu-ju-zhu-shi-fen-hao-kong-ge" class="header-anchor">#</a></h2>
+<h2><span id="per-bian-liang">二、变量</span><a href="#per-bian-liang" class="header-anchor">#</a></h2>
+<h3><span id="p1-bian-liang-de-ming-ming-gui-fan">1、变量的命名规范</span><a href="#p1-bian-liang-de-ming-ming-gui-fan" class="header-anchor">#</a></h3>
+<h3><span id="p2-var">2、var</span><a href="#p2-var" class="header-anchor">#</a></h3>
+<h3><span id="p3-let-es6">3、let <code>ES6</code></span><a href="#p3-let-es6" class="header-anchor">#</a></h3>
+<p>块级作用域。</p>
+<h3><span id="p4-const-es6">4、const <code>ES6</code></span><a href="#p4-const-es6" class="header-anchor">#</a></h3>
+<h2><span id="psan-yan-ge-mo-shi">三、严格模式</span><a href="#psan-yan-ge-mo-shi" class="header-anchor">#</a></h2>
+<p>开启严格模式 <code>&quot;use strict&quot;</code></p>
+<p>严格模式的特点：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 变量需声明才能使用</span>
+<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"变量需声明才能使用"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>   
+
+
+<span class="token comment">// 函数全局调用的时候 this 指向 undefined</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2201-es-ji-chu/01-kai-shi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2201-es-ji-chu/01-kai-shi/" class="post-title-link" itemprop="url">220101：ES 开始</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 15:44:45 / 修改时间：16:49:41" itemprop="dateCreated datePublished" datetime="2021-01-30T15:44:45+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-kai-shi">ES 开始</span><a href="#es-kai-shi" class="header-anchor">#</a></h1>
+<p>JavaScript 由 ECMAScript、BOM、DOM三部分组成，其中 ESMAScript （简称ES）是JS的核心语法规范。</p>
+<h2><span id="pyi-gai-nian-he-te-dian">一、概念和特点</span><a href="#pyi-gai-nian-he-te-dian" class="header-anchor">#</a></h2>
+<p>概念：</p>
+<ul>
+<li>ES-262</li>
+<li>ES6</li>
+</ul>
+<p>特点：</p>
+<ul>
+<li>脚本语言</li>
+<li>弱类型</li>
+<li>动态</li>
+<li>基于对象（原型）</li>
+</ul>
+<h2><span id="per-zai-wang-ye-zhong-shi-yong-js">二、在网页中使用JS</span><a href="#per-zai-wang-ye-zhong-shi-yong-js" class="header-anchor">#</a></h2>
+<p>待更新。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2109-shu-ju-ke-shi-hua/02-antv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2109-shu-ju-ke-shi-hua/02-antv/" class="post-title-link" itemprop="url">210902：AntV</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 15:27:37 / 修改时间：15:29:01" itemprop="dateCreated datePublished" datetime="2021-01-30T15:27:37+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2109%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">2109：数据可视化</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="antv">AntV</span><a href="#antv" class="header-anchor">#</a></h1>
+<p>阿里出品</p>
+<p>文档：<a target="_blank" rel="noopener" href="https://antv.gitee.io/zh">https://antv.gitee.io/zh</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2109-shu-ju-ke-shi-hua/01-echarts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2109-shu-ju-ke-shi-hua/01-echarts/" class="post-title-link" itemprop="url">210901：ECharts</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 15:13:14" itemprop="dateCreated datePublished" datetime="2021-01-30T15:13:14+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 02:25:01" itemprop="dateModified" datetime="2021-01-31T02:25:01+08:00">2021-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2109%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">2109：数据可视化</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="echarts">ECharts</span><a href="#echarts" class="header-anchor">#</a></h1>
+<p>百度出品</p>
+<p>文档：<a target="_blank" rel="noopener" href="https://echarts.apache.org/examples">https://echarts.apache.org/examples</a></p>
+<h2><span id="pkai-shi">开始</span><a href="#pkai-shi" class="header-anchor">#</a></h2>
+<p><code>npm install echarts --save</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2701-electron/02-electron-huan-jing-pei-zhi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2701-electron/02-electron-huan-jing-pei-zhi/" class="post-title-link" itemprop="url">210702：Electron 环境配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 12:52:57 / 修改时间：14:49:18" itemprop="dateCreated datePublished" datetime="2021-01-30T12:52:57+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2701%EF%BC%9AElectron/" itemprop="url" rel="index"><span itemprop="name">2701：Electron</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="electron-huan-jing-pei-zhi">Electron 环境配置</span><a href="#electron-huan-jing-pei-zhi" class="header-anchor">#</a></h1>
+<h2><span id="pwindows-10">Windows 10</span><a href="#pwindows-10" class="header-anchor">#</a></h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018533945">electron打包踩过的坑总结</a></li>
+</ul>
+<h2><span id="pmacos-da-bao-huan-jing-pei-zhi">MacOS 打包环境配置</span><a href="#pmacos-da-bao-huan-jing-pei-zhi" class="header-anchor">#</a></h2>
+<blockquote>
+<p>推荐系统版本：<code>MacOS 10.14</code>，经过测试，10.15 会出现兼容性问题</p>
+</blockquote>
+<ol>
+<li>
+<p>通过 SVN 工具 <code>checkout</code> 代码到本地</p>
+<blockquote>
+<p>推荐用 <code>Cornerstone</code></p>
+</blockquote>
+</li>
+<li>
+<p>在官网下载并安装 Node.js</p>
+<blockquote>
+<p>推荐版本：<code>8.12</code></p>
+<p>也可以安装最新稳定版本，然后通过 npm 版本切换工具 n 来切换版本</p>
+<blockquote>
+<p><code>sudo npm i n -g</code></p>
+<p><code>sudo n 8.12</code></p>
+<p><code>sudo n</code> 选择相应的版本回车即可</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>全局安装  <code>electron-builder</code></p>
+<blockquote>
+<p><code>sudo npm i electron-builder@20.19.2 -g</code></p>
+<p>另外如果 <code>20.19.2</code> 不行可以换 <code>20.28.4</code> 试试</p>
+</blockquote>
+</li>
+<li>
+<p>终端进入要打包的版本目录，安装依赖</p>
+<blockquote>
+<p><code>cd 你的目录</code></p>
+<p><code>sudo npm i -unsafe-perm</code></p>
+<p>注：如果没有科学上网的话，下载 <code>electron</code> 会非常慢</p>
+</blockquote>
+</li>
+<li>
+<p>安装完依赖执行打包命令</p>
+<blockquote>
+<p><code>sudo npm run build:mac</code></p>
+<p>注：这里需要科学上网，不然可能卡在 <code>downloading</code> 地方</p>
+<p>如果失败，请进入<code>资源库/Cache/Electron</code> 删除全部内容，重新尝试打包</p>
+<p>科学上网只要第一次就可以了，下次打包会有缓存</p>
+</blockquote>
+</li>
+<li>
+<p>下次打包之前运行</p>
+<blockquote>
+<p><code>sudo npm run build:clean</code></p>
+</blockquote>
+</li>
+<li>
+<p>如果出现问题，可以尝试清 npm 缓存</p>
+<blockquote>
+<p><code>sudo npm cache verify</code></p>
+</blockquote>
+<p>然后删除版本目录下面的 <code>node_modules</code> ，重新 <code>sudo npm i --unsafe-perm</code> 安装依赖</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2701-electron/01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2701-electron/01/" class="post-title-link" itemprop="url">210701：Electron</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 12:52:57 / 修改时间：14:48:14" itemprop="dateCreated datePublished" datetime="2021-01-30T12:52:57+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2701%EF%BC%9AElectron/" itemprop="url" rel="index"><span itemprop="name">2701：Electron</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="electron">Electron</span><a href="#electron" class="header-anchor">#</a></h1>
+<p>VSCode 等应用是使用 <code>Electron</code> 搭建的。</p>
+<h2><span id="pyi-xiang-mu-gou-jian-he-da-bao">一、项目构建和打包</span><a href="#pyi-xiang-mu-gou-jian-he-da-bao" class="header-anchor">#</a></h2>
+<p>项目搭建：</p>
+<p><code>electron-vue</code></p>
+<p>项目打包：<br>
+<code>electron-builder</code></p>
+<ul>
+<li>可以支持 Windows/Mac/Linux 平台</li>
+<li>支持自动更新，打包更轻量</li>
+<li>可以打包出不暴露源码的安装程序<br>
+<code>electron-packager</code></li>
+<li>配置 <code>nsis</code> 自定义安装目录以及安装个性化</li>
+</ul>
+<h2><span id="per-electron-zhi-shi-dian">二、Electron 知识点</span><a href="#per-electron-zhi-shi-dian" class="header-anchor">#</a></h2>
+<h3><span id="p1-zhu-jin-cheng-he-xuan-ran-jin-cheng">1、主进程和渲染进程</span><a href="#p1-zhu-jin-cheng-he-xuan-ran-jin-cheng" class="header-anchor">#</a></h3>
+<p>主进程：package.json 中的 main.js<br>
+Electron 内核是 Chromium<br>
+在主进程中通过 <code>new BrowserWindow</code> 创建页面，每个 <code>BrowserWindow</code> 就是渲染进程，当某个页面被销毁后，对应的渲染进程就会终止。</p>
+<h3><span id="p2-you-hua-chuang-kou">2、优化窗口</span><a href="#p2-you-hua-chuang-kou" class="header-anchor">#</a></h3>
+<p>（1）无边框窗口</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">mainWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BrowserWindow</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>width<span class="token operator">:</span> <span class="token number">800</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span> frame<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> resizable<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>（2）窗口拖动<br>
+现在窗口已经没有标题栏和菜单栏了，所以窗口没办法拖动了，给拖动区域增加 <code>-webkit-app-region: drag</code> 的 CSS 代码。<br>
+<code>&lt;body style=&quot;-webkit-app-region: drag&quot;&gt;&lt;/body&gt;</code><br>
+需要注意的是，如果在拖动区域里有按钮等需要点击的元素，需要增加 <code>-webkit-app-region: no-drag</code> 设置，否则会无法点击。</p>
+<h3><span id="p3-jin-cheng-jian-tong-xin">3、进程间通信</span><a href="#p3-jin-cheng-jian-tong-xin" class="header-anchor">#</a></h3>
+<p>因为安全限制，页面不能直接访问原生 GUI 资源，在 Electron 中也是一样。<br>
+渲染进程要进行原生的 GUI 操作，比如和主进程进行通信，请求相应的操作，在 Electron 中提供了几种通信方式：</p>
+<p>（1）<code>ipcMain</code> 和 <code>ipcRenderer</code><br>
+在渲染进程中使用 <code>ipcRenderer</code> 模块来向主进程发送消息，主进程中使用 <code>ipcMain</code> 模块接受消息，进行操作。如果还需要进行反馈，则通知渲染进程，渲染进程根据接收的内容执行对应的操作。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 渲染进程中</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> ipcRenderer <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ipcRender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"somemsg"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ipcRender<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"replaymsg"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt<span class="token punctuation">,</span> otherData</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>otherData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 主进程中</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> ipcMain <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ipcMain<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"somemsg"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">evt<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  evt<span class="token punctuation">.</span>sender<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"replymsg"</span><span class="token punctuation">,</span> otherData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（2）remote<br>
+<code>remote</code> 模块为渲染进程和主进程通信提供了一种简单方法</p>
+<p>（3）webContents</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 主进程中</span>
+win<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"did-finish-load"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  win<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"ping"</span><span class="token punctuation">,</span> <span class="token string">"23333333333"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 渲染进程中</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ipcRenderer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"ping"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> message</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>（4）渲染进程之间通信<br>
+使用 Vuex 和 router<br>
+但如果对数据实时性要求高，那就要结合上面的方法来实现：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 主进程中，将两个窗口的 id 分别发送到对方的渲染进程里</span>
+mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"did-finish-load"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"getChild"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    childId<span class="token operator">:</span> childWindow<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+childWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"did-finish-load"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  childWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"getMain"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+    mainId<span class="token operator">:</span> mainWindow<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 渲染进程 mainWindow，通过 id 得到 childWindow 并发送一条消息</span>
+ipcRenderer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"getChild"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  remote<span class="token punctuation">.</span>BrowserWindow<span class="token punctuation">.</span><span class="token function">fromId</span><span class="token punctuation">(</span>arg<span class="token punctuation">.</span>childId<span class="token punctuation">)</span><span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>
+    <span class="token string">"say"</span><span class="token punctuation">,</span>
+    <span class="token string">"Hello World!"</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 渲染进程 childWindow，接收 mainWindow 的消息</span>
+ipcRenderer<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"say"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> arg</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出：Hello World!</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 同理 childWindow 也可以通过 id 给 mainWindow 发送消息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p4-cai-keng">4、踩坑</span><a href="#p4-cai-keng" class="header-anchor">#</a></h3>
+<p>electron-vue 里使用 elementUI 等，需要在 webpack.renderer.config.js 的白名单里配置：<code>let whiteListedModules = ['vue', 'element-ui']</code></p>
+<h3><span id="p5-nan-dian">5、难点</span><a href="#p5-nan-dian" class="header-anchor">#</a></h3>
+<p>多窗口的管理，每个窗口使用 <code>remote.getCurrentWindow().id</code> 命名，在主进程中采用单个实例 <code>app.makeSingleInstance</code> 管理</p>
+<h2><span id="pcan-kao">参考：</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903896041652232">https://juejin.cn/post/6844903896041652232</a></li>
+<li><a target="_blank" rel="noopener" href="https://molunerfinn.com/electron-vue-1/">https://molunerfinn.com/electron-vue-1/</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2105-xiang-ying-shi-bu-ju/02-mei-ti-cha-xun/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2105-xiang-ying-shi-bu-ju/02-mei-ti-cha-xun/" class="post-title-link" itemprop="url">210502：媒体查询</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 17:36:47 / 修改时间：17:37:14" itemprop="dateCreated datePublished" datetime="2021-01-30T17:36:47+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2105%EF%BC%9A%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2105：响应式布局</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mei-ti-cha-xun">媒体查询</span><a href="#mei-ti-cha-xun" class="header-anchor">#</a></h1>
+<p>媒体查询（media query)，CSS2 推出，CSS3 优化。</p>
+<p><code>navigator.userAgent</code> 获取浏览器的识别码</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2><span id="pmei-ti-lei-xing">媒体类型</span><a href="#pmei-ti-lei-xing" class="header-anchor">#</a></h2>
+<p><code>all</code> 所有设备</p>
+<p><code>screen</code> 屏幕，默认值</p>
+<p><code>tv</code> 电视</p>
+<h2><span id="pshe-bei-te-zheng">设备特征</span><a href="#pshe-bei-te-zheng" class="header-anchor">#</a></h2>
+<p><code>width</code> <code>height</code> <code>min/max-width/height</code></p>
+<p><code>orientation</code> 横屏竖屏判断</p>
+<p><code>resolution</code> 分辨率</p>
+<p><code>devicePixelRatio</code> 像素比</p>
+<p>检测横屏、竖屏</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: portrait)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: landscape)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2><span id="pluo-ji-tiao-jian">逻辑条件</span><a href="#pluo-ji-tiao-jian" class="header-anchor">#</a></h2>
+<ul>
+<li><code>and</code> 与</li>
+<li><code>not </code> 是对后边所有逻辑语句的否定，not 只能写第一位</li>
+<li><code>,</code> 或</li>
+<li><code>only</code></li>
+</ul>
+<h2><span id="pshe-zhi-duan-dian">设置断点</span><a href="#pshe-zhi-duan-dian" class="header-anchor">#</a></h2>
+<h2><span id="pc3-mei-ti-cha-xun">C3 媒体查询</span><a href="#pc3-mei-ti-cha-xun" class="header-anchor">#</a></h2>
+<p><code>@media</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2105-xiang-ying-shi-bu-ju/01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2105-xiang-ying-shi-bu-ju/01/" class="post-title-link" itemprop="url">210501：响应式布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 17:35:35 / 修改时间：17:36:35" itemprop="dateCreated datePublished" datetime="2021-01-30T17:35:35+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2105%EF%BC%9A%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2105：响应式布局</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="xiang-ying-shi-bu-ju">响应式布局</span><a href="#xiang-ying-shi-bu-ju" class="header-anchor">#</a></h1>
+<p>响应式布局是在 2010 年提出的一个概念，简而言之，<strong>就是一个网站能够兼容多个终端，而不是为每个终端做一个特定的版本</strong>。用户会使用不同的终端，由于屏幕分辨率不同，想要用户体验更好，就有必要让你的网页兼容多个终端。响应式布局设计可以让一个网站适配多种设备和多个屏幕，可以让网站的布局和功能随用户的使用环境（屏幕大小，输入方式，设备/浏览器能力）而变化。</p>
+<p>三个特征</p>
+<ul>
+<li>媒体查询：检查设备在渲染我们作品时的物理特性</li>
+<li>流动布局</li>
+<li>灵活的视觉效果</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/2104-css/02-stylus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2104-css/02-stylus/" class="post-title-link" itemprop="url">210402：Stylus</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-30 17:13:59 / 修改时间：17:16:29" itemprop="dateCreated datePublished" datetime="2021-01-30T17:13:59+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="stylus">Stylus</span><a href="#stylus" class="header-anchor">#</a></h1>
+<p>向下兼容 <code>Less</code><br>
+可以省略括号和分号，靠缩进区分层级</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -334,27 +2095,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">KEEL</p>
-  <div class="site-description" itemprop="description">From small beginning come great things. </div>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。 </div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -387,7 +2148,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">KEEL</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -413,7 +2174,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
