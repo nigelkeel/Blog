@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="NodeJS# I&#x2F;O密集型 非阻塞">
+  <meta name="description" content="Node.js# Node.js 是一个基于 ChromeV8 引擎的 JS 运行环境。 下载 一、特性# 优点  异步的非阻塞（处理高并发） 事件循环机制 单线程 跨平台 事件驱动  主要应用场景  中间层、RESTful API I&#x2F;O 密集型的领域，如服务端渲染，前端项目构建 低延迟的网络应用，如即时聊天  二、RERL# 在命令行窗口运行 JS 程序。 三、global 对象# 全局对象。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="220501：NodeJS">
 <meta property="og:url" content="http://nigelkeel.gitee.io/2205-nodejs/01/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="NodeJS# I&#x2F;O密集型 非阻塞">
+<meta property="og:description" content="Node.js# Node.js 是一个基于 ChromeV8 引擎的 JS 运行环境。 下载 一、特性# 优点  异步的非阻塞（处理高并发） 事件循环机制 单线程 跨平台 事件驱动  主要应用场景  中间层、RESTful API I&#x2F;O 密集型的领域，如服务端渲染，前端项目构建 低延迟的网络应用，如即时聊天  二、RERL# 在命令行窗口运行 JS 程序。 三、global 对象# 全局对象。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-30T06:54:10.515Z">
-<meta property="article:modified_time" content="2021-01-30T06:55:57.821Z">
+<meta property="article:modified_time" content="2021-01-31T05:13:36.954Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="Node">
@@ -218,10 +218,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-30 14:54:10 / 修改时间：14:55:57" itemprop="dateCreated datePublished" datetime="2021-01-30T14:54:10+08:00">2021-01-30</time>
+              <time title="创建时间：2021-01-30 14:54:10" itemprop="dateCreated datePublished" datetime="2021-01-30T14:54:10+08:00">2021-01-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 13:13:36" itemprop="dateModified" datetime="2021-01-31T13:13:36+08:00">2021-01-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -243,9 +249,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="nodejs">NodeJS</span><a href="#nodejs" class="header-anchor">#</a></h1>
-<p>I/O密集型</p>
-<p>非阻塞</p>
+        <h1><span id="node-js">Node.js</span><a href="#node-js" class="header-anchor">#</a></h1>
+<p>Node.js 是一个基于 ChromeV8 引擎的 JS 运行环境。</p>
+<p><a target="_blank" rel="noopener" href="http://nodejs.cn/download/">下载</a></p>
+<h2><span id="pyi-te-xing">一、特性</span><a href="#pyi-te-xing" class="header-anchor">#</a></h2>
+<p>优点</p>
+<ul>
+<li>异步的非阻塞（处理高并发）</li>
+<li>事件循环机制</li>
+<li>单线程</li>
+<li>跨平台</li>
+<li>事件驱动</li>
+</ul>
+<p>主要应用场景</p>
+<ul>
+<li>中间层、RESTful API</li>
+<li>I/O 密集型的领域，如服务端渲染，前端项目构建</li>
+<li>低延迟的网络应用，如即时聊天</li>
+</ul>
+<h2><span id="per-rerl">二、RERL</span><a href="#per-rerl" class="header-anchor">#</a></h2>
+<p>在命令行窗口运行 JS 程序。</p>
+<h2><span id="psan-global-dui-xiang">三、<code>global</code> 对象</span><a href="#psan-global-dui-xiang" class="header-anchor">#</a></h2>
+<p>全局对象。</p>
 
     </div>
 
@@ -254,9 +279,10 @@
     
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-              <a href="/tags/Node/" rel="tag"># Node</a>
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/Node/" rel="tag"><i class="fa fa-tag"></i> Node</a>
           </div>
 
         
@@ -330,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">NodeJS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、RERL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、global 对象</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -344,20 +370,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">160</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -442,6 +468,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

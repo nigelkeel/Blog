@@ -17,18 +17,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CSS 盒模型# 盒模型 box-sizing 盒子模式 content-box 标准盒模型 border-box 怪异盒模型（IE盒模型） content 内容 width &#x2F; min-width &#x2F; max-width height &#x2F; min-height &#x2F; max-height padding 内边距 border 边框 border-radius 圆角边框 border-shadow">
+  <meta name="description" content="CSS 盒模型# 在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。 1、盒模型标准# 通过 box-sizing 设置盒子模型的标准，分为  content-box 默认，W3C 标准盒模型 border-box IE 盒模型，也称为怪异盒模型  注，理论上还有 padding-box 和 margin-box ，但是现在 W3C 和 MDN 规范均不支持。 怪异盒模型的 wid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="210203：CSS 盒模型">
 <meta property="og:url" content="http://nigelkeel.gitee.io/2102-css/03-he-mo-xing/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="CSS 盒模型# 盒模型 box-sizing 盒子模式 content-box 标准盒模型 border-box 怪异盒模型（IE盒模型） content 内容 width &#x2F; min-width &#x2F; max-width height &#x2F; min-height &#x2F; max-height padding 内边距 border 边框 border-radius 圆角边框 border-shadow">
+<meta property="og:description" content="CSS 盒模型# 在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。 1、盒模型标准# 通过 box-sizing 设置盒子模型的标准，分为  content-box 默认，W3C 标准盒模型 border-box IE 盒模型，也称为怪异盒模型  注，理论上还有 padding-box 和 margin-box ，但是现在 W3C 和 MDN 规范均不支持。 怪异盒模型的 wid">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-30T09:09:09.425Z">
-<meta property="article:modified_time" content="2021-01-30T09:10:36.581Z">
+<meta property="article:modified_time" content="2021-01-31T06:15:50.813Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -217,10 +217,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-01-30 17:09:09 / 修改时间：17:10:36" itemprop="dateCreated datePublished" datetime="2021-01-30T17:09:09+08:00">2021-01-30</time>
+              <time title="创建时间：2021-01-30 17:09:09" itemprop="dateCreated datePublished" datetime="2021-01-30T17:09:09+08:00">2021-01-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 14:15:50" itemprop="dateModified" datetime="2021-01-31T14:15:50+08:00">2021-01-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -243,34 +249,148 @@
 
       
         <h1><span id="css-he-mo-xing">CSS 盒模型</span><a href="#css-he-mo-xing" class="header-anchor">#</a></h1>
-<p>盒模型<br>
-box-sizing 盒子模式<br>
-content-box 标准盒模型<br>
-border-box 怪异盒模型（IE盒模型）<br>
-content 内容<br>
-width / min-width / max-width<br>
-height / min-height / max-height<br>
-padding 内边距<br>
-border 边框<br>
-border-radius 圆角边框<br>
-border-shadow 边框阴影<br>
-border-image 边框填充图片<br>
-margin 外边距<br>
-margin auto<br>
-负margin<br>
-margin 塌陷问题<br>
-原因： 防止父级和其他元素之间的间隙过大，当第一个和最后一个子元素的margn塌陷给父级以后 父级就可以和兄弟元素在垂直方向上进行叠加<br>
-避免：1. 给父级设置一个边框  边框的宽度不能为0，防止影响视觉，可以设置透明（transparent）颜色<br>
-2.开启BFC（块级格式化上下文）很多种方法，后边讲解:overflow：hidden 可以开启</p>
-<p>outline 轮廓<br>
-BFC 块级格式化上下文<br>
-块级格式化上下文 BlockFormattingContexts<br>
-创建条件<br>
-根元素<br>
-浮动<br>
-overflow不为visible<br>
-display<br>
-绝对定位或者固定定位</p>
+<p>在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。</p>
+<h2><span id="p1-he-mo-xing-biao-zhun">1、盒模型标准</span><a href="#p1-he-mo-xing-biao-zhun" class="header-anchor">#</a></h2>
+<p>通过 <code>box-sizing</code> 设置盒子模型的标准，分为</p>
+<ul>
+<li><code>content-box</code> 默认，W3C 标准盒模型</li>
+<li><code>border-box</code> IE 盒模型，也称为怪异盒模型</li>
+</ul>
+<p>注，理论上还有 <code>padding-box</code> 和 <code>margin-box</code> ，但是现在 W3C 和 MDN 规范均不支持。</p>
+<p><strong>怪异盒模型的 width / height 是 border 的 尺寸。</strong></p>
+<h2><span id="p2-nei-rong-ceng-content">2、内容层 content</span><a href="#p2-nei-rong-ceng-content" class="header-anchor">#</a></h2>
+<h3><span id="pwidth-height">width/height</span><a href="#pwidth-height" class="header-anchor">#</a></h3>
+<p>width 设置的坑</p>
+<ul>
+<li>如果设置宽度为 100%，并且有 border margin padding 等属性值的时候，宽度可能超出。因为 width 内容区域已经和父级一样了，所以可以不设置宽度或者设置宽度为 auto 那么内容的宽度就是可以充分利用可使用空间。</li>
+</ul>
+<p>height 设置的坑</p>
+<ul>
+<li>如果高度设置百分比，必须父级有一个显性的设置一个 height 属性，并且不能是 auto。</li>
+</ul>
+<h3><span id="pmin-max-width-height">min/max-width/height</span><a href="#pmin-max-width-height" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>正常</th>
+<th>最小</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽度</td>
+<td>width</td>
+<td>min-width</td>
+<td>max-width</td>
+</tr>
+<tr>
+<td>高度</td>
+<td>height</td>
+<td>min-height</td>
+<td>max-height</td>
+</tr>
+</tbody>
+</table>
+<p>当 min-width 和 max-width 冲突的时候，min-width 是优先的。当 width 和 min 或 max 冲突以后，min 或者 max 直接无视 width 的存在（无论是否添加 ！important）。</p>
+<h2><span id="p3-nei-bian-ju-ceng-padding">3、内边距层 padding</span><a href="#p3-nei-bian-ju-ceng-padding" class="header-anchor">#</a></h2>
+<p>padding 的写法和 margin 一致</p>
+<p>padding 主要撑开内容和边框之间的距离</p>
+<p>padding 不支持负值</p>
+<p>padding 对所有属性的元素都支持，但是对于行内元素撑不开上下的距离</p>
+<p>padding 可以用于扩大点击范围</p>
+<h2><span id="p4-bian-kuang-ceng-border">4、边框层 border</span><a href="#p4-bian-kuang-ceng-border" class="header-anchor">#</a></h2>
+<h3><span id="pbian-kuang-shu-xing">边框属性</span><a href="#pbian-kuang-shu-xing" class="header-anchor">#</a></h3>
+<p>border</p>
+<ul>
+<li>border-width 线的宽度</li>
+<li>border-style 线的类型
+<ul>
+<li>solid 实线</li>
+<li>dashed 虚线</li>
+<li>dotted 点状线</li>
+</ul>
+</li>
+<li>border-color 线的颜色</li>
+<li>border:none 不设置边框</li>
+</ul>
+<blockquote>
+<p>边框还分为 4 个方向 要么直接设置 4 个方向，要么一个个方向单独设置</p>
+</blockquote>
+<p>练习：边框画三角形</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.box</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 100px solid #000<span class="token punctuation">;</span>
+  <span class="token property">border-left-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">border-right-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+  <span class="token property">border-bottom-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="pyuan-jiao-bian-kuang-border-radius">圆角边框 border-radius</span><a href="#pyuan-jiao-bian-kuang-border-radius" class="header-anchor">#</a></h3>
+<p>CSS3。</p>
+<table>
+<thead>
+<tr>
+<th>border-radius</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 B1 C1 D1/A2 B2 C2 D2</td>
+<td>水平/垂直，左上角开始顺时针</td>
+</tr>
+<tr>
+<td>A B C D</td>
+<td></td>
+</tr>
+<tr>
+<td>M/N</td>
+<td>水平/垂直</td>
+</tr>
+<tr>
+<td>50px 100px</td>
+<td>AC BD</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>八个值一样</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p5-wai-bian-ju-ceng-margin">5、外边距层 margin</span><a href="#p5-wai-bian-ju-ceng-margin" class="header-anchor">#</a></h2>
+<p>margin 的作用是撑开当前元素和其他元素的距离。margin 有四个方向，可以分别设置<code>margin-left</code> <code>margin-right</code> <code>margin-top</code> <code>margin-bottom</code>，margin 的 left 和 top 是让当前元素向右向下移动，margin 的 right 和 bottom 是让元素的兄弟元素向右向下移动，不影响自身。</p>
+<h3><span id="phe-xie">合写</span><a href="#phe-xie" class="header-anchor">#</a></h3>
+<ul>
+<li>4 个值：<strong>上 右 下 左</strong>（从上开始顺时针）</li>
+<li>3 个值：上 左右 下</li>
+<li>2 个值：上下 左右</li>
+<li>1 个值：上下左右</li>
+</ul>
+<h3><span id="pshui-ping-fang-xiang-shang-de-auto">水平方向上的 auto</span><a href="#pshui-ping-fang-xiang-shang-de-auto" class="header-anchor">#</a></h3>
+<p>因为块标签拥有满行属性，但是设置宽度以后，剩余的空间就是默认的 margin，设置左右的 margin 值为 auto，那么剩余的 margin 就会平分到左右两边。</p>
+<h3><span id="pshu-zhi-fang-xiang-de-auto">竖直方向的 auto</span><a href="#pshu-zhi-fang-xiang-de-auto" class="header-anchor">#</a></h3>
+<p>相对于水平方向来说，块元素在垂直方向上并没有满屏的属性，margin 默认在上下的值都是 0，并没有剩余空间去平分。</p>
+<h3><span id="pta-xian-he-bian-kuang-he-bing-wen-ti">塌陷和边框合并问题</span><a href="#pta-xian-he-bian-kuang-he-bing-wen-ti" class="header-anchor">#</a></h3>
+<ul>
+<li>父级塌陷：父级的第一个子元素的上 margin 和最后一个子元素的下 margin 会进行塌陷给父级，这样的设计是为了方便父级和他的兄弟进行垂直 margin 的合并，避免缝隙过大。</li>
+<li>解决塌陷：给父级开启 BFC，给父级设置边框。</li>
+<li>兄弟的 margin 垂直方向会进行折叠，取最大值 。</li>
+</ul>
+<h3><span id="pmargin-fu-zhi">margin 负值</span><a href="#pmargin-fu-zhi" class="header-anchor">#</a></h3>
+<ul>
+<li>margin-top 为负值：元素向上走，不会影响上边的元素的位置（会出现重叠），并且下边的兄弟元素会跟着一起向上走。</li>
+<li>margin-left 为负值：元素向左走，不会影响前边的元素位置(会出现重叠)，右边兄弟元素会跟随移动。</li>
+<li>margin-right 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向左走。</li>
+<li>margin-bottom 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向上走。</li>
+</ul>
+<h3><span id="pzhi-chi-xing">支持性</span><a href="#pzhi-chi-xing" class="header-anchor">#</a></h3>
+<p><code>margin</code> 完美支持块元素和行内块元素，不支持行元素的垂直方向。</p>
+<h2><span id="p6-lun-kuo-ceng-outline">6、轮廓层 outline</span><a href="#p6-lun-kuo-ceng-outline" class="header-anchor">#</a></h2>
+<p><code>outline</code> 轮廓层。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 去掉轮廓 */</span>
+<span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
     </div>
 
@@ -279,8 +399,9 @@ display<br>
     
 
       <footer class="post-footer">
+          
           <div class="post-tags">
-              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           </div>
 
         
@@ -354,7 +475,7 @@ display<br>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">CSS 盒模型</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">CSS 盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、盒模型标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、内容层 content</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">width&#x2F;height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">min&#x2F;max-width&#x2F;height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、内边距层 padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、边框层 border</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">边框属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">圆角边框 border-radius</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、外边距层 margin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">合写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">水平方向上的 auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">竖直方向的 auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">塌陷和边框合并问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">margin 负值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">支持性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、轮廓层 outline</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -368,20 +489,20 @@ display<br>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">160</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">67</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -466,6 +587,19 @@ display<br>
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

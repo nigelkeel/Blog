@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="能量管理#   无论精神在早晨有多么充沛，这种状态都不能持久。没有良好的习惯，注意力就会开始分散，从而影响工作效率，最终让自己疲惫不堪。   当你坐立不安的时候，起来走走。当人们讲到能量和消耗的时候，你通常都会想到运动，但是人们不知道的是非运动性能量消耗（在学术界统称为NEAT）实际上所占据的时间和所消耗的能量会更多。改变非运动性能量消耗更加容易，因为运动需要更加坚定的意志力，但是非运动性能量消耗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="610201：能量管理">
+<meta property="og:url" content="http://nigelkeel.gitee.io/6102-neng-liang-guan-li/01/index.html">
+<meta property="og:site_name" content="永远的伊尔瓦">
+<meta property="og:description" content="能量管理#   无论精神在早晨有多么充沛，这种状态都不能持久。没有良好的习惯，注意力就会开始分散，从而影响工作效率，最终让自己疲惫不堪。   当你坐立不安的时候，起来走走。当人们讲到能量和消耗的时候，你通常都会想到运动，但是人们不知道的是非运动性能量消耗（在学术界统称为NEAT）实际上所占据的时间和所消耗的能量会更多。改变非运动性能量消耗更加容易，因为运动需要更加坚定的意志力，但是非运动性能量消耗">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-31T17:18:12.056Z">
+<meta property="article:modified_time" content="2021-01-31T17:21:13.904Z">
+<meta property="article:author" content="KEEL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/6102-neng-liang-guan-li/01/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>610201：能量管理 | 永远的伊尔瓦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">永远的伊尔瓦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/6102-neng-liang-guan-li/01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          610201：能量管理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 01:18:12 / 修改时间：01:21:13" itemprop="dateCreated datePublished" datetime="2021-02-01T01:18:12+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/6102%EF%BC%9A%E8%83%BD%E9%87%8F%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">6102：能量管理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="neng-liang-guan-li">能量管理</span><a href="#neng-liang-guan-li" class="header-anchor">#</a></h1>
+<ul>
+<li>
+<p>无论精神在早晨有多么充沛，这种状态都不能持久。没有良好的习惯，注意力就会开始分散，从而影响工作效率，最终让自己疲惫不堪。</p>
+</li>
+<li>
+<p>当你坐立不安的时候，起来走走。当人们讲到能量和消耗的时候，你通常都会想到运动，但是人们不知道的是非运动性能量消耗（在学术界统称为NEAT）实际上所占据的时间和所消耗的能量会更多。改变非运动性能量消耗更加容易，因为运动需要更加坚定的意志力，但是非运动性能量消耗所造成的影响也非常深远。专注研究运动保健学的Jacquelyn Kulinski博士讲到：“我们发现久坐以后，起来动一动是能够让人更加健康。如果你需要在办公桌前久坐，不妨经常换一下坐姿，在思考的时候，站起来伸展一下，接电话的时候也可以走来走去。”</p>
+</li>
+<li>
+<p>用5分钟来克服拖延。斯坦佛研究员BJ Fogg指出，改变的你行为最好的方法是让你的目标变得更加简单。最为简单的方式是减少目标达成的时间。举个例子，锻炼一分钟比锻炼一个小时更加容易让人坚持下去。同样的原则适用于工作，每当Brian Scudamore感觉到压力山大的时候，整个人都不在状态的时候，他就用手机设定5分钟，在这5分钟内全身心投入工作，Scudamore 说：“在这5分钟里我建立起工作的势头，在5分钟结束以后，我依然会继续专注地工作。”设定长远艰难的目标对于公司未来发展是非常有益的，但是如果你今天不在状态的话，这个长远艰难目标就会变成你拖延的理由。专注在完成简单任务之所以有用是因为：建立持续工作的势头，让你更加专注。能够让你行动起来。建立一个说到做到的自我形象。给你一种进步的感觉，让你变得更加乐观，并且更容易控制自己。</p>
+</li>
+<li>
+<p>到大自然去进行“口袋式旅行”。长期接触绿色植物能够提升你的免疫系统能力，长期生活在黑白的钢筋水泥森林里面，不去接触绿色植物会增加过敏、哮喘以及其他疾病的患病概率，这种症状叫做“缺乏自然失调症。”Kay Koplovitz每天都要去纽约中央公园散步15分钟，她将其称为“口袋式旅行。”研究指出，在大自然里走5分钟能够立即放松我们的神经，减少体内的皮质醇以及压力荷尔蒙。更加重要的是，注意力恢复理论指出，大自然能够让你重新获得专注的能力。如果你没有时间去大自然里散步，你可以花40秒看看窗外绿色的风景。短短的40秒能够帮助你重新专注到工作上来，帮助你减少工作当中所犯的错误。</p>
+</li>
+<li>
+<p>小睡一会，高效生活。历史上很多著名人物，都得益于小睡这个习惯。从总统（里根，肯尼迪，詹森，克林顿）到艺术家（达利，达芬奇）再到企业家（爱迪生，洛克菲勒）这些人都有午睡的习惯。一份研究报告指出，10分钟的小睡能够减少疲惫，提升认知表现达两小时，达利有一个小睡技巧以此来提升他的创造力，他称之为“带着钥匙睡眠。”他拿着钥匙坐在椅子上。如果他睡着的话，钥匙就会掉落在地上，让他醒来，这种方法会让他进入深度休息状态，让他从意识思维转移到无意识思维上去。Sevetri Wilson选择在别人睡觉的清晨开始工作，在别人休息的晚上小睡一会。Wilson说道：“这样的节奏让我能够让我保持专注，不会被信息和电视分散我的注意力。”越来越多的公司开始意识到小睡的好处，举个例子，Huffington Post和Hubspot的CEO为员工打造了一个小睡的房间。</p>
+</li>
+<li>
+<p>学一门乐器，增强大脑可塑性。脑神经科学家Anita Collins讲到，演奏音乐相当于给大脑做了一次“全身锻炼，”因为演奏音乐“基本上需要用到大脑的每一个区域。”更为重要的是，演奏音乐能够增强我们大脑的可塑性以及大脑的整体表现。Joe Apfelbaum将此项研究付诸实践，并将音乐融合进了公司的文化。他说：“对于我而言，保持对工作的热情，我需要做点不一样的事情，当我们进行头脑风暴的时候，我有时候会弹吉他或者其他乐器，这些乐器在我的办公司里非常常见。”爱因斯坦钟爱小提琴，并且非常擅长于拉小提琴。他包含热情地写道：“我白日梦所梦到的全是音乐，我将我的生命看做乐章，我在音乐当中获得无穷的乐趣。”学会玩一门乐器，并不是如你所想的那么艰难。</p>
+</li>
+<li>
+<p>在一天结束时创建简单列表。很多的文章和书都在讲开始工作的一天应该是怎么样的，最核心的一个原则是专注困难而且重要的任务上面。Emerson Spartz讲到：“如果你将困难且重要的任务拖到下午的话，你更有可能去拖延，变得低效，工作质量也偏下。”Spartz将一些不太需要注意力的工作（比如回复邮件，回复微信等）留到工作当中的最后一个小时。Spartz 说：“我在一天当中会定时间去回复紧急邮件，但是我预留最后一个小时来去处理一些不紧急的邮件，这对我的大脑来说更加容易，因为这个时候，我的注意力更加容易涣散。”</p>
+</li>
+<li>
+<p>去健身房，好好锻炼。他讲到：“我能够在早上的时候非常专注，所以在早上锻炼的话会让我原本可以在办公室里非常专注的时间浪费掉。我现在开始在中午或者是在下午锻炼（尤其是当我工作比较多的时候。）最开始的时候，在大中午离开公司让我感觉非常奇怪，但是所花费的时间都是一样的，不同的是在一天当中，我能够变得更加的专注。”Cameron Herold同样也在中午锻炼，他雇了一个私人教练督促他去锻炼。Herold 说道：“如果我能停止工作，并开始锻炼，我能够让我的让我的工作完成地更加出色。聘请一个私人教练能够督促我进行锻炼。”29份研究报告指出，锻炼大幅提升我们的注意力，处理信息的速度，以及执行的能力。</p>
+</li>
+<li>
+<p>建立外在结构。</p>
+</li>
+<li>
+<p>安排“情绪发泄”时间。每个星期都安排一些发泄情绪的时间，只要安全无误，你喜欢做什么就做什么，比如听震耳的音乐、看赛马或大吃一顿。</p>
+</li>
+<li>
+<p>充电。每天留一点时间什么都不做，你可以把这段时间看成是重新充电，这样就不会自责了。小睡一下、看电视、发呆、禅修，任何安静的休息都好。</p>
+</li>
+</ul>
+<p>能量管理</p>
+<h2><span id="p-jing-li-guan-li-de-du-shu-bi-ji">《精力管理》的读书笔记</span><a href="#p-jing-li-guan-li-de-du-shu-bi-ji" class="header-anchor">#</a></h2>
+<p>1、精力管理要遵循四个基本原则：</p>
+<ul>
+<li>全心投入是确保最优表现的最佳精力状态，需要调动四种独立且相关联的精力源：体能、情绪、思维、意志。</li>
+<li>使用过度和使用不足都会削弱精力，必须不时更新精力以平衡消耗。</li>
+<li>想突破自己的精力极限，就要像训练肌肉一样系统训练。</li>
+<li>建立仪式感和习惯（细致具体的精力管理方法），是全心投入、保持高效表现的诀窍。</li>
+</ul>
+<p>2、体能：</p>
+<ul>
+<li>体能是身体最基本的精力源。</li>
+<li>可以从呼吸，体育锻炼，饮食，睡眠，活动周期五个方面来改善体能。</li>
+<li>呼吸：深呼吸(腹式呼吸)。</li>
+<li>体育锻炼：体育锻炼是一个很好的办法。尤其是高强度间歇训练，能够短时间提升到燃脂心率，提高心肺功能，改善大脑供血。</li>
+<li>饮食：吃升糖指数低的食物（全麦、蛋白质、坚果、低糖水果），每天喝至少2升水。</li>
+<li>睡眠：每天保持7到8小时的睡眠。</li>
+<li>活动周期：早睡早起，睡午觉，工作60到90分钟就休息15-30分钟。</li>
+</ul>
+<p>3、情绪：</p>
+<ul>
+<li>管理情绪的终极目标是掌握各种情绪，而不是被各种情绪所掌控，这样就减少了内耗成本，将精力用于做事情上。作者介绍了五大招，提升情感精力：</li>
+<li>第一招：获得正面情感。在日常工作和生活中，我们要学会调节自己的积极情绪，获得正面情感，为效能提供动力。这些积极情感包括：自信、自律、人际沟通、理解和关爱他人。发展各种爱好，享受一段安静的独处时光，定期陪伴家人、朋友聚会…只要能带来享受、满足和安全感的活动都能激发正面情感。</li>
+<li>第二招：让人际关系促进精力再生。在人际交往中，要多倾听，少批判；批评要有“套路”，先肯定对方，再提出意见，最后以鼓励结束反馈，把批评意见像三明治一样地夹在鼓励认可中间。还可以在工作中结交一位好朋友。</li>
+<li>第三招：积极扩充情感容量。迈出舒适圈，做自己要做，但是害怕做的事情。比如内向的人可以设定一个“见面第一个打招呼”的目标；害怕被拒绝的业务员可以设定一个“每天下午3点到4点拜访客户”的目标，当你行动起来，会发现没有想象中那么可怕。业余时间，还可以做一些跟工作无关的公益活动，发挥自己的特长，这样能够获得很多的正面回馈和正能量，帮助自己树立自信。</li>
+<li>第四招：学会接纳正反两面的情感。向往勇敢，但是也要接纳和允许自己害怕；向往自律，对于自己的偷懒也不要过度批判。</li>
+<li>第五招：学会从跌倒处站起。我们要像《反脆弱》一般，遭遇挫折后能够触底反弹，从失败中汲取营养，变得更强大。</li>
+</ul>
+<p>4、思维：</p>
+<ul>
+<li>保持乐观：<br>
+通过日记进行自我积极对话。Susan Kuang说过，她刚回国时，有一段时间内心非常没有自信，整个人的状态很不好。于是她写了半年的日记进行自我积极对话。具体方法是，在日记本的左边，写下自己消极的解读。然后，在日记本的右边，针对每一条消极的解读进行反驳。通过自己与自己的对话，把自己对自己的看法进行积极的强化，最后越来越乐观，越来越自信，整个人的状态被打开了。此外，每天写感恩日记也是一个很好的办法。<br>
+对于容易焦虑的人，可以每天早上列出危机处理清单。写下所有认为会出错、会有问题的事物，将其看作是挑战和机遇，而不是灾难或威胁。问自己，最坏的情况是怎样的，后果可否接受？写到这里，往往会发现，事情并没有自己想象当中那么严重，于是就能够平静地对待了。</li>
+<li>保持专注：<br>
+根据书中的案例，提出的建议有：早上花20-30分钟记录工作和生活中出现的问题，工作前把情绪排遣出去，避免工作时被这些情绪干扰；上班途中思考一天的工作和挑战，设想如何处理具体危机，为接下来的工作作好准备；先处理最重要的事情，或者根据自己的生物钟，把精力最为充沛的时间段留给最重要的事情；每天进行总结反思。<br>
+此外，番茄钟是保持专注的好方法，亲测有效。</li>
+<li>提高创造力：<br>
+我们的左脑和右脑分管不同的区域，其中左脑是负责数字逻辑；右脑是负责语言艺术等能力。因此，创造力的关键在于转换思维频道，激活不同的大脑部分。作者指出，灵感时刻创造的最高形式依靠投入与抽离、思考与放松、活跃与休息有节奏的交替。人的大脑，在放松中思考更容易有创造力，沐浴、听音乐、散步…欧阳修曾说：“余平生所作文章，多在三上，乃马上、枕上、厕上也。”便是这个道理。<br>
+关于创造力，美国教授芭芭拉·奥克利所著《学习之道》里有更为细致的阐述，很推荐。</li>
+<li>重塑大脑：<br>
+“年纪大了，脑子不好使了。”连90后都开始“中年危机”的当今社会，青年一代的焦虑尤甚，害怕时间来不及，害怕还没成功就已衰老。看完这本书，我们或许不那么悲观了，作者书中指出，记忆衰退是由于思维不够活跃导致的，无论哪个年龄阶段，记忆“肌肉”萎缩都可以持续优化大脑。<br>
+锻炼大脑也如同锻炼身体，要系统地加以锻炼，必须不断突破舒适区并充分休息。慢跑可以使更多的血液和氧气输送到大脑，帮助修复脑部细胞；短暂压力之下，刺激肾上腺素分泌，可以提高记忆力；学习新事物，建立起大脑细胞新的联结，可以维持大脑的良好状态。</li>
+</ul>
+<p>5、意志：</p>
+<ul>
+<li>意志力，可以为所有层面的行为提供动力，带来激情、恒心和投入。意志与我们的价值观息息相关。正如尼采所说“知晓生命的意义，方能忍耐一切”。按照自己的价值观而活，将提供巨大的动力支持。</li>
+<li>那，如果我不知道自己的价值观是什么，该怎么办呢？作者用一组问答，帮助我们寻找自己的深层价值取向：<br>
+Q1：如果现在就是人生的尽头，你学到的最重要的3件事是什么？为什么它们如此重要？<br>
+Q2：你最敬重谁？最钦佩他的3种品质？<br>
+Q3：你能做到的最好的自己是什么样的？<br>
+Q4：你希望你的墓志铭上如何总结你的人生？<br>
+拿出一张A4纸，写下这些问题的答案，你就会明白，哪些对你来说是最重要的，你最看重的是什么。</li>
+</ul>
+<p>6、管理精力的三个步骤：一、明确目标：</p>
+<ul>
+<li>知道什么最重要，才能全心投入。</li>
+<li>明确“目标”，指的就是与价值观指向的目标，即“使命感”。使命只能由自己定义。正如维克多·弗兰克尔在《活出生命的意义》一书中说的：人类不应该询问生活的意义，因为他自己才是需要做出回答的人。他只能为自己的生活作答，并负起相应的责任。作者强调，只有我们将使命感从负面变成正面、从外部转向内部、从自我变成他人时，才能为我们提供更强大、持久的精力。</li>
+<li>确定积极的目标：<br>
+作者对目标进行了分类：积极的目标和消极的目标。<br>
+我曾参加过前麦肯锡合伙人、盖茨基金会李一诺的线下课时，她讲道“焦虑”的原因让我深受触动：<br>
+人为什么焦虑，会不快乐？是因为很多人奋斗的目标是恐惧，害怕没钱、没地位，害怕变成自己不喜欢的样子，一面害怕一面往前走。所以他们活在焦虑之中，哪怕有所得，也没有真正快乐。<br>
+而有的人，他们奋斗的目标是爱，他们爱自己、完全地接纳了自己；爱社会、爱世界，所以他们能够平和，能够快乐。<br>
+所以书中说的“当目标感从消极流向积极、从外部流向内部、从自己流向他人，它就成为生活中最强大也最持久的精力源。”就很好理解了，消极的目标会不断产生内耗，消耗我们的精力；而积极的目标，则会产生动力。<br>
+这给我们的启示是，在现实的工作和生活中，我们要将注意力从内心的威胁转化为变好变强的挑战和机遇，将生存动机从恐惧转化为人生的意义，从更高维度来看待当下。那么，我们就不会纠结于眼前的困难，更有勇气和动力做我们的事情。</li>
+<li>将目标由外部转移到内心：<br>
+成年后，我们经常会惊叹，为什么小孩子的精力那么旺盛呢？哪怕是一个小玻璃珠、一片小树叶，他们也能兴趣盎然。很简单，因为他们喜欢。<br>
+心理学家曾做过一个试验，他们找到一群兴高采烈玩游戏的小朋友，许诺他们，如果他们完成了游戏中的任务便会获得奖励。<br>
+玩自己高兴的事情，还能获得奖励，听起来很不错吧？孩子们应该会更加乐此不疲了吧？试验的结果是，过了一段时间，孩子们对这个游戏再也提不起兴趣了。<br>
+哪怕是自己原本喜欢的游戏，一旦与外部奖励联系起来，他们对的兴趣就会消失。因为，他们做游戏的动力变为了获得奖励。<br>
+因此，心理学家得出结论，人们可以被物质奖励或外部激励所驱使，但只有在自由选择并享受事物本身的情况下，人们才会有更多的热情，从中获得乐趣。<br>
+我们做一件事情，外在动机包括金钱、认同感、社会地位、权力、爱情等等，获得外在激励会损害我们的内在动机。真正的内在动机，包括兴趣、满足感，才能够提供持久的动力。<br>
+激发内在动力，可以按照以下几个步骤：<br>
+1.明确什么是自己最珍视的品质？<br>
+2.我做的事情是否符合这些品质？<br>
+3.如果不符合，我要怎样调整。<br>
+举个例子，我对当前的工作环境不满意，我觉得工作没有前景、周围的同事都是负能量，我不喜欢现在的工作，于是对自己的任务敷衍塞责，明明没干什么事情，但是一天下来还是会特别累。这个时候，我要停下来，想一想：<br>
+我看重什么品质，希望自己是什么样的人？（认真、负责）<br>
+但是我现在所做所为违背了这些品质，那我要调整自己：我工作不是为了做给别人看的，我是为了自己的成长、为了…<br>
+这样想着，我便又有了动力，不再无精打采。接下来，我就要开始认真做事情，使自己的行为与价值一致。</li>
+</ul>
+<p>7、管理精力的三个步骤：二、正视现实：</p>
+<ul>
+<li>弗洛伊德认为整个人格由三大系统组成，它们是本我、自我、超我。其中，“超我”是理想中的自己，拥有着自律、善良、上进等我们所喜爱的美德，犹如天使般美好；“本我”是动物性的“我”，它懒惰、贪婪，还有一些我们不喜欢的阴暗面；“自我”就是平时表现出来的那个“我”，自我所作的决策，是超我和本我共同影响下的结果。</li>
+<li>出于自我保护，我们的大脑为我们设置了一道防御系统，帮助我们维护我们的人格自尊，使我们有了生存和发展的心理基础。但这道防御系统也让我们和真实的自我产生了隔阂。对于我们不喜欢的那一面，我们会采取麻木无视、掩饰、找借口、影射到他人身上等方式进行回避和压制。在实际生活中，我们常常会看到，内心软弱的人，粗暴对待他人；自卑的人吹嘘自己的成就；不愿面对自己内心的嫉妒，用微妙的方式诋毁他人。</li>
+<li>事实上，我们认为的，是我们进行选择过滤的结果，并不代表真实。</li>
+<li>书中写道：“只有满怀震惊地看到真实的自己，与我们希望或想象中的自己区分开，才算迈向自己生活现实的第一步。”形容真实自我，用的是“满怀震惊”四个字，可见想象与真实的差距之大。</li>
+<li>回避现实会消耗大量精力，为了节省精力，我们要诚实地对待自己。那么，怎样诚实地对待自己呢？</li>
+<li>第一步，认识自己<br>
+将自己当作研究对象，像一个旁观者一样地观察自己为人处事的模式，客观地作出评价。在这一过程中，我们要反复告诉自己，自己的观点并不一定就是事实，只是我们解读世界的方式，要分清观点与现实。<br>
+当自我解读采用个人的、消极的和渲染夸大的角度，我们会放弃并失去动力。<br>
+举个例子，焦虑来袭时的两种认知：<br>
+A：我就要陷入焦虑中了（我是受害者/无能为力）<br>
+B：我感受到了焦虑（焦虑只是一种感觉，我依然拥有决策和行动的能力）<br>
+B的认知模式明显优于A，因为B的表达，只是在陈述事实，不带任何消极的情绪。<br>
+关于焦虑等消极情绪，我非常建议冥想的方式，将焦虑这些情绪看成是飘在自己心绪世界中的云朵。当这些情绪在心底涌现时，不要批判自己，也不要压制这些情绪，想象自己是一个旁观者，看着云朵飘走。</li>
+<li>第二步，承认自己的局限性<br>
+一方面，要清楚地知道，自己并不一定总是对的，也可能会错。另一方面，也要告诉自己，偶尔犯错无损于自己的形象。这样，可帮助降低自我防御，增强积极精力。</li>
+<li>第三步，接受自我<br>
+心理学有个名词叫做“投射”，在上文已经提到了。把对自己的不满归咎到别人身上，就叫投射。事实上，如果你特别讨厌某人的性格，其实这种你讨厌的性格特质，你也有，而且是你性格中最压抑的一面。<br>
+有这样的心理，代表着我们想否认自己。作者强调，我们都是光明与暗影、美德与恶行的混合体，爱全部的自我，包括阴影部分，接受全部的自我。<br>
+这并不意味着我们要放任自流。接受自我包含两种意思，一方面，要从道德上意识到阴影部分是种负累，一定要改变；另一方面，要认可并微笑接受自己的不足和阴影，对于自己不愿面对事实也要理解。<br>
+对于自己的阴影，不要过份地关注和挖掘。任何人都不是非黑即白的，无休止地追寻真相会有损自我，不带怜悯的诚实是种残酷，对人对己均是如此。<br>
+其实就是我们常说的，改变能改变的，接受无法改变的。</li>
+</ul>
+<p>8、管理精力的三个步骤：付诸行动</p>
+<ul>
+<li>根据科学家研究，人类行为只有5%是受自我意识支配的，95%是自动反应或应激反应。正如我们常说的“优秀是一种习惯。”</li>
+<li>《自控力》一书中介绍过，人的自控力像肌肉一样，也会消耗甚至力竭。自律不能光靠意志力，更多的是要养成良好的习惯。</li>
+<li>《精力管理》一书中，更进一步说到，当我们面对的困难越大，越容易退回旧习惯中。因此，一定要建立自己的仪式习惯，这样有助于促进改变，有压力时更容易行动，也能确保在困难的情况下能够继续，在精力消耗和恢复之间达到平衡，不至于“身体被掏空”。</li>
+<li>关于建立自己的仪式习惯，作者介绍了一些小诀窍：<br>
+建立属于自己的“战前准备程序”，比如深呼吸、泡咖啡等等。然后在内心对即将要做的事情进行预演。<br>
+每天固定时间干固定的事情。比如，将上午9点-11点固定为工作时间，这个时段内，关掉手机等一切干扰；中午12点固定为健身时间。<br>
+每周/月固定时间与爱人约会、与家人相处。</li>
+<li>关于建立自己的仪式习惯，作者也介绍了一些注意事项：<br>
+压力越大仪式就应该越严格<br>
+适时更新仪式内容，保持新鲜感<br>
+提倡人生中重大时刻、纪念日的仪式<br>
+在建立“做某事”的仪式习惯时，至少要保持30-60天的周期。决定习惯形成的关键在于，要将时间和行为具体化，这样就便于实施。<br>
+建立“不做某事”的仪式习惯时，可以采用“如果…就”的预案， 这个在古典的《超级个体》中也提到过。比如，<br>
+减肥期间：如果我想吃甜点，就去吃一片水果。<br>
+要专注于想要建立的行为上，而不是要抵制的行为上。再比如，<br>
+不焦虑：如果我焦虑，我就微笑。<br>
+在情绪来临让自己面带微笑，即便是装出来的也会有效果。原因是，人的表情、肢体，与情绪是相互影响的。</li>
+<li>渐进，每次把精力放在一个重大改变上。</li>
+</ul>
+<p>精力管理</p>
+<h3><span id="pyi-jing-li-guan-li">一、精力管理</span><a href="#pyi-jing-li-guan-li" class="header-anchor">#</a></h3>
+<ul>
+<li>
+<p>人每天的精力不是均等分布的，而是波浪型分布。起床清醒后，精力会迅速攀升，在上午达到高峰，然后随时间幂指式递减。睡觉和冥想都会清理大脑进程，清空缓存，会恢复一定精力。</p>
+</li>
+<li>
+<p>而精力管理的目标并不是单单有充足的精力，而是利用精力做最有价值的事情。</p>
+<blockquote>
+<p>如图所示，精力管理的目标是：在精力曲线与时间围成的区间内，填充总价值量最多的任务块。<br>
+其中：<br>
+★ 任务一：开拓创新型任务。精力消耗量大（高度高），持续时间有限，价值很高。<br>
+★ 任务二：维护型任务。精力消耗量低（高度低），持续时间长，价值一般。<br>
+★ 任务三：一般事情。精力消耗量低（高度底），持续时间短，价值较低。<br>
+★ 干扰项：趣事。即粉色区块，趣事有很强的趣味性，也会提供一定的价值，就像看视频、微博、微信、知乎一样。它们刚开始时消耗精力极少，用户粘性强，持续时间长，后期消耗精力大。为什么后期消耗精力大？一方面快感也会消耗精力的，另一方面由于价值供应不足，人就会因为价值的缺失而产生焦虑，消耗精力。最后，人为了填充价值的缺失，就会增加趣事的摄入量，导致消耗更多精力。</p>
+</blockquote>
+</li>
+<li>
+<p>根据任务的特点，人应该在上午时完成任务一，中午完成任务二，晚上完成任务三。</p>
+</li>
+<li>
+<p>日常计划可以是：<br>
+上午完成最重要、最有挑战性的开拓型任务。<br>
+下午完成持续性、维护性、一般性任务。<br>
+晚上完成机械型、重复型任务，或单纯信息摄入型任务，比如听讲座，看学习视频等。<br>
+同时根据干扰项的特点，人要尽量推迟插入干扰项的时间，因为他们持久时间长，消耗大量精力，导致其余任务很难完成。<br>
+可以允许自己在晚上看娱乐视频和玩游戏。</p>
+</li>
+</ul>
+<h3><span id="per-shui-mian">二、睡眠</span><a href="#per-shui-mian" class="header-anchor">#</a></h3>
+<ul>
+<li>人一天的精力曲线与前一天的睡眠状态息息相关。前一天睡眠不好，即影响精力，还会影响自信，是自律的第一大敌。</li>
+<li>另一方面，人在入眠之时，恰恰是一天之中精力水平最差的时候，很容易管不住自己，导致熬夜娱乐。因此睡眠很容易被不自律而影响。</li>
+<li>关于睡眠，有以下几点经验：<br>
+①晚上冥想后就洗漱（九点左右）。目的是让11点的时候自己能倒头就睡，入睡没有阻碍。<br>
+②手机调到飞行模式。睡眠时的手机异响并不会直接惊醒自己，但会让自己从深睡眠，跳到浅睡眠，人在浅睡眠中就容易多梦，导致疲惫。<br>
+③躺下后，不再接触开放信息源。微信、知乎、微博、B站都是开放信息源，新鲜内容源源不绝，一开始就停不下来。<br>
+④11点准时休息。<br>
+⑤别赖床。听听音乐，伸伸懒腰就可以起床了。</li>
+</ul>
+<h3><span id="psan-yuan-chi-you-huo">三、远离诱惑</span><a href="#psan-yuan-chi-you-huo" class="header-anchor">#</a></h3>
+<ul>
+<li>诱惑是环境与脑回路共同作用的结果。它是客观的，不是主观的。</li>
+<li>很多人常常以为诱惑可以靠观念的转变解决，或者靠自制力解决。</li>
+<li>太Naive了，诱惑是一种客观的存在，客观的存在对主观的愿望常常是降维打击，就像三体水滴碾压宇宙舰队一样。</li>
+<li>我曾经对游戏上瘾，其客观原因在于两点，一是国外的生活枯燥和压抑，不能提供足够的满足感。二是，上瘾已经形成了回路，这个奖惩回路很强健。</li>
+<li>如果我的生活状态不发生明显的改变，上瘾的状态就不会改变。</li>
+<li>明白了这点，我放弃了通过主观努力克服上瘾的想法，只有远离诱惑一条路可走。正是断了这个念想，我之后再也没有打过游戏。</li>
+</ul>
+<h3><span id="psi-bu-zai-kai-fang-xin-xi-yuan-xia-xue-xi">四、不在开放信息源下学习</span><a href="#psi-bu-zai-kai-fang-xin-xi-yuan-xia-xue-xi" class="header-anchor">#</a></h3>
+<ul>
+<li>在知乎的官方平台上看文章，我常是不认真的，一目三行。但是同样的文章在笔记软件的环境下看，我就看得更仔细了。</li>
+<li>和吃饭一样，在锅里吃饭我们肯定是凑合扒饭，在碗里吃才会仔细咀嚼。</li>
+<li>开放的环境下总是给人仓促的感觉。封闭的环境下，人才会安心学习。</li>
+<li>在使用知乎、微信、B站时，先把要看的东西摘出来，然后把它们做为有限资源 慢慢享用，这是大幅提高时间利用率的方法。</li>
+</ul>
+<h3><span id="pwu-xue-bu-jin-qu-shi-zen-me-ban">五、学不进去时怎么办</span><a href="#pwu-xue-bu-jin-qu-shi-zen-me-ban" class="header-anchor">#</a></h3>
+<ul>
+<li>人有一种行动偏误，就是在不知所措的时候，总是要做些什么才能安心。</li>
+<li>比如有人在投资股票时，看到股价波动，总是要操作一下，要么追加，要么抛出，结果自然是亏本。为了应对行动偏误，人最优的策略是，<strong>在情况不明时按兵不动，直到分析清形势</strong>。</li>
+<li>学不进去时，表明大脑判断自己没有能量支持后面的学习，最优的策略就是<strong>休息储能，然后再战</strong>。休息储能，可以使用假寐，冥想，做眼保健操，深呼吸等等，总之让大脑放空，安静下来，持续一断时间。等能量恢复到安全线以上，就可以继续之前的学习了。</li>
+<li>为什么要继续之前的学习？**因为大脑对一门学科进行高强度的集中突破，是最高效的学习方法之一。**如果在难处就中断学习，大脑就自动为此门学科贴上“困难”的标签，你就不可能爱上这门学课了。把当前的难点跨过去，你就驯服了它，否则它就驯服了你。</li>
+</ul>
+<h3><span id="pliu-zui-qiang-you-li-de-wu-qi-shi-zhuang-tai">六、最强有力的武器是状态</span><a href="#pliu-zui-qiang-you-li-de-wu-qi-shi-zhuang-tai" class="header-anchor">#</a></h3>
+<ul>
+<li>自律的目标不是一段时间内有爆棚的生产力，而是<strong>维持一个状态</strong> —— 每晚都心满意足地躺下，清晨都满怀期待地睁眼。当人处于这样的状态中时，时间本身像裹了糖一样，这就是天底下最幸福的生活生式。有这种生活状态的人，就算遭受一定的命运重击，仍然能恢复到自己本来的位置。这样的状态既是最厚的铠甲，也是最锋利的武器。所以追求自律的过程中，大可不必因为一两次失败而沮丧，因为你的目标不是一城一池，而是一个状态。也不要太过分透支精力，不要熬夜学习，因为你的目标不是一城一池，而是一个状态。一个保有余力的生活状态。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/6101-shi-jian-guan-li/02-du-shu-bi-ji-qi-te-de-yi-sheng/" rel="prev" title="610102：读书笔记《奇特的一生》">
+      <i class="fa fa-chevron-left"></i> 610102：读书笔记《奇特的一生》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/6203-ji-ji-xin-li-xue/01/" rel="next" title="620301：积极心理学">
+      620301：积极心理学 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">能量管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">《精力管理》的读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">一、精力管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">二、睡眠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">三、远离诱惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">四、不在开放信息源下学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">五、学不进去时怎么办</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">六、最强有力的武器是状态</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。 </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">160</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">67</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
