@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="字符串 API# 字符串是基本类型，所有的方法都无法修改原字符串。 查找 - indexOf &#x2F; lastIndexOf# indexOf() 返回指定字符串在字符串首次出现的位置（向后查找，对大小写敏感），如果没找到，返回-1。 STR. indexOf(search [, start]) &#x2F;&#x2F; 参数 &#x2F;&#x2F;    search 需检索的字符串 &#x2F;&#x2F;    start  可选，指定开始检索的位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="220304：ES String API">
+<meta property="og:url" content="http://nigelkeel.gitee.io/ckkmbbb0d006svgt40qzxb5df/index.html">
+<meta property="og:site_name" content="永远的伊尔瓦">
+<meta property="og:description" content="字符串 API# 字符串是基本类型，所有的方法都无法修改原字符串。 查找 - indexOf &#x2F; lastIndexOf# indexOf() 返回指定字符串在字符串首次出现的位置（向后查找，对大小写敏感），如果没找到，返回-1。 STR. indexOf(search [, start]) &#x2F;&#x2F; 参数 &#x2F;&#x2F;    search 需检索的字符串 &#x2F;&#x2F;    start  可选，指定开始检索的位置">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-30T08:51:45.360Z">
+<meta property="article:modified_time" content="2021-01-31T06:22:09.473Z">
+<meta property="article:author" content="KEEL">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/ckkmbbb0d006svgt40qzxb5df/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>220304：ES String API | 永远的伊尔瓦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">永远的伊尔瓦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/ckkmbbb0d006svgt40qzxb5df/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;"></span>
+        <h1 class="post-title" itemprop="name headline">
+          220304：ES String API
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 16:51:45" itemprop="dateCreated datePublished" datetime="2021-01-30T16:51:45+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-31 14:22:09" itemprop="dateModified" datetime="2021-01-31T14:22:09+08:00">2021-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2203%EF%BC%9AES-API/" itemprop="url" rel="index"><span itemprop="name">2203：ES API</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1><span id="zi-fu-chuan-api">字符串 API</span><a href="#zi-fu-chuan-api" class="header-anchor">#</a></h1>
+<p>字符串是基本类型，所有的方法都无法修改原字符串。</p>
+<h2><span id="pcha-zhao-indexof-lastindexof">查找 - indexOf / lastIndexOf</span><a href="#pcha-zhao-indexof-lastindexof" class="header-anchor">#</a></h2>
+<p><code>indexOf()</code> 返回指定字符串在字符串首次出现的位置（向后查找，对大小写敏感），如果没找到，返回<code>-1</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">indexOf</span><span class="token punctuation">(</span>search <span class="token punctuation">[</span><span class="token punctuation">,</span> start<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    search 需检索的字符串</span>
+<span class="token comment">//    start  可选，指定开始检索的位置</span>
+<span class="token comment">//          如果没指定就是从首字符开始搜索</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    目标字符串第一次出现的位置/-1</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> “poxiaoispig"<span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"poxiao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 0</span>
+str<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"pig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>lastIndexOf()</code> 同 <code>indexOf()</code> ，区别是逆序的（向前查找）。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">str<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"pig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="pcha-zhao-includes">查找 - includes</span><a href="#pcha-zhao-includes" class="header-anchor">#</a></h2>
+<p><code>includes()</code> 查找字符串是否包含指定字符串（对大小写敏感），如果找到返回<code>true</code> ,否则返回<code>false</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">includes</span><span class="token punctuation">(</span>search<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">,</span> start<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    search 需查找的字符串</span>
+<span class="token comment">//    start  可选，指定开始检索的位置</span>
+<span class="token comment">//          如果没指定就是从最后一个字符开始搜索</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    目标字符串第一次出现的位置/-1</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> “poxiaoispig"<span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"poxiao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+str<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"px"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pcha-zhao-search">查找 - search</span><a href="#pcha-zhao-search" class="header-anchor">#</a></h2>
+<p><code>search()</code>功能和<code>indexOf()</code>相同，定义匹配模式，只有一个参数，没有反向检索和全局模式。（正则表达式常用）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>tar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    tar 要搜索的字符串</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    目标字符串第一次出现的位置/-1</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiaoispig"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">"pig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pcha-zhao-match">查找 - match</span><a href="#pcha-zhao-match" class="header-anchor">#</a></h2>
+<p><code>match()</code> 找出所有匹配的子字符串，并以数组的形式返回，如果匹配模式没有指定全局（正则表达式），则进行单次匹配，如果没找到返回<code>null</code>。该方法类似 <code>indexOf()</code> 和 <code>lastIndexOf()</code>，但是它返回指定的值，而不是字符串的位置。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>re<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    re  字符串或者正则表达式</span>
+<span class="token comment">// 返回</span>
+<span class="token comment">//    数组（包含所有匹配的字符串）</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">"xiao"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [ 'xiao', index: 2, input: 'poxiao', groups: undefined ]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pcha-zhao-charat-charcodeat">查找 - charAt/charCodeAt</span><a href="#pcha-zhao-charat-charcodeat" class="header-anchor">#</a></h2>
+<p><code>charAt(n)</code> 返回字符串中的第 n 个字符，如果 n 超出字符串范围，返回空串。</p>
+<p><code>charCodeAt(n)</code> 返回字符串中第 n 个字符的字符编码。</p>
+<h2><span id="ppan-duan-tou-wei-startswith-endswith">判断头尾 - startsWith/endsWith</span><a href="#ppan-duan-tou-wei-startswith-endswith" class="header-anchor">#</a></h2>
+<p><code>startsWith()</code> <code>endsWith()</code> 判断字符串开头、结尾有没有包含某个字符串。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    key 目标字符串</span>
+<span class="token comment">// 返回</span>
+<span class="token comment">//    true / false</span>
+
+<span class="token string">"poxiao"</span><span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"po"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token string">"poxiao"</span><span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"po"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pqie-cheng-shu-zu-split">切成数组 - split</span><a href="#pqie-cheng-shu-zu-split" class="header-anchor">#</a></h2>
+<p><code>split()</code> 把一个字符串切割成数组，这个操作和数组<code>join</code>是相反的。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">split</span><span class="token punctuation">(</span>rule<span class="token punctuation">[</span><span class="token punctuation">,</span> max<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    rule 字符串或者正则表达式</span>
+<span class="token comment">//    max  可选，指定返回数组的的最大长度</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    数组</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["poxiao", ]</span>
+str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["p","o","x","i","a","o"]</span>
+str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["p","o"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pjie-qu-substr-slice-substring">截取 - substr/slice/substring</span><a href="#pjie-qu-substr-slice-substring" class="header-anchor">#</a></h2>
+<p><code>substr</code> 根据指定长度截取字符串（不推荐使用该方法）</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">substr</span><span class="token punctuation">(</span>start<span class="token punctuation">[</span><span class="token punctuation">,</span> length<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    start  起始下标</span>
+<span class="token comment">//    length 可选，截取的长度</span>
+<span class="token comment">//           如果省略，则截取到末尾</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    截取之后的字符串</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>slice</code> 、<code>substring</code> 根据指定的起止下标截取字符串</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">slice</span><span class="token punctuation">(</span>start<span class="token punctuation">[</span><span class="token punctuation">,</span> end<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span> <span class="token function">substring</span><span class="token punctuation">(</span>start<span class="token punctuation">[</span><span class="token punctuation">,</span> end<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    start 起始下标</span>
+<span class="token comment">//    end   可选，结束下标（不包括）</span>
+<span class="token comment">//          如果省略，代表剩下的全部截取</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>起始和结束位置相比较的大小无法确定的时候可以使用<code>substring</code>。</p>
+<p>如果为负值，<code>slic</code>e 能把负值当作从右向左。而<code>substring</code>视其无效</p>
+<h2><span id="pda-xiao-xie-zhuan-huan-tolowercase-touppercase">大小写转换 - toLowerCase / toUpperCase</span><a href="#pda-xiao-xie-zhuan-huan-tolowercase-touppercase" class="header-anchor">#</a></h2>
+<p><code>toLowerCase()</code> 将字符串转换成小写</p>
+<p><code>toUpperCase()</code> 将字符串转换成大写</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数无</span>
+<span class="token comment">// 返回</span>
+<span class="token comment">//     转换之后的字符串</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//"POXIAO"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="ppin-jie-concat-liao-jie">拼接 - concat <code>了解</code></span><a href="#ppin-jie-concat-liao-jie" class="header-anchor">#</a></h2>
+<p><code>concat(s1[, s2, s3])</code></p>
+<p>功能：把多个参数添加到指定字符串的尾部。</p>
+<p>参数：要添加到字符串尾部的，参数类型和个数没有限制。</p>
+<p>返回：连接以后的字符串。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">"is"</span><span class="token punctuation">,</span> <span class="token string">"pig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "poxiaoispig"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>原来数组的 <code>join</code> 方法替代 <code>concat</code> 方法，速度很快，但是现代浏览器优化加号拼接，所以推荐使用加号拼接。</p>
+<h2><span id="pfu-zhi-repeat">复制 - repeat</span><a href="#pfu-zhi-repeat" class="header-anchor">#</a></h2>
+<p><code>repeat()</code> 复制字符串。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    count 复制次数</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    复制之后的字符串</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "poxiaopoxiaopoxiao"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pbu-quan-padstart-padend">补全 - padStart / padEnd</span><a href="#pbu-quan-padstart-padend" class="header-anchor">#</a></h2>
+<p><code>padStart()</code> <code>padEnd()</code> 是 ES2017 引入的字符串补全长度的方法。如果某个字符串不够指定长度，会在头部或尾部补全。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">padSrart</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> pad<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> pad<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数</span>
+<span class="token comment">//    length 指定字符串的最小长度</span>
+<span class="token comment">//    pad    用来补全的字符串</span>
+<span class="token comment">// 返回值</span>
+<span class="token comment">//    补全之后的字符串</span>
+<span class="token comment">//    如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"poxiao"</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "poxiao"</span>
+str<span class="token punctuation">.</span><span class="token function">padStart</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"is"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "isispoxiao"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pti-huan-replace">替换 - replace</span><a href="#pti-huan-replace" class="header-anchor">#</a></h2>
+<p>如果没有使用正则表达式，只能替换一次。</p>
+<p>这是用于搜索和替换的通用方法，是最有用的方法之一。它是搜索和替换字符串的瑞士军刀。</p>
+<p><strong>当 <code>replace</code> 的第一个参数是字符串时，它仅替换第一个匹配项。</strong></p>
+<h2><span id="pshan-shou-wei-kong-ge-trim-trimstart-trimend">删首尾空格 - trim / trimStart / trimEnd</span><a href="#pshan-shou-wei-kong-ge-trim-trimstart-trimend" class="header-anchor">#</a></h2>
+<p><code>trim()</code> <code>trimStart()</code> <code>trimEnd()</code> 去除字符串的头尾空格。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">trimStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">STR</span><span class="token punctuation">.</span><span class="token function">trimEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 无参数</span>
+<span class="token comment">// 返回处理之后的字符串（不会改变原字符串）</span>
+
+<span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">"   poxiao is pig   "</span><span class="token punctuation">;</span>
+str<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "poxiao is pig"</span>
+str<span class="token punctuation">.</span><span class="token function">trimStart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "poxiao is pig   "</span>
+str<span class="token punctuation">.</span><span class="token function">trimEnd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "   poxiao is pig"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pzhuan-huan-valueof-tostring">转换 - valueOf / toString</span><a href="#pzhuan-huan-valueof-tostring" class="header-anchor">#</a></h2>
+<p><code>valueOf()</code> 返回对象的字符串、数值或者布尔值表示。</p>
+<p><code>toString()</code> 返回对象的字符串表示。</p>
+<h2><span id="pzheng-ze-ce-shi-test">正则测试 - test</span><a href="#pzheng-ze-ce-shi-test" class="header-anchor">#</a></h2>
+<p>查找<br>
+indexOf / lastIndexOf<br>
+search<br>
+match<br>
+charAt<br>
+截取<br>
+substring<br>
+slice<br>
+substr<br>
+拼接<br>
++<br>
+concat<br>
+大小写转换<br>
+toLowerCase<br>
+toUpperCase<br>
+转数组 split<br>
+清理字符串两侧空格 trim</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ckkmbbb0c006rvgt4gbm6b7sk/" rel="prev" title="220303：ES Date">
+      <i class="fa fa-chevron-left"></i> 220303：ES Date
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ckkmbbb0e006xvgt47mcf4a07/" rel="next" title="220305：ES Array API">
+      220305：ES Array API <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">字符串 API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">查找 - indexOf &#x2F; lastIndexOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">查找 - includes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">查找 - search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">查找 - match</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">查找 - charAt&#x2F;charCodeAt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">判断头尾 - startsWith&#x2F;endsWith</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">切成数组 - split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">截取 - substr&#x2F;slice&#x2F;substring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">大小写转换 - toLowerCase &#x2F; toUpperCase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">拼接 - concat 了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">复制 - repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">补全 - padStart &#x2F; padEnd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">替换 - replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">删首尾空格 - trim &#x2F; trimStart &#x2F; trimEnd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">转换 - valueOf &#x2F; toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">正则测试 - test</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。 </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">169</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'default',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
