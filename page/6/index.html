@@ -196,6 +196,582 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220205/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">220205</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220205/" class="post-title-link" itemprop="url">回调函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:22:45" itemprop="dateCreated datePublished" datetime="2021-01-31T14:22:45+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:10:09" itemprop="dateModified" datetime="2021-02-01T19:10:09+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="hui-diao-han-shu">回调函数</span><a href="#hui-diao-han-shu" class="header-anchor">#</a></h1>
+<p>回调函数（Callback）分为同步回调函数，异步回调函数。</p>
+<p>什么函数才是回调函数?</p>
+<ul>
+<li>你定义的</li>
+<li>你没有直接调用</li>
+<li>但最终它执行了（在特定条件或时刻）</li>
+</ul>
+<p>常见的回调函数:</p>
+<ul>
+<li>DOM 事件函数</li>
+<li>定时器函数</li>
+<li>AJAX 回调函数</li>
+<li>生命周期回调函数</li>
+</ul>
+<p>回调函数的特性导致其层层嵌套，形成<strong>回调地狱</strong>。</p>
+<p>涉及面试题：什么是回调函数？回调函数有什么缺点？如何解决回调地狱问题？</p>
+<p><strong>回调函数</strong>（Callback）分为同步回调（数组遍历）和异步回调。</p>
+<p>使用回调函数容易导致回调地狱问题。回调地狱的根本问题就是：</p>
+<ol>
+<li>嵌套函数存在耦合性，一旦有所改动，就会牵一发而动全身</li>
+<li>嵌套函数一多，就很难处理错误。</li>
+</ol>
+<p>当然，回调函数还存在着别的几个缺点，比如不能使用 <code>try catch</code> 捕获错误，不能直接 <code>return</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 输出 3 3 3</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 输出 0 1 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>面试题</code> 简述同步和异步的区别，如何避免回调地狱？</p>
+<p>同步：方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为</p>
+<p>异步：方法调用一旦开始，方法调用就会立刻返回，调用者就可以继续后续的操作，而异步方法通常会在另外一个线程中，整个过程畅通无阻。</p>
+<p>避免回调地狱：</p>
+<ul>
+<li>Promise</li>
+<li>async / await</li>
+<li>generator</li>
+<li>事件发布/监听模式</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">220204</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220204/" class="post-title-link" itemprop="url">ES Generstor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:09:30" itemprop="dateCreated datePublished" datetime="2021-01-31T14:09:30+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:10:00" itemprop="dateModified" datetime="2021-02-01T19:10:00+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="generstor">Generstor</span><a href="#generstor" class="header-anchor">#</a></h1>
+<p>状态机，异步生成器。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">yield</span> <span class="token operator">...</span>
+    <span class="token keyword">yield</span> <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span>
+    
+gen<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>Generstor</code> 是可迭代的（<code>for.. of</code>）。</p>
+<p>例子：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 使用计时器模拟依次请求 a数据 b数据</span>
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">yield</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"a数据请求成功"</span><span class="token punctuation">)</span>
+        it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">yield</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"b数据请求成功"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 开始请求</span>
+<span class="token keyword">const</span> it <span class="token operator">=</span> <span class="token function">gen</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">220203</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220203/" class="post-title-link" itemprop="url">ES this</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:03:52" itemprop="dateCreated datePublished" datetime="2021-01-31T14:03:52+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:09:50" itemprop="dateModified" datetime="2021-02-01T19:09:50+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-this">ES this</span><a href="#es-this" class="header-anchor">#</a></h1>
+<p>JS 的作用域是静态的，但是函数的调用却是动态的，由于函数可以在不同的运行环境内执行，因此 JS 在函数体内定义了<code>this</code>关键字来获取当前的运行环境。<strong>this</strong> 最终代表的是函数的<strong>执行者，使用者，调用者</strong>。它是一个指针型变量。</p>
+<h2><span id="p1-ru-he-pan-duan-this-zhi-xiang">1、如何判断 this 指向</span><a href="#p1-ru-he-pan-duan-this-zhi-xiang" class="header-anchor">#</a></h2>
+<ul>
+<li>函数是否在<code>new</code>中调用，如果是的话，<code>this</code>绑定的是新创建的对象</li>
+<li>函数是否通过<code>call</code>、<code>apply</code> 显示绑定，如果是，则<code>this</code>绑定的是执行的对象</li>
+<li>函数是否在某个上下文中调用，如果有，则<code>this</code>绑定在这个上下文对象上</li>
+<li>如果都不是，默认绑定<code>window</code></li>
+</ul>
+<h3><span id="p1-1-mo-ren-bang-ding">1.1 默认绑定</span><a href="#p1-1-mo-ren-bang-ding" class="header-anchor">#</a></h3>
+<p><code>this</code> 默认指向 <code>window</code>，在无法应用其他规则的时候使用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function-variable function">do</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token comment">// foo是直接使用不带任何修饰的函数引用进行调用，因此只能使用默认绑定规则</span>
+
+obj<span class="token punctuation">.</span><span class="token function">do</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// window</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p1-2-yin-shi-bang-ding">1.2 隐式绑定</span><a href="#p1-2-yin-shi-bang-ding" class="header-anchor">#</a></h3>
+<p>当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的 this 绑定到这个上下文对象上。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> a<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> foo<span class="token operator">:</span> foo <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+<span class="token comment">// 当foo调用的时候，它的落脚点确实是指向的obj对象，当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>隐式绑定可能会出现隐式丢失问题。被隐式绑定的函数，丢失了绑定对象</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  a<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  foo<span class="token operator">:</span> foo<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> fn1 <span class="token operator">=</span> obj<span class="token punctuation">.</span>foo<span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+<span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// hello</span>
+<span class="token comment">// 虽然fn1是obj.foo的一个引用，但是实际上它的引用是foo函数本身，因此fn1其实是一个不带任何修饰的函数调用，属于默认绑定</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>每个函数对象都有 call 和 apply 方法，本质是设置函数体内 this 对象的值。</p>
+<h2><span id="p2-call-apply-bind">2、call、apply、bind</span><a href="#p2-call-apply-bind" class="header-anchor">#</a></h2>
+<p><code>call</code>、<code>apply</code>、<code>bind</code> 是 <a href>Function</a> 对象自带的方法。</p>
+<p>这三个函数的存在意义是<strong>改变函数执行时的上下文</strong>，再具体一点就是<strong>改变函数运行时的 this 指向</strong>。</p>
+<h3><span id="p2-1-call">2.1 call</span><a href="#p2-1-call" class="header-anchor">#</a></h3>
+<p><strong>call()</strong> 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。当调用一个函数时，可以赋值一个不同的 <code>this</code> 对象。<code>this</code> 引用当前对象，即 <code>call</code> 方法的第一个参数。</p>
+<p>通过 <code>call</code> 方法，你可以在一个对象上借用另一个对象上的方法</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 语法</span>
+<span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span> thisArg<span class="token punctuation">[</span><span class="token punctuation">,</span> arg1<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// 参数列表</span>
+<span class="token comment">// - thisArg 指定函数运行时的 this值</span>
+<span class="token comment">//   - 不传，或者传 null，undefined， 函数中的this指向window对象</span>
+<span class="token comment">//   - 传递另一个函数的函数名，函数中的this指向这个函数的引用，并不一定是该函数执行时真正的this值</span>
+<span class="token comment">//   - 值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象，如 String Number Boolean</span>
+<span class="token comment">//   - 传递一个对象，函数中的this指向这个对象</span>
+<span class="token comment">// - arg 函数所需要的参数，逗号间隔</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">//输出函数a中的this对象</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//定义函数b</span>
+<span class="token keyword">function</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"我是obj"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span> <span class="token comment">//定义对象obj</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//window</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Number</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//String</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Boolean</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// function b()&#123;&#125;</span>
+<span class="token function">a</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="p2-2-apply">2.2 apply</span><a href="#p2-2-apply" class="header-anchor">#</a></h3>
+<p><strong>apply</strong>() 语法与 <code>call()</code> 方法的语法几乎完全相同，唯一的区别在于，apply 的第二个参数必须是一个包含多个参数的数组（或类数组对象）。</p>
+<h3><span id="p2-3-bind">2.3 bind</span><a href="#p2-3-bind" class="header-anchor">#</a></h3>
+<p><code>bind</code> 函数会创建一个新函数（称为绑定函数）</p>
+<ul>
+<li>传参和 call 或 apply 类似</li>
+<li>不会执行对应的函数，call 或 apply 会自动执行对应的函数</li>
+<li>返回对函数的引用</li>
+<li>语法 <code>fun.bind(thisArg[, arg1[, arg2[, ...]]])</code>。</li>
+</ul>
+<h3><span id="p2-4-call-de-shi-xian">2.4 call 的实现</span><a href="#p2-4-call-de-shi-xian" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 1. 把调用call方法的对象this指向call方法的第一个参数</span>
+  <span class="token comment">// 2. 调用call方法的自己的this</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220202/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">220202</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220202/" class="post-title-link" itemprop="url">闭包</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-12 14:25:56" itemprop="dateCreated datePublished" datetime="2021-01-12T14:25:56+08:00">2021-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:09:40" itemprop="dateModified" datetime="2021-02-01T19:09:40+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="bi-bao">闭包</span><a href="#bi-bao" class="header-anchor">#</a></h1>
+<h2><span id="p1-shi-me-shi-bi-bao">1、什么是闭包</span><a href="#p1-shi-me-shi-bi-bao" class="header-anchor">#</a></h2>
+<p>闭包是一个包含被引用局部变量的 <code>closure</code> 对象，存在嵌套的内部函数中。</p>
+<h2><span id="p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi">2、怎么产生闭包 &amp; 生命周期</span><a href="#p2-zen-me-chan-sheng-bi-bao-amp-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>
+<p>必须满足三个条件</p>
+<ul>
+<li>函数嵌套函数</li>
+<li>内部函数调用外部函数的局部变量（引入全局变量是不会产生闭包的）</li>
+<li>调用外部函数</li>
+</ul>
+<p>生命周期</p>
+<ul>
+<li>内部函数定义执行完成就产生</li>
+<li>内部函数成为垃圾对象就销毁</li>
+</ul>
+<h2><span id="p3-bi-bao-de-zuo-yong-yu-que-dian">3、闭包的作用与缺点</span><a href="#p3-bi-bao-de-zuo-yong-yu-que-dian" class="header-anchor">#</a></h2>
+<p>作用</p>
+<ul>
+<li>延长了局部变量的存活时间</li>
+<li>让函数外部操作函数内部的数据</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>用太多可能会导致内存泄露（因为占用内部空间不释放）</li>
+</ul>
+<h2><span id="p4-bi-bao-de-ying-yong">4、闭包的应用</span><a href="#p4-bi-bao-de-ying-yong" class="header-anchor">#</a></h2>
+<ul>
+<li>迭代器</li>
+<li>React 组件高阶函数（为了复用函数，给内部函数传参）</li>
+<li>Vue 原理中存在（双向数据绑定原理）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">220201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220201/" class="post-title-link" itemprop="url">ES 面向对象</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 17:32:52" itemprop="dateCreated datePublished" datetime="2021-01-30T17:32:52+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:09:29" itemprop="dateModified" datetime="2021-02-01T19:09:29+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-mian-xiang-dui-xiang">ES 面向对象</span><a href="#es-mian-xiang-dui-xiang" class="header-anchor">#</a></h1>
+<p>面向对象和面向过程是两种不同的编程思想和方法。<br>
+面向过程是以过程为中心，就像流水线一样设计程序的思想。面向对象是以对象为中心的编程思想。更符合人类的思维习惯。<br>
+在面向对象的概念中，<strong>类</strong>是一类相似事物的统称，对象是类的实例化，类是对象的模版。（JS 中没有具体类的概念，ES6 引入的类实际上是函数。）<br>
+面向对象的三个基本特性: <strong>封装、继承、多态</strong>。<br>
+<strong>对象（Object）</strong> 可以是一个变量，一个函数，一种数据结构。在 JS 中，一切皆为对象。JS 允许自定义对象，从狭义的概念来分析，对象是最基本的数据类型，是复合型的结构、引用型的数据，它是无序数据集合。对象中每个成员被称为<strong>属性</strong>。对象是无序的键值对，数组是有序的键值对，函数是一种可执行的特殊对象。</p>
+<p><strong>实例对象</strong>与<strong>函数对象</strong>。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220110/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1965,497 +2541,6 @@ both: 同时运用 forwards / backwards</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210501/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210501</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210501/" class="post-title-link" itemprop="url">响应式布局</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 17:35:35" itemprop="dateCreated datePublished" datetime="2021-01-30T17:35:35+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:30:07" itemprop="dateModified" datetime="2021-02-01T19:30:07+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2105%EF%BC%9A%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2105：响应式布局</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="xiang-ying-shi-bu-ju">响应式布局</span><a href="#xiang-ying-shi-bu-ju" class="header-anchor">#</a></h1>
-<p>响应式布局是在 2010 年提出的一个概念，简而言之，<strong>就是一个网站能够兼容多个终端，而不是为每个终端做一个特定的版本</strong>。用户会使用不同的终端，由于屏幕分辨率不同，想要用户体验更好，就有必要让你的网页兼容多个终端。响应式布局设计可以让一个网站适配多种设备和多个屏幕，可以让网站的布局和功能随用户的使用环境（屏幕大小，输入方式，设备/浏览器能力）而变化。</p>
-<p>三个特征</p>
-<ul>
-<li>媒体查询：检查设备在渲染我们作品时的物理特性</li>
-<li>流动布局</li>
-<li>灵活的视觉效果</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210403/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210403</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210403/" class="post-title-link" itemprop="url">Stylus</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 17:13:59" itemprop="dateCreated datePublished" datetime="2021-01-30T17:13:59+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:04:12" itemprop="dateModified" datetime="2021-02-01T19:04:12+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="stylus">Stylus</span><a href="#stylus" class="header-anchor">#</a></h1>
-<p>向下兼容 <code>Less</code><br>
-可以省略括号和分号，靠缩进区分层级</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210402/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210402</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210402/" class="post-title-link" itemprop="url">Less</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 17:12:49" itemprop="dateCreated datePublished" datetime="2021-01-30T17:12:49+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:54" itemprop="dateModified" datetime="2021-02-01T19:03:54+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="less">LESS</span><a href="#less" class="header-anchor">#</a></h1>
-<p>less 是一种动态样式语言，属于 CSS 预处理器，扩展了 CSS 语言，增加了变量、混合、函数等特性，使 CSS 更易维护和扩展。LESS 既可以在客户端浏览器上运行，也能借助 node.js 在服务器端运行。</p>
-<blockquote>
-<p>CSS 自诞生以来，基本语法和核心机制一直没有本质上的变化，它的发展几乎全是表现力层面上的提升。最开始 CSS 在网页中的作用只是辅助性的装饰，轻便易学是最大的需求；然而如今网站的复杂度已经不可同日而语，原生 CSS 已经让开发者力不从心。当一门语言的能力不足而用户的运行环境又不支持其它选择的时候，这门语言就会沦为 “编译目标” 语言。开发者将选择另一门更高级的语言来进行开发，然后编译到底层语言以便实际运行。于是，在前端领域，CSS 预处理器应运而生。而 CSS 这门古老的语言以另一种方式 “重新适应” 了网页开发的需求。</p>
-</blockquote>
-<h2><span id="p1-an-zhuang">1、安装</span><a href="#p1-an-zhuang" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="http://lesscss.cn/">中文</a> | <a target="_blank" rel="noopener" href="http://lesscss.org/">英文</a> | <strong><a target="_blank" rel="noopener" href="http://www.lesscss.net/">源码</a></strong></p>
-<ol>
-<li>安装 Node.JS</li>
-<li>通过命令行程序，<code>node -v</code> 和 <code>npm -v</code> 检查是否安装成功。</li>
-<li>使用<code>npm i -g less</code> 进行全局安装 less, 并输入 <code>lessc -V</code> 检查版本</li>
-</ol>
-<h2><span id="p2-te-xing">2、特性</span><a href="#p2-te-xing" class="header-anchor">#</a></h2>
-<ul>
-<li>动态样式 CSS 是非程式式语言，需要书写大量没有逻辑的代码，不方便维护和扩展、复用。</li>
-<li>预处理器 生成 CSS 前某一语法的处理程序。</li>
-</ul>
-<h2><span id="p3-shi-yong">3、使用</span><a href="#p3-shi-yong" class="header-anchor">#</a></h2>
-<p>(1) <code>style</code>标签类型改成<code>less</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet/less"</span> type<span class="token operator">=</span><span class="token string">"text/css"</span> href<span class="token operator">=</span><span class="token string">"styles.less"</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>还需要一个编译相关的 js 文件</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(2) 在命令行编译 less 文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lessc styles.less styles.css<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>(3) 通过 VSCode 的<code>Easy LESS</code>插件，在文件夹新建 less 文件，保存，即可在当前文件夹编译出相应的 css 文件。</p>
-<h2><span id="per-yu-fa">二、语法</span><a href="#per-yu-fa" class="header-anchor">#</a></h2>
-<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
-<p><code>//注释</code> 和 <code>/*注释*/</code></p>
-<p>后者可以注释到 CSS 文件中。</p>
-<h2><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h2>
-<p>LESS 允许我们定义一些变量来管理 CSS，变量需以<code>@</code>开头。</p>
-<pre class="line-numbers language-less" data-language="less"><code class="language-less">&#x2F;&#x2F; 定义
-@test: 10px;
-&#x2F;&#x2F; 使用
-width: @test;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>注意作用域。</p>
-<p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
-<h2><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h2>
-<p><code>&amp;:</code> 父级引用</p>
-<h2><span id="p4-yun-suan">4、运算</span><a href="#p4-yun-suan" class="header-anchor">#</a></h2>
-<h2><span id="p5-hun-he">5、混合</span><a href="#p5-hun-he" class="header-anchor">#</a></h2>
-<p>类似函数。</p>
-<h2><span id="p6-mo-shi-pi-pei-he-shou-wei">6、模式匹配和守卫</span><a href="#p6-mo-shi-pi-pei-he-shou-wei" class="header-anchor">#</a></h2>
-<p>重载，根据参数的个数来选择混合。</p>
-<h2><span id="p7-zi-fu-chuan-cha-zhi">7、字符串插值</span><a href="#p7-zi-fu-chuan-cha-zhi" class="header-anchor">#</a></h2>
-<h2><span id="p8-han-shu">8、函数</span><a href="#p8-han-shu" class="header-anchor">#</a></h2>
-<h2><span id="p9-wen-jian-dao-ru">9、文件导入</span><a href="#p9-wen-jian-dao-ru" class="header-anchor">#</a></h2>
-<h2><span id="p10-zhuan-yi">10、转义</span><a href="#p10-zhuan-yi" class="header-anchor">#</a></h2>
-<p>有时候，当需要引入无效的 CSS 语法或 Less 不能识别的字符，就需要使用转义字符。此时，就可以在字符串前面加一个<code>~</code>，并将需要转义的字符串放在<code>&quot; &quot;</code>中。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210401/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210401</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210401/" class="post-title-link" itemprop="url">CSS 预处理器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:10:43" itemprop="dateCreated datePublished" datetime="2021-01-31T14:10:43+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:30" itemprop="dateModified" datetime="2021-02-01T19:03:30+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="css-yu-chu-li-qi">CSS 预处理器</span><a href="#css-yu-chu-li-qi" class="header-anchor">#</a></h1>
-<h2><span id="pyuan-li">原理</span><a href="#pyuan-li" class="header-anchor">#</a></h2>
-<p>是将类 CSS 语言通过 Webpack 编译转成浏览器可读的真正 CSS。<br>
-在这层编译之上，便可以赋予 CSS 更多更强大的功能。</p>
-<h2><span id="pchang-yong-gong-neng">常用功能</span><a href="#pchang-yong-gong-neng" class="header-anchor">#</a></h2>
-<ul>
-<li>嵌套</li>
-<li>变量</li>
-<li>循环语句</li>
-<li>条件语句</li>
-<li>自动前缀</li>
-<li>单位转换</li>
-<li>mixin 复用</li>
-</ul>
-<p>面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可~</p>
-<h2><span id="pyou-na-xie">有哪些</span><a href="#pyou-na-xie" class="header-anchor">#</a></h2>
-<ul>
-<li>Less</li>
-<li>Sass</li>
-<li>Stylus</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210305/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210305</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210305/" class="post-title-link" itemprop="url">CSS 居中布局</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 22:39:40" itemprop="dateCreated datePublished" datetime="2021-01-31T22:39:40+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:18" itemprop="dateModified" datetime="2021-02-01T19:03:18+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="ju-zhong-bu-ju">居中布局</span><a href="#ju-zhong-bu-ju" class="header-anchor">#</a></h1>
-<h2><span id="pshui-ping-ju-zhong">水平居中</span><a href="#pshui-ping-ju-zhong" class="header-anchor">#</a></h2>
-<ul>
-<li>行元素 <code>text-align: center</code></li>
-<li>块元素 <code>margin: 0 auto</code></li>
-<li><code>absolute + transform</code></li>
-<li><code>flex + justify-content: center</code></li>
-</ul>
-<h2><span id="pchui-zhi-ju-zhong">垂直居中</span><a href="#pchui-zhi-ju-zhong" class="header-anchor">#</a></h2>
-<ul>
-<li><code>line-height: height</code></li>
-<li><code>absolute + transform</code></li>
-<li><code>flex + align-items: center</code></li>
-<li><code>table</code></li>
-</ul>
-<h2><span id="pshui-ping-chui-zhi-ju-zhong">水平垂直居中</span><a href="#pshui-ping-chui-zhi-ju-zhong" class="header-anchor">#</a></h2>
-<ul>
-<li>line-height</li>
-<li>absolute + margin auto</li>
-<li>absolute + 负 margin</li>
-<li>absolute + calc</li>
-<li>absolute + transform: translate</li>
-<li>flex</li>
-</ul>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.box</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
-  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>writing-mode</li>
-<li>table</li>
-<li>css-table</li>
-<li>grid</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2525,14 +2610,14 @@ width: @test;<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">187</span>
+          <span class="site-state-item-count">193</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">77</span>
+        <span class="site-state-item-count">81</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
