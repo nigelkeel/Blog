@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181101/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -209,10 +209,10 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181101</span>
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210101</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/181101/" class="post-title-link" itemprop="url">版本管理</a>
+            <a href="/210101/" class="post-title-link" itemprop="url">HTML & 网页基础</a>
         </h2>
 
         <div class="post-meta">
@@ -222,14 +222,1768 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-31 09:39:56" itemprop="dateCreated datePublished" datetime="2021-01-31T09:39:56+08:00">2021-01-31</time>
+              <time title="创建时间：2021-01-30 12:42:43" itemprop="dateCreated datePublished" datetime="2021-01-30T12:42:43+08:00">2021-01-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:24:34" itemprop="dateModified" datetime="2021-02-01T18:24:34+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-01 18:31:38" itemprop="dateModified" datetime="2021-02-01T18:31:38+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2101%EF%BC%9AHTML/" itemprop="url" rel="index"><span itemprop="name">2101：HTML</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="html-amp-wang-ye-ji-chu">HTML &amp; 网页基础</span><a href="#html-amp-wang-ye-ji-chu" class="header-anchor">#</a></h1>
+<h2><span id="pyi-ji-ben-jie-gou">一、基本结构</span><a href="#pyi-ji-ben-jie-gou" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 版本声明 --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 根文档 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- 头部 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- 主体 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
+<p>用<code>&lt;!-- </code>和<code>--&gt;</code>包裹起来。</p>
+<h2><span id="p2-wen-dang-ban-ben-sheng-ming">2、文档版本声明</span><a href="#p2-wen-dang-ban-ben-sheng-ming" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>给浏览器声明，告诉浏览器应该按照 HTML5 的规范解析当前页面。 <strong>如果不写，浏览器就是按照自己默认的模式解析。</strong></p>
+<p>版本声明必须写在第一行。我们不把他看做一个 html 标签，而是把它当做一个指令，并且这个指令对大小写不敏感。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- html 4 的 版本说明(了解) --></span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span> <span class="token name">PUBLIC</span> <span class="token string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> <span class="token string">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2><span id="p3-html-head-body-biao-qian">3、html 、head、body 标签</span><a href="#p3-html-head-body-biao-qian" class="header-anchor">#</a></h2>
+<p><code>html</code> 是一个双标签，所有网页内容全部书写在 html 标签中。<code>lang</code>就是 html 标签的属性，<code>en</code>就是<code>lang</code>属性的值，属性是对当前标签的信息的扩展。</p>
+<p><code>head</code> 标签代表网页的头部，不会显示在网页中。主要是包含了标题，网页的描述，字符编码等等一些信息。</p>
+<p><code>body</code> 标签是网页显示的主体内容。</p>
+<h2><span id="p4-meta-biao-qian">4、meta 标签</span><a href="#p4-meta-biao-qian" class="header-anchor">#</a></h2>
+<p>控制网页的<strong>元信息</strong>（信息的信息），根据属性的不同，有很多的作用。</p>
+<h2><span id="p5-jie-jue-wang-ye-luan-ma-wen-ti">5、解决网页乱码问题</span><a href="#p5-jie-jue-wang-ye-luan-ma-wen-ti" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>charset</code>即字符编码。<code>utf-8</code>称作为万国码。</p>
+<hr>
+<p>W3C标准<br>
+HTML，超文本标记语言<br>
+XML，可标记扩展语言</p>
+<p>网页的组成<br>
+结构 Structure<br>
+表现 Presentation<br>
+行为 Behavior</p>
+<p>HTML 基本结构<br>
+doctype<br>
+<code>&lt;!doctype html&gt;</code><br>
+html/head/body<br>
+title<br>
+meta charset<br>
+<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code><br>
+meta keywords<br>
+注释</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/200104/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">200104</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/200104/" class="post-title-link" itemprop="url">HTML 5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 17:05:30" itemprop="dateCreated datePublished" datetime="2021-01-30T17:05:30+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:32:50" itemprop="dateModified" datetime="2021-02-01T18:32:50+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2101%EF%BC%9AHTML/" itemprop="url" rel="index"><span itemprop="name">2101：HTML</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="html-5">HTML 5</span><a href="#html-5" class="header-anchor">#</a></h1>
+<p>新增标签<br>
+header<br>
+footer<br>
+表单增强<br>
+画布 Canvas<br>
+地理 Geolocation<br>
+音视频<br>
+自定义属性<br>
+本地存储 localStorage/seesionStorege<br>
+拖拽释放<br>
+WebWorker<br>
+WebSocket</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/182001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">182001</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/182001/" class="post-title-link" itemprop="url">Kindle 使用教程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-02 16:22:59" itemprop="dateCreated datePublished" datetime="2021-02-02T16:22:59+08:00">2021-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-03 01:31:05" itemprop="dateModified" datetime="2021-02-03T01:31:05+08:00">2021-02-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1820%EF%BC%9A%E5%90%84%E7%A7%8D%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87/" itemprop="url" rel="index"><span itemprop="name">1820：各种电子设备</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>基于 <code>Kindle Paperwhite</code></p>
+</blockquote>
+<h2><span id="pyi-ji-ben-shi-yong">一、基本使用</span><a href="#pyi-ji-ben-shi-yong" class="header-anchor">#</a></h2>
+<h2><span id="per-xia-zai-dian-zi-shu">二、下载电子书</span><a href="#per-xia-zai-dian-zi-shu" class="header-anchor">#</a></h2>
+<h3><span id="p1-zhi-chi-de-ge-shi">1、支持的格式</span><a href="#p1-zhi-chi-de-ge-shi" class="header-anchor">#</a></h3>
+<ol>
+<li>亚马逊格式：<code>mobi</code> <code>azw</code></li>
+<li>电子书标准格式 <code>epub</code></li>
+<li>PDF <code>pdf</code> （尺寸过大的PDF显示效果不佳）</li>
+<li>Word 格式：<code>doc</code> <code>docx</code></li>
+<li>图片 <code>jpg</code> <code>jpeg</code> <code>png</code> <code>bmp</code></li>
+<li>纯文本 <code>txt</code></li>
+<li>网页 <code>htm</code> <code>html</code></li>
+<li>RTF</li>
+</ol>
+<p>推荐导入格式：<code>mobi</code> <code>azw</code> <code>epub</code>。</p>
+<h3><span id="p2-xia-zai-dian-zi-shu-de-wang-zhan">2、下载电子书的网站</span><a href="#p2-xia-zai-dian-zi-shu-de-wang-zhan" class="header-anchor">#</a></h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://cn.epubee.com/books/%EF%BC%88%E4%BB%98%E8%B4%B9%EF%BC%89">http://cn.epubee.com/books/（付费）</a></li>
+</ul>
+<h2><span id="psan-dao-ru-dian-zi-shu">三、导入电子书</span><a href="#psan-dao-ru-dian-zi-shu" class="header-anchor">#</a></h2>
+<p>下载 Calibre 软件，通过数据线连接电脑之后可以直接导入<br>
+可以通过配置亚马逊账号，通过邮件导入，你的设备需要连接 Wi-Fi</p>
+<h3><span id="p1-calibre-fang-shi">1、Calibre 方式</span><a href="#p1-calibre-fang-shi" class="header-anchor">#</a></h3>
+<p>第一步：<a target="_blank" rel="noopener" href="https://calibre-ebook.com/download">下载</a>，并安装</p>
+<h3><span id="p2-you-xiang-fang-shi">2、邮箱方式</span><a href="#p2-you-xiang-fang-shi" class="header-anchor">#</a></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181808/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181808</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181808/" class="post-title-link" itemprop="url">Hexo 和 Typora 本地图片路径兼容问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-02 15:20:37 / 修改时间：16:03:47" itemprop="dateCreated datePublished" datetime="2021-02-02T15:20:37+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>目标是使 <code>Typora </code>和 <code>Hexo</code> 能正常的渲染本地图片<br>
+假设图片目录是 <code>yourBlog/source/images/test.jpg</code><br>
+在<code>_post/test.md</code> 使用该图片就需要加 <code>typora-root-url: ..</code><br>
+在<code>_post/文件夹/test.md</code> 使用该图片就需要加 <code>typora-root-url: ..\..</code><br>
+以此类推<br>
+图片的路径则为 <code>/images/test.jpg</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181807/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181807</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181807/" class="post-title-link" itemprop="url">Hexo 渲染 mathjax</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-02 14:49:42 / 修改时间：14:51:49" itemprop="dateCreated datePublished" datetime="2021-02-02T14:49:42+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="1-xiu-gai-next-zhu-ti-pei-zhi-wen-jian">1、修改 <code>NexT</code> 主题配置文件</span><a href="#1-xiu-gai-next-zhu-ti-pei-zhi-wen-jian" class="header-anchor">#</a></h1>
+<p>搜索 <code>mathjax</code>，把 <code>enable</code> 修改为 <code>true</code></p>
+<h1><span id="2-zai-xu-yao-shi-yong-de-wen-zhang-tian-jia-shu-xing">2、在需要使用的文章添加属性</span><a href="#2-zai-xu-yao-shi-yong-de-wen-zhang-tian-jia-shu-xing" class="header-anchor">#</a></h1>
+<p>在 <code>Front Matter</code> 里添加 <code>mathjax: true</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181806/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181806</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181806/" class="post-title-link" itemprop="url">Hexo 渲染 mermaid</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-02 14:38:16 / 修改时间：14:40:11" itemprop="dateCreated datePublished" datetime="2021-02-02T14:38:16+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="1-an-zhuang">1、安装</span><a href="#1-an-zhuang" class="header-anchor">#</a></h1>
+<p><code>npm install hexo-filter-mermaid-diagrams --save</code></p>
+<h1><span id="2-zai-next-zhu-ti-zhong-pei-zhi">2、在 <code>NexT</code> 主题中配置</span><a href="#2-zai-next-zhu-ti-zhong-pei-zhi" class="header-anchor">#</a></h1>
+<p>搜索关键字 <code>mermaid</code>，把 <code>enable</code> 改成 <code>true</code></p>
+<h1><span id="3-chong-xin-bu-shu">3、重新部署</span><a href="#3-chong-xin-bu-shu" class="header-anchor">#</a></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean
+hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181805/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181805</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181805/" class="post-title-link" itemprop="url">Hexo 渲染 emoji 表情</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-02 14:25:29 / 修改时间：14:46:37" itemprop="dateCreated datePublished" datetime="2021-02-02T14:25:29+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="1-an-zhuang-xin-de-xuan-ran-qi">1、安装新的渲染器</span><a href="#1-an-zhuang-xin-de-xuan-ran-qi" class="header-anchor">#</a></h1>
+<p>如果已经安装，请跳过</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cd yourBlog
+npm uninstall hexo-render-marked --save
+npm i hexo-renderer-markdown-it --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1><span id="2-an-zhuang-cha-jian">2、安装插件</span><a href="#2-an-zhuang-cha-jian" class="header-anchor">#</a></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install markdown-it-emoji --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="3-bian-ji-zhan-dian-pei-zhi-wen-jian">3、编辑站点配置文件</span><a href="#3-bian-ji-zhan-dian-pei-zhi-wen-jian" class="header-anchor">#</a></h1>
+<p>在博客根目录的 <code>_config.yml</code><br>
+在 <code>markdown --&gt; plugins</code> 中添加一项：<code>markdown-it-emoji</code></p>
+<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor">#</a></h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fsong/p/5929773.html">Hexo中添加emoji表情</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181804/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181804</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181804/" class="post-title-link" itemprop="url">Hexo 添加自定义属性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 18:30:01" itemprop="dateCreated datePublished" datetime="2021-02-01T18:30:01+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 11:41:01" itemprop="dateModified" datetime="2021-02-02T11:41:01+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="hexo-tian-jia-zi-ding-yi-shu-xing">Hexo 添加自定义属性</span><a href="#hexo-tian-jia-zi-ding-yi-shu-xing" class="header-anchor">#</a></h1>
+<p>通过在 <code>Front Matter</code> 中添加自定义属性。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181803/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181803</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181803/" class="post-title-link" itemprop="url">Hexo 随机跳转文章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 16:26:17 / 修改时间：18:29:30" itemprop="dateCreated datePublished" datetime="2021-02-01T16:26:17+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="hexo-sui-ji-tiao-zhuan-wen-zhang">Hexo 随机跳转文章</span><a href="#hexo-sui-ji-tiao-zhuan-wen-zhang" class="header-anchor">#</a></h1>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm i object-assign
+npm i hexo-generator-random
+hexo clean
+hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果在 public 目录看到 random.html 文件，说明功能正常<br>
+之后只要调用 <code>/random</code> 即可实现随机跳转（只能跳你设置好的正式地址，无法跳转到 <code>localhost</code> 相关地址），建议是添加一个新的菜单页</p>
+<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="https://cndrew.cn/2019/10/19/plugin/">https://cndrew.cn/2019/10/19/plugin/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181802/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181802</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181802/" class="post-title-link" itemprop="url">Hexo 内嵌脑图</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-28 14:14:36" itemprop="dateCreated datePublished" datetime="2021-01-28T14:14:36+08:00">2021-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:29:25" itemprop="dateModified" datetime="2021-02-01T18:29:25+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="hexo-nei-qian-nao-tu">Hexo 内嵌脑图</span><a href="#hexo-nei-qian-nao-tu" class="header-anchor">#</a></h1>
+<p>工具:</p>
+<ul>
+<li>MindManager 2020</li>
+<li>Hexo</li>
+</ul>
+<p>第一步: MindManager 导出，选择 <code>HTML5 交互式导图</code>，选择局部导出<br>
+第二步: 在 Hexo 博客目录的 source 目录下新建一个 map 文件夹（也可以是其他名字）<br>
+第三步: 编辑 Hexo 博客目录下的 <code>_config.yml</code> ，搜索 <code>skip_render</code>，在下面添加 <code>&quot;map/**&quot;</code>，保存。<br>
+第四步: <code>hexo clean</code><br>
+第五步: 在你想插入导图的页面:</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../map/1.html<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181801/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181801</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181801/" class="post-title-link" itemprop="url">Hexo</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 00:14:45" itemprop="dateCreated datePublished" datetime="2021-02-01T00:14:45+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 14:37:59" itemprop="dateModified" datetime="2021-02-02T14:37:59+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="hexo">Hexo</span><a href="#hexo" class="header-anchor">#</a></h1>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
+<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1>
+<h2><span id="p1-an-zhuang">1、安装</span><a href="#p1-an-zhuang" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="p2-xin-jian-bo-ke">2、新建博客</span><a href="#p2-xin-jian-bo-ke" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init 博客名称
+cd 博客名称
+npm i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p3-chang-yong-ming-ling">3、常用命令</span><a href="#p3-chang-yong-ming-ling" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 启动博客（本地服务器）打开 localhost:4000 查看
+hexo s
+
+# 清除缓存
+hexo clean
+
+# 构建
+hexo g
+
+# 把代码推送到远程仓库
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="p4-bo-ke-pei-zhi">4、博客配置</span><a href="#p4-bo-ke-pei-zhi" class="header-anchor">#</a></h2>
+<p>博客根目录下的 <code>_config</code> 为 <strong>博客配置文件</strong><br>
+主题目录下的 <code>_config</code> 为 <strong>主题配置文件</strong></p>
+<h2><span id="p5-zhu-ti-pei-zhi">5、主题配置</span><a href="#p5-zhu-ti-pei-zhi" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题库</a></p>
+<p>这边推荐 NEXT 主题。</p>
+<h3><span id="pan-zhuang-next-zhu-ti">安装NEXT主题</span><a href="#pan-zhuang-next-zhu-ti" class="header-anchor">#</a></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next
+cd themes&#x2F;next
+npm i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>修改 博客根目录下 <code>_config</code>  文件 里面的主题为 <code>next</code></p>
+<h2><span id="p6-github-page-gitee-page">6、Github Page / Gitee Page</span><a href="#p6-github-page-gitee-page" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># _config.yml
+
+# git 配置
+deploy:
+  type: git
+  repo: https&#x2F;&#x2F; .... .git
+  branch: master
+  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>推上去</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="er-xie-zuo">二、写作</span><a href="#er-xie-zuo" class="header-anchor">#</a></h1>
+<h2><span id="p1-yaml-front-matter">1、YAML Front Matter</span><a href="#p1-yaml-front-matter" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">---
+title: 这是标题
+
+## 这是创建时间、更新时间
+date: 2020-10-01
+updated: 2020-12-21
+
+## 这是标签
+tags: 标签
+tags: [标签一, 标签二]
+
+
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1><span id="san-cha-jian">三、插件</span><a href="#san-cha-jian" class="header-anchor">#</a></h1>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">插件库</a></p>
+<h2><span id="pmu-lu-sheng-cheng">目录生成</span><a href="#pmu-lu-sheng-cheng" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-toc --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># _config.yml
+
+toc:
+  # 目录深度，最多生成三级目录
+  maxDepth: 3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="psou-suo">搜索</span><a href="#psou-suo" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-generator-search --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="pdai-ma-gao-liang">代码高亮</span><a href="#pdai-ma-gao-liang" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm i -S hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p>
+<pre class="line-numbers language-YAML" data-language="YAML"><code class="language-YAML">prism_plugin:
+  mode: &#39;preprocess&#39;    # realtime&#x2F;preprocess
+  theme: &#39;tomorrow&#39;     #主题选项
+  line_number: false    # default false
+  custom_css:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可用的主题有</p>
+<blockquote>
+<p>coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,hopscotch,material-dark,material-light,material-oceanic,pojoaque,shades-of-purple,synthwave84,vs,xonokai,default,</p>
+</blockquote>
+<h2><span id="pping-lun">评论</span><a href="#pping-lun" class="header-anchor">#</a></h2>
+<h2><span id="pyuan-cheng-bian-ji">远程编辑</span><a href="#pyuan-cheng-bian-ji" class="header-anchor">#</a></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181501/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181501</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181501/" class="post-title-link" itemprop="url">Photoshop</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 00:33:11" itemprop="dateCreated datePublished" datetime="2021-02-01T00:33:11+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 11:59:59" itemprop="dateModified" datetime="2021-02-02T11:59:59+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1815%EF%BC%9APhotoshop/" itemprop="url" rel="index"><span itemprop="name">1815：Photoshop</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="adobe-photoshop">Adobe Photoshop</span><a href="#adobe-photoshop" class="header-anchor">#</a></h1>
+<ul>
+<li>关于蒙版：黑色画笔变透明露出背景，白色画笔恢复，使用灰色做为过渡，也可以利用渐变工具做无缝拼贴。优点是可以不破坏原图。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181401/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181401</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181401/" class="post-title-link" itemprop="url">Microsoft Office</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 01:02:10 / 修改时间：15:28:40" itemprop="dateCreated datePublished" datetime="2021-02-01T01:02:10+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1814%EF%BC%9AMS-Office/" itemprop="url" rel="index"><span itemprop="name">1814：MS-Office</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="microsoft-office">Microsoft Office</span><a href="#microsoft-office" class="header-anchor">#</a></h1>
+<ul>
+<li>快捷键F4：重复上一步操作。</li>
+<li>快捷键Shift + F3。对指定的英文字母进行大小写切换，有三种模式，如test、Test、TEST。</li>
+<li>双击格式刷可以多次使用格式刷。</li>
+<li>Ctrl+E，这是快速填充的快捷键。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181205/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181205</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181205/" class="post-title-link" itemprop="url">VSCode 拼写检查</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 10:09:00" itemprop="dateCreated datePublished" datetime="2021-01-31T10:09:00+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:27:14" itemprop="dateModified" datetime="2021-02-01T18:27:14+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="pcode-spell-checker-si-xing-tui-jian">Code Spell Checker  - 四星推荐</span><a href="#pcode-spell-checker-si-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>代码拼写检查。</p>
+<p>配置忽略词 <code>Ignore Words</code></p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&quot;cSpell.ignoreWords&quot;: [
+    &quot;vuex&quot;,
+    &quot;stylesheet&quot;,
+    &quot;Nprogress&quot;,
+    &quot;swiper&quot;,
+    &quot;mockjs&quot;,
+    &quot;rgba&quot;,
+    &quot;tahoma&quot;,
+    &quot;nowrap&quot;,
+    &quot;clearfix&quot;,
+    &quot;nbsp&quot;
+],<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181204</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181204/" class="post-title-link" itemprop="url">VSCode Prettier & 代码格式化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 10:07:01" itemprop="dateCreated datePublished" datetime="2021-01-31T10:07:01+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:27:02" itemprop="dateModified" datetime="2021-02-01T18:27:02+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="prettier-amp-dai-ma-ge-shi-hua">Prettier &amp; 代码格式化</span><a href="#prettier-amp-dai-ma-ge-shi-hua" class="header-anchor">#</a></h1>
+<p>项目根目录 新建 <code>.prettierrc</code> 配置文件</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&#123;
+  &quot;semi&quot;: false, &#x2F;&#x2F; 句末是否加分号
+  &quot;singleQuote&quot;: true &#x2F;&#x2F; 用单引号
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pbeautify-wu-xing-tui-jian">Beautify - 五星推荐</span><a href="#pbeautify-wu-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>代码格式美化。<br>
+对象不会自动换行</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&quot;beautify.config&quot;: &#123;
+    &quot;brace_style&quot;: &quot;collapse,preserve-inline&quot;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181203</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181203/" class="post-title-link" itemprop="url">VSCode 插件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 09:57:51" itemprop="dateCreated datePublished" datetime="2021-01-31T09:57:51+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:26:27" itemprop="dateModified" datetime="2021-02-01T18:26:27+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="vscode-cha-jian">VSCode 插件</span><a href="#vscode-cha-jian" class="header-anchor">#</a></h1>
+<h2><span id="pyi-cha-jian-yi-lan">一、插件一览</span><a href="#pyi-cha-jian-yi-lan" class="header-anchor">#</a></h2>
+<ol>
+<li>Chinese (Simplified) Language Pack for Visual Studio Code - 中文语言包</li>
+<li>Markdown All in One</li>
+<li>Markdown Perview Eehanced</li>
+<li>HTML CSS Support：智能提示CSS类名以及id</li>
+<li>Python</li>
+<li>Python for VSCode</li>
+<li>Beautify 代码格式化 --&gt; Prettier</li>
+<li>Prettier</li>
+<li>Code Spell Checker（推荐） - 代码拼写检查</li>
+<li>TabNine</li>
+<li>Better Comments - 更好的注释</li>
+<li>Rainbow Brackets</li>
+<li>Auto Rename Tag：自动完成另一侧标签的同步修改</li>
+<li>Easy LESS - 自动编译LESS</li>
+<li>Live Server - HTML 服务器</li>
+<li>Path Autocomplete</li>
+<li>Path Intellisense：自动提示文件路径，支持各种快速引入文件</li>
+<li><a target="_blank" rel="noopener" href="http://Draw.io">Draw.io</a> Integration：画图</li>
+<li>A-super-comprehensive：代码补全合集</li>
+<li>Reactjs code snippets</li>
+<li>React Redux ES6 Snippets</li>
+<li>ES7 React/Redux/React-Native/JS snippets</li>
+<li>Auto Close Tag：自动闭合HTML/XML标签</li>
+<li>Bracket Pair Colorizer：给括号加上不同的颜色，便于区分不同的区块，使用者可以定义不同括号类型和不同颜色</li>
+<li>Debugger for Chrome：映射vscode上的断点到chrome上，方便调试</li>
+<li>GitLens：方便查看git日志，git重度使用者必备</li>
+<li>HTML Snippets：智能提示HTML标签，以及标签含义</li>
+<li>JavaScript(ES6) code snippets：ES6语法智能提示，以及快速输入，不仅仅支持.js，还支持.ts，.jsx，.tsx，.html，.vue，省去了配置其支持各种包含js代码文件的时间</li>
+<li>open in browser：vscode不像IDE一样能够直接在浏览器中打开html，而该插件支持快捷键与鼠标右键快速在浏览器中打开html文件，支持自定义打开指定的浏览器，包括：Firefox，Chrome，Opera，IE以及Safari</li>
+<li>React/Redux/react-router Snippets：React/Redux/react-router语法智能提示</li>
+<li>Vetur：Vue多功能集成插件，包括：语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger。vscode官方钦定Vue插件，Vue开发者必备。</li>
+<li>vscode-icon：让 vscode 资源树目录加图标</li>
+<li>CSS Peek：使用此插件，你可以追踪至样式表中 CSS 类和 ids 定义的地方。当你在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码。</li>
+<li>Color Info：提供你在 CSS中使用颜色的相关信息。你只需在颜色上悬停光标，就可以预览色块中色彩模型的（HEX、 RGB、HSL 和 CMYK）相关信息了。</li>
+<li>Window Colors：每个VSCode窗口都可以独特地自动着色。</li>
+<li>live server：开启本地服务器</li>
+</ol>
+<h2><span id="peslint-si-xing-tui-jian">ESLint - 四星推荐</span><a href="#peslint-si-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>代码检查。</p>
+<h2><span id="ptabnine-si-xing-tui-jian">TabNine - 四星推荐</span><a href="#ptabnine-si-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>神奇的扩展，根据Github中超过两百万个文件的训练。可以根据你输入的文本预测你接下来的输入。</p>
+<h2><span id="ppower-mode-san-xing-tui-jian">Power Mode - 三星推荐</span><a href="#ppower-mode-san-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>趣味性插件。</p>
+<p>然后我们点击安装，安装后我们按下键盘组合键 Ctrl + Shift + P，然后输入 setting，打开 JSON 配置文件</p>
+<p>在最后添加下面三行配置：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">&quot;powermode.enabled&quot;: true, 
+
+&#x2F;&#x2F; 开启 Power Mode
+&quot;powermode.shakeIntensity&quot;: 0, 
+
+&#x2F;&#x2F; 关闭抖动（喜欢的也可以选择不关闭）
+
+&quot;powermode.presets&quot;: &quot;particles&quot;, 
+&#x2F;&#x2F; 特效预设，还有 &quot;fireworks&quot;, &quot;flames&quot;, &quot;magic&quot;, &quot;clippy&quot;, &quot;simple-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="pbracket-pair-colorizer-si-xing-tui-jian">Bracket Pair Colorizer - 四星推荐</span><a href="#pbracket-pair-colorizer-si-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>快速区分括号位置和类型。</p>
+<p><a target="_blank" rel="noopener" href="https://www.juejin.im/post/6862510480397697038">https://www.juejin.im/post/6862510480397697038</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181202/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181202</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181202/" class="post-title-link" itemprop="url">VSCode 快捷</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 09:57:31" itemprop="dateCreated datePublished" datetime="2021-01-31T09:57:31+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:26:12" itemprop="dateModified" datetime="2021-02-01T18:26:12+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="vscode-kuai-jie">VSCode 快捷</span><a href="#vscode-kuai-jie" class="header-anchor">#</a></h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ycx60rzvvbj/article/details/105775469">https://blog.csdn.net/ycx60rzvvbj/article/details/105775469</a></p>
+<p>F11 全屏/退出全屏</p>
+<p>Home/End 行头/行尾</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>CTRL</th>
+<th>CTRL + SHIFT</th>
+<th>CTRL + ALT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>==编辑器 - 全选==</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>B</td>
+<td>侧边栏隐藏/显示</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td>==编辑器 - 复制==</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D</td>
+<td></td>
+<td>显示 debug</td>
+<td></td>
+</tr>
+<tr>
+<td>K</td>
+<td>==编辑器 - 全部折叠==</td>
+<td></td>
+<td>编辑器 - 全部展开</td>
+</tr>
+<tr>
+<td>N</td>
+<td>新建文件</td>
+<td>新建编辑器</td>
+<td></td>
+</tr>
+<tr>
+<td>O</td>
+<td></td>
+<td>显示 output</td>
+<td></td>
+</tr>
+<tr>
+<td>W</td>
+<td>关闭当前文件</td>
+<td>关闭当前编辑器</td>
+<td></td>
+</tr>
+<tr>
+<td>X</td>
+<td>编辑器 - 剪切</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>/?</td>
+<td>==编辑器 - 注释==</td>
+<td>==编辑器 - 注释多行==</td>
+<td></td>
+</tr>
+<tr>
+<td>\ |</td>
+<td>切出去分栏</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ / ]</td>
+<td>代码缩进</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TAB</td>
+<td>切换文件</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>enter</td>
+<td>行下插入</td>
+<td>行上插入</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>+ / -</td>
+<td>放大 / 缩小</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>滚轮拖 书写多行</p>
+<p>shift + alt + F 格式化</p>
+<p>shift + end/home 选择从光标到行尾、行首的内容</p>
+<p>ctrl + delete 删除当前</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181201/" class="post-title-link" itemprop="url">VSCode</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 09:56:51" itemprop="dateCreated datePublished" datetime="2021-01-31T09:56:51+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:25:55" itemprop="dateModified" datetime="2021-02-01T18:25:55+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="vscode">VSCode</span><a href="#vscode" class="header-anchor">#</a></h1>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181104/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181104</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181104/" class="post-title-link" itemprop="url">Git 常用命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 09:43:07" itemprop="dateCreated datePublished" datetime="2021-01-31T09:43:07+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:25:38" itemprop="dateModified" datetime="2021-02-01T18:25:38+08:00">2021-02-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,14 +2006,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="ban-ben-guan-li">版本管理</span><a href="#ban-ben-guan-li" class="header-anchor">#</a></h1>
-<p>本部分主要内容：</p>
-<ul>
-<li>SVN</li>
-<li>Git</li>
-<li>Git + Github</li>
-<li>Github Pages</li>
-</ul>
+          <h1><span id="git-chang-yong-ming-ling">Git 常用命令</span><a href="#git-chang-yong-ming-ling" class="header-anchor">#</a></h1>
 
       
     </div>
@@ -279,7 +2026,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181009/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181103/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -292,10 +2039,10 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181009</span>
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181103</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/181009/" class="post-title-link" itemprop="url">Markdown 使用心得</a>
+            <a href="/181103/" class="post-title-link" itemprop="url">Git</a>
         </h2>
 
         <div class="post-meta">
@@ -305,14 +2052,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-28 14:14:36" itemprop="dateCreated datePublished" datetime="2021-01-28T14:14:36+08:00">2021-01-28</time>
+              <time title="创建时间：2021-01-31 09:42:32" itemprop="dateCreated datePublished" datetime="2021-01-31T09:42:32+08:00">2021-01-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:16:04" itemprop="dateModified" datetime="2021-02-02T14:16:04+08:00">2021-02-02</time>
+                <time title="修改时间：2021-02-01 18:25:27" itemprop="dateModified" datetime="2021-02-01T18:25:27+08:00">2021-02-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,7 +2067,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
+                  <a href="/categories/1811%EF%BC%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1811：版本管理</span></a>
                 </span>
             </span>
 
@@ -335,2466 +2082,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2><span id="p1-lian-jie-de-wen-jian-ming-zi-dai-kong-ge-bu-shi-bie-zen-me-ban">1、链接的文件名字带空格不识别怎么办？</span><a href="#p1-lian-jie-de-wen-jian-ming-zi-dai-kong-ge-bu-shi-bie-zen-me-ban" class="header-anchor">#</a></h2>
-<p>解决: 在链接中用<code>%20</code>替代空格的书写</p>
-<h2><span id="p2-yong-jiu-cha-ru-tu-pian">2、永久插入图片</span><a href="#p2-yong-jiu-cha-ru-tu-pian" class="header-anchor">#</a></h2>
-<p>首先将图片通过在线转码工具转换成base64的编码，并用以下格式嵌入即可，格式如下：</p>
-<p><code>![image] (base64)</code></p>
-<p>但是由于这base64编码往往都很长，很占篇幅，因此我们可以给图片编号，并将所有的图片base64编码放在文档的最后即可，格式如下：</p>
-<ul>
-<li>在插入图片的地方使用：<code>![image] [图片编号]</code></li>
-<li>在文档最后使用：<code>[图片编号]:base64编码</code></li>
-</ul>
-<p>这样即可完成图片的永久插入！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181008/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181008</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181008/" class="post-title-link" itemprop="url">Mermaid</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 00:56:17" itemprop="dateCreated datePublished" datetime="2021-02-01T00:56:17+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:41:46" itemprop="dateModified" datetime="2021-02-02T14:41:46+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。<br>
-本文基于 Typora。</p>
-<h2><span id="pliu-cheng-tu">流程图</span><a href="#pliu-cheng-tu" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid"> graph TD;
-    A-->B;
-    A-->C;
-    B-->D;</pre>
-<h2><span id="pshi-xu-tu">时序图</span><a href="#pshi-xu-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>-&gt;&gt;</code> 代表实线箭头，<code>--&gt;&gt;</code> 则代表虚线。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid">sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!</pre>
-<h2><span id="pzhuang-tai-tu">状态图</span><a href="#pzhuang-tai-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>[*]</code> 表示开始或者结束，如果在箭头右边则表示结束。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">stateDiagram
-    [*] --&gt; s1
-    s1 --&gt; [*]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid">stateDiagram
-    [*] --> s1
-    s1 --> [*]</pre>
-<h2><span id="plei-tu">类图</span><a href="#plei-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>&lt;|--</code> 表示继承，<code>+</code> 表示 <code>public</code>，<code>-</code> 表示 <code>private</code>。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">classDiagram
-      Animal &lt;|-- Duck
-      Animal &lt;|-- Fish
-      Animal &lt;|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck&#123;
-          +String beakColor
-          +swim()
-          +quack()
-      &#125;
-      class Fish&#123;
-          -int sizeInFeet
-          -canEat()
-      &#125;
-      class Zebra&#123;
-          +bool is_wild
-          +run()
-      &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid">classDiagram
-      Animal <|-- duck animal <|-- fish zebra : +int age +string gender animal: +ismammal() +mate() class duck{ beakcolor +swim() +quack() } fish{ -int sizeinfeet -caneat() zebra{ +bool is_wild +run() }< pre>
-<h2><span id="pgan-te-tu">甘特图</span><a href="#pgan-te-tu" class="header-anchor">#</a></h2>
-<p>甘特图一般用来表示项目的计划排期，目前在工作中经常会用到。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">gantt
-    title 工作计划
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2020-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2020-01-12  , 12d
-    another task      : 24d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid">gantt
-    title 工作计划
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2020-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2020-01-12  , 12d
-    another task      : 24d</pre>
-<h2><span id="pbing-tu">饼图</span><a href="#pbing-tu" class="header-anchor">#</a></h2>
-<p>饼图使用 <code>pie</code> 表示，标题下面分别是区域名称及其百分比。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">pie
-    title Key elements in Product X
-    &quot;Calcium&quot; : 42.96
-    &quot;Potassium&quot; : 50.05
-    &quot;Magnesium&quot; : 10.01
-    &quot;Iron&quot; :  5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="mermaid">pie
-    title Key elements in Product X
-    "Calcium" : 42.96
-    "Potassium" : 50.05
-    "Magnesium" : 10.01
-    "Iron" :  5</pre>
-</|--></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181007/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181007</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181007/" class="post-title-link" itemprop="url">MathJax</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 15:33:31" itemprop="dateCreated datePublished" datetime="2021-02-01T15:33:31+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:53:43" itemprop="dateModified" datetime="2021-02-02T14:53:43+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mathjax">MathJax</span><a href="#mathjax" class="header-anchor">#</a></h1>
-<p>在Markdown中输入数学公式需要LaTeX语法的支持。</p>
-<h2><span id="pyi-ji-ben-yu-fa">一、基本语法</span><a href="#pyi-ji-ben-yu-fa" class="header-anchor">#</a></h2>
-<h3><span id="p1-cheng-xian-wei-zhi">1. 呈现位置</span><a href="#p1-cheng-xian-wei-zhi" class="header-anchor">#</a></h3>
-<p>在行内显示用<code>$</code>包围，单独显示用<code>$$</code>包围。</p>
-<h3><span id="p2-shang-biao-he-xia-biao">2. 上标和下标</span><a href="#p2-shang-biao-he-xia-biao" class="header-anchor">#</a></h3>
-<p>上标使用<code>^</code>，下标使用<code>_</code>。</p>
-<h3><span id="p3-fen-shi-he-gen-shi">3. 分式和根式</span><a href="#p3-fen-shi-he-gen-shi" class="header-anchor">#</a></h3>
-<h4><span id="p3-1-fen-shi">3.1 分式</span><a href="#p3-1-fen-shi" class="header-anchor">#</a></h4>
-<p>分式格式为<code>\frac&#123;a&#125;&#123;b</code>，呈现为</p>
-<blockquote>
-<p>$\frac{a}{b}$</p>
-</blockquote>
-<h4><span id="p3-2-gen-shi">3.2 根式</span><a href="#p3-2-gen-shi" class="header-anchor">#</a></h4>
-<p>根式格式为<code>\sqrt[x]&#123;y&#125;</code>，呈现为：</p>
-<blockquote>
-<p>$\sqrt[x]{y}$</p>
-</blockquote>
-<h3><span id="p4-fen-zu-he-gua-hao">4. 分组和括号</span><a href="#p4-fen-zu-he-gua-hao" class="header-anchor">#</a></h3>
-<h4><span id="p4-1-fen-zu">4.1 分组</span><a href="#p4-1-fen-zu" class="header-anchor">#</a></h4>
-<p>使用<code>&#123;&#125;</code>将具有相同等级的内容扩入其中，成组处理。</p>
-<blockquote>
-<p>举例：<code>10^&#123;10&#125;</code>呈现为$10<sup>{10}$，而`10^10`呈现为$10</sup>10$。</p>
-</blockquote>
-<h4><span id="p4-2-gua-hao">4.2 括号</span><a href="#p4-2-gua-hao" class="header-anchor">#</a></h4>
-<ul>
-<li>小括号：<code>()</code>呈现为$()$</li>
-<li>中括号：<code>[]</code>呈现为$[]$</li>
-<li>尖括号：<code>\langle</code>，<code>\rangle</code>呈现为$\langle \rangle$</li>
-<li>此处为与分组符号<code>&#123;&#125;</code>相区别，使用转义字符<code>\</code></li>
-</ul>
-<h3><span id="p5-qiu-he-ji-xian-yu-ji-fen">5. 求和、极限与积分</span><a href="#p5-qiu-he-ji-xian-yu-ji-fen" class="header-anchor">#</a></h3>
-<h4><span id="p5-1-qiu-he">5.1 求和</span><a href="#p5-1-qiu-he" class="header-anchor">#</a></h4>
-<p>求和用<code>\sum</code>。</p>
-<blockquote>
-<p>例：<code>\sum_&#123;i=1&#125;^n&#123;a_i&#125;</code>呈现为$\sum_{i=1}^n{a_i}$</p>
-</blockquote>
-<h4><span id="p5-2-ji-xian">5.2 极限</span><a href="#p5-2-ji-xian" class="header-anchor">#</a></h4>
-<p>极限用<code>\lim</code>。</p>
-<blockquote>
-<p>例：<code>y=\lim_&#123;x\to 0&#125;^&#123;x&#125;</code>呈现为$y=\lim_{x\to 0}^{x}$</p>
-</blockquote>
-<h4><span id="p5-3-ji-fen">5.3 积分</span><a href="#p5-3-ji-fen" class="header-anchor">#</a></h4>
-<p>积分用<code>\int</code>。</p>
-<blockquote>
-<p>例：<code>\int_0^\infty&#123;xdx&#125;</code>呈现为$\int_0^\infty{xdx}$。</p>
-</blockquote>
-<h3><span id="p6-xian-xing-dai-shu">6. 线性代数</span><a href="#p6-xian-xing-dai-shu" class="header-anchor">#</a></h3>
-<h4><span id="p6-1-xiang-liang">6.1 向量</span><a href="#p6-1-xiang-liang" class="header-anchor">#</a></h4>
-<p>向量用<code>\vec</code>，<code>\overrightarrow</code>呈现。</p>
-<blockquote>
-<p>例：</p>
-<ul>
-<li><code>\vec a</code>呈现为$\vec a$</li>
-<li><code>\overrightarrow&#123;AB&#125;</code>呈现为$\overrightarrow{AB}$</li>
-</ul>
-</blockquote>
-<h4><span id="p6-2-ju-zhen">6.2 矩阵</span><a href="#p6-2-ju-zhen" class="header-anchor">#</a></h4>
-<h5><span id="pa-ji-ben">a. 基本</span><a href="#pa-ji-ben" class="header-anchor">#</a></h5>
-<ul>
-<li>起始标记<code>\begin&#123;matrix&#125;</code>，结束标记<code>\end&#123;matrix&#125;</code></li>
-<li>每一行末尾标记<code>\\</code>，行间元素之间以<code>&amp;</code>分隔</li>
-<li>举例</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">$$\begin&#123;matrix&#125;
-1&amp;0&amp;0\\
-0&amp;1&amp;0\\
-0&amp;0&amp;1\\
-\end&#123;matrix&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>呈现为：<br>
-$$\begin{matrix}<br>
-1&amp;0&amp;0\<br>
-0&amp;1&amp;0\<br>
-0&amp;0&amp;1\<br>
-\end{matrix}$$</li>
-</ul>
-<h5><span id="pb-bian-kuang">b. 边框</span><a href="#pb-bian-kuang" class="header-anchor">#</a></h5>
-<p>在起始、结束标记处用下列词替换<code>matrix</code>。</p>
-<ul>
-<li><code>pmatrix</code>：小括号边框</li>
-<li><code>bmatrix</code>：中括号边框</li>
-<li><code>Bmatrix</code>：大括号边框</li>
-<li><code>vmatrix</code>：单竖线边框</li>
-<li><code>Vmatrix</code>：双竖线边框</li>
-</ul>
-<h5><span id="pb-sheng-lue-yuan-su">b. 省略元素</span><a href="#pb-sheng-lue-yuan-su" class="header-anchor">#</a></h5>
-<ul>
-<li>横省略号：<code>\cdots</code></li>
-<li>竖省略号：<code>\vdots</code></li>
-<li>斜省略号：<code>\ddots</code></li>
-<li>举例：</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">$$\begin&#123;bmatrix&#125;
-&#123;a_&#123;11&#125;&#125;&amp;&#123;a_&#123;12&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;1n&#125;&#125;\\
-&#123;a_&#123;21&#125;&#125;&amp;&#123;a_&#123;22&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;2n&#125;&#125;\\
-&#123;\vdots&#125;&amp;&#123;\vdots&#125;&amp;&#123;\ddots&#125;&amp;&#123;\vdots&#125;\\
-&#123;a_&#123;m1&#125;&#125;&amp;&#123;a_&#123;m2&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;mn&#125;&#125;\\
-\end&#123;bmatrix&#125;$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>呈现为：<br>
-$$\begin{bmatrix}<br>
-{a_{11}}&amp;{a_{12}}&amp;{\cdots}&amp;{a_{1n}}\<br>
-{a_{21}}&amp;{a_{22}}&amp;{\cdots}&amp;{a_{2n}}\<br>
-{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}\<br>
-{a_{m1}}&amp;{a_{m2}}&amp;{\cdots}&amp;{a_{mn}}\<br>
-\end{bmatrix}$$</li>
-</ul>
-<h4><span id="p6-3-fang-cheng-zu">6.3 方程组</span><a href="#p6-3-fang-cheng-zu" class="header-anchor">#</a></h4>
-<ul>
-<li>需要cases环境：起始、结束处以<code>&#123;cases&#125;</code>声明。</li>
-<li>例：</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">$$\begin&#123;cases&#125;
-a_1x+b_1y+c_1z&#x3D;d_1\\
-a_2x+b_2y+c_2z&#x3D;d_2\\
-a_3x+b_3y+c_3z&#x3D;d_3\\
-\end&#123;cases&#125;
-$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>呈现为：<br>
-$$\begin{cases}<br>
-a_1x+b_1y+c_1z=d_1\<br>
-a_2x+b_2y+c_2z=d_2\<br>
-a_3x+b_3y+c_3z=d_3\<br>
-\end{cases}<br>
-$$</li>
-</ul>
-<h2><span id="per-kuo-zhan">二、扩展</span><a href="#per-kuo-zhan" class="header-anchor">#</a></h2>
-<h3><span id="p1-xi-la-zi-mu-de-shu-ru">1. 希腊字母的输入</span><a href="#p1-xi-la-zi-mu-de-shu-ru" class="header-anchor">#</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">显示</th>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">显示</th>
-<th style="text-align:center">命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">α</td>
-<td style="text-align:center">\alpha</td>
-<td style="text-align:center">β</td>
-<td style="text-align:center">\beta</td>
-</tr>
-<tr>
-<td style="text-align:center">γ</td>
-<td style="text-align:center">\gamma</td>
-<td style="text-align:center">δ</td>
-<td style="text-align:center">\delta</td>
-</tr>
-<tr>
-<td style="text-align:center">ε</td>
-<td style="text-align:center">\epsilon</td>
-<td style="text-align:center">ζ</td>
-<td style="text-align:center">\zeta</td>
-</tr>
-<tr>
-<td style="text-align:center">η</td>
-<td style="text-align:center">\eta</td>
-<td style="text-align:center">θ</td>
-<td style="text-align:center">\theta</td>
-</tr>
-<tr>
-<td style="text-align:center">ι</td>
-<td style="text-align:center">\iota</td>
-<td style="text-align:center">κ</td>
-<td style="text-align:center">\kappa</td>
-</tr>
-<tr>
-<td style="text-align:center">λ</td>
-<td style="text-align:center">\lambda</td>
-<td style="text-align:center">μ</td>
-<td style="text-align:center">\mu</td>
-</tr>
-<tr>
-<td style="text-align:center">ν</td>
-<td style="text-align:center">\nu</td>
-<td style="text-align:center">ξ</td>
-<td style="text-align:center">\xi</td>
-</tr>
-<tr>
-<td style="text-align:center">π</td>
-<td style="text-align:center">\pi</td>
-<td style="text-align:center">ρ</td>
-<td style="text-align:center">\rho</td>
-</tr>
-<tr>
-<td style="text-align:center">σ</td>
-<td style="text-align:center">\sigma</td>
-<td style="text-align:center">τ</td>
-<td style="text-align:center">\tau</td>
-</tr>
-<tr>
-<td style="text-align:center">υ</td>
-<td style="text-align:center">\upsilon</td>
-<td style="text-align:center">φ</td>
-<td style="text-align:center">\phi</td>
-</tr>
-<tr>
-<td style="text-align:center">χ</td>
-<td style="text-align:center">\chi</td>
-<td style="text-align:center">ψ</td>
-<td style="text-align:center">\psi</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>若需要大写希腊字母，将命令首字母大写即可。</li>
-<li>若需要斜体希腊字母，将命令前加上<code>var</code>前缀即可。</li>
-</ul>
-<h3><span id="p2-te-shu-fu-hao">2. 特殊符号</span><a href="#p2-te-shu-fu-hao" class="header-anchor">#</a></h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">显示</th>
-<th style="text-align:center">命令</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-<p>(待补充)</p>
-<h3><span id="p3-han-shu-de-cheng-xian">3. 函数的呈现</span><a href="#p3-han-shu-de-cheng-xian" class="header-anchor">#</a></h3>
-<ul>
-<li><code>\函数名</code></li>
-<li>举例：<code>\sin x</code>，<code>\ln x</code>，<code>\max(A,B,C)</code>呈现为：</li>
-</ul>
-<blockquote>
-<p>$\sin x$<br>
-$\ln x$<br>
-$\max(A,B,C)$</p>
-</blockquote>
-<h3><span id="p4-zi-ti">4. 字体</span><a href="#p4-zi-ti" class="header-anchor">#</a></h3>
-<ul>
-<li>Typewriter：<code>\mathtt&#123;A&#125;</code>呈现为$\mathtt{ABCDEFG}$</li>
-<li>Blackboard Bold：<code>\mathbb&#123;A&#125;</code>呈现为$\mathbb{ABCDEFG}$</li>
-<li>Sans Serif：<code>\mathsf&#123;A&#125;</code>呈现为$\mathsf{ABCDEFG}$</li>
-</ul>
-<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ethmery/article/details/50670297">https://blog.csdn.net/ethmery/article/details/50670297</a>)<br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/garfielder007/article/details/51646604">https://blog.csdn.net/garfielder007/article/details/51646604</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181006/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181006</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181006/" class="post-title-link" itemprop="url">Typora emoji</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 00:57:51" itemprop="dateCreated datePublished" datetime="2021-02-01T00:57:51+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:33:19" itemprop="dateModified" datetime="2021-02-02T14:33:19+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于 <code>Typora</code> 和 <code>Hexo</code> 显示。</p>
-<h1><span id="cheng-xu-yuan">程序员</span><a href="#cheng-xu-yuan" class="header-anchor">#</a></h1>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>word</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🎨</td>
-<td>art</td>
-<td>改进结构和代码格式</td>
-</tr>
-<tr>
-<td>⚡️</td>
-<td>zap</td>
-<td>优化性能</td>
-</tr>
-<tr>
-<td>🔥</td>
-<td>fire</td>
-<td>移除代码或文件</td>
-</tr>
-<tr>
-<td>🐛</td>
-<td>bug</td>
-<td>修复bug</td>
-</tr>
-<tr>
-<td>✨</td>
-<td>sparkles</td>
-<td>引入新功能</td>
-</tr>
-<tr>
-<td>🍎</td>
-<td>apple</td>
-<td>修复 MacOS 下的问题</td>
-</tr>
-<tr>
-<td>📝</td>
-<td>memo</td>
-<td>更新文档</td>
-</tr>
-<tr>
-<td>🚀</td>
-<td>rocket</td>
-<td>部署新功能</td>
-</tr>
-<tr>
-<td>✅</td>
-<td>white_check_mark</td>
-<td>添加测试用例</td>
-</tr>
-<tr>
-<td>🔖</td>
-<td>bookmark</td>
-<td>发布新版本/新版本标签</td>
-</tr>
-<tr>
-<td>🔒</td>
-<td>lock</td>
-<td>修复安全问题</td>
-</tr>
-<tr>
-<td>🐧</td>
-<td>penguin</td>
-<td>Linux</td>
-</tr>
-<tr>
-<td>🚧</td>
-<td>construction</td>
-<td>更新中，工作进行中</td>
-</tr>
-<tr>
-<td>💚</td>
-<td>green_heart</td>
-<td>修复 CI 构建问题</td>
-</tr>
-<tr>
-<td>🏁</td>
-<td>checkered_flag</td>
-<td>修复 window 下的问题</td>
-</tr>
-</tbody>
-</table>
-<h1><span id="ri-chang">日常</span><a href="#ri-chang" class="header-anchor">#</a></h1>
-<ul>
-<li>💡 bulb，灯泡</li>
-<li>🌍 ​earth_africa，地球（面向亚洲）</li>
-</ul>
-<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor">#</a></h1>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.sohu.com/a/141030276_610464">https://www.sohu.com/a/141030276_610464</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181005/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181005</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181005/" class="post-title-link" itemprop="url">Typora</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-28 15:22:53" itemprop="dateCreated datePublished" datetime="2021-01-28T15:22:53+08:00">2021-01-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:33:59" itemprop="dateModified" datetime="2021-02-02T14:33:59+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="1-kuai-jie-jian">1、快捷键</span><a href="#1-kuai-jie-jian" class="header-anchor">#</a></h1>
-<ul>
-<li>源代码模式：CTRL + /</li>
-<li>打字机模式：F8</li>
-<li>专注模式：F9</li>
-<li>显示/隐藏侧边栏：CTRL + SHIFT + L</li>
-<li>段落：CTRL + 0</li>
-<li>标题：CTRL + 1/6</li>
-<li>表格：CTRL + T</li>
-<li>选中一整行：CTRL + L</li>
-<li>选中单词：CTRL + D</li>
-<li>跳转到文章开头：CTRL + HOME</li>
-<li>跳转到文章结尾：CTRL + END</li>
-<li>插入链接：CTRL + K</li>
-<li>设置：CTRL + ，</li>
-<li>返回顶部: CTRL + Home</li>
-</ul>
-<h1><span id="2-zhuan-zhu-mo-shi">2、专注模式</span><a href="#2-zhuan-zhu-mo-shi" class="header-anchor">#</a></h1>
-<p>快捷键 <code>F8</code> 打开专注模式，编辑器会高亮显示当前正在编辑的段落，让你更加专注于当前内容，不受视觉干扰。</p>
-<h1><span id="3-da-zi-ji-mo-shi">3、打字机模式</span><a href="#3-da-zi-ji-mo-shi" class="header-anchor">#</a></h1>
-<p>快捷键 <code>F9</code> 打开打字机模式，当前正在编辑的段落会居中显示。</p>
-<h1><span id="4-shu-xue-gong-shi">4、数学公式</span><a href="#4-shu-xue-gong-shi" class="header-anchor">#</a></h1>
-<p>数学的公式块是使用 <em>LaTeX</em> 语言实现，输入<code>$$</code>，然后按下<code>Enter</code>键就会弹出一个支持 TeX/LaTeX 语法的输入框。</p>
-<h3><span id="pxiang-guan-lian-jie">相关链接</span><a href="#pxiang-guan-lian-jie" class="header-anchor">#</a></h3>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://typora.io/">首页</a></li>
-<li><a target="_blank" rel="noopener" href="https://theme.typora.io/">主题</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181004/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181004</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181004/" class="post-title-link" itemprop="url">Markdown 扩展语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-02 14:15:02 / 修改时间：14:22:26" itemprop="dateCreated datePublished" datetime="2021-02-02T14:15:02+08:00">2021-02-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="1-mu-lu">1、目录</span><a href="#1-mu-lu" class="header-anchor">#</a></h1>
-<p>用<code>[TOC]</code>生成目录。</p>
-<h1><span id="2-shu-xue-gong-shi">2、数学公式</span><a href="#2-shu-xue-gong-shi" class="header-anchor">#</a></h1>
-<p>通过一个<code>$</code>插入行内公式，通过两个<code>$$</code>插入整行居中的公式。<br>
-具体看 <a href="/181007">MathJax</a>。</p>
-<h1><span id="3-jiao-zhu">3、角注</span><a href="#3-jiao-zhu" class="header-anchor">#</a></h1>
-<p>使用<code>^</code>来定义脚注。如：</p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">这是一个脚注的例子[^1]
-[^1]: 这里是脚注<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1><span id="4-to-do-list">4、TO-DO LIST</span><a href="#4-to-do-list" class="header-anchor">#</a></h1>
-<p>在 <strong>Markdown</strong> 中可以插入TO-DO 列表，如：</p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">- [ ] 未完成
-- [x] 完成<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1><span id="5-emoji-biao-qing">5、Emoji 表情</span><a href="#5-emoji-biao-qing" class="header-anchor">#</a></h1>
-<p>用冒号包起来，如<code>:link:</code>。</p>
-<h1><span id="6-liu-cheng-tu">6、流程图</span><a href="#6-liu-cheng-tu" class="header-anchor">#</a></h1>
-<p>流程图在代码块的基础上加关键字<code>flow</code>来生成。</p>
-<pre class="line-numbers language-none"><code class="language-none">st&#x3D;&gt;start: Start
-e&#x3D;&gt;end: End
-op1&#x3D;&gt;operation: My Operation
-sub1&#x3D;&gt;subroutine: My Subroutine
-cond&#x3D;&gt;condition: Yes or No?
-io&#x3D;&gt;inputoutput: catch something...
-st-&gt;op1-&gt;cond
-cond(yes)-&gt;io-&gt;e
-cond(no)-&gt;sub1(right)-&gt;op1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="7-shi-xu-tu">7、时序图</span><a href="#7-shi-xu-tu" class="header-anchor">#</a></h1>
-<p>时序图在代码块的基础上加关键字<code>sequence</code>来生成。</p>
-<pre class="line-numbers language-none"><code class="language-none">Alice-&gt;Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob--&gt;Alice: I am good thanks!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor">#</a></h1>
-<p><a target="_blank" rel="noopener" href="http://www.wiz.cn/feature-markdown.html" title="为知笔记 Markdown 新手指南">为知笔记 Markdown 新手指南</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181003/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181003</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181003/" class="post-title-link" itemprop="url">Markdown 基础语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-02 14:06:14 / 修改时间：14:16:43" itemprop="dateCreated datePublished" datetime="2021-02-02T14:06:14+08:00">2021-02-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3><span id="p1-huan-xing">1、换行</span><a href="#p1-huan-xing" class="header-anchor">#</a></h3>
-<p>句末加两个空格或者使用HTML的<code>&lt;br/&gt;</code>换行。</p>
-<h3><span id="p2-fen-ge-xian">2、分隔线</span><a href="#p2-fen-ge-xian" class="header-anchor">#</a></h3>
-<p>你可以在一行中用三个以上的<code>*</code>、<code>+</code>、<code>_</code>来建立一个分隔线，行内不能有其他东西。也可以使用HTML的<code>&lt;hr/&gt;</code>画分隔符。</p>
-<h3><span id="p3-biao-ti">3、标题</span><a href="#p3-biao-ti" class="header-anchor">#</a></h3>
-<p><strong>Markdown</strong> 标题支持两种形式：<br>
-1）Atx式：格式为<code># + 空格 + 标题内容</code>，级别由<code>#</code>的数量来确定，<code>#</code>是一级标题，<code>######</code>则是六级标题，最高六级标题。<br>
-2）Setext式：在标题底下加上任意个<code>=</code>代表一级标题，<code>-</code>代表二级标题。只支持一级标题和二级标题。</p>
-<blockquote>
-<p>注：Setext式标题不支持目录渲染。</p>
-</blockquote>
-<h3><span id="p4-qu-kuai-yin-yong">4、区块引用</span><a href="#p4-qu-kuai-yin-yong" class="header-anchor">#</a></h3>
-<p>区块引用（Blockquotes）由<code>&gt;</code>确定。</p>
-<blockquote>
-<p>这是区块引用。<br>
-区块引用可以嵌套。<br>
-<strong>Markdown</strong> 也允许你偷懒只在整个段落的第一行最前面加上“&gt;”。只要你在后面换个行。<br>
-引用的区块内可以使用其他大多数的 Markdown 语法。</p>
-</blockquote>
-<h3><span id="p5-lie-biao">5、列表</span><a href="#p5-lie-biao" class="header-anchor">#</a></h3>
-<h4><span id="p5-1-you-xu-lie-biao">5.1 有序列表</span><a href="#p5-1-you-xu-lie-biao" class="header-anchor">#</a></h4>
-<p>有序列表则使用数字接着一个英文句点。如：</p>
-<blockquote>
-<ol>
-<li>苹果</li>
-<li>番茄</li>
-<li>香蕉</li>
-</ol>
-</blockquote>
-<h4><span id="p5-2-wu-xu-lie-biao">5.2 无序列表</span><a href="#p5-2-wu-xu-lie-biao" class="header-anchor">#</a></h4>
-<p>无序列表使用<code>*</code>号、<code>+</code>号或是<code>-</code>号作为列表标记。如：</p>
-<blockquote>
-<ul>
-<li>苹果</li>
-<li>番茄</li>
-<li>香蕉</li>
-</ul>
-</blockquote>
-<h3><span id="p6-dai-ma-kuai">6、代码块</span><a href="#p6-dai-ma-kuai" class="header-anchor">#</a></h3>
-<h4><span id="p6-1-xing-nei-dai-ma">6.1 行内代码</span><a href="#p6-1-xing-nei-dai-ma" class="header-anchor">#</a></h4>
-<p>行内代码区块用一对<code>反引号</code>把它包起来。如：</p>
-<blockquote>
-<p>这是一句<code>话</code>。</p>
-</blockquote>
-<h4><span id="p6-2-pu-tong-dai-ma-kuai">6.2 普通代码块</span><a href="#p6-2-pu-tong-dai-ma-kuai" class="header-anchor">#</a></h4>
-<p><strong>Markdown</strong> 中建立代码块只要简单地缩进4个空格或是1个制表符就可以。也可以用三个反引号包围起来。<br>
-在前面后加语言名称可以加强代码的显示。如：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c">printf(&quot;Hello World!&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3><span id="p7-lian-jie">7、链接</span><a href="#p7-lian-jie" class="header-anchor">#</a></h3>
-<h4><span id="p7-1-zi-dong-lian-jie">7.1 自动链接</span><a href="#p7-1-zi-dong-lian-jie" class="header-anchor">#</a></h4>
-<p><strong>Markdown</strong> 支持直接黏贴链接地址，Markdown就会自动把它转成链接。如果不能识别则使用尖括号括起来即可。</p>
-<h4><span id="p7-2-xing-nei-shi-lian-jie">7.2 行内式链接</span><a href="#p7-2-xing-nei-shi-lian-jie" class="header-anchor">#</a></h4>
-<p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接](http:&#x2F;&#x2F;example.com&#x2F; &quot;这是链接&quot;) 。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>渲染为：<br>
-这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a> 。</p>
-<h4><span id="p7-3-can-kao-shi-lian-jie">7.3 参考式链接</span><a href="#p7-3-can-kao-shi-lian-jie" class="header-anchor">#</a></h4>
-<p>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接][id]。
-
-[id]: http:&#x2F;&#x2F;example.com&#x2F;  &quot;这是链接&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>渲染为：<br>
-这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a>。</p>
-<h3><span id="p8-qiang-diao">8、强调</span><a href="#p8-qiang-diao" class="header-anchor">#</a></h3>
-<h4><span id="p8-1-jia-cu">8.1 加粗</span><a href="#p8-1-jia-cu" class="header-anchor">#</a></h4>
-<p>用两个 <code>*</code> 或 <code>_</code> 包起来的话，就是加粗。</p>
-<h4><span id="p8-2-xie-ti">8.2 斜体</span><a href="#p8-2-xie-ti" class="header-anchor">#</a></h4>
-<p>使用一个星号<code>*</code>和底线<code>_</code>包起来，就是斜体。</p>
-<h4><span id="p8-3-xia-hua-xian">8.3 下划线</span><a href="#p8-3-xia-hua-xian" class="header-anchor">#</a></h4>
-<p><strong>Markdown</strong> 并无直接出现下划线的语法，可以使用HTML的<code>&lt;u&gt;</code>和<code>&lt;/u&gt;</code>实现。</p>
-<h4><span id="p8-4-shan-chu-wen-ben">8.4 删除文本</span><a href="#p8-4-shan-chu-wen-ben" class="header-anchor">#</a></h4>
-<p>删除文本使用两个<code>~</code>包围起来实现。</p>
-<h3><span id="p9-tu-pian">9、图片</span><a href="#p9-tu-pian" class="header-anchor">#</a></h3>
-<p>插入图片和链接很像，区别在于前面一个<code>!</code>。</p>
-<h4><span id="p9-1-xing-nei-shi-tu-pian">9.1 行内式图片</span><a href="#p9-1-xing-nei-shi-tu-pian" class="header-anchor">#</a></h4>
-<p>一个惊叹号 <code>!</code>。接着一个方括号，里面放上图片的替代文字。接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 文字。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![](img&#x2F;test.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>渲染为：<br>
-<img src="/181003/test.jpg" alt></p>
-<h4><span id="p9-2-can-kao-shi-tu-pian">9.2 参考式图片</span><a href="#p9-2-can-kao-shi-tu-pian" class="header-anchor">#</a></h4>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![][pic]
-
-[pic]:img&#x2F;test.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>渲染为：<br>
-<img src="/181003/test.jpg" alt></p>
-<p>在 <strong>VSCode</strong> 里可以插入 GIF 格式图片。</p>
-<h3><span id="p10-cha-ru-biao-ge">10、插入表格</span><a href="#p10-cha-ru-biao-ge" class="header-anchor">#</a></h3>
-<p><strong>Markdown</strong> 中可以创建表格，如：</p>
-<pre class="line-numbers language-none"><code class="language-none">|标题|标题|标题|
-|:---|:---:|---:|
-|居左|居中123|居右|
-|居左123|居中|居右123|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>渲染为：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">标题</th>
-<th style="text-align:center">标题</th>
-<th style="text-align:right">标题</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">居左</td>
-<td style="text-align:center">居中123</td>
-<td style="text-align:right">居右</td>
-</tr>
-<tr>
-<td style="text-align:left">居左123</td>
-<td style="text-align:center">居中</td>
-<td style="text-align:right">居右123</td>
-</tr>
-</tbody>
-</table>
-<p>在 VSCode 里安装插件后可以黏贴EXCEL格式的表格。</p>
-<h3><span id="p11-fan-xie-gan">11、反斜杆</span><a href="#p11-fan-xie-gan" class="header-anchor">#</a></h3>
-<p><strong>Markdown</strong> 可以利用反斜杠来插入一些在语法中有其它意义的符号。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181002</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181002/" class="post-title-link" itemprop="url">Markdown 快速上手</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-29 17:48:40" itemprop="dateCreated datePublished" datetime="2021-01-29T17:48:40+08:00">2021-01-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:12:48" itemprop="dateModified" datetime="2021-02-02T14:12:48+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ol>
-<li>
-<p>Markdown 文档的格式是 <code>.md</code> ，推荐使用编辑器 <code>Typora</code></p>
-</li>
-<li>
-<p>标题 <code>#</code> ：</p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md"># 一级标题
-## 二级标题
-### 三级标题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>注释 <code>&gt;</code></p>
-<blockquote>
-<p>这是注释</p>
-</blockquote>
-<pre class="line-numbers language-none"><code class="language-none">&gt; 这是注释<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>行内代码用 ` （Tab键上面，1键右边）包裹起来即可</p>
-<p><code>这是行内代码</code></p>
-</li>
-<li>
-<p>多行代码用 ``` 包裹起来即可，可以在第一个上面注明是什么语言</p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">​&#96;&#96;&#96;js
-	这里写的是JS代码哦！
-​&#96;&#96;&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li>
-<p>加粗内容 <code>**</code> 包裹，如 <strong>加粗</strong></p>
-</li>
-<li>
-<p>链接：<a href>链接</a></p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">[要显示的链接名字](链接地址)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>图片</p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">![](图片地址)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>无序列表，用 <code>-</code> （也可以用<code>+</code> 或者 <code>*</code> ，建议统一）</p>
-</li>
-<li>
-<p>有序列表用 <code>序号.</code></p>
-<pre class="line-numbers language-md" data-language="md"><code class="language-md">- 无序列表
-- 无序列表
-
-1.有序列表
-2.有序列表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181001</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181001/" class="post-title-link" itemprop="url">Markdown</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-02 14:06:48 / 修改时间：14:12:19" itemprop="dateCreated datePublished" datetime="2021-02-02T14:06:48+08:00">2021-02-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="markdown">Markdown</span><a href="#markdown" class="header-anchor">#</a></h1>
-<p><strong>Markdown</strong> 是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。<br>
-<strong>Markdown</strong> 具有一系列衍生版本，用于扩展 <strong>Markdown</strong> 的功能（如表格、脚注、内嵌HTML等等），这些功能原初的 <strong>Markdown</strong> 尚不具备，它们能让 <strong>Markdown</strong> 转换成更多的格式。这些衍生版本要么基于工具，如Typora；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-<h2><span id="p1-zong-zhi-he-mu-biao">1、宗旨和目标</span><a href="#p1-zong-zhi-he-mu-biao" class="header-anchor">#</a></h2>
-<p><strong>Markdown</strong> 提倡于注重内容而不是格式。<br>
-<strong>Markdown</strong> 的目标是实现易读易写。</p>
-<h2><span id="p2-html-jian-rong-xing">2、HTML兼容性</span><a href="#p2-html-jian-rong-xing" class="header-anchor">#</a></h2>
-<p><strong>Markdown</strong> 允许使用<strong>HTML</strong>语法进行文本格式化。</p>
-<h2><span id="p3-bian-ji-gong-ju">3、编辑工具</span><a href="#p3-bian-ji-gong-ju" class="header-anchor">#</a></h2>
-<p>首选 <code>Typora</code> ，另外 <code>VSCode</code> 也有比较好的编辑体验。需安装这些插件<strong>Markdown All in One</strong>，<strong>Markdown Extended</strong>，<strong>Markdown Preview Enhance</strong>，并重新加载。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180901/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180901</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180901/" class="post-title-link" itemprop="url">开发词汇集</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-24 17:12:21" itemprop="dateCreated datePublished" datetime="2020-12-24T17:12:21+08:00">2020-12-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:23:26" itemprop="dateModified" datetime="2021-02-01T18:23:26+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1809%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">1809：计算机英语</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2><span id="pa">A</span><a href="#pa" class="header-anchor">#</a></h2>
-<ul>
-<li>absolute 绝对</li>
-<li>abstract 抽象</li>
-<li>action 活动</li>
-<li>active 活动的</li>
-<li>activity 活动</li>
-<li>add 添加</li>
-<li>admin / administrator 管理员</li>
-<li>align 对齐</li>
-<li>alpha 阿尔法，内测版本</li>
-<li>anchor 锚标记</li>
-<li><strong>animation</strong> 动画</li>
-<li>application / app 应用</li>
-<li>API / Application Programming Interface 应用程序接口</li>
-<li>area 区域</li>
-<li>array 数组</li>
-<li>aside 侧边栏</li>
-<li>async 异步</li>
-<li><strong>attribute</strong> 属性</li>
-<li>auto 自动</li>
-</ul>
-<h2><span id="pb">B</span><a href="#pb" class="header-anchor">#</a></h2>
-<ul>
-<li>background 背景</li>
-<li>banner 横幅</li>
-<li>base 基础</li>
-<li>beta 贝塔，公测版本</li>
-<li>bit 位</li>
-<li>BIOS / Basic Input Output System 基础输入输出系统</li>
-<li>blog 博客</li>
-<li>BOM / Browser Object Model 浏览器对象模型</li>
-<li>border 边框</li>
-<li>boolean 布尔值（true/false）</li>
-<li>browser 浏览器</li>
-<li>break 中断</li>
-<li>bug 问题，漏洞（近：debug 调试）</li>
-<li>button / btn 按钮</li>
-<li>byte 字节</li>
-</ul>
-<h2><span id="pc">C</span><a href="#pc" class="header-anchor">#</a></h2>
-<ul>
-<li>cache 缓存</li>
-<li>call 调用</li>
-<li>callback 回调函数</li>
-<li>card 卡片</li>
-<li>carousel 轮播图（旋转木马，跑马灯）</li>
-<li>catch 捕获</li>
-<li>category 类别</li>
-<li>center 居中，中心</li>
-<li>change 改变</li>
-<li>check 检查</li>
-<li>children 子集</li>
-<li>class 类</li>
-<li>click 点击</li>
-<li>client 客户端</li>
-<li>code 码，代码</li>
-<li>cookies</li>
-<li>color 颜色</li>
-<li><strong>component</strong> 组件</li>
-<li>config 配置（近：option）</li>
-<li>const 常量</li>
-<li><strong>constructor</strong> 构造函数</li>
-<li>container 容器</li>
-<li>content 内容</li>
-<li>continue 继续</li>
-<li>count 数量</li>
-<li>CPU / Central Processing Unit 中央处理器</li>
-<li>create 创建</li>
-<li>CSS / Cascading Style Sheets 层叠样式表</li>
-<li>current 当前</li>
-<li>custom 自定义，习惯</li>
-</ul>
-<h2><span id="pd">D</span><a href="#pd" class="header-anchor">#</a></h2>
-<ul>
-<li>data 数据（混：date 日期）</li>
-<li>database 数据库</li>
-<li>detail 详情</li>
-<li>date 日期（混：data 数据）</li>
-<li>debounce 防抖</li>
-<li>debug 调试</li>
-<li>deep 深度</li>
-<li><strong>default</strong> 默认</li>
-<li>define  定义（宏定义）</li>
-<li>delay 延时</li>
-<li>delegate 委托，代理</li>
-<li>delete 删除（近：remove）</li>
-<li>demo 演示</li>
-<li>description 描述</li>
-<li><strong>development</strong> 开发环境</li>
-<li>dialog 对话框</li>
-<li>dictionary 字典</li>
-<li>direction 方向</li>
-<li><strong>directive</strong> 指令</li>
-<li>disable 禁用</li>
-<li>display 显示</li>
-<li>document 文档</li>
-<li>DOM / Document Object Model 文档对象模式</li>
-<li>download 下载</li>
-</ul>
-<h2><span id="pe">E</span><a href="#pe" class="header-anchor">#</a></h2>
-<ul>
-<li>element 元素</li>
-<li>electron 电子</li>
-<li>emit 分发</li>
-<li>engine 引擎</li>
-<li>enterprise 企业版</li>
-<li>entry / entries 进入</li>
-<li>environment / env 环境</li>
-<li>error 错误</li>
-<li>ES / ECMAScript</li>
-<li>event 事件</li>
-<li>exclude 排除</li>
-<li>exception 异常</li>
-<li>expired 到期，过期</li>
-<li>export 导出</li>
-<li>expand 展开</li>
-<li>extend 扩展（近：extra），继承（extends）</li>
-</ul>
-<h2><span id="pf">F</span><a href="#pf" class="header-anchor">#</a></h2>
-<ul>
-<li>false 假</li>
-<li>fast 快速</li>
-<li>feedback 反馈</li>
-<li>filter 过滤，滤镜</li>
-<li>flex 弹性</li>
-<li>focus 焦点，得到焦点（反：blur 失去焦点）</li>
-<li>follow 关注（follower 关注者），遵循</li>
-<li>footer 底部</li>
-<li>force / -f 强制</li>
-<li>form 表单</li>
-<li>format 格式，格式化</li>
-<li>found 发现（Not Found）</li>
-<li>function 函数</li>
-<li>full 全部，完整（full screen 全屏）</li>
-</ul>
-<h2><span id="pg">G</span><a href="#pg" class="header-anchor">#</a></h2>
-<ul>
-<li>GIS / Geographic Information System 地理信息系统</li>
-<li>GMT / Greenwich Mean Time 格林威治时间（零时区）</li>
-<li>grade 层级，等级（近：level）</li>
-<li>grid 网格</li>
-<li>get 获取</li>
-<li>getter/setter 存取器</li>
-<li>global 全局</li>
-<li>GPU / Graphics Processing Unit 图形处理器</li>
-</ul>
-<h2><span id="ph">H</span><a href="#ph" class="header-anchor">#</a></h2>
-<ul>
-<li>handle 处理</li>
-<li>HDMI / High Definition Multimedia Interface 高清多媒体接口</li>
-<li>header 头部</li>
-<li>height 高度</li>
-<li>hide / hidden 隐藏</li>
-<li>horizontal 水平（反：vertical 垂直）</li>
-<li>host 主机</li>
-<li>hover 鼠标悬浮效果</li>
-<li>HTML / Hypertext Markup Language 超文本标记语言</li>
-<li>HTTP / HyperText Transfer Protocol 超文本传输协议</li>
-<li>HTTPS / Hyper Text Transfer Protocol over SecureSocket Layer</li>
-<li>href / hypertext reference 超文本引用</li>
-</ul>
-<h2><span id="pi">I</span><a href="#pi" class="header-anchor">#</a></h2>
-<ul>
-<li>icon 图标</li>
-<li>IDE / Integrated Development Environment 集成开发环境</li>
-<li>image / img 图像</li>
-<li>import 引入、导入</li>
-<li>important 重要的</li>
-<li>in 在</li>
-<li>inactive 不活跃的</li>
-<li>include 包含</li>
-<li>index 序列</li>
-<li>infinite 无限</li>
-<li>info / information 信息（近：message）</li>
-<li>init 初始化</li>
-<li>install 安装（反：uninstall 卸载）</li>
-<li>interface 接口</li>
-<li>item 项</li>
-<li>iterator 迭代器</li>
-</ul>
-<h2><span id="pj">J</span><a href="#pj" class="header-anchor">#</a></h2>
-<ul>
-<li>JS / JavaScript</li>
-<li>JSX / JavaScript XML</li>
-<li>jQuery*</li>
-</ul>
-<h2><span id="pk">K</span><a href="#pk" class="header-anchor">#</a></h2>
-<ul>
-<li>keep-alive 保持长连接，Vue 缓存组件</li>
-<li>key 键</li>
-<li>keyword 关键字</li>
-</ul>
-<h2><span id="pl">L</span><a href="#pl" class="header-anchor">#</a></h2>
-<ul>
-<li>label 标签</li>
-<li>language / lang 语言</li>
-<li>launch 启动</li>
-<li>layout 布局</li>
-<li>length 长度</li>
-<li>let 让（定义）</li>
-<li>level / lv 等级</li>
-<li>library 库</li>
-<li>lifecycle 生命周期</li>
-<li>linear 线性</li>
-<li>list 列表</li>
-<li>load / loading 加载</li>
-<li>local 本地</li>
-<li>log 日志</li>
-<li>login 登录</li>
-<li>logo 商标，标志</li>
-<li>logout 登出，注销</li>
-</ul>
-<h2><span id="pm">M</span><a href="#pm" class="header-anchor">#</a></h2>
-<ul>
-<li>main 主</li>
-<li>manifest 清单</li>
-<li>map 映射</li>
-<li>margin 外边距</li>
-<li>mask 蒙板，遮罩</li>
-<li>max 最大值</li>
-<li>menu 菜单</li>
-<li>message 消息</li>
-<li>merge 合并</li>
-<li>method 方法</li>
-<li>modal 模态（框）</li>
-<li>mode 模式</li>
-<li>model 模型</li>
-<li>modern 现代</li>
-<li>modify 修改</li>
-<li>modifiers 修饰符</li>
-<li><strong>module</strong> 模块</li>
-<li>mount 挂载</li>
-<li>multiple 多个</li>
-<li><strong>mutation</strong> 变化</li>
-</ul>
-<h2><span id="pn">N</span><a href="#pn" class="header-anchor">#</a></h2>
-<ul>
-<li>NaN / Not a Number 非数字</li>
-<li>native 原生的</li>
-<li>navigation / nav 导航</li>
-<li>network 网络</li>
-<li>node 节点</li>
-<li>notice 通知</li>
-</ul>
-<h2><span id="po">O</span><a href="#po" class="header-anchor">#</a></h2>
-<ul>
-<li>OA / Office Automation 办公自动化</li>
-<li>object 对象</li>
-<li>offline 离线</li>
-<li>offset 偏移</li>
-<li>open 打开，开放（开放平台）</li>
-<li>operation 操作</li>
-<li>option 选项，配置（近：setting 设置）</li>
-<li>origin 源</li>
-<li>OS / Operating System 操作系统</li>
-<li>overflow 溢出</li>
-<li>overview 总览，概述</li>
-<li>outline 轮廓</li>
-</ul>
-<h2><span id="pp">P</span><a href="#pp" class="header-anchor">#</a></h2>
-<ul>
-<li>pack / package 包</li>
-<li>padding 内边距</li>
-<li>page 页面</li>
-<li>pagination 分页</li>
-<li>password 密码</li>
-<li>path 路径（文件路径）</li>
-<li>pay 支付</li>
-<li>param 参数</li>
-<li>parse 解析</li>
-<li>pause 暂停</li>
-<li><strong>permissions</strong> 权限</li>
-<li>person 个人</li>
-<li>phone 电话</li>
-<li>plain 朴素的</li>
-<li>player 播放器</li>
-<li>position 定位，位置</li>
-<li>power 驱动</li>
-<li>preview 预览</li>
-<li>private 私有</li>
-<li>process 过程</li>
-<li>product 产品</li>
-<li>progress 进度，进度条</li>
-<li><strong>promise</strong> 承诺</li>
-<li><strong>production</strong> 生产环境</li>
-<li>proportion 比例</li>
-<li><strong>prototype</strong> 原型</li>
-<li>proxy 委托</li>
-<li>public 公共</li>
-</ul>
-<h2><span id="pq">Q</span><a href="#pq" class="header-anchor">#</a></h2>
-<ul>
-<li>query 查询</li>
-</ul>
-<h2><span id="pr">R</span><a href="#pr" class="header-anchor">#</a></h2>
-<ul>
-<li>radius 半径</li>
-<li>RAM / Random Access Memory 随机存取存储器</li>
-<li>react / reactive 响应式</li>
-<li>readonly 只读</li>
-<li>recover 恢复</li>
-<li>reflect 反射</li>
-<li>refresh 刷新</li>
-<li>register 注册；寄存器</li>
-<li>remove / rm 移除（近：delete）</li>
-<li>render 渲染</li>
-<li>renderer 渲染器</li>
-<li>repeat 重复，平铺</li>
-<li>REST / Representational State Transfer 表现层状态转移</li>
-<li>return 返回</li>
-<li>request / req 请求</li>
-<li>require 必需</li>
-<li>response 响应</li>
-<li>result 结果</li>
-<li>ROM / Read-Only Memory 只读存储器</li>
-<li>root 根（根路径，Android 系统代表最高权限）</li>
-<li><strong>router</strong> 路由，路由器</li>
-<li>row 行</li>
-</ul>
-<h2><span id="ps">S</span><a href="#ps" class="header-anchor">#</a></h2>
-<ul>
-<li>save 保存</li>
-<li>scope 范围</li>
-<li>script 脚本</li>
-<li>scroll 滚动</li>
-<li>search 搜索</li>
-<li>section 分区，分块</li>
-<li>select 选择</li>
-<li>server 服务器</li>
-<li>service 服务</li>
-<li>set 设置</li>
-<li>setting 设置</li>
-<li>size 尺寸，大小</li>
-<li>slot 插槽</li>
-<li>SQL / Structured Query Language 结构化查询语言</li>
-<li>standard 标准</li>
-<li>start 开始</li>
-<li>state / status  状态值</li>
-<li>static 静态</li>
-<li>storage 存储</li>
-<li>store 仓库</li>
-<li>string / str 字符串</li>
-<li>style 样式</li>
-<li>sum 求和</li>
-<li>support 支持，帮助</li>
-<li>SVG / Scalable Vector Graphics 可伸缩矢量图</li>
-<li>switch 开关（近：toggle）</li>
-<li>symbol 唯一标志</li>
-<li>sync 同步（反：async 异步）</li>
-<li>system 系统</li>
-</ul>
-<h2><span id="pt">T</span><a href="#pt" class="header-anchor">#</a></h2>
-<ul>
-<li>table 表格</li>
-<li>target 目标</li>
-<li>temp 临时</li>
-<li>template 模板</li>
-<li>theme 主题</li>
-<li>throttle 节流</li>
-<li>time 时间</li>
-<li>timeout 超时</li>
-<li>tip 提示</li>
-<li>title 标题</li>
-<li>TLS / Transport Layer Security 传输层安全协议</li>
-<li>tool 工具</li>
-<li>toggle 切换、开关（近：switch）</li>
-<li>transition 过渡动画</li>
-<li>transparent 透明</li>
-<li>tree 树形，树形控件</li>
-<li>Trigger 触发器</li>
-<li>tutorial 教程</li>
-<li>type 类型</li>
-</ul>
-<h2><span id="pu">U</span><a href="#pu" class="header-anchor">#</a></h2>
-<ul>
-<li>undefined 未定义的</li>
-<li>unicode 万国码（utf-8 是其实现方式之一）</li>
-<li>update 更新</li>
-<li>URL / Uniform Resource Locator 网址（统一资源定位器）</li>
-<li>usage 用法</li>
-<li>USB / Universal Serial Bus 通用串行总线</li>
-<li>use 使用</li>
-<li>user 用户</li>
-<li>UTC / Coordinated Universal Time 协调世界时</li>
-</ul>
-<h2><span id="pv">V</span><a href="#pv" class="header-anchor">#</a></h2>
-<ul>
-<li>value 值</li>
-<li>version / ver 版本</li>
-<li>verify 验证</li>
-<li>verification 验证（近：check）</li>
-<li>vertical 垂直（反：horizontal 水平）</li>
-<li>view 视图</li>
-<li>viewport 视口</li>
-<li>visibility 可见性</li>
-<li>VPN / Virtual Private Network 虚拟专用网络</li>
-</ul>
-<h2><span id="pw">W</span><a href="#pw" class="header-anchor">#</a></h2>
-<ul>
-<li>warn / warning 警告</li>
-<li>watch 监视，侦听</li>
-<li>weak 弱</li>
-<li>webkit 浏览器渲染内核（Safari）</li>
-<li>webpack</li>
-<li>WebSocket</li>
-<li>width 宽度</li>
-<li>Wi-Fi 无线局域网</li>
-<li>window 窗口</li>
-<li>wrapper 包裹</li>
-<li>WWW / World Wide Web 万维网</li>
-</ul>
-<h2><span id="px">X</span><a href="#px" class="header-anchor">#</a></h2>
-<ul>
-<li>XML / Extensible Markup Language 可扩展标记语言</li>
-</ul>
-<h2><span id="py">Y</span><a href="#py" class="header-anchor">#</a></h2>
-<h2><span id="pz">Z</span><a href="#pz" class="header-anchor">#</a></h2>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180602/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180602</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180602/" class="post-title-link" itemprop="url">Figma</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-01 00:24:53 / 修改时间：18:23:19" itemprop="dateCreated datePublished" datetime="2021-02-01T00:24:53+08:00">2021-02-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1806%EF%BC%9A%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">1806：网络应用</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="figma">Figma</span><a href="#figma" class="header-anchor">#</a></h1>
-<p>快捷键</p>
-<ul>
-<li>按住 <code>CTRL + 鼠标滚轮</code> 进行缩放</li>
-<li>按住 <code>空格</code> ，可以用鼠标进行拖动</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180601/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180601</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180601/" class="post-title-link" itemprop="url">网址导航</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-01 00:24:45 / 修改时间：18:23:15" itemprop="dateCreated datePublished" datetime="2021-02-01T00:24:45+08:00">2021-02-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1806%EF%BC%9A%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">1806：网络应用</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="qian-duan">前端</span><a href="#qian-duan" class="header-anchor">#</a></h1>
-<p><strong><a target="_blank" rel="noopener" href="https://www.iconfont.cn/">iconfont</a></strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180501/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180501</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180501/" class="post-title-link" itemprop="url">移动应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-02 11:51:11 / 修改时间：11:51:39" itemprop="dateCreated datePublished" datetime="2021-02-02T11:51:11+08:00">2021-02-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1805%EF%BC%9A%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">1805：移动应用</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="yi-dong-ying-yong">移动应用</span><a href="#yi-dong-ying-yong" class="header-anchor">#</a></h1>
-<ul>
-<li>什么情况下微信会显示对方正在输入中？<br>
-微信仅收到消息后10秒内在对话框中进行输入操作，即会显示「对方正在输入中」。因为此显示提示，可能会激起用户的兴奋度。而如果是超过10秒外的会话，可能说明对方不是很重视这段会话。故超过10秒的不显示这个状态，避免不必要的兴奋度。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180301/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180301</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180301/" class="post-title-link" itemprop="url">Vim</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-01 00:19:56 / 修改时间：18:23:11" itemprop="dateCreated datePublished" datetime="2021-02-01T00:19:56+08:00">2021-02-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1803%EF%BC%9ALinux/" itemprop="url" rel="index"><span itemprop="name">1803：Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="vim">Vim</span><a href="#vim" class="header-anchor">#</a></h1>
-<p>命令模式（默认）</p>
-<ul>
-<li><code>i</code> 切换到输入模式</li>
-<li><code>:wq</code> 退出</li>
-</ul>
-<p>输入模式</p>
-<ul>
-<li><code>ESC</code> 切换到命令模式</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180203/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180203</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180203/" class="post-title-link" itemprop="url">Mac 故障排除</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 14:51:17" itemprop="dateCreated datePublished" datetime="2021-02-01T14:51:17+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 16:21:26" itemprop="dateModified" datetime="2021-02-02T16:21:26+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1802%EF%BC%9AMac/" itemprop="url" rel="index"><span itemprop="name">1802：Mac</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="1-npm-an-zhuang-bao-de-shi-hou-bao-cuo-eacces-permission-denied">1、<code>npm</code> 安装包的时候报错 <code>EACCES: permission denied</code></span><a href="#1-npm-an-zhuang-bao-de-shi-hou-bao-cuo-eacces-permission-denied" class="header-anchor">#</a></h1>
-<p>解决：使用 <code>sudo</code> 命令和 <code>--unsafe-perms</code> 参数</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180202/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180202</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180202/" class="post-title-link" itemprop="url">Mac 命令行</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-01 00:22:32 / 修改时间：15:17:41" itemprop="dateCreated datePublished" datetime="2021-02-01T00:22:32+08:00">2021-02-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1802%EF%BC%9AMac/" itemprop="url" rel="index"><span itemprop="name">1802：Mac</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mac-ming-ling-xing">Mac 命令行</span><a href="#mac-ming-ling-xing" class="header-anchor">#</a></h1>
-<p><code>sudo</code>命令 允许系统管理员让普通用户执行一些或者全部 <code>root</code> 命令的工具。（<code>mac</code> <code>linux</code>）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180201/" class="post-title-link" itemprop="url">Mac</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-07 11:46:01" itemprop="dateCreated datePublished" datetime="2021-01-07T11:46:01+08:00">2021-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:24" itemprop="dateModified" datetime="2021-02-01T18:22:24+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1802%EF%BC%9AMac/" itemprop="url" rel="index"><span itemprop="name">1802：Mac</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="mac">Mac</span><a href="#mac" class="header-anchor">#</a></h1>
-<ul>
-<li>切换输入法：<code>Command + 空格</code>（<code>ctrl + 空格</code>）</li>
-<li>显示/隐藏隐藏文件：<code>Command + Shift + .</code></li>
-</ul>
-<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a4019069/article/details/80585612">VMWare虚拟机安装dmg格式的macOS操作系统</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43825552/article/details/86763378">调分辨率</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180104</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180104/" class="post-title-link" itemprop="url">Window 命令行</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:52:23" itemprop="dateCreated datePublished" datetime="2021-01-31T09:52:23+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:04" itemprop="dateModified" datetime="2021-02-01T18:22:04+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="window-ming-ling-xing">Window 命令行</span><a href="#window-ming-ling-xing" class="header-anchor">#</a></h1>
-<h2><span id="pyi-chang-yong">一、常用</span><a href="#pyi-chang-yong" class="header-anchor">#</a></h2>
-<ul>
-<li>清屏 <code>CLS</code></li>
-<li>运行可执行文件 <code>Start xxx.exe</code></li>
-</ul>
-<h2><span id="per-shutdown">二、<code>shutdown</code></span><a href="#per-shutdown" class="header-anchor">#</a></h2>
-<ul>
-<li>设置 3600秒 后关机 <code>shutdown -s -t 3600</code></li>
-<li>取消关机 <code>shutdown -a</code></li>
-<li>重启 <code>shutdown -r</code></li>
-<li>立即重启 <code>shutdown -r -t 0</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180103/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">180103</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180103/" class="post-title-link" itemprop="url">快捷操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:46:37" itemprop="dateCreated datePublished" datetime="2021-01-31T09:46:37+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:07" itemprop="dateModified" datetime="2021-02-01T18:22:07+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="windows-kuai-jie-cao-zuo">Windows 快捷操作</span><a href="#windows-kuai-jie-cao-zuo" class="header-anchor">#</a></h1>
-<blockquote>
-<p>主要是对于 Windows 10 而言</p>
-</blockquote>
-<h2><span id="pyi-wei-gui-lei">一、未归类</span><a href="#pyi-wei-gui-lei" class="header-anchor">#</a></h2>
-<ul>
-<li><code>Win + V</code>  可以查看剪贴板</li>
-<li><code>Shift</code> 按住右键 可以在当前目录打开 <code>powershell</code></li>
-<li>直接在地址栏输入 <code>cmd</code> 或者 <code>powershell</code> 在当前目录打开命令窗口</li>
-</ul>
-<h2><span id="per-tong-yong-kuai-jie-jian">二、通用快捷键</span><a href="#per-tong-yong-kuai-jie-jian" class="header-anchor">#</a></h2>
-<ul>
-<li><code>CTRL + SHIFT + V</code> 无格式黏贴</li>
-</ul>
+          <h1><span id="git-kai-shi">Git 开始</span><a href="#git-kai-shi" class="header-anchor">#</a></h1>
 
       
     </div>
@@ -2813,7 +2101,7 @@ Bob--&gt;Alice: I am good thanks!<span aria-hidden="true" class="line-numbers-ro
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2879,14 +2167,14 @@ Bob--&gt;Alice: I am good thanks!<span aria-hidden="true" class="line-numbers-ro
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">214</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-count">85</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -2995,59 +2283,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
