@@ -196,6 +196,238 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210304/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210304</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210304/" class="post-title-link" itemprop="url">CSS 弹性布局</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 22:36:44" itemprop="dateCreated datePublished" datetime="2021-01-31T22:36:44+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:03:05" itemprop="dateModified" datetime="2021-02-01T19:03:05+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="dan-xing-bu-ju">弹性布局</span><a href="#dan-xing-bu-ju" class="header-anchor">#</a></h1>
+<p><code>flex</code> ，即弹性布局。</p>
+<h2><span id="p1-kai-qi-dan-xing-bu-ju">1、开启弹性布局</span><a href="#p1-kai-qi-dan-xing-bu-ju" class="header-anchor">#</a></h2>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token property">display</span><span class="token punctuation">:</span> -webkit-flex<span class="token punctuation">;</span> <span class="token comment">/* Safari */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>开启 <code>flex</code> 的元素自身不受影响，只会影响子元素，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。对子元素的子元素不会影响。<br>
+a<br>
+开启<code>flex</code>的盒子称为 <strong>容器</strong>（container），子元素称为 <strong>项目</strong>（item）。横向默认是 <strong>主轴</strong>（main axis）。纵向默认是 <strong>侧轴</strong>（交叉轴，cross axis）。默认情况下，项目沿着主轴从左到右依次排列。项目的高度撑满容器（侧轴撑满）。</p>
+<p>当项目的总宽度超出，并不会换行，而是压缩项目的宽度。</p>
+<p>涉及到 12 个 CSS 属性，父容器，子容器各 6 个。</p>
+<h2><span id="p2-chang-yong-shu-xing">2、常用属性</span><a href="#p2-chang-yong-shu-xing" class="header-anchor">#</a></h2>
+<h3><span id="pflex-direction">flex-direction</span><a href="#pflex-direction" class="header-anchor">#</a></h3>
+<p>默认情况下，<strong>主轴</strong>的方向是从左向右的，<strong>交叉轴</strong>垂直于主轴。</p>
+<p>交叉轴是由主轴决定的，主轴又是由 <code>flex-direction</code> 决定的，这个属性设置在父容器上，才可以生效。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">flex-direction</span><span class="token punctuation">:</span> row | row-reverse | column | column-reverse<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.juejin.im/post/6866914148387651592">「一劳永逸」48 张小图带你领略 flex 布局之美</a></li>
+<li><a target="_blank" rel="noopener" href="http://flexboxfroggy.com/#zh-cn">青蛙 FLEX</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210303/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">210303</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210303/" class="post-title-link" itemprop="url">CSS 定位</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:25:21" itemprop="dateCreated datePublished" datetime="2021-01-31T14:25:21+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:03:40" itemprop="dateModified" datetime="2021-02-01T19:03:40+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="ding-wei">定位</span><a href="#ding-wei" class="header-anchor">#</a></h1>
+<p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>默认，没有定位</td>
+</tr>
+<tr>
+<td>relative</td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>固定定位</td>
+</tr>
+</tbody>
+</table>
+<p>布局一般用在大布局的小范围中。</p>
+<h2><span id="p1-xiang-dui-ding-wei-relative">1、相对定位 - relative</span><a href="#p1-xiang-dui-ding-wei-relative" class="header-anchor">#</a></h2>
+<p><strong>相对定位</strong>（relative），让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。</p>
+<h2><span id="p2-jue-dui-ding-wei-absolute">2、绝对定位 - absolute</span><a href="#p2-jue-dui-ding-wei-absolute" class="header-anchor">#</a></h2>
+<p><strong>绝对定位</strong>（absolute），相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非 static 属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非 position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的 padding-box 的左上角为原点。right 和 bottom 是距离包含块右下角的距离。</p>
+<h3><span id="pbao-han-kuai">包含块</span><a href="#pbao-han-kuai" class="header-anchor">#</a></h3>
+<p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
+<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：</p>
+<ul>
+<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
+<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
+<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
+</ul>
+<blockquote>
+<p>补充：<br>
+如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。</p>
+<ul>
+<li>当祖先元素拥有 transform 或 perspective 属性并且值不为 none 的时候，它也是被当做包含块。</li>
+<li>当祖先元素 拥有 filter 属性的时候（值不为 none） 它也可以被当做包含块</li>
+</ul>
+</blockquote>
+<p>注：如果由内向外找不到包含块条件的元素，那么 html（根元素）被称作为初始包含块。</p>
+<h3><span id="pzi-jue-fu-xiang">子绝父相</span><a href="#pzi-jue-fu-xiang" class="header-anchor">#</a></h3>
+<p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
+<h2><span id="p3-gu-ding-ding-wei-fixed">3、固定定位 - fixed</span><a href="#p3-gu-ding-ding-wei-fixed" class="header-anchor">#</a></h2>
+<p>固定定位（fixed），相对于浏览器窗口定位。</p>
+<h2><span id="p4-nian-xing-ding-wei-sticky">4、粘性定位 - sticky</span><a href="#p4-nian-xing-ding-wei-sticky" class="header-anchor">#</a></h2>
+<p>sticky 的意思是“粘性的”，<code>position:sticky</code> 表现也符合这个粘性的表现。基本上，可以看出是<code>position:relative</code>和<code>position:fixed</code>的结合体——当元素在屏幕内，表现为<code>relative</code>，就要滚出显示器屏幕的时候，表现为<code>fixed</code>。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">nav</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> -webkit-sticky<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> sticky<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/">杀了个回马枪，还是说说 position:sticky 吧</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210302/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2684,6 +2916,79 @@ WebSocket</p>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181807/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181807</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181807/" class="post-title-link" itemprop="url">Hexo 渲染 mathjax</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-02 14:49:42 / 修改时间：14:51:49" itemprop="dateCreated datePublished" datetime="2021-02-02T14:49:42+08:00">2021-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="1-xiu-gai-next-zhu-ti-pei-zhi-wen-jian">1、修改 <code>NexT</code> 主题配置文件</span><a href="#1-xiu-gai-next-zhu-ti-pei-zhi-wen-jian" class="header-anchor">#</a></h1>
+<p>搜索 <code>mathjax</code>，把 <code>enable</code> 修改为 <code>true</code></p>
+<h1><span id="2-zai-xu-yao-shi-yong-de-wen-zhang-tian-jia-shu-xing">2、在需要使用的文章添加属性</span><a href="#2-zai-xu-yao-shi-yong-de-wen-zhang-tian-jia-shu-xing" class="header-anchor">#</a></h1>
+<p>在 <code>Front Matter</code> 里添加 <code>mathjax: true</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181806/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2776,7 +3081,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
         <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181805</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/181805/" class="post-title-link" itemprop="url">Hexo 渲染emoji表情</a>
+            <a href="/181805/" class="post-title-link" itemprop="url">Hexo 渲染 emoji 表情</a>
         </h2>
 
         <div class="post-meta">
@@ -2787,7 +3092,7 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-02 14:25:29 / 修改时间：14:38:23" itemprop="dateCreated datePublished" datetime="2021-02-02T14:25:29+08:00">2021-02-02</time>
+              <time title="创建时间：2021-02-02 14:25:29 / 修改时间：14:46:37" itemprop="dateCreated datePublished" datetime="2021-02-02T14:25:29+08:00">2021-02-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2916,331 +3221,6 @@ npm i hexo-renderer-markdown-it --save<span aria-hidden="true" class="line-numbe
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181803/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181803</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181803/" class="post-title-link" itemprop="url">Hexo 随机跳转文章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-01 16:26:17 / 修改时间：18:29:30" itemprop="dateCreated datePublished" datetime="2021-02-01T16:26:17+08:00">2021-02-01</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="hexo-sui-ji-tiao-zhuan-wen-zhang">Hexo 随机跳转文章</span><a href="#hexo-sui-ji-tiao-zhuan-wen-zhang" class="header-anchor">#</a></h1>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm i object-assign
-npm i hexo-generator-random
-hexo clean
-hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>如果在 public 目录看到 random.html 文件，说明功能正常<br>
-之后只要调用 <code>/random</code> 即可实现随机跳转（只能跳你设置好的正式地址，无法跳转到 <code>localhost</code> 相关地址），建议是添加一个新的菜单页</p>
-<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="https://cndrew.cn/2019/10/19/plugin/">https://cndrew.cn/2019/10/19/plugin/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181802/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181802</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181802/" class="post-title-link" itemprop="url">Hexo 内嵌脑图</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-28 14:14:36" itemprop="dateCreated datePublished" datetime="2021-01-28T14:14:36+08:00">2021-01-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:29:25" itemprop="dateModified" datetime="2021-02-01T18:29:25+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="hexo-nei-qian-nao-tu">Hexo 内嵌脑图</span><a href="#hexo-nei-qian-nao-tu" class="header-anchor">#</a></h1>
-<p>工具:</p>
-<ul>
-<li>MindManager 2020</li>
-<li>Hexo</li>
-</ul>
-<p>第一步: MindManager 导出，选择 <code>HTML5 交互式导图</code>，选择局部导出<br>
-第二步: 在 Hexo 博客目录的 source 目录下新建一个 map 文件夹（也可以是其他名字）<br>
-第三步: 编辑 Hexo 博客目录下的 <code>_config.yml</code> ，搜索 <code>skip_render</code>，在下面添加 <code>&quot;map/**&quot;</code>，保存。<br>
-第四步: <code>hexo clean</code><br>
-第五步: 在你想插入导图的页面:</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../map/1.html<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1000<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181801/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181801</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181801/" class="post-title-link" itemprop="url">Hexo</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 00:14:45" itemprop="dateCreated datePublished" datetime="2021-02-01T00:14:45+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:37:59" itemprop="dateModified" datetime="2021-02-02T14:37:59+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1818%EF%BC%9AHexo/" itemprop="url" rel="index"><span itemprop="name">1818：Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="hexo">Hexo</span><a href="#hexo" class="header-anchor">#</a></h1>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
-<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1>
-<h2><span id="p1-an-zhuang">1、安装</span><a href="#p1-an-zhuang" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="p2-xin-jian-bo-ke">2、新建博客</span><a href="#p2-xin-jian-bo-ke" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init 博客名称
-cd 博客名称
-npm i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p3-chang-yong-ming-ling">3、常用命令</span><a href="#p3-chang-yong-ming-ling" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 启动博客（本地服务器）打开 localhost:4000 查看
-hexo s
-
-# 清除缓存
-hexo clean
-
-# 构建
-hexo g
-
-# 把代码推送到远程仓库
-hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="p4-bo-ke-pei-zhi">4、博客配置</span><a href="#p4-bo-ke-pei-zhi" class="header-anchor">#</a></h2>
-<p>博客根目录下的 <code>_config</code> 为 <strong>博客配置文件</strong><br>
-主题目录下的 <code>_config</code> 为 <strong>主题配置文件</strong></p>
-<h2><span id="p5-zhu-ti-pei-zhi">5、主题配置</span><a href="#p5-zhu-ti-pei-zhi" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题库</a></p>
-<p>这边推荐 NEXT 主题。</p>
-<h3><span id="pan-zhuang-next-zhu-ti">安装NEXT主题</span><a href="#pan-zhuang-next-zhu-ti" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next
-cd themes&#x2F;next
-npm i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>修改 博客根目录下 <code>_config</code>  文件 里面的主题为 <code>next</code></p>
-<h2><span id="p6-github-page-gitee-page">6、Github Page / Gitee Page</span><a href="#p6-github-page-gitee-page" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"># _config.yml
-
-# git 配置
-deploy:
-  type: git
-  repo: https&#x2F;&#x2F; .... .git
-  branch: master
-  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>推上去</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1><span id="er-xie-zuo">二、写作</span><a href="#er-xie-zuo" class="header-anchor">#</a></h1>
-<h2><span id="p1-yaml-front-matter">1、YAML Front Matter</span><a href="#p1-yaml-front-matter" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">---
-title: 这是标题
-
-## 这是创建时间、更新时间
-date: 2020-10-01
-updated: 2020-12-21
-
-## 这是标签
-tags: 标签
-tags: [标签一, 标签二]
-
-
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="san-cha-jian">三、插件</span><a href="#san-cha-jian" class="header-anchor">#</a></h1>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">插件库</a></p>
-<h2><span id="pmu-lu-sheng-cheng">目录生成</span><a href="#pmu-lu-sheng-cheng" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-toc --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># _config.yml
-
-toc:
-  # 目录深度，最多生成三级目录
-  maxDepth: 3
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="psou-suo">搜索</span><a href="#psou-suo" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install hexo-generator-search --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="pdai-ma-gao-liang">代码高亮</span><a href="#pdai-ma-gao-liang" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm i -S hexo-prism-plugin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p>
-<pre class="line-numbers language-YAML" data-language="YAML"><code class="language-YAML">prism_plugin:
-  mode: &#39;preprocess&#39;    # realtime&#x2F;preprocess
-  theme: &#39;tomorrow&#39;     #主题选项
-  line_number: false    # default false
-  custom_css:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>可用的主题有</p>
-<blockquote>
-<p>coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,hopscotch,material-dark,material-light,material-oceanic,pojoaque,shades-of-purple,synthwave84,vs,xonokai,default,</p>
-</blockquote>
-<h2><span id="pping-lun">评论</span><a href="#pping-lun" class="header-anchor">#</a></h2>
-<h2><span id="pyuan-cheng-bian-ji">远程编辑</span><a href="#pyuan-cheng-bian-ji" class="header-anchor">#</a></h2>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -3310,20 +3290,20 @@ toc:
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">76</span>
+        <span class="site-state-item-count">77</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-count">44</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
