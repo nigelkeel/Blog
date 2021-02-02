@@ -339,7 +339,7 @@ app<span class="token punctuation">.</span><span class="token function">on</span
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx @electron-forge&#x2F;cli import<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>创建一个分发版本</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm run make<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>（:bug: 如果打包出错，大概率是因为你的 <code>package.json</code> 文件里面的 <code>author</code> 和 <code>description</code> 为空）</p>
+<p>（🐛 如果打包出错，大概率是因为你的 <code>package.json</code> 文件里面的 <code>author</code> 和 <code>description</code> 为空）</p>
 <h3><span id="p3-ying-yong-cheng-xu-jie-gou">3、应用程序结构</span><a href="#p3-ying-yong-cheng-xu-jie-gou" class="header-anchor">#</a></h3>
 <p>Electron 由三个主要部分组成：</p>
 <ul>
@@ -453,20 +453,20 @@ APIs 分为 Electron API、Node.js API</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">170</span>
+          <span class="site-state-item-count">183</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">71</span>
+        <span class="site-state-item-count">76</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -555,7 +555,7 @@ APIs 分为 Electron API、Node.js API</p>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
-      theme    : 'default',
+      theme    : 'forest',
       logLevel : 3,
       flowchart: { curve     : 'linear' },
       gantt    : { axisFormat: '%m/%d/%Y' },

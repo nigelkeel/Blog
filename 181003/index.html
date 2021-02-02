@@ -20,18 +20,21 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Markdown 使用心得# 1、链接的文件名字带空格不识别怎么办？  解决: 在链接中用%20替代空格的书写  2、永久插入图片 首先将图片通过在线转码工具转换成base64的编码，并用以下格式嵌入即可，格式如下： ![image] (base64) 但是由于这base64编码往往都很长，很占篇幅，因此我们可以给图片编号，并将所有的图片base64编码放在文档的最后即可，格式如下：  在插入图片">
+  <meta name="description" content="1、换行# 句末加两个空格或者使用HTML的&lt;br&#x2F;&gt;换行。 2、分隔线# 你可以在一行中用三个以上的*、+、_来建立一个分隔线，行内不能有其他东西。也可以使用HTML的&lt;hr&#x2F;&gt;画分隔符。 3、标题# Markdown 标题支持两种形式： 1）Atx式：格式为# + 空格 + 标题内容，级别由#的数量来确定，#是一级标题，######则是六级标题，最高六级标题。 2）Se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown 使用心得">
+<meta property="og:title" content="Markdown 基础语法">
 <meta property="og:url" content="http://nigelkeel.gitee.io/181003/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="Markdown 使用心得# 1、链接的文件名字带空格不识别怎么办？  解决: 在链接中用%20替代空格的书写  2、永久插入图片 首先将图片通过在线转码工具转换成base64的编码，并用以下格式嵌入即可，格式如下： ![image] (base64) 但是由于这base64编码往往都很长，很占篇幅，因此我们可以给图片编号，并将所有的图片base64编码放在文档的最后即可，格式如下：  在插入图片">
+<meta property="og:description" content="1、换行# 句末加两个空格或者使用HTML的&lt;br&#x2F;&gt;换行。 2、分隔线# 你可以在一行中用三个以上的*、+、_来建立一个分隔线，行内不能有其他东西。也可以使用HTML的&lt;hr&#x2F;&gt;画分隔符。 3、标题# Markdown 标题支持两种形式： 1）Atx式：格式为# + 空格 + 标题内容，级别由#的数量来确定，#是一级标题，######则是六级标题，最高六级标题。 2）Se">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-28T06:14:36.388Z">
-<meta property="article:modified_time" content="2021-02-01T10:23:43.515Z">
+<meta property="og:image" content="http://nigelkeel.gitee.io/181003/test.jpg">
+<meta property="og:image" content="http://nigelkeel.gitee.io/181003/test.jpg">
+<meta property="article:published_time" content="2021-02-02T06:06:14.241Z">
+<meta property="article:modified_time" content="2021-02-02T06:16:43.088Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://nigelkeel.gitee.io/181003/test.jpg">
 
 <link rel="canonical" href="http://nigelkeel.gitee.io/181003/">
 
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>Markdown 使用心得 | 永远的伊尔瓦</title>
+  <title>Markdown 基础语法 | 永远的伊尔瓦</title>
   
 
 
@@ -215,7 +218,7 @@
         <!-- 自定义id -->
         <span style="color:#666; font-size:12px; padding:3px; border:1px solid #666;">181003</span>
         <h1 class="post-title" itemprop="name headline">
-          Markdown 使用心得
+          Markdown 基础语法
         </h1>
 
         <div class="post-meta">
@@ -224,16 +227,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-01-28 14:14:36" itemprop="dateCreated datePublished" datetime="2021-01-28T14:14:36+08:00">2021-01-28</time>
+              <time title="创建时间：2021-02-02 14:06:14 / 修改时间：14:16:43" itemprop="dateCreated datePublished" datetime="2021-02-02T14:06:14+08:00">2021-02-02</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:23:43" itemprop="dateModified" datetime="2021-02-01T18:23:43+08:00">2021-02-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -255,20 +252,123 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="markdown-shi-yong-xin-de">Markdown 使用心得</span><a href="#markdown-shi-yong-xin-de" class="header-anchor">#</a></h1>
-<p>1、链接的文件名字带空格不识别怎么办？</p>
+        <h3><span id="p1-huan-xing">1、换行</span><a href="#p1-huan-xing" class="header-anchor">#</a></h3>
+<p>句末加两个空格或者使用HTML的<code>&lt;br/&gt;</code>换行。</p>
+<h3><span id="p2-fen-ge-xian">2、分隔线</span><a href="#p2-fen-ge-xian" class="header-anchor">#</a></h3>
+<p>你可以在一行中用三个以上的<code>*</code>、<code>+</code>、<code>_</code>来建立一个分隔线，行内不能有其他东西。也可以使用HTML的<code>&lt;hr/&gt;</code>画分隔符。</p>
+<h3><span id="p3-biao-ti">3、标题</span><a href="#p3-biao-ti" class="header-anchor">#</a></h3>
+<p><strong>Markdown</strong> 标题支持两种形式：<br>
+1）Atx式：格式为<code># + 空格 + 标题内容</code>，级别由<code>#</code>的数量来确定，<code>#</code>是一级标题，<code>######</code>则是六级标题，最高六级标题。<br>
+2）Setext式：在标题底下加上任意个<code>=</code>代表一级标题，<code>-</code>代表二级标题。只支持一级标题和二级标题。</p>
 <blockquote>
-<p>解决: 在链接中用<code>%20</code>替代空格的书写</p>
+<p>注：Setext式标题不支持目录渲染。</p>
 </blockquote>
-<p>2、永久插入图片</p>
-<p>首先将图片通过在线转码工具转换成base64的编码，并用以下格式嵌入即可，格式如下：</p>
-<p><code>![image] (base64)</code></p>
-<p>但是由于这base64编码往往都很长，很占篇幅，因此我们可以给图片编号，并将所有的图片base64编码放在文档的最后即可，格式如下：</p>
+<h3><span id="p4-qu-kuai-yin-yong">4、区块引用</span><a href="#p4-qu-kuai-yin-yong" class="header-anchor">#</a></h3>
+<p>区块引用（Blockquotes）由<code>&gt;</code>确定。</p>
+<blockquote>
+<p>这是区块引用。<br>
+区块引用可以嵌套。<br>
+<strong>Markdown</strong> 也允许你偷懒只在整个段落的第一行最前面加上“&gt;”。只要你在后面换个行。<br>
+引用的区块内可以使用其他大多数的 Markdown 语法。</p>
+</blockquote>
+<h3><span id="p5-lie-biao">5、列表</span><a href="#p5-lie-biao" class="header-anchor">#</a></h3>
+<h4><span id="p5-1-you-xu-lie-biao">5.1 有序列表</span><a href="#p5-1-you-xu-lie-biao" class="header-anchor">#</a></h4>
+<p>有序列表则使用数字接着一个英文句点。如：</p>
+<blockquote>
+<ol>
+<li>苹果</li>
+<li>番茄</li>
+<li>香蕉</li>
+</ol>
+</blockquote>
+<h4><span id="p5-2-wu-xu-lie-biao">5.2 无序列表</span><a href="#p5-2-wu-xu-lie-biao" class="header-anchor">#</a></h4>
+<p>无序列表使用<code>*</code>号、<code>+</code>号或是<code>-</code>号作为列表标记。如：</p>
+<blockquote>
 <ul>
-<li>在插入图片的地方使用：<code>![image] [图片编号]</code></li>
-<li>在文档最后使用：<code>[图片编号]:base64编码</code></li>
+<li>苹果</li>
+<li>番茄</li>
+<li>香蕉</li>
 </ul>
-<p>这样即可完成图片的永久插入！</p>
+</blockquote>
+<h3><span id="p6-dai-ma-kuai">6、代码块</span><a href="#p6-dai-ma-kuai" class="header-anchor">#</a></h3>
+<h4><span id="p6-1-xing-nei-dai-ma">6.1 行内代码</span><a href="#p6-1-xing-nei-dai-ma" class="header-anchor">#</a></h4>
+<p>行内代码区块用一对<code>反引号</code>把它包起来。如：</p>
+<blockquote>
+<p>这是一句<code>话</code>。</p>
+</blockquote>
+<h4><span id="p6-2-pu-tong-dai-ma-kuai">6.2 普通代码块</span><a href="#p6-2-pu-tong-dai-ma-kuai" class="header-anchor">#</a></h4>
+<p><strong>Markdown</strong> 中建立代码块只要简单地缩进4个空格或是1个制表符就可以。也可以用三个反引号包围起来。<br>
+在前面后加语言名称可以加强代码的显示。如：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">printf(&quot;Hello World!&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="p7-lian-jie">7、链接</span><a href="#p7-lian-jie" class="header-anchor">#</a></h3>
+<h4><span id="p7-1-zi-dong-lian-jie">7.1 自动链接</span><a href="#p7-1-zi-dong-lian-jie" class="header-anchor">#</a></h4>
+<p><strong>Markdown</strong> 支持直接黏贴链接地址，Markdown就会自动把它转成链接。如果不能识别则使用尖括号括起来即可。</p>
+<h4><span id="p7-2-xing-nei-shi-lian-jie">7.2 行内式链接</span><a href="#p7-2-xing-nei-shi-lian-jie" class="header-anchor">#</a></h4>
+<p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可。如：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接](http:&#x2F;&#x2F;example.com&#x2F; &quot;这是链接&quot;) 。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>渲染为：<br>
+这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a> 。</p>
+<h4><span id="p7-3-can-kao-shi-lian-jie">7.3 参考式链接</span><a href="#p7-3-can-kao-shi-lian-jie" class="header-anchor">#</a></h4>
+<p>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记。如：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接][id]。
+
+[id]: http:&#x2F;&#x2F;example.com&#x2F;  &quot;这是链接&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>渲染为：<br>
+这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a>。</p>
+<h3><span id="p8-qiang-diao">8、强调</span><a href="#p8-qiang-diao" class="header-anchor">#</a></h3>
+<h4><span id="p8-1-jia-cu">8.1 加粗</span><a href="#p8-1-jia-cu" class="header-anchor">#</a></h4>
+<p>用两个 <code>*</code> 或 <code>_</code> 包起来的话，就是加粗。</p>
+<h4><span id="p8-2-xie-ti">8.2 斜体</span><a href="#p8-2-xie-ti" class="header-anchor">#</a></h4>
+<p>使用一个星号<code>*</code>和底线<code>_</code>包起来，就是斜体。</p>
+<h4><span id="p8-3-xia-hua-xian">8.3 下划线</span><a href="#p8-3-xia-hua-xian" class="header-anchor">#</a></h4>
+<p><strong>Markdown</strong> 并无直接出现下划线的语法，可以使用HTML的<code>&lt;u&gt;</code>和<code>&lt;/u&gt;</code>实现。</p>
+<h4><span id="p8-4-shan-chu-wen-ben">8.4 删除文本</span><a href="#p8-4-shan-chu-wen-ben" class="header-anchor">#</a></h4>
+<p>删除文本使用两个<code>~</code>包围起来实现。</p>
+<h3><span id="p9-tu-pian">9、图片</span><a href="#p9-tu-pian" class="header-anchor">#</a></h3>
+<p>插入图片和链接很像，区别在于前面一个<code>!</code>。</p>
+<h4><span id="p9-1-xing-nei-shi-tu-pian">9.1 行内式图片</span><a href="#p9-1-xing-nei-shi-tu-pian" class="header-anchor">#</a></h4>
+<p>一个惊叹号 <code>!</code>。接着一个方括号，里面放上图片的替代文字。接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 文字。如：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![](img&#x2F;test.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>渲染为：<br>
+<img src="/181003/test.jpg" alt></p>
+<h4><span id="p9-2-can-kao-shi-tu-pian">9.2 参考式图片</span><a href="#p9-2-can-kao-shi-tu-pian" class="header-anchor">#</a></h4>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![][pic]
+
+[pic]:img&#x2F;test.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>渲染为：<br>
+<img src="/181003/test.jpg" alt></p>
+<p>在 <strong>VSCode</strong> 里可以插入 GIF 格式图片。</p>
+<h3><span id="p10-cha-ru-biao-ge">10、插入表格</span><a href="#p10-cha-ru-biao-ge" class="header-anchor">#</a></h3>
+<p><strong>Markdown</strong> 中可以创建表格，如：</p>
+<pre class="line-numbers language-none"><code class="language-none">|标题|标题|标题|
+|:---|:---:|---:|
+|居左|居中123|居右|
+|居左123|居中|居右123|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>渲染为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">标题</th>
+<th style="text-align:center">标题</th>
+<th style="text-align:right">标题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">居左</td>
+<td style="text-align:center">居中123</td>
+<td style="text-align:right">居右</td>
+</tr>
+<tr>
+<td style="text-align:left">居左123</td>
+<td style="text-align:center">居中</td>
+<td style="text-align:right">居右123</td>
+</tr>
+</tbody>
+</table>
+<p>在 VSCode 里安装插件后可以黏贴EXCEL格式的表格。</p>
+<h3><span id="p11-fan-xie-gan">11、反斜杆</span><a href="#p11-fan-xie-gan" class="header-anchor">#</a></h3>
+<p><strong>Markdown</strong> 可以利用反斜杠来插入一些在语法中有其它意义的符号。</p>
 
     </div>
 
@@ -288,12 +388,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/181802/" rel="prev" title="Hexo 内嵌脑图">
-      <i class="fa fa-chevron-left"></i> Hexo 内嵌脑图
+    <a href="/160201/" rel="prev" title="加密">
+      <i class="fa fa-chevron-left"></i> 加密
     </a></div>
       <div class="post-nav-item">
-    <a href="/280101/" rel="next" title="前端面试之道">
-      前端面试之道 <i class="fa fa-chevron-right"></i>
+    <a href="/181001/" rel="next" title="Markdown">
+      Markdown <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -353,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">Markdown 使用心得</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、分隔线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、区块引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5、列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">5.1 有序列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">5.2 无序列表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">6、代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">6.1 行内代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">6.2 普通代码块</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">7、链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">7.1 自动链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">7.2 行内式链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">7.3 参考式链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">8、强调</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">8.1 加粗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">8.2 斜体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">8.3 下划线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">8.4 删除文本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9、图片</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">9.1 行内式图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text">9.2 参考式图片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10、插入表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">11、反斜杆</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -367,20 +467,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">170</span>
+          <span class="site-state-item-count">183</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">71</span>
+        <span class="site-state-item-count">76</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -469,7 +569,7 @@
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
-      theme    : 'default',
+      theme    : 'forest',
       logLevel : 3,
       flowchart: { curve     : 'linear' },
       gantt    : { axisFormat: '%m/%d/%Y' },
