@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="NPM# npm 是 Node 的模块管理器，全称 Node Package Manager。 一、常用命令# 1、安装  npm install &lt;package&gt; npm install 可以简写为 npm i （？二者有一些微小的差异） 强制安装 安装之前，会先检查 node_modules 目录之中是否已经存在指定模块，就会跳过，即使有一个新版本也是如此。使用-f或者--for">
@@ -46,7 +46,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>NPM | 永远的伊尔瓦</title>
   
 
@@ -102,6 +101,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -309,52 +309,18 @@
 <p><code>npm restart</code></p>
 </blockquote>
 <p>7、切换镜像</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 切换阿里镜像
-npm config set registry http:&#x2F;&#x2F;registry.npm.taobao.org
-# 切换回原镜像
-npm config set registry https:&#x2F;&#x2F;registry.npmjs.org<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换阿里镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 切换回原镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org</span><br></pre></td></tr></table></figure>
 <p>8、清缓存</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm cache verify
-# mac 要加 sudo 前缀<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm cache verify</span><br><span class="line"><span class="comment"># mac 要加 sudo 前缀</span></span><br></pre></td></tr></table></figure>
 <h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a></li>
 </ul>
 <h2><span id="pxu-zheng-li">需整理</span><a href="#pxu-zheng-li" class="header-anchor">#</a></h2>
 <h3><span id="pchang-yong-ming-ling">常用命令</span><a href="#pchang-yong-ming-ling" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 查看版本
-npm -v
-
-# 初始化项目
-npm init
-npm init -y
-
-# 安装项目的所有依赖
-npm i
-npm install
-
-# 安装
-npm i 包名
-npm install 包名
-
-# 安装到项目的生产依赖
-npm install 包名 --save
-npm install 包名 -S
-
-# 安装到项目的开发依赖
-npm install 包名 --save-dev
-npm install 包名 -D
-
-# 安装到全局环境
-npm install 包名 -g
-
-# 删除包
-npm remove 包名
-npm r 包名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化项目</span></span><br><span class="line">npm init</span><br><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装项目的所有依赖</span></span><br><span class="line">npm i</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">npm i 包名</span><br><span class="line">npm install 包名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到项目的生产依赖</span></span><br><span class="line">npm install 包名 --save</span><br><span class="line">npm install 包名 -S</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到项目的开发依赖</span></span><br><span class="line">npm install 包名 --save-dev</span><br><span class="line">npm install 包名 -D</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到全局环境</span></span><br><span class="line">npm install 包名 -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除包</span></span><br><span class="line">npm remove 包名</span><br><span class="line">npm r 包名</span><br></pre></td></tr></table></figure>
 <h3><span id="pcnpm">cnpm</span><a href="#pcnpm" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org
-# 或者
-npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 <h3><span id="pyarn">Yarn</span><a href="#pyarn" class="header-anchor">#</a></h3>
 <p>待更新。</p>
 <h2><span id="ppackage-json">package.json</span><a href="#ppackage-json" class="header-anchor">#</a></h2>
@@ -362,33 +328,7 @@ npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org<span aria-hidd
 <p><code>package.json</code> 文件其实就是对项目或者模块包的描述，里面包含许多元信息。比如项目名称，项目版本，项目执行入口文件，项目贡献者等等。<code>npm install</code>命令会根据这个文件下载所有依赖模块。</p>
 <p>在项目根目录下执行 <code>npm init</code>，然后根据提示一步步输入相应的内容完成后即可自动创建该文件。</p>
 <p>包描述文件包含以下字段：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">name - 包名，不能有中文、特殊字符等
-version - 包的版本号
-description - 包的描述
-homepage - 包的官网URL
-author - 包的作者
-contributors - 包的其他贡献者
-description - 项目描述，是一个字符串
-keywords - 项目关键字，是一个字符串数组
-private - 是否私有，设置为 true 时，npm 拒绝发布
-license - 软件授权条款，让用户知道他们的使用权利和限制
-bugs - bug 提交地址
-repository - 项目仓库地址
-homepage - 项目包的官网 URL
-dependencies - 生产环境下，项目运行所需依赖，运行包时需要使用的依赖
-
-\&gt; 显示的版本号：
-\&gt; 1.12.4 --&gt; 必须是 1.12.4 版本
-\&gt; ^1.12.4 --&gt; 必须是 1.12.x 版本，x取最新的
-\&gt; ~1.12.4 --&gt; 必须是 1.x.x 版本，x取最新的
-
-devDependencies - 开发环境下，项目所需依赖，构建包时需要使用依赖
-scripts - 执行 npm 脚本命令简写，比如 “start”: “react-scripts start”, 执行 npm start 就是运行 “react-scripts start”
-bin - 内部命令对应的可执行文件的路径。
-eslintConfig - EsLint 检查文件配置，自动读取验证
-engines - 项目运行的平台
-browseslist - 供浏览器使用的版本列表
-files - 被项目包含的文件名数组<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">name - 包名，不能有中文、特殊字符等</span><br><span class="line">version - 包的版本号</span><br><span class="line">description - 包的描述</span><br><span class="line">homepage - 包的官网URL</span><br><span class="line">author - 包的作者</span><br><span class="line">contributors - 包的其他贡献者</span><br><span class="line">description - 项目描述，是一个字符串</span><br><span class="line">keywords - 项目关键字，是一个字符串数组</span><br><span class="line">private - 是否私有，设置为 <span class="literal">true</span> 时，npm 拒绝发布</span><br><span class="line">license - 软件授权条款，让用户知道他们的使用权利和限制</span><br><span class="line">bugs - bug 提交地址</span><br><span class="line">repository - 项目仓库地址</span><br><span class="line">homepage - 项目包的官网 URL</span><br><span class="line">dependencies - 生产环境下，项目运行所需依赖，运行包时需要使用的依赖</span><br><span class="line"></span><br><span class="line">\&gt; 显示的版本号：</span><br><span class="line">\&gt; 1.12.4 --&gt; 必须是 1.12.4 版本</span><br><span class="line">\&gt; ^1.12.4 --&gt; 必须是 1.12.x 版本，x取最新的</span><br><span class="line">\&gt; ~1.12.4 --&gt; 必须是 1.x.x 版本，x取最新的</span><br><span class="line"></span><br><span class="line">devDependencies - 开发环境下，项目所需依赖，构建包时需要使用依赖</span><br><span class="line">scripts - 执行 npm 脚本命令简写，比如 “start”: “react-scripts start”, 执行 npm start 就是运行 “react-scripts start”</span><br><span class="line">bin - 内部命令对应的可执行文件的路径。</span><br><span class="line">eslintConfig - EsLint 检查文件配置，自动读取验证</span><br><span class="line">engines - 项目运行的平台</span><br><span class="line">browseslist - 供浏览器使用的版本列表</span><br><span class="line">files - 被项目包含的文件名数组</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -488,7 +428,7 @@ files - 被项目包含的文件名数组<span aria-hidden="true" class="line-nu
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -538,13 +478,13 @@ files - 被项目包含的文件名数组<span aria-hidden="true" class="line-nu
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="生成随机用户 id 字符串的工具模块。 &#x2F;&#x2F; 安装 npm i uuidjs  &#x2F;&#x2F; 引入 import uuid from &#39;uuidjs&#39;  &#x2F;&#x2F; 生成随机的用户id，如 const uuid &#x3D; UUID.generate() &#x2F;&#x2F; uuid: 9b88f18f-7172-41b0-8868-260045692a42">
+  <meta name="description" content="生成随机用户 id 字符串的工具模块。 12345678&#x2F;&#x2F; 安装npm i uuidjs&#x2F;&#x2F; 引入import uuid from &amp;#x27;uuidjs&amp;#x27;&#x2F;&#x2F; 生成随机的用户id，如const uuid &#x3D; UUID.generate() &#x2F;&#x2F; uuid: 9b88f18f-7172-41b0-8868-260045692a42">
 <meta property="og:type" content="article">
 <meta property="og:title" content="uuid.js 使用心得">
 <meta property="og:url" content="http://nigelkeel.gitee.io/220803/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="生成随机用户 id 字符串的工具模块。 &#x2F;&#x2F; 安装 npm i uuidjs  &#x2F;&#x2F; 引入 import uuid from &#39;uuidjs&#39;  &#x2F;&#x2F; 生成随机的用户id，如 const uuid &#x3D; UUID.generate() &#x2F;&#x2F; uuid: 9b88f18f-7172-41b0-8868-260045692a42">
+<meta property="og:description" content="生成随机用户 id 字符串的工具模块。 12345678&#x2F;&#x2F; 安装npm i uuidjs&#x2F;&#x2F; 引入import uuid from &amp;#x27;uuidjs&amp;#x27;&#x2F;&#x2F; 生成随机的用户id，如const uuid &#x3D; UUID.generate() &#x2F;&#x2F; uuid: 9b88f18f-7172-41b0-8868-260045692a42">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-31T16:35:47.252Z">
 <meta property="article:modified_time" content="2021-02-02T08:11:53.156Z">
@@ -45,7 +45,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>uuid.js 使用心得 | 永远的伊尔瓦</title>
   
 
@@ -101,6 +100,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>138</span>
+              <span>156</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -271,14 +271,7 @@
 
       
         <p>生成随机用户 id 字符串的工具模块。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 安装</span>
-npm i uuidjs
-
-<span class="token comment">// 引入</span>
-<span class="token keyword">import</span> uuid <span class="token keyword">from</span> <span class="token string">'uuidjs'</span>
-
-<span class="token comment">// 生成随机的用户id，如</span>
-<span class="token keyword">const</span> uuid <span class="token operator">=</span> <span class="token constant">UUID</span><span class="token punctuation">.</span><span class="token function">generate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// uuid: 9b88f18f-7172-41b0-8868-260045692a42</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 安装</span></span><br><span class="line">npm i uuidjs</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引入</span></span><br><span class="line"><span class="keyword">import</span> uuid <span class="keyword">from</span> <span class="string">&#x27;uuidjs&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成随机的用户id，如</span></span><br><span class="line"><span class="keyword">const</span> uuid = UUID.generate() <span class="comment">// uuid: 9b88f18f-7172-41b0-8868-260045692a42</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -376,7 +369,7 @@ npm i uuidjs
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -426,13 +419,13 @@ npm i uuidjs
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

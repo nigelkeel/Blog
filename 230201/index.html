@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="JavaScript BOM# Browser Object Model，浏览器对象模型。 一、window 对象# window 是 BOM 的核心对象。表示浏览器的一个实例，是客户端浏览器对象模型的基类。在浏览器中，该对象具有双重角色，既是通过 JS 访问浏览器窗口的一个接口，也是 ES 规定中的 Global 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以 window 作为其">
@@ -45,7 +45,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>BOM | 永远的伊尔瓦</title>
   
 
@@ -101,6 +100,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -320,15 +320,7 @@
 </ul>
 <p>返回值 就是新建的窗口名称。</p>
 <p><code>窗口名.close()</code>可以关闭窗口，如果关闭自身那就使用 <code>window.close()</code>。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1. 打开窗口</span>
-<span class="token keyword">var</span> newWin <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>
-  <span class="token string">"http://www.jd.com"</span><span class="token punctuation">,</span>
-  <span class="token string">"_blank"</span><span class="token punctuation">,</span>
-  <span class="token string">"width=300,height=300,left=200,top=100"</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 2. 关闭窗口</span>
-newWin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 打开窗口</span></span><br><span class="line"><span class="keyword">var</span> newWin = <span class="built_in">window</span>.open(</span><br><span class="line">  <span class="string">&quot;http://www.jd.com&quot;</span>,</span><br><span class="line">  <span class="string">&quot;_blank&quot;</span>,</span><br><span class="line">  <span class="string">&quot;width=300,height=300,left=200,top=100&quot;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 关闭窗口</span></span><br><span class="line">newWin.close();</span><br></pre></td></tr></table></figure>
 <p><code>close()</code> 方法仅适用于通过 <code>window.open()</code> 打开的弹出窗口。</p>
 <h2><span id="p4-liu-lan-qi-kuan-gao">4、浏览器宽高</span><a href="#p4-liu-lan-qi-kuan-gao" class="header-anchor">#</a></h2>
 <p><code>window</code>对象有<code>innerWidth</code>和<code>innerHeight</code>属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。</p>
@@ -360,16 +352,9 @@ newWin<span class="token punctuation">.</span><span class="token function">close
 <p>navigator.userAgent 返回值一般都会包含操作系统的基本信息，不过这些信息比较散乱，没有统一的规则。</p>
 <p>用户可以检测一些更为通用的信息，如检测是否为 Windows 系统，或者为 Macintosh 系统，而不去分辨操作系统的版本号。</p>
 <p>例如，如果仅检测通用信息，那么所有 Windows 版本的操作系统都会包含&quot;Win”字符串，所有 Macintosh 版本的操作系统都包含有&quot;Mac”字符串，所有 Umix 版本的操作系统都包含有&quot;X11”，而 Linux 操作系统会同时包含&quot;X11”和&quot; Linux。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> isWin <span class="token operator">=</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Win"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token comment">// 如果是Windows系统，则返回true</span>
-<span class="token keyword">var</span> isMac <span class="token operator">=</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Mac"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token comment">// 如果是Macintosh系统，则返回true</span>
-<span class="token keyword">var</span> isUnix <span class="token operator">=</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"X11"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token comment">// 如果是UNIX系统，则返回true</span>
-<span class="token keyword">var</span> isLinux <span class="token operator">=</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"Linux"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token comment">// 如果是Linux系统，则返回true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isWin = navigator.userAgent.indexOf(<span class="string">&quot;Win&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Windows系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isMac = navigator.userAgent.indexOf(<span class="string">&quot;Mac&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Macintosh系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isUnix = navigator.userAgent.indexOf(<span class="string">&quot;X11&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是UNIX系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isLinux = navigator.userAgent.indexOf(<span class="string">&quot;Linux&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Linux系统，则返回true</span></span><br></pre></td></tr></table></figure>
 <p>！请注意，<code>navigator</code>的信息可以很容易地被用户修改，所以 JavaScript 读取的值不一定是正确的。但这样既可能判断不准确，也很难维护代码。正确的方法是充分利用 JavaScript 对不存在属性返回<code>undefined</code>的特性，直接用短路运算符<code>||</code>计算：</p>
-<pre class="line-numbers language-none"><code class="language-none">var width &#x3D; window.innerWidth || document.body.clientWidth;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var width &#x3D; window.innerWidth || document.body.clientWidth;</span><br></pre></td></tr></table></figure>
 <h1><span id="san-location-dui-xiang">三、location 对象</span><a href="#san-location-dui-xiang" class="header-anchor">#</a></h1>
 <p><code>location</code> 对象存储了与当前文档位置（URL）信息。</p>
 <table>
@@ -415,17 +400,7 @@ newWin<span class="token punctuation">.</span><span class="token function">close
 </tbody>
 </table>
 <p><code>location.href</code> 可以设置和获取 url 地址</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">location<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">"demo.html"</span><span class="token punctuation">;</span> <span class="token comment">//重定向</span>
-location<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-location<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//刷新</span>
-location<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"demo.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-hostname<span class="token punctuation">;</span> <span class="token comment">// http://127.0.0.1:5500/0717/12.location.html</span>
-protocol<span class="token punctuation">;</span> <span class="token comment">// 127.0.0.1</span>
-host<span class="token punctuation">;</span> <span class="token comment">// http:</span>
-port<span class="token punctuation">;</span> <span class="token comment">// 127.0.0.1:5500</span>
-pathname<span class="token punctuation">;</span> <span class="token comment">// 5500</span>
-search<span class="token punctuation">;</span> <span class="token comment">/// 0717/12.location.html</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">&quot;demo.html&quot;</span>; <span class="comment">//重定向</span></span><br><span class="line">location.assign(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line">location.reload(); <span class="comment">//刷新</span></span><br><span class="line">location.replace(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line"></span><br><span class="line">hostname; <span class="comment">// http://127.0.0.1:5500/0717/12.location.html</span></span><br><span class="line">protocol; <span class="comment">// 127.0.0.1</span></span><br><span class="line">host; <span class="comment">// http:</span></span><br><span class="line">port; <span class="comment">// 127.0.0.1:5500</span></span><br><span class="line">pathname; <span class="comment">// 5500</span></span><br><span class="line">search; <span class="comment">/// 0717/12.location.html</span></span><br></pre></td></tr></table></figure>
 <p><code>reload()</code> 重新加载文档</p>
 <p><code>replace()</code> 重新加载一个新文档，无需为它创建一个新的历史记录，替换当前文档的历史记录</p>
 <p><code>assign()</code> 和<code>href</code>差不多，要加载一个新页面，可以调用 <code>location.assign()</code> 。如果要重新加载当前页面，调用 <code>location.reload()</code> 方法非常方便。</p>
@@ -540,7 +515,7 @@ search<span class="token punctuation">;</span> <span class="token comment">/// 0
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -590,13 +565,13 @@ search<span class="token punctuation">;</span> <span class="token comment">/// 0
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

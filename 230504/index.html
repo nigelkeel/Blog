@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="跨域解决方案# 一、同源策略# Same-Origin Policy，同源策略 最早由 Netscape 公司提出，是浏览器的一种安全策略。该策略表示协议、域名、端口号必须完全相同。 违背同源策略就是跨域，主要是针对 ajax 而言。 二、JSONP# JSON with Padding，JSONP 是一个非官方的跨域解决方案，只支持 get 请求，而且需要服务器的配合。 1、工作原理# 在网页有">
@@ -46,7 +46,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>跨域解决方案 | 永远的伊尔瓦</title>
   
 
@@ -102,6 +101,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -252,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -281,45 +281,12 @@
 <p>在网页有一些标签天生具有跨域能力，比如 <code>img</code> <code>link</code> <code>iframe</code> <code>script</code>。JSONP 就是利用 <code>script</code> 标签的跨域能力来发送请求的。</p>
 <h3><span id="p2-ying-yong-shi-li">2、应用示例</span><a href="#p2-ying-yong-shi-li" class="header-anchor">#</a></h3>
 <p>客户端</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-  <span class="token keyword">const</span> script <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-  <span class="token comment">// 这是一个事件触发</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">&#123;</span>
-      <span class="token comment">// 新建一个 script 标签</span>
-      script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"script"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 设置需要跨域的URL</span>
-      script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://.../test?a=1&amp;cb=jp"</span><span class="token punctuation">;</span>
-      <span class="token comment">// 插入到页面</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token comment">// 回调函数</span>
-  <span class="token keyword">function</span> <span class="token function">jp</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token comment">// 这边要移除script 标签</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 后续操作</span>
-  <span class="token punctuation">&#125;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> script = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 这是一个事件触发</span></span></span><br><span class="line">  ..&#123;</span><br><span class="line"><span class="javascript">      <span class="comment">// 新建一个 script 标签</span></span></span><br><span class="line"><span class="javascript">      script = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 设置需要跨域的URL</span></span></span><br><span class="line"><span class="javascript">      script.src = <span class="string">&quot;http://.../test?a=1&amp;cb=jp&quot;</span>;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 插入到页面</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.body.appendChild(script);</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="comment">// 回调函数</span></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">jp</span>(<span class="params">n</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 这边要移除script 标签</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.body.removeChild(script);</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 后续操作</span></span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>服务器</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token function">cb</span><span class="token punctuation">(</span>xxx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.end(cb(xxx));</span><br></pre></td></tr></table></figure>
 <h2><span id="psan-cors">三、CORS</span><a href="#psan-cors" class="header-anchor">#</a></h2>
 <p>Cross-Origin Resource Sharing，CORS，<strong>跨域资源共享</strong>是官方的跨域解决方案，它的特点是不需要在客户端做任何特殊的操作，完全在服务器中进行处理，支持 GET 和 POST 请求。是通过设置一个响应头来告诉浏览器，该请求允许跨域，浏览器收到该响应以后就会对响应放行。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 服务端</span>
-app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-    <span class="token comment">// 设置白名单</span>
-    <span class="token keyword">const</span> arrOrigin <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token string">"http://xxxxx"</span><span class="token punctuation">,</span>
-        <span class="token string">"xxxx"</span>
-    <span class="token punctuation">]</span>
-    <span class="token comment">// 如果访问的URL在白名单中</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>arrOrigin<span class="token punctuation">.</span><span class="token function">oncludes</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>header<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">// 允许跨域</span>
-        res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>req<span class="token punctuation">.</span>header<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 允许携带内容</span>
-        res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Headers"</span><span class="token punctuation">,</span> <span class="token string">"content-type"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务端</span></span><br><span class="line">app.all(<span class="string">&quot;*&quot;</span>, <span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 设置白名单</span></span><br><span class="line">    <span class="keyword">const</span> arrOrigin = [</span><br><span class="line">        <span class="string">&quot;http://xxxxx&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xxxx&quot;</span></span><br><span class="line">    ]</span><br><span class="line">    <span class="comment">// 如果访问的URL在白名单中</span></span><br><span class="line">    <span class="keyword">if</span>(arrOrigin.oncludes(req.header.origin))&#123;</span><br><span class="line">        <span class="comment">// 允许跨域</span></span><br><span class="line">        res.header(<span class="string">&quot;Access-Control-Allow-Origin&quot;</span>),req.header.origin);</span><br><span class="line">        <span class="comment">// 允许携带内容</span></span><br><span class="line">        res.header(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>, <span class="string">&quot;content-type&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2><span id="psi-fu-wu-qi-dai-li">四、服务器代理</span><a href="#psi-fu-wu-qi-dai-li" class="header-anchor">#</a></h2>
 <p>服务器和服务器之间没有同源策略限制，所以可以通过代理的方式进行跨域。</p>
 
@@ -421,7 +388,7 @@ app<span class="token punctuation">.</span><span class="token function">all</spa
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -471,13 +438,13 @@ app<span class="token punctuation">.</span><span class="token function">all</spa
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

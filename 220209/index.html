@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1、ES6 Module#  简称 ESM  import * as test from &quot;.&#x2F;test&quot;; 2、NodeJS 模块化# CommonJS# NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 CommonJS 模块化系统。 1、模块暴露# 默认情况下模块内部代码对于外部来说都是不可见的，可以通过以下方式向外部暴露变量和函数。 （1）通过 module.exports">
+  <meta name="description" content="1、ES6 Module#  简称 ESM  1import * as test from &quot;.&#x2F;test&quot;; 2、NodeJS 模块化# CommonJS# NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 CommonJS 模块化系统。 1、模块暴露# 默认情况下模块内部代码对于外部来说都是不可见的，可以通过以下方式向外部暴露变量和函数。 （1）通过 mod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 模块化">
 <meta property="og:url" content="http://nigelkeel.gitee.io/220209/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="1、ES6 Module#  简称 ESM  import * as test from &quot;.&#x2F;test&quot;; 2、NodeJS 模块化# CommonJS# NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 CommonJS 模块化系统。 1、模块暴露# 默认情况下模块内部代码对于外部来说都是不可见的，可以通过以下方式向外部暴露变量和函数。 （1）通过 module.exports">
+<meta property="og:description" content="1、ES6 Module#  简称 ESM  1import * as test from &quot;.&#x2F;test&quot;; 2、NodeJS 模块化# CommonJS# NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 CommonJS 模块化系统。 1、模块暴露# 默认情况下模块内部代码对于外部来说都是不可见的，可以通过以下方式向外部暴露变量和函数。 （1）通过 mod">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-02T07:08:34.489Z">
 <meta property="article:modified_time" content="2021-02-02T08:04:40.287Z">
@@ -47,7 +47,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>JavaScript 模块化 | 永远的伊尔瓦</title>
   
 
@@ -103,6 +102,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -247,7 +247,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -270,7 +270,7 @@
 <blockquote>
 <p>简称 <code>ESM</code></p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> test <span class="token keyword">from</span> <span class="token string">"./test"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> test <span class="keyword">from</span> <span class="string">&quot;./test&quot;</span>;</span><br></pre></td></tr></table></figure>
 <h2><span id="p2-nodejs-mo-kuai-hua">2、NodeJS 模块化</span><a href="#p2-nodejs-mo-kuai-hua" class="header-anchor">#</a></h2>
 <h3><span id="pcommonjs">CommonJS</span><a href="#pcommonjs" class="header-anchor">#</a></h3>
 <p>NodeJS 借鉴了 Common 规范实现了一套模块系统，称为 <strong>CommonJS</strong> 模块化系统。</p>
@@ -280,79 +280,31 @@
 <p><code>module.exports</code> 是导出的对象。</p>
 <p>无论添加还是直接覆盖，他永远都是导出的对象。</p>
 <p>如果是导出一个对象，可以写</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>obj <span class="token operator">=</span> obj<span class="token punctuation">;</span>
-<span class="token comment">//或者</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span> obj<span class="token operator">:</span> obj <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports.obj = obj;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123; <span class="attr">obj</span>: obj &#125;;</span><br></pre></td></tr></table></figure>
 <p>如果导出一组对象，可以写</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">moudle<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span> obj<span class="token operator">:</span> obj<span class="token punctuation">,</span> obj2<span class="token operator">:</span> obj2 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">moudle.exports.obj = &#123; <span class="attr">obj</span>: obj, <span class="attr">obj2</span>: obj2 &#125;;</span><br></pre></td></tr></table></figure>
 <p>如果直接导出</p>
-<pre class="line-numbers language-none"><code class="language-none">module.exports &#x3D; fun;
-&#x2F;&#x2F; 导出的对象是 fun 函数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; fun;</span><br><span class="line">&#x2F;&#x2F; 导出的对象是 fun 函数</span><br></pre></td></tr></table></figure>
 <p>例子</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 暴露出去</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> add<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 暴露出去</span></span><br><span class="line"><span class="built_in">module</span>.exports = add;</span><br></pre></td></tr></table></figure>
 <p>（2）将变量和函数设置为 <code>exports</code> 的属性来暴露变量和函数为了方便，Node 为每个模块提供一个 exports 变量，指向 module.exports，例如： <code>module.exports.fun = …</code>，相当于<code>exports.fun = ...</code>。</p>
 <p><code>exports</code> 本身不具备导出功能，但是修改它的时候，其实是修改了<code>module.exports</code> 。<code>exports</code> 是指向 <code>moudlue.exports</code> 的对象地址的一个新对象。（<code>exports = xxx</code> 的用法是错误的，这样使其不再绑定。正确的用法是 <code>exports.xxx = xxx</code> ）</p>
 <p>不能将一个值赋值给<code>exports</code>，而是使用<code>exports.XXX</code>来暴露。否则这样它将不再绑定到<code>module.exports</code>。如果 exports 导出的变量类型是引用类型如函数，则会断开与<code>module.exports</code>的地址指向，导致变量导出失败。因为最终还是要靠<code>module.exports</code>来导出变量的。</p>
 <p>例子</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 暴露出去</span>
-exports<span class="token punctuation">.</span>add <span class="token operator">=</span> add<span class="token punctuation">;</span> <span class="token comment">// &#123; add: [Function: add] &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 暴露出去</span></span><br><span class="line"><span class="built_in">exports</span>.add = add; <span class="comment">// &#123; add: [Function: add] &#125;</span></span><br></pre></td></tr></table></figure>
 <h2><span id="p2-mo-kuai-dao-ru">2、模块导入</span><a href="#p2-mo-kuai-dao-ru" class="header-anchor">#</a></h2>
 <p>通过 <code>require()</code> 来引入外部的模块</p>
 <p>模块分为三种类型。</p>
 <p>（1）系统模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"path"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>（2）第三方模块</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// npm install express -save</span>
-<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// npm install express -save</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>（3）自定义模块</p>
 <p>可以不书写后缀名：默认按照 js json node 顺序解析</p>
 <p>一定要加上<code>./</code> 或者 <code>../</code> 之类的路径 否则可能解析错误</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// f1,f2 是 函数 o1,o2 是对象</span>
-
-<span class="token comment">// (1)</span>
-module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>f1 <span class="token operator">=</span> f1<span class="token punctuation">;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-module<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>o1 <span class="token operator">=</span> o1<span class="token punctuation">;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>o1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// &#123; o1: &#123;...&#125;&#125;</span>
-
-<span class="token comment">// (2)</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>f1<span class="token operator">:</span>f1<span class="token punctuation">,</span> f2<span class="token operator">:</span>f2<span class="token punctuation">&#125;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment">// &#123; o1: &#123;...&#125;, o2: &#123;...&#125; &#125;</span>
-
-
-<span class="token comment">// (3)</span>
-exports<span class="token punctuation">.</span>f1 <span class="token operator">=</span> f1<span class="token punctuation">;</span>
-exports<span class="token punctuation">.</span>f2 <span class="token operator">=</span> f2<span class="token punctuation">;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> <span class="token punctuation">&#123;</span>f1<span class="token punctuation">,</span> f2<span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./mod/test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// (4)</span>
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./xxx/xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [Function: f]</span>
-<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// f1,f2 是 函数 o1,o2 是对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// (1)</span></span><br><span class="line"><span class="built_in">module</span>.exports.f1 = f1;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> &#123;f1&#125; = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.o1 = o1;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> &#123;o1&#125; = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123; o1: &#123;...&#125;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// (2)</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;<span class="attr">f1</span>:f1, <span class="attr">f2</span>:f2&#125;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj) <span class="comment">// &#123; o1: &#123;...&#125;, o2: &#123;...&#125; &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// (3)</span></span><br><span class="line"><span class="built_in">exports</span>.f1 = f1;</span><br><span class="line"><span class="built_in">exports</span>.f2 = f2;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> &#123;f1&#125; = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> &#123;f1, f2&#125; = <span class="built_in">require</span>(<span class="string">&quot;./mod/test&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// (4)</span></span><br><span class="line"><span class="built_in">module</span>.exports = f = <span class="function">() =&gt;</span> &#123;&#125;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> fn = <span class="built_in">require</span>(<span class="string">&quot;./xxx/xxx&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(fn); <span class="comment">// [Function: f]</span></span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
 <p>！实际使用例子</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// (1)</span>
-module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token operator">...</span><span class="token punctuation">&#125;</span>
-<span class="token operator">==</span><span class="token operator">></span>
-<span class="token keyword">const</span> xxx <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"./xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1)</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (req, res) =&gt; &#123;...&#125;</span><br><span class="line">==&gt;</span><br><span class="line"><span class="keyword">const</span> xxx = <span class="built_in">require</span>(<span class="string">&quot;./xxx&quot;</span>);</span><br></pre></td></tr></table></figure>
 <h2><span id="p3-lu-jing-fen-xi-he-wen-jian-ding-wei">3、路径分析和文件定位</span><a href="#p3-lu-jing-fen-xi-he-wen-jian-ding-wei" class="header-anchor">#</a></h2>
 <p>路径形式的文件模块：以<code>./</code> <code>../</code>路径形式的文件模块，将其转化为真实路径，根据真实路径索引去查找。</p>
 <p>第三方模块会从 <code>node_modules</code> 逐层往上找，直到根目录的<code>node_modules</code>。</p>
@@ -458,7 +410,7 @@ module<span class="token punctuation">.</span><span class="token function-variab
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -508,13 +460,13 @@ module<span class="token punctuation">.</span><span class="token function-variab
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

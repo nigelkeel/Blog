@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。 本文基于 Typora。 流程图# graph TD;     A--&gt;B;     A--&gt;C;     B--&gt;D;  graph TD;     A--&gt;B;">
+  <meta name="description" content="Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。 本文基于 Typora。 流程图# 1234graph TD;    A--&gt;B;    A--&gt;C;    B--&gt;D;  graph TD;     A--&gt;B;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mermaid">
 <meta property="og:url" content="http://nigelkeel.gitee.io/181008/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。 本文基于 Typora。 流程图# graph TD;     A--&gt;B;     A--&gt;C;     B--&gt;D;  graph TD;     A--&gt;B;">
+<meta property="og:description" content="Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。 本文基于 Typora。 流程图# 1234graph TD;    A--&gt;B;    A--&gt;C;    B--&gt;D;  graph TD;     A--&gt;B;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-31T16:56:17.712Z">
 <meta property="article:modified_time" content="2021-02-02T06:41:46.261Z">
@@ -46,7 +46,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>Mermaid | 永远的伊尔瓦</title>
   
 
@@ -102,6 +101,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -252,7 +252,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>783</span>
+              <span>826</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,66 +274,31 @@
         <p>Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。<br>
 本文基于 Typora。</p>
 <h2><span id="pliu-cheng-tu">流程图</span><a href="#pliu-cheng-tu" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">graph TD;
-    A--&gt;B;
-    A--&gt;C;
-    B--&gt;D;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br></pre></td></tr></table></figure>
 <pre class="mermaid"> graph TD;
     A-->B;
     A-->C;
     B-->D;</pre>
 <h2><span id="pshi-xu-tu">时序图</span><a href="#pshi-xu-tu" class="header-anchor">#</a></h2>
 <p>语法解释：<code>-&gt;&gt;</code> 代表实线箭头，<code>--&gt;&gt;</code> 则代表虚线。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br></pre></td></tr></table></figure>
 <pre class="mermaid">sequenceDiagram
     Alice->>John: Hello John, how are you?
     John-->>Alice: Great!</pre>
 <h2><span id="pzhuang-tai-tu">状态图</span><a href="#pzhuang-tai-tu" class="header-anchor">#</a></h2>
 <p>语法解释：<code>[*]</code> 表示开始或者结束，如果在箭头右边则表示结束。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">stateDiagram
-    [*] --&gt; s1
-    s1 --&gt; [*]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; s1</span><br><span class="line">    s1 --&gt; [*]</span><br></pre></td></tr></table></figure>
 <pre class="mermaid">stateDiagram
     [*] --> s1
     s1 --> [*]</pre>
 <h2><span id="plei-tu">类图</span><a href="#plei-tu" class="header-anchor">#</a></h2>
 <p>语法解释：<code>&lt;|--</code> 表示继承，<code>+</code> 表示 <code>public</code>，<code>-</code> 表示 <code>private</code>。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">classDiagram
-      Animal &lt;|-- Duck
-      Animal &lt;|-- Fish
-      Animal &lt;|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck&#123;
-          +String beakColor
-          +swim()
-          +quack()
-      &#125;
-      class Fish&#123;
-          -int sizeInFeet
-          -canEat()
-      &#125;
-      class Zebra&#123;
-          +bool is_wild
-          +run()
-      &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 <pre class="mermaid">classDiagram
       Animal <|-- duck animal <|-- fish zebra : +int age +string gender animal: +ismammal() +mate() class duck{ beakcolor +swim() +quack() } fish{ -int sizeinfeet -caneat() zebra{ +bool is_wild +run() }< pre>
 <h2><span id="pgan-te-tu">甘特图</span><a href="#pgan-te-tu" class="header-anchor">#</a></h2>
 <p>甘特图一般用来表示项目的计划排期，目前在工作中经常会用到。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">gantt
-    title 工作计划
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2020-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2020-01-12  , 12d
-    another task      : 24d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    title 工作计划</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    section Section</span><br><span class="line">    A task           :a1, 2020-01-01, 30d</span><br><span class="line">    Another task     :after a1  , 20d</span><br><span class="line">    section Another</span><br><span class="line">    Task in sec      :2020-01-12  , 12d</span><br><span class="line">    another task      : 24d</span><br></pre></td></tr></table></figure>
 <pre class="mermaid">gantt
     title 工作计划
     dateFormat  YYYY-MM-DD
@@ -345,12 +310,7 @@
     another task      : 24d</pre>
 <h2><span id="pbing-tu">饼图</span><a href="#pbing-tu" class="header-anchor">#</a></h2>
 <p>饼图使用 <code>pie</code> 表示，标题下面分别是区域名称及其百分比。</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">pie
-    title Key elements in Product X
-    &quot;Calcium&quot; : 42.96
-    &quot;Potassium&quot; : 50.05
-    &quot;Magnesium&quot; : 10.01
-    &quot;Iron&quot; :  5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br></pre></td></tr></table></figure>
 <pre class="mermaid">pie
     title Key elements in Product X
     "Calcium" : 42.96
@@ -456,7 +416,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -506,13 +466,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

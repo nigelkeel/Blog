@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CSS 开始# CSS，即 Cascading Style Sheets，层叠样式表。 具有：  像素级精确控制。 将内容和表现形式分离。 层叠特性。  一、基本语句# 通常分为三部分：选择器，属性，属性值。        属性      分号 .box &amp;#123; width:10px;  height:20px; &amp;#125;   选择器        属性值  可以写多个 二、使用方式#">
+  <meta name="description" content="CSS 开始# CSS，即 Cascading Style Sheets，层叠样式表。 具有：  像素级精确控制。 将内容和表现形式分离。 层叠特性。  一、基本语句# 通常分为三部分：选择器，属性，属性值。 123       属性      分号.box &amp;#123; width:10px;  height:20px; &amp;#125;  选择器        属性值  可以写多个 二、使用方式#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS 开始">
 <meta property="og:url" content="http://nigelkeel.gitee.io/210201/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="CSS 开始# CSS，即 Cascading Style Sheets，层叠样式表。 具有：  像素级精确控制。 将内容和表现形式分离。 层叠特性。  一、基本语句# 通常分为三部分：选择器，属性，属性值。        属性      分号 .box &amp;#123; width:10px;  height:20px; &amp;#125;   选择器        属性值  可以写多个 二、使用方式#">
+<meta property="og:description" content="CSS 开始# CSS，即 Cascading Style Sheets，层叠样式表。 具有：  像素级精确控制。 将内容和表现形式分离。 层叠特性。  一、基本语句# 通常分为三部分：选择器，属性，属性值。 123       属性      分号.box &amp;#123; width:10px;  height:20px; &amp;#125;  选择器        属性值  可以写多个 二、使用方式#">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-30T02:02:47.220Z">
 <meta property="article:modified_time" content="2021-02-01T10:33:34.055Z">
@@ -45,7 +45,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>CSS 开始 | 永远的伊尔瓦</title>
   
 
@@ -101,6 +100,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>622</span>
+              <span>706</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,13 +280,11 @@
 </ul>
 <h2><span id="pyi-ji-ben-yu-ju">一、基本语句</span><a href="#pyi-ji-ben-yu-ju" class="header-anchor">#</a></h2>
 <p>通常分为三部分：选择器，属性，属性值。</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css">       <span class="token selector">属性      分号
-.box</span> <span class="token punctuation">&#123;</span> <span class="token property">width</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>  <span class="token property">height</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>  
-选择器        属性值  可以写多个<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">       属性      分号</span><br><span class="line"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:<span class="number">10px</span>;  <span class="attribute">height</span>:<span class="number">20px</span>; &#125;  </span><br><span class="line">选择器        属性值  可以写多个</span><br></pre></td></tr></table></figure>
 <h2><span id="per-shi-yong-fang-shi">二、使用方式</span><a href="#per-shi-yong-fang-shi" class="header-anchor">#</a></h2>
 <h3><span id="p1-nei-lian-shi">1. 内联式</span><a href="#p1-nei-lian-shi" class="header-anchor">#</a></h3>
 <p>一般不推荐使用。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:10px; height:10px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>特点：</p>
 <ul>
 <li>优先级高</li>
@@ -295,15 +293,7 @@
 </ul>
 <h3><span id="p2-tou-bu-yin-ru">2. 头部引入</span><a href="#p2-tou-bu-yin-ru" class="header-anchor">#</a></h3>
 <p>常用。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  ...
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-    <span class="token selector">div</span> <span class="token punctuation">&#123;</span>
-      <span class="token property">width</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
-      <span class="token property">height</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">      width: 10px;</span><br><span class="line">      height: 10px;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>特点：</p>
 <ul>
 <li>方便维护和修改</li>
@@ -311,10 +301,7 @@
 </ul>
 <h3><span id="p3-wai-bu-yin-ru">3. 外部引入</span><a href="#p3-wai-bu-yin-ru" class="header-anchor">#</a></h3>
 <p>（1）<code>link</code> 方式</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  ...
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attr">href</span>=<span class="string">&quot;index.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>（2）<code>@import</code> 方式</p>
 <p>不推荐。</p>
 <p>（3）<code>@import</code> 和 <code>link</code> 方式引入的区别：</p>
@@ -422,7 +409,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -472,13 +459,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

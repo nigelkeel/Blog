@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="这个人很懒，什么都没留下。">
@@ -42,7 +42,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>永远的伊尔瓦</title>
   
 
@@ -98,6 +97,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -197,6 +197,112 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/340204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">340204</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/340204/" class="post-title-link" itemprop="url">Python Random</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 01:50:46" itemprop="dateCreated datePublished" datetime="2021-01-31T01:50:46+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:24:20" itemprop="dateModified" datetime="2021-02-01T19:24:20+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3402%EF%BC%9APython%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">3402：Python库</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>279</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="python-random">Python Random</span><a href="#python-random" class="header-anchor">#</a></h1>
+<blockquote>
+<p>随机数库</p>
+</blockquote>
+<p>1、引入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br></pre></td></tr></table></figure>
+<p>2、生成一个指定范围内的随机浮点数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.uniform(n1,n2)</span><br></pre></td></tr></table></figure>
+<p>3、生成一个指定范围内的整数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.randint(n1,n2)</span><br></pre></td></tr></table></figure>
+<p>4、从指定范围内，按指定的基数递增的集合中获取一个随机数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.randrange([start],stop[,step]) </span><br></pre></td></tr></table></figure>
+<p>5、从序列中获取一个随机元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.choice(序列)</span><br></pre></td></tr></table></figure>
+<p>6、打乱列表元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.shuffle(x[,random]) </span><br></pre></td></tr></table></figure>
+<p>7、从序列中随机获取指定长度的片段</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">random.sample(n1,n2)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/340202/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -248,7 +354,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>292</span>
+              <span>269</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -269,25 +375,13 @@
       
           <h1><span id="python-os-amp-sys">Python os &amp; sys</span><a href="#python-os-amp-sys" class="header-anchor">#</a></h1>
 <h1><span id="os">os</span><a href="#os" class="header-anchor">#</a></h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import os<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
 <h2><span id="psystem">system</span><a href="#psystem" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"># 清屏
-os.system(&#39;cls&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清屏</span></span><br><span class="line">os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <h1><span id="sys">sys</span><a href="#sys" class="header-anchor">#</a></h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">import sys<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
 <h2><span id="pargv">argv</span><a href="#pargv" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">if __name__ &#x3D;&#x3D; &quot;__main__&quot;:
-    q &#x3D; &#39;&#39;
-    b &#x3D; &#39;&#39;
-    c &#x3D; &#39;&#39;
-    if len(sys.argv) &#x3D;&#x3D; 4:
-        a &#x3D; sys.argv[1]
-        b &#x3D; sys.argv[2]
-        c &#x3D; sys.argv[3]
-    print(a,b,c)
-
-# 输入 python test1.py 1 2 3
-# 输出 1 2 3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    q = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    b = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    c = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">        a = sys.argv[<span class="number">1</span>]</span><br><span class="line">        b = sys.argv[<span class="number">2</span>]</span><br><span class="line">        c = sys.argv[<span class="number">3</span>]</span><br><span class="line">    print(a,b,c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入 python test1.py 1 2 3</span></span><br><span class="line"><span class="comment"># 输出 1 2 3</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -542,14 +636,14 @@ os.system(&#39;cls&#39;)<span aria-hidden="true" class="line-numbers-rows"><span
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -565,83 +659,15 @@ os.system(&#39;cls&#39;)<span aria-hidden="true" class="line-numbers-rows"><span
 <p><code>fetch</code> 是新型 ajax 请求方式，返回的是一个 Promise 对象。<br>
 兼容性不好。</p>
 <p>1、get</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/1"</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword/1&quot;</span>)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>2、post</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// application/json</span>
-<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span> <span class="token comment">// 默认是 get</span>
-  headers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"绒布球之剑"</span><span class="token punctuation">,</span>
-    attr<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      atk<span class="token operator">:</span> <span class="token number">999</span><span class="token punctuation">,</span>
-      parry<span class="token operator">:</span> <span class="token number">999</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// application/x-www-form-urlencoded</span>
-<span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span>
-  headers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/x-www-form-urlencoded"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  body<span class="token operator">:</span> <span class="token string">"name=大绒布球之剑&amp;text=绒布球之剑"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// application/json</span></span><br><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword&quot;</span>, &#123;</span><br><span class="line">  method: <span class="string">&quot;post&quot;</span>, <span class="comment">// 默认是 get</span></span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">&quot;content-type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    name: <span class="string">&quot;绒布球之剑&quot;</span>,</span><br><span class="line">    attr: &#123;</span><br><span class="line">      atk: <span class="number">999</span>,</span><br><span class="line">      parry: <span class="number">999</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// application/x-www-form-urlencoded</span></span><br><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword&quot;</span>, &#123;</span><br><span class="line">  method: <span class="string">&quot;post&quot;</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">&quot;content-type&quot;</span>: <span class="string">&quot;application/x-www-form-urlencoded&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: <span class="string">&quot;name=大绒布球之剑&amp;text=绒布球之剑&quot;</span>,</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>3、delete</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"delete"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>, &#123;</span><br><span class="line">  method: <span class="string">&quot;delete&quot;</span>,</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>4、put</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"put"</span><span class="token punctuation">,</span>
-  headers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"绒布球之大剑"</span><span class="token punctuation">,</span>
-    attr<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-      atk<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
-      parry<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">999</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>, &#123;</span><br><span class="line">  method: <span class="string">&quot;put&quot;</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">&quot;content-type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    name: <span class="string">&quot;绒布球之大剑&quot;</span>,</span><br><span class="line">    attr: &#123;</span><br><span class="line">      atk: <span class="number">-1</span>,</span><br><span class="line">      parry: <span class="number">-999</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>5、patch</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"patch"</span><span class="token punctuation">,</span>
-  headers<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  body<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"绒布球快乐剑"</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token operator">=></span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>, &#123;</span><br><span class="line">  method: <span class="string">&quot;patch&quot;</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">&quot;content-type&quot;</span>: <span class="string">&quot;application/json&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  body: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    name: <span class="string">&quot;绒布球快乐剑&quot;</span></span><br><span class="line">  &#125;),</span><br><span class="line">&#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -953,14 +979,14 @@ BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的�
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -975,84 +1001,34 @@ BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的�
           <p><strong>axios</strong> 是目前最受欢迎的 ajax 封装库， 基于 Promise。</p>
 <p><a target="_blank" rel="noopener" href="http://www.axios-js.com/zh-cn">文档</a></p>
 <h2><span id="pyi-kai-shi">一、开始</span><a href="#pyi-kai-shi" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npm install axios<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios</span><br></pre></td></tr></table></figure>
 <h2><span id="per-ji-ben-shi-yong">二、基本使用</span><a href="#per-ji-ben-shi-yong" class="header-anchor">#</a></h2>
 <p><code>axios</code> 相当于 <code>axios.request</code> ，返回的是一个 Promise 对象</p>
 <h3><span id="p1-get">1、GET</span><a href="#p1-get" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">axios</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>);</span><br></pre></td></tr></table></figure>
 <h3><span id="p2-post">2、POST</span><a href="#p2-post" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// application/json</span>
-axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  name<span class="token operator">:</span> <span class="token string">"破剑"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// application/x-www-form-urlencoded</span>
-axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword"</span><span class="token punctuation">,</span> <span class="token string">"name=破晓快乐剑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"post"</span><span class="token punctuation">,</span>
-  url<span class="token operator">:</span> <span class="token string">"http://127.0.0.1/sword"</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"破铁剑"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// application/json</span></span><br><span class="line">axios.post(<span class="string">&quot;http://127.0.0.1/sword&quot;</span>, &#123;</span><br><span class="line">  id: <span class="number">1</span>,</span><br><span class="line">  name: <span class="string">&quot;破剑&quot;</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// application/x-www-form-urlencoded</span></span><br><span class="line">axios.post(<span class="string">&quot;http://127.0.0.1/sword&quot;</span>, <span class="string">&quot;name=破晓快乐剑&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">&quot;post&quot;</span>,</span><br><span class="line">  url: <span class="string">&quot;http://127.0.0.1/sword&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">&quot;破铁剑&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3><span id="p3-delete">3、DELETE</span><a href="#p3-delete" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"delete"</span><span class="token punctuation">,</span>
-  url<span class="token operator">:</span> <span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.delete(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">&quot;delete&quot;</span>,</span><br><span class="line">  url: <span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3><span id="p4-put">4、PUT</span><a href="#p4-put" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token string">"七色破晓剑"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"put"</span><span class="token punctuation">,</span>
-  url<span class="token operator">:</span> <span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"七色破晓剑"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.put(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>, &#123;</span><br><span class="line">  name: <span class="string">&quot;七色破晓剑&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">&quot;put&quot;</span>,</span><br><span class="line">  url: <span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">&quot;七色破晓剑&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3><span id="p5-patch">5、PATCH</span><a href="#p5-patch" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">patch</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token string">"轩辕剑"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  method<span class="token operator">:</span> <span class="token string">"patch"</span><span class="token punctuation">,</span>
-  url<span class="token operator">:</span> <span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">,</span>
-  data<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    name<span class="token operator">:</span> <span class="token string">"轩辕剑"</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.patch(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>, &#123;</span><br><span class="line">  name: <span class="string">&quot;轩辕剑&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">&quot;patch&quot;</span>,</span><br><span class="line">  url: <span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    name: <span class="string">&quot;轩辕剑&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3><span id="p6-lian-zhui-xie-fa">6、连缀写法</span><a href="#p6-lian-zhui-xie-fa" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;&#125;);</span><br></pre></td></tr></table></figure>
 <h3><span id="p7-await-xie-fa">7、await 写法</span><a href="#p7-await-xie-fa" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"http://127.0.0.1/sword/9"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> axios.get(<span class="string">&quot;http://127.0.0.1/sword/9&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3><span id="p8-quan-ju-she-zhi">8、全局设置</span><a href="#p8-quan-ju-she-zhi" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 指定根路径</span>
-axios<span class="token punctuation">.</span>default<span class="token punctuation">.</span>baseURL <span class="token operator">=</span> <span class="token string">"http://127.0.0.1"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 指定超时时间（毫秒）</span>
-axios<span class="token punctuation">.</span>default<span class="token punctuation">.</span>timeout <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 指定根路径</span></span><br><span class="line">axios.default.baseURL = <span class="string">&quot;http://127.0.0.1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定超时时间（毫秒）</span></span><br><span class="line">axios.default.timeout = <span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
 <p>或者</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> ajax <span class="token operator">=</span> axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  baseURL<span class="token operator">:</span> <span class="token string">"/api"</span><span class="token punctuation">,</span> <span class="token comment">// 设置根路径</span>
-  timeOut<span class="token operator">:</span> <span class="token number">20000</span><span class="token punctuation">,</span> <span class="token comment">// 设置超时时间</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ajax = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">&quot;/api&quot;</span>, <span class="comment">// 设置根路径</span></span><br><span class="line">  timeOut: <span class="number">20000</span>, <span class="comment">// 设置超时时间</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2><span id="plan-jie-qi-chang-yong">拦截器 <code>常用</code></span><a href="#plan-jie-qi-chang-yong" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 请求拦截</span>
-axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  config<span class="token punctuation">.</span>url <span class="token operator">=</span> <span class="token string">"url"</span> <span class="token operator">+</span> config<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> config<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 响应拦截</span>
-axios<span class="token punctuation">.</span>intercertors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> res<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求拦截</span></span><br><span class="line">axios.interceptors.request.use(<span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">  config.url = <span class="string">&quot;url&quot;</span> + config.url;</span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 响应拦截</span></span><br><span class="line">axios.intercertors.response.use(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> res.data;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1123,7 +1099,7 @@ axios<span class="token punctuation">.</span>intercertors<span class="token punc
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>393</span>
+              <span>445</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1145,8 +1121,7 @@ axios<span class="token punctuation">.</span>intercertors<span class="token punc
           <h1><span id="mei-ti-cha-xun">媒体查询</span><a href="#mei-ti-cha-xun" class="header-anchor">#</a></h1>
 <p>媒体查询（media query)，CSS2 推出，CSS3 优化。</p>
 <p><code>navigator.userAgent</code> 获取浏览器的识别码</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">media</span>=<span class="string">&quot;tv&quot;</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h2><span id="pmei-ti-lei-xing">媒体类型</span><a href="#pmei-ti-lei-xing" class="header-anchor">#</a></h2>
 <p><code>all</code> 所有设备</p>
 <p><code>screen</code> 屏幕，默认值</p>
@@ -1157,8 +1132,7 @@ axios<span class="token punctuation">.</span>intercertors<span class="token punc
 <p><code>resolution</code> 分辨率</p>
 <p><code>devicePixelRatio</code> 像素比</p>
 <p>检测横屏、竖屏</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: portrait)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (orientation: landscape)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">media</span>=<span class="string">&quot;screen and (orientation: portrait)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">media</span>=<span class="string">&quot;screen and (orientation: landscape)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2><span id="pluo-ji-tiao-jian">逻辑条件</span><a href="#pluo-ji-tiao-jian" class="header-anchor">#</a></h2>
 <ul>
 <li><code>and</code> 与</li>
@@ -1432,7 +1406,7 @@ axios<span class="token punctuation">.</span>intercertors<span class="token punc
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1461,45 +1435,12 @@ axios<span class="token punctuation">.</span>intercertors<span class="token punc
 <p>在网页有一些标签天生具有跨域能力，比如 <code>img</code> <code>link</code> <code>iframe</code> <code>script</code>。JSONP 就是利用 <code>script</code> 标签的跨域能力来发送请求的。</p>
 <h3><span id="p2-ying-yong-shi-li">2、应用示例</span><a href="#p2-ying-yong-shi-li" class="header-anchor">#</a></h3>
 <p>客户端</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-  <span class="token keyword">const</span> script <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-  <span class="token comment">// 这是一个事件触发</span>
-  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">&#123;</span>
-      <span class="token comment">// 新建一个 script 标签</span>
-      script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"script"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 设置需要跨域的URL</span>
-      script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">"http://.../test?a=1&amp;cb=jp"</span><span class="token punctuation">;</span>
-      <span class="token comment">// 插入到页面</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token comment">// 回调函数</span>
-  <span class="token keyword">function</span> <span class="token function">jp</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-      <span class="token comment">// 这边要移除script 标签</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment">// 后续操作</span>
-  <span class="token punctuation">&#125;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">const</span> script = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">  <span class="comment">// 这是一个事件触发</span></span></span><br><span class="line">  ..&#123;</span><br><span class="line"><span class="javascript">      <span class="comment">// 新建一个 script 标签</span></span></span><br><span class="line"><span class="javascript">      script = <span class="built_in">document</span>.createElement(<span class="string">&quot;script&quot;</span>);</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 设置需要跨域的URL</span></span></span><br><span class="line"><span class="javascript">      script.src = <span class="string">&quot;http://.../test?a=1&amp;cb=jp&quot;</span>;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 插入到页面</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.body.appendChild(script);</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="javascript">  <span class="comment">// 回调函数</span></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">jp</span>(<span class="params">n</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 这边要移除script 标签</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.body.removeChild(script);</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 后续操作</span></span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>服务器</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token function">cb</span><span class="token punctuation">(</span>xxx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">res.end(cb(xxx));</span><br></pre></td></tr></table></figure>
 <h2><span id="psan-cors">三、CORS</span><a href="#psan-cors" class="header-anchor">#</a></h2>
 <p>Cross-Origin Resource Sharing，CORS，<strong>跨域资源共享</strong>是官方的跨域解决方案，它的特点是不需要在客户端做任何特殊的操作，完全在服务器中进行处理，支持 GET 和 POST 请求。是通过设置一个响应头来告诉浏览器，该请求允许跨域，浏览器收到该响应以后就会对响应放行。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 服务端</span>
-app<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-    <span class="token comment">// 设置白名单</span>
-    <span class="token keyword">const</span> arrOrigin <span class="token operator">=</span> <span class="token punctuation">[</span>
-        <span class="token string">"http://xxxxx"</span><span class="token punctuation">,</span>
-        <span class="token string">"xxxx"</span>
-    <span class="token punctuation">]</span>
-    <span class="token comment">// 如果访问的URL在白名单中</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>arrOrigin<span class="token punctuation">.</span><span class="token function">oncludes</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>header<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">// 允许跨域</span>
-        res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Origin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>req<span class="token punctuation">.</span>header<span class="token punctuation">.</span>origin<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">// 允许携带内容</span>
-        res<span class="token punctuation">.</span><span class="token function">header</span><span class="token punctuation">(</span><span class="token string">"Access-Control-Allow-Headers"</span><span class="token punctuation">,</span> <span class="token string">"content-type"</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务端</span></span><br><span class="line">app.all(<span class="string">&quot;*&quot;</span>, <span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 设置白名单</span></span><br><span class="line">    <span class="keyword">const</span> arrOrigin = [</span><br><span class="line">        <span class="string">&quot;http://xxxxx&quot;</span>,</span><br><span class="line">        <span class="string">&quot;xxxx&quot;</span></span><br><span class="line">    ]</span><br><span class="line">    <span class="comment">// 如果访问的URL在白名单中</span></span><br><span class="line">    <span class="keyword">if</span>(arrOrigin.oncludes(req.header.origin))&#123;</span><br><span class="line">        <span class="comment">// 允许跨域</span></span><br><span class="line">        res.header(<span class="string">&quot;Access-Control-Allow-Origin&quot;</span>),req.header.origin);</span><br><span class="line">        <span class="comment">// 允许携带内容</span></span><br><span class="line">        res.header(<span class="string">&quot;Access-Control-Allow-Headers&quot;</span>, <span class="string">&quot;content-type&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    next();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2><span id="psi-fu-wu-qi-dai-li">四、服务器代理</span><a href="#psi-fu-wu-qi-dai-li" class="header-anchor">#</a></h2>
 <p>服务器和服务器之间没有同源策略限制，所以可以通过代理的方式进行跨域。</p>
 
@@ -1664,7 +1605,7 @@ app<span class="token punctuation">.</span><span class="token function">all</spa
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1702,11 +1643,11 @@ app<span class="token punctuation">.</span><span class="token function">all</spa
 </ul>
 <h2><span id="p3-shi-yong">3、使用</span><a href="#p3-shi-yong" class="header-anchor">#</a></h2>
 <p>(1) <code>style</code>标签类型改成<code>less</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet/less"</span> type<span class="token operator">=</span><span class="token string">"text/css"</span> href<span class="token operator">=</span><span class="token string">"styles.less"</span> <span class="token operator">/</span><span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet/less&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;styles.less&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
 <p>还需要一个编译相关的 js 文件</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>(2) 在命令行编译 less 文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lessc styles.less styles.css<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lessc styles.less styles.css</span><br></pre></td></tr></table></figure>
 <p>(3) 通过 VSCode 的<code>Easy LESS</code>插件，在文件夹新建 less 文件，保存，即可在当前文件夹编译出相应的 css 文件。</p>
 <h2><span id="per-yu-fa">二、语法</span><a href="#per-yu-fa" class="header-anchor">#</a></h2>
 <h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
@@ -1714,10 +1655,7 @@ app<span class="token punctuation">.</span><span class="token function">all</spa
 <p>后者可以注释到 CSS 文件中。</p>
 <h2><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h2>
 <p>LESS 允许我们定义一些变量来管理 CSS，变量需以<code>@</code>开头。</p>
-<pre class="line-numbers language-less" data-language="less"><code class="language-less">&#x2F;&#x2F; 定义
-@test: 10px;
-&#x2F;&#x2F; 使用
-width: @test;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="variable">@test:</span> <span class="number">10px</span>;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="attribute">width</span>: <span class="variable">@test</span>;</span><br></pre></td></tr></table></figure>
 <p>注意作用域。</p>
 <p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
 <h2><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h2>
@@ -1802,7 +1740,7 @@ width: @test;<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.1k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1951,7 +1889,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 </table>
 <p>（2）a 标签的 color 属性默认不是继承，需要的时候需直接控制。</p>
 <h2><span id="p02-font-family-zi-ti-kong-zhi">02、font-family - 字体控制</span><a href="#p02-font-family-zi-ti-kong-zhi" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"微软雅黑"</span><span class="token punctuation">,</span> <span class="token string">"SimSun"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: &quot;微软雅黑&quot;, &quot;<span class="selector-tag">SimSun</span>&quot;;</span><br></pre></td></tr></table></figure>
 <p>浏览器根据 font-family 解析渲染不同图形的过程 <code>了解</code></p>
 <ol>
 <li>
@@ -1968,10 +1906,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 </li>
 </ol>
 <h2><span id="p03-font-face-zi-ding-yi-zi-ti-chang-yong">03、@font-face - 自定义字体 <code>常用</code></span><a href="#p03-font-face-zi-ding-yi-zi-ti-chang-yong" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">&#123;</span>
-  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"自定义字体名称"</span><span class="token punctuation">;</span>
-  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">"自定义字体路径"</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&quot;自定义字体名称&quot;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;自定义字体路径&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2><span id="p04-font-size-zi-ti-da-xiao">04、font-size - 字体大小</span><a href="#p04-font-size-zi-ti-da-xiao" class="header-anchor">#</a></h2>
 <p>常用单位</p>
 <ul>
@@ -2063,17 +1998,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 </tbody>
 </table>
 <p>图片垂直居中</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 1.首先控制父级内的元素的行高，让元素基线上下平分 */</span>
-<span class="token selector">outer</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
-  <span class="token property">line-height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">/*2.因为图片的基线是图片的底部，平分以后，不会居中 所以让图片改变成由自身的中间对齐方式对齐*/</span>
-<span class="token selector">img</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1.首先控制父级内的元素的行高，让元素基线上下平分 */</span></span><br><span class="line"><span class="selector-tag">outer</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">600px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*2.因为图片的基线是图片的底部，平分以后，不会居中 所以让图片改变成由自身的中间对齐方式对齐*/</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2><span id="p10-text-align-wen-ben-dui-qi-she-zhi">10、text-align - 文本对齐设置</span><a href="#p10-text-align-wen-ben-dui-qi-she-zhi" class="header-anchor">#</a></h2>
 <p><code>text-align</code> 文本对齐设置。控制当前元素内容。</p>
 <p>属性值</p>
@@ -2179,7 +2104,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 背景图片的左上角原点，是以 padding 区域的左上角开始显示的。</p>
 <h3><span id="pduo-chong-bei-jing-css3">多重背景 <code>CSS3</code></span><a href="#pduo-chong-bei-jing-css3" class="header-anchor">#</a></h3>
 <p>CSS3 允许为元素使用多个背景图片。</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'1.jpg),url('</span>2.jpg'<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-image: url(&#x27;1.jpg),url(&#x27;2.jpg&#x27;);</span><br></pre></td></tr></table></figure>
 <p>元素引入多个背景图片，前面图片会覆盖后面的图片。</p>
 <h2><span id="p3-background-position-bei-jing-tu-ding-wei">3、background-position - 背景图定位</span><a href="#p3-background-position-bei-jing-tu-ding-wei" class="header-anchor">#</a></h2>
 <p>由两个值构成（<code>background-position-x</code> <code>background-position-y</code>），值可以是 （坐标轴是以 padding 区域的左上角原点的坐标）</p>
@@ -2232,13 +2157,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 <p><a target="_blank" rel="noopener" href="http://www.spritecow.com/">定位辅助工具</a></p>
 <h1><span id="si-qi-ta-she-zhi">四、其他设置</span><a href="#si-qi-ta-she-zhi" class="header-anchor">#</a></h1>
 <h2><span id="p1-wen-zi-yin-ying-text-shadow">1、文字阴影 text-shadow</span><a href="#p1-wen-zi-yin-ying-text-shadow" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*
-  第1个值：阴影水平偏移值。可为负值
-  第2个值：阴影垂直偏移值。可为负值
-  第3个值：可选，阴影模糊值。不允许负值
-*/</span>
-
-<span class="token property">text</span><span class="token punctuation">:</span><span class="token property">shadow</span><span class="token punctuation">:</span> 0px 0px 0px red<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  第1个值：阴影水平偏移值。可为负值</span></span><br><span class="line"><span class="comment">  第2个值：阴影垂直偏移值。可为负值</span></span><br><span class="line"><span class="comment">  第3个值：可选，阴影模糊值。不允许负值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">text</span><span class="selector-pseudo">:shadow</span>: 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> <span class="selector-tag">red</span>;</span><br></pre></td></tr></table></figure>
 <h2><span id="p2-he-zi-yin-ying-box-shadow">2、盒子阴影 box-shadow</span><a href="#p2-he-zi-yin-ying-box-shadow" class="header-anchor">#</a></h2>
 <p>比文字阴影多一个阴影外延值。</p>
 <h2><span id="p3-dao-ying-box-reflect">3、倒影 box-reflect</span><a href="#p3-dao-ying-box-reflect" class="header-anchor">#</a></h2>
@@ -2392,7 +2311,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -2482,14 +2401,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 <p>边框还分为 4 个方向 要么直接设置 4 个方向，要么一个个方向单独设置</p>
 </blockquote>
 <p>练习：边框画三角形</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.box</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> 100px solid #000<span class="token punctuation">;</span>
-  <span class="token property">border-left-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
-  <span class="token property">border-right-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
-  <span class="token property">border-bottom-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">100px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">border-left-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-right-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-bottom-color</span>: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3><span id="pyuan-jiao-bian-kuang-border-radius">圆角边框 border-radius</span><a href="#pyuan-jiao-bian-kuang-border-radius" class="header-anchor">#</a></h3>
 <p>CSS3。</p>
 <table>
@@ -2552,8 +2464,7 @@ opacity 直接控制所有的内部元素的不透明度，无论是什么元素
 <p><code>margin</code> 完美支持块元素和行内块元素，不支持行元素的垂直方向。</p>
 <h2><span id="p6-lun-kuo-ceng-outline">6、轮廓层 outline</span><a href="#p6-lun-kuo-ceng-outline" class="header-anchor">#</a></h2>
 <p><code>outline</code> 轮廓层。</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 去掉轮廓 */</span>
-<span class="token property">outline</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 去掉轮廓 */</span></span><br><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -2841,7 +2752,7 @@ WebSocket</p>
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -2862,7 +2773,7 @@ WebSocket</p>
       
           <h1><span id="biao-dan">表单</span><a href="#biao-dan" class="header-anchor">#</a></h1>
 <h2><span id="p1-form">1、form</span><a href="#p1-form" class="header-anchor">#</a></h2>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>action：表单提交接口。如果省略，则设置为当前页面。</p>
 <p>method：表单提交的方式。一般为 <strong>POST</strong> 或者 <strong>GET</strong> 。</p>
 <ul>
@@ -2904,11 +2815,7 @@ WebSocket</p>
 <h3><span id="p2-password-mi-ma-yu">2 password 密码域</span><a href="#p2-password-mi-ma-yu" class="header-anchor">#</a></h3>
 <h3><span id="p3-radio-dan-xuan-kuang">3 radio 单选框</span><a href="#p3-radio-dan-xuan-kuang" class="header-anchor">#</a></h3>
 <p>注意需设置好 value 值。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
-  请选择您的性别：
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>女<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>女
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sex<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>男<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>男
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  请选择您的性别：</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;女&quot;</span> /&gt;</span>女</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;男&quot;</span> /&gt;</span>男</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>默认选中：checked</p>
 <ul>
 <li>checked</li>
@@ -2916,18 +2823,11 @@ WebSocket</p>
 <li>checked = “checked”</li>
 </ul>
 <h3><span id="p4-checkbox-fu-xuan-kuang">4 checkbox 复选框</span><a href="#p4-checkbox-fu-xuan-kuang" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
-  请选择您的学科
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>HTML5<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>HTML5
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ASP<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>ASP
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>c#<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>c#
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>class<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Java<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>Java
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">  请选择您的学科</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;HTML5&quot;</span> /&gt;</span>HTML5</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ASP&quot;</span> /&gt;</span>ASP</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;c#&quot;</span> /&gt;</span>c#</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;class&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Java&quot;</span> /&gt;</span>Java</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3><span id="p5-file-wen-jian-yu">5 file 文件域</span><a href="#p5-file-wen-jian-yu" class="header-anchor">#</a></h3>
 <p>上传文件。</p>
 <p>调用相册和摄像头。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image/*<span class="token punctuation">"</span></span> <span class="token attr-name">capture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>camera<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">accept</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image/*<span class="token punctuation">"</span></span> <span class="token attr-name">capture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&quot;camera&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">accept</span>=<span class="string">&quot;image/*&quot;</span> <span class="attr">capture</span>=<span class="string">&quot;photo&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <h3><span id="p6-button-pu-tong-an-niu">6 button 普通按钮</span><a href="#p6-button-pu-tong-an-niu" class="header-anchor">#</a></h3>
 <h3><span id="p7-submit-ti-jiao-an-niu">7 submit 提交按钮</span><a href="#p7-submit-ti-jiao-an-niu" class="header-anchor">#</a></h3>
 <h3><span id="p8-reset-chong-zhi-an-niu">8 reset 重置按钮</span><a href="#p8-reset-chong-zhi-an-niu" class="header-anchor">#</a></h3>
@@ -3005,19 +2905,12 @@ WebSocket</p>
 <h2><span id="p4-label-biao-qian">4、label 标签</span><a href="#p4-label-biao-qian" class="header-anchor">#</a></h2>
 <p>定义表单元素标注，获取焦点。</p>
 <p>两种方式来绑定表单。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span> ...
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span> ...</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;xxx&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2><span id="p5-select-option-xia-lie-lie-biao">5、select-option 下列列表</span><a href="#p5-select-option-xia-lie-lie-biao" class="header-anchor">#</a></h2>
 <p>在 option 中 value 属性书写的内容不会显示，但是最后会提交。显示的内容写在 option 标签中。</p>
 <p><code>selected</code> 默认选中</p>
 <p><code>multiple</code> 多选</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html">请选择你喜欢的地方：
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>address<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>北京<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>北京<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>上海<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上海<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>广州<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>广州<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>深圳<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>深圳<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>option</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">请选择你喜欢的地方：</span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;北京&quot;</span>&gt;</span>北京<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;上海&quot;</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;广州&quot;</span>&gt;</span>广州<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;深圳&quot;</span>&gt;</span>深圳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2><span id="p5-textarea-duo-xing-wen-ben-shu-ru-kuang">5、textarea 多行文本输入框</span><a href="#p5-textarea-duo-xing-wen-ben-shu-ru-kuang" class="header-anchor">#</a></h2>
 <h2><span id="p6-datalist-option">6、datalist-option +</span><a href="#p6-datalist-option" class="header-anchor">#</a></h2>
 <h2><span id="p7-h5-biao-dan-xin-gui-fan">7、H5 表单新规范</span><a href="#p7-h5-biao-dan-xin-gui-fan" class="header-anchor">#</a></h2>
@@ -3046,8 +2939,7 @@ multiple<br>
 button</p>
 <h2><span id="plabel">label</span><a href="#plabel" class="header-anchor">#</a></h2>
 <p>定义表单控制件的关系</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;id&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -3213,10 +3105,7 @@ button</p>
 用的少。</p>
 <p>（3）自定义列表<br>
 <code>dl</code>-<code>dt</code>-<code>dd</code>，组合标签。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dt</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dt</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dt</span>&gt;</span><span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3><span id="p4-biao-ge">4、表格</span><a href="#p4-biao-ge" class="header-anchor">#</a></h3>
 <h3><span id="p5-span-e-wai-jie-gou">5、<code>span</code> 额外结构</span><a href="#p5-span-e-wai-jie-gou" class="header-anchor">#</a></h3>
 <h3><span id="p6-mao-lian-jie">6、锚链接</span><a href="#p6-mao-lian-jie" class="header-anchor">#</a></h3>
@@ -3262,132 +3151,6 @@ width / height<br>
 src &amp; href<br>
 href：文档之间的跳转<br>
 src：资源的引用</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220405/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220405</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/220405/" class="post-title-link" itemprop="url">ES Map</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 16:54:29" itemprop="dateCreated datePublished" datetime="2021-01-30T16:54:29+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 16:09:09" itemprop="dateModified" datetime="2021-02-01T16:09:09+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2204%EF%BC%9AES6/" itemprop="url" rel="index"><span itemprop="name">2204：ES6</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>739</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="es-map">ES Map</span><a href="#es-map" class="header-anchor">#</a></h1>
-<p>ES6+</p>
-<p>类似于对象的一种数据结构，是键值对的集合，但是键的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//为什么会有Map，因为对象属性名称必须是字符串，如果是其他类型则不行</span>
-<span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"lily"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  id<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span>p1<span class="token punctuation">]</span><span class="token operator">:</span> <span class="token string">"good"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Map也是新增的数据解构  类似于对象</span>
-<span class="token keyword">let</span> mp1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-  <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mp1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> p2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">"lily"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> mp2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
-  <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span>p2<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mp2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="papi">API</span><a href="#papi" class="header-anchor">#</a></h2>
-<ul>
-<li><code>size</code>属性返回 Map 结构的成员总数。</li>
-<li><code>set</code>方法设置键名<code>key</code>对应的键值为<code>value</code>，然后返回整个 Map 结构。如果<code>key</code>已经有值，则键值会被更新，否则就新生成该键。<code>set</code>方法返回的是当前的<code>Map</code>对象，因此可以采用链式写法。</li>
-<li><code>get</code>方法读取<code>key</code>对应的键值，如果找不到<code>key</code>，返回<code>undefined</code>。</li>
-<li><code>has</code>方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。</li>
-<li><code>delete</code>方法删除某个键，返回<code>true</code>。如果删除失败，返回<code>false</code>。</li>
-<li><code>clear</code>方法清除所有成员，没有返回值。</li>
-<li><code>keys()</code>：返回键名的遍历器。</li>
-<li><code>values()</code>：返回键值的遍历器。</li>
-<li><code>entries()</code>：返回所有成员的遍历器。</li>
-<li><code>forEach()</code>：遍历 Map 的所有成员。</li>
-</ul>
 
       
     </div>
@@ -3472,7 +3235,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -3522,13 +3285,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

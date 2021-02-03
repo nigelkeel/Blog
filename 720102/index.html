@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="脚本开发指南# v0.1 本指南基于 wsmud_pluginss wsmud_Raid wsmud_Trigger 一、开始# 1、安装 Tampermonkey 在你的火狐浏览器或者谷歌浏览器上安装 Tampermonkey 扩展组件。 2、依次安装以下脚本   wsmud_pluginss   wsmud_Raid   wsmud_Trigger   二、参考#   开发指南 | 更新日志">
@@ -44,7 +44,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>武神传说脚本开发指南 | 永远的伊尔瓦</title>
   
 
@@ -100,6 +99,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -244,7 +244,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>927</span>
+              <span>938</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,19 +293,12 @@
 <h2><span id="psan-di-yi-ge-liu-cheng-hong-fa-qi">三、第一个流程 / 触发器</span><a href="#psan-di-yi-ge-liu-cheng-hong-fa-qi" class="header-anchor">#</a></h2>
 <h3><span id="p1-di-yi-ge-liu-cheng">1、第一个流程</span><a href="#p1-di-yi-ge-liu-cheng" class="header-anchor">#</a></h3>
 <p>新建一个流程，输入以下内容，输入流程名称 `first ，保存</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// flow</span>
-tm Hello World<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// flow</span></span><br><span class="line">tm Hello World</span><br></pre></td></tr></table></figure>
 <p>运行后队伍消息出现 <code>Hello World</code> 即运行成功。</p>
 <h3><span id="p2-di-yi-ge-hong-fa-qi">2、第一个触发器</span><a href="#p2-di-yi-ge-hong-fa-qi" class="header-anchor">#</a></h3>
 <p>新建一个触发器，类型选<code>新聊天信息</code> ，输入触发器名称 <code>first</code></p>
 <p>频道选 <code>队伍</code> 发言人留空 关键字为 <code>hello</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// trigger</span>
-<span class="token comment">// 类型 新聊天消息触发器</span>
-<span class="token comment">// 频道 队伍</span>
-<span class="token comment">// 发言人</span>
-<span class="token comment">// 关键字 hello</span>
-
-tm trigger success<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// trigger</span></span><br><span class="line"><span class="comment">// 类型 新聊天消息触发器</span></span><br><span class="line"><span class="comment">// 频道 队伍</span></span><br><span class="line"><span class="comment">// 发言人</span></span><br><span class="line"><span class="comment">// 关键字 hello</span></span><br><span class="line"></span><br><span class="line">tm trigger success</span><br></pre></td></tr></table></figure>
 <p>保存并启用这个触发器</p>
 <p>在聊天频道输入 <code>hello</code> 并发送</p>
 <p>如果出现提示 <code>触发=&gt;first</code> 队伍消息出现  <code>trigger success</code> 则表示触发器构建成功。</p>
@@ -325,8 +318,7 @@ tm trigger success<span aria-hidden="true" class="line-numbers-rows"><span></spa
 <p>同时执行太多系统指令会导致服务器拒绝执行（目测好像是一秒二十条）。</p>
 <h3><span id="p4-jian-xie-xi-tong-zhi-ling">4、简写系统指令</span><a href="#p4-jian-xie-xi-tong-zhi-ling" class="header-anchor">#</a></h3>
 <p>可以在系统指令后跟随 <code>[数字]</code>，表示该语句重复的次数，例如：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">go west<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>go north
-go west<span class="token punctuation">;</span>go west<span class="token punctuation">;</span>go west<span class="token punctuation">;</span>go north<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go west[<span class="number">3</span>];go north</span><br><span class="line">go west;go west;go west;go north</span><br></pre></td></tr></table></figure>
 <p>上述的两条语句是等价的。</p>
 <h2><span id="pliu-zhan-wei-fu-can-shu">六、占位符参数</span><a href="#pliu-zhan-wei-fu-can-shu" class="header-anchor">#</a></h2>
 <h2><span id="pqi-bian-liang">七、变量</span><a href="#pqi-bian-liang" class="header-anchor">#</a></h2>
@@ -440,7 +432,7 @@ go west<span class="token punctuation">;</span>go west<span class="token punctua
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -490,13 +482,13 @@ go west<span class="token punctuation">;</span>go west<span class="token punctua
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

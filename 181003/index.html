@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1、换行# 句末加两个空格或者使用HTML的&lt;br&#x2F;&gt;换行。 2、分隔线# 你可以在一行中用三个以上的*、+、_来建立一个分隔线，行内不能有其他东西。也可以使用HTML的&lt;hr&#x2F;&gt;画分隔符。 3、标题# Markdown 标题支持两种形式： 1）Atx式：格式为# + 空格 + 标题内容，级别由#的数量来确定，#是一级标题，######则是六级标题，最高六级标题。 2）Se">
@@ -48,7 +48,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>Markdown 基础语法 | 永远的伊尔瓦</title>
   
 
@@ -104,6 +103,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -314,20 +314,18 @@
 <h4><span id="p6-2-pu-tong-dai-ma-kuai">6.2 普通代码块</span><a href="#p6-2-pu-tong-dai-ma-kuai" class="header-anchor">#</a></h4>
 <p><strong>Markdown</strong> 中建立代码块只要简单地缩进4个空格或是1个制表符就可以。也可以用三个反引号包围起来。<br>
 在前面后加语言名称可以加强代码的显示。如：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c">printf(&quot;Hello World!&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure>
 <h3><span id="p7-lian-jie">7、链接</span><a href="#p7-lian-jie" class="header-anchor">#</a></h3>
 <h4><span id="p7-1-zi-dong-lian-jie">7.1 自动链接</span><a href="#p7-1-zi-dong-lian-jie" class="header-anchor">#</a></h4>
 <p><strong>Markdown</strong> 支持直接黏贴链接地址，Markdown就会自动把它转成链接。如果不能识别则使用尖括号括起来即可。</p>
 <h4><span id="p7-2-xing-nei-shi-lian-jie">7.2 行内式链接</span><a href="#p7-2-xing-nei-shi-lian-jie" class="header-anchor">#</a></h4>
 <p>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接](http:&#x2F;&#x2F;example.com&#x2F; &quot;这是链接&quot;) 。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个 [<span class="string">链接</span>](<span class="link">http://example.com/ &quot;这是链接&quot;</span>) 。</span><br></pre></td></tr></table></figure>
 <p>渲染为：<br>
 这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a> 。</p>
 <h4><span id="p7-3-can-kao-shi-lian-jie">7.3 参考式链接</span><a href="#p7-3-can-kao-shi-lian-jie" class="header-anchor">#</a></h4>
 <p>参考式的链接是在链接文字的括号后面再接上另一个方括号，而在第二个方括号里面要填入用以辨识链接的标记。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">这是一个 [链接][id]。
-
-[id]: http:&#x2F;&#x2F;example.com&#x2F;  &quot;这是链接&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是一个 [<span class="string">链接</span>][<span class="symbol">id</span>]。</span><br><span class="line"></span><br><span class="line">[<span class="symbol">id</span>]: <span class="link">http://example.com/  &quot;这是链接&quot;</span></span><br></pre></td></tr></table></figure>
 <p>渲染为：<br>
 这是一个 <a target="_blank" rel="noopener" href="http://example.com/" title="这是链接">链接</a>。</p>
 <h3><span id="p8-qiang-diao">8、强调</span><a href="#p8-qiang-diao" class="header-anchor">#</a></h3>
@@ -343,22 +341,17 @@
 <p>插入图片和链接很像，区别在于前面一个<code>!</code>。</p>
 <h4><span id="p9-1-xing-nei-shi-tu-pian">9.1 行内式图片</span><a href="#p9-1-xing-nei-shi-tu-pian" class="header-anchor">#</a></h4>
 <p>一个惊叹号 <code>!</code>。接着一个方括号，里面放上图片的替代文字。接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 文字。如：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![](img&#x2F;test.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](img/test.jpg)</span><br></pre></td></tr></table></figure>
 <p>渲染为：<br>
 <img src="/181003/test.jpg" alt></p>
 <h4><span id="p9-2-can-kao-shi-tu-pian">9.2 参考式图片</span><a href="#p9-2-can-kao-shi-tu-pian" class="header-anchor">#</a></h4>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">![][pic]
-
-[pic]:img&#x2F;test.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![][pic]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">pic</span>]:<span class="link">img/test.jpg</span></span><br></pre></td></tr></table></figure>
 <p>渲染为：<br>
 <img src="/181003/test.jpg" alt></p>
 <p>在 <strong>VSCode</strong> 里可以插入 GIF 格式图片。</p>
 <h3><span id="p10-cha-ru-biao-ge">10、插入表格</span><a href="#p10-cha-ru-biao-ge" class="header-anchor">#</a></h3>
 <p><strong>Markdown</strong> 中可以创建表格，如：</p>
-<pre class="line-numbers language-none"><code class="language-none">|标题|标题|标题|
-|:---|:---:|---:|
-|居左|居中123|居右|
-|居左123|居中|居右123|<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|标题|标题|标题|</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|居左|居中123|居右|</span><br><span class="line">|居左123|居中|居右123|</span><br></pre></td></tr></table></figure>
 <p>渲染为：</p>
 <table>
 <thead>
@@ -482,7 +475,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -532,13 +525,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

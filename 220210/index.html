@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1、栈内存和堆内存# 内存根据程序运行时候的逻辑分为栈内存和堆内存。在 JS 中，并没有严格意义区分。大部分的数据都保存在堆内存中，但是在某些场景，仍需要用栈（有时候也叫堆栈）的数据结构的思路进行处理，如执行上下文。    栈内存 堆内存     栈结构 链表结构   占内存小，速度快 占内存大，速度慢   自动分配，自动回收 自己申请，手动释放    2、执行上下文# JS 引擎并不是逐行解析代">
@@ -47,7 +47,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>JavaScript 函数执行过程 | 永远的伊尔瓦</title>
   
 
@@ -103,6 +102,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -304,26 +304,7 @@
 <h2><span id="p3-bian-liang-dui-xiang">3、变量对象</span><a href="#p3-bian-liang-dui-xiang" class="header-anchor">#</a></h2>
 <p><strong>全局变量对象</strong> windows</p>
 <p><strong>函数变量对象</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-	<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-	<span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-	<span class="token keyword">var</span> <span class="token function-variable function">d</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-	b <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">foo</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 模拟上面代码的变量对象</span>
-<span class="token keyword">var</span> <span class="token constant">VO</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    argument<span class="token operator">:</span><span class="token punctuation">&#123;</span>
-        <span class="token number">0</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-        <span class="token number">1</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
-        length<span class="token operator">:</span><span class="token number">2</span>
-    <span class="token punctuation">&#125;</span>
-    a<span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">c</span><span class="token operator">:</span><span class="token keyword">function</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    b<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span>
-	d<span class="token operator">:</span><span class="token keyword">undefined</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	<span class="keyword">var</span> d = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">	b = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟上面代码的变量对象</span></span><br><span class="line"><span class="keyword">var</span> VO = &#123;</span><br><span class="line">    argument:&#123;</span><br><span class="line">        <span class="number">0</span>:<span class="number">1</span>,</span><br><span class="line">        <span class="number">1</span>:<span class="number">2</span>,</span><br><span class="line">        length:<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    c:<span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    b:<span class="literal">undefined</span>,</span><br><span class="line">	d:<span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2><span id="p4-zuo-yong-yu">4、作用域</span><a href="#p4-zuo-yong-yu" class="header-anchor">#</a></h2>
 <p><strong>作用域 scope</strong> 是变量在程序中可以访问的有效访问，也被称为变量的可见性。作用域在进入全局执行环境或者函数执行环境时就已经确定好了。在<code>ES5</code>中，作用域分为两种：</p>
 <ul>
@@ -335,36 +316,12 @@
 <p><strong>局部变量</strong> 是在函数内部定义的，在函数执行域中。只能在自己的作用域中起作用，只能在函数内部使用。外部无法使用和操作局部变量。</p>
 <h2><span id="p5-zuo-yong-yu-lian">5、作用域链</span><a href="#p5-zuo-yong-yu-lian" class="header-anchor">#</a></h2>
 <p><strong>作用域链</strong> 是用来查找变量的这样一系列的过程。一个函数在定义时会生成一个属性<code>[[scope]]</code>，这个属性存储的是函数定义时作用域的层级关系。作用域链是函数执行时创建的，是当前函数作用域链 -&gt; <code>[[scope]]</code>属性作用域组成的。函数当前执行的作用域是作用域链的顶端，全局作用域在作用域链的最后。执行环境销毁时，作用域链也会销毁。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 全局作用域</span>
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// test -> 全局作用域</span>
-  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
-  <span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">// test2 -> test -> 全局作用域</span>
-    <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//100</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">function</span> <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//10</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">f1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">f2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局作用域</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// test -&gt; 全局作用域</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// test2 -&gt; test -&gt; 全局作用域</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">//100</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">//10</span></span><br><span class="line">  &#125;</span><br><span class="line">  f1();</span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f();</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <p>当执行 f1 时，创建函数 f1 的执行环境，并将该对象置于链表开头，然后将函数 f 的调用对象放在第二位，最后是全局对象，作用域链的链表的结构是 f1-&gt;f-&gt;window 。从链表的开头寻找变量 a，即 f1 函数内部找变量 a，找到了，结果是 20。同样，执行 f2 时，作用域链的链表的结构是 f2-&gt;f-&gt;window 。从链表的开头寻找变量 a，即 f2 函数内部找变量 a，找不到，于是从 f 内部找变量 a，找到了，结果是 10。最后在最外层打印出变量 a，直接从变量 a 的作用域即全局作用域内寻找，结果为 1。</p>
 <h2><span id="p6-nei-cun-zhong-de-bian-liang-cun-chu">6、内存中的变量存储</span><a href="#p6-nei-cun-zhong-de-bian-liang-cun-chu" class="header-anchor">#</a></h2>
 <p>变量如果是基本数据类型，会在直接在栈内存开辟一段存储空间标识符。然后将基本数据类型的值也存储在栈内存中和标识符对应起来。要求变量名不能重名，重名就会覆盖。</p>
 <p>如果是引用数据类型，值储存在堆内存中，存储引用类型的时候标识符是储存在栈内存中的。（JS 不允许直接访问堆内存中的数据，只能通过引用访问，差不多就是在变量对象中存储一个指向对象的句柄，可以理解成是一个地址，要访问这个对象，就要通过这个引用句柄来访问）。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> c <span class="token operator">=</span> b<span class="token punctuation">;</span>
-c<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [1000,2,3]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> c = b;</span><br><span class="line">c[<span class="number">0</span>] = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// [1000,2,3]</span></span><br></pre></td></tr></table></figure>
 <p>程序一开始执行，进入全局环境，首先会创建全局环境并且压栈（执行栈），全局代码执行的时候依赖的是全局环境中的东西。全局变量如果是基本类型，那么这个值直接存在栈当中，如果这个变量的值是引用类型，那么引用类型会在堆内存中开辟自己的空间专门存储（数据本身）。然后里面的这块空间的地址存在栈当中对应的变量。</p>
 <p>当函数执行碰到函数调用，函数执行时也要有自己的环境去依赖。函数执行也是创建自己的函数环境进行压栈（函数执行环境一定压在全局执行环境的上面）。局部变量，是在函数环境当中存在的，只有函数执行，局部变量才会出现，函数执行完成之后，函数环境要弹出栈（销毁归还内存），局部变量也就不存在了。</p>
 <p>当函数调用完成之后，会继续执行全局代码，一直到所有的全局代码执行完成，代表程序执行结束，程序执行结束的时候，全局环境最后出栈（销毁）。</p>
@@ -470,7 +427,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -520,13 +477,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

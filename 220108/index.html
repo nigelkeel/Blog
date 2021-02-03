@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="函数# 函数是可以反复使用的并且命名的代码块。本质上也是一种属于对象类型的数据。与其他数据类型不同的是，函数的值是可执行的代码。分为系统函数和自定义函数。 函数是数据，函数名是这个数据的标识。需要访问函数的数据去掉圆括号就好。一个函数可以有多个标识。 1、函数的作用#  解决代码的冗余问题，实现代码的复用。 封装代码，让函数内部的代码对外部不可见。 可以让整个代码项目通过函数模块化。  2、新建函">
@@ -45,7 +45,6 @@
     lang   : 'zh-CN'
   };
 </script>
-
   <title>ES 函数 | 永远的伊尔瓦</title>
   
 
@@ -101,6 +100,7 @@
       <h1 class="site-title">永远的伊尔瓦</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
   </div>
 
   <div class="site-nav-right">
@@ -251,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,35 +282,17 @@
 <h2><span id="p2-xin-jian-han-shu">2、新建函数</span><a href="#p2-xin-jian-han-shu" class="header-anchor">#</a></h2>
 <p>函数名定义的规则遵循标识符的规则。函数的声明函数名可以重复，一旦重名，前面的覆盖后面的。</p>
 <h3><span id="p2-1-sheng-ming-han-shu-chang">2.1 声明函数 <code>常</code></span><a href="#p2-1-sheng-ming-han-shu-chang" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">name</span><span class="token punctuation">(</span><span class="token parameter">args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 函数体</span>
-  <span class="token keyword">return</span> statement<span class="token punctuation">;</span> <span class="token comment">// 返回语句</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// name -- 函数名</span>
-<span class="token comment">// args -- 参数列表（可选）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params">args</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> statement; <span class="comment">// 返回语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// name -- 函数名</span></span><br><span class="line"><span class="comment">// args -- 参数列表（可选）</span></span><br></pre></td></tr></table></figure>
 <p><code>var</code> 和 <code>function</code> 都是声明语句，它们声明的变量和函数都在 JS 预编译时被解析，也被称为变量提升和函数提升。</p>
 <p>ES5 中，不允许函数书写在非函数的代码块中（比如 if 语句中）。</p>
 <h3><span id="p2-2-han-shu-biao-da-shi-chang">2.2 函数表达式 <code>常</code></span><a href="#p2-2-han-shu-biao-da-shi-chang" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 赋值调用（被称为函数表达式，这种方法只能提升函数名，不能提升函数体）</span>
-<span class="token comment">// 调用需在创建之后</span>
-<span class="token keyword">let</span> <span class="token function-variable function">fun</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 函数体</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值调用（被称为函数表达式，这种方法只能提升函数名，不能提升函数体）</span></span><br><span class="line"><span class="comment">// 调用需在创建之后</span></span><br><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>函数可以不书写名字，这种被称为<strong>匿名函数</strong>。</p>
 <p>执行方法：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 自调用</span>
-<span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 函数体</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token operator">!</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// 函数体</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">!(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <h3><span id="p2-3-gou-zao-han-shu-shi-liao-jie">2.3 构造函数式 <code>了解</code></span><a href="#p2-3-gou-zao-han-shu-shi-liao-jie" class="header-anchor">#</a></h3>
 <p>类如 <code>const x = new XXXX()</code> 的形式，被称为<strong>构造函数</strong>。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> fun <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token string">"执行字符串"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 这个定义函数的方法几乎不用（会执行两次）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;执行字符串&quot;</span>);</span><br><span class="line"><span class="comment">// 这个定义函数的方法几乎不用（会执行两次）</span></span><br></pre></td></tr></table></figure>
 <h3><span id="p2-4-jian-tou-han-shu-es6-chang">2.4 箭头函数 <code>ES6</code> <code>常</code></span><a href="#p2-4-jian-tou-han-shu-es6-chang" class="header-anchor">#</a></h3>
 <ul>
 <li>内部没有<code>this</code> ，箭头函数与包围它的代码共享一个<code>this</code>。</li>
@@ -318,25 +300,7 @@
 <li>内部没有没有<code>argument</code>对象，可用<code>rest</code>参数代替。</li>
 <li>箭头函数不能使用<code>yield</code>命令，即不能用作<code>Generator</code>函数。</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 1、函数有参数，函数体只有一句返回值</span>
-<span class="token keyword">function</span> <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">fn1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token operator">=></span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 2、函数没有参数，函数体只有一句返回值</span>
-<span class="token keyword">function</span> <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">const</span> <span class="token function-variable function">fn2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 3、函数参数随意，函数体不仅仅是一句返回值</span>
-<span class="token keyword">function</span> <span class="token function">fn3</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-<span class="token keyword">const</span> <span class="token function-variable function">fn3</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 用箭头函数和reduce数组求和</span>
-<span class="token keyword">const</span> <span class="token function-variable function">arrSum</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token operator">=></span> arr<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">p<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token operator">=></span> p <span class="token operator">+</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、函数有参数，函数体只有一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn1 = <span class="function">(<span class="params">n</span>) =&gt;</span> n + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、函数没有参数，函数体只有一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> fn2 = <span class="function">() =&gt;</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、函数参数随意，函数体不仅仅是一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> fn3 = <span class="function">() =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用箭头函数和reduce数组求和</span></span><br><span class="line"><span class="keyword">const</span> arrSum = <span class="function">(<span class="params">arr</span>) =&gt;</span> arr.reduce(<span class="function">(<span class="params">p, n</span>) =&gt;</span> p + n);</span><br></pre></td></tr></table></figure>
 <h2><span id="p3-shi-yong-han-shu">3、使用函数</span><a href="#p3-shi-yong-han-shu" class="header-anchor">#</a></h2>
 <p>函数需要调用才会执行。</p>
 <h2><span id="p4-can-shu">4、参数</span><a href="#p4-can-shu" class="header-anchor">#</a></h2>
@@ -345,18 +309,9 @@
 <p><strong>形参</strong> 形式上的参数，声明函数时候提供的参数。</p>
 <p><strong>实参</strong> 在调用时，实际使用的参数。</p>
 <h3><span id="p4-2-mo-ren-can-shu">4.2 默认参数</span><a href="#p4-2-mo-ren-can-shu" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// ES6之前</span>
-<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  age <span class="token operator">?</span> age <span class="token operator">:</span> <span class="token punctuation">(</span>age <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// ES6</span>
-<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age <span class="token operator">=</span> <span class="token number">18</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6之前</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  age ? age : (age = <span class="number">18</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name, age = <span class="number">18</span></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <h3><span id="p4-3-sheng-yu-can-shu">4.3 剩余参数</span><a href="#p4-3-sheng-yu-can-shu" class="header-anchor">#</a></h3>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 可以把不确定的参数表示成数组</span>
-<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> <span class="token operator">...</span>b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// [2,3,4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以把不确定的参数表示成数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, ...b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// [2,3,4]</span></span><br></pre></td></tr></table></figure>
 <h3><span id="p4-4-argument-dui-xiang">4.4 argument 对象</span><a href="#p4-4-argument-dui-xiang" class="header-anchor">#</a></h3>
 <p>二者在传值的时候是一一对应的。二者的个数可以不相等，形参多的时候，多出来的自动被赋值 undefined，实参多的时候，多出来的放在**<code>arguments</code>**对象中。该对象在函数内部才有，实际上是一个类数组 array-like 的对象，可以访问这个对象获得传递给函数的每一个实参。函数中的形参可写可不写，即使不写形参也可以使用 arguments 对象获得，使用形参比较方便。arguments 对象的 length 属性用来确定传递进来多少个实参。可以通过 length 属性的值的不同（根据传入的参数个数的不同），进行不同的操作。<code>arguments</code>对象中保存着一个叫<code>callee</code>的属性，这个属性是一个指针，它指向拥有这个<code>arguments</code>对象的函数。</p>
 <ul>
@@ -365,8 +320,7 @@
 <li>使用函数对象的 length 属性可以获取函数的形参个数,该属性为只读属性,在函数体内,体外都可以使用</li>
 </ul>
 <p>callee 是 arguments 对象的属性，它引用当前 argument 对象所在的函数，使用该属性可以在函数体内调用自身。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 检测函数的形参和实参是否一致</span>
-arguments<span class="token punctuation">.</span>length <span class="token operator">!=</span> arguments<span class="token punctuation">.</span>callee<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测函数的形参和实参是否一致</span></span><br><span class="line"><span class="built_in">arguments</span>.length != <span class="built_in">arguments</span>.callee.length;</span><br></pre></td></tr></table></figure>
 <h2><span id="p5-fan-hui-zhi">5、返回值</span><a href="#p5-fan-hui-zhi" class="header-anchor">#</a></h2>
 <p><code>return</code> 没有指定值时函数返回的是<code>undefined</code>，函数在执行完该语句以后立即停止执行并退出函数。</p>
 <p>返回值是一个函数的函数称为<strong>高阶函数</strong>。</p>
@@ -468,7 +422,7 @@ arguments<span class="token punctuation">.</span>length <span class="token opera
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">217</span>
+          <span class="site-state-item-count">218</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -518,13 +472,13 @@ arguments<span class="token punctuation">.</span>length <span class="token opera
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">356k</span>
+    <span title="站点总字数">385k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:23</span>
+    <span title="站点阅读时长">5:50</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
