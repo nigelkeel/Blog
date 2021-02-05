@@ -20,19 +20,21 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Kindle 是亚马逊出的一款电子书阅读器，使用的是电子墨水屏幕。电子墨水屏幕只有在像素变化的时候才耗电。">
+  <meta name="description" content="脚本化CSS。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kindle 使用教程">
-<meta property="og:url" content="http://nigelkeel.gitee.io/182001/index.html">
+<meta property="og:title" content="DOM &#x2F; 节点位置与尺寸">
+<meta property="og:url" content="http://nigelkeel.gitee.io/230303/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="Kindle 是亚马逊出的一款电子书阅读器，使用的是电子墨水屏幕。电子墨水屏幕只有在像素变化的时候才耗电。">
+<meta property="og:description" content="脚本化CSS。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-02T08:22:59.611Z">
-<meta property="article:modified_time" content="2021-02-04T10:04:46.350Z">
+<meta property="article:published_time" content="2021-02-05T05:52:32.038Z">
+<meta property="article:modified_time" content="2021-02-05T05:53:49.282Z">
 <meta property="article:author" content="KEEL">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="DOM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/182001/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/230303/">
 
 
 <script id="page-configurations">
@@ -44,7 +46,7 @@
     lang   : 'zh-CN'
   };
 </script>
-  <title>Kindle 使用教程 | 永远的伊尔瓦</title>
+  <title>DOM / 节点位置与尺寸 | 永远的伊尔瓦</title>
   
 
 
@@ -200,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/182001/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/230303/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -213,9 +215,9 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">182001</span>
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">230303</span>
         <h1 class="post-title" itemprop="name headline">
-          Kindle 使用教程
+          DOM / 节点位置与尺寸
         </h1>
 
         <div class="post-meta">
@@ -224,23 +226,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-02-02 16:22:59" itemprop="dateCreated datePublished" datetime="2021-02-02T16:22:59+08:00">2021-02-02</time>
+              <time title="创建时间：2021-02-05 13:52:32 / 修改时间：13:53:49" itemprop="dateCreated datePublished" datetime="2021-02-05T13:52:32+08:00">2021-02-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-04 18:04:46" itemprop="dateModified" datetime="2021-02-04T18:04:46+08:00">2021-02-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1820%EF%BC%9A%E5%90%84%E7%A7%8D%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87/" itemprop="url" rel="index"><span itemprop="name">1820：各种电子设备</span></a>
+                  <a href="/categories/2303%EF%BC%9ADOM/" itemprop="url" rel="index"><span itemprop="name">2303：DOM</span></a>
                 </span>
             </span>
 
@@ -254,10 +250,10 @@
             </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>345</span>
+              <span>1.8k</span>
             </span>
 
         </div>
@@ -269,35 +265,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Kindle 是亚马逊出的一款电子书阅读器，使用的是电子墨水屏幕。电子墨水屏幕只有在像素变化的时候才耗电。</p>
+        <p>脚本化CSS。</p>
 <a id="more"></a>
-<blockquote>
-<p>基于 <code>Kindle Paperwhite</code></p>
-</blockquote>
-<h2><span id="pyi-ji-ben-shi-yong">一、基本使用</span><a href="#pyi-ji-ben-shi-yong" class="header-anchor">#</a></h2>
-<h2><span id="per-xia-zai-dian-zi-shu">二、下载电子书</span><a href="#per-xia-zai-dian-zi-shu" class="header-anchor">#</a></h2>
-<h3><span id="p1-zhi-chi-de-ge-shi">1、支持的格式</span><a href="#p1-zhi-chi-de-ge-shi" class="header-anchor">#</a></h3>
-<ol>
-<li>亚马逊格式：<code>mobi</code> <code>azw</code></li>
-<li>电子书标准格式 <code>epub</code></li>
-<li>PDF <code>pdf</code> （尺寸过大的PDF显示效果不佳）</li>
-<li>Word 格式：<code>doc</code> <code>docx</code></li>
-<li>图片 <code>jpg</code> <code>jpeg</code> <code>png</code> <code>bmp</code></li>
-<li>纯文本 <code>txt</code></li>
-<li>网页 <code>htm</code> <code>html</code></li>
-<li>RTF</li>
-</ol>
-<p>推荐导入格式：<code>mobi</code> <code>azw</code> <code>epub</code>。</p>
-<h3><span id="p2-xia-zai-dian-zi-shu-de-wang-zhan">2、下载电子书的网站</span><a href="#p2-xia-zai-dian-zi-shu-de-wang-zhan" class="header-anchor">#</a></h3>
+<h3><span id="p1-huo-qu-chi-cun">1、获取尺寸</span><a href="#p1-huo-qu-chi-cun" class="header-anchor">#</a></h3>
+<p><code>offsetWidth</code>和<code>offsetHeight</code> 可以获取元素的<code>border-box</code>尺寸。</p>
+<p><code>clientWidth</code>和<code>clientHeight</code> 可以获取元素的<code>padding-box</code>尺寸。</p>
+<p><code>scrollWidth</code>和<code>scrollHeight</code> 可以获取元素完全内容尺寸和<code>padding</code>。（几乎不用）</p>
+<p><code>innerWidth</code>和<code>innerHeight</code> 可以获取浏览器窗口的尺寸。</p>
+<p><code>outerWidth</code>和<code>outerHeight</code> 可以获取取加上工具条与滚动条窗口的尺寸。</p>
+<p><code>style.width/height</code> <strong>只能获取行内样式的尺寸</strong>（字符串，“10px”）。</p>
+<p>常见应用: 大盒子里面小盒子，大盒子用<code>clientX</code>，小盒子用<code>offsetX</code>。</p>
+<h3><span id="p2-huo-qu-wei-zhi">2、获取位置</span><a href="#p2-huo-qu-wei-zhi" class="header-anchor">#</a></h3>
+<p><code>getBoundingClientRect()</code> 返回一个对象，对象中包含元素距离视口的距离信息。</p>
+<p>getBoundingClientRect。</p>
+<p>获取某个元素相对于视口的位置集合</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="http://cn.epubee.com/books/%EF%BC%88%E4%BB%98%E8%B4%B9%EF%BC%89">http://cn.epubee.com/books/（付费）</a></li>
+<li>top 元素上边到视窗上的距离</li>
+<li>right 元素右边到视窗左的距离</li>
+<li>bottom 元素下边到视窗上的距离</li>
+<li>left 元素左边到视窗左的距离</li>
+<li>width</li>
+<li>height</li>
 </ul>
-<h2><span id="psan-dao-ru-dian-zi-shu">三、导入电子书</span><a href="#psan-dao-ru-dian-zi-shu" class="header-anchor">#</a></h2>
-<p>下载 Calibre 软件，通过数据线连接电脑之后可以直接导入<br>
-可以通过配置亚马逊账号，通过邮件导入，你的设备需要连接 Wi-Fi</p>
-<h3><span id="p1-calibre-fang-shi">1、Calibre 方式</span><a href="#p1-calibre-fang-shi" class="header-anchor">#</a></h3>
-<p>第一步：<a target="_blank" rel="noopener" href="https://calibre-ebook.com/download">下载</a>，并安装</p>
-<h3><span id="p2-you-xiang-fang-shi">2、邮箱方式</span><a href="#p2-you-xiang-fang-shi" class="header-anchor">#</a></h3>
+<p>offsetParent</p>
+<p>==offsetLeft / Top==</p>
+<p>返回当前元素的相对包含块的偏移位置。</p>
+<p>JS 默认把它当成绝对定位属性来寻找包含块，不管是什么属性，都是寻找最近定位父级，如果没找到就是 HTML。</p>
+<p>clientLeft / Top</p>
+<p>clientLeft 等于 border-left。</p>
+<p>==scrollLeft / Top==</p>
+<p>==设置或者获取==当前元素滚动条已经滚动过的距离。（值增大，内容左滚）</p>
+<h3><span id="p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao">3、获取文档大小、视口大小</span><a href="#p3-huo-qu-wen-dang-da-xiao-shi-kou-da-xiao" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取文档大小</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDocSize</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> h = <span class="built_in">document</span>.documentElement;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="built_in">document</span>.body;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    y: h.offsetHeight || b.offsetHeight,</span><br><span class="line">    x: h.offsetWidth || b.offsetWidth,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取视口大小</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getWinSize</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> h = <span class="built_in">document</span>.documentElement;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="built_in">document</span>.body;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    y: h.clientHeight || b.clientHeight,</span><br><span class="line">    x: h.clientWidth || b.clientWidth,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao">4、获取和设置系统滚动条</span><a href="#p4-huo-qu-he-she-zhi-xi-tong-gun-dong-tiao" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取系统滚动条</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDocScroll</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> h = <span class="built_in">document</span>.documentElement;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="built_in">document</span>.body;</span><br><span class="line">  <span class="keyword">var</span> y = self.pageYOffset || h.scrollTop || b.scrollTop;</span><br><span class="line">  <span class="keyword">var</span> x = self.pageXOffset || h.scrollLeft || b.scrollLeft;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    x: x,</span><br><span class="line">    y: y,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置系统滚动条</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setDocScroll</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">1</span> &amp;&amp; <span class="keyword">typeof</span> x === <span class="string">&quot;number&quot;</span>) &#123;</span><br><span class="line">    <span class="built_in">window</span>.scrollTo(x, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">document</span>.documentElement.scrollLeft = x;</span><br><span class="line">    <span class="built_in">document</span>.body.scrollLeft = x;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    <span class="built_in">arguments</span>.length === <span class="number">2</span> &amp;&amp;</span><br><span class="line">    <span class="keyword">typeof</span> x === <span class="string">&quot;number&quot;</span> &amp;&amp;</span><br><span class="line">    <span class="keyword">typeof</span> y === <span class="string">&quot;number&quot;</span></span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="built_in">window</span>.scrollTo(x, y);</span><br><span class="line">    <span class="built_in">document</span>.documentElement.scrollLeft = x;</span><br><span class="line">    <span class="built_in">document</span>.documentElement.scrollTop = y;</span><br><span class="line">    <span class="built_in">document</span>.body.scrollLeft = x;</span><br><span class="line">    <span class="built_in">document</span>.body.scrollTop = y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -306,6 +307,11 @@
     
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/tags/DOM/" rel="tag"><i class="fa fa-tag"></i> DOM</a>
+          </div>
 
         
 
@@ -313,12 +319,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/220820/" rel="prev" title="CSS Hack">
-      <i class="fa fa-chevron-left"></i> CSS Hack
+    <a href="/260101/" rel="prev" title="React">
+      <i class="fa fa-chevron-left"></i> React
     </a></div>
       <div class="post-nav-item">
-    <a href="/252001/" rel="next" title="Vue 商城项目">
-      Vue 商城项目 <i class="fa fa-chevron-right"></i>
+    <a href="/181802/" rel="next" title="Hexo / 扩展功能">
+      Hexo / 扩展功能 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -378,7 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、下载电子书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、支持的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、下载电子书的网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、导入电子书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、Calibre 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、邮箱方式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">1、获取尺寸</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">2、获取位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3、获取文档大小、视口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、获取和设置系统滚动条</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -392,20 +398,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">228</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-count">90</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -442,13 +448,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">385k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:50</span>
+    <span title="站点总字数">387k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

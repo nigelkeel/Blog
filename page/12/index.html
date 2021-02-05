@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这个人很懒，什么都没留下。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="永远的伊尔瓦">
+<meta property="og:url" content="http://nigelkeel.gitee.io/page/12/index.html">
+<meta property="og:site_name" content="永远的伊尔瓦">
+<meta property="og:description" content="这个人很懒，什么都没留下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="KEEL">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://nigelkeel.gitee.io/page/12/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+  <title>永远的伊尔瓦</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-material-oceanic.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">永远的伊尔瓦</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人知识库</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/random" rel="section"><i class="fa fa-sitemap fa-fw"></i>随机</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220503/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220503</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220503/" class="post-title-link" itemprop="url">NodeJS 版本管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-08 18:12:45" itemprop="dateCreated datePublished" datetime="2021-01-08T18:12:45+08:00">2021-01-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-03 15:49:15" itemprop="dateModified" datetime="2021-02-03T15:49:15+08:00">2021-02-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2205%EF%BC%9ANodeJS/" itemprop="url" rel="index"><span itemprop="name">2205：NodeJS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>232</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="nodejs-ban-ben-guan-li">NodeJS 版本管理</span><a href="#nodejs-ban-ben-guan-li" class="header-anchor">#</a></h1>
+<h2><span id="pyi-n">一、<code>n</code></span><a href="#pyi-n" class="header-anchor">#</a></h2>
+<p>用于 Mac 系统。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">sudo npm i -g n</span><br><span class="line"><span class="comment"># 安装指定版本的 node.js</span></span><br><span class="line">sudo n 12.18.2</span><br><span class="line"><span class="comment"># 切换</span></span><br><span class="line">sudo n</span><br></pre></td></tr></table></figure>
+<h2><span id="per-nvm">二、<code>NVM</code></span><a href="#per-nvm" class="header-anchor">#</a></h2>
+<p>用于 Windows 系统。<br>
+全称 <code>Node.js Version Management</code></p>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">下载</a>，推荐使用 <code>nvm-setup.zip</code></p>
+</li>
+<li>
+<p>相关命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已经安装的node版本（ls 即 list）</span></span><br><span class="line">nvm ls</span><br><span class="line"><span class="comment"># 安装对应的版本 </span></span><br><span class="line">nvm install xxx</span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">nvm uninstall xxx</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">nvm use xxx</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/180201/" class="post-title-link" itemprop="url">Mac</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-07 11:46:01" itemprop="dateCreated datePublished" datetime="2021-01-07T11:46:01+08:00">2021-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-05 13:50:03" itemprop="dateModified" datetime="2021-02-05T13:50:03+08:00">2021-02-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1802%EF%BC%9AMac/" itemprop="url" rel="index"><span itemprop="name">1802：Mac</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>85</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="kuai-jie-jian">快捷键</span><a href="#kuai-jie-jian" class="header-anchor">#</a></h1>
+<ul>
+<li>切换输入法：<code>Command + 空格</code>（<code>ctrl + 空格</code>）</li>
+<li>显示/隐藏隐藏文件：<code>Command + Shift + .</code></li>
+</ul>
+<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor">#</a></h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/a4019069/article/details/80585612">VMWare虚拟机安装dmg格式的macOS操作系统</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43825552/article/details/86763378">调分辨率</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220502/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220502</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220502/" class="post-title-link" itemprop="url">NPM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-05 10:41:10" itemprop="dateCreated datePublished" datetime="2021-01-05T10:41:10+08:00">2021-01-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:13:43" itemprop="dateModified" datetime="2021-02-01T19:13:43+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2205%EF%BC%9ANodeJS/" itemprop="url" rel="index"><span itemprop="name">2205：NodeJS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="npm">NPM</span><a href="#npm" class="header-anchor">#</a></h1>
+<p><code>npm</code> 是 Node 的模块管理器，全称 <code>Node Package Manager</code>。</p>
+<h2><span id="pyi-chang-yong-ming-ling">一、常用命令</span><a href="#pyi-chang-yong-ming-ling" class="header-anchor">#</a></h2>
+<p>1、安装</p>
+<blockquote>
+<p><code>npm install &lt;package&gt;</code></p>
+<p><code>npm install</code> 可以简写为 <code>npm i</code> （？二者有一些微小的差异）</p>
+<p><strong>强制安装</strong> 安装之前，会先检查 <code>node_modules</code> 目录之中是否已经存在指定模块，就会跳过，即使有一个新版本也是如此。使用<code>-f</code>或者<code>--force</code> 参数强制安装。</p>
+<p><strong>安装指定版本</strong> 在包名@指定版本</p>
+<p>全局安装 <code>-g</code> 或者 <code>-global</code></p>
+<p>安装到生产和开发环境(dependencies) <code>-D</code> 或者 <code>--save-dev</code> （默认）</p>
+<p>仅安装到开发环境(devDependencies) <code>-S</code> 或者 <code>--save</code></p>
+<p><strong>安装项目依赖</strong> <code>npm i</code></p>
+</blockquote>
+<p>2、更新</p>
+<blockquote>
+<p><code>npm updata &lt;package&gt;</code></p>
+</blockquote>
+<p>3、查询版本</p>
+<blockquote>
+<p><code>npm view &lt;package&gt;</code></p>
+<p>简写为 <code>npm v</code></p>
+</blockquote>
+<p>4、查看全局安装的包</p>
+<blockquote>
+<p><code>npm list -g --depth 0</code></p>
+</blockquote>
+<p>5、卸载</p>
+<blockquote>
+<p><code>npm uninstall &lt;package&gt;</code></p>
+</blockquote>
+<p>6、启动、停止、重启模块</p>
+<blockquote>
+<p><code>npm start</code></p>
+<p><code>npm stop</code></p>
+<p><code>npm restart</code></p>
+</blockquote>
+<p>7、切换镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换阿里镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry http://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 切换回原镜像</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmjs.org</span><br></pre></td></tr></table></figure>
+<p>8、清缓存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm cache verify</span><br><span class="line"><span class="comment"># mac 要加 sudo 前缀</span></span><br></pre></td></tr></table></figure>
+<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/01/npm-install.html">npm 模块安装机制简介</a></li>
+</ul>
+<h2><span id="pxu-zheng-li">需整理</span><a href="#pxu-zheng-li" class="header-anchor">#</a></h2>
+<h3><span id="pchang-yong-ming-ling">常用命令</span><a href="#pchang-yong-ming-ling" class="header-anchor">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">npm -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化项目</span></span><br><span class="line">npm init</span><br><span class="line">npm init -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装项目的所有依赖</span></span><br><span class="line">npm i</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">npm i 包名</span><br><span class="line">npm install 包名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到项目的生产依赖</span></span><br><span class="line">npm install 包名 --save</span><br><span class="line">npm install 包名 -S</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到项目的开发依赖</span></span><br><span class="line">npm install 包名 --save-dev</span><br><span class="line">npm install 包名 -D</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装到全局环境</span></span><br><span class="line">npm install 包名 -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除包</span></span><br><span class="line">npm remove 包名</span><br><span class="line">npm r 包名</span><br></pre></td></tr></table></figure>
+<h3><span id="pcnpm">cnpm</span><a href="#pcnpm" class="header-anchor">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h3><span id="pyarn">Yarn</span><a href="#pyarn" class="header-anchor">#</a></h3>
+<p>待更新。</p>
+<h2><span id="ppackage-json">package.json</span><a href="#ppackage-json" class="header-anchor">#</a></h2>
+<p>NodeJS 的包基本遵循 CommonJS 规范，包将一组相关的模块组合在一起，形成一套完整的工具，主要文件就是 <code>package.json</code>。</p>
+<p><code>package.json</code> 文件其实就是对项目或者模块包的描述，里面包含许多元信息。比如项目名称，项目版本，项目执行入口文件，项目贡献者等等。<code>npm install</code>命令会根据这个文件下载所有依赖模块。</p>
+<p>在项目根目录下执行 <code>npm init</code>，然后根据提示一步步输入相应的内容完成后即可自动创建该文件。</p>
+<p>包描述文件包含以下字段：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">name - 包名，不能有中文、特殊字符等</span><br><span class="line">version - 包的版本号</span><br><span class="line">description - 包的描述</span><br><span class="line">homepage - 包的官网URL</span><br><span class="line">author - 包的作者</span><br><span class="line">contributors - 包的其他贡献者</span><br><span class="line">description - 项目描述，是一个字符串</span><br><span class="line">keywords - 项目关键字，是一个字符串数组</span><br><span class="line">private - 是否私有，设置为 <span class="literal">true</span> 时，npm 拒绝发布</span><br><span class="line">license - 软件授权条款，让用户知道他们的使用权利和限制</span><br><span class="line">bugs - bug 提交地址</span><br><span class="line">repository - 项目仓库地址</span><br><span class="line">homepage - 项目包的官网 URL</span><br><span class="line">dependencies - 生产环境下，项目运行所需依赖，运行包时需要使用的依赖</span><br><span class="line"></span><br><span class="line">\&gt; 显示的版本号：</span><br><span class="line">\&gt; 1.12.4 --&gt; 必须是 1.12.4 版本</span><br><span class="line">\&gt; ^1.12.4 --&gt; 必须是 1.12.x 版本，x取最新的</span><br><span class="line">\&gt; ~1.12.4 --&gt; 必须是 1.x.x 版本，x取最新的</span><br><span class="line"></span><br><span class="line">devDependencies - 开发环境下，项目所需依赖，构建包时需要使用依赖</span><br><span class="line">scripts - 执行 npm 脚本命令简写，比如 “start”: “react-scripts start”, 执行 npm start 就是运行 “react-scripts start”</span><br><span class="line">bin - 内部命令对应的可执行文件的路径。</span><br><span class="line">eslintConfig - EsLint 检查文件配置，自动读取验证</span><br><span class="line">engines - 项目运行的平台</span><br><span class="line">browseslist - 供浏览器使用的版本列表</span><br><span class="line">files - 被项目包含的文件名数组</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/240102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">240102</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/240102/" class="post-title-link" itemprop="url">前端代码规范</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-24 17:12:21" itemprop="dateCreated datePublished" datetime="2020-12-24T17:12:21+08:00">2020-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:17:37" itemprop="dateModified" datetime="2021-02-01T19:17:37+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2401%EF%BC%9A%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">2401：前端工程化</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="qian-duan-dai-ma-gui-fan">前端代码规范</span><a href="#qian-duan-dai-ma-gui-fan" class="header-anchor">#</a></h1>
+<p>JS</p>
+<ol>
+<li>使用单引号</li>
+<li>代码换号</li>
+<li><code>:</code> 后加空格，函数名和 <code>()</code> 前后加空格</li>
+<li>废弃 <code>var</code> 用 <code>let</code> 和 <code>const</code></li>
+<li>去除未使用的变量和函数</li>
+<li>如有多个属性引用至同一个对象：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误写法</span></span><br><span class="line"><span class="built_in">this</span>.$route.query.a</span><br><span class="line"><span class="built_in">this</span>.$route.query.b</span><br><span class="line"><span class="comment">// 正确写法</span></span><br><span class="line"><span class="keyword">let</span> query = <span class="built_in">this</span>.$route </span><br><span class="line">query.a</span><br><span class="line">query.b </span><br></pre></td></tr></table></figure>
+</li>
+<li>不用分号</li>
+<li>四个空格缩进</li>
+<li>使用小驼峰命名法，并且变量都有明确的用途 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> getComputedStyle</span><br><span class="line"><span class="keyword">let</span> setProjectName</span><br><span class="line"><span class="keyword">let</span> deleteProject</span><br></pre></td></tr></table></figure>
+</li>
+<li>代码注释</li>
+</ol>
+<p>CSS：</p>
+<ol>
+<li>尽量在三层嵌套以内</li>
+<li>不使用 <code>*</code></li>
+<li>注重公共样式提取</li>
+<li>命名用<code>-</code>拼接，应明确功能用途</li>
+</ol>
+<p>HTML：</p>
+<ol>
+<li>
+<p>组件尽量遵守柯里化，例如一个确认框组件，尽可能拆散：<br>
+（1. 头部组件<br>
+- 标题<br>
+- close</p>
+<p>（2. 中间内容</p>
+<p>（3. 底部组件<br>
+- 按钮组件</p>
+<p>（4. 遮罩组件<br>
+…</p>
+</li>
+<li>
+<p>class 名使用 <code>-</code> 拼接</p>
+</li>
+<li>
+<p>Tab / 4格缩进</p>
+</li>
+<li>
+<p>尽量各个组件维护各个组件的 JS/CSS/HTML</p>
+</li>
+</ol>
+<p>VSCode 配置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 调整窗口的缩放级别</span></span><br><span class="line">  <span class="comment">// &quot;window.zoomLevel&quot;: 1,</span></span><br><span class="line">  <span class="comment">//设置文字大小</span></span><br><span class="line">  <span class="attr">&quot;editor.fontSize&quot;</span>: <span class="number">16</span>,</span><br><span class="line">  <span class="comment">//设置文字行高</span></span><br><span class="line">  <span class="attr">&quot;editor.lineHeight&quot;</span>: <span class="number">24</span>,</span><br><span class="line">  <span class="comment">//开启行数提示</span></span><br><span class="line">  <span class="attr">&quot;editor.lineNumbers&quot;</span>: <span class="string">&quot;on&quot;</span>,</span><br><span class="line">  <span class="comment">//开启自动显示建议</span></span><br><span class="line">  <span class="attr">&quot;editor.quickSuggestions&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;other&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;comments&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;strings&quot;</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//指定工作台中使用的颜色主题</span></span><br><span class="line">  <span class="comment">// &quot;workbench.colorTheme&quot;: &quot;Darcula Theme from IntelliJ&quot;,</span></span><br><span class="line">  <span class="comment">// vscode默认启用了根据文件类型自动设置tabsize的选项</span></span><br><span class="line">  <span class="attr">&quot;editor.detectIndentation&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 重新设定 tabSize</span></span><br><span class="line">  <span class="attr">&quot;editor.tabSize&quot;</span>: <span class="number">4</span>,</span><br><span class="line">  <span class="comment">// #每次保存的时候自动格式化</span></span><br><span class="line">  <span class="attr">&quot;editor.formatOnSave&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// #每次保存的时候将代码按eslint格式进行修复</span></span><br><span class="line">  <span class="attr">&quot;eslint.autoFixOnSave&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 添加 vue 支持, 开启对.vue文件中错误的检查</span></span><br><span class="line">  <span class="attr">&quot;eslint.validate&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;javascript&quot;</span>,</span><br><span class="line">    <span class="string">&quot;javascriptreact&quot;</span>,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;language&quot;</span>: <span class="string">&quot;vue&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;autoFix&quot;</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">//  #让prettier使用eslint的代码格式进行校验</span></span><br><span class="line">  <span class="attr">&quot;prettier.eslintIntegration&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">//  #去掉代码结尾的分号</span></span><br><span class="line">  <span class="attr">&quot;prettier.semi&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">//  #使用带引号替代双引号</span></span><br><span class="line">  <span class="attr">&quot;prettier.singleQuote&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">//  #让函数(名)和后面的括号之间加个空格</span></span><br><span class="line">  <span class="attr">&quot;javascript.format.insertSpaceBeforeFunctionParenthesis&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">// #这个按用户自身习惯选择</span></span><br><span class="line">  <span class="attr">&quot;vetur.format.defaultFormatter.html&quot;</span>: <span class="string">&quot;js-beautify-html&quot;</span>,</span><br><span class="line">  <span class="comment">// #让vue中的js按编辑器自带的ts格式进行格式化</span></span><br><span class="line">  <span class="attr">&quot;vetur.format.defaultFormatter.js&quot;</span>: <span class="string">&quot;vscode-typescript&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;vetur.format.defaultFormatterOptions&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;js-beautify-html&quot;</span>: &#123;</span><br><span class="line">      <span class="comment">// #vue组件中html代码格式化样式</span></span><br><span class="line">      <span class="attr">&quot;wrap_attributes&quot;</span>: <span class="string">&quot;auto&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180901</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/180901/" class="post-title-link" itemprop="url">开发词汇集</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-24 17:12:21" itemprop="dateCreated datePublished" datetime="2020-12-24T17:12:21+08:00">2020-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-05 13:51:44" itemprop="dateModified" datetime="2021-02-05T13:51:44+08:00">2021-02-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1809%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%8B%B1%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">1809：计算机英语</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="pa">A</span><a href="#pa" class="header-anchor">#</a></h2>
+<ul>
+<li>absolute 绝对</li>
+<li>abstract 抽象</li>
+<li>action 活动</li>
+<li>active 活动的</li>
+<li>activity 活动</li>
+<li>add 添加</li>
+<li>admin / administrator 管理员</li>
+<li>align 对齐</li>
+<li>alpha 阿尔法，内测版本</li>
+<li>anchor 锚标记</li>
+<li><strong>animation</strong> 动画</li>
+<li>application / app 应用</li>
+<li>API / Application Programming Interface 应用程序接口</li>
+<li>area 区域</li>
+<li>array 数组</li>
+<li>aside 侧边栏</li>
+<li>async 异步</li>
+<li><strong>attribute</strong> 属性</li>
+<li>auto 自动</li>
+</ul>
+<h2><span id="pb">B</span><a href="#pb" class="header-anchor">#</a></h2>
+<ul>
+<li>background 背景</li>
+<li>banner 横幅</li>
+<li>base 基础</li>
+<li>beta 贝塔，公测版本</li>
+<li>bit 位</li>
+<li>BIOS / Basic Input Output System 基础输入输出系统</li>
+<li>blog 博客</li>
+<li>BOM / Browser Object Model 浏览器对象模型</li>
+<li>border 边框</li>
+<li>boolean 布尔值（true/false）</li>
+<li>browser 浏览器</li>
+<li>break 中断</li>
+<li>bug 问题，漏洞（近：debug 调试）</li>
+<li>button / btn 按钮</li>
+<li>byte 字节</li>
+</ul>
+<h2><span id="pc">C</span><a href="#pc" class="header-anchor">#</a></h2>
+<ul>
+<li>cache 缓存</li>
+<li>call 调用</li>
+<li>callback 回调函数</li>
+<li>card 卡片</li>
+<li>carousel 轮播图（旋转木马，跑马灯）</li>
+<li>catch 捕获</li>
+<li>category 类别</li>
+<li>center 居中，中心</li>
+<li>change 改变</li>
+<li>check 检查</li>
+<li>children 子集</li>
+<li>class 类</li>
+<li>click 点击</li>
+<li>client 客户端</li>
+<li>code 码，代码</li>
+<li>cookies</li>
+<li>color 颜色</li>
+<li><strong>component</strong> 组件</li>
+<li>config 配置（近：option）</li>
+<li>const 常量</li>
+<li><strong>constructor</strong> 构造函数</li>
+<li>container 容器</li>
+<li>content 内容</li>
+<li>continue 继续</li>
+<li>count 数量</li>
+<li>CPU / Central Processing Unit 中央处理器</li>
+<li>create 创建</li>
+<li>CSS / Cascading Style Sheets 层叠样式表</li>
+<li>current 当前</li>
+<li>custom 自定义，习惯</li>
+</ul>
+<h2><span id="pd">D</span><a href="#pd" class="header-anchor">#</a></h2>
+<ul>
+<li>data 数据（混：date 日期）</li>
+<li>database 数据库</li>
+<li>detail 详情</li>
+<li>date 日期（混：data 数据）</li>
+<li>debounce 防抖</li>
+<li>debug 调试</li>
+<li>deep 深度</li>
+<li><strong>default</strong> 默认</li>
+<li>define  定义（宏定义）</li>
+<li>delay 延时</li>
+<li>delegate 委托，代理</li>
+<li>delete 删除（近：remove）</li>
+<li>demo 演示</li>
+<li>description 描述</li>
+<li><strong>development</strong> 开发环境</li>
+<li>dialog 对话框</li>
+<li>dictionary 字典</li>
+<li>direction 方向</li>
+<li><strong>directive</strong> 指令</li>
+<li>disable 禁用</li>
+<li>display 显示</li>
+<li>document 文档</li>
+<li>DOM / Document Object Model 文档对象模式</li>
+<li>download 下载</li>
+</ul>
+<h2><span id="pe">E</span><a href="#pe" class="header-anchor">#</a></h2>
+<ul>
+<li>element 元素</li>
+<li>electron 电子</li>
+<li>emit 分发</li>
+<li>engine 引擎</li>
+<li>enterprise 企业版</li>
+<li>entry / entries 进入</li>
+<li>environment / env 环境</li>
+<li>error 错误</li>
+<li>ES / ECMAScript</li>
+<li>event 事件</li>
+<li>exclude 排除</li>
+<li>exception 异常</li>
+<li>expired 到期，过期</li>
+<li>export 导出</li>
+<li>expand 展开</li>
+<li>extend 扩展（近：extra），继承（extends）</li>
+</ul>
+<h2><span id="pf">F</span><a href="#pf" class="header-anchor">#</a></h2>
+<ul>
+<li>false 假</li>
+<li>fast 快速</li>
+<li>feedback 反馈</li>
+<li>filter 过滤，滤镜</li>
+<li>flex 弹性</li>
+<li>focus 焦点，得到焦点（反：blur 失去焦点）</li>
+<li>follow 关注（follower 关注者），遵循</li>
+<li>footer 底部</li>
+<li>force / -f 强制</li>
+<li>form 表单</li>
+<li>format 格式，格式化</li>
+<li>found 发现（Not Found）</li>
+<li>function 函数</li>
+<li>full 全部，完整（full screen 全屏）</li>
+</ul>
+<h2><span id="pg">G</span><a href="#pg" class="header-anchor">#</a></h2>
+<ul>
+<li>GIS / Geographic Information System 地理信息系统</li>
+<li>GMT / Greenwich Mean Time 格林威治时间（零时区）</li>
+<li>grade 层级，等级（近：level）</li>
+<li>grid 网格</li>
+<li>get 获取</li>
+<li>getter/setter 存取器</li>
+<li>global 全局</li>
+<li>GPU / Graphics Processing Unit 图形处理器</li>
+</ul>
+<h2><span id="ph">H</span><a href="#ph" class="header-anchor">#</a></h2>
+<ul>
+<li>handle 处理</li>
+<li>HDMI / High Definition Multimedia Interface 高清多媒体接口</li>
+<li>header 头部</li>
+<li>height 高度</li>
+<li>hide / hidden 隐藏</li>
+<li>horizontal 水平（反：vertical 垂直）</li>
+<li>host 主机</li>
+<li>hover 鼠标悬浮效果</li>
+<li>HTML / Hypertext Markup Language 超文本标记语言</li>
+<li>HTTP / HyperText Transfer Protocol 超文本传输协议</li>
+<li>HTTPS / Hyper Text Transfer Protocol over SecureSocket Layer</li>
+<li>href / hypertext reference 超文本引用</li>
+</ul>
+<h2><span id="pi">I</span><a href="#pi" class="header-anchor">#</a></h2>
+<ul>
+<li>icon 图标</li>
+<li>IDE / Integrated Development Environment 集成开发环境</li>
+<li>image / img 图像</li>
+<li>import 引入、导入</li>
+<li>important 重要的</li>
+<li>in 在</li>
+<li>inactive 不活跃的</li>
+<li>include 包含</li>
+<li>index 序列</li>
+<li>infinite 无限</li>
+<li>info / information 信息（近：message）</li>
+<li>init 初始化</li>
+<li>install 安装（反：uninstall 卸载）</li>
+<li>interface 接口</li>
+<li>item 项</li>
+<li>iterator 迭代器</li>
+</ul>
+<h2><span id="pj">J</span><a href="#pj" class="header-anchor">#</a></h2>
+<ul>
+<li>JS / JavaScript</li>
+<li>JSX / JavaScript XML</li>
+<li>jQuery*</li>
+</ul>
+<h2><span id="pk">K</span><a href="#pk" class="header-anchor">#</a></h2>
+<ul>
+<li>keep-alive 保持长连接，Vue 缓存组件</li>
+<li>key 键</li>
+<li>keyword 关键字</li>
+</ul>
+<h2><span id="pl">L</span><a href="#pl" class="header-anchor">#</a></h2>
+<ul>
+<li>label 标签</li>
+<li>language / lang 语言</li>
+<li>launch 启动</li>
+<li>layout 布局</li>
+<li>length 长度</li>
+<li>let 让（定义）</li>
+<li>level / lv 等级</li>
+<li>library 库</li>
+<li>lifecycle 生命周期</li>
+<li>linear 线性</li>
+<li>list 列表</li>
+<li>load / loading 加载</li>
+<li>local 本地</li>
+<li>log 日志</li>
+<li>login 登录</li>
+<li>logo 商标，标志</li>
+<li>logout 登出，注销</li>
+</ul>
+<h2><span id="pm">M</span><a href="#pm" class="header-anchor">#</a></h2>
+<ul>
+<li>main 主</li>
+<li>manifest 清单</li>
+<li>map 映射</li>
+<li>margin 外边距</li>
+<li>mask 蒙板，遮罩</li>
+<li>max 最大值</li>
+<li>menu 菜单</li>
+<li>message 消息</li>
+<li>merge 合并</li>
+<li>method 方法</li>
+<li>modal 模态（框）</li>
+<li>mode 模式</li>
+<li>model 模型</li>
+<li>modern 现代</li>
+<li>modify 修改</li>
+<li>modifiers 修饰符</li>
+<li><strong>module</strong> 模块</li>
+<li>mount 挂载</li>
+<li>multiple 多个</li>
+<li><strong>mutation</strong> 变化</li>
+</ul>
+<h2><span id="pn">N</span><a href="#pn" class="header-anchor">#</a></h2>
+<ul>
+<li>NaN / Not a Number 非数字</li>
+<li>native 原生的</li>
+<li>navigation / nav 导航</li>
+<li>network 网络</li>
+<li>node 节点</li>
+<li>notice 通知</li>
+</ul>
+<h2><span id="po">O</span><a href="#po" class="header-anchor">#</a></h2>
+<ul>
+<li>OA / Office Automation 办公自动化</li>
+<li>object 对象</li>
+<li>offline 离线</li>
+<li>offset 偏移</li>
+<li>open 打开，开放（开放平台）</li>
+<li>operation 操作</li>
+<li>option 选项，配置（近：setting 设置）</li>
+<li>origin 源</li>
+<li>OS / Operating System 操作系统</li>
+<li>overflow 溢出</li>
+<li>overview 总览，概述</li>
+<li>outline 轮廓</li>
+</ul>
+<h2><span id="pp">P</span><a href="#pp" class="header-anchor">#</a></h2>
+<ul>
+<li>pack / package 包</li>
+<li>padding 内边距</li>
+<li>page 页面</li>
+<li>pagination 分页</li>
+<li>password 密码</li>
+<li>path 路径（文件路径）</li>
+<li>pay 支付</li>
+<li>param 参数</li>
+<li>parse 解析</li>
+<li>pause 暂停</li>
+<li><strong>permissions</strong> 权限</li>
+<li>person 个人</li>
+<li>phone 电话</li>
+<li>plain 朴素的</li>
+<li>player 播放器</li>
+<li>position 定位，位置</li>
+<li>power 驱动</li>
+<li>preview 预览</li>
+<li>private 私有</li>
+<li>process 过程</li>
+<li>product 产品</li>
+<li>progress 进度，进度条</li>
+<li><strong>promise</strong> 承诺</li>
+<li><strong>production</strong> 生产环境</li>
+<li>proportion 比例</li>
+<li><strong>prototype</strong> 原型</li>
+<li>proxy 委托</li>
+<li>public 公共</li>
+</ul>
+<h2><span id="pq">Q</span><a href="#pq" class="header-anchor">#</a></h2>
+<ul>
+<li>query 查询</li>
+</ul>
+<h2><span id="pr">R</span><a href="#pr" class="header-anchor">#</a></h2>
+<ul>
+<li>radius 半径</li>
+<li>RAM / Random Access Memory 随机存取存储器</li>
+<li>react / reactive 响应式</li>
+<li>readonly 只读</li>
+<li>recover 恢复</li>
+<li>reflect 反射</li>
+<li>refresh 刷新</li>
+<li>register 注册；寄存器</li>
+<li>remove / rm 移除（近：delete）</li>
+<li>render 渲染</li>
+<li>renderer 渲染器</li>
+<li>repeat 重复，平铺</li>
+<li>REST / Representational State Transfer 表现层状态转移</li>
+<li>return 返回</li>
+<li>request / req 请求</li>
+<li>require 必需</li>
+<li>response 响应</li>
+<li>result 结果</li>
+<li>ROM / Read-Only Memory 只读存储器</li>
+<li>root 根（根路径，Android 系统代表最高权限）</li>
+<li><strong>router</strong> 路由，路由器</li>
+<li>row 行</li>
+</ul>
+<h2><span id="ps">S</span><a href="#ps" class="header-anchor">#</a></h2>
+<ul>
+<li>save 保存</li>
+<li>scope 范围</li>
+<li>script 脚本</li>
+<li>scroll 滚动</li>
+<li>search 搜索</li>
+<li>section 分区，分块</li>
+<li>select 选择</li>
+<li>server 服务器</li>
+<li>service 服务</li>
+<li>set 设置</li>
+<li>setting 设置</li>
+<li>size 尺寸，大小</li>
+<li>slot 插槽</li>
+<li>SQL / Structured Query Language 结构化查询语言</li>
+<li>standard 标准</li>
+<li>start 开始</li>
+<li>state / status  状态值</li>
+<li>static 静态</li>
+<li>storage 存储</li>
+<li>store 仓库</li>
+<li>string / str 字符串</li>
+<li>style 样式</li>
+<li>sum 求和</li>
+<li>support 支持，帮助</li>
+<li>SVG / Scalable Vector Graphics 可伸缩矢量图</li>
+<li>switch 开关（近：toggle）</li>
+<li>symbol 唯一标志</li>
+<li>sync 同步（反：async 异步）</li>
+<li>system 系统</li>
+</ul>
+<h2><span id="pt">T</span><a href="#pt" class="header-anchor">#</a></h2>
+<ul>
+<li>table 表格</li>
+<li>target 目标</li>
+<li>temp 临时</li>
+<li>template 模板</li>
+<li>theme 主题</li>
+<li>throttle 节流</li>
+<li>time 时间</li>
+<li>timeout 超时</li>
+<li>tip 提示</li>
+<li>title 标题</li>
+<li>TLS / Transport Layer Security 传输层安全协议</li>
+<li>tool 工具</li>
+<li>toggle 切换、开关（近：switch）</li>
+<li>transition 过渡动画</li>
+<li>transparent 透明</li>
+<li>tree 树形，树形控件</li>
+<li>Trigger 触发器</li>
+<li>tutorial 教程</li>
+<li>type 类型</li>
+</ul>
+<h2><span id="pu">U</span><a href="#pu" class="header-anchor">#</a></h2>
+<ul>
+<li>undefined 未定义的</li>
+<li>unicode 万国码（utf-8 是其实现方式之一）</li>
+<li>update 更新</li>
+<li>URL / Uniform Resource Locator 网址（统一资源定位器）</li>
+<li>usage 用法</li>
+<li>USB / Universal Serial Bus 通用串行总线</li>
+<li>use 使用</li>
+<li>user 用户</li>
+<li>UTC / Coordinated Universal Time 协调世界时</li>
+</ul>
+<h2><span id="pv">V</span><a href="#pv" class="header-anchor">#</a></h2>
+<ul>
+<li>value 值</li>
+<li>version / ver 版本</li>
+<li>verify 验证</li>
+<li>verification 验证（近：check）</li>
+<li>vertical 垂直（反：horizontal 水平）</li>
+<li>view 视图</li>
+<li>viewport 视口</li>
+<li>visibility 可见性</li>
+<li>VPN / Virtual Private Network 虚拟专用网络</li>
+</ul>
+<h2><span id="pw">W</span><a href="#pw" class="header-anchor">#</a></h2>
+<ul>
+<li>warn / warning 警告</li>
+<li>watch 监视，侦听</li>
+<li>weak 弱</li>
+<li>webkit 浏览器渲染内核（Safari）</li>
+<li>webpack</li>
+<li>WebSocket</li>
+<li>width 宽度</li>
+<li>Wi-Fi 无线局域网</li>
+<li>window 窗口</li>
+<li>wrapper 包裹</li>
+<li>WWW / World Wide Web 万维网</li>
+</ul>
+<h2><span id="px">X</span><a href="#px" class="header-anchor">#</a></h2>
+<ul>
+<li>XML / Extensible Markup Language 可扩展标记语言</li>
+</ul>
+<h2><span id="py">Y</span><a href="#py" class="header-anchor">#</a></h2>
+<h2><span id="pz">Z</span><a href="#pz" class="header-anchor">#</a></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220211/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220211</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220211/" class="post-title-link" itemprop="url">JavaScript Promise</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-27 11:08:29" itemprop="dateCreated datePublished" datetime="2020-11-27T11:08:29+08:00">2020-11-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 16:17:53" itemprop="dateModified" datetime="2021-02-02T16:17:53+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.9k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>进行异步编程的新解决方案。<br>
+以同步的形式把异步代码表达出来，避免回调函数层层嵌套的回调地狱。</p>
+<h2><span id="p1-zhuang-tai">1、状态</span><a href="#p1-zhuang-tai" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pending</code></td>
+<td>初始化状态</td>
+</tr>
+<tr>
+<td><code>fulfilled</code>（<code>resolve</code>）</td>
+<td>成功状态，完成状态</td>
+</tr>
+<tr>
+<td><code>reject</code></td>
+<td>失败状态</td>
+</tr>
+</tbody>
+</table>
+<p>状态只能被改变一次。</p>
+<h2><span id="p2-ji-ben-yong-fa">2、基本用法</span><a href="#p2-ji-ben-yong-fa" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">// excutor 函数（同步的）</span></span><br><span class="line">  resolve(<span class="number">1</span>); <span class="comment">// reject(2)</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法一</span></span><br><span class="line">p.then(<span class="function">(<span class="params">num</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;, <span class="function">(<span class="params">num</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line">p.then(<span class="function">(<span class="params">num</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;).catch(reason)=&gt;&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2><span id="p3-lian-shi-diao-yong">3、链式调用</span><a href="#p3-lian-shi-diao-yong" class="header-anchor">#</a></h2>
+<p><code>Promise</code> 实现了<strong>链式调用</strong>，也就是说每次调用 <code>then</code> 之后返回的都是一个 <code>Promise</code>，并且是一个全新的 <code>Promise</code>，原因也是因为状态不可变。如果你在 <code>then</code> 中 使用了 <code>return</code>，那么 <code>return</code> 的值会被 <code>Promise.resolve()</code> 包装。</p>
+<h2><span id="p4-geng-duo-fang-fa">4、更多方法</span><a href="#p4-geng-duo-fang-fa" class="header-anchor">#</a></h2>
+<p>（1）<code>Promise.prototype.then</code></p>
+<p>返回一个<code>Promise</code> 对象。</p>
+<p>（2）<code>Promise.prototype.catch</code></p>
+<p>返回一个<code>Promise</code> 对象。</p>
+<p>（3）<code>Promise.resolve</code></p>
+<p>返回的<code>Promise</code>对象状态为<code>fulfilled</code>。</p>
+<p>（4）<code>Promise.reject</code></p>
+<p>返回一个状态为<strong>失败</strong>的<code>Promise</code>对象，并将给定的失败信息传递给对应的处理方法。</p>
+<p>（5）<code>Promise.all</code></p>
+<ul>
+<li>接收一个数组，数组的每一个元素都的 <code>Promise</code></li>
+<li>返回的是一个 <code>Promise</code></li>
+<li>数组中所有成功，则返回成功，如果有一个失败，则返回失败状态</li>
+</ul>
+<p>这个方法返回一个新的 promise 对象，该 promise 对象在 iterable 参数对象里所有的 promise 对象都成功的时候才会触发成功，一旦有任何一个 iterable 里面的 promise 对象失败则立即触发该 promise 对象的失败。</p>
+<p>（6）<code>Promise.race</code></p>
+<p>当 iterable 参数里的任意一个子 promise 被成功或失败后，父 promise 马上也会用子 promise 的成功返回值或失败详情作为参数调用父 promise 绑定的相应句柄，并返回该 promise 对象。</p>
+<p>（7）<code>Promise.any</code></p>
+<p>接收一个 Promise 对象的集合，当其中的一个 promise 成功，就返回那个成功的 promise 的值。</p>
+<p>（8）<code>Promise.allSettled</code></p>
+<p>等到所有 promises 都完成（每个 promise 返回成功或失败）。<br>
+返回一个 promise，该 promise 在所有 promise 完成后完成。并带有一个对象数组，每个对象对应每个 promise 的结果。</p>
+<h2><span id="p5-li-zi-feng-zhuang-ajax">5、例子：封装 ajax</span><a href="#p5-li-zi-feng-zhuang-ajax" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装 ajax</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    xhr.onreadystatechange = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) &#123;</span><br><span class="line">          resolve(xhr.responseText);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          reject(xhr.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(<span class="string">&quot;GET&quot;</span>, url);</span><br><span class="line">    xhr.send();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line">ajax(<span class="string">&quot;xxx&quot;</span>).then(</span><br><span class="line">  (value) =&gt; &#123;</span><br><span class="line">    <span class="comment">// ....</span></span><br><span class="line">  &#125;,</span><br><span class="line">  (result) =&gt; &#123;</span><br><span class="line">    <span class="comment">// .....</span></span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2><span id="p6-shou-xie-yi-ge-jian-dan-de-promise">6、手写一个简单的 Promise</span><a href="#p6-shou-xie-yi-ge-jian-dan-de-promise" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> PENDING = <span class="string">&quot;pending&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> RESOLVED = <span class="string">&quot;fulfilled&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> REJECTED = <span class="string">&quot;rejected&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Promise</span>(<span class="params">exec</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> that = <span class="built_in">this</span>;</span><br><span class="line">  that.state = PENDING;</span><br><span class="line">  that.value = <span class="literal">null</span>;</span><br><span class="line">  that.resolvedCallbacks = [];</span><br><span class="line">  that.rejectedCallbacks = [];</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">resolved</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.state !== PENDING) <span class="keyword">return</span>;</span><br><span class="line">    that.state = RESOLVED;</span><br><span class="line">    that.value = value;</span><br><span class="line">    that.resolvedCallbacks.map(<span class="function">(<span class="params">v</span>) =&gt;</span> v(that.value));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">rejected</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.state !== PENDING) <span class="keyword">return</span>;</span><br><span class="line">    that.state = REJECTED;</span><br><span class="line">    <span class="built_in">this</span>.value = value;</span><br><span class="line">    that.rejectedCallbacks.map(<span class="function">(<span class="params">v</span>) =&gt;</span> v(that.value));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    exec(resolved, rejected);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    rejected(err);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.prototype.then = <span class="function"><span class="keyword">function</span> (<span class="params">onResolved, onRejected</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> that = <span class="built_in">this</span>;</span><br><span class="line">  onResolved = <span class="keyword">typeof</span> onResolved === <span class="string">&quot;function&quot;</span> ? onResolved : <span class="function">(<span class="params">v</span>) =&gt;</span> v;</span><br><span class="line">  onRejected =</span><br><span class="line">    <span class="keyword">typeof</span> onRejected === <span class="string">&quot;function&quot;</span> ? onRejected : <span class="function">(<span class="params">err</span>) =&gt;</span> <span class="keyword">throw</span> err;</span><br><span class="line">  <span class="keyword">switch</span> (that.state) &#123;</span><br><span class="line">    <span class="keyword">case</span> PENDING:</span><br><span class="line">      that.resolvedCallbacks.push(onResolved);</span><br><span class="line">      that.rejectedCallbacks.push(onRejected);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> RESOLVED:</span><br><span class="line">      onResolved(that.value);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> REJECTED:</span><br><span class="line">      onRejected(that.value);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/270202/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">270202</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/270202/" class="post-title-link" itemprop="url">uni-app</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-25 08:39:19" itemprop="dateCreated datePublished" datetime="2020-11-25T08:39:19+08:00">2020-11-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:21:33" itemprop="dateModified" datetime="2021-02-01T19:21:33+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2702%EF%BC%9A%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url" rel="index"><span itemprop="name">2702：微信小程序</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>282</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="uni-app">uni-app</span><a href="#uni-app" class="header-anchor">#</a></h1>
+<p>跨终端 | 基于 Vue</p>
+<p>一套代码，可以在十个平台使用。</p>
+<h2><span id="pyi-kai-shi">一、开始</span><a href="#pyi-kai-shi" class="header-anchor">#</a></h2>
+<h3><span id="p1-kai-fa-huan-jing">1、开发环境</span><a href="#p1-kai-fa-huan-jing" class="header-anchor">#</a></h3>
+<p>IDE：<code>HBuilderX</code></p>
+<p>运行在浏览器需要配置程序路径（.exe）。运行在小程序模拟器需要配置程序文件夹并打开小程序开发工具安全设置<strong>开启端口</strong>。</p>
+<h3><span id="p2-xiang-mu-mu-lu-fen-xi">2、项目目录分析</span><a href="#p2-xiang-mu-mu-lu-fen-xi" class="header-anchor">#</a></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">app</span><br><span class="line"> ├── App.vue</span><br><span class="line"> ├── main.js       <span class="comment"># 等同 Vue 的 main.js || mpType 声明App组件代表整个小程序</span></span><br><span class="line"> ├── pages.json    <span class="comment"># 对应小程序的 app.json</span></span><br><span class="line"> └── mainfest.json <span class="comment"># 项目声明和配置：小程序id必须配置（不是uni-app id）</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p3-yu-fa">3、语法</span><a href="#p3-yu-fa" class="header-anchor">#</a></h3>
+<ul>
+<li>用 <code>view</code> 代替 <code>div</code></li>
+<li>单位 <code>upx</code></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220110/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220110</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220110/" class="post-title-link" itemprop="url">ES 杂项</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-07T00:00:00+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:09:14" itemprop="dateModified" datetime="2021-02-01T19:09:14+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>261</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="peval">eval</span><a href="#peval" class="header-anchor">#</a></h2>
+<h2><span id="pdebugger">debugger</span><a href="#pdebugger" class="header-anchor">#</a></h2>
+<h2><span id="pin-of">in/of</span><a href="#pin-of" class="header-anchor">#</a></h2>
+<p>1、<code>in</code> 用来判断对象是否是数组/对象的元素/属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A <span class="keyword">in</span> B</span><br><span class="line"><span class="comment">// 当B是数组时，A指的是数组的索引</span></span><br><span class="line"><span class="comment">// 当B是对象时，A指的是对象的属性</span></span><br></pre></td></tr></table></figure>
+<p>2、<code>for...in</code> 对数组或者对象循环（迭代）操作</p>
+<p>对于数组来说，遍历出来的是数组元素</p>
+<p>对于对象来说，遍历出来的是对象属性（key）</p>
+<p>可枚举属性（<code>enumerable</code> ，不包括 <code>symbol</code>），会循环原型链和手动添加的键</p>
+<p>某些情况下，循环顺序是随机的</p>
+<p>3、<code>for...of</code> 遍历出来的是对象（数组、类数组、字符串）的值</p>
+<p>可以使用 <code>break</code> <code>continue</code> <code>return</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">KEEL</p>
+  <div class="site-description" itemprop="description">这个人很懒，什么都没留下。 </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">228</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KEEL</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">387k</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

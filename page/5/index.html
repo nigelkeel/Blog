@@ -197,6 +197,1032 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181008/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181008</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181008/" class="post-title-link" itemprop="url">Mermaid</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 00:56:17" itemprop="dateCreated datePublished" datetime="2021-02-01T00:56:17+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 14:41:46" itemprop="dateModified" datetime="2021-02-02T14:41:46+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>826</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。<br>
+本文基于 Typora。</p>
+<h2><span id="pliu-cheng-tu">流程图</span><a href="#pliu-cheng-tu" class="header-anchor">#</a></h2>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid"> graph TD;
+    A-->B;
+    A-->C;
+    B-->D;</pre>
+<h2><span id="pshi-xu-tu">时序图</span><a href="#pshi-xu-tu" class="header-anchor">#</a></h2>
+<p>语法解释：<code>-&gt;&gt;</code> 代表实线箭头，<code>--&gt;&gt;</code> 则代表虚线。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!</pre>
+<h2><span id="pzhuang-tai-tu">状态图</span><a href="#pzhuang-tai-tu" class="header-anchor">#</a></h2>
+<p>语法解释：<code>[*]</code> 表示开始或者结束，如果在箭头右边则表示结束。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; s1</span><br><span class="line">    s1 --&gt; [*]</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">stateDiagram
+    [*] --> s1
+    s1 --> [*]</pre>
+<h2><span id="plei-tu">类图</span><a href="#plei-tu" class="header-anchor">#</a></h2>
+<p>语法解释：<code>&lt;|--</code> 表示继承，<code>+</code> 表示 <code>public</code>，<code>-</code> 表示 <code>private</code>。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">classDiagram
+      Animal <|-- duck animal <|-- fish zebra : +int age +string gender animal: +ismammal() +mate() class duck{ beakcolor +swim() +quack() } fish{ -int sizeinfeet -caneat() zebra{ +bool is_wild +run() }< pre>
+<h2><span id="pgan-te-tu">甘特图</span><a href="#pgan-te-tu" class="header-anchor">#</a></h2>
+<p>甘特图一般用来表示项目的计划排期，目前在工作中经常会用到。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    title 工作计划</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    section Section</span><br><span class="line">    A task           :a1, 2020-01-01, 30d</span><br><span class="line">    Another task     :after a1  , 20d</span><br><span class="line">    section Another</span><br><span class="line">    Task in sec      :2020-01-12  , 12d</span><br><span class="line">    another task      : 24d</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">gantt
+    title 工作计划
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2020-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2020-01-12  , 12d
+    another task      : 24d</pre>
+<h2><span id="pbing-tu">饼图</span><a href="#pbing-tu" class="header-anchor">#</a></h2>
+<p>饼图使用 <code>pie</code> 表示，标题下面分别是区域名称及其百分比。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">pie
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5</pre>
+</|--></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/130401/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">130401</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/130401/" class="post-title-link" itemprop="url">算法基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:54:49 / 修改时间：18:19:26" itemprop="dateCreated datePublished" datetime="2021-02-01T00:54:49+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1304%EF%BC%9A%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">1304：算法基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>28</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="suan-fa-ji-chu">算法基础</span><a href="#suan-fa-ji-chu" class="header-anchor">#</a></h1>
+<p>01 算法概述<br>
+02 排序<br>
+03 搜索<br>
+04 递归<br>
+05 动态规划</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/120301/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">120301</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/120301/" class="post-title-link" itemprop="url">操作系统原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:52:59 / 修改时间：18:19:08" itemprop="dateCreated datePublished" datetime="2021-02-01T00:52:59+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1203%EF%BC%9A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1203：操作系统原理</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>39</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="cao-zuo-xi-tong-yuan-li">操作系统原理</span><a href="#cao-zuo-xi-tong-yuan-li" class="header-anchor">#</a></h1>
+<p>01 CPU调度：进程、线程<br>
+02 内存管理<br>
+03 文件系统与I/O<br>
+04 显示</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/120101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">120101</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/120101/" class="post-title-link" itemprop="url">微型计算机组成原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:51:33 / 修改时间：18:18:56" itemprop="dateCreated datePublished" datetime="2021-02-01T00:51:33+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1201%EF%BC%9A%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1201：微型计算机组成原理</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>40</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="wei-xing-ji-suan-ji-zu-cheng-yuan-li">微型计算机组成原理</span><a href="#wei-xing-ji-suan-ji-zu-cheng-yuan-li" class="header-anchor">#</a></h1>
+<p>01 冯诺依曼结构<br>
+02 CPU<br>
+03 存储器：RAM、ROM<br>
+04 GPU</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/110401/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">110401</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/110401/" class="post-title-link" itemprop="url">线性代数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:50:28 / 修改时间：18:18:41" itemprop="dateCreated datePublished" datetime="2021-02-01T00:50:28+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1104%EF%BC%9A%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">1104：线性代数</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>24</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="xian-xing-dai-shu">线性代数</span><a href="#xian-xing-dai-shu" class="header-anchor">#</a></h1>
+<p>01 行列式<br>
+02 矩阵<br>
+03 线性向量组和方程组</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220701/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220701</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220701/" class="post-title-link" itemprop="url">正则表达式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:44:23 / 修改时间：15:58:47" itemprop="dateCreated datePublished" datetime="2021-02-01T00:44:23+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2207%EF%BC%9A%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">2207：正则表达式</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="zheng-ze-biao-da-shi">正则表达式</span><a href="#zheng-ze-biao-da-shi" class="header-anchor">#</a></h1>
+<p>正则表达式（RegExp，Regular Expression），又叫规则表达式，是由一些特殊符号（<strong>元字符</strong>、限定符）组成的式子。</p>
+<p>是搜索和替换字符串一种强大的方法。在 JS 中，正则表达式通过内置的 RegExp 类的对象来实现，并和字符串集成。用来匹配字符串。</p>
+<h1><span id="yi-kai-shi">一、开始</span><a href="#yi-kai-shi" class="header-anchor">#</a></h1>
+<h3><span id="p1-chuang-jian-yi-ge-zheng-ze-biao-da-shi-dui-xiang">1、创建一个正则表达式对象</span><a href="#p1-chuang-jian-yi-ge-zheng-ze-biao-da-shi-dui-xiang" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// （1）允许从字符串动态构造模式</span></span><br><span class="line">reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;pattern&quot;</span>, <span class="string">&quot;flags&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// （2）常用</span></span><br><span class="line">reg2 = <span class="regexp">/pattern/</span>;</span><br><span class="line">reg3 = <span class="regexp">/pattern/gim</span>;</span><br></pre></td></tr></table></figure>
+<p>如果要在字符串中搜索，可以使用 <code>search()</code> 。这个方法返回匹配项的索引位置，如果没找到返回<code>-1</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;I love you!&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> reg = <span class="regexp">/love/</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.search(reg)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p><code>test()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匹配就是 true</span></span><br><span class="line"><span class="comment">// 不匹配就是 false</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p2-yuan-zi-fu">2、元字符</span><a href="#p2-yuan-zi-fu" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>表述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>除了<code>\n</code>之外任意单个字符</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>表示一个范围 / 去除元字符串原有的作用<br>- <code>[0-9]</code> 0-9 之间任意的单个数字<br>- <code>[a-zA-Z]</code> 表示任意一个字母<br>- <code>[.]</code> 表示单纯的<code>.</code></td>
+</tr>
+<tr>
+<td><code>          |</code></td>
+<td>或者<br>- <code>[a-z] | [0-9]</code> 小写字母或者数字</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>提升优先级 / 分组（第几组从左开始数<code>(</code>）</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>单词的边界</td>
+</tr>
+<tr>
+<td><code>\d</code> / <code>\D</code></td>
+<td>数字 / 非数字</td>
+</tr>
+<tr>
+<td><code>\s</code> / <code>\S</code></td>
+<td>空白字符 | 非空白符</td>
+</tr>
+<tr>
+<td><code>\w</code> / <code>\W</code></td>
+<td>非特殊符号 | 特殊符号（下划线不是特殊符号）</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>开头 / 取反（在<code>[]</code> 里面）</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>结尾</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p3-xian-ding-fu">3、限定符</span><a href="#p3-xian-ding-fu" class="header-anchor">#</a></h3>
+<p>限定符也是一种元字符，限定某些表达式出现的次数。</p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>表述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#123;&#125;</code></td>
+<td>该限定符前面的表达式出现的次数<br>- <code>[a-z]&#123;5&#125;</code> 出现 5 次 <br>- <code>[a-z]&#123;5,&#125;</code> 出现 5 次或者多次 <br>- <code>[0-9]&#123;0,1&#125;</code> 出现 0 次或者 1 次</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>表示前面的表达式出现 0 次或者多次</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>表示前面的表达式出现 1 次或者多次</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>表示前面的表达式出现 0 次或者 1 次</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p4-xiu-shi-fu">4、修饰符</span><a href="#p4-xiu-shi-fu" class="header-anchor">#</a></h3>
+<p>正则表达式的修饰符影响搜索结果，在 JS 中有五个修饰符：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>搜索不区分大小写</td>
+</tr>
+<tr>
+<td>g</td>
+<td>搜索会查找所有的匹配项，而不是第一个</td>
+</tr>
+<tr>
+<td>m</td>
+<td>多行模式</td>
+</tr>
+<tr>
+<td>u</td>
+<td>开启完整的 unicode 支持</td>
+</tr>
+<tr>
+<td>y</td>
+<td>粘滞模式</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&quot;I love you!&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.search(<span class="regexp">/LOVE/</span>)); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(str.search(<span class="regexp">/LOVE/i</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>搜索默认是区分大小写的。</p>
+<h3><span id="p5-zhuan-yi">5、转义</span><a href="#p5-zhuan-yi" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/.</span><br></pre></td></tr></table></figure>
+<h1><span id="er-ying-yong">二、应用</span><a href="#er-ying-yong" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 邮编</span></span><br><span class="line">=<span class="regexp">/[1-9][0-9]&#123;5&#125;/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 手机号码</span></span><br><span class="line">=<span class="regexp">/[1][0-9]&#123;10&#125;/</span></span><br><span class="line">=/([<span class="number">1</span>][<span class="number">358</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">9</span>&#125;)|(...)|(...)|(...)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邮箱的正则 重要</span></span><br><span class="line"><span class="comment">// fsdffisdhfuid @ dadjhasdhuyudga   .com.cn</span></span><br><span class="line">=<span class="regexp">/[a-zA-Z0-9_.-]+[@][a-zA-Z0-9_.-]+([.][a-zA-Z]+)&#123;1,2&#125;/</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220207/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220207</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220207/" class="post-title-link" itemprop="url">JavaScript async/await</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:43:05 / 修改时间：19:10:28" itemprop="dateCreated datePublished" datetime="2021-02-01T00:43:05+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>952</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="async-await">async / await</span><a href="#async-await" class="header-anchor">#</a></h1>
+<p><code>async</code> 是 <code>Promise</code> 和 <code>Generstor</code> 语法糖。</p>
+<h2><span id="p1-async-han-shu">1、async 函数</span><a href="#p1-async-han-shu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p2-await-biao-da-shi">2、await 表达式</span><a href="#p2-await-biao-da-shi" class="header-anchor">#</a></h2>
+<p><code>await</code> 表达式必须写在 <code>async</code> 函数中。</p>
+<p><code>await</code> 右侧的表达式一般为 Promise 对象，但也可以是其他值。</p>
+<p>如果表达式是 Promise 对象，返回的是 Promise 成功的值。如果失败的，则会抛出异常，需要通过 <code>try... catch</code> 捕捉。</p>
+<p>如果是其他值，则直接将此值作为 await 的返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子1</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> result = fn();</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// Promise &#123; 1 &#125;</span></span><br><span class="line">result.then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value); <span class="comment">// 1</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子2</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="string">&quot;异常&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> result = fn();</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// Promise &#123; &lt;rejected&gt; &#x27;异常&#x27; &#125;</span></span><br><span class="line">result</span><br><span class="line">  .then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(reason); <span class="comment">// 异常</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例子3</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    reject(<span class="string">&quot;error&quot;</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> result = fn(); <span class="comment">// 失败的Promise</span></span><br><span class="line">result.catch(<span class="function">(<span class="params">reason</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(reason); <span class="comment">// error</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>await</code> 会阻塞函数的运行，需要等后边的异步代码执行完毕才会向下执行。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/150205/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">150205</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/150205/" class="post-title-link" itemprop="url">WebSocket</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 00:41:42 / 修改时间：19:32:29" itemprop="dateCreated datePublished" datetime="2021-02-01T00:41:42+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1502%EF%BC%9A%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" itemprop="url" rel="index"><span itemprop="name">1502：通信协议</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="websocket">WebSocket</span><a href="#websocket" class="header-anchor">#</a></h1>
+<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
+<ul>
+<li>它是一种网络通信协议，是 <code>HTML5</code> 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。</li>
+<li>因为 HTTP 协议有一个缺陷：通信只能由客户端发起</li>
+<li>我们都知道轮询的效率低，非常浪费资源（因为必须不停连接，或者 HTTP 连接始终打开）, 因此 websocket 应运而生。</li>
+<li>WebSocket 用于在 Web 浏览器和服务器之间进行任意的双向数据传输的一种技术。WebSocket 协议基于 TCP 协议实现，包含初始的握手过程，以及后续的多次数据帧双向传输过程。其目的是在 WebSocket 应用和 WebSocket 服务器进行频繁双向通信时，可以使服务器避免打开多个 HTTP 连接进行工作来节约资源，提高了工作效率和资源利用率。</li>
+<li>WebSocket 目前支持两种统一资源标志符<code>ws</code>和<code>wss</code>，类似于 HTTP 和 HTTPS</li>
+<li>浏览器发出 webSocket 的连线请求，服务器发出响应，这个过程称为<code>握手</code>,握手的过程只需要一次，就可以实现持久连接。</li>
+</ul>
+<h2><span id="p2-ji-ben-shi-yong">2、基本使用</span><a href="#p2-ji-ben-shi-yong" class="header-anchor">#</a></h2>
+<p>WS 表示一个 WebSocket 对象。</p>
+<p><code>WS.readyState</code> 检查连接状态</p>
+<ul>
+<li>0 未连接</li>
+<li>1 <code>WS.OPEN</code> 连接已建立</li>
+<li>2 连接正在关闭</li>
+<li>3 连接已经关闭</li>
+</ul>
+<h2><span id="p3-xin-tiao">3、心跳</span><a href="#p3-xin-tiao" class="header-anchor">#</a></h2>
+<p>待补充。</p>
+<h2><span id="p4-socket-io">4、</span><a href="#p4-socket-io" class="header-anchor">#</a></h2>
+<p><a target="_blank" rel="noopener" href="http://Socket.io">Socket.io</a> 是一个 NodeJS <code>webSocket</code>库，目标是构建不同浏览器和移动设备上使用的实时应用。它会自动根据浏览器从<code>webSocket</code> <code>ajax长轮询</code> <code>ifrane流</code>等各种方式选择最佳的方式。</p>
+<p>聊天室的实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务端</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建http server</span></span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>).createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (req.url === <span class="string">&quot;/socket.io.js&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> filePath = path.resolve(__dirname, <span class="string">&quot;./public/socket.io.js&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> rs = fs.createReadStream(filePath);</span><br><span class="line">    res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/javascript;charset=utf8&quot;</span>);</span><br><span class="line">    rs.pipe(res);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 响应页面</span></span><br><span class="line">  <span class="keyword">const</span> filePath = path.resolve(__dirname, <span class="string">&quot;./public/chat.html&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> rs = fs.createReadStream(filePath);</span><br><span class="line">  res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/html;charset=utf8&quot;</span>);</span><br><span class="line">  rs.pipe(res);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建WebSocket服务</span></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">&quot;socket.io&quot;</span>)(server);</span><br><span class="line"></span><br><span class="line"><span class="comment">// io可以代表所有客户端连接对象</span></span><br><span class="line">io.on(<span class="string">&quot;connect&quot;</span>, <span class="function">(<span class="params">socket</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// socket代表当前连接上服务的客户端对象</span></span><br><span class="line">  socket.on(<span class="string">&quot;client_to_server&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">    <span class="comment">// 除它以外，通知其他客户端</span></span><br><span class="line">    socket.broadcast.emit(<span class="string">&quot;server_to_client&quot;</span>, data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务</span></span><br><span class="line">server.listen(<span class="number">3000</span>, <span class="string">&quot;localhost&quot;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 客户端</span></span><br><span class="line"><span class="keyword">const</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.chat-btn&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> content = <span class="built_in">document</span>.querySelector(<span class="string">&quot;textarea&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">&quot;#chat-name&gt;input&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> chatContent = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.chat-content&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 客户端连接上服务端</span></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">&quot;ws://192.168.10.2:3000&quot;</span>);</span><br><span class="line"><span class="comment">// socket代表当前连接客户端对象</span></span><br><span class="line"></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 获取当前用户名</span></span><br><span class="line">  <span class="keyword">const</span> username = input.value;</span><br><span class="line">  <span class="keyword">if</span> (!username) &#123;</span><br><span class="line">    alert(<span class="string">&quot;请输入用户名！&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取用户输入的消息</span></span><br><span class="line">  <span class="keyword">const</span> msg = content.value;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!msg) &#123;</span><br><span class="line">    alert(<span class="string">&quot;请输入聊天内容！&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> time = <span class="built_in">Date</span>.now();</span><br><span class="line">  <span class="comment">// 客户端向服务端发送消息</span></span><br><span class="line">  socket.emit(<span class="string">&quot;client_to_server&quot;</span>, &#123;</span><br><span class="line">    username,</span><br><span class="line">    msg,</span><br><span class="line">    time,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 显示在你的聊天内容</span></span><br><span class="line">  <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line">  div.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;title right-title&quot;&gt;<span class="subst">$&#123;username&#125;</span>  </span></span><br><span class="line"><span class="string">        <span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>(time).toLocaleString()&#125;</span></span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;right-content&quot;&gt;<span class="subst">$&#123;msg&#125;</span>&lt;/div&gt;`</span>;</span><br><span class="line"></span><br><span class="line">  chatContent.appendChild(div);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 聊天内容清空</span></span><br><span class="line">  content.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">&quot;server_to_client&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; username, msg, time &#125; = data;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 显示别人的聊天内容</span></span><br><span class="line">  <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line"></span><br><span class="line">  div.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;title left-title&quot;&gt;<span class="subst">$&#123;username&#125;</span>  </span></span><br><span class="line"><span class="string">        <span class="subst">$&#123;<span class="keyword">new</span> <span class="built_in">Date</span>(time).toLocaleString()&#125;</span></span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;left-content&quot;&gt;<span class="subst">$&#123;msg&#125;</span>&lt;/div&gt;`</span>;</span><br><span class="line"></span><br><span class="line">  chatContent.appendChild(div);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/240201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">240201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/240201/" class="post-title-link" itemprop="url">Webpack</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 00:39:13" itemprop="dateCreated datePublished" datetime="2021-02-01T00:39:13+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 15:06:19" itemprop="dateModified" datetime="2021-02-02T15:06:19+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2402%EF%BC%9AWebpack/" itemprop="url" rel="index"><span itemprop="name">2402：Webpack</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>自动化构建工具：<strong>开发环境 --&gt; 生产环境</strong></p>
+<ul>
+<li>开发环境（development）注重开发效率和源码的阅读。</li>
+<li>生产环境（production）注重代码的执行效率（压缩）。</li>
+</ul>
+<p>gulp / grunt 属于任务流工具（Task Runner）</p>
+<p>webpack 是模块化打包工具（bundler）</p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.webpackjs.com/">webpack</a></strong> 是一个模块打包器（bundler），根据模块的依赖关系进行静态分析，生成对应的静态资源。对 webpack 来说，前端所有资源文件（js/json/css/less/img/…）都会作为模块处理。</p>
+<p>核心概念</p>
+<ul>
+<li><code>Entry</code> 入口起点，指示 webpack 应该使用哪个模块，来作为构建其内部依赖图的开始。</li>
+<li><code>Output</code> 告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件。</li>
+<li><code>Loader</code> 让 webpack 能够处理那些非 JS 文件。</li>
+<li><code>Plugins</code> 插件，用于执行范围更广的任务，比如打包优化，压缩。</li>
+<li><code>Mode</code> 模式，有生产模式（production）和开发模式（development）。</li>
+</ul>
+<h2><span id="p1-kai-shi">1、开始</span><a href="#p1-kai-shi" class="header-anchor">#</a></h2>
+<p>（1）初始化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<p>（2）安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装</span></span><br><span class="line">npm i webpack webpack-cli -g</span><br><span class="line"></span><br><span class="line"><span class="comment"># 局部安装（建议）</span></span><br><span class="line">npm i webpack webpack-cli -D</span><br></pre></td></tr></table></figure>
+<h2><span id="p2-ji-ben-shi-yong">2、基本使用</span><a href="#p2-ji-ben-shi-yong" class="header-anchor">#</a></h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">demo</span><br><span class="line"> ├── src</span><br><span class="line"> │   ├── js</span><br><span class="line"> │   │   ├── app.js</span><br><span class="line"> │   │   └── mod.js</span><br><span class="line"> │   └── index.html</span><br><span class="line"> ├── build</span><br><span class="line"> ├── package.json</span><br><span class="line"> └── webpack.config.js</span><br></pre></td></tr></table></figure>
+<p>（1）打包 JS 文件</p>
+<p>能够编译打包 js 和 json 文件，并且能将 es6 的模块化语法转换成浏览器能识别的语法。</p>
+<p>将 <code>src/js/app.js</code> 打包成开发环境文件 <code>build/js/app.js</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx webpack src/js/app.js -o build/js/app.js --mode=develoment</span><br><span class="line"><span class="comment">#                         -output</span></span><br></pre></td></tr></table></figure>
+<p>打包到生产环境（比生产环境多了一个<strong>代码压缩</strong>）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx webpack src/js/app.js -o build/js/app.js --mode=production</span><br></pre></td></tr></table></figure>
+<p>缺点就是不能编译打包 CSS img 等文件，不能将 ES6 基本语法转化成 ES5 以下语法。</p>
+<p>可以通过配置文件改善。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对指定文件进行打包</span></span><br><span class="line">npx webpack xxx.js --output xxx.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打包多个文件</span></span><br><span class="line">npx webpack x1.js x2.js</span><br></pre></td></tr></table></figure>
+<p>（2）默认配置文件 <code>webpack.config.js</code> △</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; resolve &#125; = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 指定打包文件的入口</span></span><br><span class="line">  <span class="comment">// （单入口写法）</span></span><br><span class="line">  <span class="comment">// entry: &quot;.src/js/app.js&quot;,</span></span><br><span class="line">  <span class="comment">// （多入口写法）</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">&quot;./src/js/app.js&quot;</span>,</span><br><span class="line">    mod: <span class="string">&quot;./src/js/mod.js&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// output</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// 指定打包之后的名字</span></span><br><span class="line">    <span class="comment">//               ↓ entry 的属性名</span></span><br><span class="line">    filename: <span class="string">&quot;js/[name].index.js&quot;</span>,</span><br><span class="line">    <span class="comment">// 指定打包的绝对路径</span></span><br><span class="line">    path: resolve(__dirname, <span class="string">&quot;./build&quot;</span>),</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 指定打包模式</span></span><br><span class="line">  <span class="comment">// - development 开发模式</span></span><br><span class="line">  <span class="comment">// - production  生产模式</span></span><br><span class="line">  mode: <span class="string">&quot;development&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里是局部安装的命令，全局安装直接 webpack 即可</span></span><br><span class="line">npx webpack</span><br></pre></td></tr></table></figure>
+<p>（3）清空上次打包的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install clean-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; cleanWebpackPlugin &#125; = <span class="built_in">require</span>(<span class="string">&quot;clean-webpack-plugin&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  plugins: [<span class="keyword">new</span> cleanWebpackPlugin()],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（4）配置 <code>package.json</code> 编译命令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;build&quot;</span>: <span class="string">&quot;npx webpack&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// bash</span></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<h2><span id="p3-da-bao-css-less-sass-zi-yuan">3、打包 CSS/LESS/SASS 资源</span><a href="#p3-da-bao-css-less-sass-zi-yuan" class="header-anchor">#</a></h2>
+<p>（1）打包 CSS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install style-loader css-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 入口文件 app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;../css/app.css&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置文件 webpack.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loader: [<span class="string">&quot;style-loader&quot;</span>, <span class="string">&quot;css-loader&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>index.html</code> 把 <code>build/js/app.js</code> 引入之后就能加载样式了。</p>
+<p>（2）打包 LESS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 入口文件 app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;../css/style.less&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置文件 webpack.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        loader: [<span class="string">&quot;style-loader&quot;</span>, <span class="string">&quot;css-loader&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.less$/</span>,</span><br><span class="line">        use: [<span class="string">&quot;style-loader&quot;</span>, <span class="string">&quot;css-loader&quot;</span>, <span class="string">&quot;less-loader&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（3）打包 SASS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install sass-loader -D</span><br></pre></td></tr></table></figure>
+<h2><span id="p4-js-eslint">4、JS eslint</span><a href="#p4-js-eslint" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install eslint-loader eslint -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,&#123;</span><br><span class="line">                <span class="comment">// 只检测 js 文件</span></span><br><span class="line">                test:<span class="regexp">/\.js$/</span>,</span><br><span class="line">                <span class="comment">// 排除的目录</span></span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">                <span class="comment">// 要检查的目录</span></span><br><span class="line">                include: resolve(__dirname, <span class="string">&quot;./src&quot;</span>),</span><br><span class="line">                <span class="comment">// 提前加载使用</span></span><br><span class="line">                enforce: <span class="string">&quot;pre&quot;</span>,</span><br><span class="line">                use:&#123;</span><br><span class="line">                    loader:<span class="string">&quot;eslint-loader&quot;</span></span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .eslintrc.js（项目根目录）</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">&quot;parserOptions&quot;</span>:&#123;</span><br><span class="line">        <span class="string">&quot;ecmaVersion&quot;</span>: <span class="number">6</span>,  <span class="comment">// 支持 ES6</span></span><br><span class="line">        <span class="string">&quot;sourceType&quot;</span>: <span class="string">&quot;module&quot;</span>  <span class="comment">// 使用 ES6 模块化</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;env&quot;</span>:&#123;                <span class="comment">// 设置环境</span></span><br><span class="line">        <span class="string">&quot;browser&quot;</span>: <span class="literal">true</span>,   <span class="comment">// 支持浏览器环境</span></span><br><span class="line">        <span class="string">&quot;node&quot;</span>: <span class="literal">true</span>       <span class="comment">// 支持服务器环境</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果这个地方定义了但是没有用，会过不去</span></span><br><span class="line">    <span class="comment">// Unexpected top-level property &quot;global&quot;</span></span><br><span class="line">    <span class="string">&quot;global&quot;</span>:&#123;             <span class="comment">// 声明使用的全局变量</span></span><br><span class="line">        <span class="string">&quot;$&quot;</span>:<span class="string">&quot;readonly&quot;</span>,    <span class="comment">// 不允许重写 &quot;writable&quot; 可修改</span></span><br><span class="line">	&#125;,</span><br><span class="line">    <span class="string">&quot;rules&quot;</span>:&#123;              <span class="comment">// 0/off忽略 1/warn警告 2/error错误</span></span><br><span class="line">        <span class="string">&quot;eqeqeq&quot;</span>: <span class="number">0</span>,       <span class="comment">// 必须使用全等</span></span><br><span class="line">        <span class="string">&quot;no-alert&quot;</span>: <span class="number">0</span>      <span class="comment">// 禁止使用 alert confirm prompt</span></span><br><span class="line">        <span class="string">&quot;no-console&quot;</span>: <span class="number">0</span>,   <span class="comment">// 禁止使用 console</span></span><br><span class="line">        <span class="string">&quot;no-var&quot;</span>: <span class="number">0</span>,       <span class="comment">// 禁用 var</span></span><br><span class="line">        <span class="string">&quot;indent&quot;</span>: [<span class="string">&quot;error&quot;</span>, <span class="number">4</span>],  <span class="comment">// 缩进风格</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 使用 eslint 推荐的默认规则</span></span><br><span class="line">    <span class="string">&quot;extends&quot;</span>: <span class="string">&quot;eslint:recommended&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2><span id="p5-js-yu-fa-zhuan-huan">5、JS 语法转换</span><a href="#p5-js-yu-fa-zhuan-huan" class="header-anchor">#</a></h2>
+<p><code>@babel/preset-env</code> 将新语法转成 ES5。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-loader @babel/core @babel/preset-env -D</span><br><span class="line"><span class="comment"># @babel/core  babel 的核心库</span></span><br><span class="line"><span class="comment"># @babel/preset-env  babel 预设工具包，默认可以将所有最新的语法转为为 ES5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,&#123;</span><br><span class="line">            test:<span class="regexp">/\.js$/</span>,</span><br><span class="line">            exclude: <span class="regexp">/node_modules/</span>,</span><br><span class="line">            use:&#123;</span><br><span class="line">                loader:<span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">                options:&#123;</span><br><span class="line">                    presets: [<span class="string">&#x27;@babel/preset-env&#x27;</span>]</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p6-js-jian-rong-xing-chu-li">6、JS 兼容性处理</span><a href="#p6-js-jian-rong-xing-chu-li" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/polyfill</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 入口文件 app.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;@babel/polyfill&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>解决 <code>babel</code> 只能转换语法的问题，引入 <code>polyfill</code> 可以转换高级语法（如 <code>Promise</code> ）。</p>
+<h2><span id="p7-da-bao-yang-shi-wen-jian-zhong-de-tu-pian-zi-yuan">7、打包样式文件中的图片资源</span><a href="#p7-da-bao-yang-shi-wen-jian-zhong-de-tu-pian-zi-yuan" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install file-loader url-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.(png|jpg|gif)$/</span>,</span><br><span class="line">                use:&#123;</span><br><span class="line">                    loader: <span class="string">&quot;url-loader&quot;</span>,</span><br><span class="line">                    options:&#123;</span><br><span class="line">                        <span class="comment">// 8KB以下的base64处理</span></span><br><span class="line">                        limit: <span class="number">8192</span>,</span><br><span class="line">                        <span class="comment">// 文件本地输出路径</span></span><br><span class="line">                        outputPath: <span class="string">&quot;images&quot;</span>,</span><br><span class="line">                        <span class="comment">// 图片URL路径</span></span><br><span class="line">                        publicPath: <span class="string">&quot;../build/images&quot;</span>,</span><br><span class="line">                        <span class="comment">// 修改文件名称和后缀</span></span><br><span class="line">                        name: <span class="string">&quot;[hash:8]&quot;</span>.[ext],</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p8-da-bao-html-wen-jian">8、打包 HTML 文件</span><a href="#p8-da-bao-html-wen-jian" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&quot;html-webpack-plugin&quot;</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      <span class="comment">// 设置要编译的 HTML 源文件路径</span></span><br><span class="line">      template: <span class="string">&quot;./src/index.html&quot;</span>,</span><br><span class="line">      <span class="comment">// 设置打包之后的文件名，默认 index.html</span></span><br><span class="line">      filename: <span class="string">&quot;home.html&quot;</span>,</span><br><span class="line">      title: <span class="string">&quot;我是打包之后的文件&quot;</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 传入参数</span></span><br><span class="line">      <span class="comment">// -- &lt;%=user%&gt;</span></span><br><span class="line">      <span class="comment">// -- &lt;%if(user)%&gt;</span></span><br><span class="line">      arr: [<span class="number">1111</span>, <span class="number">222</span>],</span><br><span class="line">      <span class="comment">// 加载的JS增加一个后缀</span></span><br><span class="line">      <span class="comment">// JS内容变化，后缀会重新生成</span></span><br><span class="line">      hash: <span class="literal">true</span>,</span><br><span class="line">      <span class="comment">// 指定要引入的JS文件</span></span><br><span class="line">      <span class="comment">// app 是entry对象的属性名不是文件名</span></span><br><span class="line">      chunk: [<span class="string">&quot;app&quot;</span>],</span><br><span class="line">      excludeChunk: [<span class="string">&quot;app&quot;</span>], <span class="comment">// 除了...之外</span></span><br><span class="line">      <span class="comment">// 不引入 JS</span></span><br><span class="line">      <span class="comment">// - &quot;head&quot;, 放到head里</span></span><br><span class="line">      <span class="comment">// - &quot;body&quot;</span></span><br><span class="line">      inject: <span class="literal">false</span>,</span><br><span class="line">      minify: &#123;</span><br><span class="line">        <span class="comment">// 移除注释</span></span><br><span class="line">        removeComments: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// 移除属性中的引号</span></span><br><span class="line">        removeAttributeQuotes: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// 将代码进行折叠，去除空格</span></span><br><span class="line">        collapseWhitespace: <span class="literal">true</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2><span id="p9-da-kai-html-zhong-de-tu-pian-zi-yuan">9、打开 HTML 中的图片资源</span><a href="#p9-da-kai-html-zhong-de-tu-pian-zi-yuan" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.(html)$/</span>,</span><br><span class="line">                use:&#123;</span><br><span class="line">                    loader: <span class="string">&quot;html-loader&quot;</span>,</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p10-da-bao-zi-ti-zi-yuan">10、打包字体资源</span><a href="#p10-da-bao-zi-ti-zi-yuan" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install file-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,</span><br><span class="line">        &#123;</span><br><span class="line">                test:<span class="regexp">/\.(eot|svg|woff|woff2|ttf)$/</span>,</span><br><span class="line">                loader: <span class="string">&quot;file-loader&quot;</span>,</span><br><span class="line">                options:&#123;</span><br><span class="line">                    <span class="comment">// 输出的目录</span></span><br><span class="line">                    outputPath: <span class="string">&quot;fonts&quot;</span>,</span><br><span class="line">                    name:<span class="string">&#x27;[hash:8].[ext]&#x27;</span></span><br><span class="line">                &#125;</span><br><span class="line">		&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p11-zi-dong-bian-yi-da-bao-yun-xing">11、自动编译打包运行</span><a href="#p11-zi-dong-bian-yi-da-bao-yun-xing" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack-dev-server -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">// 添加 devServer 服务后需要调整输出的路径</span></span><br><span class="line">    publicPath: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">// 删除 publicPath 配置</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 配置服务</span></span><br><span class="line">  devServer: &#123;</span><br><span class="line">    <span class="comment">// 自动打开浏览器</span></span><br><span class="line">    open: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 启动 gzip 压缩</span></span><br><span class="line">    compress: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 端口号</span></span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    <span class="comment">// 开启热模替换功能</span></span><br><span class="line">    hot: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">npx webpack-dev-server</span><br></pre></td></tr></table></figure>
+<p>热模替换</p>
+<p>HMR，Hot Module Replacement，热模替换功能会在应用程序运行过程中替换。添加或删除模块，而无需重新加载整个界面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// index.html 不能自动刷新的问题</span></span><br><span class="line">  entry: &#123;</span><br><span class="line">    main: [<span class="string">&quot;./src/js/app.js&quot;</span>, <span class="string">&quot;./src/index.html&quot;</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2><span id="p12-devtool">12、devtool</span><a href="#p12-devtool" class="header-anchor">#</a></h2>
+<p>devtools 是 webpack 中的一个配置，可以将压缩/编译文件中的代码映射回源文件中的原始位置，便于调试代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// 设置 devtool 策略（生产环境需改成 none）</span></span><br><span class="line">  devtool: <span class="string">&quot;cheap-module-eval-sourse-map&quot;</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2><span id="p13-zhun-bei-sheng-chan-huan-jing">13、准备生产环境</span><a href="#p13-zhun-bei-sheng-chan-huan-jing" class="header-anchor">#</a></h2>
+<p>webpack.config.js --&gt; webpack.dev.js + webpack.prod.js</p>
+<p>运行非默认的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server --config ./config/webpack.dev.js</span><br><span class="line">npx webpack --config ./config/webpack.prot.js</span><br></pre></td></tr></table></figure>
+<p>加到 <code>package.json</code> 快捷命令中 <code>dev</code> / <code>build</code></p>
+<h2><span id="p14-ti-qu-css-cheng-dan-du-wen-jian">14、提取 CSS 成单独文件</span><a href="#p14-ti-qu-css-cheng-dan-du-wen-jian" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mini-css-exrtract-plugin -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.prod.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MiniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">&quot;mini-css-extract-plugin&quot;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports= &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,</span><br><span class="line">              <span class="comment">// 修改</span></span><br><span class="line">              &#123;</span><br><span class="line">               		test: /\.less$\,</span><br><span class="line">               		use:[</span><br><span class="line">               			MiniCssExtractPlugin.loader,</span><br><span class="line">               			<span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">               			<span class="string">&#x27;less-loader&#x27;</span></span><br><span class="line">              ]&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> MiniCssExtractPlugin(&#123;</span><br><span class="line">            filename: <span class="string">&quot;css.[hash:8].css&quot;</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p15-tian-jia-css-jian-rong">15、添加 CSS 兼容</span><a href="#p15-tian-jia-css-jian-rong" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-loader autoprefixer -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.prod.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MiniCssExtractPlugin = <span class="built_in">require</span>(<span class="string">&quot;mini-css-extract-plugin&quot;</span>)</span><br><span class="line"><span class="built_in">module</span>.exports= &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="built_in">module</span>:&#123;</span><br><span class="line">        rules:[...,</span><br><span class="line">              <span class="comment">// 修改</span></span><br><span class="line">              &#123;</span><br><span class="line">               		test: /\.less$\,</span><br><span class="line">               		use:[</span><br><span class="line">               			MiniCssExtractPlugin.loader,</span><br><span class="line">               			<span class="string">&#x27;css-loader&#x27;</span>,</span><br><span class="line">               			&#123;</span><br><span class="line">               				loader: <span class="string">&quot;postcss-loader&quot;</span>,</span><br><span class="line">               				options:&#123;</span><br><span class="line">               					plugins:[<span class="built_in">require</span>(<span class="string">&quot;autoprefixer&quot;</span>)]</span><br><span class="line">               				&#125;</span><br><span class="line">               			&#125;,</span><br><span class="line">               			<span class="string">&#x27;less-loader&#x27;</span></span><br><span class="line">              ]&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .browserslistrc (根目录)</span></span><br><span class="line"><span class="comment">// 目标浏览器配置表</span></span><br><span class="line">chrome <span class="number">50</span></span><br><span class="line">last <span class="number">1</span> versions</span><br><span class="line">ie <span class="number">10</span></span><br><span class="line">iOS <span class="number">7</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// &gt;1%                 全球超过1%人使用的浏览器</span></span><br><span class="line"><span class="comment">// &gt;1% in US</span></span><br><span class="line"><span class="comment">// last 1 version      所有浏览器兼容到最后1个版本根据CanIUse.com追踪的版本</span></span><br><span class="line"><span class="comment">// Firefox &gt; 20        指定浏览器的版本范围</span></span><br><span class="line"><span class="comment">// since 2013          2013年之后发布的版本</span></span><br><span class="line"><span class="comment">// cover 99%           99%的浏览器都是目标</span></span><br></pre></td></tr></table></figure>
+<h2><span id="p16-ya-suo-css">16、压缩 CSS</span><a href="#p16-ya-suo-css" class="header-anchor">#</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install optimize-css-assets-webpack-plugin -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.prod.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> OptimizeCssAssetsPlugin = <span class="built_in">require</span>(<span class="string">&#x27;optimize-css-assets-webpack-plugin&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    plugins:[...,</span><br><span class="line">        <span class="keyword">new</span> OptimizeCssAssetsPlugin(&#123;</span><br><span class="line">             cssProcessorPluginOptions:&#123;</span><br><span class="line">             	<span class="comment">// 移除所有注释</span></span><br><span class="line">             	preset: [<span class="string">&#x27;default&#x27;</span>, &#123;<span class="attr">disardComments</span>: &#123;<span class="attr">removeAll</span>:<span class="literal">true</span>&#125;&#125;],</span><br><span class="line">             &#125;,</span><br><span class="line">             <span class="comment">// 解决 无 sourse map 问题</span></span><br><span class="line">             cssProcessorOptions:&#123;</span><br><span class="line">                 map: <span class="literal">true</span></span><br><span class="line">             &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220803/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +1271,7 @@
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>156</span>
@@ -329,7 +1355,7 @@
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>15</span>
@@ -413,7 +1439,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>73</span>
@@ -499,7 +1525,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>190</span>
@@ -560,10 +1586,16 @@ day.js</p>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-02-01 00:24:53 / 修改时间：18:23:19" itemprop="dateCreated datePublished" datetime="2021-02-01T00:24:53+08:00">2021-02-01</time>
+              <time title="创建时间：2021-02-01 00:24:53" itemprop="dateCreated datePublished" datetime="2021-02-01T00:24:53+08:00">2021-02-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-05 13:51:11" itemprop="dateModified" datetime="2021-02-05T13:51:11+08:00">2021-02-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -577,10 +1609,10 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>37</span>
+              <span>32</span>
             </span>
 
         </div>
@@ -592,8 +1624,7 @@ day.js</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="figma">Figma</span><a href="#figma" class="header-anchor">#</a></h1>
-<p>快捷键</p>
+          <h1><span id="kuai-jie-jian">快捷键</span><a href="#kuai-jie-jian" class="header-anchor">#</a></h1>
 <ul>
 <li>按住 <code>CTRL + 鼠标滚轮</code> 进行缩放</li>
 <li>按住 <code>空格</code> ，可以用鼠标进行拖动</li>
@@ -659,7 +1690,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>10</span>
@@ -737,7 +1768,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>52</span>
@@ -815,7 +1846,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>38</span>
@@ -907,7 +1938,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>1.4k</span>
@@ -1036,7 +2067,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>362</span>
@@ -1149,7 +2180,7 @@ day.js</p>
           <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
               <span>88</span>
@@ -1181,1162 +2212,10 @@ day.js</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210304/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210304</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210304/" class="post-title-link" itemprop="url">CSS 弹性布局</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 22:36:44" itemprop="dateCreated datePublished" datetime="2021-01-31T22:36:44+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:05" itemprop="dateModified" datetime="2021-02-01T19:03:05+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>496</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="dan-xing-bu-ju">弹性布局</span><a href="#dan-xing-bu-ju" class="header-anchor">#</a></h1>
-<p><code>flex</code> ，即弹性布局。</p>
-<h2><span id="p1-kai-qi-dan-xing-bu-ju">1、开启弹性布局</span><a href="#p1-kai-qi-dan-xing-bu-ju" class="header-anchor">#</a></h2>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-flex</span>; <span class="comment">/* Safari */</span></span><br></pre></td></tr></table></figure>
-<p>开启 <code>flex</code> 的元素自身不受影响，只会影响子元素，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。对子元素的子元素不会影响。<br>
-a<br>
-开启<code>flex</code>的盒子称为 <strong>容器</strong>（container），子元素称为 <strong>项目</strong>（item）。横向默认是 <strong>主轴</strong>（main axis）。纵向默认是 <strong>侧轴</strong>（交叉轴，cross axis）。默认情况下，项目沿着主轴从左到右依次排列。项目的高度撑满容器（侧轴撑满）。</p>
-<p>当项目的总宽度超出，并不会换行，而是压缩项目的宽度。</p>
-<p>涉及到 12 个 CSS 属性，父容器，子容器各 6 个。</p>
-<h2><span id="p2-chang-yong-shu-xing">2、常用属性</span><a href="#p2-chang-yong-shu-xing" class="header-anchor">#</a></h2>
-<h3><span id="pflex-direction">flex-direction</span><a href="#pflex-direction" class="header-anchor">#</a></h3>
-<p>默认情况下，<strong>主轴</strong>的方向是从左向右的，<strong>交叉轴</strong>垂直于主轴。</p>
-<p>交叉轴是由主轴决定的，主轴又是由 <code>flex-direction</code> 决定的，这个属性设置在父容器上，才可以生效。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction: row | row-reverse | column | column-reverse;</span><br></pre></td></tr></table></figure>
-<p>参考</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.juejin.im/post/6866914148387651592">「一劳永逸」48 张小图带你领略 flex 布局之美</a></li>
-<li><a target="_blank" rel="noopener" href="http://flexboxfroggy.com/#zh-cn">青蛙 FLEX</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/730101/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">730101</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/730101/" class="post-title-link" itemprop="url">摘抄</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 22:33:54" itemprop="dateCreated datePublished" datetime="2021-01-31T22:33:54+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-04 18:27:27" itemprop="dateModified" datetime="2021-02-04T18:27:27+08:00">2021-02-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/7301%EF%BC%9A%E6%91%98%E6%8A%84/" itemprop="url" rel="index"><span itemprop="name">7301：摘抄</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <a id="more"></a>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/630202/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">630202</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/630202/" class="post-title-link" itemprop="url">恋爱</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 22:30:25" itemprop="dateCreated datePublished" datetime="2021-01-31T22:30:25+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 11:48:06" itemprop="dateModified" datetime="2021-02-02T11:48:06+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/6302%EF%BC%9A%E4%BA%B2%E5%AF%86%E5%85%B3%E7%B3%BB/" itemprop="url" rel="index"><span itemprop="name">6302：亲密关系</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>243</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="lian-ai">恋爱</span><a href="#lian-ai" class="header-anchor">#</a></h1>
-<ol>
-<li>可以说，男人追不到心仪的女人，90% 的原因是缺乏勇气，勇气是男性魅力得到展现的最关键要素，是男性荷尔蒙得以释放的开关。</li>
-<li>如何和程序员谈一场没有bug的恋爱？恋爱关系上线前，做好压力测试和边界测试。原则上，测试对双方是等同的，为了尽可能减少bug，应该彼此都达到百分百覆盖率。但在实践上，更常用的方法是，女方主要对男方做压力测试，检测承压能力、可靠性、稳定性，对边界测试则尽可能放宽；男方主要对女方做边界测试，搞清楚各种场景下女方的应对和反应，明确情绪阈值的上下边界，尽量少做压力测试。</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210303/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210303</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210303/" class="post-title-link" itemprop="url">CSS 定位</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:25:21" itemprop="dateCreated datePublished" datetime="2021-01-31T14:25:21+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:40" itemprop="dateModified" datetime="2021-02-01T19:03:40+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="ding-wei">定位</span><a href="#ding-wei" class="header-anchor">#</a></h1>
-<p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>static</td>
-<td>默认，没有定位</td>
-</tr>
-<tr>
-<td>relative</td>
-<td>相对定位</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td>绝对定位</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>固定定位</td>
-</tr>
-</tbody>
-</table>
-<p>布局一般用在大布局的小范围中。</p>
-<h2><span id="p1-xiang-dui-ding-wei-relative">1、相对定位 - relative</span><a href="#p1-xiang-dui-ding-wei-relative" class="header-anchor">#</a></h2>
-<p><strong>相对定位</strong>（relative），让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。</p>
-<h2><span id="p2-jue-dui-ding-wei-absolute">2、绝对定位 - absolute</span><a href="#p2-jue-dui-ding-wei-absolute" class="header-anchor">#</a></h2>
-<p><strong>绝对定位</strong>（absolute），相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非 static 属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非 position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的 padding-box 的左上角为原点。right 和 bottom 是距离包含块右下角的距离。</p>
-<h3><span id="pbao-han-kuai">包含块</span><a href="#pbao-han-kuai" class="header-anchor">#</a></h3>
-<p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
-<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：</p>
-<ul>
-<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
-<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
-<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
-</ul>
-<blockquote>
-<p>补充：<br>
-如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。</p>
-<ul>
-<li>当祖先元素拥有 transform 或 perspective 属性并且值不为 none 的时候，它也是被当做包含块。</li>
-<li>当祖先元素 拥有 filter 属性的时候（值不为 none） 它也可以被当做包含块</li>
-</ul>
-</blockquote>
-<p>注：如果由内向外找不到包含块条件的元素，那么 html（根元素）被称作为初始包含块。</p>
-<h3><span id="pzi-jue-fu-xiang">子绝父相</span><a href="#pzi-jue-fu-xiang" class="header-anchor">#</a></h3>
-<p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
-<h2><span id="p3-gu-ding-ding-wei-fixed">3、固定定位 - fixed</span><a href="#p3-gu-ding-ding-wei-fixed" class="header-anchor">#</a></h2>
-<p>固定定位（fixed），相对于浏览器窗口定位。</p>
-<h2><span id="p4-nian-xing-ding-wei-sticky">4、粘性定位 - sticky</span><a href="#p4-nian-xing-ding-wei-sticky" class="header-anchor">#</a></h2>
-<p>sticky 的意思是“粘性的”，<code>position:sticky</code> 表现也符合这个粘性的表现。基本上，可以看出是<code>position:relative</code>和<code>position:fixed</code>的结合体——当元素在屏幕内，表现为<code>relative</code>，就要滚出显示器屏幕的时候，表现为<code>fixed</code>。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: -webkit-sticky;</span><br><span class="line">  <span class="attribute">position</span>: sticky;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/">杀了个回马枪，还是说说 position:sticky 吧</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210302/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210302</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210302/" class="post-title-link" itemprop="url">浮动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:23:54" itemprop="dateCreated datePublished" datetime="2021-01-31T14:23:54+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:02:39" itemprop="dateModified" datetime="2021-02-01T19:02:39+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>558</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="fu-dong">浮动</span><a href="#fu-dong" class="header-anchor">#</a></h1>
-<p><strong>浮动</strong>（<strong>float</strong>）可以让多个块元素横向排列，共行。</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>none</td>
-<td>默认，不浮动</td>
-</tr>
-<tr>
-<td>left</td>
-<td>左浮动</td>
-</tr>
-<tr>
-<td>right</td>
-<td>右浮动</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p1-gai-nian">1、概念</span><a href="#p1-gai-nian" class="header-anchor">#</a></h2>
-<p><strong>正常页面流/正常文档流</strong> 是行元素从左至右，块元素从上到下布局。<strong>浮动</strong> 是破坏流（脱离文档流）的一种方式。在目前开发中，很多的元素都是一个个 float 堆叠起来，但是这种布局很容易崩溃。只要宽度和高度发生一点变化，页面就会发生错乱。</p>
-<h2><span id="p2-fu-dong-de-shi-yong">2、浮动的使用</span><a href="#p2-fu-dong-de-shi-yong" class="header-anchor">#</a></h2>
-<p><strong>左浮动</strong> 就是让容器沿着容器左侧排序。</p>
-<p><strong>右浮动</strong> 让容器沿着容器右侧排序。</p>
-<h2><span id="p3-gao-du-ta-xian">3、高度塌陷</span><a href="#p3-gao-du-ta-xian" class="header-anchor">#</a></h2>
-<p>浮动元素以后，脱离父级内容区域，父级没有内容撑开自身的高度，而且父级的兄弟元素是按照父级的位置进行布局的，所以页面会乱。</p>
-<h2><span id="p4-qing-chu-fu-dong-chang-yong">4、清除浮动 <code>常用</code></span><a href="#p4-qing-chu-fu-dong-chang-yong" class="header-anchor">#</a></h2>
-<p>清除浮动不是不让元素浮动，是清除浮动对父级高度塌陷的影响。</p>
-<p>清除浮动的方法</p>
-<ul>
-<li>给浮动元素的父级设置高度。</li>
-<li>给浮动元素的父级设置浮动，以浮制浮。</li>
-<li>overflow 设置不为 visible 的属性。</li>
-<li>在最后一个浮动元素的后边添加一个空的块级元素，添加一个块级元素，添加属性和值为 <code>clear: both</code>。</li>
-<li>after 伪元素清浮动，给所有浮动元素父级一个 clearFix 的类名。<code>推荐</code></li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearFix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;/200B&quot;</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210301/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210301</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210301/" class="post-title-link" itemprop="url">CSS 布局</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:23:45" itemprop="dateCreated datePublished" datetime="2021-01-31T14:23:45+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:02:28" itemprop="dateModified" datetime="2021-02-01T19:02:28+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="css-bu-ju">CSS 布局</span><a href="#css-bu-ju" class="header-anchor">#</a></h1>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220205/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220205</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/220205/" class="post-title-link" itemprop="url">回调函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:22:45" itemprop="dateCreated datePublished" datetime="2021-01-31T14:22:45+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:10:09" itemprop="dateModified" datetime="2021-02-01T19:10:09+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>717</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="hui-diao-han-shu">回调函数</span><a href="#hui-diao-han-shu" class="header-anchor">#</a></h1>
-<p>回调函数（Callback）分为同步回调函数，异步回调函数。</p>
-<p>什么函数才是回调函数?</p>
-<ul>
-<li>你定义的</li>
-<li>你没有直接调用</li>
-<li>但最终它执行了（在特定条件或时刻）</li>
-</ul>
-<p>常见的回调函数:</p>
-<ul>
-<li>DOM 事件函数</li>
-<li>定时器函数</li>
-<li>AJAX 回调函数</li>
-<li>生命周期回调函数</li>
-</ul>
-<p>回调函数的特性导致其层层嵌套，形成<strong>回调地狱</strong>。</p>
-<p>涉及面试题：什么是回调函数？回调函数有什么缺点？如何解决回调地狱问题？</p>
-<p><strong>回调函数</strong>（Callback）分为同步回调（数组遍历）和异步回调。</p>
-<p>使用回调函数容易导致回调地狱问题。回调地狱的根本问题就是：</p>
-<ol>
-<li>嵌套函数存在耦合性，一旦有所改动，就会牵一发而动全身</li>
-<li>嵌套函数一多，就很难处理错误。</li>
-</ol>
-<p>当然，回调函数还存在着别的几个缺点，比如不能使用 <code>try catch</code> 捕获错误，不能直接 <code>return</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 3 3 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 0 1 2</span></span><br></pre></td></tr></table></figure>
-<p><code>面试题</code> 简述同步和异步的区别，如何避免回调地狱？</p>
-<p>同步：方法调用一旦开始，调用者必须等到方法调用返回后，才能继续后续的行为</p>
-<p>异步：方法调用一旦开始，方法调用就会立刻返回，调用者就可以继续后续的操作，而异步方法通常会在另外一个线程中，整个过程畅通无阻。</p>
-<p>避免回调地狱：</p>
-<ul>
-<li>Promise</li>
-<li>async / await</li>
-<li>generator</li>
-<li>事件发布/监听模式</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/230501/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">230501</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/230501/" class="post-title-link" itemprop="url">ajax</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:21:11" itemprop="dateCreated datePublished" datetime="2021-01-31T14:21:11+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-03 01:29:37" itemprop="dateModified" datetime="2021-02-03T01:29:37+08:00">2021-02-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2305%EF%BC%9A%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/" itemprop="url" rel="index"><span itemprop="name">2305：网络请求</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="ajax">Ajax</span><a href="#ajax" class="header-anchor">#</a></h1>
-<p><strong>AJAX</strong> 即 Asynchronous Javascript And XML，异步 JavaScript 和 XML。是指一种无需重新加载整个网页的情况下，能够更新部分网页的技术。通过 Ajax 可以在浏览器中向服务器发起异步请求。</p>
-<p>XML 称为可扩展标记语言，被设计用来传输和存储数据，和 HTML 类似，不同的是 HTML 日常使用大部分都是预定义标签，XML 全部都是自定义标签，用来表示一些数据。</p>
-<h2><span id="p1-gong-zuo-yuan-li">1、工作原理</span><a href="#p1-gong-zuo-yuan-li" class="header-anchor">#</a></h2>
-<p>相当于在用户和服务器之间加了一个中间层（Ajax 引擎），使用户操作与服务器响应异步化。</p>
-<h2><span id="p2-te-dian">2、特点</span><a href="#p2-te-dian" class="header-anchor">#</a></h2>
-<p>优点</p>
-<ul>
-<li>无需刷新页面来和服务器通信。</li>
-<li>允许你根据用户事件来更新部分页面内容。</li>
-</ul>
-<p>缺点</p>
-<ul>
-<li>没有浏览历史，无法回退。</li>
-<li>存在跨域问题。</li>
-<li>对 SEO 不友好。</li>
-</ul>
-<h2><span id="p3-xhr-xmlhttprequest">3、XHR - XMLHttpRequest</span><a href="#p3-xhr-xmlhttprequest" class="header-anchor">#</a></h2>
-<p>Ajax 的所有操作都是通过 <strong><code>XMLHttpRequest</code></strong> 对象进行的。</p>
-<h2><span id="p4-shi-yong-bu-zou-kao">4、使用步骤 <code>考</code></span><a href="#p4-shi-yong-bu-zou-kao" class="header-anchor">#</a></h2>
-<h3><span id="p-1-chuang-jian-yi-bu-diao-yong-dui-xiang">（1）创建异步调用对象</span><a href="#p-1-chuang-jian-yi-bu-diao-yong-dui-xiang" class="header-anchor">#</a></h3>
-<p>创建 <code>XMLHttpRequest</code> 核心对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure>
-<h3><span id="p-2-chuang-jian-http-qing-qiu">（2）创建 HTTP 请求</span><a href="#p-2-chuang-jian-http-qing-qiu" class="header-anchor">#</a></h3>
-<p>通过 <code>open(method, URL)</code> 打开接口。</p>
-<ul>
-<li><code>method</code> 请求方法，<code>POST</code> 或者 <code>GET</code>。</li>
-<li><code>URL</code> 接口地址。</li>
-</ul>
-<p><code>POST</code> 方式要设置请求头</p>
-<ul>
-<li><code>application/json</code></li>
-<li><code>application/x-www-form-urlencoded</code></li>
-<li><code>formdata</code></li>
-</ul>
-<p><code>xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(<span class="string">&quot;POST&quot;</span>, <span class="string">&quot;http://127.0.0.1/weibo&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h3><span id="p-3-fa-song-qing-qiu">（3）发送请求</span><a href="#p-3-fa-song-qing-qiu" class="header-anchor">#</a></h3>
-<p>发送请求 <code>send(body)</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.send(<span class="built_in">JSON</span>.stringifly(content)); <span class="comment">// 只能传字符串</span></span><br></pre></td></tr></table></figure>
-<p><code>GET</code> 请求不需要参数， <code>POST</code> 请求需要。</p>
-<h3><span id="p-4-tong-guo-zhi-ding-hui-diao-han-shu-jie-shou-shu-ju">（4）通过指定回调函数接收数据</span><a href="#p-4-tong-guo-zhi-ding-hui-diao-han-shu-jie-shou-shu-ju" class="header-anchor">#</a></h3>
-<p><code>xhr.responseXML</code> 接收 XML 格式的响应数据。</p>
-<p><code>xhr.responseText</code> 接收文本格式的响应数据。</p>
-<p>a. 通过 <code>onreadystatechange</code> 事件接收数据，xhr 对象有 <code>readyState</code> 表示当前的请求状态，状态改变就会触发这个事件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> text = xhr.responseText;</span><br><span class="line">    <span class="built_in">console</span>.log(text);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>b. 通过 <code>onload</code> 事件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	...xhr.responseText;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="p5-xhr-api">5、XHR API △</span><a href="#p5-xhr-api" class="header-anchor">#</a></h2>
-<p>（01）<code>XMLHttpRequest()</code> 创建 XHR 对象的构造函数</p>
-<p>（02）<code>readyState</code> 当前的请求状态</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = XMLHttpRequest();</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 3</span></span><br><span class="line">  <span class="comment">// 4</span></span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">&quot;get&quot;</span>, <span class="string">&quot;http://...&quot;</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">xhr.send();</span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>状态</th>
-<th>常量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>UNSENT</td>
-<td>表示 <code>XMLHttpRequest</code> 实例已经生成，但是 <code>open()</code> 方法还没有被调用。</td>
-</tr>
-<tr>
-<td>1</td>
-<td>OPENED</td>
-<td>表示 <code>send()</code>方法还没有被调用，仍然可以使用<code>setRequestHeader()</code>，设定 HTTP 请求的头信息。</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HEADERS_RECEIVED</td>
-<td>表示 <code>send()</code> 方法已经执行，并且头信息和状态码已经收到。</td>
-</tr>
-<tr>
-<td>3</td>
-<td>LOADING</td>
-<td>表示正在接收服务器传来的 body 部分的数据，如果 responseType 属性是 text 或者空字符串，responseText 就会包含已经收到的部分信息。</td>
-</tr>
-<tr>
-<td>4</td>
-<td>DONE</td>
-<td>表示服务器数据已经接收完成，或者本次接收已经失败了。</td>
-</tr>
-</tbody>
-</table>
-<p>（03）<code>status</code> 响应状态码</p>
-<p>（04）<code>statusText</code> 响应状态文本</p>
-<p>（05）<code>onreadystatechange</code> 当<code>readyState</code>发生变化就会触发这个事件</p>
-<p>（06）<code>responseType</code> 指定响应数据类型，如果是 json，得到响应后自动解析响应体数据</p>
-<p>（07）<code>response</code> 响应体数据，类型取决于 <code>responseType</code> 的指定</p>
-<ul>
-<li><code>responseXML</code> 接收 XML 格式的响应数据</li>
-<li><code>responseText</code> 接收文本格式的响应数据</li>
-</ul>
-<p>（08）<code>timeout</code> 指定请求超时时间（毫秒），默认是 0，代表没有限制</p>
-<p>（09）<code>ontimeout</code> 超时之后触发的事件</p>
-<p>（10）<code>onerror</code> 请求网络错误触发的事件</p>
-<p>（11）<code>open(method, URL[, async])</code> 初始化一个请求</p>
-<p>（12）<code>send(data)</code> 发送请求</p>
-<p>（13）<code>abort()</code> 中断请求</p>
-<p>（14）<code>getResponseHeader(name)</code> 获取指定名称的响应头值</p>
-<p>（15）<code>getAllResponseHeaders()</code> 获取所有响应头组成的字符串</p>
-<p>（16）<code>setRequestHeader(name, value)</code> 设置请求头</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/230201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">230201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/230201/" class="post-title-link" itemprop="url">BOM</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 14:19:46" itemprop="dateCreated datePublished" datetime="2021-01-31T14:19:46+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:15:31" itemprop="dateModified" datetime="2021-02-01T19:15:31+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2302%EF%BC%9ABOM/" itemprop="url" rel="index"><span itemprop="name">2302：BOM</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.5k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="javascript-bom">JavaScript BOM</span><a href="#javascript-bom" class="header-anchor">#</a></h1>
-<p>Browser Object Model，浏览器对象模型。</p>
-<h1><span id="yi-window-dui-xiang">一、window 对象</span><a href="#yi-window-dui-xiang" class="header-anchor">#</a></h1>
-<p><code>window</code> 是 BOM 的核心对象。表示浏览器的一个实例，是客户端浏览器对象模型的基类。在浏览器中，该对象具有双重角色，既是通过 JS 访问浏览器窗口的一个接口，也是 ES 规定中的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以 <code>window</code> 作为其 <code>Global</code> 对象。<strong>所有在全局作用域中声明的变量、函数都会变成该对象的属性和方法。</strong></p>
-<h2><span id="p1-ke-hu-duan-dui-xiang">1、客户端对象</span><a href="#p1-ke-hu-duan-dui-xiang" class="header-anchor">#</a></h2>
-<p>可以访问客户端其他对象，这种关系构成浏览器对象模型。</p>
-<table>
-<thead>
-<tr>
-<th>对象</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>document</code></td>
-<td>包含整个 HTML 文档，可以用来访问文档内容及其所有页面元素。</td>
-</tr>
-<tr>
-<td><code>navigator</code></td>
-<td>包含客户端有关浏览器的信息。</td>
-</tr>
-<tr>
-<td><code>screen</code></td>
-<td>包含客户端屏幕的信息</td>
-</tr>
-<tr>
-<td><code>history</code></td>
-<td>包含浏览历史记录信息</td>
-</tr>
-<tr>
-<td><code>location</code></td>
-<td>包含当前网页文档的 URL 信息</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p2-xi-tong-dui-hua-kuang">2、系统对话框</span><a href="#p2-xi-tong-dui-hua-kuang" class="header-anchor">#</a></h2>
-<p>浏览器通过 <code>alert()</code>、<code>confirm()</code> 和 <code>prompt()</code> 方法可以调用系统对话框向用户显示消息。</p>
-<p>系统对话框与在浏览器中显示的网页没有关系，也不包含 HTML。它们的外观由操作系统及（或）浏览器设置决定，而不是由 CSS 决定（无法设置）。通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关掉这些对话框后代码又会恢复执行。</p>
-<p><code>confirm</code>和<code>prompt</code>有返回值。生产环境下不用，调试使用。</p>
-<h2><span id="p3-da-kai-he-guan-bi-chuang-kou">3、打开和关闭窗口</span><a href="#p3-da-kai-he-guan-bi-chuang-kou" class="header-anchor">#</a></h2>
-<p><code>window.open()</code> 方法既可以导航到一个特定的 URL，也可以打开一个新的浏览器窗口。</p>
-<p>参数</p>
-<ul>
-<li>要加载的 URL</li>
-<li>新窗口打开方式：<code>_self</code> <code>_blank</code>（默认新标签页打开）</li>
-<li>窗口大小、位置。</li>
-</ul>
-<p>返回值 就是新建的窗口名称。</p>
-<p><code>窗口名.close()</code>可以关闭窗口，如果关闭自身那就使用 <code>window.close()</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 打开窗口</span></span><br><span class="line"><span class="keyword">var</span> newWin = <span class="built_in">window</span>.open(</span><br><span class="line">  <span class="string">&quot;http://www.jd.com&quot;</span>,</span><br><span class="line">  <span class="string">&quot;_blank&quot;</span>,</span><br><span class="line">  <span class="string">&quot;width=300,height=300,left=200,top=100&quot;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 关闭窗口</span></span><br><span class="line">newWin.close();</span><br></pre></td></tr></table></figure>
-<p><code>close()</code> 方法仅适用于通过 <code>window.open()</code> 打开的弹出窗口。</p>
-<h2><span id="p4-liu-lan-qi-kuan-gao">4、浏览器宽高</span><a href="#p4-liu-lan-qi-kuan-gao" class="header-anchor">#</a></h2>
-<p><code>window</code>对象有<code>innerWidth</code>和<code>innerHeight</code>属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。</p>
-<p>对应的，还有一个<code>outerWidth</code>和<code>outerHeight</code>属性，可以获取浏览器窗口的整个宽高。</p>
-<h1><span id="er-navigator-dui-xiang">二、navigator 对象</span><a href="#er-navigator-dui-xiang" class="header-anchor">#</a></h1>
-<p>navigator 对象储存了浏览器信息。通过 <code>navigator</code> 可以引用该对象，并利用它的属性来读取客户端基本信息。</p>
-<p>常见属性：</p>
-<ul>
-<li><code>onLine</code> 表示浏览器是否连接到因特网</li>
-<li><code>platform</code> 浏览器所在的操作系统</li>
-<li><code>userAgent</code> 浏览器识别码</li>
-<li><code>appName</code> 浏览器名称</li>
-<li><code>labguage</code> 浏览器设置的语言</li>
-</ul>
-<h2><span id="p1-liu-lan-qi-jian-ce-fang-fa">1、浏览器检测方法</span><a href="#p1-liu-lan-qi-jian-ce-fang-fa" class="header-anchor">#</a></h2>
-<p>检测浏览器类型的方法有多种，常用的方法包括两种:<strong>特征检测法</strong>和<strong>字符串检测法</strong>，这两种方法都存在各自的优点与缺点，用户可以根据需要进行选择。</p>
-<p>（1）特征检测法</p>
-<ul>
-<li>特征检测法就是根据浏览器是否支持特定功能来决定相应操作的方式。这是一种非精确判断法。但却是最安全的检测方法</li>
-<li>因为准确检测浏览器的类型和型号是一件很困难的事情,而且很容易存在误差，如果不关心浏览器的身份，仅仅在意浏览器的执行能力，那么使用特征检测法就完全可以满足需要。</li>
-<li>当使用一个对象、方法或属性时，先判断它是否存在，如果存在，则说明浏览器支持该对象、方法属性，那么就可以放心使用</li>
-</ul>
-<p>（2）字符串检测法</p>
-<ul>
-<li>客户端浏览器每次发送 HTTP 请求时，都会附带有一个 user-agent(用户代理)字符串，对于 Web 开发人员来说，可以使用用户代理字符串检测浏览器类型。</li>
-<li>userAgent 字符串包含了 web 浏览器的大量信息，如浏览器的名称和版本。</li>
-</ul>
-<h2><span id="p2-cao-zuo-xi-tong-jian-ce-fang-fa">2、操作系统检测方法</span><a href="#p2-cao-zuo-xi-tong-jian-ce-fang-fa" class="header-anchor">#</a></h2>
-<p>navigator.userAgent 返回值一般都会包含操作系统的基本信息，不过这些信息比较散乱，没有统一的规则。</p>
-<p>用户可以检测一些更为通用的信息，如检测是否为 Windows 系统，或者为 Macintosh 系统，而不去分辨操作系统的版本号。</p>
-<p>例如，如果仅检测通用信息，那么所有 Windows 版本的操作系统都会包含&quot;Win”字符串，所有 Macintosh 版本的操作系统都包含有&quot;Mac”字符串，所有 Umix 版本的操作系统都包含有&quot;X11”，而 Linux 操作系统会同时包含&quot;X11”和&quot; Linux。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isWin = navigator.userAgent.indexOf(<span class="string">&quot;Win&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Windows系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isMac = navigator.userAgent.indexOf(<span class="string">&quot;Mac&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Macintosh系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isUnix = navigator.userAgent.indexOf(<span class="string">&quot;X11&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是UNIX系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isLinux = navigator.userAgent.indexOf(<span class="string">&quot;Linux&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Linux系统，则返回true</span></span><br></pre></td></tr></table></figure>
-<p>！请注意，<code>navigator</code>的信息可以很容易地被用户修改，所以 JavaScript 读取的值不一定是正确的。但这样既可能判断不准确，也很难维护代码。正确的方法是充分利用 JavaScript 对不存在属性返回<code>undefined</code>的特性，直接用短路运算符<code>||</code>计算：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var width &#x3D; window.innerWidth || document.body.clientWidth;</span><br></pre></td></tr></table></figure>
-<h1><span id="san-location-dui-xiang">三、location 对象</span><a href="#san-location-dui-xiang" class="header-anchor">#</a></h1>
-<p><code>location</code> 对象存储了与当前文档位置（URL）信息。</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>href</code></td>
-<td>声明或获取当前文档完整的 URL</td>
-</tr>
-<tr>
-<td><code>protocol</code></td>
-<td>协议部分 <code>http:</code></td>
-</tr>
-<tr>
-<td><code>host</code></td>
-<td>主机和端口名称 <code>localhost:8080</code></td>
-</tr>
-<tr>
-<td><code>hostname</code></td>
-<td>主机名称 <code>localhost</code></td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>端口号 <code>8080</code></td>
-</tr>
-<tr>
-<td><code>pathname</code></td>
-<td>路径部分</td>
-</tr>
-<tr>
-<td><code>search</code></td>
-<td>URL 查询部分</td>
-</tr>
-<tr>
-<td><code>hash</code></td>
-<td>锚部分包括前导 <code>#</code></td>
-</tr>
-</tbody>
-</table>
-<p><code>location.href</code> 可以设置和获取 url 地址</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">&quot;demo.html&quot;</span>; <span class="comment">//重定向</span></span><br><span class="line">location.assign(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line">location.reload(); <span class="comment">//刷新</span></span><br><span class="line">location.replace(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line"></span><br><span class="line">hostname; <span class="comment">// http://127.0.0.1:5500/0717/12.location.html</span></span><br><span class="line">protocol; <span class="comment">// 127.0.0.1</span></span><br><span class="line">host; <span class="comment">// http:</span></span><br><span class="line">port; <span class="comment">// 127.0.0.1:5500</span></span><br><span class="line">pathname; <span class="comment">// 5500</span></span><br><span class="line">search; <span class="comment">/// 0717/12.location.html</span></span><br></pre></td></tr></table></figure>
-<p><code>reload()</code> 重新加载文档</p>
-<p><code>replace()</code> 重新加载一个新文档，无需为它创建一个新的历史记录，替换当前文档的历史记录</p>
-<p><code>assign()</code> 和<code>href</code>差不多，要加载一个新页面，可以调用 <code>location.assign()</code> 。如果要重新加载当前页面，调用 <code>location.reload()</code> 方法非常方便。</p>
-<h1><span id="si-history-dui-xiang-ji-chu">四、history 对象 <code>基础</code></span><a href="#si-history-dui-xiang-ji-chu" class="header-anchor">#</a></h1>
-<p><code>history</code>对象保存了浏览器的历史记录，JS 可以调用<code>history</code>对象的<code>back()</code>或<code>forward ()</code>，相当于用户点击了浏览器的后退或前进按钮。</p>
-<p>这个对象属于历史遗留对象，对于现代 Web 页面来说，由于大量使用 AJAX 和页面交互，简单粗暴地调用<code>history.back()</code>可能会让用户体验非常不好。</p>
-<p>新手开始设计 Web 页面时喜欢在登录页登录成功时调用<code>history.back()</code>，试图回到登录前的页面。这是一种错误的方法。</p>
-<p>前端框架路由原理中使用了 <code>history</code> 库。</p>
-<p><code>https://github.com/ReactTraining/history</code></p>
-<h1><span id="wu-screen-dui-xiang">五、screen 对象</span><a href="#wu-screen-dui-xiang" class="header-anchor">#</a></h1>
-<p><code>screen</code> 对象表示屏幕的信息，常用的属性有：</p>
-<ul>
-<li>screen.width：屏幕宽度，以像素为单位；</li>
-<li>screen.height：屏幕高度，以像素为单位；</li>
-<li>screen.colorDepth：返回颜色位数，如 8、16、24。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2402,20 +2281,20 @@ a<br>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">219</span>
+          <span class="site-state-item-count">228</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-count">90</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">48</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2452,13 +2331,7 @@ a<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">385k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:50</span>
+    <span title="站点总字数">387k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>
