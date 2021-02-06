@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Windows 使用技巧# 1、host 位置# C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host 2、右键新建 .md 文件#  打开注册表 HKEY_CLASSES_ROOT 添加.md ，修改默认值为 Markdown.File 添加子项 ShellNew ，在该子项中新建字符串值 NullFile">
+  <meta name="description" content="1、host 位置# C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host 2、右键新建 .md 文件#  打开注册表 HKEY_CLASSES_ROOT 添加.md ，修改默认值为 Markdown.File 添加子项 ShellNew ，在该子项中新建字符串值 NullFile ，内容不需要设置 绑定打开方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用技巧">
 <meta property="og:url" content="http://nigelkeel.gitee.io/180102/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="Windows 使用技巧# 1、host 位置# C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host 2、右键新建 .md 文件#  打开注册表 HKEY_CLASSES_ROOT 添加.md ，修改默认值为 Markdown.File 添加子项 ShellNew ，在该子项中新建字符串值 NullFile">
+<meta property="og:description" content="1、host 位置# C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host 2、右键新建 .md 文件#  打开注册表 HKEY_CLASSES_ROOT 添加.md ，修改默认值为 Markdown.File 添加子项 ShellNew ，在该子项中新建字符串值 NullFile ，内容不需要设置 绑定打开方">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-31T01:45:50.063Z">
-<meta property="article:modified_time" content="2021-02-01T10:21:36.614Z">
+<meta property="article:modified_time" content="2021-02-06T08:15:46.611Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="OS">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:21:36" itemprop="dateModified" datetime="2021-02-01T18:21:36+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-06 16:15:46" itemprop="dateModified" datetime="2021-02-06T16:15:46+08:00">2021-02-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>309</span>
+              <span>607</span>
             </span>
 
         </div>
@@ -270,10 +270,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="windows-shi-yong-ji-qiao">Windows 使用技巧</span><a href="#windows-shi-yong-ji-qiao" class="header-anchor">#</a></h1>
-<h2><span id="p1-host-wei-zhi">1、<code>host</code> 位置</span><a href="#p1-host-wei-zhi" class="header-anchor">#</a></h2>
+        <h1><span id="1-host-wei-zhi">1、<code>host</code> 位置</span><a href="#1-host-wei-zhi" class="header-anchor">#</a></h1>
 <p><code>C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host</code></p>
-<h2><span id="p2-you-jian-xin-jian-md-wen-jian">2、右键新建 <code>.md</code> 文件</span><a href="#p2-you-jian-xin-jian-md-wen-jian" class="header-anchor">#</a></h2>
+<h1><span id="2-you-jian-xin-jian-md-wen-jian">2、右键新建 <code>.md</code> 文件</span><a href="#2-you-jian-xin-jian-md-wen-jian" class="header-anchor">#</a></h1>
 <ol>
 <li>打开注册表</li>
 <li><code>HKEY_CLASSES_ROOT</code> 添加<code>.md</code> ，<strong>修改默认值为 <code>Markdown.File</code></strong></li>
@@ -281,8 +280,12 @@
 <li>绑定打开方式（ md文件–&gt;右键属性–&gt;打开方式 ）</li>
 <li><code>HKEY_CLASSES_ROOT</code> 下新建 <code>Markdown.File</code>， 默认值为<code>Markdown File</code> ，可以自定义</li>
 </ol>
-<h2><span id="p3-pi-liang-xin-jian-wen-jian-jia">3、批量新建文件夹</span><a href="#p3-pi-liang-xin-jian-wen-jian-jia" class="header-anchor">#</a></h2>
+<h1><span id="3-pi-liang-xin-jian-wen-jian-jia">3、批量新建文件夹</span><a href="#3-pi-liang-xin-jian-wen-jian-jia" class="header-anchor">#</a></h1>
 <p>记事本：<code>md 文件夹名1 文件夹名2 ..</code> 修改文件后缀为bat，双击执行。</p>
+<h1><span id="4-zhuo-yue-xing-neng-mo-shi">4、卓越性能模式</span><a href="#4-zhuo-yue-xing-neng-mo-shi" class="header-anchor">#</a></h1>
+<p>首先在管理员模式下运行Powershell，然后输入代码<code>powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61</code>”`。激活完成后，在Win10的电源计划里就会多出一项“卓越性能”，点击即可切换。</p>
+<h1><span id="5-shang-di-mo-shi">5、上帝模式</span><a href="#5-shang-di-mo-shi" class="header-anchor">#</a></h1>
+<p>“上帝模式”（God Mode）说白了，就是将所有设置全都放入到一个文件夹内，就像上帝一样，随心所欲进行任何操作。上帝模式也是一项隐藏功能，首先在桌面上建立一个文件夹，然后将文件夹重命名为“GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}”。接下来再打开这个文件夹，就能看到所有你想看到的功能了。</p>
 
     </div>
 
@@ -367,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">Windows 使用技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、host 位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、右键新建 .md 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、批量新建文件夹</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">1、host 位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">2、右键新建 .md 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">3、批量新建文件夹</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">4、卓越性能模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">5、上帝模式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -381,20 +384,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">228</span>
+          <span class="site-state-item-count">240</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-count">96</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,7 +434,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">387k</span>
+    <span title="站点总字数">408k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

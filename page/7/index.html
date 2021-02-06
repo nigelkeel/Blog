@@ -197,6 +197,1659 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/230201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">230201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/230201/" class="post-title-link" itemprop="url">BOM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:19:46" itemprop="dateCreated datePublished" datetime="2021-01-31T14:19:46+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:15:31" itemprop="dateModified" datetime="2021-02-01T19:15:31+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2302%EF%BC%9ABOM/" itemprop="url" rel="index"><span itemprop="name">2302：BOM</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="javascript-bom">JavaScript BOM</span><a href="#javascript-bom" class="header-anchor">#</a></h1>
+<p>Browser Object Model，浏览器对象模型。</p>
+<h1><span id="yi-window-dui-xiang">一、window 对象</span><a href="#yi-window-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>window</code> 是 BOM 的核心对象。表示浏览器的一个实例，是客户端浏览器对象模型的基类。在浏览器中，该对象具有双重角色，既是通过 JS 访问浏览器窗口的一个接口，也是 ES 规定中的 <strong>Global</strong> 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以 <code>window</code> 作为其 <code>Global</code> 对象。<strong>所有在全局作用域中声明的变量、函数都会变成该对象的属性和方法。</strong></p>
+<h2><span id="p1-ke-hu-duan-dui-xiang">1、客户端对象</span><a href="#p1-ke-hu-duan-dui-xiang" class="header-anchor">#</a></h2>
+<p>可以访问客户端其他对象，这种关系构成浏览器对象模型。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>document</code></td>
+<td>包含整个 HTML 文档，可以用来访问文档内容及其所有页面元素。</td>
+</tr>
+<tr>
+<td><code>navigator</code></td>
+<td>包含客户端有关浏览器的信息。</td>
+</tr>
+<tr>
+<td><code>screen</code></td>
+<td>包含客户端屏幕的信息</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>包含浏览历史记录信息</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>包含当前网页文档的 URL 信息</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p2-xi-tong-dui-hua-kuang">2、系统对话框</span><a href="#p2-xi-tong-dui-hua-kuang" class="header-anchor">#</a></h2>
+<p>浏览器通过 <code>alert()</code>、<code>confirm()</code> 和 <code>prompt()</code> 方法可以调用系统对话框向用户显示消息。</p>
+<p>系统对话框与在浏览器中显示的网页没有关系，也不包含 HTML。它们的外观由操作系统及（或）浏览器设置决定，而不是由 CSS 决定（无法设置）。通过这几个方法打开的对话框都是同步和模态的。也就是说，显示这些对话框的时候代码会停止执行，而关掉这些对话框后代码又会恢复执行。</p>
+<p><code>confirm</code>和<code>prompt</code>有返回值。生产环境下不用，调试使用。</p>
+<h2><span id="p3-da-kai-he-guan-bi-chuang-kou">3、打开和关闭窗口</span><a href="#p3-da-kai-he-guan-bi-chuang-kou" class="header-anchor">#</a></h2>
+<p><code>window.open()</code> 方法既可以导航到一个特定的 URL，也可以打开一个新的浏览器窗口。</p>
+<p>参数</p>
+<ul>
+<li>要加载的 URL</li>
+<li>新窗口打开方式：<code>_self</code> <code>_blank</code>（默认新标签页打开）</li>
+<li>窗口大小、位置。</li>
+</ul>
+<p>返回值 就是新建的窗口名称。</p>
+<p><code>窗口名.close()</code>可以关闭窗口，如果关闭自身那就使用 <code>window.close()</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 打开窗口</span></span><br><span class="line"><span class="keyword">var</span> newWin = <span class="built_in">window</span>.open(</span><br><span class="line">  <span class="string">&quot;http://www.jd.com&quot;</span>,</span><br><span class="line">  <span class="string">&quot;_blank&quot;</span>,</span><br><span class="line">  <span class="string">&quot;width=300,height=300,left=200,top=100&quot;</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 关闭窗口</span></span><br><span class="line">newWin.close();</span><br></pre></td></tr></table></figure>
+<p><code>close()</code> 方法仅适用于通过 <code>window.open()</code> 打开的弹出窗口。</p>
+<h2><span id="p4-liu-lan-qi-kuan-gao">4、浏览器宽高</span><a href="#p4-liu-lan-qi-kuan-gao" class="header-anchor">#</a></h2>
+<p><code>window</code>对象有<code>innerWidth</code>和<code>innerHeight</code>属性，可以获取浏览器窗口的内部宽度和高度。内部宽高是指除去菜单栏、工具栏、边框等占位元素后，用于显示网页的净宽高。</p>
+<p>对应的，还有一个<code>outerWidth</code>和<code>outerHeight</code>属性，可以获取浏览器窗口的整个宽高。</p>
+<h1><span id="er-navigator-dui-xiang">二、navigator 对象</span><a href="#er-navigator-dui-xiang" class="header-anchor">#</a></h1>
+<p>navigator 对象储存了浏览器信息。通过 <code>navigator</code> 可以引用该对象，并利用它的属性来读取客户端基本信息。</p>
+<p>常见属性：</p>
+<ul>
+<li><code>onLine</code> 表示浏览器是否连接到因特网</li>
+<li><code>platform</code> 浏览器所在的操作系统</li>
+<li><code>userAgent</code> 浏览器识别码</li>
+<li><code>appName</code> 浏览器名称</li>
+<li><code>labguage</code> 浏览器设置的语言</li>
+</ul>
+<h2><span id="p1-liu-lan-qi-jian-ce-fang-fa">1、浏览器检测方法</span><a href="#p1-liu-lan-qi-jian-ce-fang-fa" class="header-anchor">#</a></h2>
+<p>检测浏览器类型的方法有多种，常用的方法包括两种:<strong>特征检测法</strong>和<strong>字符串检测法</strong>，这两种方法都存在各自的优点与缺点，用户可以根据需要进行选择。</p>
+<p>（1）特征检测法</p>
+<ul>
+<li>特征检测法就是根据浏览器是否支持特定功能来决定相应操作的方式。这是一种非精确判断法。但却是最安全的检测方法</li>
+<li>因为准确检测浏览器的类型和型号是一件很困难的事情,而且很容易存在误差，如果不关心浏览器的身份，仅仅在意浏览器的执行能力，那么使用特征检测法就完全可以满足需要。</li>
+<li>当使用一个对象、方法或属性时，先判断它是否存在，如果存在，则说明浏览器支持该对象、方法属性，那么就可以放心使用</li>
+</ul>
+<p>（2）字符串检测法</p>
+<ul>
+<li>客户端浏览器每次发送 HTTP 请求时，都会附带有一个 user-agent(用户代理)字符串，对于 Web 开发人员来说，可以使用用户代理字符串检测浏览器类型。</li>
+<li>userAgent 字符串包含了 web 浏览器的大量信息，如浏览器的名称和版本。</li>
+</ul>
+<h2><span id="p2-cao-zuo-xi-tong-jian-ce-fang-fa">2、操作系统检测方法</span><a href="#p2-cao-zuo-xi-tong-jian-ce-fang-fa" class="header-anchor">#</a></h2>
+<p>navigator.userAgent 返回值一般都会包含操作系统的基本信息，不过这些信息比较散乱，没有统一的规则。</p>
+<p>用户可以检测一些更为通用的信息，如检测是否为 Windows 系统，或者为 Macintosh 系统，而不去分辨操作系统的版本号。</p>
+<p>例如，如果仅检测通用信息，那么所有 Windows 版本的操作系统都会包含&quot;Win”字符串，所有 Macintosh 版本的操作系统都包含有&quot;Mac”字符串，所有 Umix 版本的操作系统都包含有&quot;X11”，而 Linux 操作系统会同时包含&quot;X11”和&quot; Linux。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isWin = navigator.userAgent.indexOf(<span class="string">&quot;Win&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Windows系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isMac = navigator.userAgent.indexOf(<span class="string">&quot;Mac&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Macintosh系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isUnix = navigator.userAgent.indexOf(<span class="string">&quot;X11&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是UNIX系统，则返回true</span></span><br><span class="line"><span class="keyword">var</span> isLinux = navigator.userAgent.indexOf(<span class="string">&quot;Linux&quot;</span>) != <span class="number">-1</span>;</span><br><span class="line"><span class="comment">// 如果是Linux系统，则返回true</span></span><br></pre></td></tr></table></figure>
+<p>！请注意，<code>navigator</code>的信息可以很容易地被用户修改，所以 JavaScript 读取的值不一定是正确的。但这样既可能判断不准确，也很难维护代码。正确的方法是充分利用 JavaScript 对不存在属性返回<code>undefined</code>的特性，直接用短路运算符<code>||</code>计算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var width &#x3D; window.innerWidth || document.body.clientWidth;</span><br></pre></td></tr></table></figure>
+<h1><span id="san-location-dui-xiang">三、location 对象</span><a href="#san-location-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>location</code> 对象存储了与当前文档位置（URL）信息。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>href</code></td>
+<td>声明或获取当前文档完整的 URL</td>
+</tr>
+<tr>
+<td><code>protocol</code></td>
+<td>协议部分 <code>http:</code></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>主机和端口名称 <code>localhost:8080</code></td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>主机名称 <code>localhost</code></td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>端口号 <code>8080</code></td>
+</tr>
+<tr>
+<td><code>pathname</code></td>
+<td>路径部分</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td>URL 查询部分</td>
+</tr>
+<tr>
+<td><code>hash</code></td>
+<td>锚部分包括前导 <code>#</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>location.href</code> 可以设置和获取 url 地址</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">location.href = <span class="string">&quot;demo.html&quot;</span>; <span class="comment">//重定向</span></span><br><span class="line">location.assign(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line">location.reload(); <span class="comment">//刷新</span></span><br><span class="line">location.replace(<span class="string">&quot;demo.html&quot;</span>);</span><br><span class="line"></span><br><span class="line">hostname; <span class="comment">// http://127.0.0.1:5500/0717/12.location.html</span></span><br><span class="line">protocol; <span class="comment">// 127.0.0.1</span></span><br><span class="line">host; <span class="comment">// http:</span></span><br><span class="line">port; <span class="comment">// 127.0.0.1:5500</span></span><br><span class="line">pathname; <span class="comment">// 5500</span></span><br><span class="line">search; <span class="comment">/// 0717/12.location.html</span></span><br></pre></td></tr></table></figure>
+<p><code>reload()</code> 重新加载文档</p>
+<p><code>replace()</code> 重新加载一个新文档，无需为它创建一个新的历史记录，替换当前文档的历史记录</p>
+<p><code>assign()</code> 和<code>href</code>差不多，要加载一个新页面，可以调用 <code>location.assign()</code> 。如果要重新加载当前页面，调用 <code>location.reload()</code> 方法非常方便。</p>
+<h1><span id="si-history-dui-xiang-ji-chu">四、history 对象 <code>基础</code></span><a href="#si-history-dui-xiang-ji-chu" class="header-anchor">#</a></h1>
+<p><code>history</code>对象保存了浏览器的历史记录，JS 可以调用<code>history</code>对象的<code>back()</code>或<code>forward ()</code>，相当于用户点击了浏览器的后退或前进按钮。</p>
+<p>这个对象属于历史遗留对象，对于现代 Web 页面来说，由于大量使用 AJAX 和页面交互，简单粗暴地调用<code>history.back()</code>可能会让用户体验非常不好。</p>
+<p>新手开始设计 Web 页面时喜欢在登录页登录成功时调用<code>history.back()</code>，试图回到登录前的页面。这是一种错误的方法。</p>
+<p>前端框架路由原理中使用了 <code>history</code> 库。</p>
+<p><code>https://github.com/ReactTraining/history</code></p>
+<h1><span id="wu-screen-dui-xiang">五、screen 对象</span><a href="#wu-screen-dui-xiang" class="header-anchor">#</a></h1>
+<p><code>screen</code> 对象表示屏幕的信息，常用的属性有：</p>
+<ul>
+<li>screen.width：屏幕宽度，以像素为单位；</li>
+<li>screen.height：屏幕高度，以像素为单位；</li>
+<li>screen.colorDepth：返回颜色位数，如 8、16、24。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210801/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210801</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210801/" class="post-title-link" itemprop="url">CSS 动画</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:16:40" itemprop="dateCreated datePublished" datetime="2021-01-31T14:16:40+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:04:45" itemprop="dateModified" datetime="2021-02-01T19:04:45+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2108%EF%BC%9ACSS%E5%8A%A8%E7%94%BB/" itemprop="url" rel="index"><span itemprop="name">2108：CSS动画</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>986</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="css-dong-hua">CSS 动画</span><a href="#css-dong-hua" class="header-anchor">#</a></h1>
+<p>transition: 过渡动画</p>
+<p>transition-property: 属性<br>
+transition-duration: 间隔<br>
+transition-timing-function: 曲线<br>
+transition-delay: 延迟</p>
+<h2><span id="p1-guo-du-dong-hua-transition">1、过渡动画 transition</span><a href="#p1-guo-du-dong-hua-transition" class="header-anchor">#</a></h2>
+<p>允许 CSS 的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变 CSS 的属性值。</p>
+<p>transition</p>
+<ul>
+<li>property 参与过渡的属性</li>
+<li>duration 持续时间</li>
+<li>timing-function 动画类型 linear 线性匀速</li>
+<li>delay 延迟时间</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">height</span> 3<span class="selector-tag">s</span> <span class="selector-tag">linear</span> 2<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
+<p>animation / keyframes</p>
+<p>animation-name: 动画名称，对应@keyframes<br>
+animation-duration: 间隔<br>
+animation-timing-function: 曲线<br>
+animation-delay: 延迟<br>
+animation-iteration-count: 次数</p>
+<p>infinite: 循环动画</p>
+<p>animation-direction: 方向</p>
+<p>alternate: 反向播放</p>
+<p>animation-fill-mode: 静止模式</p>
+<p>forwards: 停止时，保留最后一帧<br>
+backwards: 停止时，回到第一帧<br>
+both: 同时运用 forwards / backwards</p>
+<p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
+<h2><span id="p2-guan-jian-zheng-dong-hua-animation">2、关键帧动画 animation</span><a href="#p2-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h2>
+<p>关键帧动画是控制关键位置，而不是所有位置。</p>
+<h3><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h3>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> &lt;name&gt; &#123;</span><br><span class="line">  from/0% &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">  to/100% &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="p2-animation">2、animation</span><a href="#p2-animation" class="header-anchor">#</a></h3>
+<ul>
+<li>name 动画属性名</li>
+<li>duration 关键帧持续时间</li>
+<li>timing-function 动画执行方式（针对于每一个关键帧之间的动画）</li>
+<li>delay 动画延迟时间</li>
+<li>iteration-count 动画循环次数，次数或者 infinite（无穷次）</li>
+<li>direction 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
+</ul>
+<h3><span id="p3-dong-hua-de-zan-ting-he-bo-fang">3、动画的暂停和播放</span><a href="#p3-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h3>
+<ul>
+<li>animation-play-state</li>
+<li>paused</li>
+</ul>
+<h3><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h3>
+<h3><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h3>
+<p>timing-function: steps()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210401/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210401</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210401/" class="post-title-link" itemprop="url">CSS 预处理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:10:43" itemprop="dateCreated datePublished" datetime="2021-01-31T14:10:43+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:03:30" itemprop="dateModified" datetime="2021-02-01T19:03:30+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>151</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="css-yu-chu-li-qi">CSS 预处理器</span><a href="#css-yu-chu-li-qi" class="header-anchor">#</a></h1>
+<h2><span id="pyuan-li">原理</span><a href="#pyuan-li" class="header-anchor">#</a></h2>
+<p>是将类 CSS 语言通过 Webpack 编译转成浏览器可读的真正 CSS。<br>
+在这层编译之上，便可以赋予 CSS 更多更强大的功能。</p>
+<h2><span id="pchang-yong-gong-neng">常用功能</span><a href="#pchang-yong-gong-neng" class="header-anchor">#</a></h2>
+<ul>
+<li>嵌套</li>
+<li>变量</li>
+<li>循环语句</li>
+<li>条件语句</li>
+<li>自动前缀</li>
+<li>单位转换</li>
+<li>mixin 复用</li>
+</ul>
+<p>面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可~</p>
+<h2><span id="pyou-na-xie">有哪些</span><a href="#pyou-na-xie" class="header-anchor">#</a></h2>
+<ul>
+<li>Less</li>
+<li>Sass</li>
+<li>Stylus</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220204</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220204/" class="post-title-link" itemprop="url">ES Generstor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:09:30" itemprop="dateCreated datePublished" datetime="2021-01-31T14:09:30+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:10:00" itemprop="dateModified" datetime="2021-02-01T19:10:00+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>356</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="generstor">Generstor</span><a href="#generstor" class="header-anchor">#</a></h1>
+<p>状态机，异步生成器。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> ...</span><br><span class="line">    <span class="keyword">yield</span> ...</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">gen.next();</span><br></pre></td></tr></table></figure>
+<p><code>Generstor</code> 是可迭代的（<code>for.. of</code>）。</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用计时器模拟依次请求 a数据 b数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;a数据请求成功&quot;</span>)</span><br><span class="line">        it.next();</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">    <span class="keyword">yield</span> <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;b数据请求成功&quot;</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始请求</span></span><br><span class="line"><span class="keyword">const</span> it = gen()</span><br><span class="line">it.next();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/230301/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">230301</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/230301/" class="post-title-link" itemprop="url">DOM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:08:02" itemprop="dateCreated datePublished" datetime="2021-01-31T14:08:02+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-05 13:53:31" itemprop="dateModified" datetime="2021-02-05T13:53:31+08:00">2021-02-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2303%EF%BC%9ADOM/" itemprop="url" rel="index"><span itemprop="name">2303：DOM</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="javascript-dom">JavaScript DOM</span><a href="#javascript-dom" class="header-anchor">#</a></h1>
+<p><strong>Document Object Model</strong>， <strong>文档对象模型</strong>。是 W3C 制订的一套技术规范，用来描述 JS 如何与 HTML 或 XML 文档进行交互的 Web 标准。DOM 规定了一系列标准 API，允许开发人员通过标准方式访问文档结构、操作网页内容、控制样式和行为等。</p>
+<p>加载 HTML 页面时，Web 浏览器生成一个树型结构，用来表示页面内部结构。DOM 将这种树型结构理解为由节点组成的 DOM 树。</p>
+<h2><span id="p1-dom-ban-ben">1、DOM 版本</span><a href="#p1-dom-ban-ben" class="header-anchor">#</a></h2>
+<p>主要分为 <code>DOM 0级</code> 和 <code>DOM 2级</code>。</p>
+<h2><span id="p2-document-dui-xiang">2、document 对象</span><a href="#p2-document-dui-xiang" class="header-anchor">#</a></h2>
+<p><strong><code>document</code> 对象</strong> 是<code>window</code>对象的一个属性，因此可以将<code>document</code>对象作为一个全局对象来访问。当浏览器载入 html 文档, 它就会成为<code>document</code>对象。</p>
+<p>JS 顶层对象是<code>global</code>，<code>window</code>是<code>global</code>在浏览器的实现。</p>
+<h1><span id="dom-jie-dian">DOM 节点</span><a href="#dom-jie-dian" class="header-anchor">#</a></h1>
+<p>在网页中所有的对象和内容称为<strong>节点</strong>（Node），如文档、元素、文本、属性、注释等，节点是 DOM 最基本的单元，并派生出不同类型的节点，它们共同的构成了文档的树形结构。</p>
+<h2><span id="p1-jie-dian-guan-xi">1、节点关系</span><a href="#p1-jie-dian-guan-xi" class="header-anchor">#</a></h2>
+<p>节点之间的关系包括：</p>
+<ul>
+<li>父子关系</li>
+<li>兄弟关系。</li>
+</ul>
+<p>在节点树中，最顶端节点为<strong>根节点</strong>。</p>
+<p>除了根节点之外，每个节点都有一个父节点。</p>
+<p>节点可以包含任何数量的子节点。</p>
+<p>叶子是没有子节点的节点。</p>
+<p>同级节点是拥有相同父节点的节点。</p>
+<h2><span id="p2-jie-dian-shu-xing">2、节点属性</span><a href="#p2-jie-dian-shu-xing" class="header-anchor">#</a></h2>
+<p><code>childNodes</code> 属性获取元素所有的子节点，保存到一个<code>NodeList</code>伪数组对象中。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nodeType</code></td>
+<td>节点类型</td>
+</tr>
+<tr>
+<td><code>nodeName</code></td>
+<td>节点名称</td>
+</tr>
+<tr>
+<td><code>nodeValue</code></td>
+<td>节点值</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>nodeType</th>
+<th></th>
+<th>nodeName</th>
+<th>nodeValue</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Element</td>
+<td>元素名</td>
+<td>null</td>
+<td>元素</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Attr</td>
+<td>属性名</td>
+<td>属性值</td>
+<td>属性</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Text</td>
+<td>#text</td>
+<td>节点内容</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Comment</td>
+<td>#comment</td>
+<td>注释文本</td>
+<td>注释</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Document</td>
+<td>#document</td>
+<td>null</td>
+<td>根节点</td>
+</tr>
+<tr>
+<td>11</td>
+<td>DocumentFragment</td>
+<td>#document 片段</td>
+<td>null</td>
+<td>文档碎片</td>
+</tr>
+</tbody>
+</table>
+<h1><span id="huo-qu-jie-dian">获取节点</span><a href="#huo-qu-jie-dian" class="header-anchor">#</a></h1>
+<h2><span id="p1-getelement-s-xi-lie">1、getElement(s) 系列</span><a href="#p1-getelement-s-xi-lie" class="header-anchor">#</a></h2>
+<p>（1） <code>getElementsByTagName()</code> 通过标签名获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获得一个 HTMLCollection 对象（伪数组）</span></span><br><span class="line"><span class="comment">// 拥有 length 属性</span></span><br><span class="line"><span class="keyword">var</span> oLis = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 控制背景并变色</span></span><br><span class="line">oLis.style.background = <span class="string">&quot;red&quot;</span>; <span class="comment">// 报错了！</span></span><br><span class="line">oLis[<span class="number">0</span>].style.background = <span class="string">&quot;red&quot;</span>; <span class="comment">// 注意要加下标获取</span></span><br></pre></td></tr></table></figure>
+<p>（2）<code>getElementsByClassName()</code> 通过类名</p>
+<p>（3）<code>getElementsByName()</code> 通过 name 属性获取（几乎不用）</p>
+<ul>
+<li>IE6-9 不兼容。</li>
+</ul>
+<p>（4）<code>getElementByID()</code> 通过 id 获取</p>
+<p>和上面三个的区别是，这个可以直接获取到元素，不需要下标。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取某个元素中元素的方法</span></span><br><span class="line"><span class="comment">// （1）先获取到ul</span></span><br><span class="line"><span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">&quot;box&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> oBox2 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;ul&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// （2）通过ul获取到其中的li</span></span><br><span class="line"><span class="keyword">var</span> oBoxLis = oBox.getElementsByTagName(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> oBoxLis2 = oBox2[<span class="number">1</span>].getElementsByTagName(<span class="string">&quot;li&quot;</span>);</span><br><span class="line"><span class="comment">//   注意下标</span></span><br></pre></td></tr></table></figure>
+<p>（1）（2）（3）获取到的是 <code>HTMLCollection</code> 伪数组对象。</p>
+<h2><span id="p2-selectors-api">2、selectors API</span><a href="#p2-selectors-api" class="header-anchor">#</a></h2>
+<p>直接使用 CSS 选择器作为参数传递。</p>
+<p>核心方法 <code>querySelector()</code> 和 <code>querySelectorAll()</code>。</p>
+<p><code>querySelectorAll()</code> 获取的是一个<code>NodeList</code>对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取单个节点（如果选择多个，默认选第一个）</span></span><br><span class="line"><span class="keyword">var</span> oRed = <span class="built_in">document</span>.querySelector(<span class="string">&quot;#box&gt;.red&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取多个节点（NodeList），使用的时候注意加下标</span></span><br><span class="line"><span class="keyword">var</span> oRed2 = <span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;#box&gt;.red&quot;</span>);</span><br><span class="line"></span><br><span class="line">oRed2.forEach(item, index, array)&#123;</span><br><span class="line">  	item.style.background = <span class="string">&quot;red&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：低版本的 IE&lt;8 不支持<code>querySelector</code>和<code>querySelectorAll</code>。IE8 仅有限支持。</p>
+<h2><span id="p3-fang-fa-bi-jiao">3、方法比较</span><a href="#p3-fang-fa-bi-jiao" class="header-anchor">#</a></h2>
+<p><code>getElementsByXX</code> 获取的元素集合是 <strong>动态</strong> 的，也就是 DOM 节点改变时，当前获取的集合内容也会改变。（选出来的元素会随着文档的改变而改变）</p>
+<p><code>selector API</code> 是 <strong>静态</strong> 的集合。（只要取出来，就和页面有没有任何关系；未来元素改变，不影响获取的结果。）</p>
+<h2><span id="p4-jie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa">4、节点关系中访问节点方法</span><a href="#p4-jie-dian-guan-xi-zhong-fang-wen-jie-dian-fang-fa" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parentNode</td>
+<td>获取元素的父元素节点</td>
+</tr>
+<tr>
+<td>children</td>
+<td>获取元素的所有子元素节点<br>（IE6-8 会获取到注释节点）</td>
+</tr>
+<tr>
+<td>firstChild</td>
+<td>获取第一个子元素节点</td>
+</tr>
+<tr>
+<td>firstElementChild</td>
+<td>获取第一个子元素节点</td>
+</tr>
+<tr>
+<td>lastChild</td>
+<td>获取最后一个子元素节点</td>
+</tr>
+<tr>
+<td>lastElementChild</td>
+<td>获取最后一个子元素节点</td>
+</tr>
+<tr>
+<td>nextSibling</td>
+<td>获取下一个兄弟节点</td>
+</tr>
+<tr>
+<td>nextElementSibing</td>
+<td>获取下一个兄弟节点</td>
+</tr>
+<tr>
+<td>previousSibling</td>
+<td>获取上一个兄弟节点</td>
+</tr>
+<tr>
+<td>previosElementSibing</td>
+<td>获取上一个兄弟节点</td>
+</tr>
+</tbody>
+</table>
+<p>在 IE678 中获取上一个元素节点，在其他浏览器中获取的是是一个节点（可能是文本节点等）。后者在浏览器中获取上一个兄弟元素节点，IE678 不兼容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) parentNode</span></span><br><span class="line">...parentNode <span class="comment">// ul</span></span><br><span class="line">...parentNode.parentNode<span class="comment">// body</span></span><br><span class="line">...parentNode.parentNode.parentNode <span class="comment">// html</span></span><br><span class="line">...parentNode.parentNode.parentNode.parentNode <span class="comment">// document</span></span><br><span class="line">...parentNode.parentNode.parentNode.parentNode.parentNode <span class="comment">// null</span></span><br><span class="line">...parentNode.parentNode.parentNode.parentNode.parentNode.parentNode <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// (2) 获取上一个兄弟元素节点的兼容性封装</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPrevSibling</span>(<span class="params">ele</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">if</span>(ele.previousElementSibing)&#123;</span><br><span class="line">        <span class="keyword">return</span> ele.previousElementSibing;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> ele.previousSibing;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p5-qi-ta-huo-qu-jie-dian-fang-fa">5、其他获取节点方法</span><a href="#p5-qi-ta-huo-qu-jie-dian-fang-fa" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1)获取body元素</span></span><br><span class="line"><span class="built_in">document</span>.body == <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;body&quot;</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// (2)获取head元素</span></span><br><span class="line"><span class="built_in">document</span>.head == <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;head&quot;</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// (3)获取html元素</span></span><br><span class="line"><span class="built_in">document</span>.documentElement == <span class="built_in">document</span>.getElementsByTagName(<span class="string">&quot;html&quot;</span>)[<span class="number">0</span>];</span><br></pre></td></tr></table></figure>
+<h1><span id="cao-zuo-jie-dian">操作节点</span><a href="#cao-zuo-jie-dian" class="header-anchor">#</a></h1>
+<p>原生 DOM 操作。</p>
+<h2><span id="p1-chuang-jian-jie-dian">1、创建节点</span><a href="#p1-chuang-jian-jie-dian" class="header-anchor">#</a></h2>
+<p><code>createElement()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createElement(tag);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	参数：标签名字</span></span><br><span class="line"><span class="comment">	返回值：新元素的引用</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>使用 document 对象的 createElement 方法能够根据参数指定的标签名创建一个新的元素。并返回对新元素的引用。</p>
+<p>使用 creatElement 方法创建的新元素不会被自动添加到文档里，需要使用 appendChild 等方法。</p>
+<p><code>createTextNode</code> 用于创建文本节点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createTextNode(<span class="built_in">String</span>);</span><br><span class="line"><span class="comment">//                    参数是字符串</span></span><br></pre></td></tr></table></figure>
+<h2><span id="p2-cha-ru-jie-dian">2、插入节点</span><a href="#p2-cha-ru-jie-dian" class="header-anchor">#</a></h2>
+<p><code>appendChild()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appendChild();</span><br></pre></td></tr></table></figure>
+<p>可以向当前节点的字节点列表的==末尾==添加新的节点。如果文档树中已经存在参数节点，则将从文档树中删除，然后重新插入新的位置。</p>
+<p><code>insertBefore()</code></p>
+<p>使用 <code>insertBefore(newChild,oldChild)</code> 方法可以在已有的子节点前插入一个新的子节点。</p>
+<p>newChild 表示新插入的节点，oldChild 用于指定插入节点的后边的相邻位置。插入成功以后，该方法返回新插入的节点。insertBefore 可以把指定元素及其所包含的所有子节点都一起插入到指定位置中。同时会先删除移动的元素，再重新插入。</p>
+<p>appendChild 和 insertBefore 可以操作已经存在的元素。</p>
+<h2><span id="p3-fu-zhi-jie-dian">3、复制节点</span><a href="#p3-fu-zhi-jie-dian" class="header-anchor">#</a></h2>
+<p><code>cloneNode()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cloneNode();</span><br><span class="line"><span class="comment">//      参数 true 深复制 复制整个节点和里面的内容</span></span><br><span class="line"><span class="comment">//           false 浅复制 只复制节点（不要里面的内容）</span></span><br></pre></td></tr></table></figure>
+<p>可以创建一个节点的副本。复制后的新节点，也不会被自动插入到文档，需要用到之前的方法去插入。</p>
+<p>注意改<code>id</code>，复制的节点会包含原节点的所有特性，如果原节点中包含 id 属性，就会出现 id 属性值重叠的情况。为了避免潜在的冲突，应修改其中某个节点的 id 属性值。</p>
+<h2><span id="p4-shan-chu-jie-dian">4、删除节点</span><a href="#p4-shan-chu-jie-dian" class="header-anchor">#</a></h2>
+<p><code>removeChild()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">removeChild();</span><br><span class="line"><span class="comment">// 返回值：</span></span><br><span class="line"><span class="comment">// - 删除成功 ==&gt; 返回被删除的节点</span></span><br><span class="line"><span class="comment">// - 删除失败 ==&gt; 返回 null</span></span><br></pre></td></tr></table></figure>
+<p>可以从子节点列表中删除某个节点，该节点所包含的所有子节点将同时被删除。</p>
+<h2><span id="p5-ti-huan-jie-dian">5、替换节点</span><a href="#p5-ti-huan-jie-dian" class="header-anchor">#</a></h2>
+<p><code>replaceChild(new, old)</code> 方法可以将某个子节点替换为另一个。替换节点替换的是所有子节点以及包含的所有内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">replaceChild(newNode, oldNode);</span><br><span class="line"><span class="comment">// 参数</span></span><br><span class="line"><span class="comment">// - newNode 指定的新节点</span></span><br><span class="line"><span class="comment">// - oldNode 被替换的节点</span></span><br><span class="line"><span class="comment">// 返回值</span></span><br><span class="line"><span class="comment">// - 替换成功 ==&gt; 返回替换的节点</span></span><br><span class="line"><span class="comment">// - 替换失败 ==&gt;  null</span></span><br></pre></td></tr></table></figure>
+<h2><span id="p6-nei-rong-cao-zuo">6、内容操作</span><a href="#p6-nei-rong-cao-zuo" class="header-anchor">#</a></h2>
+<h3><span id="pinnerhtml-innertext-outerhtml-outertext">innerHTML、innerText、outerHTML、outerText</span><a href="#pinnerhtml-innertext-outerhtml-outertext" class="header-anchor">#</a></h3>
+<p>（1）获取标签</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;abc&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>破晓<span class="tag">&lt;/<span class="name">span</span>&gt;</span>是猪<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  oT = <span class="built_in">document</span>.getElementById(<span class="string">&quot;abc&quot;</span>);</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(oT.innerHTML); <span class="comment">//&lt;span&gt;破晓&lt;/span&gt;是猪</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(oT.innerText); <span class="comment">//破晓是猪</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(oT.outerText); <span class="comment">//破晓是猪</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">  console.log(oT.outerHTML); //<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;abc&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>破晓<span class="tag">&lt;/<span class="name">span</span>&gt;</span>是猪<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>innerHTML</code> 和 <code>innerText</code> 前者可以解析并输出标签，后者是纯文本。</p>
+<p><code>innerHTML</code> 和 <code>outerHTML</code> 前者不包括自身，后者包括自身。</p>
+<p>（2）设置标签（直接覆盖原来的内容）</p>
+<p>innerText 和 outerText 在获取的时候是相同效果，但在设置时，innerText 仅设置标签所包含的文本，而 outerText 设置包含包括标签<strong>自身在内</strong>的文本。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oTest.innerHTML = <span class="string">&quot;这是内容&quot;</span></span><br><span class="line">oTest.innerHTML = &quot;&lt;a href = &quot;##&quot;&gt; 这是内容 &lt;/a&gt;&quot;</span><br></pre></td></tr></table></figure>
+<h3><span id="ptextcontent">textContent</span><a href="#ptextcontent" class="header-anchor">#</a></h3>
+<p>设置或者返回固定节点的文本内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;myList&quot;</span>).textContent;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;myList&quot;</span>).textContent = <span class="string">&quot;你好&quot;</span>；</span><br></pre></td></tr></table></figure>
+<p>（1）textContent 和 innerHTML 的区别</p>
+<ul>
+<li>textContent 会获取 style= “display:none” 中的文本，而 innerText 不会。</li>
+<li>innerText 不会理会 html 格式，直接输出不换行的文本，textContent 会根据标签里面的元素独立一行。</li>
+<li>innerText 对 IE 的兼容性较好 ，textContent 虽然作为标准方法但是只支持 IE8+以上的浏览器 。</li>
+</ul>
+<p>（2）兼容性处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setOrGetContent</span>(<span class="params">node, content</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">//代表当前是读取操作</span></span><br><span class="line">    <span class="keyword">if</span> (node.textContent) &#123;</span><br><span class="line">      <span class="comment">//只要能拿到这个dom对象的textContent属性值，代表当前用户是高级浏览器</span></span><br><span class="line">      <span class="keyword">return</span> node.textContent;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//代表拿不到  那就是低级浏览器</span></span><br><span class="line">      <span class="keyword">return</span> node.innerText;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">arguments</span>.length === <span class="number">2</span>) &#123;</span><br><span class="line">    <span class="comment">//代表写入操作</span></span><br><span class="line">    <span class="keyword">if</span> (node.textContent) &#123;</span><br><span class="line">      <span class="comment">//代表高级</span></span><br><span class="line">      node.textContent = content;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//代表低级</span></span><br><span class="line">      node.innerText = content;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p7-wen-dang-pian-duan-jie-dian-xu-ni-dom">7、文档片段节点（虚拟 DOM） △</span><a href="#p7-wen-dang-pian-duan-jie-dian-xu-ni-dom" class="header-anchor">#</a></h2>
+<p><strong>DocumentFragment</strong> 是一个==虚拟的==节点类型，仅仅存在于内存中，没有添加到文档树中，看不到渲染效果。当文档片段设计完善后，再使用 JS 一次性添加到文档树中显示出来，提高效率，==减少页面重绘的次数==。避免浏览器渲染和资源占用，解决大量添加节点时候的性能问题。</p>
+<p><strong>createDocumentFragment()</strong> 创建虚拟节点，使用 appendChild 等方法插入。</p>
+<h1><span id="shu-xing-jie-dian-cao-zuo">属性节点操作</span><a href="#shu-xing-jie-dian-cao-zuo" class="header-anchor">#</a></h1>
+<h2><span id="p1-chuang-jian-shu-xing-jie-dian">1、创建属性节点</span><a href="#p1-chuang-jian-shu-xing-jie-dian" class="header-anchor">#</a></h2>
+<p><code>createAttribute()</code> 可以创建属性节点。</p>
+<ul>
+<li>使用属性节点的 name 属性，可以得到属性的名称。</li>
+<li>使用属性节点的 value 属性，可以设置和属性的值。</li>
+<li>创建的属性可以通过 setAttributeNode 来插入到元素中。</li>
+</ul>
+<h2><span id="p2-du-qu-shu-xing">2、读取属性</span><a href="#p2-du-qu-shu-xing" class="header-anchor">#</a></h2>
+<p>（1） 常用点语法通过元素直接访问 HTML 属性，如 src、href 等。</p>
+<p>（2） <code>getAttribute()</code> 可以读取指定属性的值（非自有属性）。</p>
+<p>对于 class 属性，必须使用 className 属性名。对于 for 属性，则必须使用 htmlFor 属性名。</p>
+<p>在脚本化 css 中设置 float 属性和 text 属性，要改为 cssFloat 和 cssText（一次设置多个样式）使用。</p>
+<h2><span id="p3-she-zhi-shu-xing">3、设置属性</span><a href="#p3-she-zhi-shu-xing" class="header-anchor">#</a></h2>
+<p><code>setAttribute(name,value)</code> 可以设置元素的属性值。</p>
+<p>参数 name 和 value 分别代表属性名称和属性值，并且必须是字符串，如果存在相同属性，则值被刷新，如果不存在则创建属性并添加。</p>
+<p>通过 <code>ele.value</code> 获取或设置表单的值（string）。</p>
+<h2><span id="p4-shan-chu-shu-xing">4、删除属性</span><a href="#p4-shan-chu-shu-xing" class="header-anchor">#</a></h2>
+<p><code>removeAttribute()</code> 使用元素的方法可以删除指定的属性</p>
+<p>参数是要删除的属性名。</p>
+<h2><span id="p5-zi-ding-yi-shu-xing">5、自定义属性 △</span><a href="#p5-zi-ding-yi-shu-xing" class="header-anchor">#</a></h2>
+<p>HTML5 允许用户为元素自定义属性，但是要求添加前缀<code>data-</code>。</p>
+<p><code>.dataset</code> 设置和获取自定义属性</p>
+<p><code>.delete</code> 删除自定义属性</p>
+<h2><span id="pinnre-outer-html-text-xi-lie">innre / outer | HTML / text 系列</span><a href="#pinnre-outer-html-text-xi-lie" class="header-anchor">#</a></h2>
+<p>inner 不包括自身 outer 包括自身</p>
+<p>HTML 解析 html 标签 Text 不解析</p>
+<h2><span id="ptextcontent">textContent</span><a href="#ptextcontent" class="header-anchor">#</a></h2>
+<p>textContent 和 innerHTML 的区别</p>
+<ul>
+<li>textContent 会获取 style= “display:none” 中的文本，而 innerText 不会</li>
+<li>innerText 不会理会 html 格式，直接输出不换行的文本 ，textContent 会根据标签里面的元素独立一行</li>
+<li>innerText 对 IE 的兼容性较好 ，textContent 虽然作为标准方法但是只支持 IE8+以上的浏览器</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/150202/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">150202</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/150202/" class="post-title-link" itemprop="url">TCP & UDP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:06:48" itemprop="dateCreated datePublished" datetime="2021-01-31T14:06:48+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:20:03" itemprop="dateModified" datetime="2021-02-01T18:20:03+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1502%EF%BC%9A%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" itemprop="url" rel="index"><span itemprop="name">1502：通信协议</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>504</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="tcp-amp-udp">TCP &amp; UDP</span><a href="#tcp-amp-udp" class="header-anchor">#</a></h1>
+<p>TCP，Transmission Control Protool，传输控制协议是一种面向连接的、可靠的、基于字节流的传输层通信协议，由 IETF 的 RFC-793 定义。是一种面向广域网的通信协议，目的是在跨越多个网络通信时，为两个通信端点之间提供一条具有下列特点的通信方式：</p>
+<ul>
+<li>基于流的方式</li>
+<li>面向连接</li>
+<li>可靠通信方式</li>
+<li>在网络状况不佳的时候尽量降低系统由于重传带来的带宽开销</li>
+<li>通信连接维护是面向通信的两个端点的，而不考虑中间网段和节点</li>
+</ul>
+<p>首先 UDP 协议是<strong>面向无连接</strong>的，也就是说不需要在正式传递数据之前先连接起双方。然后 UDP 协议只是数据报文的搬运工，不保证有序且不丢失的传递到对端，并且 UDP 协议也没有任何控制流量的算法，总的来说 UDP 相较于 TCP 更加的轻便。</p>
+<p>UDP 相比 TCP 简单的多，不需要建立连接，不需要验证数据报文，不需要流量控制，只会把想发的数据报文一股脑的丢给对端。虽然 UDP 并没有 TCP 传输来的准确，但是也能在很多实时性要求高的地方有所作为。</p>
+<p>TCP 建立连接需要三次握手，断开连接需要四次握手。滑动窗口解决了数据的丢包、顺序不对和流量控制问题拥塞窗口实现了对流量的控制，保证在全天候环境下最优的传递数据。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/150201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">150201</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/150201/" class="post-title-link" itemprop="url">通信协议</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:05:58" itemprop="dateCreated datePublished" datetime="2021-01-31T14:05:58+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:19:42" itemprop="dateModified" datetime="2021-02-01T18:19:42+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1502%EF%BC%9A%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE/" itemprop="url" rel="index"><span itemprop="name">1502：通信协议</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="tong-xin-xie-yi">通信协议</span><a href="#tong-xin-xie-yi" class="header-anchor">#</a></h1>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220203</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220203/" class="post-title-link" itemprop="url">ES this</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:03:52" itemprop="dateCreated datePublished" datetime="2021-01-31T14:03:52+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:09:50" itemprop="dateModified" datetime="2021-02-01T19:09:50+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2202%EF%BC%9AES%E9%AB%98%E7%BA%A7/" itemprop="url" rel="index"><span itemprop="name">2202：ES高级</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-this">ES this</span><a href="#es-this" class="header-anchor">#</a></h1>
+<p>JS 的作用域是静态的，但是函数的调用却是动态的，由于函数可以在不同的运行环境内执行，因此 JS 在函数体内定义了<code>this</code>关键字来获取当前的运行环境。<strong>this</strong> 最终代表的是函数的<strong>执行者，使用者，调用者</strong>。它是一个指针型变量。</p>
+<h2><span id="p1-ru-he-pan-duan-this-zhi-xiang">1、如何判断 this 指向</span><a href="#p1-ru-he-pan-duan-this-zhi-xiang" class="header-anchor">#</a></h2>
+<ul>
+<li>函数是否在<code>new</code>中调用，如果是的话，<code>this</code>绑定的是新创建的对象</li>
+<li>函数是否通过<code>call</code>、<code>apply</code> 显示绑定，如果是，则<code>this</code>绑定的是执行的对象</li>
+<li>函数是否在某个上下文中调用，如果有，则<code>this</code>绑定在这个上下文对象上</li>
+<li>如果都不是，默认绑定<code>window</code></li>
+</ul>
+<h3><span id="p1-1-mo-ren-bang-ding">1.1 默认绑定</span><a href="#p1-1-mo-ren-bang-ding" class="header-anchor">#</a></h3>
+<p><code>this</code> 默认指向 <code>window</code>，在无法应用其他规则的时候使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="keyword">do</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo();</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// foo是直接使用不带任何修饰的函数引用进行调用，因此只能使用默认绑定规则</span></span><br><span class="line"></span><br><span class="line">obj.do(); <span class="comment">// window</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p1-2-yin-shi-bang-ding">1.2 隐式绑定</span><a href="#p1-2-yin-shi-bang-ding" class="header-anchor">#</a></h3>
+<p>当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的 this 绑定到这个上下文对象上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">a</span>: <span class="number">2</span>, <span class="attr">foo</span>: foo &#125;;</span><br><span class="line"></span><br><span class="line">obj.foo(); <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 当foo调用的时候，它的落脚点确实是指向的obj对象，当函数引用有上下文对象的时候（obj），隐式绑定规则会把函数中的this绑定到这个上下文对象上。</span></span><br></pre></td></tr></table></figure>
+<p>隐式绑定可能会出现隐式丢失问题。被隐式绑定的函数，丢失了绑定对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">2</span>,</span><br><span class="line">  foo: foo,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1 = obj.foo;</span><br><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">fn1(); <span class="comment">// hello</span></span><br><span class="line"><span class="comment">// 虽然fn1是obj.foo的一个引用，但是实际上它的引用是foo函数本身，因此fn1其实是一个不带任何修饰的函数调用，属于默认绑定</span></span><br></pre></td></tr></table></figure>
+<p>每个函数对象都有 call 和 apply 方法，本质是设置函数体内 this 对象的值。</p>
+<h2><span id="p2-call-apply-bind">2、call、apply、bind</span><a href="#p2-call-apply-bind" class="header-anchor">#</a></h2>
+<p><code>call</code>、<code>apply</code>、<code>bind</code> 是 <a href>Function</a> 对象自带的方法。</p>
+<p>这三个函数的存在意义是<strong>改变函数执行时的上下文</strong>，再具体一点就是<strong>改变函数运行时的 this 指向</strong>。</p>
+<h3><span id="p2-1-call">2.1 call</span><a href="#p2-1-call" class="header-anchor">#</a></h3>
+<p><strong>call()</strong> 方法在使用一个指定的 this 值和若干个指定的参数值的前提下调用某个函数或方法。当调用一个函数时，可以赋值一个不同的 <code>this</code> 对象。<code>this</code> 引用当前对象，即 <code>call</code> 方法的第一个参数。</p>
+<p>通过 <code>call</code> 方法，你可以在一个对象上借用另一个对象上的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">fun.call( thisArg[, arg1..])</span><br><span class="line"><span class="comment">// 参数列表</span></span><br><span class="line"><span class="comment">// - thisArg 指定函数运行时的 this值</span></span><br><span class="line"><span class="comment">//   - 不传，或者传 null，undefined， 函数中的this指向window对象</span></span><br><span class="line"><span class="comment">//   - 传递另一个函数的函数名，函数中的this指向这个函数的引用，并不一定是该函数执行时真正的this值</span></span><br><span class="line"><span class="comment">//   - 值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象，如 String Number Boolean</span></span><br><span class="line"><span class="comment">//   - 传递一个对象，函数中的this指向这个对象</span></span><br><span class="line"><span class="comment">// - arg 函数所需要的参数，逗号间隔</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//输出函数a中的this对象</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义函数b</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123; <span class="attr">name</span>: <span class="string">&quot;我是obj&quot;</span> &#125;; <span class="comment">//定义对象obj</span></span><br><span class="line">a.call(); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">null</span>); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="literal">undefined</span>); <span class="comment">//window</span></span><br><span class="line">a.call(<span class="number">1</span>); <span class="comment">//Number</span></span><br><span class="line">a.call(<span class="string">&quot;&quot;</span>); <span class="comment">//String</span></span><br><span class="line">a.call(<span class="literal">true</span>); <span class="comment">//Boolean</span></span><br><span class="line">a.call(b); <span class="comment">// function b()&#123;&#125;</span></span><br><span class="line">a.call(obj); <span class="comment">//Object</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p2-2-apply">2.2 apply</span><a href="#p2-2-apply" class="header-anchor">#</a></h3>
+<p><strong>apply</strong>() 语法与 <code>call()</code> 方法的语法几乎完全相同，唯一的区别在于，apply 的第二个参数必须是一个包含多个参数的数组（或类数组对象）。</p>
+<h3><span id="p2-3-bind">2.3 bind</span><a href="#p2-3-bind" class="header-anchor">#</a></h3>
+<p><code>bind</code> 函数会创建一个新函数（称为绑定函数）</p>
+<ul>
+<li>传参和 call 或 apply 类似</li>
+<li>不会执行对应的函数，call 或 apply 会自动执行对应的函数</li>
+<li>返回对函数的引用</li>
+<li>语法 <code>fun.bind(thisArg[, arg1[, arg2[, ...]]])</code>。</li>
+</ul>
+<h3><span id="p2-4-call-de-shi-xian">2.4 call 的实现</span><a href="#p2-4-call-de-shi-xian" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">call</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 1. 把调用call方法的对象this指向call方法的第一个参数</span></span><br><span class="line">  <span class="comment">// 2. 调用call方法的自己的this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220504/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220504</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220504/" class="post-title-link" itemprop="url">NodeJS 核心模块</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:01:52" itemprop="dateCreated datePublished" datetime="2021-01-31T14:01:52+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:14:03" itemprop="dateModified" datetime="2021-02-01T19:14:03+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2205%EF%BC%9ANodeJS/" itemprop="url" rel="index"><span itemprop="name">2205：NodeJS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="node-he-xin-mo-kuai">Node 核心模块</span><a href="#node-he-xin-mo-kuai" class="header-anchor">#</a></h1>
+<h1><span id="process">process</span><a href="#process" class="header-anchor">#</a></h1>
+<p>进程模块，无需<code>require</code>。</p>
+<p><code>.MODE_ENV</code> 设置是开发环境还是生产环境</p>
+<p><code>cwd()</code> 返回当前进程的绝对路径</p>
+<p><code>exit()</code></p>
+<h1><span id="buffer-mo-kuai">buffer 模块</span><a href="#buffer-mo-kuai" class="header-anchor">#</a></h1>
+<p><code>Buffer</code> 是一个和数组类似的对象，是专门用来保存二进制数据的（数据储存为二进制数据，性能是最好的）。</p>
+<p>在全局作用域上，不需要引用直接使用。</p>
+<p>1 Byte = 8 bit</p>
+<p>一个字母 1 字节</p>
+<p>一个汉字或者全角 3 字节</p>
+<h1><span id="path-mo-kuai-chang-yong">path 模块 <code>常用</code></span><a href="#path-mo-kuai-chang-yong" class="header-anchor">#</a></h1>
+<p><code>path</code> 是专门用于处理文件路径、目录的核心模块。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2><span id="presolve">resolve</span><a href="#presolve" class="header-anchor">#</a></h2>
+<p><code>resolve</code> 方法将目录或者路径片段的序列解析成绝对路径。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path.resolve(<span class="string">&quot;./index.html&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2><span id="phuo-qu-dang-qian-wen-jian-jia">获取当前文件夹</span><a href="#phuo-qu-dang-qian-wen-jian-jia" class="header-anchor">#</a></h2>
+<p><code>__dirname</code> 表示当前目录。</p>
+<p>常用 <code>path.resolve(__dirname, &quot;xxxx&quot;)</code></p>
+<h1><span id="fs-mo-kuai-chong-dian">fs 模块 <code>重点</code></span><a href="#fs-mo-kuai-chong-dian" class="header-anchor">#</a></h1>
+<p><code>fs</code> 就是 <code>file system</code> 是 NodeJS 核心的文件系统。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>该模块大部分方法提供了两个版本的方法，同步和异步。</p>
+<ul>
+<li>
+<p>同步方法 带<code>sync</code>的方法</p>
+<p>同步方法会阻塞程序的执行</p>
+<p>同步方法通过返回值返回结果</p>
+</li>
+<li>
+<p>异步方法 不带 sync 的方法</p>
+<p>异步方法不会阻塞程序的执行</p>
+<p>异步方法都是通过回调函数来返回结果的</p>
+</li>
+</ul>
+<h2><span id="pwen-jian-de-du-qu">文件的读取</span><a href="#pwen-jian-de-du-qu" class="header-anchor">#</a></h2>
+<h3><span id="p-1-jian-dan-du-qu-wen-jian">（1）简单读取文件</span><a href="#p-1-jian-dan-du-qu-wen-jian" class="header-anchor">#</a></h3>
+<p><code>fs.readFileSync(path[, options])</code><br>
+<code>fs.readFile(path[, options], callback)</code></p>
+<ul>
+<li>
+<p>path 读取文件的路径</p>
+</li>
+<li>
+<p>options 配置对象 默认如下： <code>&#123;encoding:&quot;utf8&quot;,flag:&quot;w&quot;,mode:0666&#125;</code></p>
+</li>
+<li>
+<p>callback 回调函数，通过回调函数返回读取到的数据</p>
+<p>err 错误对象</p>
+<p>data 返回的数据（Buffer）</p>
+</li>
+</ul>
+<h3><span id="p-2-shi-yong-promisify-jie-jue-yi-bu-wen-ti">（2）使用 promisify 解决异步问题</span><a href="#p-2-shi-yong-promisify-jie-jue-yi-bu-wen-ti" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//案例1</span></span><br><span class="line"><span class="keyword">const</span> &#123; promisify &#125; = <span class="built_in">require</span>(<span class="string">&quot;util&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> readFile = promisify(fs.readFile);</span><br><span class="line">readFile(<span class="string">&quot;./conf.js&quot;</span>).then(<span class="function">(<span class="params">data</span>) =&gt;</span> <span class="built_in">console</span>.log(data))(</span><br><span class="line">  <span class="comment">//案例2</span></span><br><span class="line">  <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> &#123; promisify &#125; = <span class="built_in">require</span>(<span class="string">&quot;util&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> readFile = promisify(fs.readFile);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> readFile(<span class="string">&quot;./index.html&quot;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;data&quot;</span>, data);</span><br><span class="line">  &#125;</span><br><span class="line">)();</span><br></pre></td></tr></table></figure>
+<h3><span id="p-3-liu-shi-du-qu-wen-jian">（3）流式读取文件</span><a href="#p-3-liu-shi-du-qu-wen-jian" class="header-anchor">#</a></h3>
+<p>适用于较大的文件。</p>
+<h2><span id="pwen-jian-de-xie-ru">文件的写入</span><a href="#pwen-jian-de-xie-ru" class="header-anchor">#</a></h2>
+<h3><span id="p-1-tong-bu-xie">（1）同步写</span><a href="#p-1-tong-bu-xie" class="header-anchor">#</a></h3>
+<p>打开，写入，==关闭==。</p>
+<p><code>fs.openSync(path[, flags, mode])</code></p>
+<ul>
+<li>
+<p><code>path</code> 文件路径</p>
+</li>
+<li>
+<p><code>flag</code> 文件系统标志<br><code>a</code> 追加，如果不存在就创建<br><code>w</code> 用于写，如果不存在就创建，存在覆盖<br><code>r</code> 用于读，如果不存在就异常（默认）</p>
+</li>
+<li>
+<p><code>mode</code> 设置下一次打开文件时候的权限。<br><code>0o666</code> <code>110110110</code> 可读可写<br><code>0o111</code> <code>001001001</code> 可执行<br><code>0o222</code> <code>010010010</code> 可写<br><code>0o333</code> <code>100100100</code> 可读</p>
+</li>
+<li>
+<p>返回文件描述符</p>
+</li>
+</ul>
+<p><code>fs.writeSync(fd, buffer[, offset, length, position, encoding])</code></p>
+<ul>
+<li><code>fd</code> 文件描述符</li>
+<li><code>buffer</code> 要写入的内容</li>
+<li><code>offset</code></li>
+<li><code>length</code></li>
+<li><code>position</code></li>
+<li><code>encoding</code> 写人文件的编码，默认<code>utf-8</code></li>
+</ul>
+<p><code>fs.closeSync(fd)</code></p>
+<h3><span id="p-2-yi-bu-xie">（2）异步写</span><a href="#p-2-yi-bu-xie" class="header-anchor">#</a></h3>
+<p><code>fs.open( path, flags[, ], (err, data)=&gt;&#123;&#125;)</code></p>
+<ul>
+<li>回调函数<code>err</code>在前是因为 NodeJS 是==错误优先处理机制==。如果有错误返回错误对象，否则返回<code>null</code>。<code>data</code> 就是文件描述符。</li>
+<li>异步得到结果在回调函数中。</li>
+</ul>
+<p><code>fs.write(fd, string, call, (err, data)=&gt;&#123;&#125;)</code></p>
+<p><code>fs.close(fd)</code></p>
+<p>无论写入成功或者失败都要关闭文件。</p>
+<h2><span id="pliu-shi-wen-jian-cao-zuo">流式文件操作</span><a href="#pliu-shi-wen-jian-cao-zuo" class="header-anchor">#</a></h2>
+<ul>
+<li>fs 模块处理文件的缺点：将文件的数据全读到内存中，在把数据写到文件内，会大量占用内存</li>
+<li>流（stream）是 Node.js 中处理流式数据的抽象接口，是一组有序的，有起点和终点的字节数据传输手段。可以实现将数据从一个地方流动到另一个地方，其边读取边写入的特点有别于 fs 模块的文件处理，并且可以做到控制读取文件和写入文件的速度，从而减少内存的占用</li>
+<li>流是基于事件的，所有的流对象都用 on(once)绑定事件，并触发</li>
+<li>流式文件写入适用于一些比较大的文件，可以分多次向文件中写入内容，有效避免内存溢出的问题。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.createWriteStream(path[, options])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> inputFilePath = <span class="string">&quot;//Users//lipeihua//Desktop//nodeJS//08.简单文件写入.mp4&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> outputFilePath = path.resolve(__dirname, <span class="string">&quot;d.mp4&quot;</span>);</span><br><span class="line"><span class="comment">// 创建可读流 会自动关闭</span></span><br><span class="line"><span class="keyword">const</span> rs = fs.createReadStream(inputFilePath);</span><br><span class="line"><span class="comment">// 创建可写流 不会自动关闭，需要手动关闭</span></span><br><span class="line"><span class="keyword">const</span> ws = fs.createWriteStream(outputFilePath);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* rs.on(&#x27;data&#x27;, (chunk) =&gt; &#123;</span></span><br><span class="line"><span class="comment">  // 当数据读取出来，要写入成另外一个文件</span></span><br><span class="line"><span class="comment">  ws.write(chunk);</span></span><br><span class="line"><span class="comment">&#125;)</span></span><br><span class="line"><span class="comment">.once(&#x27;end&#x27;, () =&gt; &#123;</span></span><br><span class="line"><span class="comment">  // 可读流全部读取完毕了，关闭可写流</span></span><br><span class="line"><span class="comment">  ws.end();</span></span><br><span class="line"><span class="comment">&#125;) */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// pipe会持续性消费可读流数据</span></span><br><span class="line"><span class="comment">// 将可读流数据写入到可写流中</span></span><br><span class="line"><span class="comment">// 会自动关闭可写流</span></span><br><span class="line">rs.pipe(ws);</span><br></pre></td></tr></table></figure>
+<h1><span id="events-mo-kuai">events 模块</span><a href="#events-mo-kuai" class="header-anchor">#</a></h1>
+<p>事件触发器。</p>
+<p><code>once()</code> 函数可注册最多只监听一次的函数。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310501/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310501</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310501/" class="post-title-link" itemprop="url">nginx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:57:07" itemprop="dateCreated datePublished" datetime="2021-01-31T13:57:07+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 14:47:33" itemprop="dateModified" datetime="2021-02-01T14:47:33+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3105%EF%BC%9Anginx/" itemprop="url" rel="index"><span itemprop="name">3105：nginx</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="nginx">nginx</span><a href="#nginx" class="header-anchor">#</a></h1>
+<p>反向代理</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310203</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310203/" class="post-title-link" itemprop="url">json-server</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:55:58" itemprop="dateCreated datePublished" datetime="2021-01-31T13:55:58+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:22:46" itemprop="dateModified" datetime="2021-02-01T19:22:46+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3102%EF%BC%9A%E6%8E%A5%E5%8F%A3/" itemprop="url" rel="index"><span itemprop="name">3102：接口</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="json-server">json-server</span><a href="#json-server" class="header-anchor">#</a></h1>
+<p>用来快速搭建模拟的 REST API 的工具包。</p>
+<h2><span id="p1-kai-shi">1、开始</span><a href="#p1-kai-shi" class="header-anchor">#</a></h2>
+<p>（1）安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i json-server -g</span><br></pre></td></tr></table></figure>
+<p>（2）查看版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server -v</span><br></pre></td></tr></table></figure>
+<p>（3）准备一个 db.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// db.json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;sword&quot;</span>: [&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;木剑&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;attr&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;atk&quot;</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">&quot;parry&quot;</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;铜剑&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;attr&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;atk&quot;</span>: <span class="number">5</span>,</span><br><span class="line">            <span class="attr">&quot;parry&quot;</span>: <span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;铁剑&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;attr&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;atk&quot;</span>: <span class="number">8</span>,</span><br><span class="line">            <span class="attr">&quot;parry&quot;</span>: <span class="number">6</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;钢剑&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;attr&quot;</span>: &#123;</span><br><span class="line">            <span class="attr">&quot;atk&quot;</span>: <span class="number">12</span>,</span><br><span class="line">            <span class="attr">&quot;parry&quot;</span>: <span class="number">10</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    <span class="attr">&quot;shield&quot;</span>: [&#123;</span><br><span class="line">        <span class="attr">&quot;id&quot;</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;木盾&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;def&quot;</span>: <span class="number">5</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（4）配置服务器</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// package.json</span></span><br><span class="line"><span class="comment">// &gt; npm run server</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;s&quot;</span>: <span class="string">&quot;json-server -w db.json -H 127.0.0.1 -p 8888&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;server&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// json-server.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;port&quot;</span>: <span class="number">80</span>,</span><br><span class="line">  <span class="attr">&quot;watch&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">&quot;host&quot;</span>: <span class="string">&quot;127.0.0.1&quot;</span>,</span><br><span class="line">  <span class="comment">// 设置静态目录</span></span><br><span class="line">  <span class="attr">&quot;static&quot;</span>: <span class="string">&quot;./public&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;read-only&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">// 允许跨域</span></span><br><span class="line">  <span class="attr">&quot;no-cors&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;no-gzip&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">&quot;delay&quot;</span>: <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（5）开启服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch db.json</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server --watch db.json --host 127.0.0.1 --port 8888</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310202/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310202</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310202/" class="post-title-link" itemprop="url">RESTful API</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:53:55" itemprop="dateCreated datePublished" datetime="2021-01-31T13:53:55+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-04 18:28:53" itemprop="dateModified" datetime="2021-02-04T18:28:53+08:00">2021-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3102%EF%BC%9A%E6%8E%A5%E5%8F%A3/" itemprop="url" rel="index"><span itemprop="name">3102：接口</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>689</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>REST，Representational State Transfer，表现层状态转移的缩写，它是由罗伊·菲尔丁（Roy Fielding）提出的，是用来描述创建 HTTP API 的标准方法的，他发现这四种常用的行为（查看（view），创建（create），编辑（edit）和删除（delete））都可以直接映射到 HTTP 中已实现的 GET，POST，PUT 和 DELETE 方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/310202/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310201/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1277,1265 +2930,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181203/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181203</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181203/" class="post-title-link" itemprop="url">VSCode 插件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:57:51" itemprop="dateCreated datePublished" datetime="2021-01-31T09:57:51+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:26:27" itemprop="dateModified" datetime="2021-02-01T18:26:27+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="vscode-cha-jian">VSCode 插件</span><a href="#vscode-cha-jian" class="header-anchor">#</a></h1>
-<h2><span id="pyi-cha-jian-yi-lan">一、插件一览</span><a href="#pyi-cha-jian-yi-lan" class="header-anchor">#</a></h2>
-<ol>
-<li>Chinese (Simplified) Language Pack for Visual Studio Code - 中文语言包</li>
-<li>Markdown All in One</li>
-<li>Markdown Perview Eehanced</li>
-<li>HTML CSS Support：智能提示CSS类名以及id</li>
-<li>Python</li>
-<li>Python for VSCode</li>
-<li>Beautify 代码格式化 --&gt; Prettier</li>
-<li>Prettier</li>
-<li>Code Spell Checker（推荐） - 代码拼写检查</li>
-<li>TabNine</li>
-<li>Better Comments - 更好的注释</li>
-<li>Rainbow Brackets</li>
-<li>Auto Rename Tag：自动完成另一侧标签的同步修改</li>
-<li>Easy LESS - 自动编译LESS</li>
-<li>Live Server - HTML 服务器</li>
-<li>Path Autocomplete</li>
-<li>Path Intellisense：自动提示文件路径，支持各种快速引入文件</li>
-<li><a target="_blank" rel="noopener" href="http://Draw.io">Draw.io</a> Integration：画图</li>
-<li>A-super-comprehensive：代码补全合集</li>
-<li>Reactjs code snippets</li>
-<li>React Redux ES6 Snippets</li>
-<li>ES7 React/Redux/React-Native/JS snippets</li>
-<li>Auto Close Tag：自动闭合HTML/XML标签</li>
-<li>Bracket Pair Colorizer：给括号加上不同的颜色，便于区分不同的区块，使用者可以定义不同括号类型和不同颜色</li>
-<li>Debugger for Chrome：映射vscode上的断点到chrome上，方便调试</li>
-<li>GitLens：方便查看git日志，git重度使用者必备</li>
-<li>HTML Snippets：智能提示HTML标签，以及标签含义</li>
-<li>JavaScript(ES6) code snippets：ES6语法智能提示，以及快速输入，不仅仅支持.js，还支持.ts，.jsx，.tsx，.html，.vue，省去了配置其支持各种包含js代码文件的时间</li>
-<li>open in browser：vscode不像IDE一样能够直接在浏览器中打开html，而该插件支持快捷键与鼠标右键快速在浏览器中打开html文件，支持自定义打开指定的浏览器，包括：Firefox，Chrome，Opera，IE以及Safari</li>
-<li>React/Redux/react-router Snippets：React/Redux/react-router语法智能提示</li>
-<li>Vetur：Vue多功能集成插件，包括：语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger。vscode官方钦定Vue插件，Vue开发者必备。</li>
-<li>vscode-icon：让 vscode 资源树目录加图标</li>
-<li>CSS Peek：使用此插件，你可以追踪至样式表中 CSS 类和 ids 定义的地方。当你在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码。</li>
-<li>Color Info：提供你在 CSS中使用颜色的相关信息。你只需在颜色上悬停光标，就可以预览色块中色彩模型的（HEX、 RGB、HSL 和 CMYK）相关信息了。</li>
-<li>Window Colors：每个VSCode窗口都可以独特地自动着色。</li>
-<li>live server：开启本地服务器</li>
-</ol>
-<h2><span id="peslint-si-xing-tui-jian">ESLint - 四星推荐</span><a href="#peslint-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>代码检查。</p>
-<h2><span id="ptabnine-si-xing-tui-jian">TabNine - 四星推荐</span><a href="#ptabnine-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>神奇的扩展，根据Github中超过两百万个文件的训练。可以根据你输入的文本预测你接下来的输入。</p>
-<h2><span id="ppower-mode-san-xing-tui-jian">Power Mode - 三星推荐</span><a href="#ppower-mode-san-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>趣味性插件。</p>
-<p>然后我们点击安装，安装后我们按下键盘组合键 Ctrl + Shift + P，然后输入 setting，打开 JSON 配置文件</p>
-<p>在最后添加下面三行配置：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;powermode.enabled&quot;: true, </span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启 Power Mode</span></span><br><span class="line">&quot;powermode.shakeIntensity&quot;: 0, </span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭抖动（喜欢的也可以选择不关闭）</span></span><br><span class="line"></span><br><span class="line">&quot;powermode.presets&quot;: &quot;particles&quot;, </span><br><span class="line"><span class="comment">// 特效预设，还有 &quot;fireworks&quot;, &quot;flames&quot;, &quot;magic&quot;, &quot;clippy&quot;, &quot;simple-</span></span><br></pre></td></tr></table></figure>
-<h2><span id="pbracket-pair-colorizer-si-xing-tui-jian">Bracket Pair Colorizer - 四星推荐</span><a href="#pbracket-pair-colorizer-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>快速区分括号位置和类型。</p>
-<p><a target="_blank" rel="noopener" href="https://www.juejin.im/post/6862510480397697038">https://www.juejin.im/post/6862510480397697038</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181202/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181202</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181202/" class="post-title-link" itemprop="url">VSCode 快捷</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:57:31" itemprop="dateCreated datePublished" datetime="2021-01-31T09:57:31+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:26:12" itemprop="dateModified" datetime="2021-02-01T18:26:12+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>344</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="vscode-kuai-jie">VSCode 快捷</span><a href="#vscode-kuai-jie" class="header-anchor">#</a></h1>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ycx60rzvvbj/article/details/105775469">https://blog.csdn.net/ycx60rzvvbj/article/details/105775469</a></p>
-<p>F11 全屏/退出全屏</p>
-<p>Home/End 行头/行尾</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>CTRL</th>
-<th>CTRL + SHIFT</th>
-<th>CTRL + ALT</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>==编辑器 - 全选==</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>B</td>
-<td>侧边栏隐藏/显示</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>C</td>
-<td>==编辑器 - 复制==</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>D</td>
-<td></td>
-<td>显示 debug</td>
-<td></td>
-</tr>
-<tr>
-<td>K</td>
-<td>==编辑器 - 全部折叠==</td>
-<td></td>
-<td>编辑器 - 全部展开</td>
-</tr>
-<tr>
-<td>N</td>
-<td>新建文件</td>
-<td>新建编辑器</td>
-<td></td>
-</tr>
-<tr>
-<td>O</td>
-<td></td>
-<td>显示 output</td>
-<td></td>
-</tr>
-<tr>
-<td>W</td>
-<td>关闭当前文件</td>
-<td>关闭当前编辑器</td>
-<td></td>
-</tr>
-<tr>
-<td>X</td>
-<td>编辑器 - 剪切</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>/?</td>
-<td>==编辑器 - 注释==</td>
-<td>==编辑器 - 注释多行==</td>
-<td></td>
-</tr>
-<tr>
-<td>\ |</td>
-<td>切出去分栏</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>[ / ]</td>
-<td>代码缩进</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>TAB</td>
-<td>切换文件</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>enter</td>
-<td>行下插入</td>
-<td>行上插入</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>+ / -</td>
-<td>放大 / 缩小</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>滚轮拖 书写多行</p>
-<p>shift + alt + F 格式化</p>
-<p>shift + end/home 选择从光标到行尾、行首的内容</p>
-<p>ctrl + delete 删除当前</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181201/" class="post-title-link" itemprop="url">VSCode</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:56:51" itemprop="dateCreated datePublished" datetime="2021-01-31T09:56:51+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:25:55" itemprop="dateModified" datetime="2021-02-01T18:25:55+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>6</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="vscode">VSCode</span><a href="#vscode" class="header-anchor">#</a></h1>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180104</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180104/" class="post-title-link" itemprop="url">Window 命令行</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:52:23" itemprop="dateCreated datePublished" datetime="2021-01-31T09:52:23+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:04" itemprop="dateModified" datetime="2021-02-01T18:22:04+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>118</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="window-ming-ling-xing">Window 命令行</span><a href="#window-ming-ling-xing" class="header-anchor">#</a></h1>
-<h2><span id="pyi-chang-yong">一、常用</span><a href="#pyi-chang-yong" class="header-anchor">#</a></h2>
-<ul>
-<li>清屏 <code>CLS</code></li>
-<li>运行可执行文件 <code>Start xxx.exe</code></li>
-</ul>
-<h2><span id="per-shutdown">二、<code>shutdown</code></span><a href="#per-shutdown" class="header-anchor">#</a></h2>
-<ul>
-<li>设置 3600秒 后关机 <code>shutdown -s -t 3600</code></li>
-<li>取消关机 <code>shutdown -a</code></li>
-<li>重启 <code>shutdown -r</code></li>
-<li>立即重启 <code>shutdown -r -t 0</code></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180103/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180103</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180103/" class="post-title-link" itemprop="url">快捷操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:46:37" itemprop="dateCreated datePublished" datetime="2021-01-31T09:46:37+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:07" itemprop="dateModified" datetime="2021-02-01T18:22:07+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>132</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="windows-kuai-jie-cao-zuo">Windows 快捷操作</span><a href="#windows-kuai-jie-cao-zuo" class="header-anchor">#</a></h1>
-<blockquote>
-<p>主要是对于 Windows 10 而言</p>
-</blockquote>
-<h2><span id="pyi-wei-gui-lei">一、未归类</span><a href="#pyi-wei-gui-lei" class="header-anchor">#</a></h2>
-<ul>
-<li><code>Win + V</code>  可以查看剪贴板</li>
-<li><code>Shift</code> 按住右键 可以在当前目录打开 <code>powershell</code></li>
-<li>直接在地址栏输入 <code>cmd</code> 或者 <code>powershell</code> 在当前目录打开命令窗口</li>
-</ul>
-<h2><span id="per-tong-yong-kuai-jie-jian">二、通用快捷键</span><a href="#per-tong-yong-kuai-jie-jian" class="header-anchor">#</a></h2>
-<ul>
-<li><code>CTRL + SHIFT + V</code> 无格式黏贴</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180102/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180102</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180102/" class="post-title-link" itemprop="url">使用技巧</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:45:50" itemprop="dateCreated datePublished" datetime="2021-01-31T09:45:50+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:21:36" itemprop="dateModified" datetime="2021-02-01T18:21:36+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>309</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="windows-shi-yong-ji-qiao">Windows 使用技巧</span><a href="#windows-shi-yong-ji-qiao" class="header-anchor">#</a></h1>
-<h2><span id="p1-host-wei-zhi">1、<code>host</code> 位置</span><a href="#p1-host-wei-zhi" class="header-anchor">#</a></h2>
-<p><code>C --&gt; Windows --&gt; System32 --&gt; drivers --&gt; etc --&gt; host</code></p>
-<h2><span id="p2-you-jian-xin-jian-md-wen-jian">2、右键新建 <code>.md</code> 文件</span><a href="#p2-you-jian-xin-jian-md-wen-jian" class="header-anchor">#</a></h2>
-<ol>
-<li>打开注册表</li>
-<li><code>HKEY_CLASSES_ROOT</code> 添加<code>.md</code> ，<strong>修改默认值为 <code>Markdown.File</code></strong></li>
-<li>添加子项 <code>ShellNew</code> ，在该子项中新建字符串值 <code>NullFile</code> ，内容不需要设置</li>
-<li>绑定打开方式（ md文件–&gt;右键属性–&gt;打开方式 ）</li>
-<li><code>HKEY_CLASSES_ROOT</code> 下新建 <code>Markdown.File</code>， 默认值为<code>Markdown File</code> ，可以自定义</li>
-</ol>
-<h2><span id="p3-pi-liang-xin-jian-wen-jian-jia">3、批量新建文件夹</span><a href="#p3-pi-liang-xin-jian-wen-jian-jia" class="header-anchor">#</a></h2>
-<p>记事本：<code>md 文件夹名1 文件夹名2 ..</code> 修改文件后缀为bat，双击执行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/180101/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">180101</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/180101/" class="post-title-link" itemprop="url">Windows</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:44:32" itemprop="dateCreated datePublished" datetime="2021-01-31T09:44:32+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-05 13:50:20" itemprop="dateModified" datetime="2021-02-05T13:50:20+08:00">2021-02-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1801%EF%BC%9AWindows/" itemprop="url" rel="index"><span itemprop="name">1801：Windows</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="windows">Windows</span><a href="#windows" class="header-anchor">#</a></h1>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181104</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181104/" class="post-title-link" itemprop="url">Git 常用命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:43:07" itemprop="dateCreated datePublished" datetime="2021-01-31T09:43:07+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:25:38" itemprop="dateModified" datetime="2021-02-01T18:25:38+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1811%EF%BC%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1811：版本管理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="git-chang-yong-ming-ling">Git 常用命令</span><a href="#git-chang-yong-ming-ling" class="header-anchor">#</a></h1>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181103/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181103</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181103/" class="post-title-link" itemprop="url">Git</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:42:32" itemprop="dateCreated datePublished" datetime="2021-01-31T09:42:32+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:25:27" itemprop="dateModified" datetime="2021-02-01T18:25:27+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1811%EF%BC%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1811：版本管理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="git-kai-shi">Git 开始</span><a href="#git-kai-shi" class="header-anchor">#</a></h1>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181102/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181102</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181102/" class="post-title-link" itemprop="url">SVN</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:41:21" itemprop="dateCreated datePublished" datetime="2021-01-31T09:41:21+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:24:49" itemprop="dateModified" datetime="2021-02-01T18:24:49+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1811%EF%BC%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1811：版本管理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>169</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="svn">SVN</span><a href="#svn" class="header-anchor">#</a></h1>
-<h2><span id="pyi-an-zhuang">一、安装</span><a href="#pyi-an-zhuang" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="https://tortoisesvn.net/downloads.html">下载</a></p>
-<p>安装</p>
-<ul>
-<li>喜欢用命令行操作，请务必记得勾选<code>command line client tool</code>为<code>will be install on local hard driver</code></li>
-</ul>
-<p>下载语言包并汉化（可选）</p>
-<h2><span id="per-shi-yong">二、使用</span><a href="#per-shi-yong" class="header-anchor">#</a></h2>
-<h3><span id="p1-jian-chu-xiang-mu">1、检出项目</span><a href="#p1-jian-chu-xiang-mu" class="header-anchor">#</a></h3>
-<h3><span id="p2-dao-ru-xiang-mu">2、导入项目</span><a href="#p2-dao-ru-xiang-mu" class="header-anchor">#</a></h3>
-<p>参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/maplejaw_/article/details/52874348">https://blog.csdn.net/maplejaw_/article/details/52874348</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181101/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181101</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181101/" class="post-title-link" itemprop="url">版本管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:39:56" itemprop="dateCreated datePublished" datetime="2021-01-31T09:39:56+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:24:34" itemprop="dateModified" datetime="2021-02-01T18:24:34+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1811%EF%BC%9A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">1811：版本管理</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>39</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="ban-ben-guan-li">版本管理</span><a href="#ban-ben-guan-li" class="header-anchor">#</a></h1>
-<p>本部分主要内容：</p>
-<ul>
-<li>SVN</li>
-<li>Git</li>
-<li>Git + Github</li>
-<li>Github Pages</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/270104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">270104</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/270104/" class="post-title-link" itemprop="url">Electron 使用心得</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:36:48" itemprop="dateCreated datePublished" datetime="2021-01-31T09:36:48+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:21:10" itemprop="dateModified" datetime="2021-02-01T19:21:10+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2701%EF%BC%9AElectron/" itemprop="url" rel="index"><span itemprop="name">2701：Electron</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="electron">Electron</span><a href="#electron" class="header-anchor">#</a></h1>
-<h2><span id="pyi-xiang-mu-gou-jian-he-da-bao">一、项目构建和打包</span><a href="#pyi-xiang-mu-gou-jian-he-da-bao" class="header-anchor">#</a></h2>
-<p>项目搭建：<br>
-<code>electron-vue</code></p>
-<p>项目打包：<br>
-<code>electron-builder</code></p>
-<ul>
-<li>可以支持 Windows/Mac/Linux 平台</li>
-<li>支持自动更新，打包更轻量</li>
-<li>可以打包出不暴露源码的安装程序<br>
-<code>electron-packager</code></li>
-<li>配置 <code>nsis</code> 自定义安装目录以及安装个性化</li>
-</ul>
-<h2><span id="per-electron-zhi-shi-dian">二、Electron 知识点</span><a href="#per-electron-zhi-shi-dian" class="header-anchor">#</a></h2>
-<h3><span id="p1-zhu-jin-cheng-he-xuan-ran-jin-cheng">1、主进程和渲染进程</span><a href="#p1-zhu-jin-cheng-he-xuan-ran-jin-cheng" class="header-anchor">#</a></h3>
-<p>主进程：package.json 中的 main.js<br>
-Electron 内核是 Chromium<br>
-在主进程中通过 <code>new BrowserWindow</code> 创建页面，每个 <code>BrowserWindow</code> 就是渲染进程，当某个页面被销毁后，对应的渲染进程就会终止。</p>
-<h3><span id="p2-you-hua-chuang-kou">2、优化窗口</span><a href="#p2-you-hua-chuang-kou" class="header-anchor">#</a></h3>
-<p>（1）无边框窗口</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mainWindow = <span class="keyword">new</span> BrowserWindow(&#123;<span class="attr">width</span>: <span class="number">800</span>, <span class="attr">height</span>: <span class="number">600</span>, <span class="attr">frame</span>: <span class="literal">false</span>, <span class="attr">resizable</span>: <span class="literal">false</span>&#125;);</span><br></pre></td></tr></table></figure>
-<p>（2）窗口拖动<br>
-现在窗口已经没有标题栏和菜单栏了，所以窗口没办法拖动了，给拖动区域增加 <code>-webkit-app-region: drag</code> 的 CSS 代码。<br>
-<code>&lt;body style=&quot;-webkit-app-region: drag&quot;&gt;&lt;/body&gt;</code><br>
-需要注意的是，如果在拖动区域里有按钮等需要点击的元素，需要增加 <code>-webkit-app-region: no-drag</code> 设置，否则会无法点击。</p>
-<h3><span id="p3-jin-cheng-jian-tong-xin">3、进程间通信</span><a href="#p3-jin-cheng-jian-tong-xin" class="header-anchor">#</a></h3>
-<p>因为安全限制，页面不能直接访问原生 GUI 资源，在 Electron 中也是一样。<br>
-渲染进程要进行原生的 GUI 操作，比如和主进程进行通信，请求相应的操作，在 Electron 中提供了几种通信方式：</p>
-<p>（1）<code>ipcMain</code> 和 <code>ipcRenderer</code><br>
-在渲染进程中使用 <code>ipcRenderer</code> 模块来向主进程发送消息，主进程中使用 <code>ipcMain</code> 模块接受消息，进行操作。如果还需要进行反馈，则通知渲染进程，渲染进程根据接收的内容执行对应的操作。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 渲染进程中</span></span><br><span class="line"><span class="keyword">const</span> &#123; ipcRenderer &#125; = <span class="built_in">require</span>(<span class="string">&quot;electron&quot;</span>);</span><br><span class="line">ipcRender.send(<span class="string">&quot;somemsg&quot;</span>, data);</span><br><span class="line">ipcRender.on(<span class="string">&quot;replaymsg&quot;</span>, <span class="function">(<span class="params">evt, otherData</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(otherData);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 主进程中</span></span><br><span class="line"><span class="keyword">const</span> &#123; ipcMain &#125; = <span class="built_in">require</span>(<span class="string">&quot;electron&quot;</span>);</span><br><span class="line">ipcMain.on(<span class="string">&quot;somemsg&quot;</span>, <span class="function">(<span class="params">evt, data</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">  evt.sender.send(<span class="string">&quot;replymsg&quot;</span>, otherData);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>（2）remote<br>
-<code>remote</code> 模块为渲染进程和主进程通信提供了一种简单方法</p>
-<p>（3）webContents</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主进程中</span></span><br><span class="line">win.webContents.on(<span class="string">&quot;did-finish-load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  win.webContents.send(<span class="string">&quot;ping&quot;</span>, <span class="string">&quot;23333333333&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 渲染进程中</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;electron&quot;</span>).ipcRenderer.on(<span class="string">&quot;ping&quot;</span>, <span class="function">(<span class="params">event, message</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>（4）渲染进程之间通信<br>
-使用 Vuex 和 router<br>
-但如果对数据实时性要求高，那就要结合上面的方法来实现：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主进程中，将两个窗口的 id 分别发送到对方的渲染进程里</span></span><br><span class="line">mainWindow.webContents.on(<span class="string">&quot;did-finish-load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  mainWindow.webContents.send(<span class="string">&quot;getChild&quot;</span>, &#123;</span><br><span class="line">    childId: childWindow.id,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">childWindow.webContents.on(<span class="string">&quot;did-finish-load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  childWindow.webContents.send(<span class="string">&quot;getMain&quot;</span>, &#123;</span><br><span class="line">    mainId: mainWindow.id,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染进程 mainWindow，通过 id 得到 childWindow 并发送一条消息</span></span><br><span class="line">ipcRenderer.on(<span class="string">&quot;getChild&quot;</span>, <span class="function">(<span class="params">event, arg</span>) =&gt;</span> &#123;</span><br><span class="line">  remote.BrowserWindow.fromId(arg.childId).webContents.send(</span><br><span class="line">    <span class="string">&quot;say&quot;</span>,</span><br><span class="line">    <span class="string">&quot;Hello World!&quot;</span></span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 渲染进程 childWindow，接收 mainWindow 的消息</span></span><br><span class="line">ipcRenderer.on(<span class="string">&quot;say&quot;</span>, <span class="function">(<span class="params">event, arg</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg); <span class="comment">// 输出：Hello World!</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 同理 childWindow 也可以通过 id 给 mainWindow 发送消息</span></span><br></pre></td></tr></table></figure>
-<h3><span id="p4-cai-keng">4、踩坑</span><a href="#p4-cai-keng" class="header-anchor">#</a></h3>
-<p>electron-vue 里使用 elementUI 等，需要在 webpack.renderer.config.js 的白名单里配置：<code>let whiteListedModules = ['vue', 'element-ui']</code></p>
-<h3><span id="p5-nan-dian">5、难点</span><a href="#p5-nan-dian" class="header-anchor">#</a></h3>
-<p>多窗口的管理，每个窗口使用 <code>remote.getCurrentWindow().id</code> 命名，在主进程中采用单个实例 <code>app.makeSingleInstance</code> 管理</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2605,20 +2999,20 @@ Electron 内核是 Chromium<br>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">228</span>
+          <span class="site-state-item-count">240</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">90</span>
+        <span class="site-state-item-count">96</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2655,7 +3049,7 @@ Electron 内核是 Chromium<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">387k</span>
+    <span title="站点总字数">408k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>
