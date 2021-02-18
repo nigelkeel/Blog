@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Stylus# 向下兼容 Less 可以省略括号和分号，靠缩进区分层级">
+  <meta name="description" content="BFC，块级格式化上下文。 是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Stylus">
-<meta property="og:url" content="http://nigelkeel.gitee.io/210404/index.html">
+<meta property="og:title" content="CSS &#x2F; BFC">
+<meta property="og:url" content="http://nigelkeel.gitee.io/210212/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="Stylus# 向下兼容 Less 可以省略括号和分号，靠缩进区分层级">
+<meta property="og:description" content="BFC，块级格式化上下文。 是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-30T09:13:59.380Z">
-<meta property="article:modified_time" content="2021-02-06T06:11:49.538Z">
+<meta property="article:published_time" content="2021-01-30T09:39:30.902Z">
+<meta property="article:modified_time" content="2021-02-18T07:42:08.288Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/210404/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/210212/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
     lang   : 'zh-CN'
   };
 </script>
-  <title>Stylus | 永远的伊尔瓦</title>
+  <title>CSS / BFC | 永远的伊尔瓦</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210404/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210212/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,9 +214,9 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210404</span>
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210212</span>
         <h1 class="post-title" itemprop="name headline">
-          Stylus
+          CSS / BFC
         </h1>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-30 17:13:59" itemprop="dateCreated datePublished" datetime="2021-01-30T17:13:59+08:00">2021-01-30</time>
+              <time title="创建时间：2021-01-30 17:39:30" itemprop="dateCreated datePublished" datetime="2021-01-30T17:39:30+08:00">2021-01-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 14:11:49" itemprop="dateModified" datetime="2021-02-06T14:11:49+08:00">2021-02-06</time>
+                <time title="修改时间：2021-02-18 15:42:08" itemprop="dateModified" datetime="2021-02-18T15:42:08+08:00">2021-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
                 </span>
             </span>
 
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>31</span>
+              <span>812</span>
             </span>
 
         </div>
@@ -270,9 +270,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="stylus">Stylus</span><a href="#stylus" class="header-anchor">#</a></h1>
-<p>向下兼容 <code>Less</code><br>
-可以省略括号和分号，靠缩进区分层级</p>
+        <p>BFC，块级格式化上下文。 是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
+<a id="more"></a>
+<h2><span id="p1-chuang-jian-bfc">1、创建 BFC</span><a href="#p1-chuang-jian-bfc" class="header-anchor">#</a></h2>
+<ul>
+<li><strong>根元素</strong></li>
+<li><strong>浮动</strong> <code>float: right / left</code></li>
+<li><strong>定位（仅 absolute 和 fixed）</strong></li>
+<li><strong>行内块元素和表格元素</strong> <code>display: inline-block / table</code></li>
+<li><strong>overflow 的值不为 visible</strong></li>
+</ul>
+<h2><span id="p2-fan-wei">2、范围</span><a href="#p2-fan-wei" class="header-anchor">#</a></h2>
+<blockquote>
+<p>A block formatting context contains everything inside of the element creating it, that is not also inside a descendant element that creates a new block formatting context.</p>
+</blockquote>
+<p>直译过来就是, BFC 包含创建它的元素的所有子元素, 但不包括创建了新 BFC 的子元素的内部元素。简单来说，子元素如果又创建了一个新的 BFC，那么它里面的内容就不属于上一个 BFC 了，这体现了 BFC 隔离 的思想。<br>
+也就是所说，<strong>一个元素不能同时存在于两个 BFC 中</strong>。</p>
+<h2><span id="p3-gui-ze">3、规则</span><a href="#p3-gui-ze" class="header-anchor">#</a></h2>
+<p>BFC 除了会创建一个隔离的空间外，还具有以下特性：</p>
+<ul>
+<li>BFC 内部的块级盒会在垂直方向上一个接一个排列。</li>
+<li>同一 BFC 下的相邻块级元素可能发生外边距折叠，创建新的 BFC 可以避免外边距折叠。（解决塌陷）</li>
+<li>浮动盒的区域不会和 BFC 重叠 （BFC 的区域不会与 float 的元素区域重叠）</li>
+<li>计算 BFC 的高度时，浮动元素也会参与计算</li>
+<li>文字层不会被浮动层覆盖，环绕于周围</li>
+</ul>
+<h2><span id="p4-ying-yong">4、应用</span><a href="#p4-ying-yong" class="header-anchor">#</a></h2>
+<ul>
+<li>
+<p>自适应多栏布局<br>
+中间栏创建 BFC，左右栏宽度固定后浮动。由于盒子的 margin box 的左边和包含块 border box 的左边相接触，同时浮动盒的区域不会和 BFC 重叠，所以中间栏的宽度会自适应。</p>
+</li>
+<li>
+<p>防止外边距折叠<br>
+创建新的 BFC ，让相邻的块级盒位于不同 BFC 下可以防止外边距折叠</p>
+</li>
+<li>
+<p>清除浮动<br>
+BFC 内部的浮动元素也会参与高度计算，可以清除 BFC 内部的浮动</p>
+<p>清除浮动的原理是两个<code>div</code>都位于同一个 BFC 区域之中</p>
+</li>
+</ul>
 
     </div>
 
@@ -292,12 +330,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/210402/" rel="prev" title="Less">
-      <i class="fa fa-chevron-left"></i> Less
+    <a href="/230502/" rel="prev" title="Axios">
+      <i class="fa fa-chevron-left"></i> Axios
     </a></div>
       <div class="post-nav-item">
-    <a href="/230504/" rel="next" title="跨域解决方案">
-      跨域解决方案 <i class="fa fa-chevron-right"></i>
+    <a href="/250301/" rel="next" title="Vuex">
+      Vuex <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -357,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">Stylus</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、创建 BFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -371,20 +409,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">244</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -421,7 +459,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">408k</span>
+    <span title="站点总字数">410k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

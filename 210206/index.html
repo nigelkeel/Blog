@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="CSS 预处理器# 原理# 是将类 CSS 语言通过 Webpack 编译转成浏览器可读的真正 CSS。 在这层编译之上，便可以赋予 CSS 更多更强大的功能。 常用功能#  嵌套 变量 循环语句 条件语句 自动前缀 单位转换 mixin 复用  面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可~ 有哪些#  Less Sass Stylus">
+  <meta name="description" content="在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 预处理器">
-<meta property="og:url" content="http://nigelkeel.gitee.io/210401/index.html">
+<meta property="og:title" content="CSS &#x2F; 盒模型">
+<meta property="og:url" content="http://nigelkeel.gitee.io/210206/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="CSS 预处理器# 原理# 是将类 CSS 语言通过 Webpack 编译转成浏览器可读的真正 CSS。 在这层编译之上，便可以赋予 CSS 更多更强大的功能。 常用功能#  嵌套 变量 循环语句 条件语句 自动前缀 单位转换 mixin 复用  面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可~ 有哪些#  Less Sass Stylus">
+<meta property="og:description" content="在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-31T06:10:43.120Z">
-<meta property="article:modified_time" content="2021-02-01T11:03:30.613Z">
+<meta property="article:published_time" content="2021-01-30T09:09:09.425Z">
+<meta property="article:modified_time" content="2021-02-18T07:42:04.470Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/210401/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/210206/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
     lang   : 'zh-CN'
   };
 </script>
-  <title>CSS 预处理器 | 永远的伊尔瓦</title>
+  <title>CSS / 盒模型 | 永远的伊尔瓦</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210401/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210206/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,9 +214,9 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210401</span>
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210206</span>
         <h1 class="post-title" itemprop="name headline">
-          CSS 预处理器
+          CSS / 盒模型
         </h1>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-31 14:10:43" itemprop="dateCreated datePublished" datetime="2021-01-31T14:10:43+08:00">2021-01-31</time>
+              <time title="创建时间：2021-01-30 17:09:09" itemprop="dateCreated datePublished" datetime="2021-01-30T17:09:09+08:00">2021-01-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:30" itemprop="dateModified" datetime="2021-02-01T19:03:30+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-18 15:42:04" itemprop="dateModified" datetime="2021-02-18T15:42:04+08:00">2021-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
                 </span>
             </span>
 
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>151</span>
+              <span>2k</span>
             </span>
 
         </div>
@@ -270,27 +270,143 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="css-yu-chu-li-qi">CSS 预处理器</span><a href="#css-yu-chu-li-qi" class="header-anchor">#</a></h1>
-<h2><span id="pyuan-li">原理</span><a href="#pyuan-li" class="header-anchor">#</a></h2>
-<p>是将类 CSS 语言通过 Webpack 编译转成浏览器可读的真正 CSS。<br>
-在这层编译之上，便可以赋予 CSS 更多更强大的功能。</p>
-<h2><span id="pchang-yong-gong-neng">常用功能</span><a href="#pchang-yong-gong-neng" class="header-anchor">#</a></h2>
+        <p>在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。</p>
+<a id="more"></a>
+<h1><span id="yi-he-mo-xing-lei-xing">一、盒模型类型</span><a href="#yi-he-mo-xing-lei-xing" class="header-anchor">#</a></h1>
+<p>通过 <code>box-sizing</code> 设置盒子模型的标准，分为</p>
 <ul>
-<li>嵌套</li>
-<li>变量</li>
-<li>循环语句</li>
-<li>条件语句</li>
-<li>自动前缀</li>
-<li>单位转换</li>
-<li>mixin 复用</li>
+<li><code>content-box</code> 默认，W3C 标准盒模型</li>
+<li><code>border-box</code> IE 盒模型，也称为怪异盒模型</li>
 </ul>
-<p>面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可~</p>
-<h2><span id="pyou-na-xie">有哪些</span><a href="#pyou-na-xie" class="header-anchor">#</a></h2>
+<p>注，理论上还有 <code>padding-box</code> 和 <code>margin-box</code> ，但是现在 W3C 和 MDN 规范均不支持。</p>
+<p><strong>怪异盒模型的 width / height 是 border 的 尺寸。</strong></p>
+<h1><span id="er-nei-rong-ceng-content">二、内容层 content</span><a href="#er-nei-rong-ceng-content" class="header-anchor">#</a></h1>
+<h2><span id="pwidth-height">width/height</span><a href="#pwidth-height" class="header-anchor">#</a></h2>
+<p>width 设置的坑</p>
 <ul>
-<li>Less</li>
-<li>Sass</li>
-<li>Stylus</li>
+<li>如果设置宽度为 100%，并且有 border margin padding 等属性值的时候，宽度可能超出。因为 width 内容区域已经和父级一样了，所以可以不设置宽度或者设置宽度为 auto 那么内容的宽度就是可以充分利用可使用空间。</li>
 </ul>
+<p>height 设置的坑</p>
+<ul>
+<li>如果高度设置百分比，必须父级有一个显性的设置一个 height 属性，并且不能是 auto。</li>
+</ul>
+<h2><span id="pmin-max-width-height">min/max-width/height</span><a href="#pmin-max-width-height" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>正常</th>
+<th>最小</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽度</td>
+<td>width</td>
+<td>min-width</td>
+<td>max-width</td>
+</tr>
+<tr>
+<td>高度</td>
+<td>height</td>
+<td>min-height</td>
+<td>max-height</td>
+</tr>
+</tbody>
+</table>
+<p>当 min-width 和 max-width 冲突的时候，min-width 是优先的。当 width 和 min 或 max 冲突以后，min 或者 max 直接无视 width 的存在（无论是否添加 ！important）。</p>
+<h1><span id="san-nei-bian-ju-padding-he-wai-bian-ju-margin">三、内边距 padding 和 外边距 margin</span><a href="#san-nei-bian-ju-padding-he-wai-bian-ju-margin" class="header-anchor">#</a></h1>
+<h2><span id="p1-nei-bian-ju">1、内边距</span><a href="#p1-nei-bian-ju" class="header-anchor">#</a></h2>
+<p>padding 的写法和 margin 一致<br>
+padding 主要撑开内容和边框之间的距离<br>
+padding 不支持负值<br>
+padding 对所有属性的元素都支持，但是对于行内元素撑不开上下的距离<br>
+padding 可以用于扩大点击范围</p>
+<h2><span id="p2-wai-bian-ju">2、外边距</span><a href="#p2-wai-bian-ju" class="header-anchor">#</a></h2>
+<p>margin 的作用是撑开当前元素和其他元素的距离。margin 有四个方向，可以分别设置<code>margin-left</code> <code>margin-right</code> <code>margin-top</code> <code>margin-bottom</code>，margin 的 left 和 top 是让当前元素向右向下移动，margin 的 right 和 bottom 是让元素的兄弟元素向右向下移动，不影响自身。</p>
+<h3><span id="phe-xie">合写</span><a href="#phe-xie" class="header-anchor">#</a></h3>
+<ul>
+<li>4 个值：<strong>上 右 下 左</strong>（从上开始顺时针）</li>
+<li>3 个值：上 左右 下</li>
+<li>2 个值：上下 左右</li>
+<li>1 个值：上下左右</li>
+</ul>
+<h3><span id="pshui-ping-fang-xiang-shang-de-auto">水平方向上的 auto</span><a href="#pshui-ping-fang-xiang-shang-de-auto" class="header-anchor">#</a></h3>
+<p>因为块标签拥有满行属性，但是设置宽度以后，剩余的空间就是默认的 margin，设置左右的 margin 值为 auto，那么剩余的 margin 就会平分到左右两边。</p>
+<h3><span id="pshu-zhi-fang-xiang-de-auto">竖直方向的 auto</span><a href="#pshu-zhi-fang-xiang-de-auto" class="header-anchor">#</a></h3>
+<p>相对于水平方向来说，块元素在垂直方向上并没有满屏的属性，margin 默认在上下的值都是 0，并没有剩余空间去平分。</p>
+<h3><span id="pta-xian-he-bian-kuang-he-bing-wen-ti">塌陷和边框合并问题</span><a href="#pta-xian-he-bian-kuang-he-bing-wen-ti" class="header-anchor">#</a></h3>
+<ul>
+<li>父级塌陷：父级的第一个子元素的上 margin 和最后一个子元素的下 margin 会进行塌陷给父级，这样的设计是为了方便父级和他的兄弟进行垂直 margin 的合并，避免缝隙过大。</li>
+<li>解决塌陷：给父级开启 BFC，给父级设置边框。</li>
+<li>兄弟的 margin 垂直方向会进行折叠，取最大值 。</li>
+</ul>
+<h3><span id="pmargin-fu-zhi">margin 负值</span><a href="#pmargin-fu-zhi" class="header-anchor">#</a></h3>
+<ul>
+<li>margin-top 为负值：元素向上走，不会影响上边的元素的位置（会出现重叠），并且下边的兄弟元素会跟着一起向上走。</li>
+<li>margin-left 为负值：元素向左走，不会影响前边的元素位置(会出现重叠)，右边兄弟元素会跟随移动。</li>
+<li>margin-right 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向左走。</li>
+<li>margin-bottom 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向上走。</li>
+</ul>
+<h3><span id="pzhi-chi-xing">支持性</span><a href="#pzhi-chi-xing" class="header-anchor">#</a></h3>
+<p><code>margin</code> 完美支持块元素和行内块元素，不支持行元素的垂直方向。</p>
+<h1><span id="si-bian-kuang-ceng-border">四、边框层 border</span><a href="#si-bian-kuang-ceng-border" class="header-anchor">#</a></h1>
+<h2><span id="pbian-kuang-shu-xing">边框属性</span><a href="#pbian-kuang-shu-xing" class="header-anchor">#</a></h2>
+<p>border</p>
+<ul>
+<li>border-width 线的宽度</li>
+<li>border-style 线的类型
+<ul>
+<li>solid 实线</li>
+<li>dashed 虚线</li>
+<li>dotted 点状线</li>
+</ul>
+</li>
+<li>border-color 线的颜色</li>
+<li>border:none 不设置边框</li>
+</ul>
+<blockquote>
+<p>边框还分为 4 个方向 要么直接设置 4 个方向，要么一个个方向单独设置</p>
+</blockquote>
+<h2><span id="plian-xi-bian-kuang-hua-san-jiao-xing">练习：边框画三角形</span><a href="#plian-xi-bian-kuang-hua-san-jiao-xing" class="header-anchor">#</a></h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">100px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">border-left-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-right-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-bottom-color</span>: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="pyuan-jiao-bian-kuang-border-radius">圆角边框 border-radius</span><a href="#pyuan-jiao-bian-kuang-border-radius" class="header-anchor">#</a></h2>
+<p>CSS3。</p>
+<table>
+<thead>
+<tr>
+<th>border-radius</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 B1 C1 D1/A2 B2 C2 D2</td>
+<td>水平/垂直，左上角开始顺时针</td>
+</tr>
+<tr>
+<td>A B C D</td>
+<td></td>
+</tr>
+<tr>
+<td>M/N</td>
+<td>水平/垂直</td>
+</tr>
+<tr>
+<td>50px 100px</td>
+<td>AC BD</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>八个值一样</td>
+</tr>
+</tbody>
+</table>
+<h1><span id="wu-lun-kuo-ceng-outline">五、轮廓层 outline</span><a href="#wu-lun-kuo-ceng-outline" class="header-anchor">#</a></h1>
+<p><code>outline</code> 轮廓层。<br>
+轮廓不占空间。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 去掉轮廓 */</span></span><br><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -310,12 +426,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/220204/" rel="prev" title="ES Generstor">
-      <i class="fa fa-chevron-left"></i> ES Generstor
+    <a href="/210105/" rel="prev" title="HTML 多媒体">
+      <i class="fa fa-chevron-left"></i> HTML 多媒体
     </a></div>
       <div class="post-nav-item">
-    <a href="/210801/" rel="next" title="CSS 动画">
-      CSS 动画 <i class="fa fa-chevron-right"></i>
+    <a href="/210204/" rel="next" title="CSS / 样式：背景、高级">
+      CSS / 样式：背景、高级 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -375,7 +491,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">CSS 预处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">常用功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">有哪些</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、盒模型类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、内容层 content</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">width&#x2F;height</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">min&#x2F;max-width&#x2F;height</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三、内边距 padding 和 外边距 margin</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、内边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、外边距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">合写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">水平方向上的 auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">竖直方向的 auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">塌陷和边框合并问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">margin 负值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">支持性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">四、边框层 border</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">边框属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">练习：边框画三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">圆角边框 border-radius</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">五、轮廓层 outline</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -389,20 +505,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">244</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -439,7 +555,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">408k</span>
+    <span title="站点总字数">410k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

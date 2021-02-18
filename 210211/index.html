@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这个人很懒，什么都没留下。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="永远的伊尔瓦">
-<meta property="og:url" content="http://nigelkeel.gitee.io/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/index.html">
+  <meta name="description" content="动画分为 过渡动画 和 关键帧动画。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS &#x2F; 动画基础">
+<meta property="og:url" content="http://nigelkeel.gitee.io/210211/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="这个人很懒，什么都没留下。">
+<meta property="og:description" content="动画分为 过渡动画 和 关键帧动画。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-31T06:16:40.405Z">
+<meta property="article:modified_time" content="2021-02-18T08:21:29.946Z">
 <meta property="article:author" content="KEEL">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/210211/">
 
 
 <script id="page-configurations">
@@ -38,11 +41,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
-  <title>分类: 2103：CSS布局 | 永远的伊尔瓦</title>
+  <title>CSS / 动画基础 | 永远的伊尔瓦</title>
   
 
 
@@ -191,131 +194,150 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">2103：CSS布局
-          <small>分类</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210211/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210211</span>
+        <h1 class="post-title" itemprop="name headline">
+          CSS / 动画基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 14:16:40" itemprop="dateCreated datePublished" datetime="2021-01-31T14:16:40+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-18 16:21:29" itemprop="dateModified" datetime="2021-02-18T16:21:29+08:00">2021-02-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>774</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T22:39:40+08:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/210305/" itemprop="url">
-            <span itemprop="name">CSS 居中布局</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T22:36:44+08:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/210304/" itemprop="url">
-            <span itemprop="name">CSS 弹性布局</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T14:25:21+08:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/210303/" itemprop="url">
-            <span itemprop="name">CSS 定位</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T14:23:54+08:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/210302/" itemprop="url">
-            <span itemprop="name">浮动</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T14:23:45+08:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/210301/" itemprop="url">
-            <span itemprop="name">CSS 布局</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p>动画分为 <strong>过渡动画</strong> 和 <strong>关键帧动画</strong>。</p>
+<a id="more"></a>
+<h1><span id="yi-guo-du-dong-hua-transition">一、过渡动画 <code>transition</code></span><a href="#yi-guo-du-dong-hua-transition" class="header-anchor">#</a></h1>
+<p>允许 CSS 的属性在一定的时间区间内平滑过渡。在鼠标点击，鼠标滑过或对元素任何改变中触发，并平滑地以动画改变 CSS 的属性值。</p>
+<ul>
+<li><code>transition-property</code> 参与过渡的属性</li>
+<li><code>transition-duration</code> 持续时间</li>
+<li><code>transition-timing-function</code> 动画类型<br>
+<code>linear</code> 线性，匀速</li>
+<li><code>transition-delay</code> 延迟时间</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">height</span> 3<span class="selector-tag">s</span> <span class="selector-tag">linear</span> 2<span class="selector-tag">s</span>;</span><br></pre></td></tr></table></figure>
+<h1><span id="er-guan-jian-zheng-dong-hua-animation">二、关键帧动画 <code>animation</code></span><a href="#er-guan-jian-zheng-dong-hua-animation" class="header-anchor">#</a></h1>
+<p>关键帧动画是控制关键位置，而不是所有位置。</p>
+<ul>
+<li><code>animation-name</code>: 动画名称，对应@keyframes</li>
+<li><code>animation-duration</code>: 间隔，持续时间</li>
+<li><code>animation-timing-function</code>: 动画执行方式（针对于每一个关键帧之间的动画）</li>
+<li><code>animation-delay</code>: 延迟</li>
+<li><code>animation-iteration-count</code>: 动画循环次数，次数或者 infinite（无穷次）</li>
+<li><code>animation-direction</code>: 控制动画循环反向播放，默认正常播放，alternate，轮流反向播放</li>
+</ul>
+<p><code>animation-fill-mode</code>: 静止模式</p>
+<p><code>forwards</code>: 停止时，保留最后一帧<br>
+<code>backwards</code>: 停止时，回到第一帧<br>
+<code>both</code>: 同时运用 <code>forwards</code> / <code>backwards</code></p>
+<h2><span id="p1-keyframes-ding-yi-xin-guan-jian-zheng">1、@keyframes 定义新关键帧</span><a href="#p1-keyframes-ding-yi-xin-guan-jian-zheng" class="header-anchor">#</a></h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> &lt;name&gt; &#123;</span><br><span class="line">  from/0% &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">  to/100% &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p2-dong-hua-de-zan-ting-he-bo-fang">2、动画的暂停和播放</span><a href="#p2-dong-hua-de-zan-ting-he-bo-fang" class="header-anchor">#</a></h2>
+<ul>
+<li><code>animation-play-state</code></li>
+<li><code>paused</code></li>
+</ul>
+<h3><span id="p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai">4、动画的起始和结束状态</span><a href="#p4-dong-hua-de-qi-shi-he-jie-shu-zhuang-tai" class="header-anchor">#</a></h3>
+<h3><span id="p5-zhu-zheng-dong-hua">5、逐帧动画</span><a href="#p5-zhu-zheng-dong-hua" class="header-anchor">#</a></h3>
+<p><code>timing-function: steps()</code></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/210301/" rel="prev" title="CSS 预处理器">
+      <i class="fa fa-chevron-left"></i> CSS 预处理器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/230201/" rel="next" title="BOM">
+      BOM <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -368,6 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、过渡动画 transition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二、关键帧动画 animation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、@keyframes 定义新关键帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、动画的暂停和播放</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4、动画的起始和结束状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5、逐帧动画</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -381,20 +404,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">244</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -431,7 +454,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">408k</span>
+    <span title="站点总字数">410k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

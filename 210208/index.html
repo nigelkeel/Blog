@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="LESS# less 是一种动态样式语言，属于 CSS 预处理器，扩展了 CSS 语言，增加了变量、混合、函数等特性，使 CSS 更易维护和扩展。LESS 既可以在客户端浏览器上运行，也能借助 node.js 在服务器端运行。  CSS 自诞生以来，基本语法和核心机制一直没有本质上的变化，它的发展几乎全是表现力层面上的提升。最开始 CSS 在网页中的作用只是辅助性的装饰，轻便易学是最大的需求；然而">
+  <meta name="description" content="定位（position） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Less">
-<meta property="og:url" content="http://nigelkeel.gitee.io/210402/index.html">
+<meta property="og:title" content="CSS &#x2F; 定位">
+<meta property="og:url" content="http://nigelkeel.gitee.io/210208/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="LESS# less 是一种动态样式语言，属于 CSS 预处理器，扩展了 CSS 语言，增加了变量、混合、函数等特性，使 CSS 更易维护和扩展。LESS 既可以在客户端浏览器上运行，也能借助 node.js 在服务器端运行。  CSS 自诞生以来，基本语法和核心机制一直没有本质上的变化，它的发展几乎全是表现力层面上的提升。最开始 CSS 在网页中的作用只是辅助性的装饰，轻便易学是最大的需求；然而">
+<meta property="og:description" content="定位（position） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-30T09:12:49.833Z">
-<meta property="article:modified_time" content="2021-02-01T11:03:54.046Z">
+<meta property="article:published_time" content="2021-01-31T06:25:21.895Z">
+<meta property="article:modified_time" content="2021-02-18T08:29:54.027Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/210402/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/210208/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
     lang   : 'zh-CN'
   };
 </script>
-  <title>Less | 永远的伊尔瓦</title>
+  <title>CSS / 定位 | 永远的伊尔瓦</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210402/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210208/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,9 +214,9 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210402</span>
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210208</span>
         <h1 class="post-title" itemprop="name headline">
-          Less
+          CSS / 定位
         </h1>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-30 17:12:49" itemprop="dateCreated datePublished" datetime="2021-01-30T17:12:49+08:00">2021-01-30</time>
+              <time title="创建时间：2021-01-31 14:25:21" itemprop="dateCreated datePublished" datetime="2021-01-31T14:25:21+08:00">2021-01-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:54" itemprop="dateModified" datetime="2021-02-01T19:03:54+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-18 16:29:54" itemprop="dateModified" datetime="2021-02-18T16:29:54+08:00">2021-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2104%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2104：CSS+</span></a>
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
                 </span>
             </span>
 
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.8k</span>
             </span>
 
         </div>
@@ -270,52 +270,103 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="less">LESS</span><a href="#less" class="header-anchor">#</a></h1>
-<p>less 是一种动态样式语言，属于 CSS 预处理器，扩展了 CSS 语言，增加了变量、混合、函数等特性，使 CSS 更易维护和扩展。LESS 既可以在客户端浏览器上运行，也能借助 node.js 在服务器端运行。</p>
-<blockquote>
-<p>CSS 自诞生以来，基本语法和核心机制一直没有本质上的变化，它的发展几乎全是表现力层面上的提升。最开始 CSS 在网页中的作用只是辅助性的装饰，轻便易学是最大的需求；然而如今网站的复杂度已经不可同日而语，原生 CSS 已经让开发者力不从心。当一门语言的能力不足而用户的运行环境又不支持其它选择的时候，这门语言就会沦为 “编译目标” 语言。开发者将选择另一门更高级的语言来进行开发，然后编译到底层语言以便实际运行。于是，在前端领域，CSS 预处理器应运而生。而 CSS 这门古老的语言以另一种方式 “重新适应” 了网页开发的需求。</p>
-</blockquote>
-<h2><span id="p1-an-zhuang">1、安装</span><a href="#p1-an-zhuang" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="http://lesscss.cn/">中文</a> | <a target="_blank" rel="noopener" href="http://lesscss.org/">英文</a> | <strong><a target="_blank" rel="noopener" href="http://www.lesscss.net/">源码</a></strong></p>
-<ol>
-<li>安装 Node.JS</li>
-<li>通过命令行程序，<code>node -v</code> 和 <code>npm -v</code> 检查是否安装成功。</li>
-<li>使用<code>npm i -g less</code> 进行全局安装 less, 并输入 <code>lessc -V</code> 检查版本</li>
-</ol>
-<h2><span id="p2-te-xing">2、特性</span><a href="#p2-te-xing" class="header-anchor">#</a></h2>
+        <p><strong>定位</strong>（<strong>position</strong>） 允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素，以及浏览器窗口本身的位置。</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static</code></td>
+<td>默认，没有定位</td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td>相对定位</td>
+</tr>
+<tr>
+<td><code>absolute</code></td>
+<td>绝对定位</td>
+</tr>
+<tr>
+<td><code>fixed</code></td>
+<td>固定定位</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>粘性定位</td>
+</tr>
+</tbody>
+</table>
+<p>定位一般是用在大布局的小范围中。</p>
+<h2><span id="pyi-xiang-dui-ding-wei-relative">一、相对定位 <code>relative</code></span><a href="#pyi-xiang-dui-ding-wei-relative" class="header-anchor">#</a></h2>
+<p><strong>相对定位</strong>（relative），让元素相对定位，元素先放置在未添加定位时候的区域，然后在不改变页面布局的情况下（其他元素没有受到任何影响；自身原来的位置也保留；和浮动可以一起使用）进行移动。不会脱离文档流。</p>
+<h2><span id="per-jue-dui-ding-wei-absolute">二、绝对定位 <code>absolute</code></span><a href="#per-jue-dui-ding-wei-absolute" class="header-anchor">#</a></h2>
+<p><strong>绝对定位</strong>（absolute），相对于它的 <strong>包含块</strong> 定位。绝对定位是相对于它的包含块定位的（和自身原有位置无关）。如果没有任何一个父级元素是非 static 属性，则会相对于文档（html）定位。如果它的父级元素和爷爷级元素都是非 position:static 属性，则它会选择距离最近的父元素。脱离正常文档流，原有位置不保留。定位的原点以包含块的 padding-box 的左上角为原点。right 和 bottom 是距离包含块右下角的距离。</p>
+<h3><span id="pbao-han-kuai">包含块</span><a href="#pbao-han-kuai" class="header-anchor">#</a></h3>
+<p><strong>包含块</strong> 是视觉格式化模型的一个概念，简单来说就是一个定位参考框。</p>
+<p>如何确定一个元素的包含块，完全取决于它自身的 position 属性：</p>
 <ul>
-<li>动态样式 CSS 是非程式式语言，需要书写大量没有逻辑的代码，不方便维护和扩展、复用。</li>
-<li>预处理器 生成 CSS 前某一语法的处理程序。</li>
+<li>如果一个元素自身的 position 属性是 static 或者是 relative ，它的包含块就是离他最近的祖先元素或者是格式化上下文。</li>
+<li><strong>如果一个元素自身的 position 属性是 absolute ，它的包含块就是离他最近的拥有定位属性（值不为 static ）的元素。</strong></li>
+<li>如果一个元素自身的 position 属性是 fixed，它的包含块就是 viewport。</li>
 </ul>
-<h2><span id="p3-shi-yong">3、使用</span><a href="#p3-shi-yong" class="header-anchor">#</a></h2>
-<p>(1) <code>style</code>标签类型改成<code>less</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet/less&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;styles.less&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>还需要一个编译相关的 js 文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>(2) 在命令行编译 less 文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lessc styles.less styles.css</span><br></pre></td></tr></table></figure>
-<p>(3) 通过 VSCode 的<code>Easy LESS</code>插件，在文件夹新建 less 文件，保存，即可在当前文件夹编译出相应的 css 文件。</p>
-<h2><span id="per-yu-fa">二、语法</span><a href="#per-yu-fa" class="header-anchor">#</a></h2>
-<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
-<p><code>//注释</code> 和 <code>/*注释*/</code></p>
-<p>后者可以注释到 CSS 文件中。</p>
-<h2><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h2>
-<p>LESS 允许我们定义一些变量来管理 CSS，变量需以<code>@</code>开头。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="variable">@test:</span> <span class="number">10px</span>;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="attribute">width</span>: <span class="variable">@test</span>;</span><br></pre></td></tr></table></figure>
-<p>注意作用域。</p>
-<p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
-<h2><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h2>
-<p><code>&amp;:</code> 父级引用</p>
-<h2><span id="p4-yun-suan">4、运算</span><a href="#p4-yun-suan" class="header-anchor">#</a></h2>
-<h2><span id="p5-hun-he">5、混合</span><a href="#p5-hun-he" class="header-anchor">#</a></h2>
-<p>类似函数。</p>
-<h2><span id="p6-mo-shi-pi-pei-he-shou-wei">6、模式匹配和守卫</span><a href="#p6-mo-shi-pi-pei-he-shou-wei" class="header-anchor">#</a></h2>
-<p>重载，根据参数的个数来选择混合。</p>
-<h2><span id="p7-zi-fu-chuan-cha-zhi">7、字符串插值</span><a href="#p7-zi-fu-chuan-cha-zhi" class="header-anchor">#</a></h2>
-<h2><span id="p8-han-shu">8、函数</span><a href="#p8-han-shu" class="header-anchor">#</a></h2>
-<h2><span id="p9-wen-jian-dao-ru">9、文件导入</span><a href="#p9-wen-jian-dao-ru" class="header-anchor">#</a></h2>
-<h2><span id="p10-zhuan-yi">10、转义</span><a href="#p10-zhuan-yi" class="header-anchor">#</a></h2>
-<p>有时候，当需要引入无效的 CSS 语法或 Less 不能识别的字符，就需要使用转义字符。此时，就可以在字符串前面加一个<code>~</code>，并将需要转义的字符串放在<code>&quot; &quot;</code>中。</p>
+<blockquote>
+<p>补充：<br>
+如果一个元素的 position 属性是 absolute 或者是 fixed 在下边几种情况下，包含块会发生改变。</p>
+<ul>
+<li>当祖先元素拥有 transform 或 perspective 属性并且值不为 none 的时候，它也是被当做包含块。</li>
+<li>当祖先元素 拥有 filter 属性的时候（值不为 none） 它也可以被当做包含块</li>
+</ul>
+</blockquote>
+<p>注：如果由内向外找不到包含块条件的元素，那么 html（根元素）被称作为初始包含块。</p>
+<h3><span id="pzi-jue-fu-xiang">子绝父相</span><a href="#pzi-jue-fu-xiang" class="header-anchor">#</a></h3>
+<p>父元素相对定位并不设置位移，子元素绝对定位，设置位移。</p>
+<h2><span id="psan-gu-ding-ding-wei-fixed">三、固定定位 <code>fixed</code></span><a href="#psan-gu-ding-ding-wei-fixed" class="header-anchor">#</a></h2>
+<p>固定定位（fixed），相对于浏览器窗口定位。</p>
+<h2><span id="psi-nian-xing-ding-wei-sticky">四、粘性定位 <code>sticky</code></span><a href="#psi-nian-xing-ding-wei-sticky" class="header-anchor">#</a></h2>
+<p><code>sticky</code> 的意思是粘性的，<code>position:sticky</code> 表现也符合这个粘性的表现。基本上，可以看出是<code>position: relative</code>和<code>position: fixed</code>的结合体——当元素在屏幕内，表现为<code>relative</code>，就要滚出显示器屏幕的时候，表现为<code>fixed</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: -webkit-sticky;</span><br><span class="line">  <span class="attribute">position</span>: sticky;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/">杀了个回马枪，还是说说 position:sticky 吧</a></li>
+</ul>
+<h1><span id="wu-ceng-die">五、层叠</span><a href="#wu-ceng-die" class="header-anchor">#</a></h1>
+<h2><span id="p1-z-index">1、z-index</span><a href="#p1-z-index" class="header-anchor">#</a></h2>
+<p><strong>z-index</strong> 指定了一个定位属性的元素及其后代的层叠顺序，只有定位元素（非 static）拥有该属性。z-index 的值没有单位，理论上来说 z-index 的值大的元素，会覆盖小的元素。定位元素默认的 z-index 的值是 auto。如果一个拥有 z-index 属性的定位元素中，子元素也设置了 z-index 。那么子元素会重新创建一个<strong>层叠上下文</strong>，子元素的 z-index 只能在当前的层叠上下文中对比排列。</p>
+<h2><span id="p2-yuan-su-ceng-die-shun-xu">2、元素层叠顺序</span><a href="#p2-yuan-su-ceng-die-shun-xu" class="header-anchor">#</a></h2>
+<p>z-index 为负&lt; background&lt; border&lt; 块级元素 &lt; 浮动元素 &lt; 内联元素 &lt; 没有设置 z-index 的定位元素 &lt; z-index 为正</p>
+<h2><span id="p3-ceng-die-shang-xia-wen">3、层叠上下文 +</span><a href="#p3-ceng-die-shang-xia-wen" class="header-anchor">#</a></h2>
+<p>想要一个元素支持 z-index 属性，但是又不想定位影响其他元素或者影响自己，则可以给该元素设置相对定位。</p>
+<p>元素提升为一个比较特殊的图层，在三维空间中 <strong>(z 轴)</strong> 高出普通元素一等。</p>
+<ul>
+<li>触发条件
+<ul>
+<li>根层叠上下文(<code>html</code>)</li>
+<li><code>position</code></li>
+<li>css3 属性
+<ul>
+<li><code>flex</code></li>
+<li><code>transform</code></li>
+<li><code>opacity</code></li>
+<li><code>filter</code></li>
+<li><code>will-change</code></li>
+<li><code>-webkit-overflow-scrolling</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>层叠等级：层叠上下文在 z 轴上的排序
+<ul>
+<li>在同一层叠上下文中，层叠等级才有意义</li>
+<li><code>z-index</code>的优先级最高</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -335,12 +386,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/210204/" rel="prev" title="CSS 样式">
-      <i class="fa fa-chevron-left"></i> CSS 样式
+    <a href="/210207/" rel="prev" title="CSS / 浮动">
+      <i class="fa fa-chevron-left"></i> CSS / 浮动
     </a></div>
       <div class="post-nav-item">
-    <a href="/210404/" rel="next" title="Stylus">
-      Stylus <i class="fa fa-chevron-right"></i>
+    <a href="/630202/" rel="next" title="恋爱">
+      恋爱 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -400,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">LESS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、嵌套规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4、运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5、混合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6、模式匹配和守卫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7、字符串插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8、函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">9、文件导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">10、转义</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">一、相对定位 relative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">二、绝对定位 absolute</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">包含块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">子绝父相</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">三、固定定位 fixed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">四、粘性定位 sticky</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">五、层叠</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、z-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、元素层叠顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、层叠上下文 +</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -414,20 +465,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">244</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -464,7 +515,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">408k</span>
+    <span title="站点总字数">410k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

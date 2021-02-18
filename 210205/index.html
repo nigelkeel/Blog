@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="居中布局# 水平居中#  行元素 text-align: center 块元素 margin: 0 auto absolute + transform flex + justify-content: center  垂直居中#  line-height: height absolute + transform flex + align-items: center table  水平垂直居中#  l">
+  <meta name="description" content="transforms 和 opacity 这两个属性更改不会触发重排与重绘，它们是可以由合成器（composite）单独处理的属性。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 居中布局">
-<meta property="og:url" content="http://nigelkeel.gitee.io/210305/index.html">
+<meta property="og:title" content="CSS &#x2F; transform">
+<meta property="og:url" content="http://nigelkeel.gitee.io/210205/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="居中布局# 水平居中#  行元素 text-align: center 块元素 margin: 0 auto absolute + transform flex + justify-content: center  垂直居中#  line-height: height absolute + transform flex + align-items: center table  水平垂直居中#  l">
+<meta property="og:description" content="transforms 和 opacity 这两个属性更改不会触发重排与重绘，它们是可以由合成器（composite）单独处理的属性。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-31T14:39:40.527Z">
-<meta property="article:modified_time" content="2021-02-01T11:03:18.980Z">
+<meta property="article:published_time" content="2021-01-30T03:55:49.113Z">
+<meta property="article:modified_time" content="2021-02-18T07:06:43.370Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://nigelkeel.gitee.io/210305/">
+<link rel="canonical" href="http://nigelkeel.gitee.io/210205/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
     lang   : 'zh-CN'
   };
 </script>
-  <title>CSS 居中布局 | 永远的伊尔瓦</title>
+  <title>CSS / transform | 永远的伊尔瓦</title>
   
 
 
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210305/">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210205/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,9 +214,9 @@
     </span>
       <header class="post-header">
         <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210305</span>
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210205</span>
         <h1 class="post-title" itemprop="name headline">
-          CSS 居中布局
+          CSS / transform
         </h1>
 
         <div class="post-meta">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-01-31 22:39:40" itemprop="dateCreated datePublished" datetime="2021-01-31T22:39:40+08:00">2021-01-31</time>
+              <time title="创建时间：2021-01-30 11:55:49" itemprop="dateCreated datePublished" datetime="2021-01-30T11:55:49+08:00">2021-01-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:03:18" itemprop="dateModified" datetime="2021-02-01T19:03:18+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-18 15:06:43" itemprop="dateModified" datetime="2021-02-18T15:06:43+08:00">2021-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,7 +241,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS%E5%B8%83%E5%B1%80/" itemprop="url" rel="index"><span itemprop="name">2103：CSS布局</span></a>
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
                 </span>
             </span>
 
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>362</span>
+              <span>331</span>
             </span>
 
         </div>
@@ -270,36 +270,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="ju-zhong-bu-ju">居中布局</span><a href="#ju-zhong-bu-ju" class="header-anchor">#</a></h1>
-<h2><span id="pshui-ping-ju-zhong">水平居中</span><a href="#pshui-ping-ju-zhong" class="header-anchor">#</a></h2>
+        <p><code>transforms</code> 和 <code>opacity</code> 这两个属性更改不会触发重排与重绘，它们是可以由合成器（composite）单独处理的属性。</p>
+<a id="more"></a>
+<h1><span id="yi-transform-2d">一、transform 2d</span><a href="#yi-transform-2d" class="header-anchor">#</a></h1>
+<p>改变标签在二维平面的位置和形状。<br>
+类型</p>
 <ul>
-<li>行元素 <code>text-align: center</code></li>
-<li>块元素 <code>margin: 0 auto</code></li>
-<li><code>absolute + transform</code></li>
-<li><code>flex + justify-content: center</code></li>
+<li><code>translate</code> 移动</li>
+<li><code>rotate</code> 旋转</li>
+<li><code>scale</code> 缩放</li>
 </ul>
-<h2><span id="pchui-zhi-ju-zhong">垂直居中</span><a href="#pchui-zhi-ju-zhong" class="header-anchor">#</a></h2>
+<h2><span id="p1-yi-dong-translate">1. 移动 <code>translate</code></span><a href="#p1-yi-dong-translate" class="header-anchor">#</a></h2>
 <ul>
-<li><code>line-height: height</code></li>
-<li><code>absolute + transform</code></li>
-<li><code>flex + align-items: center</code></li>
-<li><code>table</code></li>
+<li><code>transform: translate(x, y)</code></li>
+<li><code>transform: translateX(n)/Y(n)</code></li>
+<li>最大的优点就是不影响其他元素的位置。</li>
+<li>行内标签没有效果。</li>
 </ul>
-<h2><span id="pshui-ping-chui-zhi-ju-zhong">水平垂直居中</span><a href="#pshui-ping-chui-zhi-ju-zhong" class="header-anchor">#</a></h2>
+<h2><span id="p2-xuan-zhuan-rotate">2. 旋转 <code>rotate</code></span><a href="#p2-xuan-zhuan-rotate" class="header-anchor">#</a></h2>
 <ul>
-<li>line-height</li>
-<li>absolute + margin auto</li>
-<li>absolute + 负 margin</li>
-<li>absolute + calc</li>
-<li>absolute + transform: translate</li>
-<li>flex</li>
+<li>单位是 <code>deg</code></li>
+<li>正是顺时针，负是逆时针。</li>
+<li>可以通过 <code>transform-oringin</code> 设置旋转中心点</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="p3-suo-fang-scale">3. 缩放 <code>scale</code></span><a href="#p3-suo-fang-scale" class="header-anchor">#</a></h2>
+<p>备注</p>
 <ul>
-<li>writing-mode</li>
-<li>table</li>
-<li>css-table</li>
-<li>grid</li>
+<li>同时使用多个转换，其格式为 <code>transform: translate() rotate() scale()</code></li>
 </ul>
 
     </div>
@@ -320,12 +317,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/220206/" rel="prev" title="函数柯里化">
-      <i class="fa fa-chevron-left"></i> 函数柯里化
+    <a href="/210202/" rel="prev" title="CSS / 选择器">
+      <i class="fa fa-chevron-left"></i> CSS / 选择器
     </a></div>
       <div class="post-nav-item">
-    <a href="/181801/" rel="next" title="Hexo">
-      Hexo <i class="fa fa-chevron-right"></i>
+    <a href="/210101/" rel="next" title="HTML & 网页基础">
+      HTML & 网页基础 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -385,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">居中布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">水平垂直居中</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一、transform 2d</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1. 移动 translate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2. 旋转 rotate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3. 缩放 scale</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -399,20 +396,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">244</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">98</span>
+        <span class="site-state-item-count">95</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -449,7 +446,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">408k</span>
+    <span title="站点总字数">410k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>
