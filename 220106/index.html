@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"nigelkeel.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="错误与异常处理# ECMA-262 规范了7种错误类型。其中Error是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。 1、错误类型#    类型 说明     Error 基类 name 可以读写异常类型（TypeError）message 可以读写详细的错误信息。   EvalError 不正确使用eval()方法时抛出   SyntaxError 语法错误">
+  <meta name="description" content="ECMA-262 规范了7种错误类型。其中Error是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES 错误与异常处理">
 <meta property="og:url" content="http://nigelkeel.gitee.io/220106/index.html">
 <meta property="og:site_name" content="永远的伊尔瓦">
-<meta property="og:description" content="错误与异常处理# ECMA-262 规范了7种错误类型。其中Error是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。 1、错误类型#    类型 说明     Error 基类 name 可以读写异常类型（TypeError）message 可以读写详细的错误信息。   EvalError 不正确使用eval()方法时抛出   SyntaxError 语法错误">
+<meta property="og:description" content="ECMA-262 规范了7种错误类型。其中Error是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-30T08:39:36.925Z">
-<meta property="article:modified_time" content="2021-02-01T11:08:19.330Z">
+<meta property="article:modified_time" content="2021-02-09T09:15:38.520Z">
 <meta property="article:author" content="KEEL">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:08:19" itemprop="dateModified" datetime="2021-02-01T19:08:19+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-09 17:15:38" itemprop="dateModified" datetime="2021-02-09T17:15:38+08:00">2021-02-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>622</span>
+              <span>615</span>
             </span>
 
         </div>
@@ -270,8 +270,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1><span id="cuo-wu-yu-yi-chang-chu-li">错误与异常处理</span><a href="#cuo-wu-yu-yi-chang-chu-li" class="header-anchor">#</a></h1>
-<p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
+        <p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
+<a id="more"></a>
 <h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2>
 <table>
 <thead>
@@ -307,7 +307,7 @@
 </tr>
 <tr>
 <td><code>URIError</code></td>
-<td>URI编码和解码错误</td>
+<td>URI 编码和解码错误</td>
 </tr>
 </tbody>
 </table>
@@ -404,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">错误与异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、错误类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、try…catch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、throw</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1、错误类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2、try…catch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3、throw</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -418,14 +418,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">240</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>摄影入门</title>
+      <link href="/570402/"/>
+      <url>/570402/</url>
+      
+        <content type="html"><![CDATA[<p>本文主要介绍以下内容：</p><ul><li><code>ISO</code> 感光度</li><li><code>EV</code> 曝光补偿</li><li><code>S</code> 快门速度（曝光时间）</li><li><code>WB</code> 白平衡</li><li><code>AF/MF</code> 对焦</li></ul><a id="more"></a><h1><span id="yi-gan-guang-du-iso">一、感光度 <code>ISO</code></span><a href="#yi-gan-guang-du-iso" class="header-anchor">#</a></h1><p>图像传感器对光线的敏感程度，低感光度可以获得更细腻的成像，但是相同条件下曝光时间更长；高感光度所需的曝光时间更短，当会导致画面有颗粒感。</p><h1><span id="er-pu-guang-bu-chang-ev">二、曝光补偿 <code>EV</code></span><a href="#er-pu-guang-bu-chang-ev" class="header-anchor">#</a></h1><p>增加曝光补偿使画面更亮，减少则更暗。</p><h1><span id="san-kuai-men-su-du-s">三、快门速度 <code>S</code></span><a href="#san-kuai-men-su-du-s" class="header-anchor">#</a></h1><p>也就是曝光时间，光线照射图像感应器的时间。<br>慢速快门适合光线不足的场景，但一般情况下快门速度慢于 1/15 秒，手持拍照容易导致成像模糊，建议使用<strong>三脚架</strong>。<br>高速快门适合拍摄运动物体或者高亮度的场景。</p><h1><span id="si-bai-ping-heng-wb">四、白平衡 <code>WB</code></span><a href="#si-bai-ping-heng-wb" class="header-anchor">#</a></h1><p>根据拍摄场景光源环境，选择对应白平衡使物体还原真实的色彩。<br>选择低色温会消除一定的暖光，使画面趋于中性或者冷调。<br>选择高色温会消除一定的冷光，使画面趋于中性或者暖调。</p><h1><span id="wu-dui-jiao">五、对焦</span><a href="#wu-dui-jiao" class="header-anchor">#</a></h1><p><code>AF</code> 自动对焦<br><code>MF</code> 手动对焦</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 5704：摄影 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>鲁珀特之泪</title>
+      <link href="/410150/"/>
+      <url>/410150/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 4301：经典物理学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>中国传统文化</title>
+      <link href="/580101/"/>
+      <url>/580101/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><p>小年在南方是腊月廿四，在北方是腊月廿三。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 5801：中国传统文化 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>读书笔记 / 乌合之众</title>
       <link href="/620502/"/>
       <url>/620502/</url>
@@ -938,8 +995,8 @@
     
     <entry>
       <title>摄影</title>
-      <link href="/5704/"/>
-      <url>/5704/</url>
+      <link href="/570401/"/>
+      <url>/570401/</url>
       
         <content type="html"><![CDATA[<h1><span id="shao-ji-shi-duo-less-is-more">少即是多 <code>Less is more</code></span><a href="#shao-ji-shi-duo-less-is-more" class="header-anchor">#</a></h1><p>摄影最经典的法则之一。化繁为简，少即是多。<br>因此，在拍照片的时候，一定要想一下，是不是可以少一点儿，再少一点儿。</p>]]></content>
       
@@ -3296,7 +3353,7 @@
       <link href="/180104/"/>
       <url>/180104/</url>
       
-        <content type="html"><![CDATA[<h1><span id="window-ming-ling-xing">Window 命令行</span><a href="#window-ming-ling-xing" class="header-anchor">#</a></h1><h2><span id="pyi-chang-yong">一、常用</span><a href="#pyi-chang-yong" class="header-anchor">#</a></h2><ul><li>清屏 <code>CLS</code></li><li>运行可执行文件 <code>Start xxx.exe</code></li></ul><h2><span id="per-shutdown">二、<code>shutdown</code></span><a href="#per-shutdown" class="header-anchor">#</a></h2><ul><li>设置 3600秒 后关机 <code>shutdown -s -t 3600</code></li><li>取消关机 <code>shutdown -a</code></li><li>重启 <code>shutdown -r</code></li><li>立即重启 <code>shutdown -r -t 0</code></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>主要是对于 Windows 10 来说。</p><a id="more"></a><p>环境：</p><ul><li><code>cmd</code></li><li><code>powershell</code></li><li><code>git bash</code></li></ul><h1><span id="wei-gui-lei">未归类</span><a href="#wei-gui-lei" class="header-anchor">#</a></h1><ol><li>通常运行多个命令可以用<code>&amp;&amp;</code>进行连接，在 <code>powershell</code> 中使用 <code>|</code>。</li><li>运行可执行文件 <code>start xxx.exe</code></li></ol><h1><span id="chang-yong">常用</span><a href="#chang-yong" class="header-anchor">#</a></h1><ul><li><code>cls</code> 清屏</li><li><code>cd</code> 移动</li></ul><h1><span id="shutdown"><code>shutdown</code></span><a href="#shutdown" class="header-anchor">#</a></h1><ul><li>设置 3600秒 后关机 <code>shutdown -s -t 3600</code></li><li>取消关机 <code>shutdown -a</code></li><li>重启 <code>shutdown -r</code></li><li>立即重启 <code>shutdown -r -t 0</code></li></ul>]]></content>
       
       
       <categories>
@@ -4528,7 +4585,7 @@
       <link href="/220106/"/>
       <url>/220106/</url>
       
-        <content type="html"><![CDATA[<h1><span id="cuo-wu-yu-yi-chang-chu-li">错误与异常处理</span><a href="#cuo-wu-yu-yi-chang-chu-li" class="header-anchor">#</a></h1><p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p><h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2><table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>Error</code></td><td>基类 <br><code>name</code> 可以读写异常类型（TypeError）<br><code>message</code> 可以读写详细的错误信息。</td></tr><tr><td><code>EvalError</code></td><td>不正确使用eval()方法时抛出</td></tr><tr><td><code>SyntaxError</code></td><td><strong>语法错误</strong></td></tr><tr><td><code>ReferenceError</code></td><td>读取不存在的变量时抛出</td></tr><tr><td><code>TypeError</code></td><td>值的类型发生错误的时候抛出</td></tr><tr><td><code>RangeError</code></td><td>数字超出合法范围</td></tr><tr><td><code>URIError</code></td><td>URI编码和解码错误</td></tr></tbody></table><h2><span id="p2-try-catch">2、try…catch</span><a href="#p2-try-catch" class="header-anchor">#</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 调试代码块</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">// 捕获异常，并进行异常处理代码块</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一般情况下 <code>try...catch</code> 就够用了。</p><p>按顺序执行 try 子句中的代码，如果没有异常发生，将会忽略 catch 跳转到 finally 子句继续执行。</p><p>无法捕获逻辑错误。</p><h2><span id="p3-throw">3、throw</span><a href="#p3-throw" class="header-anchor">#</a></h2><p>抛出异常。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (num = <span class="literal">Infinity</span>) &#123;</span><br><span class="line">        <span class="comment">// 抛出错误</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (exception) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(exception.message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>抛出错误之后，后续代码不会执行。</p>]]></content>
+        <content type="html"><![CDATA[<p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p><a id="more"></a><h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2><table><thead><tr><th>类型</th><th>说明</th></tr></thead><tbody><tr><td><code>Error</code></td><td>基类 <br><code>name</code> 可以读写异常类型（TypeError）<br><code>message</code> 可以读写详细的错误信息。</td></tr><tr><td><code>EvalError</code></td><td>不正确使用eval()方法时抛出</td></tr><tr><td><code>SyntaxError</code></td><td><strong>语法错误</strong></td></tr><tr><td><code>ReferenceError</code></td><td>读取不存在的变量时抛出</td></tr><tr><td><code>TypeError</code></td><td>值的类型发生错误的时候抛出</td></tr><tr><td><code>RangeError</code></td><td>数字超出合法范围</td></tr><tr><td><code>URIError</code></td><td>URI 编码和解码错误</td></tr></tbody></table><h2><span id="p2-try-catch">2、try…catch</span><a href="#p2-try-catch" class="header-anchor">#</a></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 调试代码块</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">// 捕获异常，并进行异常处理代码块</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一般情况下 <code>try...catch</code> 就够用了。</p><p>按顺序执行 try 子句中的代码，如果没有异常发生，将会忽略 catch 跳转到 finally 子句继续执行。</p><p>无法捕获逻辑错误。</p><h2><span id="p3-throw">3、throw</span><a href="#p3-throw" class="header-anchor">#</a></h2><p>抛出异常。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (num = <span class="literal">Infinity</span>) &#123;</span><br><span class="line">        <span class="comment">// 抛出错误</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (exception) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(exception.message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>抛出错误之后，后续代码不会执行。</p>]]></content>
       
       
       <categories>
@@ -5306,7 +5363,7 @@
       <link href="/181005/"/>
       <url>/181005/</url>
       
-        <content type="html"><![CDATA[<h1><span id="1-kuai-jie-jian">1、快捷键</span><a href="#1-kuai-jie-jian" class="header-anchor">#</a></h1><ul><li>源代码模式：CTRL + /</li><li>打字机模式：F8</li><li>专注模式：F9</li><li>显示/隐藏侧边栏：CTRL + SHIFT + L</li><li>段落：CTRL + 0</li><li>标题：CTRL + 1/6</li><li>表格：CTRL + T</li><li>选中一整行：CTRL + L</li><li>选中单词：CTRL + D</li><li>跳转到文章开头：CTRL + HOME</li><li>跳转到文章结尾：CTRL + END</li><li>插入链接：CTRL + K</li><li>设置：CTRL + ，</li><li>返回顶部: CTRL + Home</li></ul><h1><span id="2-zhuan-zhu-mo-shi">2、专注模式</span><a href="#2-zhuan-zhu-mo-shi" class="header-anchor">#</a></h1><p>快捷键 <code>F8</code> 打开专注模式，编辑器会高亮显示当前正在编辑的段落，让你更加专注于当前内容，不受视觉干扰。</p><h1><span id="3-da-zi-ji-mo-shi">3、打字机模式</span><a href="#3-da-zi-ji-mo-shi" class="header-anchor">#</a></h1><p>快捷键 <code>F9</code> 打开打字机模式，当前正在编辑的段落会居中显示。</p><h1><span id="4-shu-xue-gong-shi">4、数学公式</span><a href="#4-shu-xue-gong-shi" class="header-anchor">#</a></h1><p>数学的公式块是使用 <em>LaTeX</em> 语言实现，输入<code>$$</code>，然后按下<code>Enter</code>键就会弹出一个支持 TeX/LaTeX 语法的输入框。</p><h3><span id="pxiang-guan-lian-jie">相关链接</span><a href="#pxiang-guan-lian-jie" class="header-anchor">#</a></h3><ul><li><a href="https://typora.io/">首页</a></li><li><a href="https://theme.typora.io/">主题</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>Typora 是一个 Markdown 编辑器。<br><a href="https://typora.io/">官网</a> | <a href="https://theme.typora.io/">主题</a></p><a id="more"></a><h1><span id="kuai-jie-jian">快捷键</span><a href="#kuai-jie-jian" class="header-anchor">#</a></h1><ul><li>源代码模式：CTRL + /</li><li>打字机模式：F8</li><li>专注模式：F9</li><li>显示/隐藏侧边栏：CTRL + SHIFT + L</li><li>段落：CTRL + 0</li><li>标题：CTRL + 1/6</li><li>表格：CTRL + T</li><li>选中一整行：CTRL + L</li><li>选中单词：CTRL + D</li><li>跳转到文章开头：CTRL + HOME</li><li>跳转到文章结尾：CTRL + END</li><li>插入链接：CTRL + K</li><li>设置：CTRL + ，</li><li>返回顶部: CTRL + Home</li></ul><h1><span id="mo-shi">模式</span><a href="#mo-shi" class="header-anchor">#</a></h1><p>快捷键 <code>F8</code> 打开专注模式，编辑器会高亮显示当前正在编辑的段落，让你更加专注于当前内容，不受视觉干扰。<br>快捷键 <code>F9</code> 打开打字机模式，当前正在编辑的段落会居中显示。</p><h1><span id="cai-keng-ji-lu">踩坑记录</span><a href="#cai-keng-ji-lu" class="header-anchor">#</a></h1><ol><li>右键属性给文档添加隐藏属性会导致无法保存。（Win@0.9.98）</li></ol>]]></content>
       
       
       <categories>

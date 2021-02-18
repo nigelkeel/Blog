@@ -197,6 +197,426 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210203/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210203</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210203/" class="post-title-link" itemprop="url">CSS 盒模型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 17:09:09" itemprop="dateCreated datePublished" datetime="2021-01-30T17:09:09+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:01:42" itemprop="dateModified" datetime="2021-02-01T19:01:42+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2102%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2102：CSS</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="css-he-mo-xing">CSS 盒模型</span><a href="#css-he-mo-xing" class="header-anchor">#</a></h1>
+<p>在 HTML 中把每个元素当成一个盒子，拥有盒子的平面外形和空间。</p>
+<h2><span id="p1-he-mo-xing-biao-zhun">1、盒模型标准</span><a href="#p1-he-mo-xing-biao-zhun" class="header-anchor">#</a></h2>
+<p>通过 <code>box-sizing</code> 设置盒子模型的标准，分为</p>
+<ul>
+<li><code>content-box</code> 默认，W3C 标准盒模型</li>
+<li><code>border-box</code> IE 盒模型，也称为怪异盒模型</li>
+</ul>
+<p>注，理论上还有 <code>padding-box</code> 和 <code>margin-box</code> ，但是现在 W3C 和 MDN 规范均不支持。</p>
+<p><strong>怪异盒模型的 width / height 是 border 的 尺寸。</strong></p>
+<h2><span id="p2-nei-rong-ceng-content">2、内容层 content</span><a href="#p2-nei-rong-ceng-content" class="header-anchor">#</a></h2>
+<h3><span id="pwidth-height">width/height</span><a href="#pwidth-height" class="header-anchor">#</a></h3>
+<p>width 设置的坑</p>
+<ul>
+<li>如果设置宽度为 100%，并且有 border margin padding 等属性值的时候，宽度可能超出。因为 width 内容区域已经和父级一样了，所以可以不设置宽度或者设置宽度为 auto 那么内容的宽度就是可以充分利用可使用空间。</li>
+</ul>
+<p>height 设置的坑</p>
+<ul>
+<li>如果高度设置百分比，必须父级有一个显性的设置一个 height 属性，并且不能是 auto。</li>
+</ul>
+<h3><span id="pmin-max-width-height">min/max-width/height</span><a href="#pmin-max-width-height" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>正常</th>
+<th>最小</th>
+<th>最大</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽度</td>
+<td>width</td>
+<td>min-width</td>
+<td>max-width</td>
+</tr>
+<tr>
+<td>高度</td>
+<td>height</td>
+<td>min-height</td>
+<td>max-height</td>
+</tr>
+</tbody>
+</table>
+<p>当 min-width 和 max-width 冲突的时候，min-width 是优先的。当 width 和 min 或 max 冲突以后，min 或者 max 直接无视 width 的存在（无论是否添加 ！important）。</p>
+<h2><span id="p3-nei-bian-ju-ceng-padding">3、内边距层 padding</span><a href="#p3-nei-bian-ju-ceng-padding" class="header-anchor">#</a></h2>
+<p>padding 的写法和 margin 一致</p>
+<p>padding 主要撑开内容和边框之间的距离</p>
+<p>padding 不支持负值</p>
+<p>padding 对所有属性的元素都支持，但是对于行内元素撑不开上下的距离</p>
+<p>padding 可以用于扩大点击范围</p>
+<h2><span id="p4-bian-kuang-ceng-border">4、边框层 border</span><a href="#p4-bian-kuang-ceng-border" class="header-anchor">#</a></h2>
+<h3><span id="pbian-kuang-shu-xing">边框属性</span><a href="#pbian-kuang-shu-xing" class="header-anchor">#</a></h3>
+<p>border</p>
+<ul>
+<li>border-width 线的宽度</li>
+<li>border-style 线的类型
+<ul>
+<li>solid 实线</li>
+<li>dashed 虚线</li>
+<li>dotted 点状线</li>
+</ul>
+</li>
+<li>border-color 线的颜色</li>
+<li>border:none 不设置边框</li>
+</ul>
+<blockquote>
+<p>边框还分为 4 个方向 要么直接设置 4 个方向，要么一个个方向单独设置</p>
+</blockquote>
+<p>练习：边框画三角形</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">100px</span> solid <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">border-left-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-right-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-bottom-color</span>: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="pyuan-jiao-bian-kuang-border-radius">圆角边框 border-radius</span><a href="#pyuan-jiao-bian-kuang-border-radius" class="header-anchor">#</a></h3>
+<p>CSS3。</p>
+<table>
+<thead>
+<tr>
+<th>border-radius</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1 B1 C1 D1/A2 B2 C2 D2</td>
+<td>水平/垂直，左上角开始顺时针</td>
+</tr>
+<tr>
+<td>A B C D</td>
+<td></td>
+</tr>
+<tr>
+<td>M/N</td>
+<td>水平/垂直</td>
+</tr>
+<tr>
+<td>50px 100px</td>
+<td>AC BD</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>八个值一样</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="p5-wai-bian-ju-ceng-margin">5、外边距层 margin</span><a href="#p5-wai-bian-ju-ceng-margin" class="header-anchor">#</a></h2>
+<p>margin 的作用是撑开当前元素和其他元素的距离。margin 有四个方向，可以分别设置<code>margin-left</code> <code>margin-right</code> <code>margin-top</code> <code>margin-bottom</code>，margin 的 left 和 top 是让当前元素向右向下移动，margin 的 right 和 bottom 是让元素的兄弟元素向右向下移动，不影响自身。</p>
+<h3><span id="phe-xie">合写</span><a href="#phe-xie" class="header-anchor">#</a></h3>
+<ul>
+<li>4 个值：<strong>上 右 下 左</strong>（从上开始顺时针）</li>
+<li>3 个值：上 左右 下</li>
+<li>2 个值：上下 左右</li>
+<li>1 个值：上下左右</li>
+</ul>
+<h3><span id="pshui-ping-fang-xiang-shang-de-auto">水平方向上的 auto</span><a href="#pshui-ping-fang-xiang-shang-de-auto" class="header-anchor">#</a></h3>
+<p>因为块标签拥有满行属性，但是设置宽度以后，剩余的空间就是默认的 margin，设置左右的 margin 值为 auto，那么剩余的 margin 就会平分到左右两边。</p>
+<h3><span id="pshu-zhi-fang-xiang-de-auto">竖直方向的 auto</span><a href="#pshu-zhi-fang-xiang-de-auto" class="header-anchor">#</a></h3>
+<p>相对于水平方向来说，块元素在垂直方向上并没有满屏的属性，margin 默认在上下的值都是 0，并没有剩余空间去平分。</p>
+<h3><span id="pta-xian-he-bian-kuang-he-bing-wen-ti">塌陷和边框合并问题</span><a href="#pta-xian-he-bian-kuang-he-bing-wen-ti" class="header-anchor">#</a></h3>
+<ul>
+<li>父级塌陷：父级的第一个子元素的上 margin 和最后一个子元素的下 margin 会进行塌陷给父级，这样的设计是为了方便父级和他的兄弟进行垂直 margin 的合并，避免缝隙过大。</li>
+<li>解决塌陷：给父级开启 BFC，给父级设置边框。</li>
+<li>兄弟的 margin 垂直方向会进行折叠，取最大值 。</li>
+</ul>
+<h3><span id="pmargin-fu-zhi">margin 负值</span><a href="#pmargin-fu-zhi" class="header-anchor">#</a></h3>
+<ul>
+<li>margin-top 为负值：元素向上走，不会影响上边的元素的位置（会出现重叠），并且下边的兄弟元素会跟着一起向上走。</li>
+<li>margin-left 为负值：元素向左走，不会影响前边的元素位置(会出现重叠)，右边兄弟元素会跟随移动。</li>
+<li>margin-right 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向左走。</li>
+<li>margin-bottom 为负值：元素不会移动，形态大小也不会发生改变，但是所占用的位置会减少（负 margin 的值），所以，后边的兄弟元素会自动向上走。</li>
+</ul>
+<h3><span id="pzhi-chi-xing">支持性</span><a href="#pzhi-chi-xing" class="header-anchor">#</a></h3>
+<p><code>margin</code> 完美支持块元素和行内块元素，不支持行元素的垂直方向。</p>
+<h2><span id="p6-lun-kuo-ceng-outline">6、轮廓层 outline</span><a href="#p6-lun-kuo-ceng-outline" class="header-anchor">#</a></h2>
+<p><code>outline</code> 轮廓层。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 去掉轮廓 */</span></span><br><span class="line"><span class="selector-tag">outline</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210105</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/210105/" class="post-title-link" itemprop="url">HTML 多媒体</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 17:06:14" itemprop="dateCreated datePublished" datetime="2021-01-30T17:06:14+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:33:04" itemprop="dateModified" datetime="2021-02-01T18:33:04+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2101%EF%BC%9AHTML/" itemprop="url" rel="index"><span itemprop="name">2101：HTML</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>220</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="html-duo-mei-ti">HTML 多媒体</span><a href="#html-duo-mei-ti" class="header-anchor">#</a></h1>
+<p>多媒体<br>
+图片<br>
+格式<br>
+jpg<br>
+png<br>
+gif<br>
+webp<br>
+音频<br>
+格式<br>
+mp3<br>
+webm<br>
+<code>&lt;audio&gt;</code><br>
+视频<br>
+格式<br>
+<code>&lt;video&gt;</code><br>
+src 引入的资源路径<br>
+width / height<br>
+controls 显示控制和进度条<br>
+autoplay 自动播放<br>
+muted 静音（想要自动播放生效，需要开启静音）<br>
+loop 循环<br>
+poster 视频播放前的一帧，图片路径<br>
+preload 加载设置<br>
+none：不提前加载视频 metadata：抓取元数据 auto：预加载<br>
+音视频兼容性处理</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/200104/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">200104</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/200104/" class="post-title-link" itemprop="url">HTML 5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 17:05:30" itemprop="dateCreated datePublished" datetime="2021-01-30T17:05:30+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:32:50" itemprop="dateModified" datetime="2021-02-01T18:32:50+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2101%EF%BC%9AHTML/" itemprop="url" rel="index"><span itemprop="name">2101：HTML</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>107</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="html-5">HTML 5</span><a href="#html-5" class="header-anchor">#</a></h1>
+<p>新增标签<br>
+header<br>
+footer<br>
+表单增强<br>
+画布 Canvas<br>
+地理 Geolocation<br>
+音视频<br>
+自定义属性<br>
+本地存储 localStorage/seesionStorege<br>
+拖拽释放<br>
+WebWorker<br>
+WebSocket</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210103/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1955,7 +2375,7 @@ toUpperCase<br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:08:19" itemprop="dateModified" datetime="2021-02-01T19:08:19+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-09 17:15:38" itemprop="dateModified" datetime="2021-02-09T17:15:38+08:00">2021-02-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1973,7 +2393,7 @@ toUpperCase<br>
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>622</span>
+              <span>615</span>
             </span>
 
         </div>
@@ -1985,57 +2405,15 @@ toUpperCase<br>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="cuo-wu-yu-yi-chang-chu-li">错误与异常处理</span><a href="#cuo-wu-yu-yi-chang-chu-li" class="header-anchor">#</a></h1>
-<p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
-<h2><span id="p1-cuo-wu-lei-xing">1、错误类型</span><a href="#p1-cuo-wu-lei-xing" class="header-anchor">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Error</code></td>
-<td>基类 <br><code>name</code> 可以读写异常类型（TypeError）<br><code>message</code> 可以读写详细的错误信息。</td>
-</tr>
-<tr>
-<td><code>EvalError</code></td>
-<td>不正确使用eval()方法时抛出</td>
-</tr>
-<tr>
-<td><code>SyntaxError</code></td>
-<td><strong>语法错误</strong></td>
-</tr>
-<tr>
-<td><code>ReferenceError</code></td>
-<td>读取不存在的变量时抛出</td>
-</tr>
-<tr>
-<td><code>TypeError</code></td>
-<td>值的类型发生错误的时候抛出</td>
-</tr>
-<tr>
-<td><code>RangeError</code></td>
-<td>数字超出合法范围</td>
-</tr>
-<tr>
-<td><code>URIError</code></td>
-<td>URI编码和解码错误</td>
-</tr>
-</tbody>
-</table>
-<h2><span id="p2-try-catch">2、try…catch</span><a href="#p2-try-catch" class="header-anchor">#</a></h2>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">// 调试代码块</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">// 捕获异常，并进行异常处理代码块</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>一般情况下 <code>try...catch</code> 就够用了。</p>
-<p>按顺序执行 try 子句中的代码，如果没有异常发生，将会忽略 catch 跳转到 finally 子句继续执行。</p>
-<p>无法捕获逻辑错误。</p>
-<h2><span id="p3-throw">3、throw</span><a href="#p3-throw" class="header-anchor">#</a></h2>
-<p>抛出异常。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">1</span> / <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (num = <span class="literal">Infinity</span>) &#123;</span><br><span class="line">        <span class="comment">// 抛出错误</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (exception) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(exception.message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>抛出错误之后，后续代码不会执行。</p>
-
+          <p>ECMA-262 规范了7种错误类型。其中<code>Error</code>是基类，其他6种错误类型是子类，都继承了基类。基类的主要作用是自定义错误对象。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/220106/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -2384,376 +2762,10 @@ continue</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220402/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220402</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/220402/" class="post-title-link" itemprop="url">Symbol</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 16:06:15" itemprop="dateCreated datePublished" datetime="2021-01-30T16:06:15+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:12:28" itemprop="dateModified" datetime="2021-02-01T19:12:28+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2204%EF%BC%9AES6/" itemprop="url" rel="index"><span itemprop="name">2204：ES6</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="symbol">Symbol</span><a href="#symbol" class="header-anchor">#</a></h1>
-<p>保证对象的每个属性的名字都是独一无二的，从根本上面防止属性名冲突。</p>
-<h2><span id="pyi-shi-yong">一、使用</span><a href="#pyi-shi-yong" class="header-anchor">#</a></h2>
-<p>1、不用加 <code>new</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>()</span><br><span class="line"><span class="keyword">typeof</span> s <span class="comment">// &quot;symbol&quot;</span></span><br></pre></td></tr></table></figure>
-<p>2、可以加描述符</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>) </span><br><span class="line">s.toString() <span class="comment">// &#x27;Symbol(foo)&#x27;</span></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3、`</span><span class="built_in">Symbol</span>.prototype.description<span class="string">`</span></span><br><span class="line"><span class="string">&gt; ES2019新增</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>js</span><br><span class="line"><span class="keyword">const</span> s = <span class="built_in">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line">s.description <span class="comment">// &quot;foo&quot;</span></span><br></pre></td></tr></table></figure>
-<p>4、<code>Symbol.for</code> / <code>Symbol.keyFor</code><br>
-有时，我们希望重新使用同一个Symbol值，Symbol.for()方法可以做到这一点。它接受一个字符串作为参数，然后搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建一个以该字符串为名称的 Symbol 值，并将其注册到全局。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line">s1 === s2 <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<p><code>Symbol.keyFor ()</code> 方法返回一个已登记的 Symbol 类型值的 key。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"><span class="built_in">Symbol</span>.keyFor(s) <span class="comment">// &quot;foo&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line"><span class="built_in">Symbol</span>.keyFor(s2) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-<h2><span id="per-bian-li">二、遍历</span><a href="#per-bian-li" class="header-anchor">#</a></h2>
-<p>无法遍历: <code>for...in</code>、<code>for...of</code>、<code>Object.keys()</code>、<code>Object.getOwnPropertyNames()</code>、<code>JSON.stringify()</code></p>
-<p>可以遍历：<br>
-<code>Object.getOwnPropertySymbols()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">Symbol</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Symbol</span>(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"></span><br><span class="line">obj[a] = <span class="string">&quot;Hello&quot;</span></span><br><span class="line">obj[b] = <span class="string">&quot;World&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> objectSymbols = <span class="built_in">Object</span>.getOwnPropertySymbols(obj)</span><br><span class="line"><span class="comment">// [Symbol(a), Symbol(b)]</span></span><br></pre></td></tr></table></figure>
-<p><code>Reflect.ownKeys()</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  [<span class="built_in">Symbol</span>(<span class="string">&#x27;key&#x27;</span>)]: <span class="number">1</span>,</span><br><span class="line">  enum: <span class="number">2</span>,</span><br><span class="line">  nonEnum: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Reflect</span>.ownKeys(obj)</span><br><span class="line"><span class="comment">// [&quot;enum&quot;, &quot;nonEnum&quot;, Symbol(key)]</span></span><br></pre></td></tr></table></figure>
-<h2><span id="psan-ying-yong">三、应用</span><a href="#psan-ying-yong" class="header-anchor">#</a></h2>
-<p>1、作为对象的属性名</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mySymbol = <span class="built_in">Symbol</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第一种写法</span></span><br><span class="line"><span class="keyword">let</span> a = &#123;&#125;</span><br><span class="line">a[mySymbol] = <span class="string">&quot;hello&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种写法</span></span><br><span class="line"><span class="keyword">let</span> b = &#123;</span><br><span class="line">  [mySymbol]: <span class="string">&quot;hello&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三种写法</span></span><br><span class="line"><span class="keyword">let</span> c = &#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(c, mySymbol, &#123; <span class="attr">value</span>: <span class="string">&quot;hello&quot;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上写法都得到同样的结果</span></span><br><span class="line"><span class="comment">// 只能用[]不能用.取值</span></span><br><span class="line">a[mySymbol]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>2、消除魔术字符串<br>
-待更新。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220103/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220103</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/220103/" class="post-title-link" itemprop="url">ES 基本数据类型</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 15:53:22" itemprop="dateCreated datePublished" datetime="2021-01-30T15:53:22+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:05:42" itemprop="dateModified" datetime="2021-02-01T19:05:42+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>391</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="es-ji-ben-shu-ju-lei-xing">ES 基本数据类型</span><a href="#es-ji-ben-shu-ju-lei-xing" class="header-anchor">#</a></h1>
-<p>在 ES 中，数据类型分为基本类型和引用类型（复杂类型）。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>基本类型</th>
-<th>引用类型</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>值</td>
-<td>不可变（注）</td>
-<td>可变</td>
-</tr>
-<tr>
-<td>添加属性和方法</td>
-<td>无效</td>
-<td>可以</td>
-</tr>
-<tr>
-<td>存储方式</td>
-<td>栈区</td>
-<td>名字地址存栈区，值存堆区</td>
-</tr>
-<tr>
-<td>比较方式</td>
-<td>值比较</td>
-<td>引用的比较</td>
-</tr>
-</tbody>
-</table>
-<p>基本类型分为</p>
-<ul>
-<li>布尔值 <code>Boolean</code></li>
-<li>数值 <code>Number</code></li>
-<li>大整数 <code>bigint</code> （ES6新增）</li>
-<li>字符串 <code>String</code></li>
-<li><code>null</code></li>
-<li><code>undefined</code></li>
-<li><code>Symbol</code> （ES6新增）</li>
-</ul>
-<h2><span id="pyi-bu-er-zhi">一、布尔值</span><a href="#pyi-bu-er-zhi" class="header-anchor">#</a></h2>
-<h2><span id="per-shu-zhi-da-zheng-shu">二、数值、大整数</span><a href="#per-shu-zhi-da-zheng-shu" class="header-anchor">#</a></h2>
-<p>NaN</p>
-<p>最值</p>
-<p>安全值</p>
-<h2><span id="psan-zi-fu-chuan">三、字符串</span><a href="#psan-zi-fu-chuan" class="header-anchor">#</a></h2>
-<p>模板字符串</p>
-<h2><span id="psi-null-amp-undefined">四、<code>null</code> &amp; <code>undefined</code></span><a href="#psi-null-amp-undefined" class="header-anchor">#</a></h2>
-<p>常见的 <code>undefined</code> 环境</p>
-<ul>
-<li>变量声明但是没有赋值</li>
-<li>调用函数没有提供的参数</li>
-<li>函数默认返回值</li>
-<li>对象没有赋值的属性</li>
-</ul>
-<p>常见的 <code>null</code> 环境</p>
-<ul>
-<li>对象原型链的终点</li>
-<li>让变量指向的对象成为垃圾对象</li>
-</ul>
-<h2><span id="pwu-symbol">五、<code>Symbol</code></span><a href="#pwu-symbol" class="header-anchor">#</a></h2>
-<p>保证对象的每个属性的名字都是独一无二的，从根本上面防止属性名冲突。</p>
-<p>更多内容详看 <code>ES6/Symbol</code></p>
-<h2><span id="pliu-pan-duan-lei-xing">六、判断类型</span><a href="#pliu-pan-duan-lei-xing" class="header-anchor">#</a></h2>
-<p><code>typeof</code><br>
-<code>instanceof</code><br>
-<code>isNaN</code></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220102/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220102</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/220102/" class="post-title-link" itemprop="url">ES 基本语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 15:49:02" itemprop="dateCreated datePublished" datetime="2021-01-30T15:49:02+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:05:31" itemprop="dateModified" datetime="2021-02-01T19:05:31+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>538</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="es-ji-ben-yu-fa">ES 基本语法</span><a href="#es-ji-ben-yu-fa" class="header-anchor">#</a></h1>
-<h2><span id="pyi-yu-ju-zhu-shi-fen-hao-kong-ge">一、语句、注释、分号、空格</span><a href="#pyi-yu-ju-zhu-shi-fen-hao-kong-ge" class="header-anchor">#</a></h2>
-<ul>
-<li>语句是执行行为的语法结构和命令。分为声明语句、调试语句<code>debugger</code>等。</li>
-<li>注释的语法和C语言一样。</li>
-<li>建议每个语句结束都加分号，否则可能会出现奇奇怪怪的BUG。（后期使用框架可以不用加分号）</li>
-<li>程序会忽略空白，合适的空白与缩进可以保持良好的代码结构。</li>
-</ul>
-<h2><span id="per-bian-liang">二、变量</span><a href="#per-bian-liang" class="header-anchor">#</a></h2>
-<p>变量是一种用来储存数据的可变容器，是数据的命名储存，通常情况下由<strong>标识符</strong>和<strong>值</strong>构成。</p>
-<h3><span id="p1-bian-liang-de-ming-ming-gui-fan">1、变量的命名规范</span><a href="#p1-bian-liang-de-ming-ming-gui-fan" class="header-anchor">#</a></h3>
-<ul>
-<li>由数字，字母，下划线，美元符组成。</li>
-<li>不允许数字开头。</li>
-<li>不能和关键字、保留字同名。</li>
-<li>严格区分大小写。</li>
-<li>变量的起名要有意义。避免使用拼音等。</li>
-</ul>
-<h3><span id="p2-var">2、var</span><a href="#p2-var" class="header-anchor">#</a></h3>
-<h3><span id="p3-let-es6">3、let <code>ES6</code></span><a href="#p3-let-es6" class="header-anchor">#</a></h3>
-<p>块级作用域。</p>
-<h3><span id="p4-const-es6">4、const <code>ES6</code></span><a href="#p4-const-es6" class="header-anchor">#</a></h3>
-<h2><span id="psan-yan-ge-mo-shi">三、严格模式</span><a href="#psan-yan-ge-mo-shi" class="header-anchor">#</a></h2>
-<p>开启严格模式 <code>&quot;use strict&quot;</code></p>
-<p>严格模式的特点：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变量需声明才能使用</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;变量需声明才能使用&quot;</span>)</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数全局调用的时候 this 指向 undefined</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">fn() <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2819,14 +2831,14 @@ continue</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">240</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

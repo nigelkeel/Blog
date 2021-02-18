@@ -197,6 +197,632 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220901/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220901</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220901/" class="post-title-link" itemprop="url">jQuery</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:24:58" itemprop="dateCreated datePublished" datetime="2021-01-31T13:24:58+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:29:44" itemprop="dateModified" datetime="2021-02-01T19:29:44+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2209%EF%BC%9AjQuery/" itemprop="url" rel="index"><span itemprop="name">2209：jQuery</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="jquery-ji-chu">jQuery 基础</span><a href="#jquery-ji-chu" class="header-anchor">#</a></h1>
+<h2><span id="pyi-kai-shi">一、开始</span><a href="#pyi-kai-shi" class="header-anchor">#</a></h2>
+<p><strong>jQuery</strong> 是一个 JS 开源类库，它通过封装原生的 JavaScript 函数得到。</p>
+<h2><span id="p1-kai-shi">1、开始</span><a href="#p1-kai-shi" class="header-anchor">#</a></h2>
+<p>引入</p>
+<ul>
+<li>
+<p>本地</p>
+</li>
+<li>
+<p>CDN 在线</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>版本</p>
+<ul>
+<li>版本格式 <code>大版本.小版本.bugfix</code></li>
+<li><code>1.x.x</code> 完全兼容 IE678</li>
+<li><code>2.x.x</code> 不再兼容 IE678</li>
+<li><code>3.x.x</code> 源码使用 ES6 语法</li>
+</ul>
+<p><code>jquery.js</code> / <code>jquery.min.js</code> 压缩版，正式上线使用压缩版本。</p>
+<h3><span id="p2-dai-ma-feng-ge">2、代码风格</span><a href="#p2-dai-ma-feng-ge" class="header-anchor">#</a></h3>
+<p>（1）全局函数 <code>jQuery()</code> ，快捷别名 <code>$</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.jQuery = windows.$ = jQuery;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 选择器选中 box 元素，获取了 jQuery 对象</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// CSS方法设置样式</span></span><br><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>（2）链式调用</p>
+<p>jQuery 的<strong>每个方法返回的都是 jQuery 对象</strong>，所以可以链式调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#box&quot;</span>).css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;red&quot;</span>).css(<span class="string">&quot;font-size&quot;</span>, <span class="string">&quot;40px&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h3><span id="p3-jquery-dui-xiang-yu-js-dui-xiang">3、jQuery 对象与 JS 对象</span><a href="#p3-jquery-dui-xiang-yu-js-dui-xiang" class="header-anchor">#</a></h3>
+<p><strong>JS 对象</strong> 即 DOM 对象，即是我们用传统的方法获得的对象。</p>
+<p><strong>jQuery 对象</strong> 即是用 jQuery 类库的选择器获得的类数组对象，就是通过 jQuery 包装 DOM 对象后产生的对象，它是 jQuery 独有的。如果一个对象是 jQuery 对象，那么就可以使用 jQuery 里的方法。</p>
+<p>对象的转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery对象 转 DOM对象</span></span><br><span class="line">$(...)[index];</span><br><span class="line">$(...).get(index);</span><br><span class="line"></span><br><span class="line"><span class="comment">// DOM对象 转 jQuery 对象</span></span><br><span class="line">$(BOM对象)</span><br></pre></td></tr></table></figure>
+<h3><span id="p4-zhi-xing-shi-ji">4、执行时机 △</span><a href="#p4-zhi-xing-shi-ji" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>window.onload</th>
+<th>$(document).ready()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行时机</td>
+<td>等待网页全部加载完成然后才会执行</td>
+<td>等待 DOM 结构加载完成就执行</td>
+</tr>
+<tr>
+<td>执行次数</td>
+<td>只会执行一次<br>写第二次会覆盖第一次</td>
+<td>可以执行多次<br>不会覆盖</td>
+</tr>
+<tr>
+<td>简写方案</td>
+<td>无</td>
+<td>$(function (){});</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="per-chang-gui-cao-zuo">二、常规操作</span><a href="#per-chang-gui-cao-zuo" class="header-anchor">#</a></h2>
+<h3><span id="p1-lei-shu-zu-cao-zuo">1、类数组操作</span><a href="#p1-lei-shu-zu-cao-zuo" class="header-anchor">#</a></h3>
+<ul>
+<li><code>children()</code> 获取选择器元素的<strong>子元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>parent()</code> 获取选择器元素的<strong>父元素</strong>节点集合（只有一个），，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>siblings()</code> 获取选择器元素的<strong>兄弟元素</strong>节点集合，如果指定了参数，那么该参数也是筛选表达式</li>
+<li><code>find()</code> 寻找后代元素，参数直接写选择器</li>
+<li><code>end</code> 返回上一次破坏性操作之前的伪数组</li>
+<li>对于类数组的常用方法还有很多，比如 <code>prev()</code>、<code>next()</code>等等。</li>
+</ul>
+<h3><span id="p2-xuan-ze-qi-cao-zuo">2、选择器操作</span><a href="#p2-xuan-ze-qi-cao-zuo" class="header-anchor">#</a></h3>
+<p>直接参数传递选择器。</p>
+<ul>
+<li>基础选择器 <code>#id</code>、<code>.class</code></li>
+<li>层次选择器 <code>A B</code>、<code>A+B</code>、<code>A~B</code></li>
+<li>过滤选择器 <code>:first</code>、<code>first-child</code>、<code>not()</code>、<code>even</code>、<code>odd</code>
+<ul>
+<li><code>:first</code> / <code>:last</code> 选取第一个元素/最后一个元素</li>
+<li><code>:first-child</code> / <code>:last-child</code> 选取第一个子元素/最后一个子元素。</li>
+<li><code>:only-child</code> 选取只有一个子元素的节点。</li>
+<li><code>nth-child(index/even/odd/equation)</code> 选取序列特定的元素</li>
+<li><code>:even</code> / <code>:odd</code> 选取索引是单数、双数的元素</li>
+<li><code>:eq(index)</code> 选取指定 index 值的元素</li>
+<li><code>:gt(index)</code> / <code>:lt(index)</code> 选取索引大于/小于指定的元素</li>
+<li><code>:not(seletor)</code> 排除选定的元素</li>
+<li><code>:contains(text)</code> 选取包含指定文本 text 的元素。</li>
+<li><code>:empty</code> 选取空元素</li>
+<li><code>:has(seletor)</code> 选取含有指定选择器的元素。</li>
+<li><code>:parent</code> 选取含有子元素或文本的元素。</li>
+</ul>
+</li>
+<li>属性过滤选择器 <code>[attr]</code></li>
+<li>表单选择器 <code>:input</code></li>
+</ul>
+<h2><span id="psan-jquery-dong-hua">三、jQuery 动画</span><a href="#psan-jquery-dong-hua" class="header-anchor">#</a></h2>
+<h3><span id="p1-xian-shi-yin-cang">1. 显示、隐藏</span><a href="#p1-xian-shi-yin-cang" class="header-anchor">#</a></h3>
+<p><code>.show()</code> 显示 | <code>.hide()</code> 隐藏</p>
+<ul>
+<li>第一个参数 控制速度 600ms <code>slow</code> | 默认 400ms <code>normal</code> | 200ms <code>fast</code></li>
+<li>第二个参数 控制动画形式 <code>linear</code> | <code>swing</code></li>
+<li>第三个参数 书写回调函数</li>
+</ul>
+<p><code>.tiggle()</code> 开关（显示的时候隐藏，隐藏的时候显示）</p>
+<h3><span id="p2-hua-dong-juan-dong">2. 滑动、卷动</span><a href="#p2-hua-dong-juan-dong" class="header-anchor">#</a></h3>
+<p><code>.slideUp()</code> 向上收缩| <code>.slideDown()</code> 向上展开 | <code>.sildeToggle()</code></p>
+<h3><span id="p3-dan-ru-dan-chu">3. 淡入、淡出</span><a href="#p3-dan-ru-dan-chu" class="header-anchor">#</a></h3>
+<p><code>.fadeIn()</code> | <code>.fadeOut()</code> | <code>.fadeToggle()</code></p>
+<h3><span id="p4-zi-ding-yi-dong-hua">4. 自定义动画</span><a href="#p4-zi-ding-yi-dong-hua" class="header-anchor">#</a></h3>
+<p>（1）基础使用</p>
+<p><code>animate( params, speed, callback)</code></p>
+<ul>
+<li>第 1 个参数 包含样式属性和值的映射速度</li>
+<li>第 2 个参数 可选</li>
+<li>第 3 个参数 在动画完成时执行的回调函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;.box&quot;</span>).animate(</span><br><span class="line">  &#123;</span><br><span class="line">    left: <span class="string">&quot;1000px&quot;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="number">2000</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 回调函数</span></span><br><span class="line">  &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>（2）动画队列</p>
+<p>如果要按照顺序执行动画，只需要按照代码顺序就可以。（只有动画会放在队列中，其他方法会立即执行 ）</p>
+<h3><span id="p5-ting-zhi-dong-hua">5. 停止动画</span><a href="#p5-ting-zhi-dong-hua" class="header-anchor">#</a></h3>
+<p>（1） 停止方法</p>
+<p><code>stop( clearQueue, gotoEnd )</code></p>
+<ul>
+<li>第 1 个参数 可选 布尔值 是否需要清空未执行完的动画队列</li>
+<li>第 2 个参数 可选 布尔值 是否直接将正在执行的动画跳转到末状态</li>
+</ul>
+<p>这个方法会结束当前正在进行的动画，并立即执行队列中的下一个动画。</p>
+<p>（2）判断元素是否处于动画状态</p>
+<p>当用户在某个元素上执行 <code>animate()</code> 动画时，就会出现动画积累，</p>
+<p>使用 <code>is(&quot;:animated&quot;)</code> 来判断是否处于动画状态，如果不处于动画状态，才会给元素添加新动画。</p>
+<h3><span id="p6-yan-chi-dong-hua">6. 延迟动画</span><a href="#p6-yan-chi-dong-hua" class="header-anchor">#</a></h3>
+<p><code>delay()</code></p>
+<p>参数是延迟的毫秒数。</p>
+<h2><span id="psi-jquery-yuan-su-yang-shi-cao-zuo">四、jQuery 元素样式操作</span><a href="#psi-jquery-yuan-su-yang-shi-cao-zuo" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>css( name )</code></td>
+<td>获取元素的样式</td>
+</tr>
+<tr>
+<td><code>css( name, value)</code></td>
+<td>设置元素的样式</td>
+</tr>
+<tr>
+<td><code>css( name:value, name2:value2,..)</code></td>
+<td>设置元素的样式（多个）</td>
+</tr>
+<tr>
+<td><code>addClass(Class)</code>/<code>removeClass(Class)</code></td>
+<td>添加类/ 移除类</td>
+</tr>
+<tr>
+<td><code>toggleClass(Class)</code></td>
+<td>来回切换默认样式和指定样式</td>
+</tr>
+<tr>
+<td><code>width()</code>/<code>height()</code></td>
+<td>获取和设置宽高</td>
+</tr>
+<tr>
+<td><code>innerWidth()</code> / <code>innerHeight()</code></td>
+<td>获取包含内边距的宽高</td>
+</tr>
+<tr>
+<td><code>outerWidth()</code> / <code>outerHeight()</code></td>
+<td>获取包含边框和内边距的宽高<br>如果参数是<code>true</code>则包含外边距</td>
+</tr>
+<tr>
+<td><code>offset()</code></td>
+<td>获取元素相对文档的偏移位置</td>
+</tr>
+<tr>
+<td><code>position()</code></td>
+<td>获取元素相对父元素的偏移位置</td>
+</tr>
+<tr>
+<td><code>scrollTop()</code> / <code>scrollLeft</code></td>
+<td>获取和设置水平/垂直滚动条</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="pwu-jquery-dom-cao-zuo">五、jQuery DOM 操作</span><a href="#pwu-jquery-dom-cao-zuo" class="header-anchor">#</a></h2>
+<h3><span id="p1-she-zhi-nei-rong-he-shu-xing">1、设置内容和属性</span><a href="#p1-she-zhi-nei-rong-he-shu-xing" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>html()</code></td>
+<td>获取和设置元素中的内容</td>
+</tr>
+<tr>
+<td><code>text()</code></td>
+<td>获取和设置元素中的文本内容</td>
+</tr>
+<tr>
+<td><code>val()</code></td>
+<td>获取和设置表单元素的文本内容</td>
+</tr>
+<tr>
+<td><code>prop/attr(key[, value])</code> <br><code>prop/attr(key:value, key2:value2, )</code></td>
+<td>获取和设置元素 key 属性值<br>处理自带属性使用 <code>prop</code><br>处理自定义属性使用 <code>attr</code></td>
+</tr>
+<tr>
+<td><code>removeattr(key)</code></td>
+<td>删除指定的属性</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p2-jie-dian-cao-zuo">2、节点操作</span><a href="#p2-jie-dian-cao-zuo" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$(&quot;&lt;标签名&gt;&lt;/标签名&quot;)</code></td>
+<td><code>createElement()</code></td>
+</tr>
+<tr>
+<td><code>$(&quot;&lt;标签名&gt;文本&lt;/标签名&gt;&quot;)</code></td>
+<td><code>createTextNode()</code></td>
+</tr>
+<tr>
+<td>直接写在创建的标签中 | <code>setAttribute( name, value)</code></td>
+<td>创建属性节点</td>
+</tr>
+<tr>
+<td><code>append(Content)</code> 元素内部后面插入 <br><code>appendTo(Content)</code> <br><code>prepend(Content)</code> 元素内部前面插入 <br><code>prepentTo(Content)</code> <br><code>after()</code> 元素外部后面 <br><code>insertAfter()</code> <br><code>before()</code> 元素外部前面 <br><code>insertBefore()</code></td>
+<td>插入节点</td>
+</tr>
+<tr>
+<td><code>remove()</code></td>
+<td><code>removeChild()</code></td>
+</tr>
+<tr>
+<td><code>replaceAll()</code></td>
+<td><code>replaceChild()</code><br>节点被替换后，所包含的事件行为就全部消失了。</td>
+</tr>
+<tr>
+<td><code>clone()</code></td>
+<td><code>cloneNode()</code><br>参数可以为空，只复制元素和内容，<br>加上 <code>true</code> 参数的话，会复制这个元素的事件处理行为。</td>
+</tr>
+</tbody>
+</table>
+<h2><span id="pliu-jquery-shi-jian">六、jQuery 事件</span><a href="#pliu-jquery-shi-jian" class="header-anchor">#</a></h2>
+<h3><span id="p1-jian-xie-shi-jian">1、简写事件</span><a href="#p1-jian-xie-shi-jian" class="header-anchor">#</a></h3>
+<p>jQuery 封装了常用的事件以节约更多的代码，称为<strong>简写事件</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>触发</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>click(fn)</code></td>
+<td>鼠标单击</td>
+</tr>
+<tr>
+<td><code>dblclick(fn)</code></td>
+<td>鼠标双击</td>
+</tr>
+<tr>
+<td><code>mousedown(fn)</code></td>
+<td>鼠标点击后</td>
+</tr>
+<tr>
+<td><code>mouseup(fn)</code></td>
+<td>鼠标点击后弹起</td>
+</tr>
+<tr>
+<td><code>mouseover(fn)</code></td>
+<td>鼠标移入</td>
+</tr>
+<tr>
+<td><code>mouseout(fn)</code></td>
+<td>鼠标移出</td>
+</tr>
+<tr>
+<td><code>mousemove(fn)</code></td>
+<td>鼠标移动</td>
+</tr>
+<tr>
+<td><code>mouseeenter(fn)</code></td>
+<td>鼠标穿过</td>
+</tr>
+<tr>
+<td><code>mouselevave(fn)</code></td>
+<td>鼠标穿出</td>
+</tr>
+<tr>
+<td><code>keydown(fn)</code></td>
+<td>键盘按下</td>
+</tr>
+<tr>
+<td><code>keyup(fn)</code></td>
+<td>键盘弹起</td>
+</tr>
+<tr>
+<td><code>resize(fn)</code></td>
+<td>文档改变大小</td>
+</tr>
+<tr>
+<td><code>scroll(fn)</code></td>
+<td>滚动条滚动</td>
+</tr>
+<tr>
+<td><code>focus(fn)</code></td>
+<td>表单交单激活</td>
+</tr>
+<tr>
+<td><code>blur(fn)</code></td>
+<td>表单交单丢失</td>
+</tr>
+<tr>
+<td><code>focusin(fn)</code></td>
+<td>表单焦点激活</td>
+</tr>
+<tr>
+<td><code>select(fn)</code></td>
+<td>表单文本选定</td>
+</tr>
+<tr>
+<td><code>change(fn)</code></td>
+<td>表单元素值改变</td>
+</tr>
+<tr>
+<td><code>submit(fn)</code></td>
+<td>表单提交</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="p2-shi-jian-dui-xiang">2、事件对象</span><a href="#p2-shi-jian-dui-xiang" class="header-anchor">#</a></h3>
+<p>对于原生的事件对象，由于浏览器差异，开发者总是需要做兼容性处理。jQuery 解决了原生事件对象的兼容性问题，还提供了很多新的属性和方法。</p>
+<p><code>stopPropagation()</code> 阻止事件冒泡</p>
+<p><code>preventDefault()</code> 阻止默认行为</p>
+<h3><span id="p3-jquery-bang-ding-shi-jian">3、jQuery 绑定事件</span><a href="#p3-jquery-bang-ding-shi-jian" class="header-anchor">#</a></h3>
+<p><code>bind()</code> 方法无法动态绑定尚未存在的元素。此外还有 <code>live()</code> <code>delegate</code> 等已经被废弃，底层实际使用 <code>on()</code>。</p>
+<p><strong><code>on( events, selector, data, fn)</code></strong> 绑定事件 jQuery 1.7+</p>
+<ul>
+<li><code>events</code> 事件类型</li>
+<li><code>selector</code> 触发事件选择器元素的后代</li>
+<li><code>data</code> 当一个事件被触发要传递 event.data 给事件处理函数</li>
+<li><code>fn</code> 该事件被触发时的执行函数</li>
+</ul>
+<p>还可以<strong>绑定多个事件绑定同一个函数、多个事件绑定不同函数</strong>。</p>
+<p><code>unbind()</code> 解除绑定事件。</p>
+<p><strong><code>off( events, selector, fn)</code></strong> 解除绑定事件。</p>
+<p><code>one( type, data, fn )</code> 绑定元素执行完毕后自动移除事件，方法仅触发一次。</p>
+<ul>
+<li><code>type</code> 添加到元素的一个或者多个事件。</li>
+<li><code>data</code> 将要传递给事件处理函数的数据映射。</li>
+<li><code>fn</code> 每当事件触发时执行的函数。</li>
+</ul>
+<h2><span id="pqi-jquery-kuo-zhan">七、jQuery 扩展</span><a href="#pqi-jquery-kuo-zhan" class="header-anchor">#</a></h2>
+<p>自定义了<code>extent()</code>和 <code>fn.extent()</code> 方法，扩展 jQuery 类本身，为类添加新的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line">$.each([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="function"><span class="keyword">function</span> (<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">  arr.push(item, <span class="number">10</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181205/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181205</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181205/" class="post-title-link" itemprop="url">VSCode 拼写检查</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 10:09:00" itemprop="dateCreated datePublished" datetime="2021-01-31T10:09:00+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:27:14" itemprop="dateModified" datetime="2021-02-01T18:27:14+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>286</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2><span id="pcode-spell-checker-si-xing-tui-jian">Code Spell Checker  - 四星推荐</span><a href="#pcode-spell-checker-si-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>代码拼写检查。</p>
+<p>配置忽略词 <code>Ignore Words</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&quot;cSpell.ignoreWords&quot;: [</span><br><span class="line">    &quot;vuex&quot;,</span><br><span class="line">    &quot;stylesheet&quot;,</span><br><span class="line">    &quot;Nprogress&quot;,</span><br><span class="line">    &quot;swiper&quot;,</span><br><span class="line">    &quot;mockjs&quot;,</span><br><span class="line">    &quot;rgba&quot;,</span><br><span class="line">    &quot;tahoma&quot;,</span><br><span class="line">    &quot;nowrap&quot;,</span><br><span class="line">    &quot;clearfix&quot;,</span><br><span class="line">    <span class="string">&quot;nbsp&quot;</span></span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181204</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181204/" class="post-title-link" itemprop="url">VSCode Prettier & 代码格式化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 10:07:01" itemprop="dateCreated datePublished" datetime="2021-01-31T10:07:01+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:27:02" itemprop="dateModified" datetime="2021-02-01T18:27:02+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1812%EF%BC%9AVSCode/" itemprop="url" rel="index"><span itemprop="name">1812：VSCode</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>254</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="prettier-amp-dai-ma-ge-shi-hua">Prettier &amp; 代码格式化</span><a href="#prettier-amp-dai-ma-ge-shi-hua" class="header-anchor">#</a></h1>
+<p>项目根目录 新建 <code>.prettierrc</code> 配置文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;semi&quot;</span>: <span class="literal">false</span>, <span class="comment">// 句末是否加分号</span></span><br><span class="line">  <span class="attr">&quot;singleQuote&quot;</span>: <span class="literal">true</span> <span class="comment">// 用单引号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="pbeautify-wu-xing-tui-jian">Beautify - 五星推荐</span><a href="#pbeautify-wu-xing-tui-jian" class="header-anchor">#</a></h2>
+<p>代码格式美化。<br>
+对象不会自动换行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;beautify.config&quot;: &#123;</span><br><span class="line">    &quot;brace_style&quot;: &quot;collapse,preserve-inline&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181203/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -645,7 +1271,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:22:04" itemprop="dateModified" datetime="2021-02-01T18:22:04+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-09 17:07:14" itemprop="dateModified" datetime="2021-02-09T17:07:14+08:00">2021-02-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -663,7 +1289,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>118</span>
+              <span>192</span>
             </span>
 
         </div>
@@ -675,20 +1301,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="window-ming-ling-xing">Window 命令行</span><a href="#window-ming-ling-xing" class="header-anchor">#</a></h1>
-<h2><span id="pyi-chang-yong">一、常用</span><a href="#pyi-chang-yong" class="header-anchor">#</a></h2>
-<ul>
-<li>清屏 <code>CLS</code></li>
-<li>运行可执行文件 <code>Start xxx.exe</code></li>
-</ul>
-<h2><span id="per-shutdown">二、<code>shutdown</code></span><a href="#per-shutdown" class="header-anchor">#</a></h2>
-<ul>
-<li>设置 3600秒 后关机 <code>shutdown -s -t 3600</code></li>
-<li>取消关机 <code>shutdown -a</code></li>
-<li>重启 <code>shutdown -r</code></li>
-<li>立即重启 <code>shutdown -r -t 0</code></li>
-</ul>
-
+          <p>主要是对于 Windows 10 来说。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/180104/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1999,314 +2620,10 @@ APIs 分为 Electron API、Node.js API</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/340102/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">340102</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/340102/" class="post-title-link" itemprop="url">Anaconda</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 01:57:25" itemprop="dateCreated datePublished" datetime="2021-01-31T01:57:25+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:23:29" itemprop="dateModified" datetime="2021-02-01T19:23:29+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/3401%EF%BC%9APython%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">3401：Python基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>617</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="anaconda">Anaconda</span><a href="#anaconda" class="header-anchor">#</a></h1>
-<h2><span id="pyi-an-zhuang-he-pei-zhi-huan-jing-bian-liang">一、安装和配置环境变量</span><a href="#pyi-an-zhuang-he-pei-zhi-huan-jing-bian-liang" class="header-anchor">#</a></h2>
-<p>1、参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/ITLearnHall/article/details/81708148">Anaconda详细安装及使用教程</a><br>
-2、查看版本 <code>conda --version</code><br>
-3、升级工具包 <code>conda upgrade --all</code></p>
-<h2><span id="per-guan-li-xu-ni-huan-jing">二、管理虚拟环境</span><a href="#per-guan-li-xu-ni-huan-jing" class="header-anchor">#</a></h2>
-<h3><span id="p1-chuang-jian-xu-ni-huan-jing">1、创建虚拟环境</span><a href="#p1-chuang-jian-xu-ni-huan-jing" class="header-anchor">#</a></h3>
-<p>创建一个名称为test的虚拟环境并指定 Python 版本为3.7。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda  create -n <span class="built_in">test</span> python=3.7</span><br></pre></td></tr></table></figure>
-<h3><span id="p2-qie-huan-huan-jing">2、切换环境</span><a href="#p2-qie-huan-huan-jing" class="header-anchor">#</a></h3>
-<p>切换到<code>base</code>环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate</span><br></pre></td></tr></table></figure>
-<p>切换到名叫<code>test</code>的环境。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>查看所有环境</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
-<h3><span id="p3-xie-zai-huan-jing">3、卸载环境</span><a href="#p3-xie-zai-huan-jing" class="header-anchor">#</a></h3>
-<p>卸载名叫<code>test</code>的环境。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name <span class="built_in">test</span> --all</span><br></pre></td></tr></table></figure>
-<h3><span id="p4-an-zhuang-he-xie-zai-di-san-fang-bao">4、安装和卸载第三方包</span><a href="#p4-an-zhuang-he-xie-zai-di-san-fang-bao" class="header-anchor">#</a></h3>
-<p>安装第三方名叫<code>test</code>的包。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>卸载第三方名叫<code>test</code>的包。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>查看所有包列表</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
-<h2><span id="psan-wen-ti">三、问题</span><a href="#psan-wen-ti" class="header-anchor">#</a></h2>
-<p>1、<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dereen/p/ps_conda_env.html">解决Win10 PowerShell无法激活Anaconda环境的问题</a></p>
-<p>2、更改PowerShell执行策略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 以管理员身份运行PowerShell;</span><br><span class="line">2. 执行：get-ExecutionPolicy，显示Restricted，表示状态是禁止的;</span><br><span class="line">3. 执行：set-ExecutionPolicy RemoteSigned;</span><br><span class="line">4. 这时再执行get-ExecutionPolicy，就显示RemoteSigned;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/340201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">340201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/340201/" class="post-title-link" itemprop="url">Python 库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 01:52:32" itemprop="dateCreated datePublished" datetime="2021-01-31T01:52:32+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:23:39" itemprop="dateModified" datetime="2021-02-01T19:23:39+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/3402%EF%BC%9APython%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">3402：Python库</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>18</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="python-ku">Python 库</span><a href="#python-ku" class="header-anchor">#</a></h1>
-<p>分为系统库和第三方库。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/340207/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">340207</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/340207/" class="post-title-link" itemprop="url">Python sqlite</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 01:52:17" itemprop="dateCreated datePublished" datetime="2021-01-31T01:52:17+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:25:08" itemprop="dateModified" datetime="2021-02-01T19:25:08+08:00">2021-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/3402%EF%BC%9APython%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">3402：Python库</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>616</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="sqlite">sqlite</span><a href="#sqlite" class="header-anchor">#</a></h1>
-<p>with Python</p>
-<p>1、引用</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sqlite3</span><br></pre></td></tr></table></figure>
-<p>2、连接或者创建数据库，如果数据库不存在将在工作目录创建数据库</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn = sqlite3.connect(<span class="string">&#x27;数据库名称.db&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>3、获取游标</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = conn.cursor()</span><br></pre></td></tr></table></figure>
-<p>4、新建表</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">c.execute(<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">       CREATE TABLE 表名(</span></span><br><span class="line"><span class="string">       ID INT PRIMARY KEY NOT NULL,</span></span><br><span class="line"><span class="string">       NAME TEXT NOT NULL,</span></span><br><span class="line"><span class="string">       AGE INT NOT NULL,</span></span><br><span class="line"><span class="string">       ADDRESS CHAR(50),</span></span><br><span class="line"><span class="string">       SALARY REAL</span></span><br><span class="line"><span class="string">       );</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>5、插入操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.execute(<span class="string">&quot;INSERT INTO 表名 (key1,key2) VALUES(value1,value2);&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>6、查询操作</p>
-<p>7、更新操作</p>
-<p>8、删除操作</p>
-<p>9、提交事务</p>
-<p>Python 的 SQLite 数据库 API 默认是开启了事务的，因此需提交事务；否则程序对数据库所做的修改（包括插入数据、修改数据、删除数据）不会生效。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn.commit()</span><br></pre></td></tr></table></figure>
-<p>10、关闭游标和连接</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
-<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor">#</a></h1>
-<p>&quot; <a target="_blank" rel="noopener" href="https://www.runoob.com/sqlite/sqlite-python.html">https://www.runoob.com/sqlite/sqlite-python.html</a> &quot;<br>
-&quot; <a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2571.html">http://c.biancheng.net/view/2571.html</a> &quot;</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2372,14 +2689,14 @@ APIs 分为 Electron API、Node.js API</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">240</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
