@@ -1,0 +1,12 @@
+.toc {
+  background-color: #eee;
+  border: 1px dashed #666;
+}
+.toc code {
+  display: none;
+}
+.toc:before {
+  content: "目录";
+  font-size: 30px;
+  margin-left: 10px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>骰子</title>
+    <!-- 2020年6月30日 16:14:10 -->
+    <!-- flex 布局练习 -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .outer {
+        display: flex;
+        width: 662px;
+        height: 402px;
+        flex-wrap: wrap;
+      }
+
+      .outer > div {
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+        border: 1px solid black;
+        border-radius: 20px;
+        display: flex;
+      }
+
+      .s1 div,
+      .s2 div,
+      .s3 div,
+      .s4 > div > div,
+      .s5 > div > div,
+      .s6 > div > div {
+        width: 50px;
+        height: 50px;
+        background-color: #000;
+        border-radius: 50%;
+      }
+
+      .s1 {
+        justify-content: center;
+        align-items: center;
+      }
+
+      .s2 {
+        justify-content: space-between;
+        padding: 25px;
+      }
+
+      .s2 div:nth-child(2) {
+        align-self: flex-end;
+      }
+
+      .s3 {
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .s3 div:nth-child(2) {
+        align-self: center;
+      }
+
+      .s3 div:nth-child(3) {
+        align-self: flex-end;
+      }
+
+      .outer > .s4 {
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .s4 .top,
+      .s4 .foot {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .outer > .s5 {
+        padding: 15px;
+
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .s5 .top,
+      .s5 .foot {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .s5 .center {
+        display: flex;
+        justify-content: center;
+      }
+
+      .outer > .s6 {
+        padding: 10px;
+
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .s6 .top,
+      .s6 .center,
+      .s6 .foot {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="s1">
+        <div></div>
+      </div>
+
+      <div class="s2">
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="s3">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="s4">
+        <div class="top">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="foot">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="s5">
+        <div class="top">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="center">
+          <div></div>
+        </div>
+        <div class="foot">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="s6">
+        <div class="top">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="center">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="foot">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

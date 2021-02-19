@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太极图v2</title>
+    <!-- 2020年6月28日 18:39:04 -->
+    <style>
+        body{
+            background: transparent;
+        }
+        .mask{
+            width: 300px;
+            height:300px;
+            background: #ddd;
+            border-radius: 50%;
+            margin: 0 auto;
+
+            /* 加入动画 */
+            animation:rotation 1.5s linear infinite;
+        }
+
+        .mask2{
+            width: 150px;
+            height: 300px;
+            background: black;
+            border-radius: 150px 0 0 150px;
+            position: relative;
+            
+        }
+
+        .mask21{
+            width: 150px;
+            height: 150px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 75px;
+            
+        }
+
+        .mask22{
+            width: 150px;
+            height: 150px;
+            background: #ddd;
+            border-radius: 50%;
+            position: absolute;
+            top: 150px;
+            left: 75px;
+        }
+
+        .mask31{
+            width: 30px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 50%;
+            position: absolute;
+            top: 60px;
+            left: 135px;
+            
+        }
+
+        .mask32{
+            width: 30px;
+            height: 30px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top:210px;
+            left: 135px;
+        }
+
+        /* 加入旋转动画 */
+        @keyframes rotation {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(360deg);}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="mask">
+        <div class="mask2">
+            <div class="mask21"></div>
+            <div class="mask22"></div>
+            <div class="mask31"></div>
+            <div class="mask32"></div>
+        </div>
+    </div>
+</body>
+</html>

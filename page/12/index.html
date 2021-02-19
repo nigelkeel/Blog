@@ -361,7 +361,7 @@
         <span style="color:#ddd; font-size:20px; font-weight: 888; ">210101</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/210101/" class="post-title-link" itemprop="url">HTML & 网页基础</a>
+            <a href="/210101/" class="post-title-link" itemprop="url">HTML / 开始</a>
         </h2>
 
         <div class="post-meta">
@@ -378,7 +378,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:31:38" itemprop="dateModified" datetime="2021-02-01T18:31:38+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-19 15:03:50" itemprop="dateModified" datetime="2021-02-19T15:03:50+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -396,7 +396,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.1k</span>
             </span>
 
         </div>
@@ -408,43 +408,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="html-amp-wang-ye-ji-chu">HTML &amp; 网页基础</span><a href="#html-amp-wang-ye-ji-chu" class="header-anchor">#</a></h1>
-<h2><span id="pyi-ji-ben-jie-gou">一、基本结构</span><a href="#pyi-ji-ben-jie-gou" class="header-anchor">#</a></h2>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 版本声明 --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 根文档 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 头部 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 主体 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
-<p>用<code>&lt;!-- </code>和<code>--&gt;</code>包裹起来。</p>
-<h2><span id="p2-wen-dang-ban-ben-sheng-ming">2、文档版本声明</span><a href="#p2-wen-dang-ban-ben-sheng-ming" class="header-anchor">#</a></h2>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>给浏览器声明，告诉浏览器应该按照 HTML5 的规范解析当前页面。 <strong>如果不写，浏览器就是按照自己默认的模式解析。</strong></p>
-<p>版本声明必须写在第一行。我们不把他看做一个 html 标签，而是把它当做一个指令，并且这个指令对大小写不敏感。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html 4 的 版本说明(了解) --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="meta-string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2><span id="p3-html-head-body-biao-qian">3、html 、head、body 标签</span><a href="#p3-html-head-body-biao-qian" class="header-anchor">#</a></h2>
-<p><code>html</code> 是一个双标签，所有网页内容全部书写在 html 标签中。<code>lang</code>就是 html 标签的属性，<code>en</code>就是<code>lang</code>属性的值，属性是对当前标签的信息的扩展。</p>
-<p><code>head</code> 标签代表网页的头部，不会显示在网页中。主要是包含了标题，网页的描述，字符编码等等一些信息。</p>
-<p><code>body</code> 标签是网页显示的主体内容。</p>
-<h2><span id="p4-meta-biao-qian">4、meta 标签</span><a href="#p4-meta-biao-qian" class="header-anchor">#</a></h2>
-<p>控制网页的<strong>元信息</strong>（信息的信息），根据属性的不同，有很多的作用。</p>
-<h2><span id="p5-jie-jue-wang-ye-luan-ma-wen-ti">5、解决网页乱码问题</span><a href="#p5-jie-jue-wang-ye-luan-ma-wen-ti" class="header-anchor">#</a></h2>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>charset</code>即字符编码。<code>utf-8</code>称作为万国码。</p>
-<hr>
-<p>W3C标准<br>
-HTML，超文本标记语言<br>
-XML，可标记扩展语言</p>
-<p>网页的组成<br>
-结构 Structure<br>
-表现 Presentation<br>
-行为 Behavior</p>
-<p>HTML 基本结构<br>
-doctype<br>
-<code>&lt;!doctype html&gt;</code><br>
-html/head/body<br>
-title<br>
-meta charset<br>
-<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code><br>
-meta keywords<br>
-注释</p>
-
+          <p>HTML</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/210101/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -586,7 +558,7 @@ meta keywords<br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-18 14:40:10" itemprop="dateModified" datetime="2021-02-18T14:40:10+08:00">2021-02-18</time>
+                <time title="修改时间：2021-02-19 14:34:51" itemprop="dateModified" datetime="2021-02-19T14:34:51+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -604,7 +576,7 @@ meta keywords<br>
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>1.9k</span>
             </span>
 
         </div>
@@ -659,7 +631,7 @@ meta keywords<br>
         <span style="color:#ddd; font-size:20px; font-weight: 888; ">210201</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/210201/" class="post-title-link" itemprop="url">CSS 开始</a>
+            <a href="/210201/" class="post-title-link" itemprop="url">CSS / 开始</a>
         </h2>
 
         <div class="post-meta">
@@ -676,7 +648,7 @@ meta keywords<br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-18 15:22:29" itemprop="dateModified" datetime="2021-02-18T15:22:29+08:00">2021-02-18</time>
+                <time title="修改时间：2021-02-19 14:47:39" itemprop="dateModified" datetime="2021-02-19T14:47:39+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2072,7 +2044,7 @@ meta keywords<br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 11:12:20" itemprop="dateModified" datetime="2021-02-06T11:12:20+08:00">2021-02-06</time>
+                <time title="修改时间：2021-02-19 10:51:51" itemprop="dateModified" datetime="2021-02-19T10:51:51+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2336,7 +2308,7 @@ meta keywords<br>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2373,7 +2345,7 @@ meta keywords<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">410k</span>
+    <span title="站点总字数">412k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>

@@ -1218,7 +1218,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e94b2b;
+  background: #c6162e;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2715,4 +2715,16 @@ mjx-container + br {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.toc {
+  background-color: #eee;
+  border: 1px dashed #666;
+}
+.toc code {
+  display: none;
+}
+.toc:before {
+  content: "目录";
+  font-size: 30px;
+  margin-left: 10px;
 }

@@ -197,6 +197,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310102</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310102/" class="post-title-link" itemprop="url">Node 服务器基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:45:43" itemprop="dateCreated datePublished" datetime="2021-01-31T13:45:43+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:22:14" itemprop="dateModified" datetime="2021-02-01T19:22:14+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3101%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">3101：服务器基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>970</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="node-fu-wu-qi-ji-chu">Node 服务器基础</span><a href="#node-fu-wu-qi-ji-chu" class="header-anchor">#</a></h1>
+<h2><span id="p1-da-jian-fu-wu-qi">1、搭建服务器</span><a href="#p1-da-jian-fu-wu-qi" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建服务</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 设置响应头(文件格式，字符编码)</span></span><br><span class="line">  response.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/plain;charset=utf-8&quot;</span>);</span><br><span class="line">  <span class="comment">// 返回响应内容</span></span><br><span class="line">  response.end(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 确定域名和端口并启动服务器</span></span><br><span class="line"><span class="keyword">const</span> host = <span class="string">&quot;localhost&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">8888</span>;</span><br><span class="line">server.listen(port, host, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;服务器打开失败&quot;</span> + err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;服务器启动成功&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2><span id="p2-da-jian-ke-hu-duan">2、搭建客户端</span><a href="#p2-da-jian-ke-hu-duan" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&quot;http://localhost:3838&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> request = http.request(url, <span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 响应状态码</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.statusCode)</span><br><span class="line">    res.on(<span class="string">&quot;data“,chunk =&gt;&#123;</span></span><br><span class="line"><span class="string"> 			console.log(chunk.toString());</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 发送请求</span></span><br><span class="line"><span class="string">request.end();</span></span><br></pre></td></tr></table></figure>
+<h2><span id="p3-chang-yong-dai-ma-pian-duan">3、常用代码片段</span><a href="#p3-chang-yong-dai-ma-pian-duan" class="header-anchor">#</a></h2>
+<p>设置响应解析类型 <code>res.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;)</code></p>
+<p>设置状态码 <code>res.statusCode = 200</code></p>
+<p>获取当前 URL <code>req.url</code> 去掉绝对路径 <code>req.url.slice(1)</code></p>
+<p>中文 URL 转码 <code>decodeURL(req.url)</code></p>
+<p><code>req.query</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -922,7 +1015,7 @@
         <span style="color:#ddd; font-size:20px; font-weight: 888; ">181203</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/181203/" class="post-title-link" itemprop="url">VSCode 插件</a>
+            <a href="/181203/" class="post-title-link" itemprop="url">VSCode 扩展</a>
         </h2>
 
         <div class="post-meta">
@@ -939,7 +1032,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:26:27" itemprop="dateModified" datetime="2021-02-01T18:26:27+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-19 14:41:28" itemprop="dateModified" datetime="2021-02-19T14:41:28+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -957,7 +1050,7 @@
                 <i class="fa fa-chart-area"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>1.9k</span>
             </span>
 
         </div>
@@ -969,59 +1062,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="vscode-cha-jian">VSCode 插件</span><a href="#vscode-cha-jian" class="header-anchor">#</a></h1>
-<h2><span id="pyi-cha-jian-yi-lan">一、插件一览</span><a href="#pyi-cha-jian-yi-lan" class="header-anchor">#</a></h2>
-<ol>
-<li>Chinese (Simplified) Language Pack for Visual Studio Code - 中文语言包</li>
-<li>Markdown All in One</li>
-<li>Markdown Perview Eehanced</li>
-<li>HTML CSS Support：智能提示CSS类名以及id</li>
-<li>Python</li>
-<li>Python for VSCode</li>
-<li>Beautify 代码格式化 --&gt; Prettier</li>
-<li>Prettier</li>
-<li>Code Spell Checker（推荐） - 代码拼写检查</li>
-<li>TabNine</li>
-<li>Better Comments - 更好的注释</li>
-<li>Rainbow Brackets</li>
-<li>Auto Rename Tag：自动完成另一侧标签的同步修改</li>
-<li>Easy LESS - 自动编译LESS</li>
-<li>Live Server - HTML 服务器</li>
-<li>Path Autocomplete</li>
-<li>Path Intellisense：自动提示文件路径，支持各种快速引入文件</li>
-<li><a target="_blank" rel="noopener" href="http://Draw.io">Draw.io</a> Integration：画图</li>
-<li>A-super-comprehensive：代码补全合集</li>
-<li>Reactjs code snippets</li>
-<li>React Redux ES6 Snippets</li>
-<li>ES7 React/Redux/React-Native/JS snippets</li>
-<li>Auto Close Tag：自动闭合HTML/XML标签</li>
-<li>Bracket Pair Colorizer：给括号加上不同的颜色，便于区分不同的区块，使用者可以定义不同括号类型和不同颜色</li>
-<li>Debugger for Chrome：映射vscode上的断点到chrome上，方便调试</li>
-<li>GitLens：方便查看git日志，git重度使用者必备</li>
-<li>HTML Snippets：智能提示HTML标签，以及标签含义</li>
-<li>JavaScript(ES6) code snippets：ES6语法智能提示，以及快速输入，不仅仅支持.js，还支持.ts，.jsx，.tsx，.html，.vue，省去了配置其支持各种包含js代码文件的时间</li>
-<li>open in browser：vscode不像IDE一样能够直接在浏览器中打开html，而该插件支持快捷键与鼠标右键快速在浏览器中打开html文件，支持自定义打开指定的浏览器，包括：Firefox，Chrome，Opera，IE以及Safari</li>
-<li>React/Redux/react-router Snippets：React/Redux/react-router语法智能提示</li>
-<li>Vetur：Vue多功能集成插件，包括：语法高亮，智能提示，emmet，错误提示，格式化，自动补全，debugger。vscode官方钦定Vue插件，Vue开发者必备。</li>
-<li>vscode-icon：让 vscode 资源树目录加图标</li>
-<li>CSS Peek：使用此插件，你可以追踪至样式表中 CSS 类和 ids 定义的地方。当你在 HTML 文件中右键单击选择器时，选择“ Go to Definition 和 Peek definition ”选项，它便会给你发送样式设置的 CSS 代码。</li>
-<li>Color Info：提供你在 CSS中使用颜色的相关信息。你只需在颜色上悬停光标，就可以预览色块中色彩模型的（HEX、 RGB、HSL 和 CMYK）相关信息了。</li>
-<li>Window Colors：每个VSCode窗口都可以独特地自动着色。</li>
-<li>live server：开启本地服务器</li>
-</ol>
-<h2><span id="peslint-si-xing-tui-jian">ESLint - 四星推荐</span><a href="#peslint-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>代码检查。</p>
-<h2><span id="ptabnine-si-xing-tui-jian">TabNine - 四星推荐</span><a href="#ptabnine-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>神奇的扩展，根据Github中超过两百万个文件的训练。可以根据你输入的文本预测你接下来的输入。</p>
-<h2><span id="ppower-mode-san-xing-tui-jian">Power Mode - 三星推荐</span><a href="#ppower-mode-san-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>趣味性插件。</p>
-<p>然后我们点击安装，安装后我们按下键盘组合键 Ctrl + Shift + P，然后输入 setting，打开 JSON 配置文件</p>
-<p>在最后添加下面三行配置：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;powermode.enabled&quot;: true, </span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启 Power Mode</span></span><br><span class="line">&quot;powermode.shakeIntensity&quot;: 0, </span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭抖动（喜欢的也可以选择不关闭）</span></span><br><span class="line"></span><br><span class="line">&quot;powermode.presets&quot;: &quot;particles&quot;, </span><br><span class="line"><span class="comment">// 特效预设，还有 &quot;fireworks&quot;, &quot;flames&quot;, &quot;magic&quot;, &quot;clippy&quot;, &quot;simple-</span></span><br></pre></td></tr></table></figure>
-<h2><span id="pbracket-pair-colorizer-si-xing-tui-jian">Bracket Pair Colorizer - 四星推荐</span><a href="#pbracket-pair-colorizer-si-xing-tui-jian" class="header-anchor">#</a></h2>
-<p>快速区分括号位置和类型。</p>
-<p><a target="_blank" rel="noopener" href="https://www.juejin.im/post/6862510480397697038">https://www.juejin.im/post/6862510480397697038</a></p>
-
+          <p>本文介绍常用的扩展.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/181203/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1271,7 +1320,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 18:25:55" itemprop="dateModified" datetime="2021-02-01T18:25:55+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-19 14:42:08" itemprop="dateModified" datetime="2021-02-19T14:42:08+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2447,131 +2496,6 @@ APIs 分为 Electron API、Node.js API</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/720201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">720201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/720201/" class="post-title-link" itemprop="url">伊洛纳</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 02:31:45" itemprop="dateCreated datePublished" datetime="2021-01-31T02:31:45+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 09:53:22" itemprop="dateModified" datetime="2021-02-06T09:53:22+08:00">2021-02-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/7202%EF%BC%9A%E4%BC%8A%E6%B4%9B%E7%BA%B3/" itemprop="url" rel="index"><span itemprop="name">7202：伊洛纳</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>437</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="yi-luo-na">伊洛纳</span><a href="#yi-luo-na" class="header-anchor">#</a></h1>
-<h2><span id="p1005">1005</span><a href="#p1005" class="header-anchor">#</a></h2>
-<p>新家 别墅</p>
-<h2><span id="p1004">1004</span><a href="#p1004" class="header-anchor">#</a></h2>
-<p>新的旅程</p>
-<p>选称号，选经历，选种族（艾莱亚人），选择职业（钢琴师）</p>
-<p>选择擅长技能（回避），能力值骰子，选择天赋（45点），选择造型</p>
-<p>选择游戏模式（Purge模式），开局（Keel）</p>
-<p>负经验</p>
-<p>英雄奶酪</p>
-<p>魔法果</p>
-<p>幸运苹果</p>
-<p>赫尔墨斯之血</p>
-<p>传送 玛尼的</p>
-<p>==五角头盔== | ==贤者头盔== | ==深渊== | ==兔耳==</p>
-<p>==乞丐的项链== | ==耶库布之球== | ==迷之贝== | ==弩张==</p>
-<p>==英雄的披风== | ==黄金剑舞翼== | ==金属巴斯达的机械翼==</p>
-<p>==战地服== | ==银雪==</p>
-<p>风暴使者 | 哀恸 |  神火剑 | ==斩铁剑==</p>
-<p>==夜之镜== | 荆棘盾</p>
-<p>==帕罗米亚的荣耀== |  ==钢铁龙之戒== | ==双螺旋==</p>
-<p>==火焰龙巴斯达的手甲== | ==精灵手甲==</p>
-<p>==飞星腰带== | ==红凛==</p>
-<p>==胡林之靴==</p>
-<p>==风之弓== | ==唾蛇==</p>
-<p>进化</p>
-<p>心</p>
-<p>下降</p>
-<hr>
-<h2><span id="p1003">1003</span><a href="#p1003" class="header-anchor">#</a></h2>
-<p>许愿</p>
-<ul>
-<li>斯特拉迪瓦里</li>
-<li>古尔德钢琴</li>
-<li>万能钥匙</li>
-<li>健康护符</li>
-<li>红色下框眼镜</li>
-<li>鱼饰马克杯</li>
-<li>古霜书签</li>
-<li>赫鲁提雷亚</li>
-</ul>
-<h2><span id="pza-xiang">杂项</span><a href="#pza-xiang" class="header-anchor">#</a></h2>
-<p>下载 <a target="_blank" rel="noopener" href="https://www.ztjal.info/">https://www.ztjal.info/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2654,7 +2578,7 @@ APIs 分为 Electron API、Node.js API</p>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2691,7 +2615,7 @@ APIs 分为 Electron API、Node.js API</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">410k</span>
+    <span title="站点总字数">412k</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT</a> 强力驱动
   </div>
