@@ -197,134 +197,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210302/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">210302</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210302/" class="post-title-link" itemprop="url">Less</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-30 17:12:49" itemprop="dateCreated datePublished" datetime="2021-01-30T17:12:49+08:00">2021-01-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-18 15:27:40" itemprop="dateModified" datetime="2021-02-18T15:27:40+08:00">2021-02-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2103%EF%BC%9ACSS/" itemprop="url" rel="index"><span itemprop="name">2103：CSS+</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="less">LESS</span><a href="#less" class="header-anchor">#</a></h1>
-<p>less 是一种动态样式语言，属于 CSS 预处理器，扩展了 CSS 语言，增加了变量、混合、函数等特性，使 CSS 更易维护和扩展。LESS 既可以在客户端浏览器上运行，也能借助 node.js 在服务器端运行。</p>
-<blockquote>
-<p>CSS 自诞生以来，基本语法和核心机制一直没有本质上的变化，它的发展几乎全是表现力层面上的提升。最开始 CSS 在网页中的作用只是辅助性的装饰，轻便易学是最大的需求；然而如今网站的复杂度已经不可同日而语，原生 CSS 已经让开发者力不从心。当一门语言的能力不足而用户的运行环境又不支持其它选择的时候，这门语言就会沦为 “编译目标” 语言。开发者将选择另一门更高级的语言来进行开发，然后编译到底层语言以便实际运行。于是，在前端领域，CSS 预处理器应运而生。而 CSS 这门古老的语言以另一种方式 “重新适应” 了网页开发的需求。</p>
-</blockquote>
-<h2><span id="p1-an-zhuang">1、安装</span><a href="#p1-an-zhuang" class="header-anchor">#</a></h2>
-<p><a target="_blank" rel="noopener" href="http://lesscss.cn/">中文</a> | <a target="_blank" rel="noopener" href="http://lesscss.org/">英文</a> | <strong><a target="_blank" rel="noopener" href="http://www.lesscss.net/">源码</a></strong></p>
-<ol>
-<li>安装 Node.JS</li>
-<li>通过命令行程序，<code>node -v</code> 和 <code>npm -v</code> 检查是否安装成功。</li>
-<li>使用<code>npm i -g less</code> 进行全局安装 less, 并输入 <code>lessc -V</code> 检查版本</li>
-</ol>
-<h2><span id="p2-te-xing">2、特性</span><a href="#p2-te-xing" class="header-anchor">#</a></h2>
-<ul>
-<li>动态样式 CSS 是非程式式语言，需要书写大量没有逻辑的代码，不方便维护和扩展、复用。</li>
-<li>预处理器 生成 CSS 前某一语法的处理程序。</li>
-</ul>
-<h2><span id="p3-shi-yong">3、使用</span><a href="#p3-shi-yong" class="header-anchor">#</a></h2>
-<p>(1) <code>style</code>标签类型改成<code>less</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;stylesheet/less&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;styles.less&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
-<p>还需要一个编译相关的 js 文件</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>(2) 在命令行编译 less 文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lessc styles.less styles.css</span><br></pre></td></tr></table></figure>
-<p>(3) 通过 VSCode 的<code>Easy LESS</code>插件，在文件夹新建 less 文件，保存，即可在当前文件夹编译出相应的 css 文件。</p>
-<h2><span id="per-yu-fa">二、语法</span><a href="#per-yu-fa" class="header-anchor">#</a></h2>
-<h2><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h2>
-<p><code>//注释</code> 和 <code>/*注释*/</code></p>
-<p>后者可以注释到 CSS 文件中。</p>
-<h2><span id="p2-bian-liang">2、变量</span><a href="#p2-bian-liang" class="header-anchor">#</a></h2>
-<p>LESS 允许我们定义一些变量来管理 CSS，变量需以<code>@</code>开头。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="variable">@test:</span> <span class="number">10px</span>;</span><br><span class="line"><span class="comment">// 使用</span></span><br><span class="line"><span class="attribute">width</span>: <span class="variable">@test</span>;</span><br></pre></td></tr></table></figure>
-<p>注意作用域。</p>
-<p>作为选择器名字、声明一个属性的名称 <code>@&#123;a&#125;</code></p>
-<h2><span id="p3-qian-tao-gui-ze">3、嵌套规则</span><a href="#p3-qian-tao-gui-ze" class="header-anchor">#</a></h2>
-<p><code>&amp;:</code> 父级引用</p>
-<h2><span id="p4-yun-suan">4、运算</span><a href="#p4-yun-suan" class="header-anchor">#</a></h2>
-<h2><span id="p5-hun-he">5、混合</span><a href="#p5-hun-he" class="header-anchor">#</a></h2>
-<p>类似函数。</p>
-<h2><span id="p6-mo-shi-pi-pei-he-shou-wei">6、模式匹配和守卫</span><a href="#p6-mo-shi-pi-pei-he-shou-wei" class="header-anchor">#</a></h2>
-<p>重载，根据参数的个数来选择混合。</p>
-<h2><span id="p7-zi-fu-chuan-cha-zhi">7、字符串插值</span><a href="#p7-zi-fu-chuan-cha-zhi" class="header-anchor">#</a></h2>
-<h2><span id="p8-han-shu">8、函数</span><a href="#p8-han-shu" class="header-anchor">#</a></h2>
-<h2><span id="p9-wen-jian-dao-ru">9、文件导入</span><a href="#p9-wen-jian-dao-ru" class="header-anchor">#</a></h2>
-<h2><span id="p10-zhuan-yi">10、转义</span><a href="#p10-zhuan-yi" class="header-anchor">#</a></h2>
-<p>有时候，当需要引入无效的 CSS 语法或 Less 不能识别的字符，就需要使用转义字符。此时，就可以在字符串前面加一个<code>~</code>，并将需要转义的字符串放在<code>&quot; &quot;</code>中。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/210204/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2013,7 +1885,7 @@ toUpperCase<br>
         <span style="color:#ddd; font-size:20px; font-weight: 888; ">220108</span>
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/220108/" class="post-title-link" itemprop="url">ES 函数</a>
+            <a href="/220108/" class="post-title-link" itemprop="url">ES / 函数</a>
         </h2>
 
         <div class="post-meta">
@@ -2030,7 +1902,7 @@ toUpperCase<br>
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-01 19:08:43" itemprop="dateModified" datetime="2021-02-01T19:08:43+08:00">2021-02-01</time>
+                <time title="修改时间：2021-02-19 17:15:52" itemprop="dateModified" datetime="2021-02-19T17:15:52+08:00">2021-02-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2060,61 +1932,15 @@ toUpperCase<br>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1><span id="han-shu">函数</span><a href="#han-shu" class="header-anchor">#</a></h1>
-<p><strong>函数</strong>是可以反复使用的并且命名的代码块。本质上也是一种属于对象类型的数据。与其他数据类型不同的是，函数的值是可执行的代码。分为<strong>系统函数</strong>和<strong>自定义函数</strong>。</p>
-<p>函数是数据，函数名是这个数据的标识。需要访问函数的数据去掉圆括号就好。一个函数可以有多个标识。</p>
-<h2><span id="p1-han-shu-de-zuo-yong">1、函数的作用</span><a href="#p1-han-shu-de-zuo-yong" class="header-anchor">#</a></h2>
-<ul>
-<li>解决代码的冗余问题，实现代码的复用。</li>
-<li>封装代码，让函数内部的代码对外部不可见。</li>
-<li>可以让整个代码项目通过函数模块化。</li>
-</ul>
-<h2><span id="p2-xin-jian-han-shu">2、新建函数</span><a href="#p2-xin-jian-han-shu" class="header-anchor">#</a></h2>
-<p>函数名定义的规则遵循标识符的规则。函数的声明函数名可以重复，一旦重名，前面的覆盖后面的。</p>
-<h3><span id="p2-1-sheng-ming-han-shu-chang">2.1 声明函数 <code>常</code></span><a href="#p2-1-sheng-ming-han-shu-chang" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">name</span>(<span class="params">args</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">  <span class="keyword">return</span> statement; <span class="comment">// 返回语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// name -- 函数名</span></span><br><span class="line"><span class="comment">// args -- 参数列表（可选）</span></span><br></pre></td></tr></table></figure>
-<p><code>var</code> 和 <code>function</code> 都是声明语句，它们声明的变量和函数都在 JS 预编译时被解析，也被称为变量提升和函数提升。</p>
-<p>ES5 中，不允许函数书写在非函数的代码块中（比如 if 语句中）。</p>
-<h3><span id="p2-2-han-shu-biao-da-shi-chang">2.2 函数表达式 <code>常</code></span><a href="#p2-2-han-shu-biao-da-shi-chang" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 赋值调用（被称为函数表达式，这种方法只能提升函数名，不能提升函数体）</span></span><br><span class="line"><span class="comment">// 调用需在创建之后</span></span><br><span class="line"><span class="keyword">let</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>函数可以不书写名字，这种被称为<strong>匿名函数</strong>。</p>
-<p>执行方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自调用</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">!(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<h3><span id="p2-3-gou-zao-han-shu-shi-liao-jie">2.3 构造函数式 <code>了解</code></span><a href="#p2-3-gou-zao-han-shu-shi-liao-jie" class="header-anchor">#</a></h3>
-<p>类如 <code>const x = new XXXX()</code> 的形式，被称为<strong>构造函数</strong>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">&quot;执行字符串&quot;</span>);</span><br><span class="line"><span class="comment">// 这个定义函数的方法几乎不用（会执行两次）</span></span><br></pre></td></tr></table></figure>
-<h3><span id="p2-4-jian-tou-han-shu-es6-chang">2.4 箭头函数 <code>ES6</code> <code>常</code></span><a href="#p2-4-jian-tou-han-shu-es6-chang" class="header-anchor">#</a></h3>
-<ul>
-<li>内部没有<code>this</code> ，箭头函数与包围它的代码共享一个<code>this</code>。</li>
-<li>不能用于构造函数（不能被<code>new</code> 实例化）。</li>
-<li>内部没有没有<code>argument</code>对象，可用<code>rest</code>参数代替。</li>
-<li>箭头函数不能使用<code>yield</code>命令，即不能用作<code>Generator</code>函数。</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、函数有参数，函数体只有一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fn1 = <span class="function">(<span class="params">n</span>) =&gt;</span> n + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、函数没有参数，函数体只有一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> fn2 = <span class="function">() =&gt;</span> <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、函数参数随意，函数体不仅仅是一句返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> fn3 = <span class="function">() =&gt;</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用箭头函数和reduce数组求和</span></span><br><span class="line"><span class="keyword">const</span> arrSum = <span class="function">(<span class="params">arr</span>) =&gt;</span> arr.reduce(<span class="function">(<span class="params">p, n</span>) =&gt;</span> p + n);</span><br></pre></td></tr></table></figure>
-<h2><span id="p3-shi-yong-han-shu">3、使用函数</span><a href="#p3-shi-yong-han-shu" class="header-anchor">#</a></h2>
-<p>函数需要调用才会执行。</p>
-<h2><span id="p4-can-shu">4、参数</span><a href="#p4-can-shu" class="header-anchor">#</a></h2>
-<p>JS 数据传递只有值传递，没有引用传递。</p>
-<h3><span id="p4-1-xing-can-yu-shi-can">4.1 形参与实参</span><a href="#p4-1-xing-can-yu-shi-can" class="header-anchor">#</a></h3>
-<p><strong>形参</strong> 形式上的参数，声明函数时候提供的参数。</p>
-<p><strong>实参</strong> 在调用时，实际使用的参数。</p>
-<h3><span id="p4-2-mo-ren-can-shu">4.2 默认参数</span><a href="#p4-2-mo-ren-can-shu" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6之前</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">  age ? age : (age = <span class="number">18</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">name, age = <span class="number">18</span></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="p4-3-sheng-yu-can-shu">4.3 剩余参数</span><a href="#p4-3-sheng-yu-can-shu" class="header-anchor">#</a></h3>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以把不确定的参数表示成数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, ...b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>); <span class="comment">// [2,3,4]</span></span><br></pre></td></tr></table></figure>
-<h3><span id="p4-4-argument-dui-xiang">4.4 argument 对象</span><a href="#p4-4-argument-dui-xiang" class="header-anchor">#</a></h3>
-<p>二者在传值的时候是一一对应的。二者的个数可以不相等，形参多的时候，多出来的自动被赋值 undefined，实参多的时候，多出来的放在**<code>arguments</code>**对象中。该对象在函数内部才有，实际上是一个类数组 array-like 的对象，可以访问这个对象获得传递给函数的每一个实参。函数中的形参可写可不写，即使不写形参也可以使用 arguments 对象获得，使用形参比较方便。arguments 对象的 length 属性用来确定传递进来多少个实参。可以通过 length 属性的值的不同（根据传入的参数个数的不同），进行不同的操作。<code>arguments</code>对象中保存着一个叫<code>callee</code>的属性，这个属性是一个指针，它指向拥有这个<code>arguments</code>对象的函数。</p>
-<ul>
-<li>使用 arguments 对象的 length 属性可以获取函数的实参个数。</li>
-<li>argument 对象只能在函数内可见,因此 arguments.legth 也只能在函数体内使用。</li>
-<li>使用函数对象的 length 属性可以获取函数的形参个数,该属性为只读属性,在函数体内,体外都可以使用</li>
-</ul>
-<p>callee 是 arguments 对象的属性，它引用当前 argument 对象所在的函数，使用该属性可以在函数体内调用自身。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测函数的形参和实参是否一致</span></span><br><span class="line"><span class="built_in">arguments</span>.length != <span class="built_in">arguments</span>.callee.length;</span><br></pre></td></tr></table></figure>
-<h2><span id="p5-fan-hui-zhi">5、返回值</span><a href="#p5-fan-hui-zhi" class="header-anchor">#</a></h2>
-<p><code>return</code> 没有指定值时函数返回的是<code>undefined</code>，函数在执行完该语句以后立即停止执行并退出函数。</p>
-<p>返回值是一个函数的函数称为<strong>高阶函数</strong>。</p>
-
+          <p><strong>函数</strong>是可以反复使用的并且命名的代码块。本质上也是一种属于对象类型的数据。与其他数据类型不同的是，函数的值是可执行的代码。分为<strong>系统函数</strong>和<strong>自定义函数</strong>。函数是数据，函数名是这个数据的标识。需要访问函数的数据去掉圆括号就好。一个函数可以有多个标识。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/220108/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -2471,6 +2297,163 @@ continue</p>
       
           <h1><span id="zhan-kai-yun-suan-fu">展开运算符</span><a href="#zhan-kai-yun-suan-fu" class="header-anchor">#</a></h1>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 展开</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">  <span class="keyword">let</span> arr2 = [...arr, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;arr&quot;</span>, arr2); <span class="comment">// [1, 2, 3, 4, 5]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 复制数组</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">  <span class="comment">// 这个不是复制数组，他们是同一个数组</span></span><br><span class="line">  <span class="keyword">let</span> arr2 = arr;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数组复制方法之 for</span></span><br><span class="line">  <span class="keyword">let</span> arr3 = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    arr3[i] = arr[i]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;arr2&quot;</span>, arr3)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 数组复制方法之 ...</span></span><br><span class="line">  <span class="keyword">let</span> arr4 = [...arr];</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;arr3&quot;</span>, arr4)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并数组</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">  <span class="keyword">let</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line">  <span class="keyword">let</span> arr3 = [...arr1, ...arr2];</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;arr4&quot;</span>, arr3)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以展开字符串</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> str = <span class="string">&quot;abcde&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> arr = [...str];</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;arr5&quot;</span>, arr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象是没有部署 itertor 接口，所以不能被展开</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;</span><br><span class="line">    name: <span class="string">&#x27;poxiao&#x27;</span>,</span><br><span class="line">    sex: <span class="string">&#x27;rbq&#x27;</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// console.log(...obj)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类数组对象上面也有iterator接口，所以也可以被展开</span></span><br><span class="line"><span class="comment">// const olis = document.querySelectorAll(&quot;ul li&quot;)</span></span><br><span class="line"><span class="comment">// console.log(...olis)</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/220104/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">220104</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/220104/" class="post-title-link" itemprop="url">ES 运算符与类型转换</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-30 16:32:11" itemprop="dateCreated datePublished" datetime="2021-01-30T16:32:11+08:00">2021-01-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:05:52" itemprop="dateModified" datetime="2021-02-01T19:05:52+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2201%EF%BC%9AES%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2201：ES基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="es-yun-suan-fu-yu-lei-xing-zhuan-huan">ES 运算符与类型转换</span><a href="#es-yun-suan-fu-yu-lei-xing-zhuan-huan" class="header-anchor">#</a></h1>
+<h2><span id="pyi-suan-zhu-yun-suan-fu">一、算术运算符</span><a href="#pyi-suan-zhu-yun-suan-fu" class="header-anchor">#</a></h2>
+<h3><span id="p1-jia-fa">1、加法</span><a href="#p1-jia-fa" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果其中一个操作数是字符串，则会把另外一个操作数转换成字符串。</span></span><br><span class="line"><span class="number">1</span> + <span class="string">&quot;str&quot;</span>; <span class="comment">// 1str</span></span><br><span class="line"><span class="string">&quot;str&quot;</span> + <span class="number">1</span>; <span class="comment">// str1</span></span><br><span class="line"><span class="number">1</span> + <span class="number">1</span> + <span class="string">&quot;str&quot;</span>; <span class="comment">// 2str</span></span><br><span class="line"><span class="number">1</span> + (<span class="number">1</span> + str); <span class="comment">// 11str</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果都有是字符串，会拼接在一起</span></span><br><span class="line"><span class="string">&quot;str&quot;</span> + <span class="string">&quot;is&quot;</span>; <span class="comment">// stris</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他类型自动调用Number()进行转换</span></span><br><span class="line"><span class="literal">true</span> + <span class="literal">true</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="literal">null</span> + <span class="literal">null</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="literal">NaN</span> + <span class="number">1</span>; <span class="comment">// NaN</span></span><br><span class="line"><span class="number">1</span> +</span><br><span class="line">  <span class="literal">undefined</span> + <span class="comment">// NaN</span></span><br><span class="line">  <span class="comment">// 放在非数值前面，则会自动调用Number()进行转换（不会影响本身）</span></span><br><span class="line">  <span class="string">&quot;123&quot;</span>; <span class="comment">// 123</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p2-jian-fa-cheng-fa-chu-fa">2、减法、乘法、除法</span><a href="#p2-jian-fa-cheng-fa-chu-fa" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果有操作数是非字符，则自动调用Number()转换。</span></span><br><span class="line"><span class="string">&quot;99&quot;</span> - <span class="number">0</span>; <span class="comment">// 99</span></span><br><span class="line"><span class="string">&quot;99&quot;</span> * <span class="number">1</span>; <span class="comment">// 99</span></span><br><span class="line"><span class="string">&quot;99&quot;</span> / <span class="number">1</span>; <span class="comment">// 99</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 特殊</span></span><br><span class="line"><span class="number">1</span> / <span class="number">0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="literal">Infinity</span> * <span class="number">-1</span>; <span class="comment">// - Infinity</span></span><br><span class="line"><span class="number">0</span> / <span class="number">0</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p3-qu-yu">3、取余</span><a href="#p3-qu-yu" class="header-anchor">#</a></h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> % <span class="number">5</span>; <span class="comment">// 3</span></span><br><span class="line"><span class="number">5</span> % <span class="number">0</span>; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<h3><span id="p4-zi-zeng-zi-jian">4、自增、自减</span><a href="#p4-zi-zeng-zi-jian" class="header-anchor">#</a></h3>
+<p><code>++i</code> 表示，i 自增 1 后再参与其它运算（先加后用）；而 <code>i++</code> 则是 i 参与运算后，i 的值再自增 1。自增自减运算可能会改变原有变量类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="number">1</span> + a++ <span class="comment">// 101</span></span><br><span class="line"><span class="number">1</span> + ++a <span class="comment">// 102</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 会改变原变量类型</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">true</span>;</span><br><span class="line">++a; <span class="comment">// a = 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span></span><br><span class="line">i = i++ <span class="comment">// i = 1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2><span id="per-guan-xi-yun-suan-fu">二、关系运算符</span><a href="#per-guan-xi-yun-suan-fu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果两个操作数都是字符串，比较对应的字符编码</span></span><br><span class="line"><span class="string">&quot;234&quot;</span> &gt; <span class="string">&quot;123455&quot;</span> <span class="comment">// true</span></span><br><span class="line"><span class="comment">// == 和 === 的区别</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">null</span> <span class="comment">// false</span></span><br><span class="line"><span class="comment">// 坑</span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> <span class="comment">// false 相等比较不进行类型转换</span></span><br><span class="line"><span class="literal">null</span> &gt;= <span class="number">0</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2><span id="psan-fu-zhi-yun-suan-fu">三、赋值运算符</span><a href="#psan-fu-zhi-yun-suan-fu" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a += b; <span class="comment">// 等价于 a = a + b</span></span><br></pre></td></tr></table></figure>
+<h2><span id="psi-luo-ji-yun-suan-fu">四、逻辑运算符</span><a href="#psi-luo-ji-yun-suan-fu" class="header-anchor">#</a></h2>
+<p><code>&amp;&amp;</code> 与</p>
+<ul>
+<li>第一步：计算第一个操作数</li>
+<li>第二步：如果第一个操作数转换成 false，那么就会结束运算，直接第一个操作数</li>
+<li>第三步：如果第一个操作数返回 true，则计算第二个操作数的值</li>
+<li>第四步：第二个操作数如果返回 true 则逻辑与返回第二个操作数，否则返回第一个操作数</li>
+</ul>
+<p><code>||</code> 或</p>
+<ul>
+<li>第一步：计算第一个操作数的值。</li>
+<li>第二步：检测第一个操作数的值。如果左侧的表达式的值可以转换为 true，那么就会结束运算。直接返回第一个操作数的值</li>
+<li>第三步：如果第一个操作数可以转换为 false，则计算第二个操作数的值。并返回第二个操作数的值</li>
+</ul>
+<p><code>!</code> 非</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &amp;&amp; <span class="number">2</span>; <span class="comment">// 返回2</span></span><br><span class="line"><span class="string">&quot;&quot;</span> &amp;&amp; <span class="number">1</span>; <span class="comment">// 返回&#x27;&#x27;</span></span><br><span class="line"><span class="string">&quot;Cat&quot;</span> &amp;&amp; <span class="string">&quot;Dog&quot;</span>; <span class="comment">// 返回”Dog&quot;</span></span><br><span class="line"><span class="string">&quot;&quot;</span> &amp;&amp; <span class="literal">false</span>; <span class="comment">// f &amp;&amp; f 返回 &quot;&quot;</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="string">&quot;&quot;</span>; <span class="comment">// f &amp;&amp; f 返回 false</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span> || <span class="number">2</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">0</span> || <span class="number">2</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">0</span> || <span class="literal">null</span>; <span class="comment">// null</span></span><br><span class="line"><span class="string">&quot;&quot;</span> || <span class="literal">false</span>; <span class="comment">// f || f 返回 false</span></span><br><span class="line"><span class="literal">false</span> || <span class="string">&quot;&quot;</span>; <span class="comment">// f || f 返回 &quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="pduan-lu-yuan-li">短路原理</span><a href="#pduan-lu-yuan-li" class="header-anchor">#</a></h3>
+<p>在逻辑运算中，如果第一个操作数就能决定结果，那么第二个操作数就不会运行了。（就算运行了会报错也能顺利通过）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</span><br><span class="line"><span class="literal">false</span> &amp;&amp; qwq();</span><br></pre></td></tr></table></figure>
+<h2><span id="pwu-wei-yun-suan-fu">五、位运算符</span><a href="#pwu-wei-yun-suan-fu" class="header-anchor">#</a></h2>
+<h2><span id="pliu-san-yuan-yun-suan-fu">六、三元运算符</span><a href="#pliu-san-yuan-yun-suan-fu" class="header-anchor">#</a></h2>
+<p>三元运算符：<code>运算元1?运算2:运算3</code></p>
+<h2><span id="pqi-qi-ta">七、其他</span><a href="#pqi-qi-ta" class="header-anchor">#</a></h2>
+<p>逗号操作符<br>
+它能够先执行运算符左侧的操作数，然后再执行右侧的操作数，最后返回右侧操作数的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>,</span><br><span class="line">  b = <span class="number">2</span>,</span><br><span class="line">  c = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h2><span id="pba-yun-suan-fu-de-you-xian-ji">八、运算符的优先级</span><a href="#pba-yun-suan-fu-de-you-xian-ji" class="header-anchor">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>符号 + 描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td><code>()</code> 分组</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>()</code> 函数调用 <code>.</code> <code>[]</code> 成员调用 <code>new</code> 创建</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>通常简要规则: 一元 &gt; 二元 &gt; 三元<br>
+使用圆括号</p>
+</blockquote>
+<h2><span id="pjiu-kuo-zhan-yun-suan-fu">九、扩展运算符</span><a href="#pjiu-kuo-zhan-yun-suan-fu" class="header-anchor">#</a></h2>
+<p><code>...</code> 三点运算符，把数组在其他数组中展开</p>
+<p>（1）复制数组（深拷贝） <code>let nArr = [...arr]</code></p>
+<p>（2）合并数组 <code>let nAtr = [...arr1, ...arr2]</code></p>
+<p>（3）解构赋值</p>
+<p>（4）字符串转数组 可以展开字符串，放在数组中，直接转为数组</p>
+<h2><span id="pshi-lei-xing-zhuan-huan">十、类型转换</span><a href="#pshi-lei-xing-zhuan-huan" class="header-anchor">#</a></h2>
+<p>强制类型转换<br>
+<code>parseInt</code><br>
+<code>parseFloat</code><br>
+<code>toString</code> / <code>valueOf</code></p>
 
       
     </div>
