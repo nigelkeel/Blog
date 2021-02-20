@@ -197,6 +197,469 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181007/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181007</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/181007/" class="post-title-link" itemprop="url">MathJax</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-01 15:33:31" itemprop="dateCreated datePublished" datetime="2021-02-01T15:33:31+08:00">2021-02-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-02 14:53:43" itemprop="dateModified" datetime="2021-02-02T14:53:43+08:00">2021-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="mathjax">MathJax</span><a href="#mathjax" class="header-anchor">#</a></h1>
+<p>在Markdown中输入数学公式需要LaTeX语法的支持。</p>
+<h2><span id="pyi-ji-ben-yu-fa">一、基本语法</span><a href="#pyi-ji-ben-yu-fa" class="header-anchor">#</a></h2>
+<h3><span id="p1-cheng-xian-wei-zhi">1. 呈现位置</span><a href="#p1-cheng-xian-wei-zhi" class="header-anchor">#</a></h3>
+<p>在行内显示用<code>$</code>包围，单独显示用<code>$$</code>包围。</p>
+<h3><span id="p2-shang-biao-he-xia-biao">2. 上标和下标</span><a href="#p2-shang-biao-he-xia-biao" class="header-anchor">#</a></h3>
+<p>上标使用<code>^</code>，下标使用<code>_</code>。</p>
+<h3><span id="p3-fen-shi-he-gen-shi">3. 分式和根式</span><a href="#p3-fen-shi-he-gen-shi" class="header-anchor">#</a></h3>
+<h4><span id="p3-1-fen-shi">3.1 分式</span><a href="#p3-1-fen-shi" class="header-anchor">#</a></h4>
+<p>分式格式为<code>\frac&#123;a&#125;&#123;b</code>，呈现为</p>
+<blockquote>
+<p>$\frac{a}{b}$</p>
+</blockquote>
+<h4><span id="p3-2-gen-shi">3.2 根式</span><a href="#p3-2-gen-shi" class="header-anchor">#</a></h4>
+<p>根式格式为<code>\sqrt[x]&#123;y&#125;</code>，呈现为：</p>
+<blockquote>
+<p>$\sqrt[x]{y}$</p>
+</blockquote>
+<h3><span id="p4-fen-zu-he-gua-hao">4. 分组和括号</span><a href="#p4-fen-zu-he-gua-hao" class="header-anchor">#</a></h3>
+<h4><span id="p4-1-fen-zu">4.1 分组</span><a href="#p4-1-fen-zu" class="header-anchor">#</a></h4>
+<p>使用<code>&#123;&#125;</code>将具有相同等级的内容扩入其中，成组处理。</p>
+<blockquote>
+<p>举例：<code>10^&#123;10&#125;</code>呈现为$10<sup>{10}$，而`10^10`呈现为$10</sup>10$。</p>
+</blockquote>
+<h4><span id="p4-2-gua-hao">4.2 括号</span><a href="#p4-2-gua-hao" class="header-anchor">#</a></h4>
+<ul>
+<li>小括号：<code>()</code>呈现为$()$</li>
+<li>中括号：<code>[]</code>呈现为$[]$</li>
+<li>尖括号：<code>\langle</code>，<code>\rangle</code>呈现为$\langle \rangle$</li>
+<li>此处为与分组符号<code>&#123;&#125;</code>相区别，使用转义字符<code>\</code></li>
+</ul>
+<h3><span id="p5-qiu-he-ji-xian-yu-ji-fen">5. 求和、极限与积分</span><a href="#p5-qiu-he-ji-xian-yu-ji-fen" class="header-anchor">#</a></h3>
+<h4><span id="p5-1-qiu-he">5.1 求和</span><a href="#p5-1-qiu-he" class="header-anchor">#</a></h4>
+<p>求和用<code>\sum</code>。</p>
+<blockquote>
+<p>例：<code>\sum_&#123;i=1&#125;^n&#123;a_i&#125;</code>呈现为$\sum_{i=1}^n{a_i}$</p>
+</blockquote>
+<h4><span id="p5-2-ji-xian">5.2 极限</span><a href="#p5-2-ji-xian" class="header-anchor">#</a></h4>
+<p>极限用<code>\lim</code>。</p>
+<blockquote>
+<p>例：<code>y=\lim_&#123;x\to 0&#125;^&#123;x&#125;</code>呈现为$y=\lim_{x\to 0}^{x}$</p>
+</blockquote>
+<h4><span id="p5-3-ji-fen">5.3 积分</span><a href="#p5-3-ji-fen" class="header-anchor">#</a></h4>
+<p>积分用<code>\int</code>。</p>
+<blockquote>
+<p>例：<code>\int_0^\infty&#123;xdx&#125;</code>呈现为$\int_0^\infty{xdx}$。</p>
+</blockquote>
+<h3><span id="p6-xian-xing-dai-shu">6. 线性代数</span><a href="#p6-xian-xing-dai-shu" class="header-anchor">#</a></h3>
+<h4><span id="p6-1-xiang-liang">6.1 向量</span><a href="#p6-1-xiang-liang" class="header-anchor">#</a></h4>
+<p>向量用<code>\vec</code>，<code>\overrightarrow</code>呈现。</p>
+<blockquote>
+<p>例：</p>
+<ul>
+<li><code>\vec a</code>呈现为$\vec a$</li>
+<li><code>\overrightarrow&#123;AB&#125;</code>呈现为$\overrightarrow{AB}$</li>
+</ul>
+</blockquote>
+<h4><span id="p6-2-ju-zhen">6.2 矩阵</span><a href="#p6-2-ju-zhen" class="header-anchor">#</a></h4>
+<h5><span id="pa-ji-ben">a. 基本</span><a href="#pa-ji-ben" class="header-anchor">#</a></h5>
+<ul>
+<li>起始标记<code>\begin&#123;matrix&#125;</code>，结束标记<code>\end&#123;matrix&#125;</code></li>
+<li>每一行末尾标记<code>\\</code>，行间元素之间以<code>&amp;</code>分隔</li>
+<li>举例</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;matrix&#125;</span><br><span class="line">1&amp;0&amp;0\\</span><br><span class="line">0&amp;1&amp;0\\</span><br><span class="line">0&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;$$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>呈现为：<br>
+$$\begin{matrix}<br>
+1&amp;0&amp;0\<br>
+0&amp;1&amp;0\<br>
+0&amp;0&amp;1\<br>
+\end{matrix}$$</li>
+</ul>
+<h5><span id="pb-bian-kuang">b. 边框</span><a href="#pb-bian-kuang" class="header-anchor">#</a></h5>
+<p>在起始、结束标记处用下列词替换<code>matrix</code>。</p>
+<ul>
+<li><code>pmatrix</code>：小括号边框</li>
+<li><code>bmatrix</code>：中括号边框</li>
+<li><code>Bmatrix</code>：大括号边框</li>
+<li><code>vmatrix</code>：单竖线边框</li>
+<li><code>Vmatrix</code>：双竖线边框</li>
+</ul>
+<h5><span id="pb-sheng-lue-yuan-su">b. 省略元素</span><a href="#pb-sheng-lue-yuan-su" class="header-anchor">#</a></h5>
+<ul>
+<li>横省略号：<code>\cdots</code></li>
+<li>竖省略号：<code>\vdots</code></li>
+<li>斜省略号：<code>\ddots</code></li>
+<li>举例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;bmatrix&#125;</span><br><span class="line">&#123;a_&#123;11&#125;&#125;&amp;&#123;a_&#123;12&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;1n&#125;&#125;\\</span><br><span class="line">&#123;a_&#123;21&#125;&#125;&amp;&#123;a_&#123;22&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;2n&#125;&#125;\\</span><br><span class="line">&#123;\vdots&#125;&amp;&#123;\vdots&#125;&amp;&#123;\ddots&#125;&amp;&#123;\vdots&#125;\\</span><br><span class="line">&#123;a_&#123;m1&#125;&#125;&amp;&#123;a_&#123;m2&#125;&#125;&amp;&#123;\cdots&#125;&amp;&#123;a_&#123;mn&#125;&#125;\\</span><br><span class="line">\end&#123;bmatrix&#125;$$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>呈现为：<br>
+$$\begin{bmatrix}<br>
+{a_{11}}&amp;{a_{12}}&amp;{\cdots}&amp;{a_{1n}}\<br>
+{a_{21}}&amp;{a_{22}}&amp;{\cdots}&amp;{a_{2n}}\<br>
+{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}\<br>
+{a_{m1}}&amp;{a_{m2}}&amp;{\cdots}&amp;{a_{mn}}\<br>
+\end{bmatrix}$$</li>
+</ul>
+<h4><span id="p6-3-fang-cheng-zu">6.3 方程组</span><a href="#p6-3-fang-cheng-zu" class="header-anchor">#</a></h4>
+<ul>
+<li>需要cases环境：起始、结束处以<code>&#123;cases&#125;</code>声明。</li>
+<li>例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$\begin&#123;cases&#125;</span><br><span class="line">a_1x+b_1y+c_1z&#x3D;d_1\\</span><br><span class="line">a_2x+b_2y+c_2z&#x3D;d_2\\</span><br><span class="line">a_3x+b_3y+c_3z&#x3D;d_3\\</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>呈现为：<br>
+$$\begin{cases}<br>
+a_1x+b_1y+c_1z=d_1\<br>
+a_2x+b_2y+c_2z=d_2\<br>
+a_3x+b_3y+c_3z=d_3\<br>
+\end{cases}<br>
+$$</li>
+</ul>
+<h2><span id="per-kuo-zhan">二、扩展</span><a href="#per-kuo-zhan" class="header-anchor">#</a></h2>
+<h3><span id="p1-xi-la-zi-mu-de-shu-ru">1. 希腊字母的输入</span><a href="#p1-xi-la-zi-mu-de-shu-ru" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">α</td>
+<td style="text-align:center">\alpha</td>
+<td style="text-align:center">β</td>
+<td style="text-align:center">\beta</td>
+</tr>
+<tr>
+<td style="text-align:center">γ</td>
+<td style="text-align:center">\gamma</td>
+<td style="text-align:center">δ</td>
+<td style="text-align:center">\delta</td>
+</tr>
+<tr>
+<td style="text-align:center">ε</td>
+<td style="text-align:center">\epsilon</td>
+<td style="text-align:center">ζ</td>
+<td style="text-align:center">\zeta</td>
+</tr>
+<tr>
+<td style="text-align:center">η</td>
+<td style="text-align:center">\eta</td>
+<td style="text-align:center">θ</td>
+<td style="text-align:center">\theta</td>
+</tr>
+<tr>
+<td style="text-align:center">ι</td>
+<td style="text-align:center">\iota</td>
+<td style="text-align:center">κ</td>
+<td style="text-align:center">\kappa</td>
+</tr>
+<tr>
+<td style="text-align:center">λ</td>
+<td style="text-align:center">\lambda</td>
+<td style="text-align:center">μ</td>
+<td style="text-align:center">\mu</td>
+</tr>
+<tr>
+<td style="text-align:center">ν</td>
+<td style="text-align:center">\nu</td>
+<td style="text-align:center">ξ</td>
+<td style="text-align:center">\xi</td>
+</tr>
+<tr>
+<td style="text-align:center">π</td>
+<td style="text-align:center">\pi</td>
+<td style="text-align:center">ρ</td>
+<td style="text-align:center">\rho</td>
+</tr>
+<tr>
+<td style="text-align:center">σ</td>
+<td style="text-align:center">\sigma</td>
+<td style="text-align:center">τ</td>
+<td style="text-align:center">\tau</td>
+</tr>
+<tr>
+<td style="text-align:center">υ</td>
+<td style="text-align:center">\upsilon</td>
+<td style="text-align:center">φ</td>
+<td style="text-align:center">\phi</td>
+</tr>
+<tr>
+<td style="text-align:center">χ</td>
+<td style="text-align:center">\chi</td>
+<td style="text-align:center">ψ</td>
+<td style="text-align:center">\psi</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>若需要大写希腊字母，将命令首字母大写即可。</li>
+<li>若需要斜体希腊字母，将命令前加上<code>var</code>前缀即可。</li>
+</ul>
+<h3><span id="p2-te-shu-fu-hao">2. 特殊符号</span><a href="#p2-te-shu-fu-hao" class="header-anchor">#</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">命令</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p>(待补充)</p>
+<h3><span id="p3-han-shu-de-cheng-xian">3. 函数的呈现</span><a href="#p3-han-shu-de-cheng-xian" class="header-anchor">#</a></h3>
+<ul>
+<li><code>\函数名</code></li>
+<li>举例：<code>\sin x</code>，<code>\ln x</code>，<code>\max(A,B,C)</code>呈现为：</li>
+</ul>
+<blockquote>
+<p>$\sin x$<br>
+$\ln x$<br>
+$\max(A,B,C)$</p>
+</blockquote>
+<h3><span id="p4-zi-ti">4. 字体</span><a href="#p4-zi-ti" class="header-anchor">#</a></h3>
+<ul>
+<li>Typewriter：<code>\mathtt&#123;A&#125;</code>呈现为$\mathtt{ABCDEFG}$</li>
+<li>Blackboard Bold：<code>\mathbb&#123;A&#125;</code>呈现为$\mathbb{ABCDEFG}$</li>
+<li>Sans Serif：<code>\mathsf&#123;A&#125;</code>呈现为$\mathsf{ABCDEFG}$</li>
+</ul>
+<h2><span id="pcan-kao">参考</span><a href="#pcan-kao" class="header-anchor">#</a></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ethmery/article/details/50670297">https://blog.csdn.net/ethmery/article/details/50670297</a>)<br>
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/garfielder007/article/details/51646604">https://blog.csdn.net/garfielder007/article/details/51646604</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/720102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">720102</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/720102/" class="post-title-link" itemprop="url">武神传说脚本开发指南</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-01 15:19:53 / 修改时间：15:20:47" itemprop="dateCreated datePublished" datetime="2021-02-01T15:19:53+08:00">2021-02-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/7201%EF%BC%9A%E6%B8%B8%E6%88%8F%E6%94%BB%E7%95%A5/" itemprop="url" rel="index"><span itemprop="name">7201：游戏攻略</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>938</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="jiao-ben-kai-fa-zhi-nan">脚本开发指南</span><a href="#jiao-ben-kai-fa-zhi-nan" class="header-anchor">#</a></h1>
+<p>v0.1</p>
+<p>本指南基于 <code>wsmud_pluginss</code> <code>wsmud_Raid</code> <code>wsmud_Trigger</code></p>
+<h2><span id="pyi-kai-shi">一、开始</span><a href="#pyi-kai-shi" class="header-anchor">#</a></h2>
+<p>1、安装 Tampermonkey</p>
+<p>在你的火狐浏览器或者谷歌浏览器上安装 <a target="_blank" rel="noopener" href="https://addons.mozilla.org/zh-CN/firefox/search/?q=Tampermonkey">Tampermonkey</a> 扩展组件。</p>
+<p>2、依次安装以下脚本</p>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/371372-wsmud-pluginss">wsmud_pluginss</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/375851-wsmud-raid">wsmud_Raid</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/378984-wsmud-trigger">wsmud_Trigger</a></p>
+</li>
+</ul>
+<h2><span id="per-can-kao">二、参考</span><a href="#per-can-kao" class="header-anchor">#</a></h2>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="http://wsmud.bobcn.me/topic/6/wsmud_raid-2-3-x-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97">开发指南</a> | <a target="_blank" rel="noopener" href="http://wsmud.bobcn.me/category/8">更新日志</a></p>
+</li>
+<li>
+<p>三三大佬的 <a target="_blank" rel="noopener" href="https://github.com/mapleobserver/wsmud-script/">Github</a> | <a target="_blank" rel="noopener" href="https://gitee.com/mapleobserver/wsmud-script">Gitee</a></p>
+</li>
+</ul>
+<h2><span id="psan-di-yi-ge-liu-cheng-hong-fa-qi">三、第一个流程 / 触发器</span><a href="#psan-di-yi-ge-liu-cheng-hong-fa-qi" class="header-anchor">#</a></h2>
+<h3><span id="p1-di-yi-ge-liu-cheng">1、第一个流程</span><a href="#p1-di-yi-ge-liu-cheng" class="header-anchor">#</a></h3>
+<p>新建一个流程，输入以下内容，输入流程名称 `first ，保存</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// flow</span></span><br><span class="line">tm Hello World</span><br></pre></td></tr></table></figure>
+<p>运行后队伍消息出现 <code>Hello World</code> 即运行成功。</p>
+<h3><span id="p2-di-yi-ge-hong-fa-qi">2、第一个触发器</span><a href="#p2-di-yi-ge-hong-fa-qi" class="header-anchor">#</a></h3>
+<p>新建一个触发器，类型选<code>新聊天信息</code> ，输入触发器名称 <code>first</code></p>
+<p>频道选 <code>队伍</code> 发言人留空 关键字为 <code>hello</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// trigger</span></span><br><span class="line"><span class="comment">// 类型 新聊天消息触发器</span></span><br><span class="line"><span class="comment">// 频道 队伍</span></span><br><span class="line"><span class="comment">// 发言人</span></span><br><span class="line"><span class="comment">// 关键字 hello</span></span><br><span class="line"></span><br><span class="line">tm trigger success</span><br></pre></td></tr></table></figure>
+<p>保存并启用这个触发器</p>
+<p>在聊天频道输入 <code>hello</code> 并发送</p>
+<p>如果出现提示 <code>触发=&gt;first</code> 队伍消息出现  <code>trigger success</code> 则表示触发器构建成功。</p>
+<h2><span id="psi-ji-ben-yu-ju">四、基本语句</span><a href="#psi-ji-ben-yu-ju" class="header-anchor">#</a></h2>
+<h3><span id="p1-zhu-shi">1、注释</span><a href="#p1-zhu-shi" class="header-anchor">#</a></h3>
+<h2><span id="pwu-zhi-ling">五、指令</span><a href="#pwu-zhi-ling" class="header-anchor">#</a></h2>
+<p>流程和触发器所有的内容都可以拆分成各种指令和占位符参数</p>
+<p>指令分为<strong>系统指令</strong>、<strong>$指令</strong>、<strong>@指令</strong></p>
+<h3><span id="p1-xi-tong-zhi-ling">1、系统指令</span><a href="#p1-xi-tong-zhi-ling" class="header-anchor">#</a></h3>
+<p>这是系统原生提供的指令。</p>
+<p>具体的指令看附录1</p>
+<h3><span id="p2-zhi-ling">2、$指令</span><a href="#p2-zhi-ling" class="header-anchor">#</a></h3>
+<p>是指<code>$</code> 开头的指令，一般是由多条系统指令组合而成。</p>
+<p>具体的指令看附录2</p>
+<h3><span id="p3-bing-fa-zhi-xing-xi-tong-zhi-ling">3、并发执行系统指令</span><a href="#p3-bing-fa-zhi-xing-xi-tong-zhi-ling" class="header-anchor">#</a></h3>
+<p>多条系统指令 (及 $指令) 可用 <code>;</code> 连接成为一条<strong>语句</strong>，一条语句中的系统指令会同时执行。</p>
+<p>同时执行太多系统指令会导致服务器拒绝执行（目测好像是一秒二十条）。</p>
+<h3><span id="p4-jian-xie-xi-tong-zhi-ling">4、简写系统指令</span><a href="#p4-jian-xie-xi-tong-zhi-ling" class="header-anchor">#</a></h3>
+<p>可以在系统指令后跟随 <code>[数字]</code>，表示该语句重复的次数，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go west[<span class="number">3</span>];go north</span><br><span class="line">go west;go west;go west;go north</span><br></pre></td></tr></table></figure>
+<p>上述的两条语句是等价的。</p>
+<h2><span id="pliu-zhan-wei-fu-can-shu">六、占位符参数</span><a href="#pliu-zhan-wei-fu-can-shu" class="header-anchor">#</a></h2>
+<h2><span id="pqi-bian-liang">七、变量</span><a href="#pqi-bian-liang" class="header-anchor">#</a></h2>
+<h2><span id="pba-suan-zhu-yun-suan">八、算术运算</span><a href="#pba-suan-zhu-yun-suan" class="header-anchor">#</a></h2>
+<h2><span id="pjiu-tiao-jian-kong-zhi-yu-xun-huan-kong-zhi">九、条件控制与循环控制</span><a href="#pjiu-tiao-jian-kong-zhi-yu-xun-huan-kong-zhi" class="header-anchor">#</a></h2>
+<h2><span id="pshi-qi-ta">十、其他</span><a href="#pshi-qi-ta" class="header-anchor">#</a></h2>
+<h3><span id="p1-shi-yong-js-yu-fa">1、使用js语法</span><a href="#p1-shi-yong-js-yu-fa" class="header-anchor">#</a></h3>
+<h3><span id="p2-zi-liu-cheng">2、子流程</span><a href="#p2-zi-liu-cheng" class="header-anchor">#</a></h3>
+<h3><span id="p3-shou-hu-yu-ju">3、守护语句</span><a href="#p3-shou-hu-yu-ju" class="header-anchor">#</a></h3>
+<h2><span id="pshi-zhan-zhi-wu-feng-hun-mi">实战之无缝昏迷</span><a href="#pshi-zhan-zhi-wu-feng-hun-mi" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-wu-feng-mang-luan">实战之无缝忙乱</span><a href="#pshi-zhan-zhi-wu-feng-mang-luan" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-jian-dan-ban-ri-chang-liu-cheng">实战之简单版日常流程</span><a href="#pshi-zhan-zhi-jian-dan-ban-ri-chang-liu-cheng" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-jian-dan-de-liao-tian-ji-qi-ren">实战之简单的聊天机器人</span><a href="#pshi-zhan-zhi-jian-dan-de-liao-tian-ji-qi-ren" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-zi-dong-xiang-yang-sao-qiang">实战之自动襄阳扫墙</span><a href="#pshi-zhan-zhi-zi-dong-xiang-yang-sao-qiang" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-zi-dong-qing-bao-hong-fa-qi">实战之自动清包触发器</span><a href="#pshi-zhan-zhi-zi-dong-qing-bao-hong-fa-qi" class="header-anchor">#</a></h2>
+<h2><span id="pshi-zhan-zhi-zi-dong-bang-zhan-liu-cheng">实战之自动帮战流程</span><a href="#pshi-zhan-zhi-zi-dong-bang-zhan-liu-cheng" class="header-anchor">#</a></h2>
+<h2><span id="pfu-1-xi-tong-zhi-ling-yi-lan">附1 系统指令一览</span><a href="#pfu-1-xi-tong-zhi-ling-yi-lan" class="header-anchor">#</a></h2>
+<h2><span id="pfu-2-zhi-ling-yi-lan">附2 $指令一览</span><a href="#pfu-2-zhi-ling-yi-lan" class="header-anchor">#</a></h2>
+<h2><span id="pfu-3-zhi-ling-yi-lan">附3 @指令一览</span><a href="#pfu-3-zhi-ling-yi-lan" class="header-anchor">#</a></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/720101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -4130,221 +4593,6 @@ Android Studio<br>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/181008/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">181008</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/181008/" class="post-title-link" itemprop="url">Mermaid</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 00:56:17" itemprop="dateCreated datePublished" datetime="2021-02-01T00:56:17+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-02 14:41:46" itemprop="dateModified" datetime="2021-02-02T14:41:46+08:00">2021-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1810%EF%BC%9AMarkdown/" itemprop="url" rel="index"><span itemprop="name">1810：Markdown</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>826</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Mermaid 是一种简单的类似 Markdown 的脚本语言，通过 JavaScript 编程语言，将文本转换为图片。因此，真正实现画图功能的并不是 Typora 本身，它只是内置了对 Mermaid 的支持。<br>
-本文基于 Typora。</p>
-<h2><span id="pliu-cheng-tu">流程图</span><a href="#pliu-cheng-tu" class="header-anchor">#</a></h2>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br></pre></td></tr></table></figure>
-<pre class="mermaid"> graph TD;
-    A-->B;
-    A-->C;
-    B-->D;</pre>
-<h2><span id="pshi-xu-tu">时序图</span><a href="#pshi-xu-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>-&gt;&gt;</code> 代表实线箭头，<code>--&gt;&gt;</code> 则代表虚线。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    Alice-&gt;&gt;John: Hello John, how are you?</span><br><span class="line">    John--&gt;&gt;Alice: Great!</span><br></pre></td></tr></table></figure>
-<pre class="mermaid">sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!</pre>
-<h2><span id="pzhuang-tai-tu">状态图</span><a href="#pzhuang-tai-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>[*]</code> 表示开始或者结束，如果在箭头右边则表示结束。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; s1</span><br><span class="line">    s1 --&gt; [*]</span><br></pre></td></tr></table></figure>
-<pre class="mermaid">stateDiagram
-    [*] --> s1
-    s1 --> [*]</pre>
-<h2><span id="plei-tu">类图</span><a href="#plei-tu" class="header-anchor">#</a></h2>
-<p>语法解释：<code>&lt;|--</code> 表示继承，<code>+</code> 表示 <code>public</code>，<code>-</code> 表示 <code>private</code>。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">      Animal &lt;|-- Duck</span><br><span class="line">      Animal &lt;|-- Fish</span><br><span class="line">      Animal &lt;|-- Zebra</span><br><span class="line">      Animal : +int age</span><br><span class="line">      Animal : +String gender</span><br><span class="line">      Animal: +isMammal()</span><br><span class="line">      Animal: +mate()</span><br><span class="line">      class Duck&#123;</span><br><span class="line">          +String beakColor</span><br><span class="line">          +swim()</span><br><span class="line">          +quack()</span><br><span class="line">      &#125;</span><br><span class="line">      class Fish&#123;</span><br><span class="line">          -int sizeInFeet</span><br><span class="line">          -canEat()</span><br><span class="line">      &#125;</span><br><span class="line">      class Zebra&#123;</span><br><span class="line">          +bool is_wild</span><br><span class="line">          +run()</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-<pre class="mermaid">classDiagram
-      Animal <|-- duck animal <|-- fish zebra : +int age +string gender animal: +ismammal() +mate() class duck{ beakcolor +swim() +quack() } fish{ -int sizeinfeet -caneat() zebra{ +bool is_wild +run() }< pre>
-<h2><span id="pgan-te-tu">甘特图</span><a href="#pgan-te-tu" class="header-anchor">#</a></h2>
-<p>甘特图一般用来表示项目的计划排期，目前在工作中经常会用到。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gantt</span><br><span class="line">    title 工作计划</span><br><span class="line">    dateFormat  YYYY-MM-DD</span><br><span class="line">    section Section</span><br><span class="line">    A task           :a1, 2020-01-01, 30d</span><br><span class="line">    Another task     :after a1  , 20d</span><br><span class="line">    section Another</span><br><span class="line">    Task in sec      :2020-01-12  , 12d</span><br><span class="line">    another task      : 24d</span><br></pre></td></tr></table></figure>
-<pre class="mermaid">gantt
-    title 工作计划
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2020-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2020-01-12  , 12d
-    another task      : 24d</pre>
-<h2><span id="pbing-tu">饼图</span><a href="#pbing-tu" class="header-anchor">#</a></h2>
-<p>饼图使用 <code>pie</code> 表示，标题下面分别是区域名称及其百分比。</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br></pre></td></tr></table></figure>
-<pre class="mermaid">pie
-    title Key elements in Product X
-    "Calcium" : 42.96
-    "Potassium" : 50.05
-    "Magnesium" : 10.01
-    "Iron" :  5</pre>
-</|--></pre>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/130401/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">130401</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/130401/" class="post-title-link" itemprop="url">算法基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-01 00:54:49" itemprop="dateCreated datePublished" datetime="2021-02-01T00:54:49+08:00">2021-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 11:36:50" itemprop="dateModified" datetime="2021-02-06T11:36:50+08:00">2021-02-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/1304%EF%BC%9A%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">1304：算法基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>24</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>01 算法概述<br>
-02 排序<br>
-03 搜索<br>
-04 递归<br>
-05 动态规划</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -4414,7 +4662,7 @@ Android Studio<br>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-count">246</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -4558,6 +4806,59 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

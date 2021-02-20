@@ -197,6 +197,182 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310103/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310103</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310103/" class="post-title-link" itemprop="url">静态资源服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:49:52" itemprop="dateCreated datePublished" datetime="2021-01-31T13:49:52+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:22:24" itemprop="dateModified" datetime="2021-02-01T19:22:24+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3101%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">3101：服务器基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="jing-tai-zi-yuan-fu-wu-qi">静态资源服务器</span><a href="#jing-tai-zi-yuan-fu-wu-qi" class="header-anchor">#</a></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入相关模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&quot;path&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 手动封装 Promise，解决回调问题</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">readFile</span>(<span class="params">filePath</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    fs.readFile(filePath, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">const</span> fileContent = data.toString();</span><br><span class="line">      resolve(fileContent);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个服务器</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 获取读取文件的路径</span></span><br><span class="line">    <span class="keyword">const</span> filePath = path.resolve(__dirname, <span class="string">&quot;./server.js&quot;</span>);</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">await</span> readFile(filePath);</span><br><span class="line">    <span class="comment">// 设置响应头类型</span></span><br><span class="line">    res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/javascript;charset=utf-8&quot;</span>);</span><br><span class="line">    <span class="comment">// 设置响应状态码</span></span><br><span class="line">    res.statusCode = <span class="number">200</span>;</span><br><span class="line">    <span class="comment">// 响应内容</span></span><br><span class="line">    res.end(data);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;读取文件失败&quot;</span>, err);</span><br><span class="line">    res.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;application/javascript;charset=utf-8&quot;</span>);</span><br><span class="line">    res.statusCode = <span class="number">404</span>;</span><br><span class="line">    res.end(<span class="string">&quot;文件资源加载失败&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置服务器</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="string">&quot;8080&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> host = <span class="string">&quot;127.0.0.1&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务器</span></span><br><span class="line">server.listen(port, host, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;服务器创建失败&quot;</span> + err);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="string">`http://<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>`</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`服务器已启动，请访问<span class="subst">$&#123;url&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310102/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop= "name" content="KEEL">
+      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="永远的伊尔瓦">
+    </span>
+      <header class="post-header">
+        <!-- 自定义id -->
+        <span style="color:#ddd; font-size:20px; font-weight: 888; ">310102</span>
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/310102/" class="post-title-link" itemprop="url">Node 服务器基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 13:45:43" itemprop="dateCreated datePublished" datetime="2021-01-31T13:45:43+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 19:22:14" itemprop="dateModified" datetime="2021-02-01T19:22:14+08:00">2021-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3101%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">3101：服务器基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-chart-area"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>970</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1><span id="node-fu-wu-qi-ji-chu">Node 服务器基础</span><a href="#node-fu-wu-qi-ji-chu" class="header-anchor">#</a></h1>
+<h2><span id="p1-da-jian-fu-wu-qi">1、搭建服务器</span><a href="#p1-da-jian-fu-wu-qi" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建服务</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">request, response</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 设置响应头(文件格式，字符编码)</span></span><br><span class="line">  response.setHeader(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/plain;charset=utf-8&quot;</span>);</span><br><span class="line">  <span class="comment">// 返回响应内容</span></span><br><span class="line">  response.end(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 确定域名和端口并启动服务器</span></span><br><span class="line"><span class="keyword">const</span> host = <span class="string">&quot;localhost&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">8888</span>;</span><br><span class="line">server.listen(port, host, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;服务器打开失败&quot;</span> + err);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;服务器启动成功&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2><span id="p2-da-jian-ke-hu-duan">2、搭建客户端</span><a href="#p2-da-jian-ke-hu-duan" class="header-anchor">#</a></h2>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请求</span></span><br><span class="line"><span class="keyword">const</span> url = <span class="string">&quot;http://localhost:3838&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> request = http.request(url, <span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 响应状态码</span></span><br><span class="line">    <span class="built_in">console</span>.log(res.statusCode)</span><br><span class="line">    res.on(<span class="string">&quot;data“,chunk =&gt;&#123;</span></span><br><span class="line"><span class="string"> 			console.log(chunk.toString());</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 发送请求</span></span><br><span class="line"><span class="string">request.end();</span></span><br></pre></td></tr></table></figure>
+<h2><span id="p3-chang-yong-dai-ma-pian-duan">3、常用代码片段</span><a href="#p3-chang-yong-dai-ma-pian-duan" class="header-anchor">#</a></h2>
+<p>设置响应解析类型 <code>res.setHeader(&quot;Content-Type&quot;, &quot;text/html;charset=utf-8&quot;)</code></p>
+<p>设置状态码 <code>res.statusCode = 200</code></p>
+<p>获取当前 URL <code>req.url</code> 去掉绝对路径 <code>req.url.slice(1)</code></p>
+<p>中文 URL 转码 <code>decodeURL(req.url)</code></p>
+<p><code>req.query</code></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/310101/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2317,217 +2493,6 @@ APIs 分为 Electron API、Node.js API</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/250110/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">250110</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/250110/" class="post-title-link" itemprop="url">Vue 路由</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 09:25:59" itemprop="dateCreated datePublished" datetime="2021-01-31T09:25:59+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-03 11:25:58" itemprop="dateModified" datetime="2021-02-03T11:25:58+08:00">2021-02-03</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2501%EF%BC%9AVue%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">2501：Vue基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>130</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="vue-lu-you">Vue 路由</span><a href="#vue-lu-you" class="header-anchor">#</a></h1>
-<p>路由组件懒加载<br>
-<code>require.ensure</code> 也是用来实现按需加载的。和 <code>import</code> 差不多。<br>
-在commonJS中有一个规范，里面定义了 <code>require.ensure</code> 语法，webpack 实现了它，作用是可以在打包的时候进行代码分片，并且异步加载分片后的代码。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://nigelkeel.gitee.io/720201/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop= "name" content="KEEL">
-      <meta itemprop="description" content="这个人很懒，什么都没留下。 ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="永远的伊尔瓦">
-    </span>
-      <header class="post-header">
-        <!-- 自定义id -->
-        <span style="color:#ddd; font-size:20px; font-weight: 888; ">720201</span>
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/720201/" class="post-title-link" itemprop="url">伊洛纳</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-01-31 02:31:45" itemprop="dateCreated datePublished" datetime="2021-01-31T02:31:45+08:00">2021-01-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-06 09:53:22" itemprop="dateModified" datetime="2021-02-06T09:53:22+08:00">2021-02-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/7202%EF%BC%9A%E4%BC%8A%E6%B4%9B%E7%BA%B3/" itemprop="url" rel="index"><span itemprop="name">7202：伊洛纳</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-chart-area"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>437</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1><span id="yi-luo-na">伊洛纳</span><a href="#yi-luo-na" class="header-anchor">#</a></h1>
-<h2><span id="p1005">1005</span><a href="#p1005" class="header-anchor">#</a></h2>
-<p>新家 别墅</p>
-<h2><span id="p1004">1004</span><a href="#p1004" class="header-anchor">#</a></h2>
-<p>新的旅程</p>
-<p>选称号，选经历，选种族（艾莱亚人），选择职业（钢琴师）</p>
-<p>选择擅长技能（回避），能力值骰子，选择天赋（45点），选择造型</p>
-<p>选择游戏模式（Purge模式），开局（Keel）</p>
-<p>负经验</p>
-<p>英雄奶酪</p>
-<p>魔法果</p>
-<p>幸运苹果</p>
-<p>赫尔墨斯之血</p>
-<p>传送 玛尼的</p>
-<p>==五角头盔== | ==贤者头盔== | ==深渊== | ==兔耳==</p>
-<p>==乞丐的项链== | ==耶库布之球== | ==迷之贝== | ==弩张==</p>
-<p>==英雄的披风== | ==黄金剑舞翼== | ==金属巴斯达的机械翼==</p>
-<p>==战地服== | ==银雪==</p>
-<p>风暴使者 | 哀恸 |  神火剑 | ==斩铁剑==</p>
-<p>==夜之镜== | 荆棘盾</p>
-<p>==帕罗米亚的荣耀== |  ==钢铁龙之戒== | ==双螺旋==</p>
-<p>==火焰龙巴斯达的手甲== | ==精灵手甲==</p>
-<p>==飞星腰带== | ==红凛==</p>
-<p>==胡林之靴==</p>
-<p>==风之弓== | ==唾蛇==</p>
-<p>进化</p>
-<p>心</p>
-<p>下降</p>
-<hr>
-<h2><span id="p1003">1003</span><a href="#p1003" class="header-anchor">#</a></h2>
-<p>许愿</p>
-<ul>
-<li>斯特拉迪瓦里</li>
-<li>古尔德钢琴</li>
-<li>万能钥匙</li>
-<li>健康护符</li>
-<li>红色下框眼镜</li>
-<li>鱼饰马克杯</li>
-<li>古霜书签</li>
-<li>赫鲁提雷亚</li>
-</ul>
-<h2><span id="pza-xiang">杂项</span><a href="#pza-xiang" class="header-anchor">#</a></h2>
-<p>下载 <a target="_blank" rel="noopener" href="https://www.ztjal.info/">https://www.ztjal.info/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2597,7 +2562,7 @@ APIs 分为 Electron API、Node.js API</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-count">246</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>

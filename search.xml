@@ -4,6 +4,52 @@
   
     
     <entry>
+      <title>ElementUI / 组件使用技巧</title>
+      <link href="/250502/"/>
+      <url>/250502/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>基于 <code>2.15</code></p></blockquote><h2><span id="pshang-chuan-upload">上传 Upload</span><a href="#pshang-chuan-upload" class="header-anchor">#</a></h2><h3><span id="pshu-xing">属性</span><a href="#pshu-xing" class="header-anchor">#</a></h3><table><thead><tr><th>名字</th><th>类型</th><th>默认</th><th>说明</th><th>示例</th></tr></thead><tbody><tr><td><code>accept</code></td><td>string</td><td>-</td><td>允许上传的文件格式</td><td><code>&quot;.pdf,.jpg,jpeg&quot;</code></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2505：Vue+ElementUI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>读书笔记</title>
+      <link href="/730201/"/>
+      <url>/730201/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 7301：摘抄 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML / 其他</title>
       <link href="/210105/"/>
       <url>/210105/</url>
@@ -3883,11 +3929,11 @@
     
     
     <entry>
-      <title>Python os &amp; sys</title>
+      <title>Python / os &amp; sys</title>
       <link href="/340202/"/>
       <url>/340202/</url>
       
-        <content type="html"><![CDATA[<h1><span id="python-os-amp-sys">Python os &amp; sys</span><a href="#python-os-amp-sys" class="header-anchor">#</a></h1><h1><span id="os">os</span><a href="#os" class="header-anchor">#</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure><h2><span id="psystem">system</span><a href="#psystem" class="header-anchor">#</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清屏</span></span><br><span class="line">os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure><h1><span id="sys">sys</span><a href="#sys" class="header-anchor">#</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure><h2><span id="pargv">argv</span><a href="#pargv" class="header-anchor">#</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    q = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    b = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    c = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">        a = sys.argv[<span class="number">1</span>]</span><br><span class="line">        b = sys.argv[<span class="number">2</span>]</span><br><span class="line">        c = sys.argv[<span class="number">3</span>]</span><br><span class="line">    print(a,b,c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入 python test1.py 1 2 3</span></span><br><span class="line"><span class="comment"># 输出 1 2 3</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1><span id="os">os</span><a href="#os" class="header-anchor">#</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure><h2><span id="psystem">system</span><a href="#psystem" class="header-anchor">#</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 清屏</span></span><br><span class="line">os.system(<span class="string">&#x27;cls&#x27;</span>)</span><br></pre></td></tr></table></figure><h1><span id="sys">sys</span><a href="#sys" class="header-anchor">#</a></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure><h2><span id="pargv">argv</span><a href="#pargv" class="header-anchor">#</a></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    q = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    b = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    c = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">        a = sys.argv[<span class="number">1</span>]</span><br><span class="line">        b = sys.argv[<span class="number">2</span>]</span><br><span class="line">        c = sys.argv[<span class="number">3</span>]</span><br><span class="line">    print(a,b,c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入 python test1.py 1 2 3</span></span><br><span class="line"><span class="comment"># 输出 1 2 3</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
